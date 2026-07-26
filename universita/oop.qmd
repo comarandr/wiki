@@ -2,7 +2,6 @@
 layout: default
 title: Programmazione a oggetti
 permalink: /universita/oop/
-custom_css: /assets/oop.css
 ---
 
 ## Concetti di base
@@ -151,7 +150,7 @@ classDiagram
     }
 
     Interfaccia <|.. MyClass
-```
+````
 
 ```java
 public interface Interfaccia{
