@@ -7,21 +7,21 @@ permalink: /universita/
 ## 1 anno informatica
 
 - [Analisi matematica]
-- [Programmazione e laboratorio](programmazione.md)
-- [Architettura degli elaboratori](./architettura.md)
-- [Matematica Discreta](./MatematicaDiscreta.md)
-- [Algebra lineare](./algebraSchemi.md)
-- [Fisica](./fisica_2026/fisica26.md)
+- [Programmazione e laboratorio](programmazione.qmd)
+- [Architettura degli elaboratori](./architettura.qmd)
+- [Matematica Discreta](./MatematicaDiscreta.qmd)
+- [Algebra lineare](./algebraSchemi.qmd)
+- [Fisica](./fisica_2026/fisica26.qmd)
 
 extra:
 
-- [Matematica di base](./matematica/matematica.md)
-- [Fisica_Santi](./fisica/fisica.md)
+- [Matematica di base](./matematica/matematica.qmd)
+- [Fisica_Santi](./fisica/fisica.qmd)
 
 ## 2 anno informatica
 
 - [Algoritmi e strutture dati]
-- [Sistemi operativi](./sistemiOperativi.md)
+- [Sistemi operativi](./sistemiOperativi.qmd)
 - [Statistica]
 - [Calcolo scientifico]
 - [Logica]
@@ -29,16 +29,16 @@ extra:
 
 OOp:
 
-- [Programmazione a oggetti](./oop.md)
-- [Terra esempio oop](./Terra.md)
-- [Barche esempio oop](./barcheoop.md)
-- [voli esempio oop](./voli.md)
+- [Programmazione a oggetti](./oop.qmd)
+- [Terra esempio oop](./Terra.qmd)
+- [Barche esempio oop](./barcheoop.qmd)
+- [voli esempio oop](./voli.qmd)
 
 ## 3 anno informatica
 
 - [Reti di calcolatori]
-- [Ingegneria del software](./IngegneriaDelSoftware.md)
-- [Basi di dati](./BasiDati.md)
+- [Ingegneria del software](./IngegneriaDelSoftware.qmd)
+- [Basi di dati](./BasiDati.qmd)
 - [Interazione uomo-macchina]
 - [Linguaggi di programmazione]
 
@@ -58,7 +58,7 @@ OOp:
 - [Storia economica]
 - Matematica generale: in analisi 1 e altre materie
 - [Economia aziendale]
-- [Microeconomia](./microeconomia.md)
+- [Microeconomia](./microeconomia.qmd)
 - [Diritto privato]
 
 2 anno:

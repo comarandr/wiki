@@ -1,0 +1,6 @@
+---
+title: "Indice Personale"
+permalink: /personali/
+---
+
+[Strumenti di poesia](./StrumentiPoesia.qmd)
