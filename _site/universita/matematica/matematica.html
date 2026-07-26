@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wiki</title>
+<title>Matematica – Wiki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,23 +29,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,8 +74,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -85,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Wiki</span>
     </a>
   </div>
@@ -100,11 +129,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -118,15 +147,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#equazioni" id="toc-equazioni" class="nav-link active" data-scroll-target="#equazioni">Equazioni</a>
+  <ul class="collapse">
+  <li><a href="#equazioni-di-secondo-grado" id="toc-equazioni-di-secondo-grado" class="nav-link" data-scroll-target="#equazioni-di-secondo-grado">Equazioni di secondo grado</a></li>
+  </ul></li>
+  <li><a href="#derivazione" id="toc-derivazione" class="nav-link" data-scroll-target="#derivazione">Derivazione</a>
+  <ul class="collapse">
+  <li><a href="#derivata-di-una-funzione" id="toc-derivata-di-una-funzione" class="nav-link" data-scroll-target="#derivata-di-una-funzione">Derivata di una funzione</a></li>
+  <li><a href="#derivate-di-funzioni-elementari" id="toc-derivate-di-funzioni-elementari" class="nav-link" data-scroll-target="#derivate-di-funzioni-elementari">Derivate di funzioni elementari</a></li>
+  </ul></li>
+  <li><a href="#integrali" id="toc-integrali" class="nav-link" data-scroll-target="#integrali">Integrali</a>
+  <ul class="collapse">
+  <li><a href="#integrazione-definita" id="toc-integrazione-definita" class="nav-link" data-scroll-target="#integrazione-definita">Integrazione definita</a></li>
+  <li><a href="#proprietà-fondamentali-dellintegrazione" id="toc-proprietà-fondamentali-dellintegrazione" class="nav-link" data-scroll-target="#proprietà-fondamentali-dellintegrazione">Proprietà fondamentali dell’integrazione</a></li>
+  <li><a href="#integrazione-di-linea" id="toc-integrazione-di-linea" class="nav-link" data-scroll-target="#integrazione-di-linea">Integrazione di linea</a></li>
+  </ul></li>
+  <li><a href="#trigonometria" id="toc-trigonometria" class="nav-link" data-scroll-target="#trigonometria">Trigonometria</a>
+  <ul class="collapse">
+  <li><a href="#circonferenza-goniometrica" id="toc-circonferenza-goniometrica" class="nav-link" data-scroll-target="#circonferenza-goniometrica">Circonferenza goniometrica</a></li>
+  <li><a href="#funzioni-trigonometriche" id="toc-funzioni-trigonometriche" class="nav-link" data-scroll-target="#funzioni-trigonometriche">Funzioni trigonometriche</a></li>
+  <li><a href="#proprietà-fondamentale-dellalgebra" id="toc-proprietà-fondamentale-dellalgebra" class="nav-link" data-scroll-target="#proprietà-fondamentale-dellalgebra">Proprietà fondamentale dell’algebra</a></li>
+  </ul></li>
+  <li><a href="#vettori-e-algebra-lineare" id="toc-vettori-e-algebra-lineare" class="nav-link" data-scroll-target="#vettori-e-algebra-lineare">Vettori e algebra lineare</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wiki</h1>
+<h1 class="title">Matematica</h1>
 </div>
 
 
@@ -143,13 +199,308 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<p><a href="./linguaggi/indexLing.html">linguaggi di programmazione</a></p>
-<p><a href="./universita/indexUni.html">università</a></p>
-<p><a href="./personali/indexPers.html">personali</a></p>
+<section id="equazioni" class="level2">
+<h2 class="anchored" data-anchor-id="equazioni">Equazioni</h2>
+<section id="equazioni-di-secondo-grado" class="level3">
+<h3 class="anchored" data-anchor-id="equazioni-di-secondo-grado">Equazioni di secondo grado</h3>
+<p><span class="math display">\[
+y = ax^2 + bx + c
+\]</span></p>
+<p><strong>determinante</strong> <span class="math inline">\(\Delta = b^2 - 4ac\)</span></p>
+<p><span class="math display">\[
+\text{soluzioni} \quad
+\begin{cases}
+x_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a} \\\\
+x_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a}
+\end{cases}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Delta &gt; 0 \quad x_1, x_2 \in \mathbb{R} \land x_1 \neq x_2\)</span></li>
+<li><span class="math inline">\(\Delta = 0 \quad x_1 = x_2 \in \mathbb{R}\)</span></li>
+<li><span class="math inline">\(\Delta &lt; 0\)</span> impossibile in <span class="math inline">\(\mathbb{R}\)</span>.<br>
+<span class="math inline">\(x_1, x_2 \in \mathbb{C} \land x_1 = \overline{x_2}\)</span> (impossibile)</li>
+</ul>
+<p>[grafici di 3 parabole]</p>
+<ul>
+<li>coefficiente <span class="math inline">\(a\)</span> determina la concavità della parabola</li>
+<li>coefficiente <span class="math inline">\(b\)</span> determina la posizione del vertice lungo l’asse x</li>
+<li>coefficiente <span class="math inline">\(c\)</span> determina l’intersezione con l’asse y</li>
+</ul>
+</section>
+</section>
+<section id="derivazione" class="level2">
+<h2 class="anchored" data-anchor-id="derivazione">Derivazione</h2>
+<section id="derivata-di-una-funzione" class="level3">
+<h3 class="anchored" data-anchor-id="derivata-di-una-funzione">Derivata di una funzione</h3>
+<p>Per comodità indichiamo la derivata <span class="math display">\[\frac{d}{dx} F = F'\]</span></p>
+<section id="somma" class="level4">
+<h4 class="anchored" data-anchor-id="somma">Somma</h4>
+<p><span class="math display">\[
+\frac{d}{dx} (F + G) = F' + G'
+\]</span></p>
+<p>Derivata di una somma:</p>
+<ol type="1">
+<li>derivo ogni funzione separatamente</li>
+<li>sommo i risultati</li>
+</ol>
+</section>
+<section id="prodotto" class="level4">
+<h4 class="anchored" data-anchor-id="prodotto">Prodotto</h4>
+<p><span class="math display">\[
+\frac{d}{dx} (F \cdot G) = F \cdot G' + G \cdot F'
+\]</span></p>
+<p>Derivata di un prodotto:</p>
+<ol type="1">
+<li>moltiplico la prima funziona per la derivata della seconda</li>
+<li>moltiplico la seconda funzione per la derivata della prima</li>
+<li>sommo i risultati</li>
+</ol>
+</section>
+<section id="potenza" class="level4">
+<h4 class="anchored" data-anchor-id="potenza">Potenza</h4>
+<p><span class="math display">\[
+\frac{d}{dx} X^{\alpha} = \alpha \cdot X^{\alpha-1}
+\]</span></p>
+<p>Derivata di una potenza:</p>
+<ol type="1">
+<li>l’esponente diventa il coefficiente</li>
+<li>l’esponente si riduce di 1</li>
+</ol>
+</section>
+<section id="costante-moltiplicativa" class="level4">
+<h4 class="anchored" data-anchor-id="costante-moltiplicativa">Costante moltiplicativa</h4>
+<p><span class="math display">\[
+\frac{d}{dx} (k \cdot F) = k \cdot F'
+\]</span></p>
+<p>la costante rimane invariata</p>
+</section>
+<section id="funzione-composta" class="level4">
+<h4 class="anchored" data-anchor-id="funzione-composta">Funzione composta</h4>
+<p><span class="math display">\[
+\frac{d}{dx} F(G) = F'(G) \cdot G'
+\]</span></p>
+<p>Derivata di una funzione composta:</p>
+<ol type="1">
+<li>derivo la funzione esterna mantenendo invariata la funzione interna</li>
+<li>moltiplico per la derivata della funzione interna</li>
+</ol>
+</section>
+</section>
+<section id="derivate-di-funzioni-elementari" class="level3">
+<h3 class="anchored" data-anchor-id="derivate-di-funzioni-elementari">Derivate di funzioni elementari</h3>
+<ul>
+<li>derivata di una costante</li>
+</ul>
+<p><span class="math display">\[
+k' = 0
+\]</span></p>
+<ul>
+<li>derivata di una funzione lineare</li>
+</ul>
+<p><span class="math display">\[
+(ax + b)' = a
+\]</span></p>
+<ul>
+<li>derivata di una potenza</li>
+</ul>
+<p><span class="math display">\[
+(x^n)' = n \cdot x^{n-1}
+\]</span></p>
+<ul>
+<li>derivata di una radice</li>
+</ul>
+<p><span class="math display">\[
+(\sqrt[n]{x})' = \frac{1}{n} \cdot x^{\frac{1}{n} - 1}
+\]</span></p>
+<ul>
+<li>derivata di un’esponenziale</li>
+</ul>
+<p><span class="math display">\[
+(e^x)' = e^x
+\]</span></p>
+<ul>
+<li>derivata di un logaritmo</li>
+</ul>
+<p><span class="math display">\[
+(\ln(x))' = \frac{1}{x}
+\]</span></p>
+<ul>
+<li>derivata di una reciproca</li>
+</ul>
+<p><span class="math display">\[
+\left(\frac{1}{x}\right)' = -\frac{1}{x^2}
+\]</span></p>
+<ul>
+<li>derivata del seno</li>
+</ul>
+<p><span class="math display">\[
+\sin^{'}(x) = \cos(x)
+\]</span></p>
+<ul>
+<li>derivata del coseno</li>
+</ul>
+<p><span class="math display">\[
+\cos^{'}(x) = -\sin(x)
+\]</span></p>
+<ul>
+<li>derivata della tangente</li>
+</ul>
+<p><span class="math display">\[
+\tan^{'}(x) = \sec^2(x)
+\]</span></p>
+<ul>
+<li>derivata della cotangente</li>
+</ul>
+<p><span class="math display">\[
+\cot^{'}(x) = -\csc^2(x)
+\]</span></p>
+</section>
+</section>
+<section id="integrali" class="level2">
+<h2 class="anchored" data-anchor-id="integrali">Integrali</h2>
+<p>Determinare area sottesa a una curva. Operazione inversa alla derivazione.</p>
+<p><span class="math display">\[
+\int f(x) dx = F(x) + k
+\]</span></p>
+<p>Tuttavia non definisce un’unica funzione, ma una famiglia di funzioni che differiscono per una costante <span class="math inline">\(k\)</span>.</p>
+<section id="integrazione-definita" class="level3">
+<h3 class="anchored" data-anchor-id="integrazione-definita">Integrazione definita</h3>
+<p>Il problema non si pone per gli integrali definiti, ovvero per l’integrazione di una funzione in un intervallo <span class="math inline">\([x_1,x_2]\)</span>:</p>
+<p><span class="math display">\[
+\int_{x_1}^{x_2} f(x) dx = F(x_2) - F(x_1)
+\]</span></p>
+</section>
+<section id="proprietà-fondamentali-dellintegrazione" class="level3">
+<h3 class="anchored" data-anchor-id="proprietà-fondamentali-dellintegrazione">Proprietà fondamentali dell’integrazione</h3>
+<section id="integrale-di-una-somma" class="level4">
+<h4 class="anchored" data-anchor-id="integrale-di-una-somma">Integrale di una somma</h4>
+<p><span class="math display">\[
+\int (f(x) + g(x)) dx = \int f(x) dx + \int g(x) dx
+\]</span></p>
+</section>
+<section id="integrale-di-funzione-con-costante-moltiplicativa" class="level4">
+<h4 class="anchored" data-anchor-id="integrale-di-funzione-con-costante-moltiplicativa">Integrale di funzione con costante moltiplicativa</h4>
+<p><span class="math display">\[
+\int k \cdot f(x) dx = k \cdot \int f(x) dx
+\]</span></p>
+</section>
+<section id="potenza-per-alpha-neq--1" class="level4">
+<h4 class="anchored" data-anchor-id="potenza-per-alpha-neq--1">Potenza (per <span class="math inline">\(\alpha \neq -1\)</span>)</h4>
+<p><span class="math display">\[
+\int x^{\alpha} dx = \frac{1}{\alpha + 1} x^{\alpha + 1}
+\]</span></p>
+</section>
+<section id="integrazione-per-parti" class="level4">
+<h4 class="anchored" data-anchor-id="integrazione-per-parti">Integrazione per parti</h4>
+<p><span class="math display">\[
+\int f(x) \cdot g(x) dx = f(x) \cdot \int g(x) dx - \int \left( f'(x) \cdot \int g(x) dx \right) dx
+\]</span></p>
+</section>
+<section id="integrazioni-con-sostituzione-di-variabile" class="level4">
+<h4 class="anchored" data-anchor-id="integrazioni-con-sostituzione-di-variabile">Integrazioni con sostituzione di variabile</h4>
+<p><span class="math display">\[
+\int f(x) dx = \int f(x(y)) \cdot \frac{dx}{dy} dy
+\]</span></p>
+</section>
+<section id="integrazione-delle-funzioni-principali" class="level4">
+<h4 class="anchored" data-anchor-id="integrazione-delle-funzioni-principali">Integrazione delle funzioni principali</h4>
+<ul>
+<li>integrale di una costante</li>
+</ul>
+<p><span class="math display">\[
+\int k dx = k \cdot x
+\]</span></p>
+<ul>
+<li>integrale del coseno</li>
+</ul>
+<p><span class="math display">\[
+\int \cos(x) dx = \sin(x)
+\]</span></p>
+<ul>
+<li>integrale del seno</li>
+</ul>
+<p><span class="math display">\[
+\int \sin(x) dx = -\cos(x)
+\]</span></p>
+</section>
+</section>
+<section id="integrazione-di-linea" class="level3">
+<h3 class="anchored" data-anchor-id="integrazione-di-linea">Integrazione di linea</h3>
+<p>Consideriamo una curva in 2 dimensioni</p>
+<p><img src="./IntegraliLinea.jpeg" height="250px"></p>
+<p>Definiamo integrale di linea:</p>
+<p><span class="math display">\[
+\int \vec{F}(\vec{r}) \cdot d\vec{r} = \int (F_x dx + F_y dy) = \int F_x dx + \int F_y dy
+\]</span></p>
+<p>Equivale alla somma degli integrali calcolati lungo le direzioni degli assi x e y.</p>
+</section>
+</section>
+<section id="trigonometria" class="level2">
+<h2 class="anchored" data-anchor-id="trigonometria">Trigonometria</h2>
+<p>Definizione di <strong>angolo <span class="math inline">\(\alpha\)</span></strong>:</p>
+<p><span class="math display">\[
+\text{angolo }\alpha = \frac{\text{arco}}{\text{raggio}}
+\]</span></p>
+<section id="circonferenza-goniometrica" class="level3">
+<h3 class="anchored" data-anchor-id="circonferenza-goniometrica">Circonferenza goniometrica</h3>
+<p>Circonferenza di raggio unitario (<span class="math inline">\(r=1\)</span>) con origine in <span class="math inline">\((0,0)\)</span>, in questo caso la misura dell’angolo coincide a quella dell’arco.</p>
+<p>radiante: <span class="math inline">\(x \text{ rad} = x \cdot \frac{2 \Pi}{360°}\)</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>radiante : gradi</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\frac{\pi}{6} : 30°\]</span></td>
+<td><span class="math display">\[\frac{\pi}{3} : 60°\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\frac{\pi}{4} : 45°\]</span></td>
+<td><span class="math display">\[\frac{\pi}{2} : 90°\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\pi : 180°\]</span></td>
+<td><span class="math display">\[2\pi : 360°\]</span></td>
+</tr>
+</tbody>
+</table>
+<p>Tuttavia è necessario anche introdurre un <strong>verso di rotazione</strong>: antiorario (positivo) e orario (negativo)</p>
+<p><span class="math display">\[
+\alpha \text{ valore }= \begin{cases}
+\vert \hat{AP} \vert \text{ se rotazione antioraria} \\\\
+-\vert \hat{AP} \vert \text{ se rotazione oraria}
+\end{cases}
+\]</span></p>
+<p>I complementari rimangono uguali anche introducendo il verso di rotazione.</p>
+</section>
+<section id="funzioni-trigonometriche" class="level3">
+<h3 class="anchored" data-anchor-id="funzioni-trigonometriche">Funzioni trigonometriche</h3>
+<p>[immagine con seno, coseno e tangente]</p>
+<section id="funzione-coseno" class="level4">
+<h4 class="anchored" data-anchor-id="funzione-coseno">Funzione coseno</h4>
+<p>associa a ogni angolo <span class="math inline">\(\alpha\)</span> la coordinata x del punto P sulla circonferenza goniometrica</p>
+</section>
+<section id="funzione-seno" class="level4">
+<h4 class="anchored" data-anchor-id="funzione-seno">Funzione seno</h4>
+<p>associa a ogni angolo <span class="math inline">\(\alpha\)</span> la coordinata y del punto P sulla circonferenza goniometrica</p>
+</section>
+<section id="funzione-tangente" class="level4">
+<h4 class="anchored" data-anchor-id="funzione-tangente">Funzione tangente</h4>
+<p>associa a ogni angolo <span class="math inline">\(\alpha\)</span> il rapporto tra la coordinata y e la coordinata x del punto P sulla circonferenza goniometrica</p>
+</section>
+</section>
+<section id="proprietà-fondamentale-dellalgebra" class="level3">
+<h3 class="anchored" data-anchor-id="proprietà-fondamentale-dellalgebra">Proprietà fondamentale dell’algebra</h3>
+</section>
+</section>
+<section id="vettori-e-algebra-lineare" class="level2">
+<h2 class="anchored" data-anchor-id="vettori-e-algebra-lineare">Vettori e algebra lineare</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

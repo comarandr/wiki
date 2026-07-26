@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sistemi Operativi – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sistemi Operativi</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>SISTEMA OPERATIVO:</p>
+<ul>
+<li><strong>Intermediario</strong>: programma che agisce come intermediario tra utente e hardware del calcolatore</li>
+<li><strong>Assegnatore di risorse</strong>: gestisce e alloca efficiente le risorse finite della macchina</li>
+<li><strong>Programma di controllo</strong>: controlla esecuzione dei programmi e le operazioni sulle risorse del sistema di calcolo, condivisione corretta rispetto tempo e spazio.</li>
+</ul>
+<p>LIVELLI DEL SISTEMA OPERATIVO:</p>
+<p><strong>hardware</strong>: risorse del calcolatore, periferiche I/O, controller, CPU, bus di memoria</p>
+<p><strong>kernel</strong>: parte del sistema operativo dedito a gestire correttamente l’hardware fornendo servizi agli strati superiori</p>
+<p><strong>programmi di sistemi</strong>: programmi che forniscono servizi generali, basati su quelli del kernel, attraverso le chiamate di sistema</p>
+<p><strong>programmi applicativi</strong>: programmi utilizzati dagli utenti che si appoggiano ai programmi di sistema ed al kernel</p>
+<p><strong>utente</strong>: utilizzatore del pc, programmatore/altro calcolatore</p>
+<p>OBBIETTIVI SISTEMA OPERATIVO:</p>
+<ul>
+<li>Realizzare una <strong>macchina astratta</strong>, implementando funzionalità di alto livello e nascondendo i dettagli di basso livello</li>
+<li>Eseguire programmi utente e rendere <strong>più facile la soluzione</strong> dei problemi dell’utente</li>
+<li>Rendere il sistema di calcolo <strong>più facile da utilizzare</strong> e programmare</li>
+<li>Utilizzare l’hardware del calcolatore in <strong>modo sicuro ed efficiente</strong></li>
+</ul>
+<p>SERVIZI SISTEMA OPERATIVO:</p>
+<p><strong>SISTEMA BATCH</strong>: sistema che riduce il tempo di setup <strong>raggruppando job simili</strong>, che siano I/O e CPU bound, oppure fortran/assembler (schede di controllo nei primi sistemi)</p>
+<p><strong>SPOOLING</strong>: tecnica di gestione dell’I\O che permette di <strong>sovrapporre</strong> operazione di I/O di un job con la computazione di un altro job, migliorando <strong>l’efficienza</strong> del sistema, tramite l’utilizzo di un <strong>buffer intermedio</strong> e uno <strong>spooler</strong> che si occupa di trasferire i dati alla periferica. I processi mandano i dati allo spool, daemon spooler trasferisce alla periferica. SI basa sulla <strong>job pool</strong>, ovvero coda di job dal quale il SO scegli il successivo job da mandare in esecuzione</p>
+<p><strong>MULTIPROGRAMMAZIONE</strong>: consente l’<strong>esecuzione di più processi</strong> (tipicamente batch) <strong>contemporaneamente</strong> in modo da <strong>aumentare l’utilizzo delle CPU</strong> che può essere assegnata ad un altro processo mentre quello corrente inizia un’operazione di input/output. Più processi in memoria per tenere occupate le cpu.</p>
+<p><strong>TIME-SHARING</strong>: sistema operativo <strong>multiprogrammato</strong> che <strong>sfrutta la condivisione del tempo</strong>, assegnando ciclicamente un <strong>quanto</strong> di tempo ad ogni processo. In questo caso la natura dei processi è interattiva e più utenti contemporaneamente accedono al sistema direttamente attraverso dei terminali: il sistema operativo <strong>commuta</strong> rapidamente l’assegnamento della CPU da un processo all’altro per un breve periodo di tempo (detto quanto), <strong>abbassando i tempi di risposta</strong> in modo da dare l’illusione ad ogni utente di avere la macchina a propria totale disposizione, (tramite una comunicazione on-line tra l’utente e il sistema, attende il prossimo “statement di controllo” dalla tastiera. Computazione interattiva)</p>
+<p>SISTEMA OPERATIVI DI RETE: la computazione viene distribuita tra più processori “isolati”, in quanto ognuno ha la propria memoria, i nodi sono separati.</p>
+<p>SISTEMA OPERATIVO DISTRIBUITO: utente ha visione unitaria del sistema, le risorse (dati e computazionali) sono condivisi.</p>
+<p>Vantaggi: velocità, bilanciamento carico e tolleranza ai guasti</p>
+<p>SISTEMI REAL-TIME: sistemi con vincoli temporali fissati e ben definiti (hard rt, soft rt)</p>
+<p>HARDWARE</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>memoria</th>
+<th>tempo di accesso</th>
+<th>capacità</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>REGISTRI</td>
+<td>&lt; 1 ns</td>
+<td>&lt;1kb</td>
+</tr>
+<tr class="even">
+<td>CACHE</td>
+<td>&lt; 2,3 ns</td>
+<td>64kb ~ 64MB</td>
+</tr>
+<tr class="odd">
+<td>RAM</td>
+<td>&lt;10-80 ns</td>
+<td>512MB ~16GB</td>
+</tr>
+<tr class="even">
+<td>MEMORIA STATO SOLIDO</td>
+<td>0,05-0,5 ms</td>
+<td>4 ~ 512GB</td>
+</tr>
+<tr class="odd">
+<td>DISCHI MAGNETICI</td>
+<td>5 - 20 ms</td>
+<td>100GB ~ 4TB</td>
+</tr>
+<tr class="even">
+<td>MEMORIE OTTICHE</td>
+<td>200 ms</td>
+<td>700MB ~ 50GB</td>
+</tr>
+<tr class="odd">
+<td>NASTRI MAGNETICI</td>
+<td>100 s</td>
+<td>20GB ~ 1TB</td>
+</tr>
+</tbody>
+</table>
+<p>CACHING: metodo che prevede di duplicare i dati usati più frequentemente in una memoria più veloce</p>
+<p>OPERAZIONI DEI SISTEMI DI CALCOLO:</p>
+<ul>
+<li>I/O possono funzionare concorrentemente</li>
+<li>Ogni tipo di dispositivo è gestito da un controller con un buffer locale, che comunica con la CPU la quale a sua volte funge da intermediario tra controller e memoria principale</li>
+<li>I\O avviene tra il dispositivo il buffer locale</li>
+<li>Controller genera un interrupt quando termina</li>
+</ul>
+<p>INTERRUPT: segnali hardware che indicano la necessità di attenzione da parte della cpu. Servono a gestire eventi hardware asincroni. Trasferiscono il controllo alla routine di servizio dell’interrupt, tramite</p>
+<ul>
+<li>Polling: è la cpu a controllare attivamente lo stato di un dispositivo o componente</li>
+<li>vettore degli interrupt: contiene gli indirizzi delle routine di servizio</li>
+</ul>
+<p>GESTIONE INTERRUPT: hardware salva indirizzo istruzione interrotta, mentre il SO salva lo stato della cpu, ovvero program counter e registri. La gestione poi passa a una sezione di codice specifica in base al tipo di interrupt, mentre quelli in arrivo vengono disabilitati.</p>
+<p>TRAP: tipologia di interrupt generate da software, o per errore nell’esecuzione oppure per una richiesta di servizi kernel da parte dell’utente.</p>
+<p>I/O sincrono: il controllo torna all’utente solo al termine dell’operazione di I/O ( wait() oppure busy wait)</p>
+<p>I/O asincrono: controllo ritorna all’utente senza aspettare che I/O venga completato (system call e sospensione del processo in attesa, SO accede a tabella dei dispositivi per determinare stato e mantenere informazioni relative agli interrupt)</p>
+<p>DIRECT MEMORY ACCESS: in caso di dispositive estremamente rapidi i controller trasferiscono dati direttamente alla memoria senza intervento CPU, ciò riduce considerevolmente il numero di interrupt. Richiede un controller DMA</p>
+<p>DUAL MODE: condivisione delle risorse richiede che il SO assicuri che un programma scorretto non possa portare inconsistenze oppure altri programmi a funzionare scorrettamente. Implementata tramite del supporto hw specifico, ad esempio con un mode bit (0 supervisor, 1 user) che indica lo stato della cpu.</p>
+<ul>
+<li><strong>Kernel mode</strong>: cpu esegue codice del sistema operativo, generalmente operazioni pericolose e istruzioni privilegiate che non devono essere richiamate in modo erroneo</li>
+<li><strong>User mode</strong>: cpu esegue codice utente, nel caso processo necessiti di servizio di sistema meccanismo di chiamate di sistema</li>
+</ul>
+<p>PROTEZIONE MEMORIA: il SO ha accesso a tutti gli indirizzi mentre i programmi hanno accesso a un range determinato da indirizzo registro base + range di memoria indicato da registro limite:. Se cpu consegna un indirizzo non valido si genera una trap (addressing error). Serve a proteggere le parti sensibili della memoria (es vettore degli interrupt)</p>
+<p>PROTEZIONE CPU: bisogna impedire che un programma monopolizzi la CPU, si mediante</p>
+<ul>
+<li>timer: ogni tick (1/50 sec) viene decrementato, a 0 si genera un interrupt</li>
+</ul>
+<p>COMPONENTI E STRUTTURA SISTEMA OPERATIVO</p>
+<p>PROCESSO: è un <strong>programma in esecuzione</strong>, che necessita di certe <strong>risorse</strong> per assolvere al suo compito: tempo di cpu, memoria, file, dispositivi di I/O</p>
+<p>MEMORIA PRINCIPALE:</p>
+<p>MEMORIA SECONDARIA:</p>
+<p>GESTIONE DI SISTEMA I/O:</p>
+<p>PROTEZIONE:</p>
+<p>NETWORKING:</p>
+<p>INTERPRETI COMANDI:</p>
+<p>SERVIZI DEI SISTEMI OPERATIVI/FUNZIONALITA’</p>
+<ul>
+<li><strong>esecuzione dei programmi</strong>: caricamento dei programmi in memoria e loro esecuzione;</li>
+<li><strong>operazioni di I/O</strong>: il sistema operativo deve fornire un modo per condurre le operazioni di I/O, dato che gli utenti non possono eseguirle direttamente;</li>
+<li>manipolazione del <strong>file system</strong>: capacità di creare, cancellare, leggere, scrivere file e directory;</li>
+<li><strong>comunicazioni</strong>: scambio di informazioni <strong>tra processi</strong> in esecuzione sullo stesso computer o su sistemi diversi collegati da una rete (implementati attraverso memoria condivisa o passaggio di messaggi);</li>
+<li>individuazione di <strong>errori</strong>: garantire una computazione corretta individuando errori nell’hardware</li>
+</ul>
+<p><strong>SYSTEM CALLS</strong>: formano <strong>l’interfaccia</strong> tra programma in esecuzione e sistema operativo. Generalmente sono implementate come istruzioni assembler oppure chiamate di sistema nei linguaggi pensati per sistema operativi. Posso passare i parametri tramite registri, in memorizzare i parametri in una tabella in memoria e poi passare indirizzo come parametro, push/pop sullo stack.</p>
+<p>Svolgono diverse funzioni:</p>
+<ul>
+<li>controllo di processi (fork)</li>
+<li>gestione dei file (open)</li>
+<li>gestione dispositivi</li>
+<li>informazioni di sistema (stat)</li>
+<li>comunicazioni (send, receive)</li>
+</ul>
+<p><strong>PROGRAMMI DI SISTEMA</strong>: forniscono un ambiente per lo sviluppo e l’esecuzione dei programmi. SI dividono in base ai compiti (gestione file, stato del sistema, linguaggi di programmazione, caricamento/esecuzione programmi, comunicazioni)</p>
+<p><strong>STRUTTURA SO SEMPLICE</strong>: non diviso in moduli, interfacce e livelli funzionali non ben separati (es MS-DOS, UNIX - due livelli: programmi di sistema / kernel)</p>
+<p><strong>STRUTTURA SO STRATIFICATA</strong>: sistema operativo diviso in diversi livelli, ognuno costruito su quelli inferiori (0: hardware, più alto: interfaccia utente), ovvero ognuno utilizza soltanto servizi/operazioni/funzionalità degli strati inferiori</p>
+<p><strong>KERNEL</strong>: parte del sistema operativo tra system calls e hardware. Implementa file system, scheduling cpu, gestione della memoria e altre funzioni del sistema operativo. Generalmente non prelazionabile (esclusione dei sistemi real-time, con punti di prelazionabilità)</p>
+<p>MACCHINE VIRTUALI: forniscono interfaccia identica all’hardware sottostante a diversi ambienti di esecuzioni, a ogni processo guest viene fornita una copia dell’host. Il VMM impiega le risorse fisiche del calcolatore per creare macchine virtuali: scheduling crea illusione processo dedicato, gestione memoria illusione di memoria virtuale, spooling per stampanti virtuali, spazio disco per dischi virtuali.</p>
+<ul>
+<li>vantaggi: protezione completa delle risorse (isolamento), emulazione protetta</li>
+<li>svantaggi: non c’è condivisione diretta delle risorse, implementazione complessa</li>
+</ul>
+<p>EXOKERNEL: tipologia di kernel che fornisce un’interfaccia molto minimale dell’hw, consentendo alle applicazioni di avere un controllo più diretto sulle risorse di sistema. Si distingue per la sua <strong>separazione tra meccanismi e politiche</strong>. Si concentra sulla <strong>fornitura di risorse</strong>, tracciandone l’utilizzo. Molto flessibile, inoltre semplifica l’uso delle risorse allocate, dato che si occupa di tenere separati i domini delle risorse.</p>
+<p>MECCANISMI: come fare qualcosa</p>
+<p>POLITICHE: cosa deve essere fatto</p>
+<p>KERNEL MONOLITICO: inglobano tutto ciò che sta tra hardware e chiamate di sistema. Non distingue tra politiche e meccanismi, poco flessibile ma molto efficiente. Al massimo può essere stratificato.</p>
+<p>MICROKERNEL: tipologia di kernel minimale, fornisce soltanto <strong>meccanismi di comunicazione</strong> tra processi, minima gestione della memoria e dei processi e driver per gestione hw. Il resto dei processi vengono gestiti in spazio utente. Si occupa della gestione di base di processi e memoria.</p>
+<ul>
+<li>Vantaggi: molto flessibile, scalabile in ambiente di rete</li>
+<li>Svantaggi: meno efficiente</li>
+</ul>
+<p>KERNEL PRELAZIONABILE: kernel che può essere prelazionato durante una system call, adatto ai sistemi real-time. Può essere implementato mediante</p>
+<ul>
+<li>Punti di prelazionabilità: punti sicuri in cui si può saltare allo scheduler per verificare presenza processi a maggiore priorità</li>
+<li>Kernel prelazionabile: processo può essere sempre interrotto, tutte le strutture dati sono protette con semafori</li>
+</ul>
+<p>PROCESSI E THREAD</p>
+<p><strong>PROCESSO</strong>: <strong>programma in esecuzione</strong> sequenziale, include tutte le risorse di cui necessita: programma stesso, program counter, stack, sezione dati, dispositivi, file aperti, variabili globali, ecc…</p>
+<p>Processo: spazio indirizzamento, variabili globali, file aperti, figli, timer, segnali e gestione dei segnali, informazione di accounting</p>
+<p>Thread: pc, registri, stato di esecuzione, stack</p>
+<p><strong>STATI PROCESSO</strong>: new, running, waiting, ready, terminated</p>
+<p><strong>I/O-BOUND</strong>: lunghi periodi di I/O e brevi computazione</p>
+<p><strong>CPU-BOUND</strong>: lunghi periodi di computazione e brevi di I/O</p>
+<p><strong>CREAZIONE</strong>: boot sistema, esecuzione di una system call, richiesta di un utente, inizio job batch. Induce una gerarchia detta albero dei processi, padre e figlio sono in esecuzione concorrente.</p>
+<p><strong>PADRE/FIGLI</strong>: possono o non possono condividere le risorse, nel caso della fork() duplicano lo spazio indirizzi, invece CreateProcess() carica un programma.</p>
+<p><strong>TERMINAZIONE</strong>: <strong>volontaria</strong> (exit) con padre che ha ricevuto output, <strong>involontaria</strong> ovvero errore, <strong>uccisione</strong> da parte di un altro processo o <strong>terminazione</strong> da parte del kernel. Le eventuali risorse vengono deallocate</p>
+<p><strong>GERARCHIA</strong>: possibilità di <strong>gruppi</strong> in cui figli sono collegati al processo padre. (esempio UNIX tutti figli di init) oppure come in windows il task creatore ha un <strong>handler</strong> che può essere passato.</p>
+<p><strong>CONTEXT SWITCH</strong>: arriva interrupt o system call, salvo il pcb del processo che stavo eseguendo, carico il pcb del nuovo processo, lo eseguo, ricarico il pcb del precedente. Porta <strong>overhead</strong>.</p>
+<p><strong>STATI DI UN PROCESSO</strong>: passaggio attraverso interruzioni, richieste risorse, scheduler</p>
+<pre class="mermaid"><code>
+flowchart 
+    A[New] -- admitted --&gt; B[Ready]
+    B -- scheduler dispatch --&gt; C[Running]
+    C -- interrupt --&gt; B
+    C -- I/O or event wait --&gt; D[Waiting]
+    D -- I/O or event completion --&gt; B
+    C -- exit --&gt; E[Terminated]</code></pre>
+<p><strong>PROCESS CONTROL BLOCK (PCB):</strong> contiene le informazioni associate a un processo</p>
+<ul>
+<li>Stato e dati identificativi del processo/utente</li>
+<li>Program counter e registri della cpu</li>
+<li>Informazioni su scheduling cpu e gestione memoria</li>
+<li>Informazioni sull’utilizzo delle risorse: tempo di cpu, memoria, file, eventuali limiti</li>
+<li>Stato dei segnali</li>
+</ul>
+<p><strong>INTERRUZIONE HW</strong>: Hardware salva program counter e stato corrente, poi carica il nuovo program counter dal <strong>vettore degli interrupt</strong>, che contiene la routine per la gestione dell’interrupt. Viene eseguita la routine (che può essere passaggio di dati a/da un buffer intermedio per I/O). Gestito l’evento vengono ripristinati i dati del processo precedente e la cpu continua da dove era stata interrotta.</p>
+<p><strong>JOB QUEUE</strong>: insieme di tutti i processi</p>
+<p><strong>READY QUEUE</strong>: processi in memoria principale</p>
+<p><strong>CODA DEI DISPOSITIVI</strong>: processi in attesa di un dispositivo di I/O</p>
+<p><strong>JOB SCHEDULER</strong>: scheduler di lungo termine che porta i processi in coda ready. Invocato raramente, molto sofisticato e controlla il grado di multiprogrammazione e il job mix (= equilibrio I/O e CPU bound)</p>
+<p><strong>SWAP SCHEDULER</strong>: scheduler di medio termine non sempre presente, sospende temporaneamente alcuni processi per abbassare il grado di multiprogrammazione</p>
+<p><strong>CPU SCHEDULER</strong>: scheduler di breve termine, che assegna la cpu al processo da eseguire, pescandolo dalla coda ready. Molto veloce poiché invocata frequentemente. Decisione quando</p>
+<p><strong>No</strong> <strong>prelazione</strong>:</p>
+<ul>
+<li>Running -&gt; waiting (non prelazionato)</li>
+<li>Termina</li>
+</ul>
+<p><strong>Prelazione:</strong></p>
+<ul>
+<li>Running -&gt; ready</li>
+<li>Waiting/new -&gt; ready</li>
+</ul>
+<p><strong>MODELLO ESECUZIONE dei PROCESSI</strong>:</p>
+<p>In base a come processi interagiscono con il kernel:</p>
+<ul>
+<li>kernel separato: spazi indirizzi separati e diversi, system call, protezione stabilità</li>
+<li>kernel interno: codice kernel eseguito stesso spazio indirizzi, efficiente ma meno sicuro</li>
+<li>microkernel + processi di sistema: le decisioni vengono prese da processi di sistema in user space</li>
+</ul>
+<p>2 COMPONENTI:</p>
+<p><strong>unità allocazione risorse</strong>: codice, variabili globali, heap, risorse mantenute dal kernel (file, I/O), controlli accesso (UID, GID)</p>
+<p><strong>unità di esecuzione</strong>: percorso di esecuzione attraverso più programmi: PC, registri, stack (variabili locali), stato, priorità, scheduling…</p>
+<p>PROCESSI IN UNIX</p>
+<p>Processo: programma in esecuzione + risorse, identificato dal PID (process identifier)</p>
+<p><strong>Stati processi in unix</strong>: User running, kernel running, ready to run in memory, ready to run, swapped, asleep in memory, sleeping swapped, preempted, zombie.</p>
+<p>Ogni processo ha uno <strong>spazio indirizzi</strong> separato, in tre segmenti:</p>
+<ul>
+<li><strong>Stack</strong>: stack di attivazione subroutine, cambia dinamicamente</li>
+<li><strong>Data</strong>: contiene <strong>heap</strong> e <strong>dati inizializzati</strong> al caricamento programma, cambia su richiesta</li>
+<li><strong>Text</strong>: codice eseguibile</li>
+</ul>
+<p>L’utente può creare e manipolare direttamente più processi, rappresentati dal PCB.</p>
+<p><strong>PCB</strong> è memorizzato in parte</p>
+<ul>
+<li>nel <strong>kernel</strong> (process structure e text structure)</li>
+<li>nello <strong>spazio di memoria</strong> del processo (user structure)</li>
+</ul>
+<p>Le informazioni contenute servono al kernel per controllo e scheduling dei processi</p>
+<p><strong>PROCESS STRUCTURE</strong> (<strong>kernel</strong>): struttura base che contiene dati come <strong>stato</strong> del processo, <strong>puntatori</strong> a sezioni utili di memoria, <strong>identificatori</strong> del processo e dell’utente, informazioni di <strong>scheduling</strong> e segnali <strong>non</strong> gestiti</p>
+<p><strong>TEXT STRUCTURE</strong> (<strong>kernel</strong>): sezione residente in memoria che <strong>memorizza quanti processi</strong> stanno utilizzando il segmento text (user space), <strong>dati</strong> per la <strong>gestione memoria</strong> virtuale del segmento text</p>
+<p><strong>USER STRUCTURE (memoria)</strong>: <strong>informazioni</strong> sul processo che sono <strong>richieste</strong> solo quando il processo è residente in memoria, read-only (scrivibile dal kernel)</p>
+<p>Contiene: UID, GID, gestione dei <strong>segnali</strong>, terminale di controllo, <strong>risultati/errori</strong> system call, tabella <strong>file</strong> aperti, <strong>limiti</strong> del processo, mode mask</p>
+<p><strong>KERNEL STACK</strong>: kernel separato rispetto quello utente, utilizzato quando il processo è eseguito in modalità supervisore</p>
+<p><strong>SEGMENTO DATI SISTEMA</strong>: è l’insieme del <strong>kernel stack</strong> e dell’<strong>user space</strong> (variabili globali e heap)</p>
+<p><strong>PCB</strong>: user structure(memoria) + text structure(kernel) + process structure(kernel)</p>
+<p><strong>System data structure</strong>: user structure + kernel stack</p>
+<p><strong>User space</strong>: stack + data + text</p>
+<p>FORK(): alloca una <strong>nuova process structure</strong> per il figlio, con <strong>copia</strong> del <strong>segmento dati e stack</strong> in nuove aree di memoria, puntano alla <strong>stessa text structure</strong></p>
+<p>VFORK(): <strong>condivide</strong> i segmenti dati e lo stack, figlio cambia spazio di indirizzamento virtuale con execve, ma prima execve rischio perché condivisione ricade sul padre</p>
+<p>EXECVE(): <strong>rimpiazza</strong> segmenti <strong>dati e stack</strong> dei processi</p>
+<p><strong>THREAD</strong>: è una <strong>unità di esecuzione</strong> all’interno di un processo che <strong>condivide</strong> il suo spazio di indirizzamento e le <strong>risorse</strong> del processo a cui appartiene. Ottimi per processi cooperanti su strutture dati condivise o che devono cooperare</p>
+<ul>
+<li>Stesso segmento dati e text structure, risorse richieste al sistema operativo</li>
+<li>Diversi <strong>program counter, stack , set di registri, stato</strong></li>
+</ul>
+<p>Vantaggi: maggiore <strong>efficienza</strong>, minor informazione da duplicare cancellare ecc, migliori performance</p>
+<p>Svantaggi: maggiore <strong>complessità</strong>, minor information <strong>hiding, sincronizzazione</strong>, scheduling all’utente</p>
+<p>Ottimi per: lavoro foreground/background oppure elaborazione asincrona, task intrisecamente paralleli</p>
+<p><strong>STATI THREAD</strong>: running, ready, blocked</p>
+<p><strong>OPERAZIONI THREAD</strong>: creazione (spawn), blocco (volontario-yield o richiesta evento), sblocco, cancellazione</p>
+<p>TASK: unità di risorse più thread che vi accedono</p>
+<p>USER LEVEL THREAD: stack, pc e operazioni in librerie livello utente</p>
+<ul>
+<li>Efficienza, no system call, semplice, portabili e scheduling specifico</li>
+<li>Scheduling non automatico (rischio monopolio cpu), accesso kernel sequenziale, NO multiprocessore, poco utile per I/O bound</li>
+</ul>
+<p>KERNEL LEVEL THREAD: il kernel gestisce direttamente i thread, operazioni ottenute tramite system call</p>
+<ul>
+<li>Scheduling kernel per thread non per processo, di conseguenza non blocca intero processo, adatto per processi I/O bound e multiprocessori</li>
+<li>Meno efficiente (system calls), meno portabile, scheduling decisa dal kernel, riscrittura delle system call del kernel</li>
+</ul>
+<p>IMPLEMENTAZIONI IBRIDE: permettono sia thread di livello utente che di livello kernel, con tutti i vantaggi e alta flessibilità, ma a costo di portabilità e complessità</p>
+<p>THREAD POP-UP: thread creati in modo asincrono da eventi esterni</p>
+<ul>
+<li>Utili in contesti <strong>distribuiti</strong> e come servizio a eventi esterni, <strong>bassa latenza</strong></li>
+<li>Complicazione decidere dove eseguirli</li>
+</ul>
+<p>SCHEDULING CPU</p>
+<p><strong>DISPATCHER</strong>: modulo che dà effettivamente il controllo al processo selezionato dallo scheduler della cpu. Context switch -&gt; cpu passa da kernel a user mode -&gt; salto alla locazione del programma utente</p>
+<p>Il tempo per compiere il passaggio è detto latenza di dispatch</p>
+<p>CRITERI DI VALUTAZIONE DELLO SCHEDULING:</p>
+<ul>
+<li>Utilizzo cpu</li>
+<li>Throughput: numero di processi completati nell’unità di tempo</li>
+<li>Tempo turnaround: tempo totale impiegato per esecuzione di un processo</li>
+<li>Tempo di attesa: quanto tempo processo ha atteso in ready</li>
+<li>Tempo di risposta: quando tempo si impiega per ricevere una risposta dopo richiesta</li>
+<li>Varianza tempo di risposta</li>
+</ul>
+<p>OBIETTIVI ALGORITMO SCHEDULING CPU</p>
+<p>Generali (tutti sistemi):</p>
+<ul>
+<li><strong>Equità</strong>: ogni processo giusta quota cpu</li>
+<li><strong>Applicazione politiche</strong>: garantire che le politiche vengano rispettate</li>
+<li><strong>Bilanciamento</strong>: mantenere tutte le parti del sistema attive</li>
+</ul>
+<p>Sistemi batch:</p>
+<ul>
+<li><strong>Throughput</strong>: massimizzare numero di lavori completati</li>
+<li><strong>Tempo turnaround</strong>: minimizzare tempo completamento di un lavoro</li>
+<li><strong>Utilizzo cpu</strong>: mantenere cpu occupata più possibile</li>
+</ul>
+<p>Sistemi interattivi</p>
+<ul>
+<li><strong>Tempi di risposta</strong>: minimizzare in modo da rendere reattivo</li>
+<li><strong>Proporzionalità</strong>: soddisfare aspettattive utenti</li>
+</ul>
+<p>Sistemi real-time:</p>
+<ul>
+<li><strong>Rispetto delle scadenze</strong>: evitare perdita di dati</li>
+<li><strong>Predicibilità</strong>: prevenire degrado qualità nei sistemi multimediali</li>
+</ul>
+<p><strong>CONTEXT SWITCH</strong>: passaggio da un processo in esecuzione a un altro, salvando lo stato del vecchio processo e caricando quello del nuovo. Questa operazione comporta un certo <strong>overhead</strong>, con rischio di collo di bottiglia in caso di alto parallelismo.</p>
+<p><strong>Effetto convoglio</strong>: processi I/O bound si accodano dietro processo CPU-bound, rendendo il sistema meno reattivo e aumentando i tempi di risposta</p>
+<p><strong>Starvation</strong>: processo a bassa priorità viene bloccato da un flusso costante di processi a priorità maggiore</p>
+<p><strong>Aging</strong>: tecnica per cui i processi che rimangono in attesa vedono incrementare la loro priorità periodicamente</p>
+<p><strong>Prelazione</strong>: quando un processo può essere interrotto e costretto a <strong>rilasciare la cpu</strong> a favore di un altro processo che è entrato in ready</p>
+<ul>
+<li>Vantaggi: <strong>tempi di risposta</strong> migliori, <strong>no monopolio</strong> cpu</li>
+<li><strong>Inconsistenze</strong> e necessità di implementazioni di uso primitive, possibile <strong>starvation</strong></li>
+</ul>
+<p><strong>Inversione delle priorità:</strong> un processo ad alta priorità deve accedere a risorse attualmente allocate ad un processo a priorità inferiore</p>
+<ul>
+<li>Protocollo di ereditarietà delle priorità:</li>
+</ul>
+<p><strong>FCFS: first-come, first served</strong></p>
+<p>Primo arriva, primo servito</p>
+<p>Vantaggi: no prelazione, no starvation</p>
+<p>Svantaggi: effetto convoglio, inadatto time-sharing (tempo riposta)</p>
+<p><strong>SJF: shortest job first</strong></p>
+<p>Si associa a ogni processo la lunghezza del suo prossimo burst cpu. I processi vengono schedulati per tempi crescenti. L’SJF puro non prevede prelazione</p>
+<p>Vantaggi: fonisce il minimo tempo di attesa per un dato insieme di processi</p>
+<p>Svantaggi: starvation</p>
+<p><strong>SRTF: shortest remaining time first</strong></p>
+<p>É come SJF con prelazione, si associa a ogni processo lunghezza del suo prossimo burst cpu, se durante esecuzione di un processo arriva in ready un processo con cpu-burst minore al tempo rimanente del processo corrente allora viene prelazionato.</p>
+<p>Formula di stima:</p>
+<p><span class="math display">\[\tau_{n+1} := \alpha t_n + (1-\alpha) \tau_n\]</span></p>
+<p>Generica:</p>
+<p><span class="math display">\[
+\tau_{n+1} = \alpha t_n + (1-\alpha) \tau_{n-1} + (1-\alpha)^2 \tau_{n-2} + \cdots + (1-\alpha)^{n+1} \cdot \tau_0
+\]</span></p>
+<p><span class="math inline">\(\alpha = 1\)</span> conta storia recente<br>
+<span class="math inline">\(\alpha = 0\)</span> non conta storia recente</p>
+<p>SCHEDULING CON PRIORITA’</p>
+<p>Numero intero di priorità associato a ogni processo, allocando la cpu al processo con priorità maggiore.</p>
+<ul>
+<li>Svantaggio: starvation</li>
+<li>Aging come soluzione</li>
+</ul>
+<p><strong>RR: round robin</strong></p>
+<p>Simile al <strong>fcfs ma con prelazione quantizzata</strong>, quanto tipicamente di 10-100ms, dopo il processo viene rimesso in coda ready.</p>
+<p>Con n processi e quanto <em>q</em>, ogni processo <em>1/n</em> tempo di cpu e processo dovrà aspettare al max <em>(n-1)q</em></p>
+<p>Vantaggio: minor tempo di risposta</p>
+<p>Svantaggio: maggior tempo di turnaround,</p>
+<p><strong>quanto grande</strong>: degenera in fcfs, <strong>quanto piccolo</strong>: alto overhead. 80% burst &lt; q</p>
+<p><strong>CODE MULTIPLE:</strong></p>
+<p>ogni coda ha il suo meccanismo di scheduling, per gestire scheduling tra code:</p>
+<ul>
+<li><strong>Priorità fissa</strong>: eseguire i processi di una coda se quelle a priorità superiore sono vuote (starvation)</li>
+<li><strong>Quanti di tempo</strong>: ogni coda riceve un certo ammontare di tempo cpu</li>
+</ul>
+<p>CODE MULTIPLE CON FEEDBACK</p>
+<p>Processi <strong>spostati dinamicamente</strong> da una coda all’altra (es. per implementare aging - sposto processo da una coda all’altra)</p>
+<ul>
+<li>Scheduler definito da: numero di code, algoritmo di scheduling, meccanismo/politiche di promozione/degradazione e di nuovo accesso</li>
+</ul>
+<p>SCHEDULAZIONE GARANTITA</p>
+<p>si promette <strong>a ogni utente</strong> un certo quantità di tempo di cpu</p>
+<p>per ogni processo Tp si tiene contro del tempo di cpu utilizzato <em>Tp</em></p>
+<p>il tempo a cui avrebbe diritto è <strong>tp = T/n</strong>, con T = tempo trascorso dall’inizio del processo</p>
+<p>priorità di <strong>P = Tp / tp</strong> - più è bassa, maggiore è la priorità (tempo utilizzato / tempo diritto)</p>
+<p>SCHEDULAZIONE A LOTTERIA</p>
+<p>Implementa schedulazione garantita, ci sono dei <strong>biglietti</strong> per ogni risorsa, di cui ogni utente/processo acquisisce un determinato <strong>sottoinsieme</strong>, e poi si <strong>estrae</strong> un biglietto. Per legge dei grandi numeri l’accesso diventerà <strong>proporzionale</strong> al numero di biglietti, per cambiare priorità si possono trasferire</p>
+<p>SCHEDULAZIONE MULTI-PROCESSORE</p>
+<p>Sistema omogeneo: indifferente processore del prossimo task, ma si può fare <strong>pinning</strong> (scelta del prossimo processore)</p>
+<p>Per bilanciare il carico tutti i processori prendono dalla stessa coda ready</p>
+<ul>
+<li>Problema di accesso alle strutture condivise del kernel: <strong>multiprocessing asimmetrico</strong>, un processsore per volta, ma sbilancia il carico, <strong>multiprocessing simmetrico</strong> condivisione, ma necessità di sincronizzazione</li>
+</ul>
+<p>SCHEDULING REAL-TIME</p>
+<ul>
+<li>Hard real time: task critic completato entro tempo ben preciso e garantito</li>
+<li>Soft real time: processi critici prioritari, possono coesistere con time-sharing</li>
+</ul>
+<p>Eventi possono essere <strong>periodici</strong> o <strong>aperiodici</strong></p>
+<p>Dati m eventi periodici, sono schedulabili se la sommatoria del tempo di cpu per gestire evento i / periodo dell’evento i, con i = 1, … , m è minore o uguale a 1</p>
+<p><strong>SCHEDULING RMS Rate Monotonic Scheduling</strong></p>
+<p>A priorità statiche proporzionali alla frequenza, con prelazione. Adatto solo a processi periodici, costo costante. Semplice da implementare</p>
+<p><span class="math display">\[
+\sum_{i=1}^{m} \frac{C_i}{P_i} \leq m(2^{1/m}-1)
+\]</span></p>
+<p><strong>SCHEDULING EDF - Earliest Deadline First</strong></p>
+<p>Priorità dinamiche, in base a chi scade prima, adatto a processi non periodici, permette anche 100% cpu</p>
+<p><strong>CORSA CRITICA</strong>: si verifica una <strong>race condition</strong> quando più processi accedono <strong>concorrentemente agli stessi dati</strong> e il risultato dipende dall’ordine di interleaving dei processi. Sono frequenti nei sistemi operativi multitasking, sia per quanto riguarda i dati in user space che in kernel space. Portano al malfunzionamento dei processi cooperanti, o anche dell’intero sistema.</p>
+<p>COOPERAZIONE TRA PROCESSI</p>
+<p>PROCESSO INDIPENDENTE: non può essere modificato da esecuzione di un altro processo</p>
+<p>PROCESSO DIPENDENTE: può modificare o essere modificato dall’esecuzione di altri processi</p>
+<p>IPC (InterProcess Communication): meccanismi di comunicazione e interazione tra processi, regolano e sincronizzano accesso a strutture condivise per evitare inconsistenze</p>
+<p>CORSA CRITICA (RACE CONDITION): più processi accedono concorrentemente agli stessi dati, il risultato dipende dall’ordine di interleaving dei processi</p>
+<p>SEZIONE CRITICA: segmento di codice in cui si accede ai dati condivisi. Generalmente protetta con apposito codice di controllo prima e dopo la sez. critica (entry section - exit section)</p>
+<p><strong>CRITERI PER SOLUZIONE SEZIONE CRITICA:</strong></p>
+<p>MUTUA ESCLUSIONE - se un processo sta eseguendo la sua sezione critica, allora nessun altro processo può eseguire la propria sezione critica</p>
+<p>PROGRESSO: nessun processo in esecuzione fuori dalla sua sezione critica può bloccare altri processi che desiderano entrare in sezione critica</p>
+<p>ATTESA LIMITATA: se un processo P ha richiesto di entrare in sezione critica, allora il numero di volte che si concede ad altri processi di accede alla propria sezione critica prima di P deve essere limitato</p>
+<p><strong>SOLUZIONI</strong></p>
+<p><strong>BUSY WAIT</strong>: attesa <strong>attiva</strong> di un evento (testando valore variabile), usando cpu <strong>ciclicamente</strong> per controllare se si sia verificato. semplice da implementare ma consuma CPU, meglio evitarlo</p>
+<p><strong>SPIN LOCK:</strong> processo che attende attivamente su una variabile, porta a <strong>busy wait</strong> (= alto consumo cpu) e <strong>inversione di priorità</strong> (processo a bassa priorità che blocca una risorsa viene bloccato all’infinito da una processo ad alta priorità che si trova in busy wait sulla stessa risorsa)</p>
+<p><strong>INVERSIONE DI PRIORITA’:</strong></p>
+<p>CONTROLLO INTERRUPT: processo disabilita tutti gli interrupt n entry section</p>
+<ul>
+<li>Vantaggi: semplice da implementare</li>
+<li>Pericolosa, rischio di alta latenza, solo per brevissimi segmenti di codice kernel</li>
+</ul>
+<p>SOLUZIONI HW</p>
+<p>ERRATO (uso di una variabile 1,0 semplice) - non garantisce mutua esclusione</p>
+<p>ALTERNANZA STRETTA (uso della variabile turn) - non garantisce progresso</p>
+<p>ALGORITMO DI PETERSON (uso di <strong>turn</strong> + <strong>interested</strong> su 2 processi) ~ soddisfa tutti</p>
+<p>ALGORITMO DEL FORNAIO (generalizzazione di Peterson) ~ soddisfa tutti</p>
+<p>ISTRUZIONI TEST&amp;SET se lock = 0 entro in regione critica, altrimenti no</p>
+<p>SOLUZIONI SENZA BUSY WAIT</p>
+<p>SLEEP(): system call in cui il processo si autosospende in wait</p>
+<p>WAKEUP(PID): il processo pid viene messo in ready, se era in wait.</p>
+<p>PRODUTTORE-CONSUMATORE CON SLEEP/WAKEUP: risolve busy wait, race condition su count e rischio deadlock per perdita segnale</p>
+<p>SEMAFORO: strumento di sincronizzazione generale. Si tratta di una variabile intera, accessibile con 2 operazioni atomiche: up() e down(). Memorizza il numero di wakeup eseguiti.</p>
+<p>In realtà si tratta di un record una variabile intera su cui operano up e down, e una lista che serve a memorizzare i processi in waiting sulla variabile semaforo.</p>
+<p>up(s): incrementa S, eventualmente processi in attesa messi in ready</p>
+<p>down(s) : wait fino a S&gt;0, quindi decrementa S</p>
+<p>l’implementazione di up e down è sufficientemente breve da poter essere</p>
+<p>MUTEX: semaforo binario con due valori possibili (lock, unlock) e due primitive mutex_lock() e mutex_unlock()</p>
+<p><strong>MONITOR</strong>: è un tipo di <strong>dato astratto</strong> che fornisce <strong>mutua esclusione</strong>, costrutto gestibile implementato ad alto livello (ad esempio con mutex), formato da una collezione di <strong>dati privati e procedure</strong>/funzioni per accedervi. Il monitor garantisce che <strong>un solo processo</strong> alla volta può eseguire del codice del monitor. Implementazione livello compilatore</p>
+<ul>
+<li>Monitor hoare: signal(c) si autosospende</li>
+<li>Monitor brinch-hansen: signal(c) deve essere ultima istruzione</li>
+</ul>
+<p>Vantaggi: gestione molto semplice di mutua esclusione</p>
+<p>Svantaggi: necessità di memoria fisica condivisa e modifica dei compilatori stessi</p>
+<p>PASSAGGIO DI MESSAGGI: non necessita di memoria condivisa, basato su</p>
+<ul>
+<li>send(dest, &amp;messaggio): NON bloccante</li>
+<li>receive(source, &amp;messaggio): bloccante in attesa del messaggio</li>
+</ul>
+<p>vantaggi: adatto a sistemi distribuiti</p>
+<p>svantaggi: affidabilità, autenticazione, sicurezza, efficienza</p>
+<p>BARRIERE: costrutto per sincronizzare gruppi di processi, ogni processo a fine computazione chiama barrier(), quando tutti i processi la raggiungono vengono sbloccati</p>
+<p><strong>GRANDI CLASSICI</strong></p>
+<p>FILOSOFI A CENA: n processi, n risorse, il processo necessita di 2 risorse. Processo può pensare, avere fame, mangiare</p>
+<ul>
+<li>prendere forchetta sx e controllare se dx disponibile, rilascio in caso (starvation, riduco con ritardo casuale)</li>
+<li>mutex per sezione critica (take fork, tark fork) ~ 1 filosofo alla volta</li>
+</ul>
+<p>SOL: tengo traccia intenzione di mangiare, processo in eating se è in hungry e non ha vicini eating</p>
+<ul>
+<li><strong>3 stati:</strong> THINKING, HUNGRY, EATING</li>
+<li><strong>STATE:</strong> vettore che raccoglie lo stato di ciascun processo</li>
+<li><strong>mutex</strong> per sezione critica e proteggere state</li>
+<li><strong>vettore di semafori:</strong> un semaforo per ogni processo</li>
+</ul>
+<p>Ogni processo è in un ciclo (think(),take_fork(),eat(),put_fork().</p>
+<ul>
+<li>(inizio take_forks) Processo quando deve prendere le forchette entra in sez. critica e cambia il proprio stato in HUNGRY, più fa test(i) …</li>
+<li>Test(i) se ci sono le condizioni (state[i] hungry + vicini non eating) porta il proprio stato in eating e fa up sul proprio semaforo.</li>
+<li>…esce sez. critica e down sul proprio semaforo. (fine take_forks)</li>
+<li>Mangia e poi put_forks(), ovvero riporta lo stato in thinking e fa test(sx) e test (dx) per eventualmente farli mangiare, infine rilascia sezione critica</li>
+</ul>
+<p>LETTORI - SCRITTORI: insieme di dati condiviso tra processi scrittori e lettori</p>
+<ul>
+<li>lettori: accesso contemponeao</li>
+<li>scrittori: accesso esclusivo</li>
+</ul>
+<p>maggiore priorità ai lettori, se ci sono lettori gli scrittori non accedono</p>
+<p>SOL:</p>
+<ul>
+<li><strong>reader_counter</strong> (condivisa): variabile intera, numero processi lettori</li>
+<li><strong>mutex_rc</strong>: semaforo mutex a protezione di reader_counter</li>
+<li><strong>semaphore_db</strong>: semaforo a protezione del database</li>
+</ul>
+<p><strong>lettore</strong>: si segnala su rc, se quando entra è il primo blocca db, legge, se quando esce è l’ultimo sblocca db</p>
+<p><strong>scrittore</strong>: prova a ad accedere a db(down), scrive, rilascia db (up)</p>
+<p>BARBIERE CHE DORME processo in wait se non ci sono clienti, se ci sono ne serve uno alla volta, ci sono tot posti per attesa</p>
+<p>SOL:</p>
+<ul>
+<li><strong>customers:</strong> semaforo, numero di clienti in attesa</li>
+<li><strong>barbers</strong>: semaforo 0,1, indica presenza barbiere</li>
+<li><strong>mutex_waiting</strong>: semaforo mutex a protezione di waiting</li>
+<li><strong>waiting</strong>: variabile che rappresenta numero di processi in attesa</li>
+<li><strong>max_chairs</strong>: costante che rappresenta il numero massimo di processi attesa</li>
+</ul>
+<p><strong>barbiere</strong>: se non ci sono clienti si blocca(down), altrimenti abbassa waiting, segna che si è svegliato, taglia i capelli</p>
+<p><strong>cliente</strong>: se ci sono spazi disponibili occupa uno spazio, indica che è in attesa, attende un barbiere, viene tagliato, altrimenti up su waiting</p>
+<p>DEADLOCK: insieme di processi si trova in deadlock se ogni processo dell’insieme è in attesa di un evento che solo un altro processo dell’insieme può provocare.</p>
+<p>RISORSA: componente di sistema a cui i processi possono accedere in modo <strong>esclusivo</strong> per un certo periodo, mentre gli altri richiedenti vengono messi in attesa. Un processo può aver bisogno di molte risorse contemporaneamente (rischio stallo, sia su risorse distribuite che locali, software e hardware). Il protocollo di utilizzo classico prevede: richiesta, uso, rilascio.</p>
+<ul>
+<li><strong>prerilasciabile</strong>: può essere tolta al processo</li>
+<li><strong>non prerilasciabile</strong>: non può essere tolta al processo (rischio deadlock)</li>
+</ul>
+<p>4 CONDIZIONI DI COFFMAN (necessarie ma non sufficienti per deadlock)</p>
+<ul>
+<li><strong>mutua esclusione:</strong></li>
+<li><strong>hold &amp; wait:</strong> processo può richiedere altre risorse</li>
+<li><strong>mancanza prerilascio:</strong> risorse possono essere rilasciate soltanto dal processo</li>
+<li><strong>catena di attesa circolare dei processi:</strong> processi {P1, … Pn} | Pi è in attesa di una risorsa assegnata a P (i+1) mod n.</li>
+</ul>
+<p>GRAFI DI ALLOCAZIONE DELLE RISORSE</p>
+<p><code>[ ]</code> risorsa, <code>( )</code> processo,</p>
+<p>assenza ciclo: nessun deadlock</p>
+<p>se grafo contiene ciclo: 1 istanza per risorsa deadlock, più istanze per risorsa rischio</p>
+<p>4 METODI DI GESTIONE:</p>
+<ul>
+<li>ignoro il problema</li>
+<li>riconosco il deadlock e lo risolvo</li>
+<li>evito dinamicamente di entrarci tramite algoritmi</li>
+<li>nego una delle 4 condizioni di condizioni di coffman</li>
+</ul>
+<p>IGNORO IL PROBLEMA: in caso in cui rapporto costi/benefici non sia conveniente, bassa probabilità deadlock (fork(), ethernet)</p>
+<p>IDENTIFICAZIONE DEADLOCK: utilizzo di un algoritmo per la ricerca del deadlock ~ O(m x n^2)</p>
+<ul>
+<li>finish<span class="math inline">\([i]\)</span> = false</li>
+<li>cerco i | Ri &lt;= A (risorse disponibili possono soddisfare processo)</li>
+<li>se esiste tale i: finish<span class="math inline">\([i]\)</span> = true, A=A+Ci (risorse di Pi diventano disponibili) e ricerco altro processo soddisfacibile</li>
+<li>se non esiste Pi soddisfacibile (finish<span class="math inline">\([i]\)</span> = false), allora Pi è in stallo</li>
+</ul>
+<p>RISOLUZIONE DEADLOCK:</p>
+<ul>
+<li>prerilascio risorsa allocata, scelgo quella più facilmente rilasciabile</li>
+<li>uso di check-point nei processi con conseguente rollback (rilascio risorse allocate successive al checkpoint), alcuni termino altri proseguono. Scelta complessa</li>
+<li>terminazione ovvero rollback iniziale</li>
+</ul>
+<p>EVITARE DINAMICAMENTE DEADLOCK:</p>
+<ul>
+<li>processo dichiara fin da subito massimo numero di risorse (matrice M)</li>
+<li>algoritmo di deadlock-avoidance esamina stato di allocazione delle risorse affinché non ci siano code circolari (es. algoritmo del banchiere)</li>
+</ul>
+<p>stato allocazione delle risorse: numero di risorse allocate, disponibili e richieste massime dei processi</p>
+<p>STATO SICURO: stato in cui esiste una sequenza sicura per tutti i processi, per cui non c’è possibilità di deadlock. Se lo stato non è sicuro allora esiste possibilità di deadlock</p>
+<p>SEQUENZA SICURA: data una sequenza di processi &lt;P1,P2,…,Pn&gt;, la sequenza è sicura se per ogni Pi, la risorsa che Pi può richiedere è soddisfatta dalle risorse disponibili più tutte le risorse mantenute dai processi <strong>precedenti</strong>.</p>
+<p>Algoritmo del banchiere: a fronte di una richiesta da parte di un processo, controlla se accettandola si rimane in uno stato sicuro, se non è così la richiesta viene negata. Funziona sia con istanze che con risorse multiple, ogni processo deve dichiarare a priori il max delle risorse, quando processo chiede risorse può essere messo in attesa, se le risorse vengono allocate il processo deve restituirle in un tempo finito.</p>
+<p>NEGAZIONE 4 CONDIZIONI DI COFFMAN</p>
+<p>MUTUA ESCLUSIONE: uso dello spooling (utilizzo di un buffer intermedio), minimizzazione tempo di allocazione delle risorse</p>
+<p>HOLD &amp; WAIT: quando un processo ottiene un insieme di risorse, non può richiederne altre finché non rilascia quelle che ha.</p>
+<ul>
+<li>Metodo transazionale: processo dichiara tutte le risorse necessarie, se disponibili il sistema operativo le alloca tutte, altrimenti nessuna e il processo va in attesa (rischio di starvation, basso uso risorse).</li>
+<li>Two phase locking: processo prova ad allocare tutte le risorse, se fallisce rilascia e riprova, se ha successo completa (ok database, no real-time), richiede che il programma sia scritto in modo da essere rieseguito da capo</li>
+</ul>
+<p>NEGARE PRERILASCIO: impraticabile per molte risorse</p>
+<p>IMPEDIRE ATTESA CIRCOLARE:</p>
+<ul>
+<li>Allocare unicamente una risorsa per processo</li>
+<li>Imporre un ordinamento totale su tutte le classi delle risorse (fattibile ma difficile da implementare e poco flessibile)</li>
+</ul>
+<p>NOTE DI VARI SISTEMI OPERATIVI</p>
+<p>MS DOS: approccio semplice, kernel monolitico con minima strutturazione</p>
+<p>UNIX ORIGINALE: approccio semplice, debole strutturazione in 2 parti</p>
+<ul>
+<li>Kernel: molte funzioni, file system, scheduling cpu, gestione ram</li>
+<li>programmi di sistema: shell, compilatori, interpreti, libreria sistema</li>
+</ul>
+<p>UNIX MODERNO - SCHEDULING CPU</p>
+<ul>
+<li>Separazione meccanismo e politiche</li>
+</ul>
+<p>Meccanismo:</p>
+<p>160 livelli di priorità (maggiore priorità numero grande), gestiti separatamente e in caso con politiche differenti</p>
+<p>Classi di scheduling: per ogni classe posso definire politica diverse (intervallo livelli priorità, quanto, politiche, algoritmo, passaggio di livello)</p>
+<p>Default 3 classi:</p>
+<ul>
+<li>Real-time: quanto e priorità fissa, prelazionano kernel (159 - 100)</li>
+<li>Kernel: priorità e quanto di tempo fisso, FCFS (99 - 60)</li>
+<li>Time shared: processi normali, RR, quanto si riduce a priorità maggiore, priorità variabile (scendo dopo aver usato il quanto)</li>
+</ul>
+<p>Limitazione tempi di latenza per real-time:</p>
+<ul>
+<li>Kernel con punti di prelazionabilità oppure completamente prelazionabile</li>
+</ul>
+<p>LINUX MODERNO</p>
+<p>Gira in tempo costante O(1), adatto per symmetric multiprocessing</p>
+<p>Scheduling con prelazione basato su priorità (valori più bassi corrispondono a valori più alti)</p>
+<ul>
+<li>Real-time (0-99): task con priorità statica</li>
+<li>Nice (100-140): task con priorità dinamica basata su valore <strong>nice</strong> +/-5 secondo grado interattività, priorità più basse corrispondono quanti più lunghi per favorire processi interattivi</li>
+<li>Ogni processore una <strong>runqueue</strong> con lista task <strong>attivi</strong> e task <strong>scaduti</strong>, ordinate secondo priorità. Quando task attivo esaurisce il quanto viene spostato in lista scaduti ricalcolandone la priorità. Svuotata la lista attivi, si invertono i ruoli.</li>
+</ul>
+<p>SCHEDULING WINDOWS</p>
+<p>THE OS: approccio stratificato in 6 strati</p>
+<p>MAC OS X: approccio stratificato con microkernel</p>
+<p>WINDOWS VISTA: approccio stratificato senza microkernel</p>
+<p><strong>GESTIONE DELLA MEMORIA</strong></p>
+<p>Gerarchia della memoria, gestita dal <strong>gestore della memoria.</strong></p>
+<ul>
+<li>Registri (&lt;1ns), cache (&lt;2-3ns), ram(&lt;10-80ns), stato solido(&lt;0,05-0,5 ms), dischi ferromagnetici (5-20 ms), ottiche, nastri magnetici</li>
+</ul>
+<p>La gestione della memoria risponde ai requisiti di:</p>
+<ul>
+<li><strong>Organizzazione logica</strong>: offrire visione astratta della gerarchia, ovvero allocare e deallocare memoria processi su richiesta</li>
+<li><strong>Organizzazione fisica</strong>: tracciare cosa è allocato a chi, effettuare scambi con disco</li>
+<li>Rilocazione, protezione(tra processi, SO), condivisione (aumento efficienza)</li>
+</ul>
+<p>Tipologie:</p>
+<ul>
+<li>Monoprogrammazione: un solo programma per volta in ram, non sfrutta la CPU</li>
+<li>Multiprogrammazione: più programmi contemporaneamente in memoria.</li>
+</ul>
+<p>Multiprogrammazione:</p>
+<p><span class="math display">\[
+\text{utilizzo CPU} = 1 - p^n
+\]</span></p>
+<p><span class="math inline">\(p\)</span>: percentuale del tempo in attesa di I/O di un processo</p>
+<p><span class="math inline">\(n\)</span>: numero di processi</p>
+<p>[immagine]</p>
+<p>Con un maggior grado di multiprogrammazione aumenta l’uso della cpu</p>
+<pre class="mermaid"><code>flowchart 
+    A((Source Program)) --&gt; B[compiler or assembler]
+    B --&gt; C((object module))
+    C --&gt; D[linkage editor]
+    E((other &lt;br&gt; object modules)) --&gt; D
+    D --&gt; F((load module))
+    F --&gt; G[loader]
+    H((system library)) --&gt; G
+    G --&gt; I[in-memory &lt;br&gt; binary &lt;br&gt; memory &lt;br&gt; image]
+    L((dinamically &lt;br&gt; loaded &lt;br&gt; system library)) --&gt; I</code></pre>
+<p><strong>Caricamento dinamico:</strong> segmento di codice caricato solo se necessario, realizzabile complementamente a livello di linguaggio/programma, SO non deve fornire supporto specifico ma può favorire con librerie apposite</p>
+<p><strong>Collegamento dinamico:</strong> librerie di sistema vengono collegate al momento dell’esecuzione. Nell’eseguibile si inseriscono delle <strong>stub</strong> ovvero delle porzioni di codice utili a localizzare la routine. Alla prima esecuzione si carica il segmento e si sostituisce alla stub l’indirizzo della routine. Permette di condividere il segmento di una libreria tra più processi, utile negli aggiornamenti di libreria ma richiede un supporto da parte del SO per far condividere più processi</p>
+<p><strong>SPAZIO DEGLI INDIRIZZI</strong></p>
+<p><strong>Spazio indirizzi logico:</strong> insieme degli indirizzi generati dalla CPU, detti anche indirizzi virtuali</p>
+<p><strong>Spazio indirizzi fisico:</strong> indirizzo visto dalla memoria</p>
+<p>Nel caso il binding avvenga in compile o load time, indirizzi fisici e logici coincidono. Invece nel caso di binding in tempo di esecuzione possono essere diversi.</p>
+<p><strong>MMU:</strong> Memory-Management Unit. È il dispositivo che associa al runtime indirizzi logici a quelli fisici (caso semplice: somma indirizzo richiesto dal processo con valore indirizzo rilocazione). Programma utente non vede MAI indirizzo fisico. Contiene i registri di rilocazione e limite, che vengono caricati dal kernel ad ogni context switch</p>
+<p>La memoria è generalmente suddivisa in due porzioni: sistema operativo residente (zona bassa degli indirizzi, insieme al vettore degli interrupt) e spazio per processi utente (resto della memoria)</p>
+<p><strong>Registro di rilocazione:</strong> contiene il primo indirizzo fisico del processo</p>
+<p><strong>Registro limite:</strong> contiene il range degli indirizzi logici</p>
+<p><strong>MODI DI ALLOCAZIONE</strong></p>
+<p><strong>Allocazione a partizione singola:</strong> processo contenuto in una singola partizione, protezione effettuata mediante registri di rilocazione e limite</p>
+<p><strong>Allocazione contigua:</strong> la memoria viene suddivisa in parti</p>
+<p><strong>Partizionamento statico:</strong> la memoria è divisa in partizioni fisse, di dimensione uguale oppure diversa. Il SO mantiere informazioni su quelle occupate e quelle libere, assegnandole ai processi in arrivo. Porta a <strong>frammentazione interna</strong> (assegnare più memoria di quella necessaria a un processo, quindi parte viene sprecata).</p>
+<p>Come gestire la coda di input?</p>
+<ul>
+<li>Una coda per ogni partizione (rischio di inutilizzo memoria)</li>
+<li>Una coda singola per tutte partizioni: scelta del job mediante
+<ul>
+<li><strong>First-fit</strong>: primo job che entra nella partizione</li>
+<li><strong>Best-fit</strong>: job più grande che entra nella partizione. Penalizza job piccoli (magari interattivi)</li>
+</ul></li>
+</ul>
+<p><strong>Partizionamento dinamico:</strong> partizioni vengono decise a runtime. Il SO mantiene informazioni su partizioni allocati e <strong>hole</strong> (blocchi di memoria libera), allocando spazi liberi ai processi che arrivano. Porta a <strong>frammentazione esterna</strong> (la c’è abbastanza memoria per un processo ma non è contigua).</p>
+<p>La frammentazione esterna può essere ridotta mediante <strong>compattazione</strong> (richiede rilocazione dinamica), ricompattando i buchi in un hole unico. Questo non è possibile con buffer in operazioni DMA: lascio fissi processi con I\O oppure eseguo I\O in buffer del kernel.</p>
+<p>Politiche di allocazione dinamica di un processo:</p>
+<ul>
+<li><strong>First-fit</strong>: primo buco sufficientemente grande</li>
+<li><strong>Next-fit</strong>: primo buco sufficientemente grande a partire dall’ultimo usato</li>
+<li><strong>Best-fit:</strong> alloca più piccolo buco sufficientemente grande (scandire intera lista salvo sia ordinata) - frammenta molto</li>
+<li><strong>Worst-fit</strong>: alloca più grande buco sufficientemente grande - più lento</li>
+</ul>
+<p><strong>SWAPPING</strong></p>
+<p>Un processo può essere spostato da ram a memoria secondaria</p>
+<p><strong>Swapping</strong>: procedura di spostamento da ram a rom</p>
+<p><strong>Backing store/ swap area</strong>: area della memoria secondaria in cui vengono riversati i processi in esecuzione. Devono essere dischi veloci e larghi per copia immagini memoria dei processi che si intende swappare.</p>
+<p>Lo swapping è gestito dallo scheduler di medio termine. Salvo binding dinamico, allo swap-in il processo deve essere ricaricato nelle stesse regioni di memoria. Il tempo principale è quello di trasferimento verso il disco. Il processo deve essere inattivo: buffer I\O asincrono rimanere in memoria, strutture kernel rilasciate. Lo swapping standard non viene generalmente impiegato a causa dei costi elevati.</p>
+<p><strong>OVERLAY</strong></p>
+<p>L’overlay consiste nel mantenere in memoria soltanto le istruzioni e i dati che servono in un dato istante. Necessario nel caso il processo sia maggiore della memoria allocatagli. Sono implementati a livello utente, non richiede supporto da parte del sistema operativo.</p>
+<p><strong>ALLOCAZIONE NON CONTIGUA</strong></p>
+<p>Quando lo spazio logico di un processo viene distribuito in modo non contiguo, ovunque ci sia spazio in memoria. La memoria fisica viene suddivisa in <strong>frame</strong>, mentre la memoria logica in <strong>pagine</strong>. Entrambi sono blocchi di dimensione fissa (generalmente una potenza di 2), generalmente con la stessa dimensione, in quanto ogni pagina viene mappata in un frame. Per la traduzione da indirizzi logici a fisici si utilizza una <strong>page table</strong>. La <strong>frammentazione interna</strong> ridotta, non c’è frammentazione esterna.</p>
+<p><strong>Paging e traduzione degli indirizzi</strong></p>
+<p>La CPU genera un indirizzo (virtuale) che viene suddiviso in:</p>
+<ul>
+<li><strong>numero di pagina <em>p,</em></strong> ovvero l’indice in una page table in cui è contenuto il numero del frame (fisico) contenente la pagina <em>p</em> stessa.</li>
+<li><strong>Offset di pagina <em>d,</em></strong> combinato con il numero di frame fornisce l’indirizzo fisico da inviare alla memoria</li>
+</ul>
+<p>Tramite la paginazione è possibile condividere porzioni di codice, condividendo una copia di codice read-only (codice deve essere rientrante). Codice condiviso nelle stesse locazioni fisiche per tutti, ma ogni processo mantiene copia separata dei propri dati.</p>
+<p>Ogni processo ha una page table dedicata, le pagine dei dati condivisi avranno lo stesso frame di riferimento, mentre le pagine contenenti i propri dati avranno un riferimento a frame diversi.</p>
+<p>Per implementare la protezione si associa un <strong>valid bit</strong> a ogni entry nella page table, che indica se la pagina è associata o meno allo spazio logico del processo.</p>
+<p><strong>Segmentazione</strong></p>
+<p>È uno schema che supporta la visione utente della memoria, in quanto ogni programma è una collezione di segmenti.</p>
+<p>L’indirizzo logico consiste in &lt;segment-number, offset&gt;</p>
+<p><strong>Segment table</strong> mappa gli indirizzi bidimensionali virtuali in indirizzi fisici. Ogni entry della segment table ha <strong>base</strong> (indirizzo inizio segmento) e <strong>limit</strong> (lunghezza del segmento).</p>
+<p>Il <strong>segment-table base register STBR</strong> punta all’inizio della tabella dei segmenti, mentre il <strong>segment-table length register STLR</strong> indica il numero di segmenti usati. Se il segmento s è superiore al STLR allora non è un numero di segmento valido.</p>
+<p>L’hardware richiesto per la segmentazione è quello necessario a confrontare la validità del numero di segmentazione.</p>
+<p>Rilocazione: dinamica mediante segment table</p>
+<p>Condivisione: condivisione dei segmenti</p>
+<p>Allocazione: algoritmi di allocazione contigua (best-fit, first-fit, …), frammentazione esterna (i segmenti sono della dimensione corretta)</p>
+<p>Protezione: bit di validità, privilegi rwe</p>
+<p>Allocazione dinamica di memoria in quanto i segmenti possono cambiare di lunghezza durante l’esecuzione</p>
+<p><strong>PAGE TABLE</strong></p>
+<p>Idealmente dovrebbe stare in registri veloci della MMU, tuttavia sarebbe tremendamente costoso in termini di context switch e soprattutto improponibile in caso di alto numero di pagine. Per questo motivo viene mantenuta in memoria principale grazie a un <strong>PTRB (Page Table Base Register)</strong> che indica l’indirizzo base, e un <strong>PTLR (Page Table Length Register)</strong> che indica il numero di entry della page table.</p>
+<p>Una cosa del genere però richiederebbe un doppio accesso in memoria, un accesso per la page table e uno per il frame contenente i dati, portando a un degrado del 100%.</p>
+<p>Per risolvere questo problema abbiamo i <strong>TLB (translation look-aside buffer)</strong>, che formano una cache apposita dedicata alle entry delle page table.</p>
+<p><strong>TLB HIT</strong></p>
+<p>Una volta che generato l’indirizzo virtuale (page + offset), questo viene confrontato con il contenuto di tutti i TLB contemporaneamente, in caso di TLB hit si accede direttamente all’indirizzo corretto in memoria.</p>
+<p>In caso di TLB miss, la MMU accede alla page-esima entry della page table in memoria, da cui si ricava il frame fisico corretto e mediante l’offset si accedere all’indirizzo esatto in memoria, sostituendo una delle entry della TLB con quella nuova.</p>
+<p>Il SO viene informato soltanto in caso di page fault.</p>
+<p><strong>Gestione mediante software TLB</strong></p>
+<p>I TLB miss vengono gestiti direttamente dal sistema operativo.</p>
+<p>MMU manda un interrupt di <strong>TLB fault</strong> al processore, attivando così un’apposita routine che gestisce page table e TLB</p>
+<p>La gestione mediante software è abbastanza efficiente con TLB sufficientemente grandi, semplificando la componentistica hw</p>
+<p><strong>TEMPO EFFETTIVO DI ACCESSO CON TLB (calcolo EAT)</strong></p>
+<p>L’effective access time è il tempo effettivo di accesso ai dati ed è dato dalla formula</p>
+<p><span class="math display">\[
+EAT = (2 - \alpha)t + \epsilon = (t + \epsilon)\alpha + (2t + \epsilon)(1 - \alpha)
+\]</span></p>
+<p><span class="math inline">\(\epsilon\)</span>= tempo lookup associativo</p>
+<p><span class="math inline">\(t\)</span>= tempo accesso in memoria</p>
+<p><span class="math inline">\(\alpha\)</span>= hit ratio</p>
+<p>In casi ho TLB hit accedo soltanto a TLB e ai dati in memoria, ovvero <span class="math inline">\((t + \epsilon)\)</span>, da cui <span class="math inline">\((t + \epsilon)\alpha\)</span></p>
+<p>In <span class="math inline">\(1 - \alpha\)</span> casi invece ho TLB miss, quindi accedo sia a TLB che alla page table in memoria che poi al frame fisico in memoria, ovvero <span class="math inline">\((2t + \epsilon)\)</span>, da cui il fattore <span class="math inline">\((2t + \epsilon)(1 - \alpha)\)</span>.</p>
+<p><strong>TABELLA INVERTITA</strong></p>
+<p>Uso di una tabella unica che mappa ogni frame della memoria principale, in cui ogni entry corrisponde al numero di page virtuale e informazioni riguardo al processo che possiede la pagina. Per ridurre i tempi di accesso si usa una funzione di hash per limitare l’accesso a poche entry.</p>
+<p><strong>COMBINAZIONI DEI METODI</strong></p>
+<p><strong>Segmentazione con paginazione:</strong> il MULTICS ha risolto la frammentazione esterna paginando i segmenti. Nella segment table ci sono indirizzi base della page table dei sementi Combina i vantaggi di entrambi gli approcci</p>
+<p><strong>Segmentazione con paginazione a 2 livelli:</strong> la IA32 ha invece optato per questa opzione</p>
+<p><strong>MEMORIA VIRTUALE</strong></p>
+<p>La memoria virtuale consiste nella separazione tra memoria logica (utente/programmatore) e memoria fisica.</p>
+<p><strong>Resident set</strong>: parte del programma e dei dati che devono stare in memoria affinché il processo possa eseguito</p>
+<p>L’uso di una memoria virtuale ha molti vantaggi:</p>
+<ul>
+<li>Spazio logico può essere maggiore di quello fisico</li>
+<li>Minor consumo di memoria, incrementando il grado di multiprogrammazione</li>
+<li>Minor I/O per caricare in memoria i programmi</li>
+</ul>
+<p>Il costo è la necessità di caricare/salvare a runtime parte della memoria dei processi nel disco. L’implementazione avviene mediante</p>
+<ul>
+<li><strong>Paginazione su richiesta:</strong> schema di paginazione in cui si carica una page in ram solo se necessario.</li>
+</ul>
+<p>Permette minor I/O, minor spazio in ram, maggior velocità e più utenti processi. Una pagina è richiesta quando vi si fa riferimento</p>
+<ul>
+<li><strong>Segmentazione su richiesta</strong></li>
+</ul>
+<p><strong>SWAPPING VS PAGING</strong></p>
+<p><strong>Swapping:</strong> scambio di interi processi da/per il backing store (swap area), effettuato dallo <strong>swapper</strong>, processo dedicato a implementare politica di scheduling di medio termine</p>
+<p><strong>Paging:</strong> scambio di gruppi di pagine (sottoinsiemi di processi) in swap area, effettuato dal <strong>pager</strong>, processo dedicato a implementare una politica di gestione delle pagine</p>
+<p><strong>POLITICA DI PAGINAZIONE</strong></p>
+<p><strong>Valid bit:</strong> in page table, se asserito (= 1) allora la pagina è in memoria, altrimenti no. Se una pagina viene riferita e non è presente in memoria, MMU lancia un interrupt alla CPU, si genera così un <strong>page fault</strong>.</p>
+<p><strong>GESTIONE DEL PAGE FAULT (CASO DEMAND PAGING - PAGINAZIONE SU RICHIESTA)</strong></p>
+<p>Per prima cosa il SO controlla che l’accesso sia valido, altrimenti abortisce il processo <strong>(segment fault).</strong></p>
+<p>Altrimenti il SO procede allo <strong>swap out</strong> di una pagina in memoria, liberando spazio per uno <strong>swap in</strong> della pagina riferita caricandola in memoria e aggiornando le page table.</p>
+<p>Ovviamente l’istruzione che ha causato il page fault deve essere rieseguita in modo consistente.</p>
+<p>Effective Access Time</p>
+<p><span class="math display">\[
+EAT = (1 - p) \cdot \text{memory access time} + p \cdot \text{(page fault overhead + ...}
+\\
+\text{... + swap out time + swap in time + restart overhead)}
+\]</span></p>
+<p>Dove</p>
+<p><span class="math inline">\(p\)</span> = page fault rate (0 no page fault, 1 ogni riferimento è page fault), casi in cui devo eseguire la routine</p>
+<p><span class="math display">\[
+p \cdot \text{page fault overhead + swape page out + swap page in + restart overhead}
+\]</span></p>
+<p>Ovvero a ogni page fault ho</p>
+<p><span class="math inline">\(\text{page fault overhead}\)</span> = il tempo di gestione da parte del SO</p>
+<p><span class="math inline">\(\text{swap out time}\)</span> = tempo di swap out, effettuato soltanto se la pagina è stata modificata rispetto all’immagine su disco, altrimenti si sovrascrive risparmiando tempo</p>
+<p><span class="math inline">\(\text{swap in time}\)</span> = tempo di caricamento della pagina riferita dal disco alla memoria principale</p>
+<p><span class="math inline">\(\text{restart overhead}\)</span> = tempo per ripristinare il tutto e far riprendere i processi</p>
+<p><span class="math inline">\((1 - p)\)</span> = page hit, sono i casi in cui devo accedere alla memoria (da cui<span class="math inline">\((1-p) \cdot \text{memory access time}\)</span> )</p>
+<p>Il page fault è una procedura molto costosa in termini di tempo pertanto è necessario:</p>
+<ul>
+<li>minimizzare il numero di page fault con un algoritmo di rimpiazzamento adatto</li>
+<li>avere un’area di swap il più veloce possibile: separarla dal file system, magari su device dedicato (nota blocchi fisici = frame in memoria)</li>
+</ul>
+<p>La memoria virtuale con demand paging porta benefici anche in fase di creazione dei processi</p>
+<p><strong>COPY-ON-WRITE</strong></p>
+<p>Procedura che permette al processo padre e figlio di condividere le stesse pagine in memoria, venendo copiata in caso di accesso in scrittura.</p>
+<p>In questo modo si possono creare processi più rapidamente. Ovviamente le pagine libere vanno allocate su set di pagine azzerate. Generalmente un SO mantiene un <strong>pool di pagine libere</strong> per ogni evenienza (es windows ha processo <strong>azzeratore</strong> ripulisce pagine disponibili nel pool)</p>
+<p><strong>MEMORY MAPPED I/O</strong></p>
+<p>Ogni blocco di un file viene <strong>mappato su una pagina</strong> di memoria virtuale, permettendo l’I/O di un file come accessi in memoria, semplificandone la gestione e permettendo la condivisione tra processi condividendone i frame. Il file viene letto con demanding paging</p>
+<p><strong>SOSTITUZIONE DELLE PAGINE</strong></p>
+<p>All’aumentare del grado di multiprogrammazione, la memoria viene <strong>sovrallocata</strong> con più spazi logici di quelli presenti fisicamente in memoria.</p>
+<p>Pertanto, è necessario dover sostituire le pagine, liberando un frame occupato (<strong>frame vittima</strong>).</p>
+<p>La presenza di un <strong>dirty bit</strong> segnala le pagine che son state modificate e devono essere salvate su disco</p>
+<p>La sostituzione permette di implementare una grande memoria logica in una piccola memoria fisica</p>
+<p><strong>ALGORITMI DI RIMPIAZZAMENTO DELLE PAGINE</strong></p>
+<p>L’obbiettivo è quello di minimizzare i page fault. La soluzione più istintiva sarebbe quella di aumentare la memoria fisica per aumentare i frame disponibili</p>
+<p><strong>Anomalia di Belady:</strong> un algoritmo la soffre quando all’aumentare di frame disponibili il numero di page fault NON diminuisce</p>
+<ul>
+<li><strong>FIFO (First In First Out):</strong> si rimpiazza la pagina che è da più tempo in memoria, soffre dell’anomalia di Belady</li>
+<li><strong>OPT / MIN (Ottimale):</strong> si rimpiazza la pagina che non verrà riusata per il periodo più lungo (ovviamente teorico), non soffre dell’anomalia di Belady</li>
+<li><strong>LRU (Last Recently Used):</strong> si rimpiazza la pagina che non viene utilizzata da più tempo. Non soffre di anomalia di Belady in quanto <em>algoritmo di stack</em>. Richiede notevole assistenza hw</li>
+</ul>
+<p><strong>Matrice di memoria <span class="math inline">\(M(m,r)\)</span>:</strong> matrice che rappresenta insieme delle pagine all’istante <em>r</em> con <em>m</em> frame a disposizione</p>
+<p><strong>Algoritmo di stack:</strong> data una reference string <span class="math inline">\(r\)</span> e memoria <span class="math inline">\(m\)</span>: <span class="math inline">\(M(m,r) \subseteq M(m +1,r)\)</span> Non soffrono dell’anomalia di Belady</p>
+<p><strong>IMPLEMENTAZIONI DI LRU</strong></p>
+<ul>
+<li><strong>Implementazioni a contatori:</strong> MMU ha un contatore che viene incrementato dopo ogni accesso in memoria, ogni entry in page table ha un registro (<strong>reference time</strong>). A ogni riferimento si copia il contatore nella entry corrispondente. Si libera il frame con la pagina con il contatore più basso. Dispendioso</li>
+<li><strong>Implementazione a stack:</strong> utilizzo di una lista doppiamente concatenata come stack di numeri di pagina, a ogni riferimento si sposta la pagina sul top dello stack. Si libera il frame della pagina in fondo allo stack. Implementabile con microcodice software, ma costoso in termini di tempo</li>
+<li><strong>Reference bit:</strong> a ogni pagina si associa un bit R = 0, se pagina riferita si porta a 1. Se esiste si rimpiazza pagina con R = 0</li>
+<li><strong>NFU (Not Frequently Used):</strong> a ogni pagina si associa un contatore, a intervalli regolari (<strong>tick</strong>) si somma il reference bit al contatore. Il problema è che le pagine usate tempo fa contano come quelle recenti (se ho usato molto una pagina in passato e ora non la uso più avrà comunque un valore elevato)</li>
+</ul>
+<p><strong>LRU mediante aging</strong></p>
+<p>A ogni pagina si associa un array di bit, inizialmente settato a 0. Se una pagina viene riferita, il <strong>reference bit</strong> viene asserito</p>
+<p>A intervalli regolari, un interrupt del timer fa shiftare gli array immettendovi i bit di riferimento nel bit più significativo, rimuovendo quello meno significativo. I reference bit vengono azzerati.</p>
+<p>In caso di necessità si rimpiazza la pagina con numero più basso nell’array</p>
+<p>Buona approssimazione, anche se non si distingue tra pagine accedute nello stesso tick e la memoria è limita al numero di tick pari alla lunghezza dell’array</p>
+<p>(foto)</p>
+<p><strong>LRU mediante CLOCK (o “Second chance”)</strong></p>
+<p>Ordine a orologio e uso del reference bit. Se la pagina candidata al rimpiazzo ha il reference bit = 0, viene rimpiazzata. Se è uguale a 1, viene posto a 0 e si passa alla successiva.</p>
+<p>NOTA: con tutti i bit = 1 degenera in un FIFO</p>
+<p>Rappresenta una buona approssimazione</p>
+<p><strong>LRU mediante CLOCK MIGLIORATO</strong></p>
+<p>Ordine a orologio e uso di due bit, reference bit <span class="math inline">\(r\)</span> e dirty bit <span class="math inline">\(d\)</span>.</p>
+<p>Inizia cercando una pagina con (r = 0, d = 0) da sacrificare. Se non la trova cerca una pagina con (r = 0, d = 1), mentre controlla azzera tutti i reference bit. Se non la trova ricomincia cercando (r = 0, d = 0).</p>
+<p><strong>TRASHING</strong></p>
+<p>In caso di eccessivo grado di multiprogrammazione, c’è il rischio che i processi impieghino la maggior parte del loro tempo a swappare pagine a seguito di numerosi page fault. Avviene quando la memoria fisica è inferiore alla somma delle località dei processi in esecuzione.</p>
+<p><strong>Località:</strong> insieme di pagine utilizzate attivamente assieme dal processo. Un processo durante l’esecuzione mira da una località all’altra, talvolta possono sovrapporsi</p>
+<p><strong>WORKING-SET</strong></p>
+<p><strong>Working-set window:</strong> numero fisso di riferimenti a pagine (es. pagine a cui han fatto riferimento le ultime 10k istruzioni).</p>
+<p>WWS<sub>i</sub> = working set del processo P<sub>i</sub>, ovvero numero totale di pagine riferite nell’ultimo periodo, cioè nell’ultima finestra di working-set. Se la working-set window è troppo piccola non copre l’intera località, se troppo grande copre più località. Una workins-set window tendente all’infinito copre l’intero programma</p>
+<p>Con D indichiamo la sommatoria dei working-set dei singoli processi, rappresentando la stima dei frame di cui avrò bisogno</p>
+<p>Se D è maggiore al numero di frame disponibili (m), otterrò trashing.</p>
+<p>Il sistema monitorizza il working-set per ogni processo, allocandogli frame a sufficienza e ammettendo in coda ready soltanto processi i cui working-set sono compatibili con il numero di frame disponibili.</p>
+<p>Nel caso D &gt; m, allora si sospende uno dei processi per liberare la memoria (abbasso il grado di multiprogrammazione)</p>
+<p>In questo modo si impedisce il trashing, massimizzando uso della cpu.</p>
+<p><strong>Working-set con registri a scorrimento</strong></p>
+<p>Si approssima con un timer e il reference bit, più due bit aggiuntivi.</p>
+<p>Data una working-set window, ogni working-set window / 2 il timer manda un interrupt e shifta il reference bit in uno dei due bit aggiuntivi, azzerandolo. Quando si sceglie una vittima, se uno dei 3 bit è asseriti allora fa parte del working set.</p>
+<p>Si può migliorare aumentando la “risoluzione”: più bit in memoria e intervalli più brevi, aumentando però i costi</p>
+<p><strong>Working-set con tempo virtuale</strong></p>
+<p>Si mantiene un <strong>tempo virtuale corrente</strong> del processo (ovvero numero di tick consumati dal processo), eliminando le pagine più vecchie di τ tick.</p>
+<p>L’<strong>età</strong> viene calcolata come differenza tra tempo corrente e tempo di ultimo riferimento</p>
+<p>Presenza del <strong>reference bit</strong></p>
+<p>Quando si cerca una vittima, se il reference bit è 1, si copia il TVC nel registro della pagina e si azzera il reference bit</p>
+<p>Se il reference bit è 0 e la pagina ha un’età maggiore a τ, si rimuove la pagina</p>
+<p>Se il reference bit è 0 e la pagina ha un’età minore o uguale di τ, si segna quella più vecchia (con TVC minore) e alla peggio si elimina quest’ultima</p>
+<p><strong>Working-set con WSClock</strong></p>
+<p>Variante dell’algoritmo di sostituzione Clock, che tiene conto del working set. Invece di contare i riferimenti, si tiene conto di una finestra temporale di fissata.</p>
+<ul>
+<li><strong>Contatore</strong> T del tempo di CPU impiegato da ogni processo</li>
+<li>Pagine organizzate a orologio, lista vuota</li>
+<li>Ogni entry contiene <strong>reference bit</strong>, <strong>dirty bit</strong> e <strong>registro Time of Last use</strong></li>
+<li><strong>Età:</strong> differenza tra registro TLU e contatore</li>
+</ul>
+<p>In caso di page fault si guarda alla prima pagina indicata dal puntatore</p>
+<ul>
+<li>Reference bit = 1, lo si azzera e si copia il contatore corrente nel TLU</li>
+<li>Se refence bit = 0 e l’età minore o uguale alla finestra , si passa avanti (working set)</li>
+<li>Se reference bit = 0 e l’età è maggiore di , si controlla il dirty bit. Se asserito si schedula un pageout e si passa avanti, altrimenti si libera la pagina</li>
+</ul>
+<p>Se si completa il giro, o si aspetta il compimento del pageout (= salvataggio pagina su disco) oppure se tutte le pagine sono nel working-set si rimpiazza una pagina pulita, o alla peggio, quella corrente</p>
+<p><strong>FREQUENZA DI PAGE-FAULT</strong></p>
+<p>Si decide di stabile un page-fault rate accettabile compreso tra un upper and lower bound</p>
+<ul>
+<li>Se il page-fault rate è troppo basso, il processo perde un frame assegnatogli</li>
+<li>Se invece il page-fault rate è troppo alto, il processo guadagna un frame</li>
+</ul>
+<p><strong>SOSTITUZIONE GLOBALE VS LOCALE</strong></p>
+<p><strong>Sostituzione locale:</strong> ogni processo può rimpiazzare soltanto i propri frame</p>
+<ul>
+<li>Mantiene fisso numero di frame allocati a un processo</li>
+<li>Comportamento processo indipendente da quello degli altri</li>
+</ul>
+<p><strong>Sostituzione globale:</strong> processo sceglie frame tra tutti quelli disponibili del sistema</p>
+<ul>
+<li>Sfruttamento migliore della memoria</li>
+<li>Processo può rubare frame ad altri</li>
+<li>Comportamento processi è dipendente da quello degli altri</li>
+</ul>
+<p>La scelta tra le due dipende dall’algoritmo di rimpiazzamento scelto</p>
+<ul>
+<li>Algoritmo con working-set: sostituzione locale</li>
+<li>Altrimenti: globale</li>
+</ul>
+<p><strong>ALGORITMI DI ALLOCAZIONE DEI FRAME</strong></p>
+<p>Bisogna anche decidere quanti frame allocare a ogni processo, generalmente l’architettura impone un numero minimo di pagine per far funzionare un processo</p>
+<ul>
+<li><strong>Allocazione libera:</strong> ogni processo ottiene quanti frame desidera, funzionale finché ci sono sufficienti frame liberi (generalmente non conviene)</li>
+<li><strong>Allocazione equa:</strong> stesso numero di ogni frame per ogni processo, sprechi elevati</li>
+<li><strong>Allocazione proporzionale:</strong> numero di frame allocati dipende da dimensione e priorità del processo</li>
+</ul>
+<p><strong>BUFFERING DI PAGINE</strong></p>
+<p>Presenza di una <strong>free list</strong> di frame liberi. Dopo aver salvato la pagina su disco, si sposta il frame sulla free list senza cancellarne il contenuto</p>
+<p>In caso di page fault se la pagina è su free list si genera un <strong>soft page fault</strong>, altrimenti si carica la pagina dal disco in un frame della free list (<strong>hard page fault</strong>)</p>
+<p><strong>Prepaging:</strong> caricare in anticipo le pagine che probabilmente verranno utilizzate</p>
+<p><strong>Dimensione ottimale della pagina:</strong> risposta non univoca, dipende da molti fattori spesso antitetici</p>
+<ul>
+<li>Frammentazione: piccola (minor frammentazione)</li>
+<li>Dimensioni page table: grande (meno entry)</li>
+<li>Quantità di I/O: meglio piccola (più facile fare piccoli I/O frequenti)</li>
+<li>Tempo di I/O: meglio grande (più rapida)</li>
+<li>Località: meglio piccola, approssima meglio in quanto più precisa</li>
+<li>Numero di page fault: meglio grande, minor numero di pagine minori page fault</li>
+</ul>
+<p>Il page-fault rate può essere influenzato dalla struttura del programma</p>
+<p>Le operazioni di I/O richiedono che i frame contenenti buffer non vengano swappati</p>
+<ul>
+<li>Se opero I/O solo in memoria di sistema è costoso</li>
+<li><strong>I/O interlock</strong> (ovvero lockare i frame dedicati) può essere delicato in quanto rischio che frame non venga più rilasciato</li>
+</ul>
+<p><strong>SISTEMI DI INPUT/OUTPUT</strong></p>
+<p>suddivisione logica nel modo di accesso a un dispositivo</p>
+<ul>
+<li>dispositivo <strong>a blocchi</strong>: permette l’accesso diretto ad un insieme finito di blocchi di dimensione costante. Trasferimento si basa sui blocchi</li>
+<li>dispositivo <strong>a carattere:</strong> generano/accettano uno <strong>stream</strong> (flusso) di dati non strutturati. Non accettano indirizzamento</li>
+<li>ci sono dispositivi che non si adattano alle due categorie (es. timer, nastri)</li>
+</ul>
+<p>COMUNICAZIONE CPU - I/O</p>
+<p>[[[Si basa sul concetto di porta, bus (daisychain o accesso diretto condiviso), controller.]]]</p>
+<p>Due modi per comunicare con il controller del dispositivo:</p>
+<ul>
+<li><strong>CPU DEDICATA:</strong> insieme di istruzioni di I/O dedicate: facili da controllare, ma richiede passaggio per kernel</li>
+<li><strong>MAPPATURA IN MEMORIA:</strong>
+<ul>
+<li><strong>I/O mappato in memoria:</strong> parte dello spazio indirizzi è collegato ai registri del controller (efficiente e flessibile), controllo mediante tecniche gestione memoria</li>
+<li><strong>I/O separato in memoria:</strong> segmento <strong>distinto</strong> dello spazio indirizzi è collegato ai registri del controller</li>
+</ul></li>
+</ul>
+<p><strong>MODI PER FARE INPUT/OUTPUT</strong></p>
+<p>trasferimento attraverso il processore:</p>
+<p><strong>PROGRAMMED I/O</strong> (I/O A INTERROGAZIONE CICLICA): cpu manda un comando di io e poi attende termine operazione testando lo stato del dispositivo con un loop busy-wait, ovvero <strong>polling.</strong> Efficiente se velocità dispositivo vicina a quella della cpu</p>
+<p><strong>I/O a interrupt:</strong> il processore manda un comando di I/O, il processo viene sospeso in attesa. Finito i/o, segnale di <strong>interrupt</strong> quando i dati sono pronti e processo può ripartire. Nel frattempo la cpu può far eseguire altri processi, o altri thread dello stesso processo.</p>
+<p><strong>vettore di interrupt:</strong> tabella (in spazio kernel) che associa ad ogni interrupt l’indirizzo di una corrispondente routine di gestione. Interrupt usati anche per indicare eccezioni.</p>
+<p>Procedura: CPU richiama il driver → inizio procedura I/O → controller ricevere i dati da mandare alla cpu (input ready, output completo, errore) → I/O controller genera il segnale di interrupt → cpu ricevere interrupt e trasferisce il controllo alla routine di gestione → handler interrupt processa i dati e restituisce valori → cpu riesuma il processo sospeso</p>
+<p><strong>DMA Direct Memory Access (richiedere controller DMA)</strong></p>
+<p>Si evita di passare attraverso la cpu, trasferimento di dati tra dispositivo e <strong>memoria</strong> fisica.</p>
+<p>Il canale dma contende alla cpu l’accesso al bus di memoria: <strong>cycle stealing</strong> →il controller DMA sottrae un singolo ciclo di bus alla cpu. Vengono trasferiti pacchetti di dati, alla fine di ogni pacchetto il bus viene sbloccato così nel caso la cpu può riprendere il controllo del bus.</p>
+<p><strong>DVMA Direct Virtual Memory Access:</strong> l’accesso diretto nello spazio indirizzi virtuale del processo e non in quello fisico (esempio nelle gpu con GART)</p>
+<p>FUNZIONAMENTO I/O DMA:</p>
+<p>CPU imposta registri DMA (tipo di operazione, indirizzo di memoria, conteggio byte da trasferire) → DMA manda richieste a controller dispositivo → dispositivo esegue I/O e appena ha caricato in memoria il dato corretto manda segnale a controller DMA → DMA incrementa indirizzo memoria e decrementa byte mancanti, ripetendo richiesta operazione al controller dispositivo (per far questo occupa un singolo ciclo di bus alla cpu) → vengono caricati tutti i dati completando l’operazione → interrupt alla cpu</p>
+<p>conveniente quando le perifiche hanno una velocità paragonabile a quella della cpu, che verrebbe interrotta troppe volte. Il tempo che occupa il controller DMA facendo <strong>cycle stealing</strong> è minore rispetto a quello che occuperebbe la cpu in caso di numerosi context switch.</p>
+<p>GESTIONE DEGLI INTERRUPT</p>
+<p>All’arrivo di un interrupt è necessario <strong>salvare</strong> lo stato della cpu:</p>
+<ul>
+<li>su copia dei registri: impedisce interrupt annidati</li>
+<li>su stack in spazio utente: problemi di sicurezza in quanto possono scriverci i processi e page fault (swapping)</li>
+<li>su stack in spazio kernel: sicuro ma pesante per context switch, mmu e cache (ovviamente ai swappato su disco)</li>
+</ul>
+<p>Problema ulteriore:</p>
+<ul>
+<li>nelle pipeline il pc identifica l’istruzione successiva, non il punto da cui riprendere</li>
+<li>nelle cpu superscalari le istruzioni possono essere già state eseguite, ma fuori ordine</li>
+</ul>
+<p><strong>INTERRUZIONI PRECISE</strong></p>
+<ul>
+<li>PC salvato in un posto noto</li>
+<li>tutte le <strong>operazioni</strong> <strong>precedenti</strong> a quella puntata dal PC sono state <strong>eseguite</strong> <strong>completamente</strong></li>
+<li><strong>nessuna</strong> operazione <strong>successiva</strong> a quella puntata dal PC è stata eseguita</li>
+<li>stato dell’esecuzione dell’istruzione puntata dal PC è noto</li>
+</ul>
+<p>CPU deve tener traccia dello stato interno → hardware complesso, minor spazio cache e registri; svuotare le pipeline causa <strong>latenza</strong> + <strong>bolle</strong> di inutilizzo</p>
+<p>INTERRUZIONI IMPRECISE</p>
+<ul>
+<li>difficile riprendere esattamente esecuzione hardware</li>
+<li>CPU riversa il suo stato interno sullo stack e SO cosa deve essere ancora fatto</li>
+<li>rallenta ricezione interrupt e aumenta le latenze</li>
+</ul>
+<p><strong>EVOLUZIONE I/O</strong></p>
+<ul>
+<li>cpu direttamente hardware dispositivo</li>
+<li>cpu comunica con controller e attesa attiva (programmed i/o)</li>
+<li>controller dotato di linee di interrupt (I/O interrupt driven)</li>
+<li>controller diventa cpu a sé stante</li>
+<li>controller ha cpu e memoria completo</li>
+</ul>
+<p><strong>INTERFACCIA I/O</strong></p>
+<p>Per maggiore flessibilità è necessario avere un trattamente uniforme dei dispositivi di I/O, le chiamate di sistema incapsulano il comportamento in alcuni tipi generali. Le differenze tra dispositivi sono contenute nei <strong>driver</strong></p>
+<p><strong>driver:</strong> moduli del kernel dedicati a controllare ogni diverso dispositivo, ovvero frammenti di codice che conoscono come funziona il controller.</p>
+<p><strong>chiamate di sistema:</strong> uniformano modi di accesso raggruppando i dispositivi in poche classi generali (i/o a blocchi, i/O a carattere, accesso mappato in memoria, socket di rete). Solitamente c’è una chiamata aggiuntiva in cui rientra tutto ciò che esula dalla classificazione precedente (ioctl di unix - per timer e orologi)</p>
+<p><strong>dispositivi a blocchi:</strong> comprendono i dischi (ferromagnetici o a stato solido). Chiamate come <strong>read, write, seek</strong>. I/O attraverso <strong>file system e cache</strong>, oppure <strong>raw</strong> per applicazioni particolari (partizione del disco). I file possono essere <strong>mappati in memoria</strong> (ovvero parte dello spazio indirizzi virtuale viene fatto coincidere con il contenuto di un file)</p>
+<p><strong>dispositivi a carattere:</strong> la maggior parte. Generano o accettano uno stream di dati (mouse, tastiera, porte seriali). Chiamate del tipo <strong>get, put</strong>. Spesso si stratificano delle librerie per filtrare l’accesso agli stream.</p>
+<p><strong>dispositivi di rete:</strong> hanno un’interfaccia separata. Unix e windows/NT le gestiscono con le <strong>socket</strong>. Permettono collegamento tra due applicazioni separate da una rete, astraggono le operazioni di rete dai protocolli, chiamata di sistema select per rimanere in attesa di traffico. Generalmente supportati almeno i collegamenti <strong>connection-oriented</strong> e <strong>connectionless</strong> (esempio passaggio di messaggi). Implementazioni variano notevolmente.</p>
+<p><strong>TIPOLOGIE DI INPUT/OUTPUT</strong></p>
+<ul>
+<li><strong>bloccante</strong>: processo si sospende finché i/o non è completato. Facile ma insufficiente</li>
+<li><strong>non bloccante</strong>: chiamata legge dati disponibili e li ritorna, anche se I/O non è ancora terminato. Facile da implementare in sistemi multi-thread con chiamate bloccanti (blocca thread ausiliario)</li>
+<li><strong>asincrono</strong>: il processo continua mentre attende risultato dell’I/O; il sistema avvisa una volta che i/O è terminato. Difficile da implementare</li>
+</ul>
+<p><strong>SOTTOSISTEMA DI I/O DEL KERNEL</strong></p>
+<ul>
+<li><strong>scheduling:</strong> specifica ordine in cui le system call devono essere eseguite, con politiche diverse per ogni dispositivo, in modo da aumentare efficienza. In alcune casi si mira anche all’equità (fairness)</li>
+<li><strong>buffering:</strong> mantenere i dati in memoria mentre sono in transito, per gestire diverse velocità e diverse dimensioni del blocco di trasferimento.</li>
+<li><strong>caching:</strong> mantenere copia dei dati più usati in una memoria più veloce</li>
+<li><strong>spooling:</strong> buffer per dispositivi che non supportano I/O interleaved (ovvero accesso parallelo, es. stampanti)</li>
+<li><strong>accesso esclusivo:</strong> per dispositivi che possono essere usati soltanto da un processo alla volta (syscall per allocazione/deallocazione</li>
+<li><strong>gestione degli errori:</strong> SO deve proteggersi da malfunzionamento dei dispositivi, errori transitori o permanenti. Nel primo caso SO può tentare il recupero. Le syscall segnalano errore quando non vanno a buon fine dopo ripetuti tentativi. I dispositivi possono fornire spiegazioni dettagliate di cosa è successo, le diagnostiche possono essere registrate dal kernel in appositi log di sistema.</li>
+</ul>
+<p><strong>STRATIFICAZIONE DEL SISTEMA DI INPUT/OUTPUT</strong></p>
+<p>Stratificazione del software in interfacce per maggiore modularità.</p>
+<ul>
+<li>User level I/O software + Device-independent operating system software</li>
+<li>Device Drivers</li>
+<li>Interrupt handlers</li>
+<li>Hardware</li>
+</ul>
+<p><strong>DRIVER DELLE INTERRUZIONI</strong></p>
+<p>Comunica direttamente con l’interrupt handler, fondamentale nei sistemi time-sharing o con I/O interrupt driven</p>
+<p>Funziona con le seguenti procedure:</p>
+<ul>
+<li>Salvare <strong>registri</strong> CPU</li>
+<li><strong>Impostare correttamente contesto</strong> per procedura di servizio, riconoscendo la natura dell’interrupt (<strong>TLB, MMU, stack</strong>…)</li>
+<li>Eventuale <strong>acknowledge</strong> al controllore degli interrupt (eventualità interrupt annidati)</li>
+<li>Copiare la <strong>copia dei registri</strong> nel PCB</li>
+<li><strong>Eseguire la procedura</strong> di servizio, richiamando il codice del <strong>driver dispositivo</strong></li>
+<li>Eventuale cambio a uno stato di un <strong>processo in attesa</strong> (e nel caso chiamare scheduler breve termine)</li>
+<li>Organizzare <strong>contesto (MMU e TLB) per processo successivo</strong></li>
+<li>Caricare registri del <strong>nuovo processo</strong> dal PCB</li>
+<li>Continuare processo selezionato</li>
+</ul>
+<p><strong>DRIVER DEI DISPOSITIVI</strong></p>
+<p>Software che accede al controller dei dispositivi, realizzato da terze parti</p>
+<ul>
+<li>Cononoscono funzionamento effettivo dei dispositivi</li>
+<li>Implementano funzionalità standardizzate</li>
+<li>Eseguiti in spazio kernel</li>
+<li>Per includere un driver potrebbe essere necessario ricompilare o rilinkare un kernel, mentre attualmente si usa un meccanismo di caricamento run-time</li>
+</ul>
+<p>I driver dei dispositivi eseguono i seguenti passi</p>
+<ul>
+<li>Controllo dei parametri</li>
+<li>Accodano richieste a una coda di operazioni</li>
+<li>Eseguono operazioni accedendo al controllo</li>
+<li>Passare il processo in <strong>wait</strong> (I/O interrupt driven) o attendere fine operazione se <strong>busy-wait</strong></li>
+<li>Controllare stato operazione nel controller</li>
+<li>Restituire risultato</li>
+</ul>
+<p>Driver devono essere <strong>rientranti:</strong> è possibile lanciare una nuova esecuzione a metà di un’altra, in quanto il risultato del codice deve essere deterministico.</p>
+<p>I driver non eseguono system call ma possono accedere ad alcune funzionalità del kernel (esempio allocazione memoria per buffer I/O)</p>
+<p><strong>SOFTWARE I/O INDIPENDENTE</strong></p>
+<p>Implementa funzionalità comuni a tutti i dispositivi di una certa classe</p>
+<ul>
+<li>Interfacia uniforme per i driver a livelli superiori (file system, sosftware utente)</li>
+<li>Bufferizzazione I/O</li>
+<li>Segnalazione errori</li>
+<li>Allocazione e rilascio dispositivi ad accesso dedicato</li>
+<li>Uniformizzazione della dimensione dei blocchi (blocchi logici)</li>
+</ul>
+<p>L’<strong>interfacciamento uniforme</strong> è facilitato se anche l’interfaccia dei driver è standardizzata, per far ciò</p>
+<ul>
+<li>Specifiche comuni agli scrittori di driver</li>
+<li><strong>Denominazione uniforme</strong>, flessibile e generale</li>
+<li>Implementazione meccanismo di protezione per strati utente (legato al meccanismo denominazione)</li>
+</ul>
+<p>In linux troviamo questo nella struttura file_operations</p>
+<p><strong>BUFFERIZZAZIONE I/O</strong></p>
+<ul>
+<li>I/O non bufferizzato: inefficiente (processo swappato, rischio perdita dati, ecc)</li>
+<li>Bufferizzazione in spazio utente: rischio swap, memoria virtuale</li>
+<li>Bufferizzazione in kernel:</li>
+<li>Doppia bufferizzazione</li>
+</ul>
+<p>La bufferizzazione è utile in quanto permette di disaccoppiare la chiamata di sistema di scrittura con l’istante di effettica uscita dei dati (<strong>outout asincrono</strong>), ovviamente un eccessivo uso della bufferizzazione incide sulle prestazione, aumentando la latenza.</p>
+<p><strong>GESTIONE DEGLI ERRORI</strong></p>
+<ul>
+<li>Errore di programmazione: richiesta impossibile, inconsistente - abortire chiamata e segnalare al chiamante</li>
+<li>Errore del dispositivo transitorio - cercare di ripetere l’errore</li>
+<li>Errore del dispositivo - abortire la chiamata in situazioni non interattive o errori non recuperabili</li>
+<li>Errore del dispostivo riparabili con intervento esterno - segnalare e far intervenire utente/operatore (es. manca la carta nella stampante)</li>
+</ul>
+<p><strong>SOFTWARE I/O LIVELLO UTENTE</strong></p>
+<ul>
+<li>Non gestisce direttamente I/O</li>
+<li>Dipende dal linguaggio di programmazione</li>
+<li>Realizzato anche da processi di sistema (es. demoni per spooling)</li>
+</ul>
+<p>Traduzioni richieste di I/O in operazioni hardware</p>
+<ul>
+<li>Determinare quale dispostivo contiene il file</li>
+<li>Tradurre nome file nella rappresentazione dispositivo</li>
+<li>Leggere fisicamente i dati dal disco in un buffer</li>
+<li>Rendere i dati disponibili al processo</li>
+<li>Ritornare il controllo al processo</li>
+</ul>
+<p>Parte della traduzione avviene nel file system, parte nel resto dell’I/O</p>
+<p>Es UNIX: dispostivi sono dei file in /dev e coppie di numeri (<strong>major,minor</strong>)</p>
+<ul>
+<li><strong>Major:</strong> tipo di dispositivo</li>
+<li><strong>Minor:</strong> dispositivo</li>
+</ul>
+<pre class="mermaid"><code>
+flowchart 
+    %% User process
+    U1["request I/O"]
+
+    %% Kernel I/O subsystem (left)
+    K1{"can already satisfy request?"}
+    K2["send request to device driver\nblock process if appropriate"]
+
+    %% Device driver (left)
+    D1["process request\nissue commands to controller\nconfigure controller to block until interrupted"]
+
+    %% Device controller
+    C1["monitor device\ninterrupt when I/O completed"]
+
+    %% Interrupt handler
+    I1["I/O completed\ngenerate interrupt"]
+    I2["receive interrupt\nstore data in driver buffer if input\nsignal to unblock device driver"]
+
+    %% Device driver (right)
+    D2["determine which I/O completed\nindicate state change to I/O subsystem"]
+
+    %% Kernel I/O subsystem (right)
+    K3["transfer data to process\nreturn completion or error code"]
+
+    %% User process (right)
+    U2["I/O completed\ninput data available or output completed"]
+
+    %% Flow
+    U1 --&gt;|system call| K1
+    K1 -- yes --&gt; U2
+    K1 -- no --&gt; K2
+    K2 --&gt; D1
+    D1 --&gt;|device controller commands| C1
+    C1 --&gt; I1
+    I1 --&gt;|interrupt| I2
+    I2 --&gt; D2
+    D2 --&gt; K3
+    K3 --&gt;|return from system call| U2</code></pre>
+<p><strong>PERFORMANCE I/O</strong></p>
+<p>Le performance sono molto importanti in quanto sono estremamente incisive sulle performance del SO</p>
+<ul>
+<li>Consumano tempo cpu per esecuzione driver e codice kernel</li>
+<li>Context switch per avvio I/O e gestione interrupt</li>
+<li>Trasferimento dati nei buffer e in memoria</li>
+<li>Traffico di rete è pesante</li>
+</ul>
+<p>Dei modi per migliorare le performance sono i seguenti</p>
+<ul>
+<li>Limitare context switch</li>
+<li>Ridurre spostamenti di dati tra dispositivi e memoria, mem e mem</li>
+<li>Ridurre numero interrupt, preferendo grossi trasferimenti, controller intelligenti e interrogazione ciclica</li>
+<li>Usare canali DMA o bus dedicati</li>
+<li>Implementare primitive in hw per aumentare parallelismo</li>
+<li>Bilanciare performance componenti hw</li>
+</ul>
+<p><strong>LIVELLO DI IMPLEMENTAZIONE I/O</strong></p>
+<p>Inizialmente gli algoritmi possono essere implementati ad alto livello, in modo più sicuro e flessibile, ma inefficiente</p>
+<p>Successivamente può essere spostato a livello kernel e, in ultima istanza, nel firmware o microcodice del controller</p>
+<p><strong>STRUTTURA DEI DISCHI</strong></p>
+<p>I dischi sono indirizzati come array monodimensionali di <strong>blocchi logici</strong>.</p>
+<p>Blocco logico = più piccola unità di trasferimento con il controller</p>
+<p>La mappatura avviene in modo sequenziale, partendo dal primo settore della prima traccia del cilindro più esterno, dal più esterno al più interno</p>
+<p>Il SO si occupa dell’uso efficiente dell’hw, in particolare per i dischi</p>
+<ul>
+<li><strong>tempi di accesso</strong> (seek time + latenza rotazionale: tempo affinché settore corretto passi sotto testina)</li>
+<li><strong>banda di utilizzo</strong></li>
+</ul>
+<p>Per minimizzare i tempi di accesso si tende a operare su</p>
+<ul>
+<li><strong>seek time:</strong> tempo medio per spostare la testina sul cilindro del settore richiesto</li>
+</ul>
+<p>La <strong>banda di disco</strong> è il totale dei byte trasferiti / tempo totale da prima richiesta a completamento trasferimento</p>
+<p><strong>ALGORITMI DI SCHEDULAMENTO DEI DISCHI</strong></p>
+<p><strong>FCFS (First Come First Serviced):</strong> segue l’ordine delle trace</p>
+<p><strong>SSTF (Shortest Seek Time First):</strong> servo prima la richiesta con minor tempo di seek (<strong>cilindro più vicino</strong>), rischio <strong>starvation.</strong> Semplice da implementare e relativamente efficiente</p>
+<p><strong>SCAN:</strong> scandisce l’<strong>intero disco</strong> a zig zag, servendo tutte le richieste che incontra. Ottimo per grande carico di I/O</p>
+<p><strong>LOOK:</strong> scandisce a zig zag fino alle <strong>richieste più estreme</strong>, non l’intero disco.</p>
+<p><strong>C-SCAN:</strong> scandisce in senso ascendente o discendente l’intero disco, per poi tornare in posizione inziale e riprendere a scandre, <strong>serve soltanto in un senso</strong>, il tempo di rientro è diverso da 0. Tempo di attesa più uniforme e equo di scan</p>
+<p><strong>C-LOOK:</strong> scandisce in senso ascendente o discendente fino alla <strong>richiesta più estrema</strong>, poi ritorna alla <strong>richiesta minima</strong>, serve <strong>soltanto in un senso.</strong> Miglioramento del C-SCAN</p>
+<p>Buona norma che l’algoritmo di scheduling sia un modulo separato del kernel facilmente rimpiazzabile se necessario</p>
+<p><strong>GESTIONE AREA DI SWAP</strong></p>
+<p>Area del disco utilizzata dal gestore di memoria come estensione della memoria principale, può essere ricavata o dal file system oppure da una partizione separata</p>
+<p><strong>AFFIDABILITÀ E PERFORMANCE DISCHI</strong></p>
+<p>I dischi soffrono di affidabilità, in quanto tendono ad avere un <strong>MTBF (Medium Time Between Failure)</strong> elevato.</p>
+<p>Per migliorare l’affidabilità, ad esempio, si possono usare le strutture <strong>RAID (Redundant Array of Inexpensive/Indepent Disks)</strong></p>
+<p>La ridondanza può essere gestita da</p>
+<ul>
+<li>RAID hardware: controller</li>
+<li>RAID software: driver</li>
+</ul>
+<p>Esistono diversi tipi di ridondanza:</p>
+<p>0 - <strong>striping:</strong> dati vengono affettati e parallelizzati distribuendoli su più dischi, zero ridonandanza ma alte performance</p>
+<p>1 - <strong>mirroring</strong> o <strong>shadowing</strong>: duplicazione di interi dischi. Ottima resistenza ai crash, ma basse performance in scrittura</p>
+<p>5 - <strong>block interleaved parity</strong>: utilizza lo striping ma per ogni stripe un disco (a turno) contiene un’informazione di parità. Alta resistenza, discrete performance in quanto malgrado la parallelizzazione in caso di aggiornamento va ricalcolata parità dello stripe</p>
+<p><strong>TIPOLOGIE DI RAID</strong></p>
+<p><strong>RAID 0 -</strong> i dati vengono suddivisi in blocchi (<strong>stripe</strong>) che vengono parallelizzati nei dischi del raid, senza ridondanza. Altissime performance (min. 2 dischi)</p>
+<p><strong>RAID 1 -</strong> i dati vengono duplicati su più dischi, raddoppiando la velocità in lettura e mantenendo inalterata quella in scrittura. Forte ridondanza, ma notevole spreco di spazio (min. 2 dischi)</p>
+<p><strong>RAID 2 -</strong> utilizzo del codice di hamming a 7 dischi per tutti quei dischi che non possedevano meccanismi di gestione errore lettura e scrittura</p>
+<p><strong>RAID 3 -</strong> i dati vengono distribuiti su più dischi, organizzandoli a livello di bit o byte (stripe molto piccole) e caricando su un disco i byte di parità con <strong>ECC</strong> (Error-Correcting Code) XOR. Prestazione elevate, ottima tolleranza ai guasti, una richiesta per volta in quanto coinvolge tutti i dischi (min 3 dischi)</p>
+<p><strong>RAID 4 -</strong> i dati sono suddivisi in blocchi invece che in strisce, ogni blocco suddiviso in un disco diverso, con un disco di parità. Prestazioni elevate in lettura e tolleranza ai guasti, disco di parità rappresenta bottleneck. La lettura coinvolge un disco, ovviamente però tante piccole scritture richiedono ogni volta accesso a disco di parità. (min 3 dischi)</p>
+<p><strong>RAID 5 -</strong> analogo al RAID 4, ma i blocchi di parità vengono distribuiti in tutti i dischi. Migliora le prestazioni in scrittura, ma il sistema è complesso da realizzare (min 3 dischi)</p>
+<p><strong>RAID 6 -</strong> analogo al RAID 5, ma vengono utilizzati due tipi di controllo di dati. Questo garantisce molta ridondanza e sicurezza nei dati, ma la ricostruzione è lenta a causa del doppio controllo ECC</p>
+<p><strong>RAID 1+0 -</strong> top level RAID 0, ovvero I dati vengono suddivisi in stripe e distribuiti su sistemi RAID 1 (ogni stripe ripetuta su più dischi) (A1 + A1 - A2 + A2)</p>
+<p><strong>RAID 0+1 -</strong> top level RAID 1, ovvero i dati vengono duplicati in due o più raid 0 che distribuiscono lo stesso dato in stripe sui dischi (A1 + A2 - A1 + A2)</p>
+<p><strong>SSD</strong></p>
+<p>Le ssd (solid state drive) hanno un accesso più veloce e ricordano le memorie flash. Non necessitano degli algoritmi tradizionali di scheduling e</p>
+<ul>
+<li>Soffrono di <strong>write amplification</strong></li>
+<li>Necessitano di <strong>supporto esplicito</strong> (es. istruzione <strong>TRIM</strong>) da parte del SO</li>
+</ul>
+<p><strong>Pagina =</strong> unità minima leggibile e scrivibile. Tuttavia per riscrivere una pagina necessito di dover cancellare l’intero blocco. Se quest’ultimo contiene altre pagine valide, devo spostarle in un altro blocco.</p>
+<p><strong>Write amplification</strong> = dati scritti nella memoria / dati inviati dal SO</p>
+<p>Per mantenere le performance alte, sorge la necessità di un <strong>garbage collector</strong> e dell’istruzione <strong>trim</strong> per informare il controller della SSD delle pagine non più in uso, ottimizzando il lavoro del garbage collector</p>
+<p><strong>FILE SYSTEM</strong></p>
+<p>I processi devono memorizzare e trattare grandi quantità di informazioni, spesso condivise tra più processi e devono essere accedute in modo consistente e possibilmente con una qualche forma di protezione. Per questo motivo l’accesso diretto ai dispositivi di massa non è sufficiente.</p>
+<p><strong>File:</strong> sono degli archivi, ovvero un insieme di blocchi / informazioni a cui è stato assegnato un nome. Rappresentano una forma di astrazione. Sono la più piccola porzione unitaria di memoria logica secondaria allocabile dall’utente o dai processi di sistema.</p>
+<p>Gli attributi di un file sono i seguenti:</p>
+<ul>
+<li><strong>nome</strong>: identificatore del file, umanamente leggibile</li>
+<li><strong>tipo:</strong></li>
+<li><strong>locazione:</strong> puntatore alla posizione del file</li>
+<li><strong>dimensioni:</strong> attuale</li>
+<li><strong>protezioni:</strong> chi può e come può agire sul file</li>
+<li><strong>identificatori dell’utente:</strong> chi ha creato / possiede il file</li>
+<li><strong>varie date e timestamp:</strong> data di creazione, modifica, aggiornamento</li>
+</ul>
+<p>L’astrazione dei file è realizzata dal SO mediante il <strong>file system</strong>, ovviamente facente parte del kernel. È sicuramente uno degli aspetti più evidenti di un SO in quanto son spesso <em>documentocentrici</em>. Il file system si appoggia alla gestione dell’I/O per implementare ulteriori funzionalità.</p>
+<p><strong>Denominazione dei file</strong></p>
+<p>Il file system ha il compito di fissare le regole per la denominazione dei fil (NON IL SO!). Queste possono essere molto variabili (lunghezza caratteri, case sensitive, preserving, metadati come il tipo, ecc)</p>
+<p><strong>Tipo dei file</strong></p>
+<p>Può essere: eseguibile (pronto da eseguire in linguaggio macchina), oggetto (compilato ma non linkato), codice sorgente, batch (script per interprete comandi), testo, word processor, librerie, grafica, archivi (file raggruppati)</p>
+<p>UNIX non forza tipo di file, in quanto tipo e contenuto di un file sono slegati dal nome o dai permessi. Sono le applicazioni come comportarsi con ogni file. La presenza di <strong>magic numbers</strong> nei primi byte di un file può aiutare a capire il tipo di cui si tratta, matchando con una tabella</p>
+<p>MacOS Classic invece ha file composti da 3 componenti:</p>
+<ul>
+<li>data fork: sequenza non strutturata</li>
+<li>resource fork: strutturato, con codice immagini, etichette, ecc</li>
+<li>info: metadati sul file, tra cui <strong>applicativo creatore</strong> e tipo (doppio click esegue applicativo che genera il file)</li>
+</ul>
+<p><strong>Struttura dei file</strong></p>
+<p>La struttura è generalmente una sequenza di dati (bit, byte, inee, record…) a cui viene assegnato un significato da parte del suo creatore.</p>
+<p>A seconda della tipologia di file varia il tipo di struttura che un file può avere (nessuna, sequenza di record - blocchi di determinata lunghezza, complessa - documenti formattati, archivi ad albero, eseguibili rilocabili)</p>
+<p>La struttura può essere impostato a livello di</p>
+<ul>
+<li>sistema operativo: più astratto, specificato il tipo viene impostato il file (struttura e accesso)</li>
+<li>utente: più flessibile, il programma è responsabile di struttura e tipo, mentre SO file non strutturati</li>
+</ul>
+<p><strong>Operazioni sui file</strong></p>
+<p>Le operazioni che devono essere realizzabili su un file sono:</p>
+<ul>
+<li><strong>creazione /cancellazione</strong></li>
+<li><strong>apertura/chiusura</strong></li>
+<li><strong>lettura/scrittura/append</strong></li>
+<li><strong>riposizionamento(seek)/troncamento</strong></li>
+<li><strong>lettura/scrittura dei metadati</strong></li>
+</ul>
+<p>creazione: consiste nell’allocare dello spazio sul dispositivo per poi collegarlo al file system</p>
+<p>cancellazione: operazione inversa, consiste nel scollegare il file dal file system e poi deallocare lo spazio assegnato</p>
+<p>apertura: caricamento di alcuni metadati in memoria principale</p>
+<p>chiusura: deallocare le strutture caricate in apertura in memoria principale</p>
+<p>lettura:dato file e rispettivo puntatore di posizione, trasferimento dei dati dal media a un buffer in memoria</p>
+<p>scrittura: dato file e rispettivo puntatore di posizione, trasferimento dei dati sul media</p>
+<p>riposizionamento(seek):</p>
+<p>troncamento: azzerare lunghezza di un file</p>
+<p>lettura e scrittura dei metadati: leggere e poter modificare informazioni come nome, timestamp, ecc</p>
+<p>Per effettuare queste operazioni servono le informazioni contenute nelle directory. Tuttavia per evitare un continuo accesso, si è preferito optare per una <strong>tabella dei file aperti</strong></p>
+<p><strong>Tabella dei file aperti:</strong> all’apertura dei file si alloca un <strong>file descriptor o file control block</strong>, ovvero una stuttura dati in memoria contenente le informazioni di un file (deallocata in chiusura dopo aver trasferito ogni dato su disco). A ciascun file aperto si associa:</p>
+<ul>
+<li>puntatore al file: posizione raggiunta in lettura/scrittura</li>
+<li>contatore dei file aperti: numero di processi che utilizzano il file</li>
+<li>posizione su disco</li>
+</ul>
+<p><strong>Metodi di accesso</strong></p>
+<p>Ci sono diversi modi per accedere a un file</p>
+<ul>
+<li><strong>sequenziale:</strong> puntatore per posizione corrente in r/w, si accede o progressivamente oppure tornare all’inizio del file (operazioni: read next, write next, reset, rewrite)</li>
+<li><strong>diretto:</strong> puntatore può essere spostato ovunque nel file (read n, write n, seek n, read next, write next, rewrite n), tipico per file su dispositivi a blocchi, può simulare accesso sequenziale</li>
+<li><strong>indicizzato:</strong> un secondo file funge da indice con parte dei dati e puntatore ai blocchi (record) del primo file. Ricerca su indice e poi blocco, implementabile in termini di file ad accesso diretto, tipico database mainframe</li>
+<li><strong>mappato in memoria:</strong> accesso ai file viene reso simile a gestione della memoria, facile da implementare in sistemi segmentati, in cui il file viene visto come swap area per il segmento mappato. Basta una chiamata mmap. Tuttavia possono insorgere problematiche legate principalmente alla dimensione del file, in quanto non è nota al SO, l’accesso condiviso con modalità diverse e il file potrebbe aver lunghezza maggiore rispetto alla dimensione massima dei segmenti</li>
+</ul>
+<p><strong>DIRECTORY</strong></p>
+<p>Collezione di nodi contenente informazioni sui file (ovvero metadati, o almeno puntatori ai metadati). Risiedono su disco come i file</p>
+<p><strong>Operazioni sulle directory</strong></p>
+<ul>
+<li>ricerca di un file</li>
+<li>creazione/cancellazione file</li>
+<li>listing (elenco file)</li>
+<li>rinomina</li>
+<li>navigazione del file system</li>
+</ul>
+<p><strong>Organizzazione logica</strong></p>
+<p>Le directory devono essere organizzate per soddisfare requisiti di efficienza (trovare rapidamente i file), nomi mnemonici (file differeni con nomi uguali in punti diversi, nomi diversi per uno stesso file) e raggruppamento di file logicamente collegati</p>
+<ul>
+<li><strong>directory flat</strong>: unica dir per tutti gli utenti, problema di raggruppamento e denominazione, esiste variante a due livelli (una dir flat per ogni utente)</li>
+<li><strong>directory ad albero</strong>: permette raggruppamento, ricerca efficiente, la wd (working directory) è una proprietà del processo. Nomi assoluti relativi, operazioni su file e director sempre relative alla wd. Se cancelli una cartella cancelli intero sottoalbero (cartella come nodo)</li>
+<li><strong>directory a grafo aciclico</strong>: permette di condividere file e cartelle tra più directory, permette aliasing in quanto due nomi diversi per stesso file. Possibilità di puntatori dangling (a file cancellati). Per ovviare al problema: puntatori all’indietro - ma dimensione dei record nelle dir è variabile, puntatoi a daisy chain oppure contatore di puntatori per ogni file (adottato da UNIX)</li>
+<li><strong>directory a grafo:</strong> problema di presenza di cicli, sia per visita che per cacnellazione creando garbage.</li>
+</ul>
+<p>Soluzioni possibili sono permettere link soltanto a file (UNIX hard link) oppure limitare il numero di link attraversabili (limite UNIX link simbolici), altrimenti implementare garbage collection (costosa!) o verificare assenza cicli a ogni aggiunta di link (algoritmi costosi)</p>
+<p><strong>Protezione</strong></p>
+<p>La protezione è un aspetto importante per tutti quei file che vengono condivisi tra più utenti, chi crea/possiede il file deve poter decidere cosa può essere fatto e da chi.</p>
+<p>Tra le tipologie di accesso soggette a controllo abbiamo:</p>
+<p>read, write execute, append, delete, list (Unix possiede le prime 3 chmod rwe)</p>
+<p>La protezione può essere garantita e gestita mediante <strong>matrice di accesso</strong> dove per ogni coppia (processo, oggetto) si associano le operazioni permesse. Essendo una matrice molto sparsa, bisogna implementarla come <strong>access control list</strong> (oggetto -&gt; lista di chi può fare cosa) oppure <strong>capability tickets</strong> (ogni processo ha un insieme di tokens he indicano cosa si può fare)</p>
+<p><strong>chmod</strong></p>
+<p>I modi di accesso (rwe) e gruppi (owner, groups, public) in UNIX sono una versione semplificata di ACL.</p>
+<p>Ogni processo possiede UID (User IDentifier) e GID (Group IDentifier)</p>
+<p>Un gruppo di utenti viene aggiunto al gruppo G, poi al file vengono attribuiti deteminati permessi e infine si assegna il gruppo al file tramite <em>chgrp nome_gruppo nome_file</em></p>
+<p><strong>Effective User e Group ID</strong></p>
+<p>Poiché in UNIX il dominio di protezione viene ereditato dai figli di un processo, tutti i processi di un utente girano con suo GID e UID.</p>
+<p>Per concedere temporaneamente privilegi speciali si possono modificare EUID e EGID da root durante la durata dell’esecuzione di un processo. La modifica avviene attraverso due bit comlementari (setuid e setgid) che se asseriti permettono a un processo che esegue un programma di avere lo stesso EUID o EGID del possessore del file, senza modificare UID e GID.</p>
+<p><strong>IMPLEMENTAZIONE DEL FILE SYSTEM</strong></p>
+<p>Generalmente i dispositivi utilizzati sono i <strong>dischi</strong>, caratterizzati da trasferimento <strong>a blocchi</strong>, con <strong>accesso diretto</strong> (in scrittura e lettura) e dimensione finita.</p>
+<p>Ad alto livello la struttura è la seguente:</p>
+<ul>
+<li><strong>programmi applicativi:</strong> applicazioni / comandi (ls, dir)</li>
+<li><strong>file system logico:</strong> diversi file system come struttura unica, implementa protezione</li>
+<li><strong>organizzazione dei file:</strong> allocazione dei blocchi fisici e corrispondenza logici, traduzione indirizzi logici in fisici</li>
+<li><strong>file system di base:</strong> utilizzo dei driver corretti per accedere ai blocchi fisici</li>
+<li><strong>controllo I/O:</strong> driver dei dispositivi che gestiscono il passaggio dei dati</li>
+<li><strong>dispositivi fisici:</strong> controller hardware dei dispositivi</li>
+</ul>
+<p><strong>Tabella dei file aperti</strong></p>
+<p>Risiede in memoria in spazio kernel, mantiene i metadati dei file aperti permettendo di non accedere ogni volta nel disco (riducendo latenza). Tutte le operazioni vengono fatte riferendosi al <strong>file control block</strong>, ovvero l’elemento della tabella corrispondente. Una volta terminati tutti i processi che vi accedevano, le informazioni vengono copiate su disco e viene deallocato il blocco.</p>
+<p>Alla prima chiamata <strong>open</strong> vengono caricati in ram i metadati relativi al file e viene restituito un intero, ovvero il puntatore al file descriptor in tabella.</p>
+<p>Ovviamente in caso di arresto anomalo, c’è il rischio di perdita dei dati.</p>
+<p><strong>Mounting del file system</strong></p>
+<p>Ogni file system fisico deve essere montato nel file system logico. Il montaggio può avvenire al boot (tramite regole implicite oppure configurabili) oppure dinamicamente (supporti rimovibili, remoti …)</p>
+<p>Il punto di montaggio può essere fissato (es C:\ in Windows) oppure configurabile in un qualsiasi punto del file system logico (Unix).</p>
+<p>Il kernel esamina il file system fisico per riconoscerne struttura e tipo, prima della rimozione/spegnimento il file system deve essere smontato per evitare gravi inconsistenze.</p>
+<p><strong>Tipologie di allocazione</strong></p>
+<ul>
+<li><strong>contigua</strong></li>
+<li><strong>concatenata</strong></li>
+<li><strong>indicizzata</strong></li>
+<li><strong>inodes (Unix)</strong></li>
+</ul>
+<p><strong>Allocazione Contigua</strong></p>
+<p>I file occupano insiemi di blocchi contigui.</p>
+<p>È un sistema semplice, in quanto basta cononoscere il blocco iniziale e la lunghezza, anche per l’accesso random</p>
+<p>Comporta <strong>frammentazione esterna</strong>, (problema di allocazione dinamica) ovvero dopo inserimenti e cancellazioni rischio di trovarmi tanti buchi sparsi per il disco.</p>
+<p>I file salvo deframmentazione non possono crescere.</p>
+<p>Nel caso allochi a priori tutto lo spazio necessario possibile, mi troverei dinnanzi a un problema di frammentazione interna.</p>
+<p>La traduzione avviene tramite la seguente divisione intera: <em>Logic Address / dim. Blocco in Byte</em></p>
+<p>Il <em>quoziente + blocco di partenza</em> mi restituiscono il blocco da accedere</p>
+<p>Mentre il <em>resto</em> mi restituisce l’offset all’interno del blocco</p>
+<p>VANTAGGI: implementazione semplice, anche per accesso random</p>
+<p>SVANTAGGI: frammentazione, a seconda dell’implementazione può essere interna o esterna</p>
+<p><strong>Allocazione concatenata</strong>Ogni file è una lista concatenata (linked list) di blocchi che possono essere sparpagliati nel disco</p>
+<p>I blocchi vengono allocati alla fine del file.</p>
+<p>L’implementazione è semplice, in quanto basta l’inidirizzo al primo blocco</p>
+<p>Impedisce la frammentazione esterna, tuttavia non è possibile avere l’accesso diretto (seek)</p>
+<p>La traduzione per l’indirizzo logico è la seguente:</p>
+<p><em>Logical Address / dim. In Byte blocco - 1</em></p>
+<p>Con <em>quoziente</em> indice del blocco da accedere (q-esimo)</p>
+<p>E <em>resto + 1</em> l’offset all’interno del blocco (prima posizione riservata al puntatore del blocco successivo)</p>
+<p>In realtà è un sistema fragile, in quanto la perdita di un puntatore porterebbe alla perdita dei dati.</p>
+<p>Inoltre i tempi di accesso sono lunghi in quanto obbliga all’accesso sequenziale.</p>
+<p><strong>Allocazione concatenata con FAT (MS-DOS e Windows)</strong></p>
+<p>Mantiene la lista concatenata in una struttura dedicata, ovvero la File-allocation table, all’inizio di ogni partizione. La FAT può funzionare in memoria, questo viene fatto per evitare eccessivi movimenti di testina dei dischi dalla FAT al blocco fisico effettivo. La FAT è una tabella in cui ogni entry corrisponde al blocco fisico e mappa il blocco successivo fino alla fine del file. In pratica si può scorrere in memoria gli indici dei blocchi e poi una volta trovato il blocco fisico che ci interessa lo si può raggiungere direttamente con un singolo accesso su disco.</p>
+<p><strong>Allocazione indicizzata</strong></p>
+<p>Ogni file possiede una <strong>tabella indice</strong> che mantiene tutti i puntatori a ogni blocco del file</p>
+<p>Permette il supporto random (seek) e l’allocazione dinamica senza frammentazione esterna.</p>
+<p>La traduzione da indirizzo logico a indirizzo fisico avviene nel seguente modo:</p>
+<p><em>Logical Address / dim in byte del blocco</em></p>
+<p>Con <em>quoziente</em> pari all’offset nella tabella indice (ovvero entry da guardare in tabella)</p>
+<p>E con il <em>resto</em> pari all’offset all’interno del blocco fisico indicato dalla tabella</p>
+<p>Nascono delle problematiche legate alla struttura della tabella:</p>
+<p>se utilizzi un blocco fisico, l’estensione massima del file è collegata alla dimensione massima del blocco (cosa che non avveniva con le altre tipologie di allocazione</p>
+<p><strong>Allocazione indicizzata con tabella indice di blocchi concatenati</strong><br>
+Esiste la possibile di implementare il blocco indice come struttura complementare (ad esempio lista di blocchi indice concatenati), tuttavia comporta un certo overhead e costo di accesso, ma elimina il problema della dimensione massima.</p>
+<p>Nel caso di blocchi concatenati, in cui ultima entry è puntatore al blocco successivo</p>
+<p><em>Logical Address / (dim. Byte blocco - 1) x (dim Byte blocco)</em></p>
+<p>Nota: la prima tabella ha la dimensione del blocco - 1 perché contiene anche il puntatore alla seconda tabella, che invece occupa l’intera dimensione del blocco.</p>
+<p>Si effettuano quindi delle divisioni successive, in cui il primo resto</p>
+<p><strong>Allocazione indicizzata a più livelli</strong></p>
+<p>Implementa una struttura ad albero, tabelle innestate</p>
+<p><strong>Caso Unix, INODE</strong></p>
+<p>In unix i file sono rappresentati da inode (index node), ovvero un nodo contenente degli indici:</p>
+<ul>
+<li><strong>mode:</strong> bit di protezione</li>
+<li><strong>owners:</strong> UID e GID del possessore</li>
+<li><strong>timestamps:</strong> ultimo accesso (atime - access), ultima modifica (mtime - modified), ultimo cambiamento inode (ctime - change)</li>
+<li><strong>size block:</strong></li>
+<li><strong>count:</strong> conteggio dei blocchi totali</li>
+<li><strong>direct blocks:</strong> puntatore ai primi 12 blocchi del file</li>
+<li><strong>single indirect:</strong> puntatore al primo blocco indice dei primi indiretti</li>
+<li><strong>double indirect:</strong> puntatore al blocco indice dei secondi indiretti</li>
+<li><strong>triple indirect:</strong> puntatore al blocco indice dei terzi indiretti (file enormi)</li>
+</ul>
+<p>Gli indici indiretti vengono allocati su richiesta nel caso di grandi file, ovviamente quindi l’accesso è più veloce per file piccoli che non li sfruttano.</p>
+<p><strong>GESTIONE DELLO SPAZIO LIBERO</strong></p>
+<p>Si può utilizzare una <strong>block map</strong> ovvero un vettore di bit che mappa tutti i blocchi, asserendo i blocchi liberi.</p>
+<p>La block map è comoda per operazioni assembler, tuttavia occupa spazio, anche se permette di trovare facilmente blocchi liberi.</p>
+<p>Un’alternativa meno pesante a livello spaziale è la <strong>free list</strong> (linked list), che tuttavia si rileva inefficiente se si tratta di trovare blocchi liberi contigui (costo lineare della visita)</p>
+<p><strong>IMPLEMENTAZIONI DELLE DIRECTORY</strong></p>
+<p>Permettono di passare dal nome dei file ai suoi attributi. In Windows gli attributi sono all’interno delle directory, mentre in UNIX contengono i puntatori alle strutture dei metadati (inodes)</p>
+<p><strong>Directory a dimensioni fisse:</strong> ogni entry ha un numero fisso di byte per il nome</p>
+<p><strong>Directory a heap:</strong> ogni file ha puntatore al nome e struttura attributi. Tutti i puntatori ai nomi dei file puntano a un’area comune (simil heap). Il nome rappresenta la parte variabile</p>
+<p><strong>Directory a lista lineare:</strong> lista lineare con puntatore ai blocchi dati (semplice ma lenta, migliorata se in cache)</p>
+<p><strong>Directory a tabelle di hash:</strong> lista lineare con struttura hash per accesso veloce</p>
+<p><strong>Directory a b-tree:</strong> generalizzazione albero ricerca binario, bassi tempi di accesso ma bisogna tenere bilanciamento. Generalmente la struttura più utilizzata</p>
+<p><strong>EFFICIENZA E PERFORMANCE</strong></p>
+<p>L’efficienza da</p>
+<ul>
+<li>algoritmi di allocazione spazio disco e gestione directory</li>
+<li>tipo di dati contenuti</li>
+<li>grandezza blocchi</li>
+</ul>
+<p><strong>Gestione della grandezza dei blocchi</strong></p>
+<p>Poché la grandezza dei blocchi ha influenza sulle prestazioni:</p>
+<ul>
+<li>blocchi piccoli aumentano efficienza in termini di frammentazione interna (in quanto approssima meglio il file)</li>
+<li>blocchi grandi aumentano le performance</li>
+<li>considerare anche la paginazione</li>
+</ul>
+<p>Misurazioni empiriche hanno notato che dimensione ideale è tra 1 - 4k</p>
+<p><strong>Caching (…)</strong></p>
+<p>Esiste anche la disk cache, ovvero bufferizzare i blocchi più usati su memoria ram.</p>
+<p>Sia sul controller, come <strong>buffer di traccia</strong> per ridurre la latenza a 0, sia in gran parte della memoria principale, prelevando pagine dalla free list, anche riempiendo tutta la RAM</p>
+<p>I buffer sono organizzati mediante coda con accesso hash, gestite con politiche diverse (LRU, CLOCK). Blocco viene salvato su disco quando deve essere liberato dalla coda. Se un blocco viene continuamente modificato non viene mai salvato su disco, questo lo espone a rischio crash. Particolarmente delicato su blocchi critici.</p>
+<p>Variante di Last Recently Used: blocco riusato a breve viene messo in fondo alla lista, mentre se è critico per la consistenza del file system ogni modifica viene trasferita al disco</p>
+<p><strong>Read-ahead</strong></p>
+<p>Leggere i blocchi in cache prima che siano richiesti (aumenta throughput: numero processi completati unità), ottimo per file letti in modo sequenziale (es. video), inoltre file system può tracciare modo di accesso al file per migliorare scelte</p>
+<p><strong>Riduzione movimento disco</strong></p>
+<p>Sistemare vicini blocchi a cui si accede di seguito in fase di scrittura (facile con bitmap, meno con liste)</p>
+<p>Raggruppare i blocchi in cluster</p>
+<p>Collocare i blocchi con metadati (es. inode) nelle vicinanze dei dati)</p>
+<p><strong>AFFIDABILITÀ DEL FILE SYSTEM</strong></p>
+<p>I dispositivi di massa hanno MTBF (medium time between failure) relativamente breve e i crash di sistema rischiano di far perdere i dati non salvati in memoria rom</p>
+<ul>
+<li>affidabilità dei dati: certezza dati salvati possano venir recuperati</li>
+<li>affidabilità dei metadati: garantire che i metadati rimangano consistenti non vengano perduti</li>
+</ul>
+<p>Per migliorare l’affidabilità dei dati si può:</p>
+<ul>
+<li>migliorare affidabilità dischi (es. RAID)</li>
+<li>backup dei dati da altro disco (dump fisico - direttamente dai blocchi del file system e dump logico )</li>
+</ul>
+<p>Per garantire consistenza del file system</p>
+<ul>
+<li>curare inconsistenze (programmi che controllano consistenza, anche grazie ad eventuali ridondanze dei metadati)</li>
+<li>prevenire le inconsistenze mediante sistemi appositi (es. journalled file system)</li>
+</ul>
+<p><strong>Journalled file system (o journalling)</strong></p>
+<p>Si utilizzano strutture e tecniche da DBMS (B-tree e transazioni) per aumentare affidabilità e velocità. Le variazioni di metadati vengono scritte immediatamente in un’area a parte, il <strong>log</strong> o <strong>giornale</strong>, prima di essere effettuate</p>
+<p>In questo modo basta ripercorrere il log per ripristinare la consistenza</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

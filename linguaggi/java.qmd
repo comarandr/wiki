@@ -261,8 +261,6 @@ numeri.forEach(n -> System.out.println(n));
 
 `char`: caratteri singoli ASCII
 
-#### Oggetti
-
 ##### Oggetti wrapper
 
 Convertono i tipi primitivi in oggetti. Questo serve per poter sfruttare metodi di utilità (es. conversione stringhe) e per inserirli in strutture dati (es. Collection, Map, List, Set)
@@ -277,6 +275,29 @@ Convertono i tipi primitivi in oggetti. Questo serve per poter sfruttare metodi 
 `char` &rarr; `Character`
 
 I wrapper possono assumere valore `null`
+
+#### Oggetti
+    
+##### Object
+    
+`.requireNonNull(obj)`: lancia un'eccezione se obj è nullo
+    
+`instanceof`: restituisce true se obj è un'istanza di Tipo, altrimenti false
+    
+`.getClass()`: restituisce la classe dell'oggetto
+    
+##### Optional
+    
+`.empty()`: restituisce un Optional vuoto
+    
+`.of(T value)`: restituisce un Optional contenente il valore
+    
+`.ofNullable(T value)`: restituisce un Optional contenente il valore se non è nullo, altrimenti un Optional vuoto
+    
+`.isPresent()`: restituisce true se l'Optional contiene un valore, altrimenti false
+    
+`.get()`: restituisce il valore contenuto nell'Optional, lancia un'eccezione se è vuoto
+
 
 ##### String
 
@@ -458,6 +479,21 @@ Nel caso di BiPredicate, accetta due argomenti e restituisce un booleano
 
 `.negate()`: restituisce un predicato che rappresenta la negazione logica di questo predicato
 
+```java
+Predicate<String> isLongerThan3 = s -> s.length() > 3;
+
+String s = "ciao";
+String t = "hi";
+
+isLongerThan3.test(s); // restituisce true
+isLongerThan3.test(t); // restituisce false
+
+BiPredicate<Integer, Integer> predicato2 = (x, y) -> x + y > 10;
+
+predicato2.test(5, 6); // restituisce true
+predicato2.test(3, 4); // restituisce false
+```
+
 ##### Queue
 
 Collezione di oggetti con accesso FIFO (First In First Out).
@@ -497,13 +533,37 @@ coda.isEmpty(); // restituisce true
 
 Collezione di oggetti che permette di eseguire operazioni in sequenza (pipeline) su di essi, senza modificarli.
 
-`.filter(Predicate p)`: restituisce un nuovo stream con gli elementi che soddisfano il predicato p
+###### Metodi di creazione (Sorgenti)
+
+`.stream()`: crea uno stream a partire da una collezione
+
+`Stream.of(T... values)`: crea uno stream a partire da un insieme di valori espliciti
+
+`Arrays.stream(array)`: crea uno stream a partire da un array
+
+`Stream.empty()`: crea uno stream vuoto
+
+###### Operazioni intermedie (Lazy)
+
+Restituiscono un flusso modificato e non vengono eseguite fino a quando non viene invocata un'operazione terminale.
+
+`.filter(Predicate p)`: scarta elementi che non soddisfano la condizione del predicato p
 
 `.map(Function f)`: restituisce un nuovo stream con gli elementi trasformati dalla funzione f
 
+`sorted()`: restituisce un nuovo stream con gli elementi ordinati secondo l'ordine naturale
+
+`.distinct()`: restituisce un nuovo stream con gli elementi distinti (senza duplicati)
+
+##### Operazioni terminali (Eager)
+
+Chiudono la pipeline e restituiscono un valore o una collezione
+
+`.collect(Collector)`: raccoglie gli elementi dello stream in una collezione o stringa. Es `Collectors.toList()`, `Collectors.toSet()`
+
 `.forEach(Consumer c)`: esegue l'operazione c su ogni elemento dello stream
 
-`.collect(Collector c)`: raccoglie gli elementi dello stream in una collezione o in un altro tipo di risultato
+`count()`: restituisce il numero di elementi dello stream
 
 `.reduce(BinaryOperator op)`: riduce gli elementi dello stream ad un singolo valore utilizzando l'operatore binario op
 
@@ -563,6 +623,7 @@ Guida sintetica alla scelta della struttura dati più adatta:
 **Map**: `.put()`, `.get()`, `.remove()`, `.containsKey()`, `.size()`
 **Stream**: `.filter()`, `.map()`, `.forEach()`, `.collect()`, `.reduce()`
 
+
 #### Confronto == e .equals()
 
 `==` : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi
@@ -570,3 +631,26 @@ Guida sintetica alla scelta della struttura dati più adatta:
 `.equals()`: confronta due oggetti per valore (stesso contenuto)
 
 `=` : assegna un valore ad una variabile
+
+```java
+
+// implementazione equals() per una classe Persona
+
+public class Persona {
+    private String nome;
+    private int eta;
+
+    public Persona(String nome, int eta) {
+        this.nome = nome;
+        this.eta = eta;
+    } 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // stesso riferimento
+        if (obj == null || getClass() != obj.getClass()) return false; // diverso tipo
+        Persona persona = (Persona) obj; // cast
+        return eta == persona.eta && Objects.equals(nome, persona.nome); // confronto per valore
+    }
+}
+```

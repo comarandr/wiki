@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Ingegneria del Software – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#concetti-fondamentali" id="toc-concetti-fondamentali" class="nav-link active" data-scroll-target="#concetti-fondamentali">1. CONCETTI FONDAMENTALI</a>
+  <ul class="collapse">
+  <li><a href="#tipologie-di-software-professionale" id="toc-tipologie-di-software-professionale" class="nav-link" data-scroll-target="#tipologie-di-software-professionale">Tipologie di Software Professionale</a></li>
+  <li><a href="#sviluppo-professionale-di-software-di-qualità" id="toc-sviluppo-professionale-di-software-di-qualità" class="nav-link" data-scroll-target="#sviluppo-professionale-di-software-di-qualità">Sviluppo professionale di software di qualità</a></li>
+  <li><a href="#definizione-di-ingegneria-del-software" id="toc-definizione-di-ingegneria-del-software" class="nav-link" data-scroll-target="#definizione-di-ingegneria-del-software">Definizione di Ingegneria del Software</a></li>
+  <li><a href="#processi-di-sviluppo-del-software" id="toc-processi-di-sviluppo-del-software" class="nav-link" data-scroll-target="#processi-di-sviluppo-del-software">Processi di Sviluppo del Software</a></li>
+  </ul></li>
+  <li><a href="#processi-software-attività-fondamentali" id="toc-processi-software-attività-fondamentali" class="nav-link" data-scroll-target="#processi-software-attività-fondamentali">2. PROCESSI SOFTWARE: ATTIVITÀ FONDAMENTALI</a>
+  <ul class="collapse">
+  <li><a href="#code-and-fix" id="toc-code-and-fix" class="nav-link" data-scroll-target="#code-and-fix">Code and Fix</a></li>
+  <li><a href="#definizione-di-processo-software" id="toc-definizione-di-processo-software" class="nav-link" data-scroll-target="#definizione-di-processo-software">Definizione di Processo Software</a></li>
+  <li><a href="#attività-fondamentali" id="toc-attività-fondamentali" class="nav-link" data-scroll-target="#attività-fondamentali">Attività Fondamentali</a></li>
+  <li><a href="#acquisizione-analisi-e-specifica-dei-requisiti" id="toc-acquisizione-analisi-e-specifica-dei-requisiti" class="nav-link" data-scroll-target="#acquisizione-analisi-e-specifica-dei-requisiti">1 - Acquisizione, Analisi e Specifica dei Requisiti</a></li>
+  <li><a href="#progettazione-e-sviluppo" id="toc-progettazione-e-sviluppo" class="nav-link" data-scroll-target="#progettazione-e-sviluppo">2 - Progettazione e Sviluppo</a></li>
+  <li><a href="#verifica-e-validazione" id="toc-verifica-e-validazione" class="nav-link" data-scroll-target="#verifica-e-validazione">3 - Verifica e Validazione</a></li>
+  <li><a href="#evoluzione" id="toc-evoluzione" class="nav-link" data-scroll-target="#evoluzione">4 - Evoluzione</a></li>
+  </ul></li>
+  <li><a href="#modelli-di-processi-software" id="toc-modelli-di-processi-software" class="nav-link" data-scroll-target="#modelli-di-processi-software">3. MODELLI DI PROCESSI SOFTWARE</a>
+  <ul class="collapse">
+  <li><a href="#modelli-a-cascata" id="toc-modelli-a-cascata" class="nav-link" data-scroll-target="#modelli-a-cascata">Modelli a cascata</a></li>
+  <li><a href="#modelli-evolutivi" id="toc-modelli-evolutivi" class="nav-link" data-scroll-target="#modelli-evolutivi">Modelli evolutivi</a></li>
+  <li><a href="#modelli-orientati-al-riuso" id="toc-modelli-orientati-al-riuso" class="nav-link" data-scroll-target="#modelli-orientati-al-riuso">Modelli orientati al riuso</a></li>
+  </ul></li>
+  <li><a href="#sviluppo-agile-del-software" id="toc-sviluppo-agile-del-software" class="nav-link" data-scroll-target="#sviluppo-agile-del-software">4. SVILUPPO AGILE DEL SOFTWARE</a>
+  <ul class="collapse">
+  <li><a href="#caratteristiche-generali" id="toc-caratteristiche-generali" class="nav-link" data-scroll-target="#caratteristiche-generali">Caratteristiche generali</a></li>
+  <li><a href="#principi-agili" id="toc-principi-agili" class="nav-link" data-scroll-target="#principi-agili">Principi agili</a></li>
+  <li><a href="#tecniche-agili" id="toc-tecniche-agili" class="nav-link" data-scroll-target="#tecniche-agili">Tecniche agili</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Ingegneria del Software</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="concetti-fondamentali" class="level2">
+<h2 class="anchored" data-anchor-id="concetti-fondamentali">1. CONCETTI FONDAMENTALI</h2>
+<section id="tipologie-di-software-professionale" class="level3">
+<h3 class="anchored" data-anchor-id="tipologie-di-software-professionale">Tipologie di Software Professionale</h3>
+<p>SOFTWARE: insieme dei programmi e relativa documentazione (modelli di progetto, manuali utente, siti web di supporto)</p>
+<ul>
+<li><strong>software generico</strong>: prodotto autonomamente, incontra la necessità di svariati clienti. Il produttore ha controllo sulle specifiche</li>
+<li><strong>software su richiesta</strong>:sviluppato da un’organizzazione per un specifico cliente. Il produttore deve attenersi alle specifiche del cliente</li>
+</ul>
+</section>
+<section id="sviluppo-professionale-di-software-di-qualità" class="level3">
+<h3 class="anchored" data-anchor-id="sviluppo-professionale-di-software-di-qualità">Sviluppo professionale di software di qualità</h3>
+<p>Caratteristiche qualitative di un software professionale_</p>
+<ul>
+<li><strong>accettabilità</strong>: deve essere accettabile per il cliente</li>
+<li><strong>Fidatezza e Protezione</strong>: non deve causare danni fisici e economici iun caso di malfunzionamento. Non vulnerabile ad attacchi da parte di utenti malintenzionati</li>
+<li><strong>Efficienza</strong>: le risorse non devono essere sprecate</li>
+<li><strong>Manutenibilità</strong>: deve poter evolvere per soddisfare nuove richieste dei clienti</li>
+</ul>
+</section>
+<section id="definizione-di-ingegneria-del-software" class="level3">
+<h3 class="anchored" data-anchor-id="definizione-di-ingegneria-del-software">Definizione di Ingegneria del Software</h3>
+<p>Adottare approcci ingegneristici alla produzione di software, disciplina ingegneristica.</p>
+</section>
+<section id="processi-di-sviluppo-del-software" class="level3">
+<h3 class="anchored" data-anchor-id="processi-di-sviluppo-del-software">Processi di Sviluppo del Software</h3>
+<p><strong>Processo software</strong>: attività che portano a creazione/evoluzione di un software</p>
+<ul>
+<li><strong>Acquisizione, analisi e specifica dei requisiti</strong>: definizione delle funzionalità e dei vincoli operativi del software</li>
+<li><strong>Progettazione e sviluppo</strong>: progettazione e programmazione</li>
+<li><strong>Verifica e validazione</strong>: verifica che il software soddisfi i requisiti</li>
+<li><strong>Evoluzione</strong>: modifiche al software per correggere errori o migliorare funzionalità</li>
+</ul>
+<p>Si distingue in metodi e strumnenti:</p>
+<ul>
+<li><strong>metodi</strong>: approcci strutturati per sviluppare software di qualità, con costi contenuti e nei tempi previsti</li>
+<li><strong>strumenti</strong>: sistemi software per aiutare le attività dei processi software (analisi, modellazione, debugging, testing)</li>
+</ul>
+<p>Alcune sfide per processi software:</p>
+<ul>
+<li><strong>diversità</strong>: metodi per produrre software su dispositivi eterogenei</li>
+<li><strong>consegna</strong>: consentirla in tempi rapidi</li>
+<li><strong>fiducia</strong>: tecniche che rendano il software affidabile e sicuro agli occhi del cliente</li>
+<li><strong>scala</strong>: software distribuito su sistemi diversi</li>
+</ul>
+<p>I <strong>principi fondamentali</strong> sono:</p>
+<ul>
+<li>metodi specifichi dipendono dal contesto del progetto</li>
+<li>non esistono metodi universalmente applicabili</li>
+<li>i concetti fondamentali sono indipendenti dal linguaggio di programmazione</li>
+</ul>
+<p>(… ultime slide)</p>
+</section>
+</section>
+<section id="processi-software-attività-fondamentali" class="level2">
+<h2 class="anchored" data-anchor-id="processi-software-attività-fondamentali">2. PROCESSI SOFTWARE: ATTIVITÀ FONDAMENTALI</h2>
+<section id="code-and-fix" class="level3">
+<h3 class="anchored" data-anchor-id="code-and-fix">Code and Fix</h3>
+<p>Consiste nel</p>
+<ul>
+<li>scrivere codice</li>
+<li>aggiustare errori, migliorarlo, aggiungere funzionalità</li>
+</ul>
+<p>Approccio <strong>molto limitato</strong> in contesti di grandi dimensioni</p>
+</section>
+<section id="definizione-di-processo-software" class="level3">
+<h3 class="anchored" data-anchor-id="definizione-di-processo-software">Definizione di Processo Software</h3>
+<p>Il processo software è quell’insieme strutturato di attività che portano alla creazione di un software. Un processo di qualità migliora qualità del software, tempi di sviluppo e costi.</p>
+</section>
+<section id="attività-fondamentali" class="level3">
+<h3 class="anchored" data-anchor-id="attività-fondamentali">Attività Fondamentali</h3>
+<ul>
+<li><strong>Acquisizione, analisi e specifica dei requisiti</strong>: definizione delle funzionalità e dei vincoli operativi del software</li>
+<li><strong>Progettazione e sviluppo</strong>: progettazione e programmazione</li>
+<li><strong>Verifica e validazione</strong>: verifica che il software soddisfi i requisiti</li>
+<li><strong>Evoluzione</strong>: modifiche al software per correggere errori o migliorare funzionalità</li>
+</ul>
+<p><strong>Studio di fattibilità</strong>: stabilisce se sviluppo debba essere avviato, determinando</p>
+<ul>
+<li>se esiste un mercato</li>
+<li>se il progetto è tecnicamente ed economicamente fattibile</li>
+</ul>
+<p>Fornisce un report con definizione problema, valutazione costi/benefici, risorse necessarie, soluzioni alternative, tempi di consegna e modalità sviluppo</p>
+</section>
+<section id="acquisizione-analisi-e-specifica-dei-requisiti" class="level3">
+<h3 class="anchored" data-anchor-id="acquisizione-analisi-e-specifica-dei-requisiti">1 - Acquisizione, Analisi e Specifica dei Requisiti</h3>
+<p>Serve a determinare <strong>cosa</strong> farà il software.<br>
+Specifica le <strong>funzionalità e le qualità</strong> che deve possedere, <strong>senza vincolare progettazione</strong> e implementazione.<br>
+Definisce <strong>funzioni e vincoli</strong> con il cliente<br>
+Un errore in questa fase è molto costoso</p>
+<p><strong>Ingegneria dei Requisiti</strong>: metodi per raccogliere, analizzare, documentare e gestire i requisiti del software</p>
+<section id="deduzione-e-analisi-dei-requisiti" class="level4">
+<h4 class="anchored" data-anchor-id="deduzione-e-analisi-dei-requisiti">Deduzione e analisi dei requisiti</h4>
+<p>DEDUZIONE: spirito critico e coinvolge osservazione di sistemi esistenti, discussioni con possibili utenti</p>
+<p>ANALISI: sviluppo di uno o più modelli e prototipi</p>
+</section>
+<section id="specifica-dei-requisiti" class="level4">
+<h4 class="anchored" data-anchor-id="specifica-dei-requisiti">Specifica dei requisiti</h4>
+<p>traduce le informazioni raccolte in un insieme di requisiti</p>
+<ul>
+<li><em>requisiti di sistema</em>: funzionalità e caratteristiche che devono essere fornite</li>
+<li><em>requisiti utente</em>: proposizioni astratte dei requisiti del sistema per i clienti</li>
+</ul>
+</section>
+<section id="convalida-dei-requisiti" class="level4">
+<h4 class="anchored" data-anchor-id="convalida-dei-requisiti">Convalida dei requisiti</h4>
+<p>Fase in cui si controlla che i requisiti siano realistici, coerenti e completi. Possibile rilevazione di errori nel documento dei requisiti</p>
+</section>
+<section id="documento-dei-requisiti" class="level4">
+<h4 class="anchored" data-anchor-id="documento-dei-requisiti">Documento dei requisiti</h4>
+<p>Documento più o meno formale contenente l’insieme dei requisiti. In questa fase viene predisposto un piano di test</p>
+<p><strong>[immagine diagramma requisiti]</strong></p>
+</section>
+</section>
+<section id="progettazione-e-sviluppo" class="level3">
+<h3 class="anchored" data-anchor-id="progettazione-e-sviluppo">2 - Progettazione e Sviluppo</h3>
+<p>Parte che si occupa della conversione dei requisiti in un sistema eseguibile. In due fasi:</p>
+<ul>
+<li><strong>progettazione</strong>: progettare struttura software che realizzi le specifiche</li>
+<li><strong>sviluppo</strong>: implementazione dei componenti definiti nel progetto</li>
+</ul>
+<p>La distinzione o meno dipende dal tipo di processo software adottato.</p>
+<section id="progettazione" class="level4">
+<h4 class="anchored" data-anchor-id="progettazione">Progettazione</h4>
+<p>Le fasi di progettazione sono intrecciate e interdipendenti, continue revisioni anche delle fasi precedenti</p>
+<p><strong>input di progettazione</strong>: requisiti, descrizione dei dati, informazioni sulla piattaforma software in cui sarà eseguito (sistema operativo, database, altre applicazioni)</p>
+<section id="attività-di-progettazione" class="level5">
+<h5 class="anchored" data-anchor-id="attività-di-progettazione">Attività di progettazione</h5>
+<ul>
+<li><strong>progettazione dell’architettura</strong>: progetto alto livello, identificazione struttura complessiva e componenti principali</li>
+<li><strong>progettazione dell’interfaccia</strong>: definizione interfaccia tra componenti, non ambigua</li>
+<li><strong>progettazione e scelta dei componenti</strong>: scelta dei componenti già disponibili, progettazione nuovi componenti. Progetto dettagliato ma generalmente senza dettagli di implementazione</li>
+<li><strong>progettazione del database</strong>: definizione struttura del database, tabelle, relazioni e vincoli</li>
+</ul>
+<p>L’output della progettazione è un progetto software che descrive struttura, modelli e strutture dati usati dal sistema e interfacce usate.</p>
+<p>[immagine diagramma progettazione - slide 22]</p>
+</section>
+</section>
+<section id="sviluppo" class="level4">
+<h4 class="anchored" data-anchor-id="sviluppo">Sviluppo</h4>
+<p>Lo sviluppo è strettamente dipendente dal singolo programmatore, ma è possibile che ci siano standard aziendali e convenzioni condivise.</p>
+</section>
+</section>
+<section id="verifica-e-validazione" class="level3">
+<h3 class="anchored" data-anchor-id="verifica-e-validazione">3 - Verifica e Validazione</h3>
+<p><strong>Verifica</strong>: mostrare conformità del sistema alle specifiche</p>
+<p><strong>Validazione</strong>: mostrare che il sistema soddisfa le aspettative del cliente</p>
+<p>Generalmente ottenute tramite <strong>testing</strong> medianti dati di prova ricavati dalle specifiche.</p>
+<section id="testing" class="level4">
+<h4 class="anchored" data-anchor-id="testing">Testing</h4>
+<p>Suddivisibile in tre fasi:</p>
+<ul>
+<li><strong>test dei componenti</strong>: test di singoli componenti in isolamento (unità o gruppi di funzioni e classi)</li>
+<li><strong>test del sistema</strong>: testare il sistema completo, oppure in più stadi con diverse componenti integrate, verificando conformità requisiti funzionali e non funzionali</li>
+<li><strong>test del cliente</strong>: sistema testato dal cliente con dati reali, verificando che soddisfi le sue aspettative</li>
+</ul>
+<p>La fase di testing è <strong>iterativa</strong>, se emergono difetti può essere necessario ripercorrere le altre fasi di testing</p>
+</section>
+</section>
+<section id="evoluzione" class="level3">
+<h3 class="anchored" data-anchor-id="evoluzione">4 - Evoluzione</h3>
+<p>Il software viene costantemenete riusato, evoluto e mantenuto, modificandolo ripetutamente durtante il suo ciclo di vita. Questo avviene per</p>
+<ul>
+<li>correggere errori</li>
+<li>migliorare funzionalità</li>
+<li>adattarlo a nuovi ambienti operativi</li>
+</ul>
+</section>
+</section>
+<section id="modelli-di-processi-software" class="level2">
+<h2 class="anchored" data-anchor-id="modelli-di-processi-software">3. MODELLI DI PROCESSI SOFTWARE</h2>
+<p><strong>CSV - modello del ciclo di vita del software</strong>: caratterizzazione descrittiva o prescrittiva di come dovrebbe essere sviluppato un software</p>
+<p><strong>modello di processo software</strong>: descrizione semplificata e astratta di un processo software</p>
+<p>Ogni processo può essere descritto tramite</p>
+<ul>
+<li><strong>descrizione architetturale</strong>: descrive la sequenza di attività senza fornire dettagli</li>
+<li><strong>data-flow</strong>: evidenzia trasformazioni dei dati dalle attività del processo</li>
+<li><strong>role/action</strong>: ruole e responsabilità di chi svolge le attività del processo</li>
+</ul>
+<p>La descrizione del processo software include:</p>
+<ul>
+<li><strong>attività</strong>: cosa deve essere fatto e in che ordine</li>
+<li><strong>prodotti</strong>: risultati di ogni attività</li>
+<li><strong>ruoli</strong>: chi deve svolgere le attività</li>
+<li><strong>pre e post condizioni</strong>: condizioni che devono essere soddisfatte prima e dopo ogni attività, criteri di transizione</li>
+</ul>
+<p>Ci sono diversi tipologie di modelli, tra cui:</p>
+<ul>
+<li><strong>plan-driven</strong>: pianificazione dettagliata di tutte le attività prima di iniziare lo sviluppo</li>
+<li><strong>agile</strong>: sviluppo iterativo e incrementale, con frequenti revisioni e</li>
+</ul>
+<section id="modelli-a-cascata" class="level3">
+<h3 class="anchored" data-anchor-id="modelli-a-cascata">Modelli a cascata</h3>
+<section id="modello-a-cascata" class="level4">
+<h4 class="anchored" data-anchor-id="modello-a-cascata">Modello a cascata</h4>
+<p>[immagine diagramma modello a cascata]</p>
+<p>Si tratta di un processo:</p>
+<ul>
+<li><strong>plan-driven</strong>: ciascuna fase segue quella successiva, le attività di prorocessso sono pianificate in anticipo</li>
+<li><strong>document-centric</strong>: ogni attività produce documenti che vengono utilizzati come input per le attività successive</li>
+<li><strong>rigido</strong>: fine di ogni fase è un milestone, gli output di una fase non sono modificabili nelle fasi successive</li>
+<li><strong>monolitico</strong>: cliente riceve il software solo alla fine del processo</li>
+</ul>
+<p><strong>vantaggi</strong>: fasi e rispettivi output ben definiti</p>
+<p><strong>svantaggi</strong>:</p>
+<ul>
+<li>richiede chiarezza dei requisiti fin da subito e stabilità degli stessi</li>
+<li>produce notevole mole di documentazione</li>
+<li>poco flessibile</li>
+</ul>
+<p>Pertanto il modello a cascata risulta:</p>
+<ul>
+<li>adatto a software che richiedono documentazione dettagliata</li>
+<li>adatto a sistemi integrati in cui software deve interfacciarsi con sistemi hardware non flessibili</li>
+</ul>
+<p><strong>non adatto</strong> a:</p>
+<ul>
+<li>piccoli team dove comunicazione è informale e contesti in cui i requisiti cambiano notevolmente</li>
+</ul>
+</section>
+<section id="modello-a-cascata-con-retroazione" class="level4">
+<h4 class="anchored" data-anchor-id="modello-a-cascata-con-retroazione">Modello a cascata con retroazione</h4>
+<p>Variazione del modello a cascata con introduzione della <strong>retroazione</strong>, verifica della correttezza dell’output con possibilità di ripetere le fasi precedenti, grazie all’uso di <strong>feedback</strong></p>
+<p>[immagine diagramma modello a cascata con retroazione]</p>
+<ul>
+<li>più flessibile del modello a cascata, mitigandone la monoliticità</li>
+<li>adatto a contesti in cui i requisiti sono poco soggetti a cambiamenti</li>
+</ul>
+</section>
+<section id="modello-a-v" class="level4">
+<h4 class="anchored" data-anchor-id="modello-a-v">Modello a V</h4>
+<p>Estensione del modello a cascata, in cui le attività di <strong>progetto</strong> sono collegate a quelle di <strong>V&amp;V (verifica e validazione)</strong></p>
+<p>[immagine diagramma modello a V]</p>
+<p>Ogni fase di progettazione è associata a una fase di V&amp;V<br>
+La fase di V&amp;V è guidata da un insieme di piani di test, eseguito da un team indipendente</p>
+<p>In caso di errore nella fase V&amp;V, si rieseguono le fasi di progettazione collegate</p>
+<p>Permette di anticipare validazione dei requisiti da parte del cliente, rilevando precocemente eventuali errori</p>
+</section>
+</section>
+<section id="modelli-evolutivi" class="level3">
+<h3 class="anchored" data-anchor-id="modelli-evolutivi">Modelli evolutivi</h3>
+<p>Adatti a contesti con requisiti non chiari fin dall’inizio del processo</p>
+<p>Due tipologie fondamentali:</p>
+<ul>
+<li><strong>modello a sviluppo incrementale</strong>: lavorare con il cliente</li>
+<li><strong>modello a consegna incrementale</strong>: realizzazione di prototipi per esplorare requisiti</li>
+</ul>
+<p><strong>vantaggi</strong>:</p>
+<ul>
+<li>rapido feedback del cliente su versione preliminare</li>
+<li>possibilità di cambiare i requisiti prima della consegna finale</li>
+<li>consegna di versioni preliminari con funzionalità fondamentali</li>
+<li>primi incrementi utili per dedurre requisiti successivi</li>
+<li>funzionalità con maggiore priorità testate maggiormente</li>
+</ul>
+<p><strong>svantaggi</strong>:</p>
+<ul>
+<li>mancanza di visibilità del processo</li>
+<li>sistemi mal strutturati per continui cambiamenti</li>
+</ul>
+<p><strong>applicabilità</strong>:</p>
+<ul>
+<li>componenti di piccole dimensioni</li>
+<li>sistemi a vita breve</li>
+<li>sistemi con requisiti che cambiano durante sviluppo</li>
+</ul>
+<section id="modello-a-sviluppo-incrementale" class="level4">
+<h4 class="anchored" data-anchor-id="modello-a-sviluppo-incrementale">Modello a sviluppo incrementale</h4>
+<p>Si sviluppa una implementazione iniziale che viene esposta agli utenti e che verrà perfezionata attraverso <strong>incrementi</strong> ovvero versioni successive.</p>
+<p>[immagine diagramma modello a sviluppo incrementale]</p>
+<p>Posso partire da una descrizione sommaria dei requisiti</p>
+<p>le varie fasi (specifica, sviluppo, convalida) sono intrecciate con feedback veloci</p>
+<ol type="1">
+<li>versione iniziale con requisiti fondamentali esposta agli utenti</li>
+<li>feedback di proxy degli utenti finali in ambiente diverso da quello target</li>
+<li>implementazioni di funzionalità e requisiti ulteriori in versioni intermedie (solitamente NON mostrate al cliente)</li>
+<li>ultimo incremento è versione finale rilasciata al cliente</li>
+</ol>
+</section>
+<section id="modello-a-consegna-incrementale" class="level4">
+<h4 class="anchored" data-anchor-id="modello-a-consegna-incrementale">Modello a consegna incrementale</h4>
+<p>Alcuni degli incrementi sviluppati sono consegnati al clienti</p>
+<p>[immagine diagramma modello a consegna incrementale]</p>
+<p><strong>vantaggio</strong>: feedback più realistico<br>
+<strong>limitazione</strong>: utenti devono aver tempo per testare adeguatamente gli incrementi rilasciati</p>
+<p>A ogni incremento viene inclusa una parte delle funzionalità, secondo dei livelli di priorità. I requisti di un incremento sono congelati una volta consegnati</p>
+</section>
+<section id="modello-prototipale" class="level4">
+<h4 class="anchored" data-anchor-id="modello-prototipale">Modello prototipale</h4>
+<p><strong>prototipo</strong>: versione iniziale di un sistema software sviluppato rapidamente, generalmente <strong>usa e getta</strong>. Generalmente potrebbe non rispettare aspetti fondamentali (es. prestazioni)</p>
+<p>[immagine diagramma modello prototipale]</p>
+<ol type="1">
+<li>stabilire esplicitamente obiettivi del prototipo (piano di prototipazione)</li>
+<li>definire quali funzionalità includere nel prototipo (definizione dello schema)</li>
+<li>sviluppo del prototipo (prototipo)</li>
+<li>fase di valutazione del prototipo (report valutativo)</li>
+</ol>
+<p>Il prototipo necessita di formazione degli utenti sull’utilizzo, inoltre ha dei problemi di rappresentatività:</p>
+<ul>
+<li>non è parte del sistema reale (al contrario degli incrementi)</li>
+<li>valutatori non rappresentativi</li>
+<li>uso può differe da quello del sistema reale</li>
+</ul>
+<p>NOTA: prototipazione può affiancare altri modelli</p>
+<ul>
+<li>durante la progettazione (modello a cascata) per valutare opzioni alternative</li>
+<li>durante validazione del sistema per controllarne il comportamento</li>
+</ul>
+</section>
+</section>
+<section id="modelli-orientati-al-riuso" class="level3">
+<h3 class="anchored" data-anchor-id="modelli-orientati-al-riuso">Modelli orientati al riuso</h3>
+<p>Oltre che in maniera informale, avviene mediante:</p>
+<ul>
+<li>componenti software riutilizzabili</li>
+<li>interi sistemi (COTS)</li>
+</ul>
+<p>Sfrutta dei <strong>framework di integrazione</strong> per comporre <strong>componenti riutilizzabili</strong> e <strong>COTS</strong></p>
+<p>[immagine diagramma modello orientato al riuso]</p>
+<ul>
+<li>requisiti specificati in maniera non dettagliata</li>
+<li>ricerca e valutazione di componenti e sistemi che possono offrire le funzionalità richieste</li>
+<li>requisiti perfezionati in base alle componenti disponibili e viene aggiornata la specifica</li>
+<li>se disponibile sistema adeguato,configurato per il nuovo sistema</li>
+<li>altrimenti componenti e sistemi possono essere adeguati alle nuove richieste insieme a componenti ex novo</li>
+</ul>
+<p><strong>vantaggi</strong>:</p>
+<ul>
+<li>riduce quantità software ex novo</li>
+<li>costi e rischi ridotti</li>
+<li>velocità consegna</li>
+</ul>
+<p><strong>svantaggi</strong>:</p>
+<ul>
+<li>compromessi nei requisiti</li>
+<li>evoluzione delle componenti non controllate direttamente</li>
+</ul>
+<section id="modelli-trasformazionali" class="level4">
+<h4 class="anchored" data-anchor-id="modelli-trasformazionali">Modelli trasformazionali</h4>
+<p>Le specifiche vengono definite mediante linguaggi formali (specifiche algebriche, modelli di stato)</p>
+<p>Correttezza mediante model checking</p>
+<p>Specifiche formali trasformate automaticamente in codice eseguibile</p>
+<ol type="1">
+<li>requisiti specificati formalmente in fase di analisi, compresi chiaramente e in modo non ambiguo, verificate automaticamente</li>
+<li>man mano trasformati in descrizione più dettagliata e meno astratta, fino a ottenere codice eseguibile</li>
+<li>può trarre vantaggio da componenti riusabili</li>
+</ol>
+<p><strong>problemi</strong>:</p>
+<ul>
+<li>necessarie competenze specifiche per scrivere specifiche formali</li>
+<li>difficile specificazione formale di alcune parti</li>
+<li>difficoltà da parte del cliente a convalidare i requisiti</li>
+</ul>
+<p><strong>applicabilità</strong>:</p>
+<ul>
+<li>NO a sistemi di grande dimensioni</li>
+<li>ottimo per parti critiche, dove validità va dimostrata <strong>by construction</strong></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="sviluppo-agile-del-software" class="level2">
+<h2 class="anchored" data-anchor-id="sviluppo-agile-del-software">4. SVILUPPO AGILE DEL SOFTWARE</h2>
+<p><strong>processi plan-driven</strong>: con pianificazione dettagliata, ottimi per sistemi critici, con team numerosi e lontani, progetti e software di lunga durata.Poco adatti a contesti dinamici, poco flessibili.</p>
+<p>Necessità di risposta rapida, comunicazione fra stakeholder e cliente nel processo per feedback rapido → agilità</p>
+<section id="caratteristiche-generali" class="level3">
+<h3 class="anchored" data-anchor-id="caratteristiche-generali">Caratteristiche generali</h3>
+<p><strong>documentazione minima</strong>:</p>
+<ul>
+<li>focus sul codice</li>
+<li>no specifiche dettagliate</li>
+<li>overhead documentazione limitata</li>
+</ul>
+<p><strong>consegna rapida e incrementale</strong>:</p>
+<ul>
+<li>incrementi rilasciati frequentemente</li>
+<li>stakeholder coinvolti</li>
+</ul>
+<p><strong>strumenti di supporto</strong>:</p>
+<ul>
+<li>uso di strumenti di supporto del processo di sviluppo (es. automatizzazione test)</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>processi plan-driven</th>
+<th>processi agili</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>attività pianificate in anticipo</td>
+<td>pianificazione incrementale continua</td>
+</tr>
+<tr class="even">
+<td>fasi processo software distinte</td>
+<td>requisiti, progettazione e implementazione contemporanemente</td>
+</tr>
+<tr class="odd">
+<td>incrementi pianificati</td>
+<td>incrementi rapidi</td>
+</tr>
+</tbody>
+</table>
+<p>Pratiche plan-driven e agili possono coesistere</p>
+</section>
+<section id="principi-agili" class="level3">
+<h3 class="anchored" data-anchor-id="principi-agili">Principi agili</h3>
+<p><strong>coinvolgimento del cliente</strong>: coinvolti in tutto il processo di svluppo</p>
+<ul>
+<li>valutano e validano</li>
+<li>forniscono nuovi requisiti e propongono modifiche</li>
+<li>assegnano priorità</li>
+</ul>
+<p><strong>accettare i cambiamenti</strong>: prodotto non pianificato rigidamente, prevedere che i requisiti cambieranno</p>
+<p><strong>mantenere la semplicità</strong>: prodotto e processo di sviluppo semplici, eliminare le complessità</p>
+<p><strong>sviluppo incrementale</strong>: software consegnato incrementalmente, cliente specifica i requisiti da includere negli incrementi</p>
+<p><strong>persone, non processi</strong>: processo di sviluppo non eccessivamente prescrittivo e rigido</p>
+<section id="applicabilità" class="level4">
+<h4 class="anchored" data-anchor-id="applicabilità">Applicabilità</h4>
+<p><strong>adatto a</strong>:</p>
+<ul>
+<li>prodotti di piccole e medie dimensioni</li>
+<li>prodotti personalizzati (con coinvolgimento cliente)</li>
+<li>pochi stakholder</li>
+<li>team fisicamente vicini, con comunicazione informale</li>
+</ul>
+<p><strong>vantaggi</strong>:</p>
+<ul>
+<li>consegne predicibili</li>
+<li>rapida risposta a cambiamenti</li>
+<li>rischi bassi grazie a cicli di consegna rapidi</li>
+<li>alta produttività</li>
+<li>clienti soddisfatti</li>
+</ul>
+<p><strong>esempio</strong>:</p>
+<ul>
+<li>prodotto evolve con brevi iterazioni</li>
+<li>iterazioni con durata fissa (es. 2 settimane)</li>
+<li>applicazione funzionante rilasciata a fine di ogni iterazione, aggiungendo quante più funzionalità ad alta priorità possibili</li>
+<li>cliente rivede ogni incremento e ridefinisce priorità</li>
+<li>non si fallisce una data di consegna, piuttosto si rimanda qualche feature</li>
+</ul>
+</section>
+</section>
+<section id="tecniche-agili" class="level3">
+<h3 class="anchored" data-anchor-id="tecniche-agili">Tecniche agili</h3>
+<section id="extreme-programming-xp" class="level4">
+<h4 class="anchored" data-anchor-id="extreme-programming-xp">Extreme Programming (XP)</h4>
+</section>
+<section id="tecniche-agili---storie-utente" class="level4">
+<h4 class="anchored" data-anchor-id="tecniche-agili---storie-utente">Tecniche agili - Storie Utente</h4>
+</section>
+<section id="tecniche-agili---refactoring" class="level4">
+<h4 class="anchored" data-anchor-id="tecniche-agili---refactoring">Tecniche agili - Refactoring</h4>
+</section>
+<section id="tecniche-agili---sviluppo-preceduto-dai-test" class="level4">
+<h4 class="anchored" data-anchor-id="tecniche-agili---sviluppo-preceduto-dai-test">Tecniche agili - Sviluppo preceduto dai Test</h4>
+</section>
+<section id="tecniche-agili---pair-programming" class="level4">
+<h4 class="anchored" data-anchor-id="tecniche-agili---pair-programming">Tecniche agili - Pair Programming</h4>
+</section>
+<section id="tecniche-agili---scrum" class="level4">
+<h4 class="anchored" data-anchor-id="tecniche-agili---scrum">Tecniche agili - Scrum</h4>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

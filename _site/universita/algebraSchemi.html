@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Algebra lineare – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#operazioni" id="toc-operazioni" class="nav-link active" data-scroll-target="#operazioni">operazioni</a></li>
+  <li><a href="#formulette-geometriche" id="toc-formulette-geometriche" class="nav-link" data-scroll-target="#formulette-geometriche">formulette geometriche</a></li>
+  <li><a href="#risoluzioni-geometria-dello-spazio" id="toc-risoluzioni-geometria-dello-spazio" class="nav-link" data-scroll-target="#risoluzioni-geometria-dello-spazio">Risoluzioni geometria dello spazio</a></li>
+  <li><a href="#matrici" id="toc-matrici" class="nav-link" data-scroll-target="#matrici">Matrici</a></li>
+  <li><a href="#operazioni-tra-matrici" id="toc-operazioni-tra-matrici" class="nav-link" data-scroll-target="#operazioni-tra-matrici">operazioni tra matrici</a></li>
+  <li><a href="#spazi-vettoriali" id="toc-spazi-vettoriali" class="nav-link" data-scroll-target="#spazi-vettoriali">Spazi vettoriali</a></li>
+  <li><a href="#basi-e-dimensione" id="toc-basi-e-dimensione" class="nav-link" data-scroll-target="#basi-e-dimensione">Basi e dimensione</a></li>
+  <li><a href="#applicazioni-lineari" id="toc-applicazioni-lineari" class="nav-link" data-scroll-target="#applicazioni-lineari">Applicazioni lineari</a></li>
+  <li><a href="#sistemi-lineari" id="toc-sistemi-lineari" class="nav-link" data-scroll-target="#sistemi-lineari">Sistemi lineari</a>
+  <ul class="collapse">
+  <li><a href="#metodo-di-gauss" id="toc-metodo-di-gauss" class="nav-link" data-scroll-target="#metodo-di-gauss">Metodo di Gauss</a></li>
+  <li><a href="#calcolo-del-determinante" id="toc-calcolo-del-determinante" class="nav-link" data-scroll-target="#calcolo-del-determinante">Calcolo del determinante</a></li>
+  </ul></li>
+  <li><a href="#autovettori-e-autovalori" id="toc-autovettori-e-autovalori" class="nav-link" data-scroll-target="#autovettori-e-autovalori">Autovettori e autovalori</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Algebra lineare</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="operazioni" class="level2">
+<h2 class="anchored" data-anchor-id="operazioni">operazioni</h2>
+<ul>
+<li><p>n-pla: $ (a_1, , a_n) $</p></li>
+<li><p>somma:</p></li>
+</ul>
+<p><span class="math display">\[
+(a_1 a_2 a_3) + (b_1 b_2 b_3) = (a_1 + b_1, a_2 + b_2, a_3 + b_3)
+\]</span></p>
+<ul>
+<li>prodotto con scalare:</li>
+</ul>
+<p><span class="math display">\[
+\lambda \cdot (a_1 a_2 a_3) = (\lambda \cdot a_1, \lambda \cdot a_2, \lambda \cdot a_3)
+\]</span></p>
+<ul>
+<li>prodotto scalare:</li>
+</ul>
+<p><span class="math display">\[
+&lt;v \cdot w&gt; = v_1 \cdot w_1 + v_2 \cdot w_2 + v_3 \cdot w_3
+\]</span></p>
+<ul>
+<li>norma (radice del prodotto scalare di sè stesso):</li>
+</ul>
+<p><span class="math display">\[
+||v|| = \sqrt{v_1^2 + v_2^2 + v_3^2} = \sqrt{&lt;v \cdot v&gt;}
+\]</span></p>
+<ul>
+<li>distanza (radice della norma della differenza):</li>
+</ul>
+<p><span class="math display">\[
+d(v, w) = \sqrt{(v_1 - w_1)^2 + (v_2 - w_2)^2 + (v_3 - w_3)^2} = \sqrt{||v - w||}
+\]</span></p>
+<ul>
+<li>disuguaglianza triangolare:</li>
+</ul>
+<p><span class="math display">\[
+||a + b|| \leq ||a|| + ||b||
+\]</span></p>
+<ul>
+<li>disuguaglianza di Cauchy-Schwarz:</li>
+</ul>
+<p><span class="math display">\[
+|\sum_{i=1}^n a_i \cdot b_i| \leq ||a|| \cdot ||b||
+\]</span></p>
+<p><span class="math display">\[
+|&lt;a \cdot b&gt;| \leq ||a|| \cdot ||b||
+\]</span></p>
+</section>
+<section id="formulette-geometriche" class="level2">
+<h2 class="anchored" data-anchor-id="formulette-geometriche">formulette geometriche</h2>
+<p><strong>rette passanti per <span class="math inline">\(O\)</span></strong>: $ (v) = {v : } $ $ $ parametro</p>
+<p><strong>ortogonalità</strong>: <span class="math inline">\(&lt;a \cdot b&gt; = 0\)</span> prodotto scalare nullo</p>
+<p><strong>angolo tra due n-ple</strong>:</p>
+<p><span class="math display">\[
+\alpha = arcos( \frac{&lt;a \cdot b&gt;}{||a|| \cdot ||b||})
+\]</span></p>
+<p><strong>rete affini</strong>: $ (v) + w = v + w $</p>
+<p><strong>retta per 2 punti</strong>: $ (1 -)P = Q : ((P-Q) + P) $</p>
+<p><strong>combinazione affine</strong>: $ P + Q + = 1 $</p>
+<p><strong>combinazione connessa</strong>: $ P + Q , ; ; + = 1 $</p>
+</section>
+<section id="risoluzioni-geometria-dello-spazio" class="level2">
+<h2 class="anchored" data-anchor-id="risoluzioni-geometria-dello-spazio">Risoluzioni geometria dello spazio</h2>
+<strong>equazione retta</strong>: $
+<span class="math display">\[\begin{cases} x = v_1 \cdot t + p_1 \\ y = v_2 \cdot t + p_2 \\ z = v_3 \cdot t + p_3 \end{cases}\]</span>
+<p>$</p>
+<p>$ t(v_1 v_2 v_3) + (p_1 p_2 p_3) $</p>
+<p><strong>retta per <span class="math inline">\(2\)</span> punti</strong>: $ t(B-A) + A $</p>
+$
+<span class="math display">\[\begin{cases} x = (b_1 - a_1) \cdot t + a_1 \\ y = (b_2 - a_2) \cdot t + a_2 \\ z = (b_3 - a_3) \cdot t + a_3 \end{cases}\]</span>
+<p>$</p>
+<p><strong>spazio perpendicolare a $ v (v_1 v_2 v_3) $</strong>: $ &lt;v, x&gt; = 0 $<br>
+NB: in $ ^2 $ è una retta</p>
+<p><strong>spazio perpendicolare a $ v (v_1 v_2 v_3) $ e passante per $ P $</strong>: $ &lt;v, x&gt; = &lt;v, P&gt; $</p>
+<p><strong>equazione del piano</strong>: $ : ax + by + cz = d $</p>
+<p><strong>retta perpendicolare al piano $ $</strong>: $ v = (a,b,c) $ perpendicolare al piano $ : ax + by +cz =d $<br>
+NB componenti vettori uguali a coefficienti piano</p>
+<p><strong>retta passante per un punto $ P(p_x, p_y, p_z) $ ovvero traslazione</strong>: $ d = a p_x + b p_y + c p_z $<br>
+$ ax + by + cz = a p_x + b p_y + c p_z $</p>
+<p><strong>piano contenente $ 2 $ rette</strong>: <span class="math inline">\(\begin{cases} x = v_1 \cdot t + w_1 \cdot s \\ y = v_2 \cdot t + w_2 \cdot s \\ z = v_3 \cdot t + w_3 \cdot s \end{cases}\)</span><br>
+forma parametrica da risolvere per ottenere forma cartesiana</p>
+<p><strong>retta in <span class="math inline">\(\mathbb{R}^2\)</span> dati <span class="math inline">\(2\)</span> piani</strong>: <span class="math inline">\(r: \begin{cases} a_1 x + b_1 y + c_1 z = d_1 \\ a_2 x + b_2 y + c_2 z = d_2 \end{cases}\)</span><br>
+parametrica (porre una variabile pari a t)</p>
+<p><strong>rette parallele</strong> $t(v_1 v_2 v_3) + Q; s(v_1 v_2 v_3) + P $<br>
+stesso vettore direttore</p>
+<p><strong>piano date due rette parallele</strong>: serve un’altra direzione</p>
+<p><strong>piano data una retta <span class="math inline">\(r\)</span> e un punto <span class="math inline">\(A\)</span></strong>:</p>
+<ol type="1">
+<li>calcolo 2 punti della retta <span class="math inline">\(r\)</span></li>
+<li>dati <span class="math inline">\(P', P'' \in r\)</span> e punto <span class="math inline">\(A\)</span> calcolo piano da rette <span class="math inline">\(\vec{A P'}\)</span> e <span class="math inline">\(\vec{AP''}\)</span></li>
+</ol>
+</section>
+<section id="matrici" class="level2">
+<h2 class="anchored" data-anchor-id="matrici">Matrici</h2>
+<p><strong>matrice m x n</strong>: $ m $ righe, $ n $ colonne<br>
+<span class="math display">\[
+A = \begin{bmatrix} a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn} \end{bmatrix}
+\]</span></p>
+<p><strong>matrice quadrata</strong>: matrice con stesso numero di righe e colonne, appartenente a <span class="math inline">\(\mathbb{R}^n\)</span></p>
+<p><strong>traccia</strong>: considero solo gli elementi sulla diagonale principale e li sommo<br>
+<span class="math display">\[
+tr(A) = \begin{bmatrix} a_{11} &amp; \ldots &amp; \ldots &amp; \ldots \\ \ldots &amp; a_{22} &amp; \ldots &amp; \ldots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \ldots &amp; \ldots &amp; \ldots &amp; a_{nn} \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+tr(A) = \sum_{i=1}^n a_{ii}
+\]</span></p>
+<p><strong>matrice diagonale</strong>: matrice quadrata con tutti gli elementi nulli tranne quelli sulla diagonale principale</p>
+<p><span class="math display">\[
+D = \begin{bmatrix} \lambda_1 &amp; 0 &amp; \ldots &amp; 0 \\ 0 &amp; \lambda_2 &amp; \ldots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; \lambda_n \end{bmatrix}
+\]</span></p>
+<p><strong>matrice triangolare superiore</strong>: matrice quadrata con tutti gli elementi nulli al di sotto della diagonale principale</p>
+<p><span class="math display">\[
+U = \begin{bmatrix} \lambda_{11} &amp; x &amp; \ldots &amp; y \\ 0 &amp; \lambda_{22} &amp; \ldots &amp; z \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; \lambda_{nn} \end{bmatrix}
+\]</span></p>
+<p><strong>matrice triangolare inferiore</strong>: matrice quadrata con tutti gli elementi nulli al di sopra della diagonale principale</p>
+<p><span class="math display">\[
+L = \begin{bmatrix} \lambda_{11} &amp; 0 &amp; \ldots &amp; 0 \\ x &amp; \lambda_{22} &amp; \ldots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ y &amp; z &amp; \ldots &amp; \lambda_{nn} \end{bmatrix}
+\]</span></p>
+<p><strong>matrice trasposta</strong>: le righe diventano colonne o viceversa</p>
+<p><span class="math display">\[
+A = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \\ \vdots &amp; \vdots\\ a_{n1} &amp; a_{n2} \end{bmatrix} \rightarrow A^T = \begin{bmatrix} a_{11} &amp; a_{21} &amp; \ldots &amp; a_{n1} \\ a_{12} &amp; a_{22} &amp; \ldots &amp; a_{n2} \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+a_{ij} = (A^T)_{ji}
+\]</span></p>
+<p><strong>matrice simmetrica</strong>: matrice quadrata che è uguale alla sua trasposta, <span class="math inline">\(A = A^T \implies a_{ij} = a_{ji}\)</span></p>
+<p><strong>matrice antisimmetrica</strong>: matrice quadrata che è uguale alla trasposta con segno opposto, <span class="math inline">\(A = -A^T \implies a_{ij} = -a_{ji}\)</span></p>
+</section>
+<section id="operazioni-tra-matrici" class="level2">
+<h2 class="anchored" data-anchor-id="operazioni-tra-matrici">operazioni tra matrici</h2>
+<ul>
+<li>somma/differenza: <span class="math display">\[(A + B)_{ij} = A_{ij} + B_{ij}\]</span></li>
+</ul>
+<p><strong>prodotto matriciale $ A ^{m n}, B ^{n p} $</strong>:</p>
+<p><span class="math display">\[
+\begin{matrix} A_1 \\ A_2 \end{matrix} \begin{bmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \end{bmatrix} \cdot \begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \\ b_{31} &amp; b_{32} \end{bmatrix} = \begin{bmatrix} &lt;A_1, B^1&gt; &amp; &lt;A_1 , B^2&gt; \\ &lt;A_2, B^1&gt; &amp; &lt;A_2, B^2&gt; \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}  a_{11} \cdot b_{11} + a_{12} \cdot b_{21} + a_{13} \cdot b_{31} &amp; a_{11} \cdot b_{12} + a_{12} \cdot b_{22} + a_{13} \cdot b_{32} \\ \; &amp; \; \\ a_{21} \cdot b_{11} + a_{22} \cdot b_{21} + a_{23} \cdot b_{31} &amp; a_{21} \cdot b_{12} + a_{22} \cdot b_{22} + a_{23} \cdot b_{32} \end{bmatrix}
+\]</span></p>
+<p>Nota bene: <span class="math inline">\(AB \neq BA\)</span></p>
+<ul>
+<li><span class="math inline">\(\exists AB \implies A \cdot (B+C) = AB + AC\)</span></li>
+<li><span class="math inline">\(\exists BA \implies (B+C) \cdot A = BA + CA\)</span></li>
+</ul>
+<p><strong>matrice inversa</strong>:</p>
+<ul>
+<li><strong>sinistra</strong>: <span class="math inline">\(A^{-1} A = I_n\)</span></li>
+<li><strong>destra</strong>: <span class="math inline">\(A A^{-1} = I_n\)</span></li>
+<li><strong>inversa matrice quadrata</strong>: <span class="math inline">\(A^{-1} A = A A^{-1} = I_n\)</span></li>
+</ul>
+<p><strong>calcolo matrice inversa</strong>:</p>
+<ol type="1">
+<li>calcolo la matrice dei complementi algebrici</li>
+<li>trasposta della matrice dei complementi algebrici</li>
+<li>divido per il determinante della matrice originale</li>
+</ol>
+<p><strong>matrice ortogonale (quadrata)</strong>: matrice <span class="math inline">\(A\)</span> tale che <span class="math inline">\(A^T A = I_n\)</span></p>
+<p><strong>matrice simile (quadrata)</strong>: matrice <span class="math inline">\(C\)</span> simile a matrice <span class="math inline">\(A\)</span> se esiste matrice invertibile <span class="math inline">\(B\)</span> tale che <span class="math inline">\(C = B^{-1} A B\)</span></p>
+<p>stesso <strong>endomorfismo</strong> rappresentato in basi diverse</p>
+</section>
+<section id="spazi-vettoriali" class="level2">
+<h2 class="anchored" data-anchor-id="spazi-vettoriali">Spazi vettoriali</h2>
+<p><strong>spazio vettoriale <span class="math inline">\(V\)</span></strong>: insieme <span class="math inline">\(V \neq \emptyset\)</span> dove sono definite:</p>
+<ul>
+<li><strong>somma</strong>: <span class="math inline">\(V \times V \rightarrow V \quad v + w\)</span></li>
+<li><strong>prodotto</strong>: <span class="math inline">\(\mathbb{R} \times V \rightarrow V \quad \lambda v\)</span></li>
+</ul>
+<p><strong>condizioni per essere spazio vettoriale</strong>:</p>
+<ol type="1">
+<li>commutativa: <span class="math inline">\((u + v) + w = u + (v + w)\)</span></li>
+<li>elemento neutro somma: <span class="math inline">\(v + 0 = v\)</span></li>
+<li>elemento opposto: <span class="math inline">\(v + (-v) = 0\)</span></li>
+<li><span class="math inline">\((\lambda + \delta) \cdot v = \lambda \cdot v + \delta \cdot v\)</span></li>
+<li>elemento neutro prodotto: <span class="math inline">\(1 \cdot v = v\)</span></li>
+<li><span class="math inline">\((\lambda \cdot \delta) \cdot v = \lambda \cdot (\delta \cdot v)\)</span></li>
+</ol>
+<p><strong>vettori</strong>: elementi di uno spazio vettoriale</p>
+<p><strong>proprietà spazio vettoriale</strong>:</p>
+<ol type="1">
+<li>$ V : v + = v v V$ ed è <em>unico</em></li>
+<li><span class="math inline">\(\mathbf{0} \cdot v = \mathbf{0} \quad \forall v \in V\)</span></li>
+<li>$v = 0 v = $</li>
+<li>$ v + u = v + w u = w$</li>
+<li>$(-1) v = &lt; -v &gt; $</li>
+</ol>
+<p><strong>sottospazio vettoriale <span class="math inline">\(W\)</span></strong>: sottoinsieme di <span class="math inline">\(V\)</span> che è esso stesso uno spazio vettoriale con le stesse operazioni di <span class="math inline">\(V\)</span></p>
+<p><strong>condizione sottospazio vettoriale</strong>:</p>
+<p><span class="math display">\[
+\lambda v + \mu w \in W \quad \forall v,w \in W \; \land \; \forall \lambda, \mu \in \mathbb{R}
+\]</span></p>
+<p>NOTA: se <span class="math inline">\(0 \not\in W\)</span> allora <span class="math inline">\(W\)</span> non è sottospazio vettoriale</p>
+<p>se <span class="math inline">\(W,U\)</span> sottospazi vettoriali allora intersezione <span class="math inline">\(W \cap U\)</span> è sottospazio vettoriale</p>
+<p><strong>combinazione lineare</strong>: $ _1 v_1 + _2 v_2 + + _n v_n $ con <span class="math inline">\(v_i\)</span> vettori e <span class="math inline">\(\lambda_i\)</span> valori in <span class="math inline">\(\mathbb{R}\)</span></p>
+<p><span class="math display">\[
+w = \sum_{i=1}^n \lambda_i v_i
+\]</span></p>
+<p><span class="math inline">\(w\)</span> generato da <span class="math inline">\(v_1, v_2, \ldots, v_n\)</span></p>
+<p><strong>inviluppo lineare</strong>: insieme di tutte le combinazioni lineari di un insieme di vettori <span class="math inline">\(S = \{v_1, v_2, \ldots, v_n\}\)</span>. È un sottospazio vettoriale</p>
+<p><span class="math display">\[
+\mathcal{L} &lt;W\&gt; = \mathcal{L}&lt; v_1, v_2, \ldots, v_n &gt; \ = \ \{ \lambda_1 v_1, \ldots, \lambda_n v_n \} : \lambda_i \in \mathbb{R}
+\]</span></p>
+<p><strong>dipendenza lineare</strong>: $ v_1 + _2 v_2 + + _n v_n = 0 $ con almeno un <span class="math inline">\(\lambda_i \neq 0\)</span></p>
+<p><strong>indipendenza lineare</strong>: $ v_1 + _2 v_2 + + _n v_n = 0 _1 = _2 = = _n = 0$</p>
+<p>NOTA:<br>
+<span class="math inline">\(v_0, v_1, \ldots, v_n\)</span> <strong>indipendenti</strong>:</p>
+<ul>
+<li>se <strong>tolgo</strong> un vettore <span class="math inline">\(v_i \implies\)</span> rimangono <strong>indipendenti</strong></li>
+<li>se <strong>aggiungo</strong> un vettore <span class="math inline">\(v_{n+1}\)</span> devo <strong>verificare nuovamente</strong> indipendenza</li>
+</ul>
+<p><span class="math inline">\(v_0, v_1, \ldots, v_n\)</span> <strong>dipendenti</strong>:</p>
+<ul>
+<li>se <strong>tolgo</strong> un vettore <span class="math inline">\(v_i\)</span> devo <strong>verificare nuovamente</strong> dipendenza</li>
+<li>se <strong>aggiungo</strong> un vettore <span class="math inline">\(v_{n+1} \implies\)</span> rimangono <strong>dipendenti</strong></li>
+</ul>
+</section>
+<section id="basi-e-dimensione" class="level2">
+<h2 class="anchored" data-anchor-id="basi-e-dimensione">Basi e dimensione</h2>
+<p><strong>dimensione <span class="math inline">\(dim(V)\)</span></strong>: cardinalità massima dell’insieme di vettori indipendenti in <span class="math inline">\(V\)</span></p>
+<p><strong>base</strong>: <span class="math inline">\(\{v_1, v_2, \ldots, v_n\}\)</span> insieme di vettori linearmente indipendenti tali che $&lt;v_1, v_2, , v_n&gt; = V $</p>
+<p>dati 2 sottospazi <span class="math inline">\(U, W\)</span> di <span class="math inline">\(V\)</span></p>
+<ul>
+<li><span class="math inline">\(\max\{dim(U), dim(W)\} \leq dim(U + W) \leq dim(U) + dim(W)\)</span></li>
+<li><span class="math inline">\(dim(U + W) = dim(U) + dim(W) - dim(U \cap W)\)</span></li>
+</ul>
+</section>
+<section id="applicazioni-lineari" class="level2">
+<h2 class="anchored" data-anchor-id="applicazioni-lineari">Applicazioni lineari</h2>
+<p><strong>applicazione lineare <span class="math inline">\(F: V \rightarrow W\)</span></strong></p>
+<p><strong>condizioni di linearità</strong>:</p>
+<ol type="1">
+<li><span class="math inline">\(F(v + w) = F(v) + F(w)\)</span></li>
+<li><span class="math inline">\(F(\lambda v) = \lambda F(v)\)</span></li>
+</ol>
+<p><strong>nucleo o kernel</strong>: <span class="math inline">\(Ker(F) = \{v \in V : F(v) = 0_W\}\)</span></p>
+<p><strong>immagine o range</strong>: <span class="math inline">\(Im(F) = \{w \in W : \exists v \in V \text{ con } w = F(v)\}\)</span></p>
+<p><strong>nullità</strong>: <span class="math inline">\(dim(Ker(F))\)</span></p>
+<p><strong>rango</strong>: <span class="math inline">\(dim(Im(F))\)</span></p>
+<p><strong>iniettività</strong>: <span class="math inline">\(dim(Ker(F)) = \{0\} \iff F\)</span> iniettiva</p>
+<p><strong>suriettività</strong>: <span class="math inline">\(dim(Im(F)) = dim(W) \iff F\)</span> suriettiva, oppure <span class="math inline">\(Im(F) = W\)</span></p>
+<p><strong>isomorfismo</strong>: iniettività e suriettività</p>
+<p><strong>teorema nullità + rango</strong>: <span class="math inline">\(dim(V) = dim(Ker(F)) + dim(Im(F))\)</span></p>
+<p><span class="math inline">\(F(v_1), F(v_2), \ldots, F(v_p)\)</span> L.I. <span class="math inline">\(\iff v_1, v_2, \ldots, v_p\)</span> L.I.</p>
+<p><strong>matrice associata a una applicazione lineare</strong>:</p>
+<p><span class="math display">\[
+A = [A^1 \; A^2 \; \ldots \; A^n] = \begin{bmatrix} \begin{bmatrix} \; \\ F(v_1) \\ \; \end{bmatrix}_{B'} &amp; \begin{bmatrix} \; \\ F(v_2) \\ \; \end{bmatrix}_{B'} &amp; \ldots &amp; \begin{bmatrix} \; \\ F(v_n) \\ \; \end{bmatrix}_{B'} \\ \end{bmatrix}
+\]</span></p>
+<p><strong>matrice di cambiamento di base</strong>: matrice associata all’identità <span class="math inline">\(I_V\)</span> tra due basi <span class="math inline">\(B\)</span> e <span class="math inline">\(B'\)</span></p>
+<p><span class="math inline">\(B = (b_1, b_2, b_3)\)</span>, <span class="math inline">\(B' = (b'_1, b'_2, b'_3)\)</span></p>
+<p><span class="math inline">\(B \rightarrow B'\)</span></p>
+<p><span class="math display">\[
+M[id, B, B'] = \begin{bmatrix} \begin{bmatrix} \; \\ b_1 \\ \; \end{bmatrix}_{B'} \begin{bmatrix} \; \\ b_2 \\ \; \end{bmatrix}_{B'} \begin{bmatrix} \; \\ b_3 \\ \; \end{bmatrix}_{B'} \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{c} [b_1]_{B'} = (x_1, x_2, x_3) \ | \ x_1 b_1' + x_2 b_2' + x_3 b_3' = b_1 \\ [b_2]_{B'} = (x_1, x_2, x_3) \ | \ x_1 b_1' + x_2 b_2' + x_3 b_3' = b_2 \\ [b_3]_{B'} = (x_1, x_2, x_3) \ | \ x_1 b_1' + x_2 b_2' + x_3 b_3' = b_3 \end{array}
+\]</span></p>
+<p><span class="math inline">\(B' \rightarrow B\)</span></p>
+<p><span class="math display">\[
+M[id, B', B] = \begin{bmatrix} \begin{bmatrix} \; \\ b'_1 \\ \; \end{bmatrix}_{B} \begin{bmatrix} \; \\ b'_2 \\ \; \end{bmatrix}_{B} \begin{bmatrix} \; \\ b'_3 \\ \; \end{bmatrix}_{B} \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{c} [b'_1]_{B} = (x_1, x_2, x_3) \ | \ x_1 b_1 + x_2 b_2 + x_3 b_3 = b'_1 \\ [b'_2]_{B} = (x_1, x_2, x_3) \ | \ x_1 b_1 + x_2 b_2 + x_3 b_3 = b'_2 \\ [b'_3]_{B} = (x_1, x_2, x_3) \ | \ x_1 b_1 + x_2 b_2 + x_3 b_3 = b'_3 \end{array}
+\]</span></p>
+<p><strong>caso di applicazioni lineari</strong>:</p>
+<p><span class="math inline">\(B' \rightarrow B \rightarrow \hat{B} \rightarrow \hat{B}'\)</span></p>
+<p><span class="math display">\[
+M[id, B', \hat{B}'] = M[id, \hat{B}, \hat{B}'] \cdot M[id, B, \hat{B}] \cdot M[id, B', B]
+\]</span></p>
+</section>
+<section id="sistemi-lineari" class="level2">
+<h2 class="anchored" data-anchor-id="sistemi-lineari">Sistemi lineari</h2>
+<p><span class="math display">\[
+AX = B
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix} \begin{bmatrix} \; \\ A^1 \\ \; \end{bmatrix} &amp; \ldots &amp; \begin{bmatrix} \; \\ A^n \\ \; \end{bmatrix} \end{bmatrix} \cdot \begin{bmatrix} x_1 \\ \ldots \\ x_n \end{bmatrix} = \begin{bmatrix} b_1 \\ \ldots \\ b_m \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+x_1 \cdot A^1 + \ldots + x_n \cdot A^n = \begin{bmatrix} b_1 \\ \ldots \\ b_m \end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{cases} x_1 \cdot a_{11} + \ldots + x_n \cdot a_{n1} = b_1 \\ \vdots \\ x_1 \cdot a_{1m} + \ldots + x_n \cdot a_{nm} = b_m \end{cases}
+\]</span></p>
+<p>Il sistema può avere 3 tipi di soluzioni:</p>
+<ol type="1">
+<li>nessuna soluzione: <span class="math inline">\(Ax = B\)</span> è impossibile</li>
+<li>una soluzione unica: <span class="math inline">\(Ax = B\)</span> è possibile e <span class="math inline">\(Ker(A) = \{0\}\)</span></li>
+<li>infinite soluzioni: <span class="math inline">\(Ax = B\)</span> è possibile e <span class="math inline">\(Ker(A) \neq \{0\}\)</span></li>
+</ol>
+<section id="metodo-di-gauss" class="level3">
+<h3 class="anchored" data-anchor-id="metodo-di-gauss">Metodo di Gauss</h3>
+<p><span class="math display">\[
+\begin{array}{c} \; \\ Ri \\ \; \\ Rj \\ \; \end{array} \begin{bmatrix} \ldots &amp;\ldots &amp; \ldots &amp; \ldots \\ a_{i1} &amp; a_{i2} &amp; \ldots &amp; a_{in} \\ \ldots &amp;\ldots &amp; \ldots &amp; \ldots \\ a_{j1} &amp; a_{j2} &amp; \ldots &amp; a_{jm} \\ \ldots &amp;\ldots &amp; \ldots &amp; \ldots \end{bmatrix}
+\]</span></p>
+<p>VI sono 3 regole per operare sulle matrici, che siano righe o colonne:</p>
+<ul>
+<li>G1: <span class="math inline">\(R_i \leftrightarrow R_j\)</span></li>
+<li>G2: <span class="math inline">\(R_i \leftrightarrow \lambda R_i\)</span></li>
+<li>G3: <span class="math inline">\(R_i \leftrightarrow R_i + R_j\)</span></li>
+</ul>
+<p>Ovviamente queste regole possono essere combinate</p>
+<p><strong>procedimento</strong>:</p>
+<ul>
+<li><p>opero sulla <strong>matrice estesa</strong> $</p>
+<span class="math display">\[\begin{bmatrix} A &amp; | &amp; b \end{bmatrix}\]</span>
+<p>$</p></li>
+<li><p>trasformo la matrice in <strong>matrice in forma echelon</strong> con le regole di Gauss</p>
+<p><span class="math display">\[
+\begin{bmatrix} 0 &amp; p_1 &amp; * &amp; * &amp; * &amp; * \\ 0 &amp; 0 &amp; 0 &amp; p_2 &amp; * &amp; * \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_3 &amp; * \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} \begin{array}{c} \; \\ \text{numero di pivot = rango} \\ \text{pivot in ultima colonna : sol. impossibile} \\ \; \end{array}
+\]</span></p></li>
+<li><p>riscrivo il sistema con la matrice a gradini</p></li>
+<li><p>risolvo il sistema con sostituzione all’indietro</p></li>
+</ul>
+<p><strong>matrice inversa con metodo di Gauss</strong>:</p>
+<p><span class="math display">\[
+\begin{bmatrix} A &amp; | &amp; I_n \end{bmatrix} \rightarrow \begin{bmatrix} I_n &amp; | &amp; A^{-1} \end{bmatrix}
+\]</span></p>
+<p><strong>Teorema di Rouché-Capelli</strong>:</p>
+<p><span class="math inline">\(rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix})\)</span> sistema ammissibile</p>
+<ul>
+<li><span class="math inline">\(rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix}) = n (x_n)\)</span> unica soluzione</li>
+<li><span class="math inline">\(rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix}) &lt; n (x_n)\)</span> infinite soluzioni</li>
+</ul>
+<p><span class="math inline">\(rg(A) \neq rg (\begin{bmatrix} A \vert b \end{bmatrix})\)</span> sistema impossibile</p>
+</section>
+<section id="calcolo-del-determinante" class="level3">
+<h3 class="anchored" data-anchor-id="calcolo-del-determinante">Calcolo del determinante</h3>
+<p>Dati <span class="math inline">\(v_1, v_2, \ldots, v_n \mathbb{R}^n \; LD \implies det(v_1, v_2, \ldots, v_n) = 0\)</span><br>
+Dati <span class="math inline">\(v_1, v_2, \ldots, v_n \mathbb{R}^n \; LI \implies det(v_1, v_2, \ldots, v_n) \neq 0\)</span></p>
+<p><strong>determinante matrice 2x2</strong>:</p>
+<p><span class="math display">\[
+det \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} = a_{11} a_{22} - a_{12} a_{21}
+\]</span></p>
+<p><strong>Regola di Sarrus</strong>:</p>
+<p><span class="math display">\[
+\begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix} \begin{array}{cc} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32} \end{array} = \begin{array}{c} a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} \\ - (a_{13} a_{22} a_{31} + a_{11} a_{23} a_{32} + a_{12} a_{21} a_{33})\end{array}
+\]</span></p>
+<p><strong>complemento algebrico</strong>: <span class="math inline">\(\bar a_{ij} = (-1)^{i+j} det(A_{ij}) = (-1)^{i+j} \cdot det M_{ij}\)</span><br>
+<span class="math inline">\(M_{ij}\)</span> matrice ottenuta da <span class="math inline">\(A\)</span> eliminando riga <span class="math inline">\(i\)</span> e colonna <span class="math inline">\(j\)</span></p>
+<p><strong>Sviluppo di Laplace</strong>:<br>
+scelgo una riga o colonna e sviluppo il determinante rispetto a quella riga o colonna</p>
+<p><span class="math display">\[
+det(A) = \sum_{j=1}^n [(-1)^{i+j} \cdot a_{ij} \cdot det(M_{ij})]
+\]</span></p>
+<p>con <span class="math inline">\(M_{ij}\)</span> matrice ottenuta da <span class="math inline">\(A\)</span> eliminando riga <span class="math inline">\(i\)</span> e colonna <span class="math inline">\(j\)</span></p>
+<ul>
+<li>esempio con matrice 3x3 scegliendo la prima riga:</li>
+</ul>
+<p><span class="math display">\[
+\begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix} = a_{11} \begin{vmatrix} a_{22} &amp; a_{23} \\ a_{32} &amp; a_{33} \end{vmatrix} - a_{12} \begin{vmatrix} a_{21} &amp; a_{23} \\ a_{31} &amp; a_{33} \end{vmatrix} + a_{13} \begin{vmatrix} a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32} \end{vmatrix}
+\]</span></p>
+<p><strong>calcolo dell’inversa mediante determinante</strong>:</p>
+<ol type="1">
+<li>calcolo la matrice dei complementi algebrici</li>
+<li>trasposta della matrice dei complementi algebrici</li>
+<li>divido per il determinante della matrice originale</li>
+</ol>
+<p>in generale:</p>
+<p><span class="math display">\[
+b_{ij} = \frac{\bar{a}_{ji}}{\det(A)}
+\]</span></p>
+<p><strong>regola di Cramer</strong>: <span class="math inline">\(Ax = b\)</span> con <span class="math inline">\(A\)</span> matrice quadrata invertibile, <span class="math inline">\(x\)</span> vettore incognito, <span class="math inline">\(b\)</span> vettore noto</p>
+<p><span class="math display">\[
+x_i = \frac{det(A_i)}{det(A)}
+\]</span></p>
+<p><span class="math display">\[
+\bar{x_i} = \frac{det \begin{bmatrix} A^1 &amp; &amp; \ldots &amp; A^{i-1} &amp; \begin{bmatrix} \; \\ b \\ \; \end{bmatrix} &amp; A^{i+1} &amp; \ldots &amp; A^n \end{bmatrix}}{det(A)}
+\]</span></p>
+<p>sostituisco la colonna <span class="math inline">\(i\)</span> di <span class="math inline">\(A\)</span> con il vettore <span class="math inline">\(b\)</span> e calcolo il determinante, poi divido per il determinante di <span class="math inline">\(A\)</span></p>
+</section>
+</section>
+<section id="autovettori-e-autovalori" class="level2">
+<h2 class="anchored" data-anchor-id="autovettori-e-autovalori">Autovettori e autovalori</h2>
+<p><span class="math inline">\(A - \lambda I\)</span> matrice ottenuta sottraendo <span class="math inline">\(\lambda\)</span> alla diagonale principale di <span class="math inline">\(A\)</span></p>
+<p><span class="math display">\[
+\begin{vmatrix} a_{11} - \lambda &amp; \ldots &amp; \ldots &amp; \ldots \\ \ldots &amp; a_{22} - \lambda &amp; \ldots &amp; \ldots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \ldots &amp; \ldots &amp; \ldots &amp; a_{nn} - \lambda \end{vmatrix}
+\]</span></p>
+<ol type="1">
+<li><strong>polinomio caratteristico <span class="math inline">\(\mathcal{P}(A)\)</span></strong>: <span class="math inline">\(det (A - \lambda I) = 0\)</span></li>
+<li><strong>autovalori</strong>: <span class="math inline">\(\bar{\lambda}\)</span> che rendono <span class="math inline">\(\mathcal{P}(A) = 0\)</span></li>
+<li>calcolo autospazio originato dagli autovettori</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

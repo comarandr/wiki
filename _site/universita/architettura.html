@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Architettura degli elaboratori – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduzione-e-definizioni" id="toc-introduzione-e-definizioni" class="nav-link active" data-scroll-target="#introduzione-e-definizioni">Introduzione e definizioni</a></li>
+  <li><a href="#algebra-booleana-e-porte-algebriche" id="toc-algebra-booleana-e-porte-algebriche" class="nav-link" data-scroll-target="#algebra-booleana-e-porte-algebriche">Algebra Booleana e porte algebriche</a>
+  <ul class="collapse">
+  <li><a href="#tabelle-di-verità" id="toc-tabelle-di-verità" class="nav-link" data-scroll-target="#tabelle-di-verità">Tabelle di verità</a></li>
+  <li><a href="#metodo-algoritmico" id="toc-metodo-algoritmico" class="nav-link" data-scroll-target="#metodo-algoritmico">Metodo algoritmico</a></li>
+  <li><a href="#metodo-duale" id="toc-metodo-duale" class="nav-link" data-scroll-target="#metodo-duale">Metodo duale</a></li>
+  <li><a href="#operazioni-dellalgebra" id="toc-operazioni-dellalgebra" class="nav-link" data-scroll-target="#operazioni-dellalgebra">Operazioni dell’algebra</a></li>
+  <li><a href="#porte-nand-e-nor" id="toc-porte-nand-e-nor" class="nav-link" data-scroll-target="#porte-nand-e-nor">Porte NAND e NOR</a></li>
+  <li><a href="#porte-or-esclusivo-xor-e-nxor" id="toc-porte-or-esclusivo-xor-e-nxor" class="nav-link" data-scroll-target="#porte-or-esclusivo-xor-e-nxor">Porte OR esclusivo (XOR e NXOR)</a></li>
+  <li><a href="#mappe-di-karnaugh" id="toc-mappe-di-karnaugh" class="nav-link" data-scroll-target="#mappe-di-karnaugh">Mappe di Karnaugh</a></li>
+  </ul></li>
+  <li><a href="#circuiti-combinatori" id="toc-circuiti-combinatori" class="nav-link" data-scroll-target="#circuiti-combinatori">Circuiti combinatori</a>
+  <ul class="collapse">
+  <li><a href="#circuiti-logici-di-base" id="toc-circuiti-logici-di-base" class="nav-link" data-scroll-target="#circuiti-logici-di-base">Circuiti logici di base</a></li>
+  </ul></li>
+  <li><a href="#numeri-binari" id="toc-numeri-binari" class="nav-link" data-scroll-target="#numeri-binari">Numeri binari</a>
+  <ul class="collapse">
+  <li><a href="#conversione-da-base-b-a-base-10" id="toc-conversione-da-base-b-a-base-10" class="nav-link" data-scroll-target="#conversione-da-base-b-a-base-10">Conversione da base B a base 10</a></li>
+  <li><a href="#conversione-da-base-10-a-base-b" id="toc-conversione-da-base-10-a-base-b" class="nav-link" data-scroll-target="#conversione-da-base-10-a-base-b">Conversione da base 10 a base B</a></li>
+  <li><a href="#codifiche-mathbbz" id="toc-codifiche-mathbbz" class="nav-link" data-scroll-target="#codifiche-mathbbz">Codifiche <span class="math inline">\(\mathbb{Z}\)</span></a></li>
+  <li><a href="#operazioni" id="toc-operazioni" class="nav-link" data-scroll-target="#operazioni">Operazioni</a></li>
+  </ul></li>
+  <li><a href="#circuiti-combinatori-e-memorie" id="toc-circuiti-combinatori-e-memorie" class="nav-link" data-scroll-target="#circuiti-combinatori-e-memorie">Circuiti combinatori e memorie</a></li>
+  <li><a href="#binari" id="toc-binari" class="nav-link" data-scroll-target="#binari">Binari</a></li>
+  <li><a href="#caratteri" id="toc-caratteri" class="nav-link" data-scroll-target="#caratteri">Caratteri</a></li>
+  <li><a href="#processore" id="toc-processore" class="nav-link" data-scroll-target="#processore">Processore</a></li>
+  <li><a href="#arm" id="toc-arm" class="nav-link" data-scroll-target="#arm">Arm</a></li>
+  <li><a href="#isa" id="toc-isa" class="nav-link" data-scroll-target="#isa">Isa</a></li>
+  <li><a href="#bus" id="toc-bus" class="nav-link" data-scroll-target="#bus">Bus</a></li>
+  <li><a href="#gerarchie-della-memoria" id="toc-gerarchie-della-memoria" class="nav-link" data-scroll-target="#gerarchie-della-memoria">Gerarchie della memoria</a></li>
+  <li><a href="#arduino" id="toc-arduino" class="nav-link" data-scroll-target="#arduino">Arduino</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Architettura degli elaboratori</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduzione-e-definizioni" class="level2">
+<h2 class="anchored" data-anchor-id="introduzione-e-definizioni">Introduzione e definizioni</h2>
+<p><strong>Architettura di calcolo</strong>: macchina capace di eseguire una sequenza di <em>istruzioni macchina</em></p>
+<p><strong>Programma</strong>: <em>sequenza</em> di istruzioni macchina</p>
+<p><strong>CPU(Central Processing Unit)</strong>: componente che fisicamente esegue le istruzioni macchina</p>
+<p><strong>Memoria principale</strong>: dove risiedono programmi e dati su cui i programmi lavorano mentre vengono elaborati dla processore</p>
+<p><strong>Memoria di massa</strong>: dove risiedono i <em>file</em>, strutture in cui vengono preservati i programmi e dati ad architettura spenta</p>
+<p><strong>Circuiti integrati</strong>: circuiti contenuti dentro un <em>chip</em>. Adoperati per realizzare CPU e RAM</p>
+<p><strong>Bit</strong>: elemento base capace di assumere <em>2 configurazioni</em> stabili.</p>
+<p><strong>Byte</strong>: giustapposizione di 8 bit.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tabella Byte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>KB</strong> (Kilobyte) = <span class="math inline">\(2^{10}\)</span> Byte ~ <span class="math inline">\(10^3\)</span> Byte</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>MB</strong> (Megabyte) = <span class="math inline">\(2^{20}\)</span> Byte ~ <span class="math inline">\(10^6\)</span> Byte</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>GB</strong> (Gigabyte) = <span class="math inline">\(2^{30}\)</span> Byte ~ <span class="math inline">\(10^9\)</span> Byte</td>
+</tr>
+</tbody>
+</table>
+<p>La memoria si ottiene giustapponendo più byte (e quindi bit)</p>
+<p>Per accedere ai dati nella memoria bisogna individuarli, ovvero trovare la loro posizione. Perciò è necessario che siano indirizzati.</p>
+<p>L’<strong>indirizzamento</strong> più efficiente è quello che adopera <span class="math inline">\(n\)</span> bit per indirizzare <span class="math inline">\(2^n\)</span> byte.</p>
+<ul>
+<li>es: se hai 2 byte (= <span class="math inline">\(2^1\)</span>), basta 1 bit di indirizzamento:
+<ul>
+<li>un byte va in posizione con bit = 0</li>
+<li>l’altro byte va in posizione con bit = 1</li>
+</ul></li>
+</ul>
+</section>
+<section id="algebra-booleana-e-porte-algebriche" class="level2">
+<h2 class="anchored" data-anchor-id="algebra-booleana-e-porte-algebriche">Algebra Booleana e porte algebriche</h2>
+<p>Si basa su due valori:</p>
+<ul>
+<li>0 = falso</li>
+<li>1 = vero</li>
+</ul>
+<p>Operazioni fondamentali:</p>
+<ul>
+<li>+ OR <span class="math inline">\(\vee\)</span></li>
+<li>* AND <span class="math inline">\(\wedge\)</span></li>
+<li>! NOT <span class="math inline">\(\neg\)</span></li>
+</ul>
+<section id="tabelle-di-verità" class="level3">
+<h3 class="anchored" data-anchor-id="tabelle-di-verità">Tabelle di verità</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">A+B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">A*B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;"><span class="math inline">\(\bar{A}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Nota bene: una tabella di verita</p>
+<ul>
+<li><span class="math inline">\(k\)</span> input = <span class="math inline">\(k\)</span> colonne</li>
+<li><span class="math inline">\(2^k\)</span> righe</li>
+</ul>
+<p>Data una tabella di verità, posso procedere in 2 modi:</p>
+<ul>
+<li>metodo algoritmico</li>
+<li>metodo duale</li>
+</ul>
+</section>
+<section id="metodo-algoritmico" class="level3">
+<h3 class="anchored" data-anchor-id="metodo-algoritmico">Metodo algoritmico</h3>
+<p>tabella di <span class="math inline">\(k\)</span> colonne e <span class="math inline">\(2^k\)</span> righe</p>
+<ul>
+<li>considero le righe con output = 1</li>
+<li>ogni riga è una porta AND (prodotto input) in cui neghi gli input che valgono 0</li>
+<li>unisco tutto in una porta OR (sommo i prodotti)</li>
+</ul>
+</section>
+<section id="metodo-duale" class="level3">
+<h3 class="anchored" data-anchor-id="metodo-duale">Metodo duale</h3>
+<p>tabella di <span class="math inline">\(k\)</span> colonne e <span class="math inline">\(2^k\)</span> righe</p>
+<ul>
+<li>considero le righe con output = 0</li>
+<li>ogni riga è una porta OR (somma input) in cui neghi gli input che valgono 1</li>
+<li>unisco tutto in una porta AND (moltiplico le somme)</li>
+</ul>
+</section>
+<section id="operazioni-dellalgebra" class="level3">
+<h3 class="anchored" data-anchor-id="operazioni-dellalgebra">Operazioni dell’algebra</h3>
+<p>Posso ulteriormente semplificare le espressioni ottenute con i metodi precedenti, adoperando le seguenti proprietà:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Proprietà</th>
+<th style="text-align: center;">Or</th>
+<th style="text-align: center;">And</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Elemento nullo</td>
+<td style="text-align: center;"><span class="math inline">\(A + 0 = A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot 0 = 0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Identità</td>
+<td style="text-align: center;"><span class="math inline">\(A + 1 = 1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot 1 = A\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Idempotenza</td>
+<td style="text-align: center;"><span class="math inline">\(A + A = A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot A = A\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Inverso</td>
+<td style="text-align: center;"><span class="math inline">\(A + \bar{A} = 1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot \bar{A} = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Commutativa</td>
+<td style="text-align: center;"><span class="math inline">\(A + B = B + A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot B = B \cdot A\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Associativa</td>
+<td style="text-align: center;"><span class="math inline">\(A + (B + C) = (A + B) + C\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot (B \cdot C) = (A \cdot B) \cdot C\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Distributiva</td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot (B + C) = A \cdot B + A \cdot C\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A + (B \cdot C) = (A + B) \cdot (A + C)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Assorbimento</td>
+<td style="text-align: center;"><span class="math inline">\(A + (A \cdot B) = A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A \cdot (A + B) = A\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">De Morgan</td>
+<td style="text-align: center;"><span class="math inline">\(\overline{A + B} = \bar{A} \cdot \bar{B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\overline{A \cdot B} = \bar{A} + \bar{B}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Negazione doppia</td>
+<td style="text-align: center;"><span class="math inline">\(\overline{\bar{A}} = A\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">$ $ <span class="math inline">\(\bar{A}\bar{B}\bar{C}\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="porte-nand-e-nor" class="level3">
+<h3 class="anchored" data-anchor-id="porte-nand-e-nor">Porte NAND e NOR</h3>
+<p><strong>NAND</strong>: <span class="math inline">\(\overline{A \cdot B}\)</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;"><span class="math inline">\(\overline{A \cdot B}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOR</strong>: <span class="math inline">\(\overline{A + B} = \bar{A} \cdot \bar{B}\)</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;"><span class="math inline">\(\overline{A + B}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>Nota bene:<br>
+<span class="math inline">\(\overline{AB}\)</span> = NAND<br>
+<span class="math inline">\(\overline{A} \cdot \overline{B}\)</span> = NOR</p>
+</section>
+<section id="porte-or-esclusivo-xor-e-nxor" class="level3">
+<h3 class="anchored" data-anchor-id="porte-or-esclusivo-xor-e-nxor">Porte OR esclusivo (XOR e NXOR)</h3>
+<p><span class="math inline">\(A \overline{B} + \overline{A}B = (A+B)(\overline{A}+\overline{B})\)</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">XOR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(AB + \overline{A}\overline{B} = \overline{(A+B)(\overline{A}+\overline{B})}\)</span></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">NXOR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mappe-di-karnaugh" class="level3">
+<h3 class="anchored" data-anchor-id="mappe-di-karnaugh">Mappe di Karnaugh</h3>
+<p>(…)</p>
+</section>
+</section>
+<section id="circuiti-combinatori" class="level2">
+<h2 class="anchored" data-anchor-id="circuiti-combinatori">Circuiti combinatori</h2>
+<section id="circuiti-logici-di-base" class="level3">
+<h3 class="anchored" data-anchor-id="circuiti-logici-di-base">Circuiti logici di base</h3>
+</section>
+</section>
+<section id="numeri-binari" class="level2">
+<h2 class="anchored" data-anchor-id="numeri-binari">Numeri binari</h2>
+<p><strong>Notazione posizionale</strong>: ogni cifra ha un peso che dipende dalla sua posizione</p>
+<p><span class="math display">\[
+\sum_{i=0}^{n-1} d_i \cdot B^i \qquad 0 \leq d_i &lt; B
+\]</span></p>
+<p>binario:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">128</td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alfabeto esadecimale</strong>:</p>
+<p><span class="math display">\[
+0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+\]</span></p>
+<section id="conversione-da-base-b-a-base-10" class="level3">
+<h3 class="anchored" data-anchor-id="conversione-da-base-b-a-base-10">Conversione da base B a base 10</h3>
+<p><strong>Notazione posizionale</strong>:</p>
+<p><span class="math display">\[
+\sum_{k=-m}^{q} d_k \cdot B^k = d_q \cdot B^q + ... + d_{-m} \cdot B^{-m}
+\]</span></p>
+<p>es:<br>
+<span class="math display">\[
+1011_2 = 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 2 + 1 = 11
+\]</span></p>
+<p><strong>Accumulazione parte intera</strong>: accumulo progressivamente il peso delle cifre nella sequenza</p>
+<p>[immagine]</p>
+<p><strong>Accumulazione parte frazionaria</strong>: accumulo progressivamente il peso delle cifre nella sequenza</p>
+<p>[immagine]</p>
+<p><span class="math inline">\(B \rarr 10\)</span> = Accumulazione parte intera + Accumulazione parte frazionaria</p>
+</section>
+<section id="conversione-da-base-10-a-base-b" class="level3">
+<h3 class="anchored" data-anchor-id="conversione-da-base-10-a-base-b">Conversione da base 10 a base B</h3>
+<p>(…)</p>
+</section>
+<section id="codifiche-mathbbz" class="level3">
+<h3 class="anchored" data-anchor-id="codifiche-mathbbz">Codifiche <span class="math inline">\(\mathbb{Z}\)</span></h3>
+<ul>
+<li><p><strong>Segno e valore assoluto</strong>: 1 bit per segno + valore binario</p>
+<p><span class="math inline">\(+9 = 00001001_2\)</span><br>
+<span class="math inline">\(-9 = 10001001_2\)</span></p></li>
+<li><p><strong>Complemento a 1</strong>: cambio di segno negando (complementando) i bit</p>
+<p><span class="math inline">\(+9 = 00001001_2\)</span><br>
+<span class="math inline">\(-9 = 11110110_2\)</span></p></li>
+<li><p><strong>Complemento a 2</strong>: cambio di segno complementando i bit e sommando 1</p>
+<p><span class="math inline">\(+9 = 00001001_2\)</span><br>
+<span class="math inline">\(-9 = 11110111_2 \quad (11110110 + 00000001)\)</span></p></li>
+<li><p><strong>Eccesso N</strong>: zero puntato su N</p>
+<p>es: N = 128 → <span class="math inline">\(10000000_2\)</span><br>
++1 = <span class="math inline">\(10000001_2\)</span><br>
++0 = <span class="math inline">\(10000000_2\)</span><br>
+-1 = <span class="math inline">\(01111111_2\)</span></p></li>
+<li><p><strong>Complemento a 2 a N bit</strong>:</p>
+<ul>
+<li><span class="math inline">\([0, 2^N - 1]\)</span> notazione binaria</li>
+<li><span class="math inline">\([-1, 2^N - 2]\)</span> nego bit valore assoluto e aggiungo 1</li>
+<li><span class="math inline">\(-i = 2^N - i \;\)</span> -(i-esimo) in notazione binaria</li>
+</ul>
+<p>es N = 8<br>
+<span class="math inline">\(-1 = 11111111_2\)</span> (11111110 + 00000001, complemento 1 + 1)<br>
+<span class="math inline">\(-2 = 11111110_2\)</span> (11111101 + 00000001)<br>
+<span class="math inline">\(-2^{N-1} = -2^7 = 10000000_2\)</span> (01111111 + 00000001)</p>
+<p>passo da <span class="math inline">\(N\)</span> a <span class="math inline">\(M\)</span> bit aggiungendo <span class="math inline">\(M-N\)</span> bit</p></li>
+</ul>
+</section>
+<section id="operazioni" class="level3">
+<h3 class="anchored" data-anchor-id="operazioni">Operazioni</h3>
+</section>
+</section>
+<section id="circuiti-combinatori-e-memorie" class="level2">
+<h2 class="anchored" data-anchor-id="circuiti-combinatori-e-memorie">Circuiti combinatori e memorie</h2>
+</section>
+<section id="binari" class="level2">
+<h2 class="anchored" data-anchor-id="binari">Binari</h2>
+</section>
+<section id="caratteri" class="level2">
+<h2 class="anchored" data-anchor-id="caratteri">Caratteri</h2>
+</section>
+<section id="processore" class="level2">
+<h2 class="anchored" data-anchor-id="processore">Processore</h2>
+</section>
+<section id="arm" class="level2">
+<h2 class="anchored" data-anchor-id="arm">Arm</h2>
+</section>
+<section id="isa" class="level2">
+<h2 class="anchored" data-anchor-id="isa">Isa</h2>
+</section>
+<section id="bus" class="level2">
+<h2 class="anchored" data-anchor-id="bus">Bus</h2>
+</section>
+<section id="gerarchie-della-memoria" class="level2">
+<h2 class="anchored" data-anchor-id="gerarchie-della-memoria">Gerarchie della memoria</h2>
+</section>
+<section id="arduino" class="level2">
+<h2 class="anchored" data-anchor-id="arduino">Arduino</h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
