@@ -1,6 +1,8 @@
 project:
   type: website
 
+from: markdown+hard_line_breaks
+
 website:
   title: "Wiki"
   site-url: "https://comarandr.github.io/wiki/"
