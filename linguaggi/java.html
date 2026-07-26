@@ -454,9 +454,6 @@ incremento: dopo ogni iterazione</p>
 <code>float</code>: numeri decimali <span class="math inline">\(\in \mathbb{R}\)</span><br>
 <code>double</code>: numeri decimali <span class="math inline">\(\in \mathbb{R}\)</span></p>
 <p><code>char</code>: caratteri singoli ASCII</p>
-</section>
-<section id="oggetti" class="level4">
-<h4 class="anchored" data-anchor-id="oggetti">Oggetti</h4>
 <section id="oggetti-wrapper" class="level5">
 <h5 class="anchored" data-anchor-id="oggetti-wrapper">Oggetti wrapper</h5>
 <p>Convertono i tipi primitivi in oggetti. Questo serve per poter sfruttare metodi di utilità (es. conversione stringhe) e per inserirli in strutture dati (es. Collection, Map, List, Set)</p>
@@ -467,6 +464,23 @@ incremento: dopo ogni iterazione</p>
 <code>double</code> → <code>Double</code></p>
 <p><code>char</code> → <code>Character</code></p>
 <p>I wrapper possono assumere valore <code>null</code></p>
+</section>
+</section>
+<section id="oggetti" class="level4">
+<h4 class="anchored" data-anchor-id="oggetti">Oggetti</h4>
+<section id="object" class="level5">
+<h5 class="anchored" data-anchor-id="object">Object</h5>
+<p><code>.requireNonNull(obj)</code>: lancia un’eccezione se obj è nullo</p>
+<p><code>instanceof</code>: restituisce true se obj è un’istanza di Tipo, altrimenti false</p>
+<p><code>.getClass()</code>: restituisce la classe dell’oggetto</p>
+</section>
+<section id="optional" class="level5">
+<h5 class="anchored" data-anchor-id="optional">Optional</h5>
+<p><code>.empty()</code>: restituisce un Optional vuoto</p>
+<p><code>.of(T value)</code>: restituisce un Optional contenente il valore</p>
+<p><code>.ofNullable(T value)</code>: restituisce un Optional contenente il valore se non è nullo, altrimenti un Optional vuoto</p>
+<p><code>.isPresent()</code>: restituisce true se l’Optional contiene un valore, altrimenti false</p>
+<p><code>.get()</code>: restituisce il valore contenuto nell’Optional, lancia un’eccezione se è vuoto</p>
 </section>
 <section id="string" class="level5">
 <h5 class="anchored" data-anchor-id="string">String</h5>
@@ -586,6 +600,18 @@ incremento: dopo ogni iterazione</p>
 <p><code>.and(Predicate other)</code>: restituisce un predicato che rappresenta la congiunzione logica di questo predicato e di un altro</p>
 <p><code>.or(Predicate other)</code>: restituisce un predicato che rappresenta la disgiunzione logica di questo predicato e di un altro</p>
 <p><code>.negate()</code>: restituisce un predicato che rappresenta la negazione logica di questo predicato</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Predicate</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> isLongerThan3 <span class="op">=</span> s <span class="op">-&gt;</span> s<span class="op">.</span><span class="fu">length</span><span class="op">()</span> <span class="op">&gt;</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s <span class="op">=</span> <span class="st">"ciao"</span><span class="op">;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> t <span class="op">=</span> <span class="st">"hi"</span><span class="op">;</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>isLongerThan3<span class="op">.</span><span class="fu">test</span><span class="op">(</span>s<span class="op">);</span> <span class="co">// restituisce true</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>isLongerThan3<span class="op">.</span><span class="fu">test</span><span class="op">(</span>t<span class="op">);</span> <span class="co">// restituisce false</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>BiPredicate<span class="op">&lt;</span><span class="bu">Integer</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> predicato2 <span class="op">=</span> <span class="op">(</span>x<span class="op">,</span> y<span class="op">)</span> <span class="op">-&gt;</span> x <span class="op">+</span> y <span class="op">&gt;</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span> <span class="co">// restituisce true</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">);</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="queue" class="level5">
 <h5 class="anchored" data-anchor-id="queue">Queue</h5>
@@ -601,33 +627,51 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <p><code>.element()</code>: restituisce l’elemento in testa alla coda senza rimuoverlo, lancia un’eccezione se la coda è vuota</p>
 <p><code>.peek()</code>: restituisce l’elemento in testa alla coda senza rimuoverlo</p>
 <p><code>.isEmpty()</code>: verifica se la coda è vuota</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Queue</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> coda <span class="op">=</span> <span class="kw">new</span> <span class="bu">PriorityQueue</span><span class="op">&lt;&gt;();</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">offer</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">remove</span><span class="op">();</span> <span class="co">// rimuove 1</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">poll</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce null</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">isEmpty</span><span class="op">();</span> <span class="co">// restituisce true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Queue</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> coda <span class="op">=</span> <span class="kw">new</span> <span class="bu">PriorityQueue</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">offer</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">remove</span><span class="op">();</span> <span class="co">// rimuove 1</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">poll</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce null</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">isEmpty</span><span class="op">();</span> <span class="co">// restituisce true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="stream" class="level5">
 <h5 class="anchored" data-anchor-id="stream">Stream</h5>
 <p>Collezione di oggetti che permette di eseguire operazioni in sequenza (pipeline) su di essi, senza modificarli.</p>
-<p><code>.filter(Predicate p)</code>: restituisce un nuovo stream con gli elementi che soddisfano il predicato p</p>
+<section id="metodi-di-creazione-sorgenti" class="level6">
+<h6 class="anchored" data-anchor-id="metodi-di-creazione-sorgenti">Metodi di creazione (Sorgenti)</h6>
+<p><code>.stream()</code>: crea uno stream a partire da una collezione</p>
+<p><code>Stream.of(T... values)</code>: crea uno stream a partire da un insieme di valori espliciti</p>
+<p><code>Arrays.stream(array)</code>: crea uno stream a partire da un array</p>
+<p><code>Stream.empty()</code>: crea uno stream vuoto</p>
+</section>
+<section id="operazioni-intermedie-lazy" class="level6">
+<h6 class="anchored" data-anchor-id="operazioni-intermedie-lazy">Operazioni intermedie (Lazy)</h6>
+<p>Restituiscono un flusso modificato e non vengono eseguite fino a quando non viene invocata un’operazione terminale.</p>
+<p><code>.filter(Predicate p)</code>: scarta elementi che non soddisfano la condizione del predicato p</p>
 <p><code>.map(Function f)</code>: restituisce un nuovo stream con gli elementi trasformati dalla funzione f</p>
+<p><code>sorted()</code>: restituisce un nuovo stream con gli elementi ordinati secondo l’ordine naturale</p>
+<p><code>.distinct()</code>: restituisce un nuovo stream con gli elementi distinti (senza duplicati)</p>
+</section>
+</section>
+<section id="operazioni-terminali-eager" class="level5">
+<h5 class="anchored" data-anchor-id="operazioni-terminali-eager">Operazioni terminali (Eager)</h5>
+<p>Chiudono la pipeline e restituiscono un valore o una collezione</p>
+<p><code>.collect(Collector)</code>: raccoglie gli elementi dello stream in una collezione o stringa. Es <code>Collectors.toList()</code>, <code>Collectors.toSet()</code></p>
 <p><code>.forEach(Consumer c)</code>: esegue l’operazione c su ogni elemento dello stream</p>
-<p><code>.collect(Collector c)</code>: raccoglie gli elementi dello stream in una collezione o in un altro tipo di risultato</p>
+<p><code>count()</code>: restituisce il numero di elementi dello stream</p>
 <p><code>.reduce(BinaryOperator op)</code>: riduce gli elementi dello stream ad un singolo valore utilizzando l’operatore binario op</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> numeri <span class="op">=</span> <span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">()</span>           <span class="co">// 1. Sorgente</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filter</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span>  <span class="co">// 2. Operazione intermedia</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">map</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">*</span> <span class="dv">2</span><span class="op">)</span>          <span class="co">// 2. Operazione intermedia</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">forEach</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">::</span>println<span class="op">);</span> <span class="co">// 3. Operazione terminale</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">().</span><span class="fu">filter</span><span class="op">().</span><span class="fu">map</span><span class="op">().</span><span class="fu">forEach</span><span class="op">();</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co">// sorgente -&gt; pari -&gt;  * 2 -&gt; stampa</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> numeri <span class="op">=</span> <span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">()</span>           <span class="co">// 1. Sorgente</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filter</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span>  <span class="co">// 2. Operazione intermedia</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">map</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">*</span> <span class="dv">2</span><span class="op">)</span>          <span class="co">// 2. Operazione intermedia</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">forEach</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">::</span>println<span class="op">);</span> <span class="co">// 3. Operazione terminale</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">().</span><span class="fu">filter</span><span class="op">().</span><span class="fu">map</span><span class="op">().</span><span class="fu">forEach</span><span class="op">();</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">// sorgente -&gt; pari -&gt;  * 2 -&gt; stampa</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="stack" class="level5">
 <h5 class="anchored" data-anchor-id="stack">Stack</h5>
@@ -636,12 +680,12 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <p><code>.pop(arg)</code>: rimuove arg in cima alla collezione</p>
 <p><code>.peek()</code>: restituisce l’elemento in cima alla collezione senza rimuoverlo</p>
 <p><code>.empty()</code>: verifica se la collezione è vuota</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Stack</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> pila <span class="op">=</span> <span class="kw">new</span> <span class="bu">Stack</span><span class="op">&lt;&gt;();</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">pop</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce 1</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">empty</span><span class="op">();</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Stack</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> pila <span class="op">=</span> <span class="kw">new</span> <span class="bu">Stack</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">pop</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce 1</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">empty</span><span class="op">();</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="scegliere-come-rappresentare-una-collezione" class="level4">
@@ -677,6 +721,26 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <p><code>==</code> : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi</p>
 <p><code>.equals()</code>: confronta due oggetti per valore (stesso contenuto)</p>
 <p><code>=</code> : assegna un valore ad una variabile</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">// implementazione equals() per una classe Persona</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Persona <span class="op">{</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> eta<span class="op">;</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">eta</span> <span class="op">=</span> eta<span class="op">;</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span><span class="op">(</span><span class="bu">Object</span> obj<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span> <span class="op">==</span> obj<span class="op">)</span> <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span> <span class="co">// stesso riferimento</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>obj <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> <span class="fu">getClass</span><span class="op">()</span> <span class="op">!=</span> obj<span class="op">.</span><span class="fu">getClass</span><span class="op">())</span> <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span> <span class="co">// diverso tipo</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        Persona persona <span class="op">=</span> <span class="op">(</span>Persona<span class="op">)</span> obj<span class="op">;</span> <span class="co">// cast</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> eta <span class="op">==</span> persona<span class="op">.</span><span class="fu">eta</span> <span class="op">&amp;&amp;</span> Objects<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>nome<span class="op">,</span> persona<span class="op">.</span><span class="fu">nome</span><span class="op">);</span> <span class="co">// confronto per valore</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
