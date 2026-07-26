@@ -6,4 +6,6 @@ This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-[Matematica Discreta](./matematicaDiscreta.qmd)
+[linguaggi di programmazione](./linguaggi/indexLing.md)
+
+[università](./universita/indexUni.md)
