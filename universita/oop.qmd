@@ -132,7 +132,7 @@ Classe che implementa interfaccia:
 - tutti i metodi dell'interfaccia (essendo astratti)
 - eventualmente altri metodi + variabili d'istanza
 
-```mermaid
+````{mermaid}
 classDiagram
 
     class Interfaccia{
@@ -165,7 +165,7 @@ public MyClass implements Interfaccia{
     //eventuali variabili d'istanza
     //implementazione metodi astratti con body
 }
-```
+````
 
 #### CLASSE ASTRATTA
 
@@ -218,7 +218,7 @@ Usare un'**interfaccia** quando
 
 **SOTTOTIPO**: estende o implementa il supertipo,deve rispettare contratto del supertipo
 
-```mermaid
+````{mermaid}
 ---
     config:
         class:
@@ -241,7 +241,7 @@ classDiagram
     }
 
     `Tipo apparente` <|-- `Tipo reale`
-```
+````
 
 Quando si fa una dichiarazione il compilatore guarda solo il lato sinistro per
 
@@ -377,7 +377,7 @@ principio Liskov
 - rispettato: uso gerarchia + ereditarietà
 - non rispettato: delega o associazione
 
-```mermaid
+````{mermaid}
 classDiagram
     class Supertipo{
         + metodo1()
@@ -394,7 +394,7 @@ classDiagram
 
     Supertipo <|-- Sottotipo1
     Supertipo <|-- Sottotipo2
-```
+````
 
 ```java
 class Animale{
@@ -655,7 +655,7 @@ Posso ovviamente aggiungere funzioni opzionali come:
 
 - `remove()`: rimuove l'elemento corrente dalla collezione
 
-```mermaid
+````{mermaid}
 ---
 config:
     class:
@@ -690,7 +690,7 @@ classDiagram
     Iterable <|-- CollezioneStudenti
     Iterator <|-- IteratoreStudenti
 
-```
+````
 
 L'iterator concreto può essere definito internamente alla classe che implementa Iterable, oppure esternamente come classe separata.
 
@@ -857,7 +857,7 @@ Fornisce un'interfaccia per creare oggetti in una superclasse, ma permette alle 
 - classi concrete che implementano l'interfaccia
 - interfaccia factory con metodo statico per creare oggetti in base a argomenti
 
-```mermaid
+````{mermaid}
 ---
 config:
     class:
@@ -893,7 +893,7 @@ classDiagram
 
     class `oggetto Moto`
     class `oggetto Automobile`
-```
+````
 
 ```java
 
@@ -939,7 +939,7 @@ provvede flessibilità quando inizializzi un tipo con molti attributi, opzionali
   - costruttore con attributi obbligatori
   - metodi per attributi opzionali che ritornano `this`
 
-```mermaid
+````{mermaid}
 ---
 title: Builder classe interna
 ---
@@ -964,7 +964,7 @@ classDiagram
     }
 
     Tipo -- `Static class Builder`
-```
+````
 
 NOTA: il builder non può essere utilizzato una volta che l'oggetto è stato costruito, quindi non è possibile modificare l'oggetto dopo la costruzione.
 
@@ -1031,7 +1031,7 @@ Serve a disaccoppiare il soggetto osservato dagli osservatori
   - lista di osservatori
   - metodo con notifyObservers che chiama update() su tutti gli osservatori
 
-```mermaid
+````{mermaid}
 classDiagram
     class Observable{
         <<Interfaccia>>
@@ -1058,7 +1058,7 @@ classDiagram
     Observable <|-- ConcreteObservable
     Observer <|-- ConcreteObserver
     ConcreteObservable --> Observer : notifyObservers()
-```
+````
 
 ```java
 //interfaccia osservatore
@@ -1133,7 +1133,7 @@ Aggiunge responsabilità/comportamenti dinamicamente mediante classi
 - classe astratta decorator che implementa interfaccia e contiene attributo `protected` a tipo I
 - classi concrete decorator con attributo super e override metodi per aggiungere funzionalità
 
-```mermaid
+````{mermaid}
 ---
 config:
     class:
@@ -1173,7 +1173,7 @@ classDiagram
     Drink <|-- `Decorator`
     `Decorator` <|-- `ConPanna`
     `Decorator` <|-- `ConChoco`
-```
+````
 
 ```java
 //interfaccia componente I
@@ -1230,7 +1230,7 @@ Compone oggetti in strutture ad albero per rappresentare gerarchie parte-tutto
 - classe foglia: oggetti finali senza figli
 - classe composita: contiene una variabile d'istanza lista di componenti (foglie o altre compositi)
 
-```mermaid
+````{mermaid}
 ---
 config:
     class:
@@ -1258,7 +1258,7 @@ classDiagram
 
     Composite <|-- `File` 
     Composite <|-- `Directory`
-```
+````
 
 ```java
 //interfaccia componente
@@ -1320,7 +1320,7 @@ Abstraction a = new RefinedAbstraction(new ConcreteImplementor());
 - classe astratta con riferimento a interfaccia con attributo `protected`
 - classi concrete astrazione che estendono
 
-```mermaid
+````{mermaid}
 classDiagram
     class Canale{
         <<Interfaccia>>
@@ -1360,7 +1360,7 @@ classDiagram
     Canale <|-- Sms
     Notifica <|-- NotificaNormale
     Notifica <|-- NotificaAvanzata
-```
+````
 
 ```java
 //interfaccia implementazione
@@ -1417,7 +1417,7 @@ due interfacce:
 
 Poi classi concrete per implementare elementi e operazioni
 
-```mermaid
+````{mermaid}
 ---
 config:
     class:
@@ -1465,7 +1465,7 @@ classDiagram
     Visitor <|-- `Print`
     Element <|-- `Cerchio`
     Element <|-- `Rettangolo`
-```
+````
 
 ```java
 //interfaccia visitor, implementa metodo visit per ogni tipo
@@ -1543,7 +1543,7 @@ definisce famiglia di algoritmi incapsulati in classi separate e intercambiali i
 - classi concrete che implementano algoritmi
 - classe selettore con attributo `private` Strategy, metodi per settare strategia e usare algoritmo
 
-```mermaid
+````{mermaid}
 classDiagram
     direction LR
 
@@ -1576,7 +1576,7 @@ classDiagram
     Strategy <|-- Standard
     Strategy <|-- Express
     Strategy <|-- International
-```
+````
 
 ```java
 //interfaccia
