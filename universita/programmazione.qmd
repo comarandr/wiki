@@ -5,8 +5,8 @@ permalink: /wiki/universita/programmazione/
 
 ## Programmazione funzionale
 
-Linguaggio: [scheme](/wiki/linguaggi/scheme.md)
+Linguaggio: [scheme](/linguaggi/scheme.qmd)
 
 ## Programmazione imperativa
 
-Linguaggio: [java](/wiki/linguaggi/java.md)
+Linguaggio: [java](/linguaggi/java.qmd)

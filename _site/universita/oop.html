@@ -134,13 +134,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+    <a class="nav-link" href="https://comarandr.github.io/"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="http://comarandr.github.io/wiki/linguaggi/"> 
+<span class="menu-text">Linguaggi</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/universita/"> 
+<span class="menu-text">Università</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/personali/"> 
+<span class="menu-text">Personali</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
@@ -162,20 +172,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#concetti-di-base" id="toc-concetti-di-base" class="nav-link active" data-scroll-target="#concetti-di-base">Concetti di base</a>
+  <ul>
+  <li><a href="#astrazione" id="toc-astrazione" class="nav-link" data-scroll-target="#astrazione">ASTRAZIONE</a>
   <ul class="collapse">
-  <li><a href="#astrazione" id="toc-astrazione" class="nav-link" data-scroll-target="#astrazione">ASTRAZIONE</a></li>
-  <li><a href="#classe" id="toc-classe" class="nav-link" data-scroll-target="#classe">CLASSE</a></li>
-  <li><a href="#tipi" id="toc-tipi" class="nav-link" data-scroll-target="#tipi">TIPI</a></li>
-  <li><a href="#metodi" id="toc-metodi" class="nav-link" data-scroll-target="#metodi">METODI</a></li>
-  <li><a href="#eccezioni" id="toc-eccezioni" class="nav-link" data-scroll-target="#eccezioni">ECCEZIONI</a></li>
+  <li><a href="#contratto" id="toc-contratto" class="nav-link" data-scroll-target="#contratto">CONTRATTO</a></li>
+  <li><a href="#tipi-dati-astratti-adt" id="toc-tipi-dati-astratti-adt" class="nav-link" data-scroll-target="#tipi-dati-astratti-adt">TIPI DATI ASTRATTI (ADT)</a></li>
+  </ul></li>
+  <li><a href="#classe" id="toc-classe" class="nav-link" data-scroll-target="#classe">CLASSE</a>
+  <ul class="collapse">
+  <li><a href="#classe-tipo-concreto" id="toc-classe-tipo-concreto" class="nav-link" data-scroll-target="#classe-tipo-concreto">CLASSE TIPO CONCRETO</a></li>
+  <li><a href="#classe-main" id="toc-classe-main" class="nav-link" data-scroll-target="#classe-main">CLASSE MAIN</a></li>
+  <li><a href="#interfaccia" id="toc-interfaccia" class="nav-link" data-scroll-target="#interfaccia">INTERFACCIA</a></li>
+  <li><a href="#classe-astratta" id="toc-classe-astratta" class="nav-link" data-scroll-target="#classe-astratta">CLASSE ASTRATTA</a></li>
+  <li><a href="#interfaccia-o-classe-astratta" id="toc-interfaccia-o-classe-astratta" class="nav-link" data-scroll-target="#interfaccia-o-classe-astratta">INTERFACCIA o CLASSE ASTRATTA?</a></li>
+  </ul></li>
+  <li><a href="#tipi" id="toc-tipi" class="nav-link" data-scroll-target="#tipi">TIPI</a>
+  <ul class="collapse">
+  <li><a href="#ereditarietà-e-gerarchia-di-classi" id="toc-ereditarietà-e-gerarchia-di-classi" class="nav-link" data-scroll-target="#ereditarietà-e-gerarchia-di-classi">EREDITARIETÀ e GERARCHIA DI CLASSI</a></li>
+  <li><a href="#polimorfismo" id="toc-polimorfismo" class="nav-link" data-scroll-target="#polimorfismo">POLIMORFISMO</a></li>
+  <li><a href="#uso-di-super" id="toc-uso-di-super" class="nav-link" data-scroll-target="#uso-di-super">Uso di super</a></li>
+  <li><a href="#tipo-generico" id="toc-tipo-generico" class="nav-link" data-scroll-target="#tipo-generico">TIPO GENERICO</a></li>
+  <li><a href="#wildcard" id="toc-wildcard" class="nav-link" data-scroll-target="#wildcard">WILDCARD</a></li>
+  </ul></li>
+  <li><a href="#metodi" id="toc-metodi" class="nav-link" data-scroll-target="#metodi">METODI</a>
+  <ul class="collapse">
+  <li><a href="#override" id="toc-override" class="nav-link" data-scroll-target="#override">OVERRIDE</a></li>
+  <li><a href="#overload" id="toc-overload" class="nav-link" data-scroll-target="#overload">OVERLOAD</a></li>
+  </ul></li>
+  <li><a href="#eccezioni" id="toc-eccezioni" class="nav-link" data-scroll-target="#eccezioni">ECCEZIONI</a>
+  <ul class="collapse">
+  <li><a href="#eccezioni-checked" id="toc-eccezioni-checked" class="nav-link" data-scroll-target="#eccezioni-checked">ECCEZIONI CHECKED</a></li>
+  <li><a href="#eccezioni-unchecked" id="toc-eccezioni-unchecked" class="nav-link" data-scroll-target="#eccezioni-unchecked">ECCEZIONI UNCHECKED</a></li>
+  <li><a href="#try---catch---finally" id="toc-try---catch---finally" class="nav-link" data-scroll-target="#try---catch---finally">TRY - CATCH - FINALLY</a></li>
+  </ul></li>
   <li><a href="#asserzioni" id="toc-asserzioni" class="nav-link" data-scroll-target="#asserzioni">ASSERZIONI</a></li>
-  <li><a href="#iteratori" id="toc-iteratori" class="nav-link" data-scroll-target="#iteratori">ITERATORI</a></li>
+  <li><a href="#iteratori" id="toc-iteratori" class="nav-link" data-scroll-target="#iteratori">ITERATORI</a>
+  <ul class="collapse">
+  <li><a href="#iteratore-interno" id="toc-iteratore-interno" class="nav-link" data-scroll-target="#iteratore-interno">ITERATORE INTERNO</a></li>
+  <li><a href="#iteratore-esterno" id="toc-iteratore-esterno" class="nav-link" data-scroll-target="#iteratore-esterno">ITERATORE ESTERNO</a></li>
+  </ul></li>
   <li><a href="#enum" id="toc-enum" class="nav-link" data-scroll-target="#enum">ENUM</a></li>
   <li><a href="#set" id="toc-set" class="nav-link" data-scroll-target="#set">SET</a></li>
   <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map">MAP</a></li>
   <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list">LIST</a></li>
-  <li><a href="#design-pattern" id="toc-design-pattern" class="nav-link" data-scroll-target="#design-pattern">DESIGN PATTERN</a></li>
-  <li><a href="#tipi-metodi-e-cose-utili" id="toc-tipi-metodi-e-cose-utili" class="nav-link" data-scroll-target="#tipi-metodi-e-cose-utili">TIPI, METODI E COSE UTILI</a></li>
+  <li><a href="#design-pattern" id="toc-design-pattern" class="nav-link" data-scroll-target="#design-pattern">DESIGN PATTERN</a>
+  <ul class="collapse">
+  <li><a href="#singleton" id="toc-singleton" class="nav-link" data-scroll-target="#singleton">SINGLETON</a></li>
+  <li><a href="#factory" id="toc-factory" class="nav-link" data-scroll-target="#factory">FACTORY</a></li>
+  <li><a href="#builder" id="toc-builder" class="nav-link" data-scroll-target="#builder">BUILDER</a></li>
+  <li><a href="#observer" id="toc-observer" class="nav-link" data-scroll-target="#observer">OBSERVER</a></li>
+  <li><a href="#decorator" id="toc-decorator" class="nav-link" data-scroll-target="#decorator">DECORATOR</a></li>
+  <li><a href="#composite" id="toc-composite" class="nav-link" data-scroll-target="#composite">COMPOSITE</a></li>
+  <li><a href="#bridge" id="toc-bridge" class="nav-link" data-scroll-target="#bridge">BRIDGE</a></li>
+  <li><a href="#visitor" id="toc-visitor" class="nav-link" data-scroll-target="#visitor">VISITOR</a></li>
+  <li><a href="#strategy" id="toc-strategy" class="nav-link" data-scroll-target="#strategy">STRATEGY</a></li>
+  </ul></li>
+  <li><a href="#tipi-metodi-e-cose-utili" id="toc-tipi-metodi-e-cose-utili" class="nav-link" data-scroll-target="#tipi-metodi-e-cose-utili">TIPI, METODI E COSE UTILI</a>
+  <ul class="collapse">
+  <li><a href="#dto" id="toc-dto" class="nav-link" data-scroll-target="#dto">DTO</a></li>
+  <li><a href="#stream" id="toc-stream" class="nav-link" data-scroll-target="#stream">STREAM</a></li>
+  <li><a href="#s.o.l.i.d.-principles" id="toc-s.o.l.i.d.-principles" class="nav-link" data-scroll-target="#s.o.l.i.d.-principles">S.O.L.I.D. PRINCIPLES</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>

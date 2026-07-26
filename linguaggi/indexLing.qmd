@@ -13,7 +13,7 @@ permalink: /wiki/linguaggi/
 - [vba](./vba.qmd)
 - [html](./schemi_html/html.qmd)
 - [python](./python/python.qmd)
-- [arm](./arm.qmd)
+- [arm](./arm.html)
 - [markdown](./markdown.qmd)
 - [java](./java.qmd)
 - [scheme](./scheme.qmd)

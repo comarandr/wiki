@@ -5,7 +5,7 @@ permalink: /wiki/universita/oop/
 
 ## Concetti di base
 
-Utile il collegamento alla pagina di [java](/wiki/linguaggi/java.md)
+Utile il collegamento alla pagina di [java](/linguaggi/java.qmd)
 
 ### ASTRAZIONE
 

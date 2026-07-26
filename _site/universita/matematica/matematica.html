@@ -125,13 +125,23 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+    <a class="nav-link" href="https://comarandr.github.io/"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="http://comarandr.github.io/wiki/linguaggi/"> 
+<span class="menu-text">Linguaggi</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/universita/"> 
+<span class="menu-text">Università</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/personali/"> 
+<span class="menu-text">Personali</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
@@ -153,24 +163,44 @@ window.Quarto = {
    
   <ul>
   <li><a href="#equazioni" id="toc-equazioni" class="nav-link active" data-scroll-target="#equazioni">Equazioni</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#equazioni-di-secondo-grado" id="toc-equazioni-di-secondo-grado" class="nav-link" data-scroll-target="#equazioni-di-secondo-grado">Equazioni di secondo grado</a></li>
   </ul></li>
   <li><a href="#derivazione" id="toc-derivazione" class="nav-link" data-scroll-target="#derivazione">Derivazione</a>
+  <ul>
+  <li><a href="#derivata-di-una-funzione" id="toc-derivata-di-una-funzione" class="nav-link" data-scroll-target="#derivata-di-una-funzione">Derivata di una funzione</a>
   <ul class="collapse">
-  <li><a href="#derivata-di-una-funzione" id="toc-derivata-di-una-funzione" class="nav-link" data-scroll-target="#derivata-di-una-funzione">Derivata di una funzione</a></li>
+  <li><a href="#somma" id="toc-somma" class="nav-link" data-scroll-target="#somma">Somma</a></li>
+  <li><a href="#prodotto" id="toc-prodotto" class="nav-link" data-scroll-target="#prodotto">Prodotto</a></li>
+  <li><a href="#potenza" id="toc-potenza" class="nav-link" data-scroll-target="#potenza">Potenza</a></li>
+  <li><a href="#costante-moltiplicativa" id="toc-costante-moltiplicativa" class="nav-link" data-scroll-target="#costante-moltiplicativa">Costante moltiplicativa</a></li>
+  <li><a href="#funzione-composta" id="toc-funzione-composta" class="nav-link" data-scroll-target="#funzione-composta">Funzione composta</a></li>
+  </ul></li>
   <li><a href="#derivate-di-funzioni-elementari" id="toc-derivate-di-funzioni-elementari" class="nav-link" data-scroll-target="#derivate-di-funzioni-elementari">Derivate di funzioni elementari</a></li>
   </ul></li>
   <li><a href="#integrali" id="toc-integrali" class="nav-link" data-scroll-target="#integrali">Integrali</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#integrazione-definita" id="toc-integrazione-definita" class="nav-link" data-scroll-target="#integrazione-definita">Integrazione definita</a></li>
-  <li><a href="#proprietà-fondamentali-dellintegrazione" id="toc-proprietà-fondamentali-dellintegrazione" class="nav-link" data-scroll-target="#proprietà-fondamentali-dellintegrazione">Proprietà fondamentali dell’integrazione</a></li>
+  <li><a href="#proprietà-fondamentali-dellintegrazione" id="toc-proprietà-fondamentali-dellintegrazione" class="nav-link" data-scroll-target="#proprietà-fondamentali-dellintegrazione">Proprietà fondamentali dell’integrazione</a>
+  <ul class="collapse">
+  <li><a href="#integrale-di-una-somma" id="toc-integrale-di-una-somma" class="nav-link" data-scroll-target="#integrale-di-una-somma">Integrale di una somma</a></li>
+  <li><a href="#integrale-di-funzione-con-costante-moltiplicativa" id="toc-integrale-di-funzione-con-costante-moltiplicativa" class="nav-link" data-scroll-target="#integrale-di-funzione-con-costante-moltiplicativa">Integrale di funzione con costante moltiplicativa</a></li>
+  <li><a href="#potenza-per-alpha-neq--1" id="toc-potenza-per-alpha-neq--1" class="nav-link" data-scroll-target="#potenza-per-alpha-neq--1">Potenza (per <span class="math inline">\(\alpha \neq -1\)</span>)</a></li>
+  <li><a href="#integrazione-per-parti" id="toc-integrazione-per-parti" class="nav-link" data-scroll-target="#integrazione-per-parti">Integrazione per parti</a></li>
+  <li><a href="#integrazioni-con-sostituzione-di-variabile" id="toc-integrazioni-con-sostituzione-di-variabile" class="nav-link" data-scroll-target="#integrazioni-con-sostituzione-di-variabile">Integrazioni con sostituzione di variabile</a></li>
+  <li><a href="#integrazione-delle-funzioni-principali" id="toc-integrazione-delle-funzioni-principali" class="nav-link" data-scroll-target="#integrazione-delle-funzioni-principali">Integrazione delle funzioni principali</a></li>
+  </ul></li>
   <li><a href="#integrazione-di-linea" id="toc-integrazione-di-linea" class="nav-link" data-scroll-target="#integrazione-di-linea">Integrazione di linea</a></li>
   </ul></li>
   <li><a href="#trigonometria" id="toc-trigonometria" class="nav-link" data-scroll-target="#trigonometria">Trigonometria</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#circonferenza-goniometrica" id="toc-circonferenza-goniometrica" class="nav-link" data-scroll-target="#circonferenza-goniometrica">Circonferenza goniometrica</a></li>
-  <li><a href="#funzioni-trigonometriche" id="toc-funzioni-trigonometriche" class="nav-link" data-scroll-target="#funzioni-trigonometriche">Funzioni trigonometriche</a></li>
+  <li><a href="#funzioni-trigonometriche" id="toc-funzioni-trigonometriche" class="nav-link" data-scroll-target="#funzioni-trigonometriche">Funzioni trigonometriche</a>
+  <ul class="collapse">
+  <li><a href="#funzione-coseno" id="toc-funzione-coseno" class="nav-link" data-scroll-target="#funzione-coseno">Funzione coseno</a></li>
+  <li><a href="#funzione-seno" id="toc-funzione-seno" class="nav-link" data-scroll-target="#funzione-seno">Funzione seno</a></li>
+  <li><a href="#funzione-tangente" id="toc-funzione-tangente" class="nav-link" data-scroll-target="#funzione-tangente">Funzione tangente</a></li>
+  </ul></li>
   <li><a href="#proprietà-fondamentale-dellalgebra" id="toc-proprietà-fondamentale-dellalgebra" class="nav-link" data-scroll-target="#proprietà-fondamentale-dellalgebra">Proprietà fondamentale dell’algebra</a></li>
   </ul></li>
   <li><a href="#vettori-e-algebra-lineare" id="toc-vettori-e-algebra-lineare" class="nav-link" data-scroll-target="#vettori-e-algebra-lineare">Vettori e algebra lineare</a></li>
