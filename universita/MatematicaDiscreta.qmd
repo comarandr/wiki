@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Matematica Discreta
-permalink: /universita/matematicaDiscreta/
+permalink: /wiki/universita/matematicaDiscreta/
 ---
 
 ## Insiemi

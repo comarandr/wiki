@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Matematica
-permalink: /matematica/
+permalink: /wiki/universita/matematica/
 ---
 
 ## Equazioni

@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Java
-permalink: /linguaggi/java
+permalink: /wiki/linguaggi/java
 custom_css: /assets/oop.css
 ---
 
-Linguaggio a oggetti, pertanto è utile il collegamento alla pagina di [oop](/universita/oop)
+Linguaggio a oggetti, pertanto è utile il collegamento alla pagina di [oop](/wiki/universita/oop)
 
 ## Basi di java
 

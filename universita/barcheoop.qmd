@@ -1,7 +1,6 @@
 ---
-layout: default
-title: Diagramma delle classi
-permalink: /universita/barcheoop
+title: Diagramma delle classi Barche
+permalink: /wiki/universita/barcheoop
 ---
 
 ```mermaid

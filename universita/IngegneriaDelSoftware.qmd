@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Ingegneria del Software
-permalink: /universita/ingegneriaDelSoftware/
+permalink: /wiki/universita/ingegneriaDelSoftware/
 ---
 
 ## 1. CONCETTI FONDAMENTALI

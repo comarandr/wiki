@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Basi di dati
-permalink: /universita/basiDati/
+permalink: /wiki/universita/basiDati/
 ---
 
 ## Introduzione

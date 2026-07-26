@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Esempio Sapori di Terra oop
-permalink: /universita/terra/
+permalink: /wiki/universita/terra/
 ---
 
 ```mermaid

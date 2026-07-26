@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Economia Aziendale
-permalink: /universita/economiaAziendale/
+permalink: /wiki/universita/economiaAziendale/
 ---
 
 ## Rilevazioni e determinazioni quantitative d'azienda

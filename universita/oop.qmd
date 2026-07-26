@@ -1,12 +1,11 @@
 ---
-layout: default
 title: Programmazione a oggetti
-permalink: /universita/oop/
+permalink: /wiki/universita/oop/
 ---
 
 ## Concetti di base
 
-Utile il collegamento alla pagina di [java](/linguaggi/java.html)
+Utile il collegamento alla pagina di [java](/wiki/linguaggi/java.md)
 
 ### ASTRAZIONE
 

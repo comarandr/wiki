@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Linguaggi di programmazione
-permalink: /linguaggi/
+permalink: /wiki/linguaggi/
 ---
 
 - [bash](./bash.qmd)
+- [exbash](./exbash.qmd)
 - [git](./git.qmd)
 - [latex](./latex.qmd)
 - [yaml](./yaml.qmd)

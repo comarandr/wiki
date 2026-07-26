@@ -1,6 +1,6 @@
 ---
 title: "Strumenti di poesia"
-permalink: /personali/StrumentiPoesia/
+permalink: /wiki/personali/StrumentiPoesia/
 ---
 
 ## INTRODUZIONE METRICA

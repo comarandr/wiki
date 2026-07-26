@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Matematica Finanziaria
-permalink: /universita/matematicaFinanziaria/
+permalink: /wiki/universita/matematicaFinanziaria/
 ---
 
 ## Fondamenti

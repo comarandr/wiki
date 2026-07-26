@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Esempio esame voli
-permalink: /universita/voli/
+permalink: /wiki/universita/voli/
 ---
 
 ## Testo d'esame

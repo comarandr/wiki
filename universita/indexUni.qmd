@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Appunti di università
-permalink: /universita/
+permalink: /wiki/universita/
 ---
 
 ## 1 anno informatica

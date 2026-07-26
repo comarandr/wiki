@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Architettura degli elaboratori
-permalink: /universita/architettura/
+permalink: /wiki/universita/architettura/
 ---
 
 ## Introduzione e definizioni

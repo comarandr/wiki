@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Fisica
-permalink: /universita/fisica/
+permalink: /wiki/universita/fisica/
 ---
 
 ## Fisica parte 1 - Cinematica

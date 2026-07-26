@@ -1,7 +1,6 @@
 ---
-layout: default
 title: Algebra lineare
-permalink: /algebraLineare/
+permalink: /wiki/universita/algebraLineare/
 ---
 
 ## operazioni
