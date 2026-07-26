@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wiki</title>
+<title>Diagramma delle classi – Wiki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,23 +29,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Wiki</span>
     </a>
   </div>
@@ -100,11 +100,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -126,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wiki</h1>
+<h1 class="title">Diagramma delle classi</h1>
 </div>
 
 
@@ -143,10 +143,112 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<p><a href="./linguaggi/indexLing.md">linguaggi di programmazione</a></p>
-<p><a href="./universita/indexUni.md">università</a></p>
+<pre class="mermaid"><code>---
+config:
+    class:
+        hideEmptyMembersBox: true
+---
+classDiagram
+    class Api{
+        GestoreBarche gestoreBarche
+        GestorePrenotazioni gestorePrenotazioni
+        Factory factory
+        QueryFactory queryFactory
+
+        + Api()
+        + creaFactory() Factory
+        + aggiungiBarca(BuilderBarca builderBarca) void
+        + aggiungiPrenotazione(BuilderPrenotazione builderPrenotazione) void
+        + cercaBarche(Query~Barca~ query) List~Barca~
+        + ritiraBarche(int idPrenotazione) void
+        + consegnaBarca (int idPrenotazione, Danni danni) void
+    }
+
+    class MainClient{
+        + static void main(String[] args)
+    }
+
+    class BarcaNonValidaException{
+        + BarcaNonValidaException(String message)
+    }
+
+    class DataIncongruenteException{
+        + DataIncongruenteException(String message)
+    }
+
+    class EnumLuogo{
+        &lt;&lt;enum&gt;&gt;
+        AVELLINO, OSPEDALETTO, 
+        NAPOLI, SALERNO
+    }
+
+    class BuilderBarca{
+    }
+
+    class GestoreBarche{
+        &lt;&lt;Observer&gt;&gt;
+        - ArrayList~Barca~ barche
+        + GestoreBarche()
+        + aggiungiBarca(BuilderBarca builderBarca) void
+        + barcaInUso(int idBarca) void
+        + filtraLista(Query~Barca~ query) List~Barca~
+        + updateConsegna(int idBarca) void
+        + updateRitiro(int idBarca) void
+        }
+    
+    class GestorePrenotazioni{
+        &lt;&lt;Observable&gt;&gt;
+        - GestorePrezzi gestorePrezzi
+        - List~Prenotazione~ prenotazioniAttuali
+        - GestoreClienti gestoreClienti
+        - List~Prenotazione~ prenotazioniConcluse
+        + GestorePrenotazioni()
+        + addPrenotazione(BuilderPrenotazione builderPrenotazione) int
+        - costruisciPrenotazione(BuilderPrenotazione builderPrenotazione) Prenotazione
+        - calcoloId() int
+        + attivaNoleggio(int idPrenotazione) float
+        + calcolaPenalita(int idPrenotazione, Danni danni) float
+        + eliminaPrenotazione(int idPrenotazione) void
+
+        addObserver(Object gestorebarche) void
+        notifyRitiro(int idBarca) void
+        notifyConsegna(int idBarca) void
+    }
+
+    class GestorePrezzi{
+        + calcoloPrezzoNoleggio(Prenotazione prenotazione) float
+        + calcoloPenalita(Prenotazione prenotazione, Danni danni) float
+    }
+
+    class GestorePagamento{}
+
+    class Observer{
+        &lt;&lt;interface&gt;&gt;
+        + updateRitiro(int idBarca) void
+        + updateConsegna(int idBarca) void
+    }
+
+    class Observable{
+        &lt;&lt;interface&gt;&gt;
+        + addObserver(Observer observer) void
+        + notifyRitiro(int idBarca) void
+        + notifyConsegna(int idBarca) void
+    }
+
+    Main Client --&gt; Api : usa
+
+    Api --&gt; GestoreBarche : usa
+    Api --&gt; GestorePrenotazioni : usa
+    Api --&gt; Factory : crea
+    Api --&gt; QueryFactory : crea
+    APi --&gt; BuilderPrenotazione : usa
+
+    GestoreBarche --&gt; BuilderBarca : usa
+    GestorePrenotazioni --&gt; BuilderPrenotazione : usa
+    GestorePrenotazioni --&gt; GestorePrezzi : usa
+    GestorePrenotazioni --&gt; GestoreClienti : usa
+    GestorePrenotazioni --&gt; Observer : implementa
+    GestorePrenotazioni --&gt; Observable : implementa</code></pre>
 
 
 

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>html – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#html" id="toc-html" class="nav-link active" data-scroll-target="#html">HTML</a>
+  <ul class="collapse">
+  <li><a href="#indice" id="toc-indice" class="nav-link" data-scroll-target="#indice">Indice</a></li>
+  <li><a href="#introduzione" id="toc-introduzione" class="nav-link" data-scroll-target="#introduzione">Introduzione</a></li>
+  <li><a href="#struttura-di-un-documento-html" id="toc-struttura-di-un-documento-html" class="nav-link" data-scroll-target="#struttura-di-un-documento-html">Struttura di un documento HTML</a></li>
+  <li><a href="#attributi-principali" id="toc-attributi-principali" class="nav-link" data-scroll-target="#attributi-principali">Attributi principali</a></li>
+  <li><a href="#entità" id="toc-entità" class="nav-link" data-scroll-target="#entità">Entità</a></li>
+  <li><a href="#liste" id="toc-liste" class="nav-link" data-scroll-target="#liste">Liste</a></li>
+  <li><a href="#commenti" id="toc-commenti" class="nav-link" data-scroll-target="#commenti">Commenti</a></li>
+  <li><a href="#immagini" id="toc-immagini" class="nav-link" data-scroll-target="#immagini">Immagini</a></li>
+  <li><a href="#righe-orizzontali" id="toc-righe-orizzontali" class="nav-link" data-scroll-target="#righe-orizzontali">Righe orizzontali</a></li>
+  <li><a href="#tabelle" id="toc-tabelle" class="nav-link" data-scroll-target="#tabelle">Tabelle</a></li>
+  <li><a href="#link-e-ipertesti" id="toc-link-e-ipertesti" class="nav-link" data-scroll-target="#link-e-ipertesti">Link e ipertesti</a></li>
+  <li><a href="#ancore-e-link-interni" id="toc-ancore-e-link-interni" class="nav-link" data-scroll-target="#ancore-e-link-interni">Ancore e link interni</a></li>
+  <li><a href="#mappe-dimmagine" id="toc-mappe-dimmagine" class="nav-link" data-scroll-target="#mappe-dimmagine">Mappe d’immagine</a></li>
+  <li><a href="#frame" id="toc-frame" class="nav-link" data-scroll-target="#frame">Frame</a></li>
+  <li><a href="#moduli" id="toc-moduli" class="nav-link" data-scroll-target="#moduli">Moduli</a></li>
+  <li><a href="#input-input" id="toc-input-input" class="nav-link" data-scroll-target="#input-input">Input &lt;input&gt;</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="html" class="level1">
+<h1>HTML</h1>
+<section id="indice" class="level2">
+<h2 class="anchored" data-anchor-id="indice">Indice</h2>
+<ol type="1">
+<li><a href="#introduzione">Introduzione</a></li>
+<li><a href="#struttura-di-un-documento-html">Struttura di un documento HTML</a></li>
+<li><a href="#attributi-principali">Attributi principali</a></li>
+<li><a href="#entità">Entità</a></li>
+<li><a href="#immagini">Immagini</a></li>
+<li><a href="#righe-orizzontali">Righe orizzontali</a></li>
+<li><a href="#tabelle">Tabelle</a></li>
+<li><a href="#link-e-ipertesti">Link e ipertesti</a></li>
+<li><a href="#ancore-e-link-interni">Ancore e link interni</a></li>
+<li><a href="#mappe-dimmagine">Mappe d’immagine</a></li>
+<li><a href="#frame">Frame</a></li>
+<li><a href="#moduli">Moduli</a></li>
+<li><a href="#input-input">Input &lt;input&gt;</a></li>
+</ol>
+</section>
+<section id="introduzione" class="level2">
+<h2 class="anchored" data-anchor-id="introduzione">Introduzione</h2>
+<p>sistema di markup basato sui <strong>tag</strong>, racchiusi tra <strong>&lt;</strong> e <strong>&gt;</strong></p>
+<p>Esempio: &lt;br&gt; … &lt;/br&gt;</p>
+</section>
+<section id="struttura-di-un-documento-html" class="level2">
+<h2 class="anchored" data-anchor-id="struttura-di-un-documento-html">Struttura di un documento HTML</h2>
+<ol type="1">
+<li>Indicazione del <strong>DTD</strong> (Document Type Definition): <code>&lt;!DOCTYPE ...&gt;</code>, generalmente <code>&lt;!DOCTYPE html&gt;</code></li>
+<li>Inizio della <strong>pagina</strong> vera e propria, racchiusa tra <code>&lt;html&gt;</code> e <code>&lt;/html&gt;</code>. è composta da header e body</li>
+<li><strong>Header</strong>, racchiuso tra <code>&lt;head&gt;</code> e <code>&lt;/head&gt;</code>, contiene tag con informazioni supplementari (es. &lt;title&gt;)</li>
+<li><strong>Body</strong>, racchiuso tra <code>&lt;body&gt;</code> e <code>&lt;/body&gt;</code>, contiene ciò che viene visualizzato</li>
+</ol>
+<p>Ci sono 6 livelli di intestazione, da <code>&lt;h1&gt;</code> (più grande) a <code>&lt;h6&gt;</code>(più piccolo). Si differenziano per dimensione carattere e uso del grassetto.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span> Title tag <span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span> Testo con grandezza h1 <span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">h6</span><span class="dt">&gt;</span> Testo con grandezza h6 <span class="dt">&lt;/</span><span class="kw">h6</span><span class="dt">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="risultato1.png" class="img-fluid figure-img"></p>
+<figcaption>risultato1</figcaption>
+</figure>
+</div>
+</section>
+<section id="attributi-principali" class="level2">
+<h2 class="anchored" data-anchor-id="attributi-principali">Attributi principali</h2>
+<p>Ogni tag può avere più <strong>attributi</strong>, per esempio:</p>
+<ul>
+<li><strong>align</strong>, che serve ad allineare il testo. I valori possono essere <strong>left, center, right</strong>
+<ul>
+<li><strong>&lt;h1 align=”center”&gt; … &lt;&gt;</strong> per allineare il testo al centro</li>
+</ul></li>
+<li><strong>lang</strong>, definisce la lingua del documento &lt;html lang=”it”&gt;</li>
+<li><strong>&lt;meta /&gt;</strong> fornisce meta-informazioni non visibili agli utenti (autore, parole chiave, <strong>charset</strong>)</li>
+</ul>
+<p>I colori possono in html sono indicati con formato RGB oppure con il nome. Es: “#FF0000” oppure “red”</p>
+<p>Gli attributi del body principali sono:</p>
+<ul>
+<li><strong>lang</strong></li>
+<li><strong>bgcolor</strong>, che imposta un colore di sfondo per la pagina &lt;body bgcolor=”red”&gt;</li>
+<li><strong>background</strong>, permette di inserire una texture di sfondo (motivo o immagine GIF, JPEG, PNG)</li>
+<li><strong>text</strong>, imposta il colore del testo nella pagina</li>
+<li><strong>link</strong>, imposta il colore dei link nella pagina</li>
+<li><strong>vlink</strong>, imposta il colore dei link visitati (visited link)</li>
+<li><strong>alink</strong>, imposta il colore dei link attivi nella pagina</li>
+<li><strong>topmargin</strong>, distanza in pixel dal margine superiore</li>
+<li><strong>bottommargin</strong>, distanza in pixel dal margine inferiore</li>
+<li><strong>leftmargin</strong>, distanza in pixel dal margine sinistro</li>
+<li><strong>rightmargin</strong>, distanza in pixel dal margine destro</li>
+</ul>
+</section>
+<section id="entità" class="level2">
+<h2 class="anchored" data-anchor-id="entità">Entità</h2>
+<p>In html esistono le <strong>entità</strong>, ovvero costrutti sintattici per far visualizzare correttamente i caratteri speciali<br>
+Sono delimitati da <strong>&amp;</strong> e <strong>;</strong><br>
+Esempio:</p>
+<ul>
+<li><code>à</code> corrisponde a <code>&amp;#224;</code></li>
+</ul>
+<p><em>nota</em>: anche lo spazio è un carattere speciale, se si vuole aggiungere più spazi consecutivi vanno inseriti più volte</p>
+<p>Per fare riferimento a un’immagine devo utilizzare il suo percorso, che può essere <strong>assoluto</strong> se fa riferimento al disco vero e proprio, altrimenti posso utilizzare il <strong>percorso relativo</strong> con ../ oppure ./ oppure /<br>
+Il percorso relativo è consigliato, così i riferimenti vengono persi in caso di spostamento delle cartelle contenenti la pagina</p>
+<ul>
+<li>&lt;body background=”./Sottocartella/sfondo.png”&gt;</li>
+</ul>
+<p>Il <strong>font</strong> del carattere è modificabile attraverso il tag <strong>&lt;font&gt; … &lt;/font&gt;</strong> e possiede i seguenti attributi:</p>
+<ul>
+<li><strong>face</strong>, specifica il carattere con il quale deve essere visualizzato. Posso indicarne più di uno, separati da una virgola. Se il primo non è disponibile allora passa al successivo &lt;font face=”arial, verdana”&gt;</li>
+<li><strong>size</strong>, imposta la dimensione del font, compreso tra 1 e 7. Il valore di default è 3, quindi posso anche usare i valori -1,-2,-3,+1,+2,+3,+4. &lt;font size=”4”&gt;</li>
+<li><strong>color</strong>, cambia il colore del font</li>
+</ul>
+<p>Il <strong>ritorno a capo (break)</strong> si ottiene con il tag <strong>&lt;br&gt;</strong> senza chiusura.</p>
+<ul>
+<li>Dopo queste parole c’è &lt;br&gt; un a capo</li>
+</ul>
+<p>L’inizio di un <strong>paragrafo</strong> viene indicato tramite il tag <strong>&lt;p&gt;</strong>. Un paragrafo è delimitato da una riga vuota all’inizio e alla fine. La chiusura <strong>&lt;/p&gt; non sarebbe necessaria</strong>, ma è buona norma inserirla <strong>per chiarezza</strong>.</p>
+<ul>
+<li><strong>align</strong>, con opzioni <strong>center, right, left, justify</strong></li>
+</ul>
+<p>Il tag <strong>&lt;div&gt;</strong> è un contenitore generico per racchiudere una parte di testo a cui attribuire caratteristiche comuni. Produce un a capo tra la porzione antecedente e successiva, ma senza lasciare righe vuote come &lt;p&gt;<br>
+L’attributo <strong>id</strong> è importante perché è un identificatore univoco della porzione di testo tra &lt;div&gt; … &lt;/div&gt;</p>
+<p>Il tag <strong>&lt;center&gt;</strong> può essere usato al posto di &lt;div align=”center”&gt; … &lt;/div&gt; ma non è molto usato</p>
+</section>
+<section id="liste" class="level2">
+<h2 class="anchored" data-anchor-id="liste">Liste</h2>
+<p>Per le liste abbiamo:</p>
+<ul>
+<li><strong>puntata</strong>: &lt;ul&gt; … &lt;/ul&gt; con attributo <strong>type</strong> per cambiare simbolo (<strong>disc, circle, square</strong>)</li>
+<li><strong>numerata</strong>: &lt;ol&gt; … &lt;/ol&gt; con attributo <strong>type</strong> per cambiare numerazione (1, I, i, a, A) e <strong>start</strong> per cambiare il valore di partenza</li>
+</ul>
+<p>Ogni elemento è inizializzato da <strong>&lt;li&gt;</strong> (list item) senza chiusura obbligatoria</p>
+<p>Inoltre abbiamo le <strong>liste di definizione</strong> in cui ogni elemento è formato da termine e definizione</p>
+<ul>
+<li>inizializzazione della lista: <strong>&lt;dl&gt; … &lt;/dl&gt;</strong></li>
+<li>tag per termine: <strong>&lt;dt&gt; … &lt;/dt&gt;</strong></li>
+<li>tag per la definizione: <strong>&lt;dd&gt; … &lt;/dd&gt;</strong></li>
+</ul>
+<p>è possibile creare <strong>liste nidificate</strong></p>
+<p>Per quanto riguarda il testo ci sono dei <strong>tag stilistici</strong>:</p>
+<ul>
+<li>grassetto &lt;b&gt; … &lt;/b&gt;</li>
+<li>corsivo &lt;i&gt; … &lt;/i&gt;</li>
+<li>sottolineato &lt;u&gt; … &lt;/u&gt;</li>
+<li>apice &lt;sup&gt;</li>
+<li>apice &lt;sup&gt;</li>
+<li>pedice &lt;sub&gt;</li>
+</ul>
+<p>E dei tag di contesto:</p>
+<ul>
+<li>citazione &lt;cite&gt;</li>
+<li>codice &lt;code&gt;</li>
+<li>esempio &lt;samp&gt;</li>
+<li>variabili di un programma &lt;var&gt;</li>
+<li>data &lt;time&gt; con attributo datetime per il formato</li>
+</ul>
+</section>
+<section id="commenti" class="level2">
+<h2 class="anchored" data-anchor-id="commenti">Commenti</h2>
+<p>Per commentare il codice: <strong>&lt;!– … –&gt;</strong></p>
+</section>
+<section id="immagini" class="level2">
+<h2 class="anchored" data-anchor-id="immagini">Immagini</h2>
+<p>Per <strong>inserire immagini</strong> si usa il tag <strong>&lt;img&gt;</strong> senza chiusura</p>
+<ul>
+<li>l’attributo <strong>src</strong> specifica il percorso del file da inserire</li>
+<li><strong>align</strong> con i valori <strong>bottom, middle, top, left, right</strong></li>
+<li><strong>width</strong> determina la larghezza dell’immagine, in pixel o percentuale</li>
+<li><strong>height</strong> determina l’altezza, in pixel o percentuale</li>
+<li><strong>alt</strong>, consente l’inserimento di una descrizione dell’immagine nel caso non sia reperibile</li>
+<li><strong>title</strong>, consente di far apparire una tooltip quando il mouse sarà sopra l’immagine</li>
+<li><strong>border</strong>, che consente di circondare con un bordo l’immagine</li>
+<li><strong>hspace</strong> e <strong>vspace</strong>, settano la distanza orizzontale e verticale in pixel dal testo</li>
+</ul>
+</section>
+<section id="righe-orizzontali" class="level2">
+<h2 class="anchored" data-anchor-id="righe-orizzontali">Righe orizzontali</h2>
+<p>Per inserire una <strong>riga orizzontale</strong> si usa il tag <strong>&lt;hr&gt;</strong> con attributi</p>
+<ul>
+<li><strong>size</strong>, spessore della linea in pixel (da 1 a 100)</li>
+<li><strong>width</strong>, lunghezza della linea in pixel o percentuale</li>
+<li><strong>align</strong>, imposta collocazione della linea con valori <strong>left, central, right</strong></li>
+<li><strong>color</strong>, imposta il colore</li>
+</ul>
+</section>
+<section id="tabelle" class="level2">
+<h2 class="anchored" data-anchor-id="tabelle">Tabelle</h2>
+<p>Per le tabelle si usa il tag <strong>&lt;table&gt;</strong> … <strong>&lt;/table&gt;</strong></p>
+<ul>
+<li>la riga è racchiusa nei tag <strong>&lt;tr&gt;</strong> … <strong>&lt;/tr&gt;</strong></li>
+<li>la singola cella è rappresentata da <strong>&lt;td&gt;</strong> … <strong>&lt;/td&gt;</strong></li>
+<li>se la cella è d’intestazione allora i tag sono <strong>&lt;th&gt;</strong> … <strong>&lt;/th&gt;</strong></li>
+</ul>
+<p>Gli attributi di <strong>&lt;table&gt;</strong> sono:</p>
+<ul>
+<li><strong>align</strong>, può assumere i valori <strong>left, center e right</strong></li>
+<li><strong>border</strong>, spessore dei bordi della tabella (default 0: no bordi)</li>
+<li><strong>cellpadding</strong>, spazio fra bordo tabella e il contenuto della cella (default 1 pixel)</li>
+<li><strong>cellspacing</strong>, distanza fra celle; (default 2 pixel)</li>
+<li><strong>Width</strong>, larghezza della tabella (in valore assoluto o in percentuale);</li>
+<li><strong>height</strong>, altezza della tabella (in valore assoluto o in percentuale);</li>
+<li><strong>bgcolor</strong>, colore dello sfondo della tabella;</li>
+<li><strong>bordercolor</strong>, colore di tutti i bordi della tabella</li>
+<li><strong>background</strong>, definisce un’immagine di sfondo</li>
+</ul>
+<p>Gli attributi di <strong>&lt;tr&gt;</strong> ovvero della cella sono:</p>
+<ul>
+<li><strong>align</strong>, allineamento orizzontale di tutte le celle della riga, con valori <strong>left, center, right</strong></li>
+<li><strong>valign</strong>, allineamento verticale celle riga, <strong>top, middle, bottom</strong></li>
+<li><strong>bordercolor</strong>, colore bordo celle</li>
+<li><strong>height</strong>, altezza riga in val. assoluto o percentuale</li>
+</ul>
+<p>Gli attributi di <strong>&lt;td&gt;</strong> sono:</p>
+<ul>
+<li><strong>align</strong> definisce l’allineamento orizzontale della cella, i valori possibili sono left, center e right</li>
+<li><strong>valign</strong> definisce l’allineamento verticale della cella, i valori possibili sono top, middle e bottom</li>
+<li><strong>width</strong> definisce la larghezza della singola cella</li>
+<li><strong>height</strong> definisce l’altezza della cella (in valore assoluto o in percentuale)</li>
+<li><strong>bgcolor</strong> definisce il colore dello sfondo della singola cella</li>
+<li><strong>bordercolor</strong> definisce il colore del bordo della singola cella</li>
+<li><strong>rowspan</strong> fa sì che una cella risulti alta n celle, dove n è il valore attribuito a rowspan;</li>
+<li><strong>colspan</strong> fa sì che una cella risulti larga n celle, dove n è il valore attribuito a colspan.</li>
+<li><strong>background</strong> definisce un’immagine di sfondo</li>
+</ul>
+<p>Le celle della stessa colonna devono avere la stessa larghezza e quelle della stessa riga devono avere la stessa altezza. In caso contrario il browser adotta quello più elevato.</p>
+<p>Per creare una tabella con un numero di celle non costanti si usano gli attributi <strong>rowspan</strong> e <strong>colspan</strong> per creare celle espanse</p>
+<p>Per aggiungere <strong>titoli alla tabella</strong> si usa il tag <strong>&lt;caption&gt; &lt;/caption&gt;</strong> subito dopo &lt;table&gt;</p>
+<ul>
+<li><strong>align</strong>, per far apparire prima o dopo della tabella il titolo, con <strong>top</strong> o <strong>bottom</strong></li>
+</ul>
+</section>
+<section id="link-e-ipertesti" class="level2">
+<h2 class="anchored" data-anchor-id="link-e-ipertesti">Link e ipertesti</h2>
+<p>Si possono creare ipertesti tramite <strong>link</strong><br>
+Se si crea un link a un’altra pagina si usa <strong>&lt;a&gt;</strong> con attributo <strong>title</strong> per tooltip e <strong>href</strong> per indicare percorso</p>
+<ul>
+<li>&lt;a href=”destinazione.html” title=”testo che compare con il cursore”&gt; testo da cliccare &lt;/a&gt;</li>
+</ul>
+<p>Il comportamento dipende dal tipo di file (htm: apertura pagina, immagini: vengono visualizzate, doc e pdf: vengono aperti se c’è il plugin, zip/com/exe: vengono scaricati). Possibile anche mandare una mail con &lt;a href=”mailto:indirizzo@mail”&gt;</p>
+</section>
+<section id="ancore-e-link-interni" class="level2">
+<h2 class="anchored" data-anchor-id="ancore-e-link-interni">Ancore e link interni</h2>
+<p>Per collegarsi a determinate posizioni all’interno di una stessa pagina</p>
+<ul>
+<li>Creare un riferimento a cui saltare &lt;<strong>a name=”nome”</strong>&gt; … &lt;/a&gt;</li>
+<li>Per raggiungerla &lt;<strong>a href=”#nome”</strong>&gt; testo collegamento &lt;/a&gt;</li>
+</ul>
+<p>NOTA: posso fare riferimento a un’ancora all’interno di un’altra pagina &lt;a href=”nomepagina#posizione”&gt;</p>
+</section>
+<section id="mappe-dimmagine" class="level2">
+<h2 class="anchored" data-anchor-id="mappe-dimmagine">Mappe d’immagine</h2>
+<p>Posso suddividere un’immagine in diverse aree. In base all’area cliccata viene richiamato un link diverso.</p>
+<ul>
+<li>Inizializzare immagine a mappa &lt;<strong>img</strong> src=”…” <strong>usemap</strong>=”#nome”&gt;, in &lt;img&gt; con #</li>
+<li>Creare mappa &lt;<strong>map name</strong>=”nome_mappa”&gt; con tag &lt;map&gt; e attributo name</li>
+<li>Inizializzare le aree tra &lt;map&gt; e &lt;/map&gt; con <strong>&lt;area&gt;</strong> e i suoi attributi
+<ul>
+<li><strong>shape</strong> indica la forma dell’area: rect, circle, poly</li>
+<li><strong>coords</strong> delimita superficie in pixel: per rettangolo (colonna vertice alto sx, riga vertice alto sx, colonna vertice basso dx, riga vertice basso dx), per cerchio (centro, raggio) e poligono (tutti vertici)</li>
+<li><strong>href</strong> richiama il link associato, volendo puoi usare <strong>nohref</strong></li>
+<li><strong>title</strong> per tooltip quando cursore si ferma</li>
+</ul></li>
+</ul>
+</section>
+<section id="frame" class="level2">
+<h2 class="anchored" data-anchor-id="frame">Frame</h2>
+<p>Utili per dividere la pagine in sezioni indipendenti tra loro, usati al posto del tag &lt;body&gt;.</p>
+<p>Si inzializza un frameset con i tag <strong>&lt;frameset&gt; … &lt;/frameset&gt;</strong>. Non possono essere accostati uno di seguito all’altro, perché i frameset occupano tutta la pagina. <strong>Possono essere annidati</strong>, ovvero un frame all’interno di un frameset può essere a sua volta un frameset di frame.<br>
+Possiede i seguenti attributi</p>
+<ul>
+<li><strong>border</strong>, spessore dei bordi per frame figli</li>
+<li><strong>bordercolor</strong>, colore dei bordi dei frame figli</li>
+<li><strong>cols</strong>, numero e dimensione dei frame verticali (pixel o percentuale). Vanno bene anche elenchi per più frame verticali “40%,30%,*” l’asterisco alloca tutta l’area rimanente</li>
+<li><strong>rows</strong>, numero e dimensione delle righe, uso analogo a cols</li>
+<li><strong>frameborder</strong>, specifica se frame visualizzati con bordo (0 no, 1 sì). Definibile a livello di singolo frame</li>
+</ul>
+<p>All’interno dei frameset specifico le sezioni della pagina con l’attributo <strong>&lt;frame&gt;</strong>, i cui attributi sono:</p>
+<ul>
+<li><strong>frameborder</strong>: specifica se il frame è visualizzato con un bordo. Il valore 1 ne indica la presenza, mentre 0 lo disabilita.</li>
+<li><strong>name</strong>: indica il nome con cui far riferimento al frame.</li>
+<li><strong>noresize</strong>: se presente, evita che l’utente possa ridimensionare il frame.</li>
+<li><strong>scrolling</strong>: specifica se deve apparire una barra di scorrimento nel frame. I valori possibili sono yes, no, auto; se impostato su auto, che è l’impostazione di default, è il browser a determinare l’eventuale creazione della barra.</li>
+<li><strong>src</strong>: indica il file da visualizzare all’interno del frame; se non si specifica un attributo src, lo spazio in cui dovrebbe apparire il frame risulterà vuoto.</li>
+<li><strong>marginheight</strong> e <strong>marginwidth</strong>: permettono di impostare la distanza verticale (marginheigth) e orizzontale (marginwidth) tra i bordi del frame e il suo contenuto</li>
+</ul>
+<p>Per caricare una pagina all’interno di un frame è sufficiente assegnare all’attributo target del tag &lt;link&gt; il nome del frame in cui la pagina deve comparire</p>
+</section>
+<section id="moduli" class="level2">
+<h2 class="anchored" data-anchor-id="moduli">Moduli</h2>
+<p>Servono per la raccolta dati. Vengono inizializzati con il tag <strong>&lt;form&gt; … &lt;/form&gt;</strong>. Presenta i seguenti attributi:</p>
+<ul>
+<li><strong>name</strong></li>
+<li><strong>method</strong>, può assumere valore get o post in base a come vanno trasmessi dati</li>
+<li><strong>action</strong>, indirizzo script per elaborazione dei dati trasmessi al server tramite il modulo</li>
+<li><strong>enctype</strong>, con method POST, specifica come browser codifica I dati. Assume due valori
+<ul>
+<li>application/x-www-form-urlencoded (default)</li>
+<li>multipart/form-data (per upload di file sul server, permette inviare dati come sequenza di parti)</li>
+</ul></li>
+</ul>
+<p>All’interno del modulo &lt;form&gt; … &lt;/form&gt; posso inserire gli oggetti per interfacce grafiche</p>
+</section>
+<section id="input-input" class="level2">
+<h2 class="anchored" data-anchor-id="input-input">Input &lt;input&gt;</h2>
+<p><strong>Casella di testo</strong>: <strong>&lt;input type=”text”&gt;</strong>, con attributi name, maxlength, size, value</p>
+<p><strong>Area di testo</strong>: <strong>&lt;textarea&gt;</strong> testo area di testo pre-inserito <strong>&lt;/textarea&gt;</strong> con name, rows/cols (numero righe colonne) e wrap (comportamento in caso di contenuto maggiore larghezza area) con valori off (aggiunge scrollbar orizzontale), virtual o soft (a capo automaticamente, server riceve una riga), physical o hard (a capo automaticamente, server riceve più righe)</p>
+<p><strong>Casella password</strong>: <strong>&lt;input type=”password”&gt;</strong></p>
+<p><strong>Campo nascosto</strong>: <strong>&lt;input type=”hidden” name=”” value=””&gt;</strong></p>
+<p><strong>Pulsante di commando per invio dati</strong>: <strong>&lt;input type=”submit”&gt;</strong> con name e value (testo su pulsante)</p>
+<p><strong>Pulsante per ripristinare valori di default</strong>: <strong>&lt;input type=”reset”&gt;</strong> con name e value (testo su pulsante)</p>
+<p><strong>Pulsante generico che deve essere programmato</strong>: <strong>&lt;input type=”button”&gt;</strong> con name e value (testo su pulsante)</p>
+<p><strong>Casella di controllo</strong>: <strong>&lt;input type=”checkbox”&gt;</strong> con attributi name, value, checked, unchecked</p>
+<p><strong>Pulsante di opzione</strong>: <strong>&lt;input type=”radio”&gt;</strong> con attributi:</p>
+<ul>
+<li><strong>name</strong>, serve per identificarlo. Tutti i pulsanti di opzione che fanno parte dello stesso gruppo devono avere lo stesso nome (per poter essere selezionato soltanto uno)</li>
+<li><strong>value</strong>, valore restituito quando il pulsante è selezionato (se omesso e viene selezionato allora value = on)</li>
+<li><strong>checked</strong>, seleziona il pulsante</li>
+</ul>
+<p><strong>Elenco a discesa</strong>: racchiuso tra i tag <strong>&lt;select&gt; … &lt;/select&gt;</strong><br>
+Ogni opzione è rappresentata dal tag <strong>&lt;option value=” ”&gt;</strong> <em>nome dell’opzione</em> <strong>&lt;/option&gt;</strong><br>
+Gli attributi possibili (facoltativi) sono:</p>
+<ul>
+<li><strong>size</strong>, numero di opzioni visibili nella lista senza scrollare con barra di scorrimento</li>
+<li><strong>multiple</strong>, se posso selezionare più elementi contemporaneamente</li>
+<li><strong>selected</strong>, indica una voce di menù selezionata</li>
+<li><strong>value</strong>, NON facoltativo, indica il valore che verrà inviato</li>
+</ul>
+<p>File upload control: <strong>&lt;input type=”file”&gt;</strong> con attributi <strong>accept</strong> (tipo di file) e <strong>size</strong> (larghezza del campo)<br>
+In accept posso specificare l’<strong>estensione, audio/*, video/*, image/*</strong></p>
+<p><strong>&lt;fieldset&gt; … &lt;/fieldset&gt;</strong> raggruppare vari elementi all’interno di un form tracciando un box<br>
+<strong>&lt;legend&gt;</strong> nome del fieldset <strong>&lt;/legend&gt;</strong> all’interno di un fieldset per indicare il nome</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

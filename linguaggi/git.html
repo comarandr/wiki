@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Wiki</title>
+<title>Git – Wiki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,23 +29,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Wiki</span>
     </a>
   </div>
@@ -100,11 +100,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -118,15 +118,40 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#creare-una-repository" id="toc-creare-una-repository" class="nav-link active" data-scroll-target="#creare-una-repository">Creare una repository</a></li>
+  <li><a href="#salvare-le-modifiche" id="toc-salvare-le-modifiche" class="nav-link" data-scroll-target="#salvare-le-modifiche">Salvare le modifiche</a></li>
+  <li><a href="#creare-nuovi-branch" id="toc-creare-nuovi-branch" class="nav-link" data-scroll-target="#creare-nuovi-branch">Creare nuovi branch</a></li>
+  <li><a href="#spostarsi-tra-i-commit" id="toc-spostarsi-tra-i-commit" class="nav-link" data-scroll-target="#spostarsi-tra-i-commit">Spostarsi tra i commit</a>
+  <ul class="collapse">
+  <li><a href="#visualizzare-la-cronologia-dei-commit" id="toc-visualizzare-la-cronologia-dei-commit" class="nav-link" data-scroll-target="#visualizzare-la-cronologia-dei-commit">visualizzare la cronologia dei commit</a></li>
+  <li><a href="#spostarsi-in-un-commit-specifico" id="toc-spostarsi-in-un-commit-specifico" class="nav-link" data-scroll-target="#spostarsi-in-un-commit-specifico">spostarsi in un commit specifico</a></li>
+  <li><a href="#operatori-di-riferimento-e" id="toc-operatori-di-riferimento-e" class="nav-link" data-scroll-target="#operatori-di-riferimento-e">operatori di riferimento ^ e ~</a></li>
+  <li><a href="#forzatura-di-un-branch" id="toc-forzatura-di-un-branch" class="nav-link" data-scroll-target="#forzatura-di-un-branch">forzatura di un branch</a></li>
+  </ul></li>
+  <li><a href="#unire-i-branch" id="toc-unire-i-branch" class="nav-link" data-scroll-target="#unire-i-branch">Unire i branch</a></li>
+  <li><a href="#annullare-le-modifiche" id="toc-annullare-le-modifiche" class="nav-link" data-scroll-target="#annullare-le-modifiche">Annullare le modifiche</a></li>
+  <li><a href="#git-cherry-pick" id="toc-git-cherry-pick" class="nav-link" data-scroll-target="#git-cherry-pick">git cherry-pick</a></li>
+  <li><a href="#git-tag" id="toc-git-tag" class="nav-link" data-scroll-target="#git-tag">Git tag</a></li>
+  <li><a href="#sincronizzare-con-un-repository-remoto" id="toc-sincronizzare-con-un-repository-remoto" class="nav-link" data-scroll-target="#sincronizzare-con-un-repository-remoto">Sincronizzare con un repository remoto</a>
+  <ul class="collapse">
+  <li><a href="#scaricare-da-un-repository-remoto" id="toc-scaricare-da-un-repository-remoto" class="nav-link" data-scroll-target="#scaricare-da-un-repository-remoto">scaricare da un repository remoto</a></li>
+  <li><a href="#scaricare-e-modificare-direttamente" id="toc-scaricare-e-modificare-direttamente" class="nav-link" data-scroll-target="#scaricare-e-modificare-direttamente">scaricare e modificare direttamente</a></li>
+  </ul></li>
+  <li><a href="#tracking" id="toc-tracking" class="nav-link" data-scroll-target="#tracking">Tracking</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wiki</h1>
+<h1 class="title">Git</h1>
 </div>
 
 
@@ -143,12 +168,145 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<p><a href="./linguaggi/indexLing.md">linguaggi di programmazione</a></p>
-<p><a href="./universita/indexUni.md">università</a></p>
+<section id="creare-una-repository" class="level2">
+<h2 class="anchored" data-anchor-id="creare-una-repository">Creare una repository</h2>
+<p><code>git init</code> : Crea una nuova repository Git nella directory corrente<br>
+<code>git clone &lt;url&gt;</code> : Clona una repository esistente da un URL. Imposta automaticamente il tracciamento del branch remoto “origin” e del branch “master” (o “main”)</p>
+</section>
+<section id="salvare-le-modifiche" class="level2">
+<h2 class="anchored" data-anchor-id="salvare-le-modifiche">Salvare le modifiche</h2>
+<p><strong>area di staging</strong> : è una zona temporanea dove si preparano i file prima di eseguire un commit</p>
+<p><code>git add &lt;file&gt;</code> : Aggiunge un file specifico all’area di staging</p>
+<p><code>git add .</code> : Aggiunge tutti i file modificati all’area di staging</p>
+<p><code>git commit -m "messaggio"</code> : Crea un commit con i file presenti nell’area di staging e un messaggio descrittivo</p>
+<p><code>git commit</code> : Apre l’editor predefinito per inserire un messaggio di commit dettagliato (riassunto + descrizione)</p>
+<p><code>git status</code> : Mostra lo stato dei file nella directory di lavoro (branch attivo, file modificati, file in staging, file non tracciati)</p>
+</section>
+<section id="creare-nuovi-branch" class="level2">
+<h2 class="anchored" data-anchor-id="creare-nuovi-branch">Creare nuovi branch</h2>
+<p><code>git branch</code> : Elenca i branch locali</p>
+<p><code>git branch &lt;nome-branch&gt;</code> : Crea un nuovo branch con il nome specificato</p>
+<ul>
+<li><code>git branch -d &lt;nome-branch&gt;</code> : Elimina un branch (deve essere già unito o non avere modifiche non salvate)</li>
+<li><code>git branch -D &lt;nome-branch&gt;</code> : Forza l’eliminazione di un branch anche se non è stato unito</li>
+</ul>
+<p><code>git switch [options] &lt;nome-branch&gt;</code> : Passa al branch specificato</p>
+<ul>
+<li><code>git switch -c &lt;nome-branch&gt;</code> : Crea un nuovo branch e passa ad esso
+<ul>
+<li><code>git switch -c name &lt;base-branch&gt;</code> : Crea un nuovo branch basato su altro branch e passa ad esso</li>
+</ul></li>
+<li><code>git switch -</code> : Passa al branch precedente</li>
+<li><code>git switch --detach &lt;commit&gt;</code> : Passa a un commit specifico in modalità detached HEAD (non associato a un branch)</li>
+</ul>
+<p><code>git checkout &lt;nome-branch&gt;</code> : Passa al branch specificato (spesso sostituito da switch)</p>
+<ul>
+<li><code>git checkout -b &lt;nome-branch&gt;</code> : Crea un nuovo branch e passa ad esso</li>
+<li><code>git checkout -d &lt;nome-branch&gt;</code> : Elimina un branch</li>
+</ul>
+</section>
+<section id="spostarsi-tra-i-commit" class="level2">
+<h2 class="anchored" data-anchor-id="spostarsi-tra-i-commit">Spostarsi tra i commit</h2>
+<section id="visualizzare-la-cronologia-dei-commit" class="level3">
+<h3 class="anchored" data-anchor-id="visualizzare-la-cronologia-dei-commit">visualizzare la cronologia dei commit</h3>
+<p><code>git log</code> : Mostra la cronologia dei commit</p>
+<p><code>git log --oneline</code> : Mostra la cronologia dei commit in formato compatto (una riga per commit)</p>
+<p><code>git log --graph</code> : Mostra la cronologia dei commit con una rappresentazione grafica dei branch e dei merge</p>
+<p><code>git log --all</code> : Mostra la cronologia dei commit di tutti i branch</p>
+<p><code>git log --remote</code> : Mostra la cronologia dei commit dei branch remoti</p>
+</section>
+<section id="spostarsi-in-un-commit-specifico" class="level3">
+<h3 class="anchored" data-anchor-id="spostarsi-in-un-commit-specifico">spostarsi in un commit specifico</h3>
+<p><code>git checkout &lt;commit&gt;</code> : Passa a un commit specifico (modalità detached HEAD)</p>
+<p><code>git switch --detach &lt;commit&gt;</code> : Passa a un commit specifico in modalità detached HEAD (alternativa a checkout)</p>
+<p><code>git checkout &lt;nome-branch&gt;^</code> : Passa al commit genitore del branch specificato</p>
+<p><code>git checkout &lt;nome-branch&gt;~n</code> : Passa al commit n livelli sopra il branch specificato</p>
+</section>
+<section id="operatori-di-riferimento-e" class="level3">
+<h3 class="anchored" data-anchor-id="operatori-di-riferimento-e">operatori di riferimento ^ e ~</h3>
+<ul>
+<li><code>^</code> : Riferisce al genitore di un commit
+<ul>
+<li><code>^&lt;numero&gt;</code> : Riferisce al genitore n-esimo di un commit nel caso di genitori multipli (<strong>spostamento orizzontale</strong>)</li>
+</ul></li>
+<li><code>~</code> : Riferisce al commit genitore di un commit, ma permette di specificare un numero di livelli da risalire
+<ul>
+<li><code>~n</code> : Riferisce al commit n livelli sopra il commit specificato (<strong>spostamento verticale</strong>)</li>
+</ul></li>
+</ul>
+<p>Gli operatori <code>^</code> e <code>~</code> possono essere combinati per navigare nella cronologia dei commit</p>
+</section>
+<section id="forzatura-di-un-branch" class="level3">
+<h3 class="anchored" data-anchor-id="forzatura-di-un-branch">forzatura di un branch</h3>
+<p><code>git branch -f &lt;nome-branch&gt; &lt;commit&gt;</code> : Forza il branch a puntare a un commit specifico (può causare perdita di dati se non usato con cautela)</p>
+<ul>
+<li>nota: &lt;commit&gt; può anche essere un riferimento relativo <code>nome-branch~n</code> o <code>nome-branch^</code></li>
+</ul>
+</section>
+</section>
+<section id="unire-i-branch" class="level2">
+<h2 class="anchored" data-anchor-id="unire-i-branch">Unire i branch</h2>
+<p><code>git merge &lt;nome-branch&gt;</code>: Unisce il branch specificato nel branch attivo</p>
+<p>in assenza di conflitti non sarà necessario risolvere manualmente le modifiche</p>
+<p><code>git rebase &lt;nome-branch&gt;</code>: Applica le modifiche del branch attivo sul il branch specificato (se mi trovo su B e faccio <code>rebase A</code> applica le modifiche di B su A)</p>
+<ol type="1">
+<li>creo il ramo secondario con la feature da sviluppare</li>
+<li>mi sposto sul ramo secondario e faccio i commit</li>
+<li>mentre sono sul ramo secondario, faccio un rebase del ramo principale per portare le modifiche più recenti</li>
+<li>risolvo eventuali conflitti</li>
+</ol>
+<ul>
+<li>pro: mantiene una cronologia più lineare e pulita</li>
+<li>contro: modifica lo storico dei commit</li>
+</ul>
+</section>
+<section id="annullare-le-modifiche" class="level2">
+<h2 class="anchored" data-anchor-id="annullare-le-modifiche">Annullare le modifiche</h2>
+<p><code>git reset &lt;commit&gt;</code> : Resetta il branch attivo a un commit specifico, annullando tutte le modifiche successive (perdita di dati)</p>
+<p><code>git revert &lt;commit&gt;</code> : Crea un nuovo commit che annulla le modifiche introdotte da un commit specifico (non altera la cronologia)</p>
+<p><strong>nota</strong>: &lt;commit&gt; è il commit a cui si vuole tornare</p>
+</section>
+<section id="git-cherry-pick" class="level2">
+<h2 class="anchored" data-anchor-id="git-cherry-pick">git cherry-pick</h2>
+<p><code>git cherry-pick &lt;commit&gt;</code> : Applica le modifiche introdotte da un commit specifico al branch attivo (utile per portare modifiche specifiche da un branch all’altro senza unire tutto il branch)</p>
+<p><code>git rebase -i &lt;nome-branch/commit&gt;</code> : apre un editor interattivo che ti permette di selezionare i commit da includere, modificare o eliminare durante un rebase, dal branch o commit specificato fino al branch attivo.</p>
+</section>
+<section id="git-tag" class="level2">
+<h2 class="anchored" data-anchor-id="git-tag">Git tag</h2>
+<p><code>git tag &lt;nome-tag&gt;</code> : Crea un tag leggero con il nome specificato, permette di identificare un commit preciso</p>
+<p><code>git describe &lt;ref&gt;</code> : Mostra una descrizione del commit più vicina a un tag, con output del tipo <code>&lt;tag&gt;-&lt;numero-commit&gt;-g&lt;hash&gt;</code></p>
+</section>
+<section id="sincronizzare-con-un-repository-remoto" class="level2">
+<h2 class="anchored" data-anchor-id="sincronizzare-con-un-repository-remoto">Sincronizzare con un repository remoto</h2>
+<section id="scaricare-da-un-repository-remoto" class="level3">
+<h3 class="anchored" data-anchor-id="scaricare-da-un-repository-remoto">scaricare da un repository remoto</h3>
+<p><strong>nota</strong>: i rami remoti riflettono lo stato del repository remoto dall’ultima volta che abbiamo comunicato con esso (tramite fetch, pull o push)</p>
+<p><code>git clone</code> : Clona una repository esistente da un URL, creando una copia locale del repository remoto</p>
+<p><code>git fetch</code>: scarica commit presenti in remoto e assenti dal nostro repository locale, aggiornando dove puntano i nostri branche remoti (“origin/branch”) ma senza modificare i nostri branch locali. è una sorta di download dei cambiamenti.</p>
+<p><code>git remote add &lt;nome-remoto&gt; &lt;url&gt;</code> : Aggiunge un repository remoto con un nome specificato</p>
+<p><strong>nota</strong>: potenzialmente è possibile prima scaricare i commit con fetch e poi unirli e spostarsi attraverso essi come se fossero stati creati localmente (cherry-pick, merge, rebase, checkout … <origin master="">)</origin></p>
+</section>
+<section id="scaricare-e-modificare-direttamente" class="level3">
+<h3 class="anchored" data-anchor-id="scaricare-e-modificare-direttamente">scaricare e modificare direttamente</h3>
+<p><code>git push &lt;remoto&gt; &lt;place&gt;</code> : Invia i commit del branch locale al repository remoto</p>
+<p><code>git push &lt;remoto&gt; &lt;branch-locale&gt;:&lt;branch-remoto&gt;</code> : Invia i commit del branch locale al repository remoto, specificando il nome del branch remoto (se diverso da quello locale)</p>
+<p><code>git pull &lt;nome-remoto&gt; &lt;nome-branch&gt;</code> : Recupera e unisce i cambiamenti dal repository remoto al branch locale, consiste nella combinazione di <code>git fetch</code> e <code>git merge</code></p>
+<p><strong>nota</strong>: generalmente il main branch è bloccato. Normalmente bisogna:</p>
+<ol type="1">
+<li>creare un branch secondario</li>
+<li>fare le modifiche e i commit su questo branch</li>
+<li>fare un push del branch secondario al repository remoto</li>
+<li>creare una pull request per unire le modifiche al main branch</li>
+</ol>
+</section>
+</section>
+<section id="tracking" class="level2">
+<h2 class="anchored" data-anchor-id="tracking">Tracking</h2>
+<p><code>git branch -u &lt;nome-remoto&gt;/&lt;branch-remoto&gt; &lt;branch-locale&gt;</code> : Imposta il tracking del branch remoto con il branch locale. Se stiamo lavorando giù sul branch locale possiamo ometterlo</p>
+<p><code>git checkout -b &lt;branch-locale&gt; &lt;nome-remoto&gt;/&lt;branch-remoto&gt;</code> : Imposta il tracking del branch remoto con il branch locale</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

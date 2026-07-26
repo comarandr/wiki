@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Markdown – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sintassi-base" id="toc-sintassi-base" class="nav-link active" data-scroll-target="#sintassi-base">Sintassi base</a></li>
+  <li><a href="#heading-titoli" id="toc-heading-titoli" class="nav-link" data-scroll-target="#heading-titoli">Heading (titoli)</a></li>
+  <li><a href="#paragraph-paragrafi" id="toc-paragraph-paragrafi" class="nav-link" data-scroll-target="#paragraph-paragrafi">Paragraph (paragrafi)</a></li>
+  <li><a href="#line-breaks-interruzioni-di-linea" id="toc-line-breaks-interruzioni-di-linea" class="nav-link" data-scroll-target="#line-breaks-interruzioni-di-linea">Line breaks (interruzioni di linea)</a></li>
+  <li><a href="#bold-grassetto" id="toc-bold-grassetto" class="nav-link" data-scroll-target="#bold-grassetto">Bold (grassetto)</a></li>
+  <li><a href="#italic-corsivo" id="toc-italic-corsivo" class="nav-link" data-scroll-target="#italic-corsivo">Italic (corsivo)</a></li>
+  <li><a href="#bold-and-italic-grassetto-e-corsivo" id="toc-bold-and-italic-grassetto-e-corsivo" class="nav-link" data-scroll-target="#bold-and-italic-grassetto-e-corsivo">Bold and Italic (grassetto e corsivo)</a></li>
+  <li><a href="#blockquote-citazioni" id="toc-blockquote-citazioni" class="nav-link" data-scroll-target="#blockquote-citazioni">Blockquote (citazioni)</a></li>
+  <li><a href="#lists-liste" id="toc-lists-liste" class="nav-link" data-scroll-target="#lists-liste">Lists (liste)</a>
+  <ul class="collapse">
+  <li><a href="#unordered-lists-liste-non-ordinate" id="toc-unordered-lists-liste-non-ordinate" class="nav-link" data-scroll-target="#unordered-lists-liste-non-ordinate">Unordered Lists (liste non ordinate)</a></li>
+  <li><a href="#ordered-lists-liste-ordinate" id="toc-ordered-lists-liste-ordinate" class="nav-link" data-scroll-target="#ordered-lists-liste-ordinate">Ordered Lists (liste ordinate)</a></li>
+  <li><a href="#elements-of-a-list-elementi-di-una-lista" id="toc-elements-of-a-list-elementi-di-una-lista" class="nav-link" data-scroll-target="#elements-of-a-list-elementi-di-una-lista">Elements of a list (elementi di una lista)</a></li>
+  </ul></li>
+  <li><a href="#blocchi-codice" id="toc-blocchi-codice" class="nav-link" data-scroll-target="#blocchi-codice">Blocchi codice</a></li>
+  <li><a href="#code-inline-code" id="toc-code-inline-code" class="nav-link" data-scroll-target="#code-inline-code">Code (inline code)</a></li>
+  <li><a href="#horizontal-rule-linea-orizzontale" id="toc-horizontal-rule-linea-orizzontale" class="nav-link" data-scroll-target="#horizontal-rule-linea-orizzontale">Horizontal Rule (linea orizzontale)</a></li>
+  <li><a href="#links-collegamenti" id="toc-links-collegamenti" class="nav-link" data-scroll-target="#links-collegamenti">Links (collegamenti)</a></li>
+  <li><a href="#urls-and-email-addresses-url-e-indirizzi-email" id="toc-urls-and-email-addresses-url-e-indirizzi-email" class="nav-link" data-scroll-target="#urls-and-email-addresses-url-e-indirizzi-email">URLs and Email Addresses (URL e indirizzi email)</a>
+  <ul class="collapse">
+  <li><a href="#formatting-links-formattazione-dei-collegamenti" id="toc-formatting-links-formattazione-dei-collegamenti" class="nav-link" data-scroll-target="#formatting-links-formattazione-dei-collegamenti">Formatting links (formattazione dei collegamenti)</a></li>
+  </ul></li>
+  <li><a href="#images-immagini" id="toc-images-immagini" class="nav-link" data-scroll-target="#images-immagini">Images (immagini)</a></li>
+  <li><a href="#escaping-caratteri-speciali" id="toc-escaping-caratteri-speciali" class="nav-link" data-scroll-target="#escaping-caratteri-speciali">Escaping (caratteri speciali)</a></li>
+  <li><a href="#tables-tabelle" id="toc-tables-tabelle" class="nav-link" data-scroll-target="#tables-tabelle">Tables (tabelle)</a>
+  <ul class="collapse">
+  <li><a href="#allineamento-delle-colonne" id="toc-allineamento-delle-colonne" class="nav-link" data-scroll-target="#allineamento-delle-colonne">allineamento delle colonne</a></li>
+  </ul></li>
+  <li><a href="#footnotes-note-a-piè-di-pagina" id="toc-footnotes-note-a-piè-di-pagina" class="nav-link" data-scroll-target="#footnotes-note-a-piè-di-pagina">Footnotes (note a piè di pagina)</a></li>
+  <li><a href="#definition-lists-liste-di-definizione" id="toc-definition-lists-liste-di-definizione" class="nav-link" data-scroll-target="#definition-lists-liste-di-definizione">Definition Lists (liste di definizione)</a></li>
+  <li><a href="#strikethrough-barrato" id="toc-strikethrough-barrato" class="nav-link" data-scroll-target="#strikethrough-barrato">Strikethrough (barrato)</a></li>
+  <li><a href="#task-lists-liste-di-attività" id="toc-task-lists-liste-di-attività" class="nav-link" data-scroll-target="#task-lists-liste-di-attività">Task Lists (liste di attività)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Markdown</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sintassi-base" class="level2">
+<h2 class="anchored" data-anchor-id="sintassi-base">Sintassi base</h2>
+</section>
+<section id="heading-titoli" class="level2">
+<h2 class="anchored" data-anchor-id="heading-titoli">Heading (titoli)</h2>
+<p>6 livelli di gerarchia, dal più grande al più piccolo, rappresentati da <code>#</code>:</p>
+<p># Heading level 1</p>
+<p>## Heading level 2</p>
+<p>### Heading level 3</p>
+<p>#### Heading level 4</p>
+<p>##### Heading level 5</p>
+<p>###### Heading level 6</p>
+<p>In alternativa, per i primi due livelli, è possibile usare <code>=</code> e <code>-</code>:</p>
+<p>Titolo di primo livello</p>
+<p>==========</p>
+<p>Titolo di secondo livello</p>
+<p>-———</p>
+</section>
+<section id="paragraph-paragrafi" class="level2">
+<h2 class="anchored" data-anchor-id="paragraph-paragrafi">Paragraph (paragrafi)</h2>
+<p>Per i paragrafi, basta lasciare una riga vuota tra due blocchi di testo.</p>
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+</section>
+<section id="line-breaks-interruzioni-di-linea" class="level2">
+<h2 class="anchored" data-anchor-id="line-breaks-interruzioni-di-linea">Line breaks (interruzioni di linea)</h2>
+<p>Per forzare un’interruzione di linea, basta terminare la riga con due spazi e premere invio.</p>
+<p>Ciao io.</p>
+<p>Ciao tu.</p>
+</section>
+<section id="bold-grassetto" class="level2">
+<h2 class="anchored" data-anchor-id="bold-grassetto">Bold (grassetto)</h2>
+<p>Racchiudere il testo tra due coppie di asterischi <code>**</code> o due coppie di underscore <code>__</code>.</p>
+<p>**ciao**</p>
+<p>__ciao__</p>
+</section>
+<section id="italic-corsivo" class="level2">
+<h2 class="anchored" data-anchor-id="italic-corsivo">Italic (corsivo)</h2>
+<p>Racchiudere il testo tra una coppia di asterischi <code>*</code> o una coppia di underscore <code>_</code>.</p>
+<p>*ciao*<br>
+_ciao_</p>
+</section>
+<section id="bold-and-italic-grassetto-e-corsivo" class="level2">
+<h2 class="anchored" data-anchor-id="bold-and-italic-grassetto-e-corsivo">Bold and Italic (grassetto e corsivo)</h2>
+<p>Racchiudere il testo tra tre coppie di asterischi <code>***</code> o tre coppie di underscore <code>___</code>.</p>
+<p>***ciao***</p>
+<p>___ciao___</p>
+</section>
+<section id="blockquote-citazioni" class="level2">
+<h2 class="anchored" data-anchor-id="blockquote-citazioni">Blockquote (citazioni)</h2>
+<p>Basta usare il simbolo <code>&gt;</code> all’inizio della riga.</p>
+<p>&gt; Questa è una citazione.</p>
+<blockquote class="blockquote">
+<p>citazione</p>
+</blockquote>
+<p>Posso anche annidare le citazioni:</p>
+<p>&gt; Questa è una citazione.</p>
+<p>&gt;&gt; Questa è una citazione annidata.</p>
+<blockquote class="blockquote">
+<p>Citazione<br>
+&gt; Citazione annidata</p>
+</blockquote>
+</section>
+<section id="lists-liste" class="level2">
+<h2 class="anchored" data-anchor-id="lists-liste">Lists (liste)</h2>
+<section id="unordered-lists-liste-non-ordinate" class="level3">
+<h3 class="anchored" data-anchor-id="unordered-lists-liste-non-ordinate">Unordered Lists (liste non ordinate)</h3>
+<p>Basta aggiungere <code>-</code>, <code>*</code> o <code>+</code> all’inizio della riga.</p>
+<p>- Elemento 1</p>
+<p>- Elemento 2</p>
+<ul>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+</ul>
+<p>Per annidare, basta aggiungere due spazi prima del simbolo della lista.</p>
+<pre><code>- Elemento 1
+  - Elemento 1.1
+  - Elemento 1.2</code></pre>
+<ul>
+<li>Elemento 1
+<ul>
+<li>Elemento 1.1</li>
+<li>Elemento 1.2</li>
+</ul></li>
+</ul>
+</section>
+<section id="ordered-lists-liste-ordinate" class="level3">
+<h3 class="anchored" data-anchor-id="ordered-lists-liste-ordinate">Ordered Lists (liste ordinate)</h3>
+<p>Aggiungere un numero seguito da un punto all’inizio della riga.</p>
+<p>\1. Elemento 1</p>
+<p>\2. Elemento 2</p>
+<ol type="1">
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+</ol>
+<p>Posso annidarle</p>
+<pre><code>1. Elemento 1
+    1. Elemento 1.1
+    2. Elemento 1.2
+2. Elemento 2</code></pre>
+<ol type="1">
+<li>Elemento 1
+<ol type="1">
+<li>Elemento 1.1</li>
+<li>Elemento 1.2</li>
+</ol></li>
+<li>Elemento 2</li>
+</ol>
+</section>
+<section id="elements-of-a-list-elementi-di-una-lista" class="level3">
+<h3 class="anchored" data-anchor-id="elements-of-a-list-elementi-di-una-lista">Elements of a list (elementi di una lista)</h3>
+<p>Per aggiungere un elemento nella lista, basta indentare di 4 spazi o un tab.</p>
+<pre><code>- Elemento 1
+    Questo è un elemento della lista.
+- Elemento 2
+    Questo è un altro elemento della lista.</code></pre>
+<ol type="1">
+<li>Elemento 1<br>
+Questo è un elemento della lista.</li>
+<li>Elemento 2<br>
+Questo è un<br>
+altro elemento della lista.</li>
+<li>Elemento 3</li>
+</ol>
+</section>
+</section>
+<section id="blocchi-codice" class="level2">
+<h2 class="anchored" data-anchor-id="blocchi-codice">Blocchi codice</h2>
+<p>Indentare ogni riga con almeno 4 spazi o un tab.</p>
+<pre><code>console.log("Hello, World!");
+  console.log("This is a code block.");</code></pre>
+<p>backtick ``` seguiti eventualmente dal nome del linguaggio per creare un blocco di codice:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hello, World!"</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"This is a code block."</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="code-inline-code" class="level2">
+<h2 class="anchored" data-anchor-id="code-inline-code">Code (inline code)</h2>
+<p>Racchiudere il testo tra due backtick ` per creare un codice inline.</p>
+<p>`console.log(“Hello, World!”);`</p>
+<p><code>console.log("Hello, World!");</code></p>
+<p>con due backtick `` posso racchiudere del testo che contiene backtick:</p>
+<p><code>ciao `code` ciao</code></p>
+</section>
+<section id="horizontal-rule-linea-orizzontale" class="level2">
+<h2 class="anchored" data-anchor-id="horizontal-rule-linea-orizzontale">Horizontal Rule (linea orizzontale)</h2>
+<p>Usare tre o più asterischi <code>***</code>, trattini <code>---</code> o underscore <code>___</code> su una riga da soli</p>
+<p>-–</p>
+<hr>
+</section>
+<section id="links-collegamenti" class="level2">
+<h2 class="anchored" data-anchor-id="links-collegamenti">Links (collegamenti)</h2>
+<p>Usa la sintassi <code>[testo](url)</code></p>
+<p>[Google](https://www.google.com)</p>
+<p><a href="https://www.google.com">Google</a></p>
+<p>Posso anche aggiungere un titolo al link, racchiuso tra virgolette:</p>
+<p>[Google](https://www.google.com “Vai a Google”)</p>
+<p><a href="https://www.google.com" title="Vai a Google">Google</a></p>
+</section>
+<section id="urls-and-email-addresses-url-e-indirizzi-email" class="level2">
+<h2 class="anchored" data-anchor-id="urls-and-email-addresses-url-e-indirizzi-email">URLs and Email Addresses (URL e indirizzi email)</h2>
+<p>Racchiudere l’URL o l’indirizzo email tra <code>&lt;</code> e <code>&gt;</code> per creare un link automatico</p>
+<p><a href="https://www.google.com" class="uri">https://www.google.com</a><br>
+<a href="mailto:example@example.com" class="email">example@example.com</a></p>
+<section id="formatting-links-formattazione-dei-collegamenti" class="level3">
+<h3 class="anchored" data-anchor-id="formatting-links-formattazione-dei-collegamenti">Formatting links (formattazione dei collegamenti)</h3>
+<p>per enfatizzare il testo del link, basta racchiuderlo tra asterischi <code>*</code> o underscore <code>_</code>:</p>
+<p><strong><a href="https://www.google.com">Google</a></strong><br>
+<em><a href="https://www.google.com">Google</a></em></p>
+<p>Ulteriori formattazioni possono essere:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Google</span><span class="co">][1]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Sito web</span><span class="co">][1]</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ot">[1]: https://www.google.com</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Entrambi i link puntano a Google</p>
+<p><a href="https://www.google.com">Google</a></p>
+<p><a href="https://www.google.com">Sito web</a></p>
+</section>
+</section>
+<section id="images-immagini" class="level2">
+<h2 class="anchored" data-anchor-id="images-immagini">Images (immagini)</h2>
+<p>I riferimenti alle immagini seguono la sintassi:</p>
+<p>![testo](url)</p>
+</section>
+<section id="escaping-caratteri-speciali" class="level2">
+<h2 class="anchored" data-anchor-id="escaping-caratteri-speciali">Escaping (caratteri speciali)</h2>
+<p>Per inserire un carattere speciale, basta precederlo con un backslash <code>\</code></p>
+</section>
+<section id="tables-tabelle" class="level2">
+<h2 class="anchored" data-anchor-id="tables-tabelle">Tables (tabelle)</h2>
+<pre><code>| Colonna 1 | Colonna 2 | Colonna 3 |
+| --------- | --------- | --------- |
+| Riga 1, Colonna 1 | Riga 1, Colonna 2 | Riga 1, Colonna 3 |</code></pre>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Colonna 1</th>
+<th>Colonna 2</th>
+<th>Colonna 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Riga 1, Colonna 1</td>
+<td>Riga 1, Colonna 2</td>
+<td>Riga 1, Colonna 3</td>
+</tr>
+</tbody>
+</table>
+<section id="allineamento-delle-colonne" class="level3">
+<h3 class="anchored" data-anchor-id="allineamento-delle-colonne">allineamento delle colonne</h3>
+<pre><code>| Colonna 1 | Colonna 2 | Colonna 3 |
+| :-------- | :-------: | --------: |
+| sinistra | centrale | destra |</code></pre>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Colonna 1</th>
+<th style="text-align: center;">Colonna 2</th>
+<th style="text-align: right;">Colonna 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sinistra</td>
+<td style="text-align: center;">centrale</td>
+<td style="text-align: right;">destra</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="footnotes-note-a-piè-di-pagina" class="level2">
+<h2 class="anchored" data-anchor-id="footnotes-note-a-piè-di-pagina">Footnotes (note a piè di pagina)</h2>
+<pre><code>Questa è una frase con una nota a piè di pagina.[^1]    
+
+[^1]: Questa è la nota a piè di pagina.</code></pre>
+<p>Nota a piè di pagina<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section>
+<section id="definition-lists-liste-di-definizione" class="level2">
+<h2 class="anchored" data-anchor-id="definition-lists-liste-di-definizione">Definition Lists (liste di definizione)</h2>
+<pre><code>Termine 1
+: Definizione del termine 1
+Termine 2
+: Definizione del termine 2</code></pre>
+<dl>
+<dt>Termine 1</dt>
+<dd>
+Definizione del termine 1
+</dd>
+<dt>Termine 2</dt>
+<dd>
+Definizione del termine 2
+</dd>
+</dl>
+</section>
+<section id="strikethrough-barrato" class="level2">
+<h2 class="anchored" data-anchor-id="strikethrough-barrato">Strikethrough (barrato)</h2>
+<p>Per barrare il testo, basta racchiuderlo tra due tilde <code>~</code></p>
+<p>~~testo barrato~~</p>
+<p><del>testo barrato</del></p>
+</section>
+<section id="task-lists-liste-di-attività" class="level2">
+<h2 class="anchored" data-anchor-id="task-lists-liste-di-attività">Task Lists (liste di attività)</h2>
+<pre><code>- [x] Attività completata
+- [ ] Attività non completata</code></pre>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Attività completata</label></li>
+<li><label><input type="checkbox">Attività non completata</label></li>
+<li><label><input type="checkbox">Attività non completata</label></li>
+</ul>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Questa è la nota a piè di pagina.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

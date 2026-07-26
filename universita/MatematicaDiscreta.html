@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Matematica Discreta – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#insiemi" id="toc-insiemi" class="nav-link active" data-scroll-target="#insiemi">Insiemi</a></li>
+  <li><a href="#relazioni" id="toc-relazioni" class="nav-link" data-scroll-target="#relazioni">Relazioni</a>
+  <ul class="collapse">
+  <li><a href="#congruenza-modulo-n-x-_n-y" id="toc-congruenza-modulo-n-x-_n-y" class="nav-link" data-scroll-target="#congruenza-modulo-n-x-_n-y">Congruenza modulo $ n $ $ x _n y $</a></li>
+  </ul></li>
+  <li><a href="#funzioni" id="toc-funzioni" class="nav-link" data-scroll-target="#funzioni">Funzioni</a></li>
+  <li><a href="#induzione" id="toc-induzione" class="nav-link" data-scroll-target="#induzione">Induzione</a></li>
+  <li><a href="#sommatorie" id="toc-sommatorie" class="nav-link" data-scroll-target="#sommatorie">Sommatorie</a>
+  <ul class="collapse">
+  <li><a href="#regole" id="toc-regole" class="nav-link" data-scroll-target="#regole">Regole</a></li>
+  <li><a href="#somme-multiple" id="toc-somme-multiple" class="nav-link" data-scroll-target="#somme-multiple">Somme multiple</a></li>
+  <li><a href="#scambio-di-indici" id="toc-scambio-di-indici" class="nav-link" data-scroll-target="#scambio-di-indici">Scambio di indici</a></li>
+  <li><a href="#somme-notevoli" id="toc-somme-notevoli" class="nav-link" data-scroll-target="#somme-notevoli">Somme notevoli</a></li>
+  <li><a href="#metodo-di-perturbazione" id="toc-metodo-di-perturbazione" class="nav-link" data-scroll-target="#metodo-di-perturbazione">Metodo di perturbazione</a></li>
+  </ul></li>
+  <li><a href="#probabilità" id="toc-probabilità" class="nav-link" data-scroll-target="#probabilità">Probabilità</a></li>
+  <li><a href="#matematica-degli-interi" id="toc-matematica-degli-interi" class="nav-link" data-scroll-target="#matematica-degli-interi">Matematica degli interi</a>
+  <ul class="collapse">
+  <li><a href="#divisibilità-mcd-mcm" id="toc-divisibilità-mcd-mcm" class="nav-link" data-scroll-target="#divisibilità-mcd-mcm">divisibilità, MCD, mcm</a></li>
+  <li><a href="#numeri-primi" id="toc-numeri-primi" class="nav-link" data-scroll-target="#numeri-primi">Numeri primi</a></li>
+  <li><a href="#segno-permutazioni-parità-e-disparità" id="toc-segno-permutazioni-parità-e-disparità" class="nav-link" data-scroll-target="#segno-permutazioni-parità-e-disparità">Segno permutazioni (parità e disparità)</a></li>
+  </ul></li>
+  <li><a href="#principio-della-piccionaia" id="toc-principio-della-piccionaia" class="nav-link" data-scroll-target="#principio-della-piccionaia">Principio della piccionaia</a></li>
+  <li><a href="#principio-di-somma-e-del-prodotto" id="toc-principio-di-somma-e-del-prodotto" class="nav-link" data-scroll-target="#principio-di-somma-e-del-prodotto">Principio di somma e del prodotto</a>
+  <ul class="collapse">
+  <li><a href="#principio-di-somma" id="toc-principio-di-somma" class="nav-link" data-scroll-target="#principio-di-somma">Principio di somma</a></li>
+  <li><a href="#principio-di-prodotto" id="toc-principio-di-prodotto" class="nav-link" data-scroll-target="#principio-di-prodotto">Principio di prodotto</a></li>
+  <li><a href="#scelte-su-sequenze" id="toc-scelte-su-sequenze" class="nav-link" data-scroll-target="#scelte-su-sequenze">Scelte su sequenze</a></li>
+  <li><a href="#combinazioni-sottoinsiemi" id="toc-combinazioni-sottoinsiemi" class="nav-link" data-scroll-target="#combinazioni-sottoinsiemi">Combinazioni (sottoinsiemi)</a></li>
+  </ul></li>
+  <li><a href="#coefficiente-binomiale" id="toc-coefficiente-binomiale" class="nav-link" data-scroll-target="#coefficiente-binomiale">Coefficiente binomiale</a>
+  <ul class="collapse">
+  <li><a href="#triangolo-di-pascal" id="toc-triangolo-di-pascal" class="nav-link" data-scroll-target="#triangolo-di-pascal">Triangolo di Pascal</a></li>
+  <li><a href="#processi-bernoulliani" id="toc-processi-bernoulliani" class="nav-link" data-scroll-target="#processi-bernoulliani">Processi Bernoulliani</a></li>
+  <li><a href="#disposizioni-insiemi-ordinati" id="toc-disposizioni-insiemi-ordinati" class="nav-link" data-scroll-target="#disposizioni-insiemi-ordinati">Disposizioni (insiemi ordinati)</a></li>
+  <li><a href="#multinsiemi-insiemi-con-elementi-ripetuti" id="toc-multinsiemi-insiemi-con-elementi-ripetuti" class="nav-link" data-scroll-target="#multinsiemi-insiemi-con-elementi-ripetuti">Multinsiemi (insiemi con elementi ripetuti)</a></li>
+  <li><a href="#combinazioni-con-ripetizioni" id="toc-combinazioni-con-ripetizioni" class="nav-link" data-scroll-target="#combinazioni-con-ripetizioni">Combinazioni con ripetizioni</a></li>
+  </ul></li>
+  <li><a href="#principio-di-inclusione-esclusione" id="toc-principio-di-inclusione-esclusione" class="nav-link" data-scroll-target="#principio-di-inclusione-esclusione">Principio di inclusione-esclusione</a>
+  <ul class="collapse">
+  <li><a href="#principio-base" id="toc-principio-base" class="nav-link" data-scroll-target="#principio-base">Principio base</a></li>
+  <li><a href="#spiazzamenti" id="toc-spiazzamenti" class="nav-link" data-scroll-target="#spiazzamenti">Spiazzamenti</a></li>
+  </ul></li>
+  <li><a href="#teoria-dei-grafi" id="toc-teoria-dei-grafi" class="nav-link" data-scroll-target="#teoria-dei-grafi">Teoria dei Grafi</a>
+  <ul class="collapse">
+  <li><a href="#grafi-non-orientati" id="toc-grafi-non-orientati" class="nav-link" data-scroll-target="#grafi-non-orientati">Grafi non orientati</a></li>
+  <li><a href="#alberi" id="toc-alberi" class="nav-link" data-scroll-target="#alberi">Alberi</a></li>
+  <li><a href="#indici-di-wiener" id="toc-indici-di-wiener" class="nav-link" data-scroll-target="#indici-di-wiener">Indici di Wiener</a></li>
+  <li><a href="#grafi-orientati-diretto-digrafo" id="toc-grafi-orientati-diretto-digrafo" class="nav-link" data-scroll-target="#grafi-orientati-diretto-digrafo">Grafi orientati (diretto, digrafo)</a></li>
+  <li><a href="#grafi-pesati" id="toc-grafi-pesati" class="nav-link" data-scroll-target="#grafi-pesati">Grafi pesati</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Matematica Discreta</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="insiemi" class="level2">
+<h2 class="anchored" data-anchor-id="insiemi">Insiemi</h2>
+<p><strong>Insieme</strong>: concetto primitivo, collezione di oggetti detti elementi</p>
+<p><strong>Cardinalità $ A $</strong>: numero di elementi di un insieme $ A$</p>
+<p><strong>Insieme vuoto $ $</strong>: insieme senza elementi, $ = 0$</p>
+<p><strong>A sottoinsieme di B</strong>: $ A B$ se ogni elemento di A è anche in B</p>
+<p><strong>prodotto cartesiano $ A B$</strong>: insieme di tutte le coppie $ (a, b)$ con $ a A$ e $ b B$</p>
+</section>
+<section id="relazioni" class="level2">
+<h2 class="anchored" data-anchor-id="relazioni">Relazioni</h2>
+<ul>
+<li><p><strong>riflessiva</strong>: $ x x&nbsp;x $</p></li>
+<li><p><strong>antiriflessiva</strong>: $ (x x)&nbsp;x $</p></li>
+<li><p><strong>simmetrica</strong>: $ x y y x $</p></li>
+<li><p><strong>antisimmetrica</strong>: $ x y&nbsp;(y x) $</p></li>
+<li><p><strong>transitiva</strong>: $ (x y) (y z) (x z) $</p></li>
+</ul>
+<p><strong>D’ORDINE</strong>: irriflessiva, antisimmetrica e transitiva</p>
+<p><strong>D’EQUIVALENZA</strong>: riflessiva, simmetrica e transitiva</p>
+<p>Le relazioni d’equivalenza implicano una partizione dell’insieme in classi di equivalenza</p>
+<section id="congruenza-modulo-n-x-_n-y" class="level3">
+<h3 class="anchored" data-anchor-id="congruenza-modulo-n-x-_n-y">Congruenza modulo $ n $ $ x _n y $</h3>
+<p>Resto della divisione intera tra due numeri</p>
+<p>$ 12 = 0$ | $ -12 = 0$<br>
+$ 13 = 1$ | $ -13 = 2$<br>
+$ 14 = 2$ | $ -14 = 1$</p>
+<p>dato $ x _n y$ allora:</p>
+<ul>
+<li>$ x-y _n 0 $</li>
+<li>$ x + z _n y + z $</li>
+<li>$ x z _n y z $</li>
+</ul>
+<p>considerando anche $ z_1 _n z_2 $:</p>
+<ul>
+<li>$ x+z_1 _n y+z_2 $</li>
+<li>$ x z_1 _n y z_2 $</li>
+</ul>
+</section>
+</section>
+<section id="funzioni" class="level2">
+<h2 class="anchored" data-anchor-id="funzioni">Funzioni</h2>
+<ul>
+<li><p><strong>iniettiva</strong>: $ x x’ f(x) f(x’) $</p></li>
+<li><p><strong>suriettiva</strong>: $ f: A B&nbsp;f(A) = B $</p></li>
+<li><p><strong>biiettiva</strong>: iniettiva e suriettiva, invertibile</p></li>
+<li><p><strong>ceiling</strong>: $ x = {v : v x} $ più piccolo intero maggiore o uguale a $ x$</p></li>
+<li><p><strong>floor</strong>: $ x = {v : v x} $ più grande intero minore o uguale a $ x $</p></li>
+</ul>
+<p><strong>composta</strong>: $ f g(x) = f(g(x)) $</p>
+</section>
+<section id="induzione" class="level2">
+<h2 class="anchored" data-anchor-id="induzione">Induzione</h2>
+<ul>
+<li>Base: $ P(0) $ è vera</li>
+<li>Passo induttivo: $ n ,&nbsp;P(n+1)&nbsp;vera P(n)&nbsp;vera $</li>
+</ul>
+</section>
+<section id="sommatorie" class="level2">
+<h2 class="anchored" data-anchor-id="sommatorie">Sommatorie</h2>
+<p><span class="math display">\[ \sum_{k=1}^n a_k\ = a_1 + a_2 + \ldots + a_n \]</span></p>
+<section id="regole" class="level3">
+<h3 class="anchored" data-anchor-id="regole">Regole</h3>
+<p>$ <em>{k K}&nbsp; a_k = </em>{k K}&nbsp;a_k $</p>
+<p>$ <em>{k K}&nbsp;(a_k + b_k) = </em>{k K}&nbsp;a_k + _{k K}&nbsp;b_k $</p>
+<p>$ <em>{k K}&nbsp;a_k = </em>{(k) K}&nbsp;a_{(k)} $</p>
+<p>$ <em>{k=1}^&nbsp;a_k + </em>{k = }^n&nbsp;a_k = a_{} + _{k=1}^n&nbsp;a_k $</p>
+<p>$ <em>{k K}&nbsp;a_k = </em>{(k + c) K}&nbsp;a_{(k + c)} $</p>
+<p>$ <em>{k = 1}^n&nbsp;a_k = </em>{k = 1}^{}&nbsp;a_k + _{k = }^n&nbsp;a_k $</p>
+</section>
+<section id="somme-multiple" class="level3">
+<h3 class="anchored" data-anchor-id="somme-multiple">Somme multiple</h3>
+<p><span class="math display">\[ \begin{matrix} a_1 b_1 &amp; a_1 b_2 &amp; a_1 b_3 \\ a_2 b_1 &amp; a_2 b_2 &amp; a_2 b_3 \\ a_3 b_1 &amp; a_3 b_2 &amp; a_3 b_3 \end{matrix} \]</span></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>tipologia</th>
+<th>formula</th>
+<th>estesione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>per righe</td>
+<td><span class="math display">\[ \sum_{i=1}^3\ \sum_{j=1}^3\ a_i b_j \]</span></td>
+<td><span class="math display">\[ a_1 \sum_{j=1}^3 b_j + a_2 \sum_{j=1}^3 b_j + a_3 \sum_{j=1}^3 b_j \]</span></td>
+</tr>
+<tr class="even">
+<td>per colonne</td>
+<td><span class="math display">\[ \sum_{j=1}^3\ \sum_{i=1}^3\ a_i b_j \]</span></td>
+<td><span class="math display">\[ \sum_{i = 1}^3 (a_i)\ b_1 + \sum_{i = 1}^3 (a_i)\ b_2 + \sum_{i = 1}^3 (a_i)\ b_3 \]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scambio-di-indici" class="level3">
+<h3 class="anchored" data-anchor-id="scambio-di-indici">Scambio di indici</h3>
+<p><span class="math display">\[ \sum_{i \in I} \sum_{j \in J(i)} a_{ij} = \sum_{j \in J} \sum_{i \in I(j)} a_{ij} \]</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math display">\[ \sum_{i=0}^n \sum_{j=i}^n s_ij \]</span></th>
+<th><span class="math display">\[ \sum_{j=0}^n \sum_{i=0}^j s_ij \]</span></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>$ J(i) = {0, , n} $<br>
+$ I(j) = {0, , j} $</p>
+</section>
+<section id="somme-notevoli" class="level3">
+<h3 class="anchored" data-anchor-id="somme-notevoli">Somme notevoli</h3>
+<ul>
+<li><p>somma numeri consecutivi: <span class="math display">\[ \sum_{i=1}^n i = \frac{n(n+1)}{2} \]</span></p></li>
+<li><p>somma quadrati numeri consecutivi: <span class="math display">\[ \sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6} \]</span></p></li>
+<li><p>somma potenze consecutive: <span class="math display">\[ \sum_{k=1}^n k^m = \frac{1}{m+1} \sum_{j=0}^m \binom{m+1}{j} B_j n^{m+1-j} \]</span></p></li>
+</ul>
+</section>
+<section id="metodo-di-perturbazione" class="level3">
+<h3 class="anchored" data-anchor-id="metodo-di-perturbazione">Metodo di perturbazione</h3>
+<p><span class="math display">\[ s_n + a_{n+1} = \sum_{k=0}^{n+1} a_k = \sum_{k=0}^n a_{k+1} \]</span></p>
+<p><span class="math display">\[ s_n + a_{n+1} = a_0 + \sum_{k=0}^n a_{k+1} \]</span></p>
+<p>$ s(n) $ sia a sinistra che a destra ma con coefficienti diversi per non elidersi</p>
+</section>
+</section>
+<section id="probabilità" class="level2">
+<h2 class="anchored" data-anchor-id="probabilità">Probabilità</h2>
+<p><strong>universo $ S $</strong>: $ Pr(S) = P S = 1 $</p>
+<p><strong>distribuita uniforme</strong>: $ Pr(A) = p A = $</p>
+<p><strong>probabilità condizionata</strong>: $ Pr(A B) = $</p>
+<p><strong>probabilità eventi indipendenti</strong>: $ Pr(A B) = Pr(A) Pr(B) $</p>
+<p><strong>teorema di Bayes</strong>: $ Pr(B A) = $</p>
+</section>
+<section id="matematica-degli-interi" class="level2">
+<h2 class="anchored" data-anchor-id="matematica-degli-interi">Matematica degli interi</h2>
+<section id="divisibilità-mcd-mcm" class="level3">
+<h3 class="anchored" data-anchor-id="divisibilità-mcd-mcm">divisibilità, MCD, mcm</h3>
+<p><strong>divisibilità:</strong> $ a b $ se $ m : &nbsp; $</p>
+<p><strong>MCD (a,b)</strong>: $ $<br>
+<strong>mcm (a,b)</strong>: $ $</p>
+<p><strong>Algoritmo di Euclide</strong>:</p>
+<p>Calcolo di $ MCD(a,b) $</p>
+<ol type="1">
+<li>$ a : b = r $</li>
+<li>$ r = 0 MCD(a,b) = b $</li>
+<li>$ r b : r = … $ (ricomincio)</li>
+</ol>
+<p><strong>Teorema di Bezout</strong>: $ MCD(a,b) = ax + by $<br>
+$ 1 = ax + by $ allora $ a $ e $ b $ sono coprimi</p>
+</section>
+<section id="numeri-primi" class="level3">
+<h3 class="anchored" data-anchor-id="numeri-primi">Numeri primi</h3>
+<p><strong>Numero primo</strong>: divisori di p: {1, p}</p>
+<ul>
+<li>1 no primo, no composto</li>
+</ul>
+<p><strong>primi in intervallo di n naturali</strong>: $ (N) $</p>
+<p><strong>Primi di Mersenne</strong>: $ M(n) = 2^n - 1&nbsp; n&nbsp; $</p>
+<p><strong>Primi di Fermat</strong>: $ F(n) = 2<sup>{2</sup>n} + 1 $</p>
+<p><strong>Fattorizzazione in numeri primi</strong>:</p>
+<p>$ p , p . $</p>
+<ul>
+<li>$ p a, b &nbsp;p ab p a p b $</li>
+<li>$ p a_1 a_2 a_r p a_i i ) $</li>
+</ul>
+<p><strong>Teorema fondamentale dell’aritmetica</strong>:</p>
+<p><span class="math display">\[ \forall n \in \mathbb{N}, n \geq 2\\ n = p_1 \cdot p_2 \cdot \ldots \cdot p_i \ \text{ con } p_i = \text{fattore primo} \]</span></p>
+<p>Per cui dati $ a,b $ con $ a = p_1^{n_1} p_2^{n_2} p_k^{n_k}$ e $ b = p_1^{m_1} p_2^{m_2} p_k^{m_k} $</p>
+<ul>
+<li><span class="math display">\[ mcm(a,b) = p_1^{\max(n_1,m_1)} \cdot p_2^{\max(n_2,m_2)} \cdot \ldots \cdot p_k^{\max(n_k,m_k)} \]</span></li>
+<li><span class="math display">\[ MCD(a,b) = p_1^{\min(n_1,m_1)} \cdot p_2^{\min(n_2,m_2)} \cdot \ldots \cdot p_k^{\min(n_k,m_k)} \]</span></li>
+</ul>
+<p><strong>Primo contenuto in un fattoriale $ N!$</strong></p>
+<p>$ p $ in $ n! $ contenuto $ _{k } $ volte</p>
+<p>$ n! = _{k } $ quante volte $ p $ è contenuto in $ n $</p>
+<p>esempio con $ 15!$</p>
+<ul>
+<li>quante volte $ 2 $ contenuto in $ 15! $:<br>
+<span class="math display">\[ \lfloor \frac{15}{2} \rfloor + \lfloor \frac{15}{2^2} \rfloor + \lfloor \frac{15}{2^3} \rfloor = 7 + 3 + 1 = 11 \]</span></li>
+<li>quante volte $ 3 $ contenuto in $ 15! $: <span class="math display">\[ \lfloor \frac{15}{3} \rfloor + \lfloor \frac{15}{9} \rfloor + \lfloor \frac{15}{27} \rfloor = 5 + 1 + 0 = 6 \]</span></li>
+</ul>
+<p><strong>proprietà</strong>:</p>
+<p>$ a ,&nbsp;p $</p>
+<ul>
+<li>$ p a ia _p ja&nbsp; &nbsp;i,j {1, 2, , p-1} $</li>
+<li>$ p a a^{p-1} _p 1 $</li>
+<li>$ a^p _p a $</li>
+</ul>
+</section>
+<section id="segno-permutazioni-parità-e-disparità" class="level3">
+<h3 class="anchored" data-anchor-id="segno-permutazioni-parità-e-disparità">Segno permutazioni (parità e disparità)</h3>
+<p>$ S_n = {1,2, , n} $: insieme permutazioni</p>
+<p>data $ ={_1, , _n} $ permutazione, tutti i modi per trasformarla in permutazione identica</p>
+<ul>
+<li>o richiedono un numero <strong>pari</strong> di trasposizioni</li>
+<li>o richiedono un numero <strong>dispari</strong> di trasposizioni</li>
+</ul>
+</section>
+</section>
+<section id="principio-della-piccionaia" class="level2">
+<h2 class="anchored" data-anchor-id="principio-della-piccionaia">Principio della piccionaia</h2>
+<p><strong>Teorema</strong>: $ n+1 $ oggetti in $ n $ contenitori, un contenitore ha $ 2 $ o più oggetti</p>
+<p><strong>Teorema</strong>: se $ r_1 + r_2 + + r_n - n + 1 $ oggetti in $ n $ contenitori, allora o 1 contiene ha $ r_1 $ o 2 contiene $ r_2 $ o n-esimo contiene $ r_n $</p>
+</section>
+<section id="principio-di-somma-e-del-prodotto" class="level2">
+<h2 class="anchored" data-anchor-id="principio-di-somma-e-del-prodotto">Principio di somma e del prodotto</h2>
+<p>$ k $ elementi diversi, $ n_1 $ del primo tipo, $ n_2 $ del secondo tipo, $ $, $ n_k $ del k-esimo tipo. In quanti modi posso</p>
+<ul>
+<li>un elemento del primo tipo <strong>o</strong> del secondo <strong>o</strong> …</li>
+<li>un elemento del primo tipo <strong>e</strong> del secondo <strong>e</strong> …</li>
+</ul>
+<section id="principio-di-somma" class="level3">
+<h3 class="anchored" data-anchor-id="principio-di-somma">Principio di somma</h3>
+<p>$ S = S_1 S_2 S_k $<br>
+$ S = S_1 + S_2 + + S_k $</p>
+<p><strong>conteggio indiretto</strong>: $ A = S + S’ S = A - S’ $</p>
+</section>
+<section id="principio-di-prodotto" class="level3">
+<h3 class="anchored" data-anchor-id="principio-di-prodotto">Principio di prodotto</h3>
+<p>$ S$: insieme di tute le coppie $ (a,b)$: $ a$ in $ p$ modi, $ b$ in $ q$ modi dato il primo</p>
+<p>$ S = p q$</p>
+<p>dimostrazione mediate principio somma</p>
+</section>
+<section id="scelte-su-sequenze" class="level3">
+<h3 class="anchored" data-anchor-id="scelte-su-sequenze">Scelte su sequenze</h3>
+<p>$ a_1 a_2 a_3 a_n$ con $ a_1 $ in $ p_1 $ modi, $ a_2 $ in $ p_2 $ modi</p>
+<p><span class="math display">\[ \text{n-ple: } S = p_1 \cdot p_2 \cdot \ldots \cdot p_n \]</span></p>
+</section>
+<section id="combinazioni-sottoinsiemi" class="level3">
+<h3 class="anchored" data-anchor-id="combinazioni-sottoinsiemi">Combinazioni (sottoinsiemi)</h3>
+<p>dato $ A = {a_1, a_2, , a_n} $ il sottoinsieme è un booleano per ogni elemento (è incluso? T/F)</p>
+<p><span class="math display">\[\mathcal{P}(A) = 2^{\vert A \vert} \]</span></p>
+</section>
+</section>
+<section id="coefficiente-binomiale" class="level2">
+<h2 class="anchored" data-anchor-id="coefficiente-binomiale">Coefficiente binomiale</h2>
+<p>$ $ k-oggetti su $ n$</p>
+<p><span class="math display">\[\binom{n}{k} = \frac{n!}{k! (n-k)!} \]</span></p>
+<p>sottoinsiemi di $ k$ elementi su $ n $</p>
+<p><strong>proprietà del coefficiente binomiale</strong>:</p>
+<ol type="1">
+<li><p><span class="math display">\[ \binom{n}{k} = \binom{n}{n-k} \]</span><br>
+stesso numero di sottoinsiemi per $ k $ elementi o $ n-k $ elementi (in quanto complementare)</p></li>
+<li><p><span class="math display">\[ \binom{n}{n} = 1 \text{ , } \binom{n}{1}=n \]</span><br>
+insieme completo e numero sottoinsiemi di un elemento</p></li>
+<li><p><span class="math display">\[ \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1} \]</span></p></li>
+<li><p><span class="math display">\[ \binom{n}{k} = \sum_{i=0}^p \binom{p}{i} \binom{n-p}{k-i} \]</span></p></li>
+<li><p><span class="math display">\[ \binom{n}{k} = \sum_{m = k}^n \binom{m-1}{k-1} \]</span></p></li>
+<li><p><span class="math display">\[ \sum_{k=0}^n \binom{n}{k} = 2^n \]</span></p></li>
+<li><p><span class="math display">\[ \text{con } 0 \leq k \leq \frac{n}{\lfloor 2 \rfloor} \text{ succede } \binom{2k}{k} \leq \binom{n}{k} \]</span></p></li>
+<li><p><span class="math display">\[ \text{con } 0 \leq k \leq n \text{ succede } \binom{n}{k} \leq \binom{n}{\frac{n}{\lfloor 2 \rfloor}} \]</span></p></li>
+<li><p><span class="math display">\[ \forall n \gt 1 \in \mathbb{N} \text{ succede } \binom{2n}{n} \geq 2^n \]</span></p></li>
+<li><p><span class="math display">\[ \forall n \in \mathbb{N^+} \text{ succede } \binom{2n}{n} \geq \frac{2^n}{2n} \]</span></p></li>
+<li><p><span class="math display">\[ \sum_{k=1}^n k \cdot \binom{n}{k} = n \cdot 2^{n-1} \]</span></p></li>
+<li><p><span class="math display">\[ \sum_{k=0}^n \binom{n}{k} 2^k = 3^n \]</span></p></li>
+</ol>
+<section id="triangolo-di-pascal" class="level3">
+<h3 class="anchored" data-anchor-id="triangolo-di-pascal">Triangolo di Pascal</h3>
+<p><span class="math display">\[ (a+b)^n = \sum_{i=0}^n \binom{n}{i} a^i b^{n-i} \]</span></p>
+</section>
+<section id="processi-bernoulliani" class="level3">
+<h3 class="anchored" data-anchor-id="processi-bernoulliani">Processi Bernoulliani</h3>
+<p>Gli esiti sono indipendenti dai precedenti: $ p $, $ q = 1-p $</p>
+<p>probabilità di $ k $ successi in $ n $ prove:<br>
+<span class="math display">\[ Pr(n,k) = \binom{n}{k} p^k q^{n-k} \]</span></p>
+<p>probabilità di almeno $ k $ successi in $ n $ prove:<br>
+<span class="math display">\[ Pr(n, \geq k) = \sum_{i=k}^n \binom{n}{i} p^i q^{n-i} \]</span></p>
+</section>
+<section id="disposizioni-insiemi-ordinati" class="level3">
+<h3 class="anchored" data-anchor-id="disposizioni-insiemi-ordinati">Disposizioni (insiemi ordinati)</h3>
+<p>prendere un sottoinsieme ma l’ordine conta</p>
+<p><span class="math display">\[ D(n,k) = \binom{n}{k} \cdot k! \]</span></p>
+<p>$ $: in quanti modi posso scegliere il sottoinsieme (quanti sottoinsiemi ci sono)<br>
+$ k! $: permutazioni possibili del sottoinsieme</p>
+</section>
+<section id="multinsiemi-insiemi-con-elementi-ripetuti" class="level3">
+<h3 class="anchored" data-anchor-id="multinsiemi-insiemi-con-elementi-ripetuti">Multinsiemi (insiemi con elementi ripetuti)</h3>
+<p>$ S = {a_1, a_2, , a_k} $ con $ {a_1 n_1, a_2 n_2, , a_k n_k} $</p>
+<p><strong>permutazioni</strong>: <span class="math display">\[ \Pi_s=\frac{n!}{n_1! \cdot n_2! \cdot \ldots \cdot n_k!} \]</span></p>
+</section>
+<section id="combinazioni-con-ripetizioni" class="level3">
+<h3 class="anchored" data-anchor-id="combinazioni-con-ripetizioni">Combinazioni con ripetizioni</h3>
+<p><strong>r-combinazioni</strong>: sottoinsiemi di un multinsieme $ S = {a_1 n_1, , a_k n_k} $</p>
+<ul>
+<li>$ n_i r&nbsp;i $<br>
+<span class="math display">\[ \binom{r-k+1}{r} \text{ oppure } \binom{r+k-1}{k-1} \]</span><br>
+$ r $: cardinalità r-combinazione<br>
+$ k $: tipologie di elementi</li>
+</ul>
+<p><strong>a valori interi limitati - lower bound</strong>:</p>
+<p><span class="math display">\[ r \geq \sum_{i=1}^k b_i \]</span></p>
+<p>quante soluzioni intere ha l’equazione $ _{i=1}^k x_i = r $ con $ x_i b_i&nbsp;i $?</p>
+<p><span class="math display">\[ x_1 + x_2 + \ldots + x_k = r \]</span></p>
+<p>sostituisco con $ y_i = x_i - b_i x_i = y_i + b_i $ ovvero mi riconduco al caso senza vincoli</p>
+<p><span class="math display">\[ \sum_{i=1}^k y_i = r - \sum_{i=1}^k b_i \implies \binom{r - \sum_{i=1}^k b_i - k + 1}{k - 1} \]</span></p>
+</section>
+</section>
+<section id="principio-di-inclusione-esclusione" class="level2">
+<h2 class="anchored" data-anchor-id="principio-di-inclusione-esclusione">Principio di inclusione-esclusione</h2>
+<section id="principio-base" class="level3">
+<h3 class="anchored" data-anchor-id="principio-base">Principio base</h3>
+<p>$ S = p_1, p_2, , p_m $</p>
+<p>insieme degli elementi che non possiedono alcuna proprietà $ p_1, , p_m $:</p>
+<p><span class="math display">\[ \begin{array}{ll} \vert \bar{A_1} \cap \bar{A_2} \cap \ldots \cap \bar{A_m}  \vert = &amp; \vert S \vert \\ \; &amp; - \sum \vert A_{i_1} \vert \\ \; &amp; + \sum \vert A_{i_1} \cap A_{i_2} \vert \\ \; &amp; \ldots \\ \; &amp; + (-1)^d \vert A_1 \cap A_2 \cap \ldots \cap A_d \vert \\ \; &amp; \ldots \\ \; &amp; + (-1)^m \vert A_1 \cap A_2 \cap \ldots \cap A_m \vert \end{array} \]</span></p>
+</section>
+<section id="spiazzamenti" class="level3">
+<h3 class="anchored" data-anchor-id="spiazzamenti">Spiazzamenti</h3>
+<p><strong>spiazzamento</strong>: permutazione $ = (_1, _2, , _n)$ con $ _i i&nbsp;i $</p>
+<p>esempi:</p>
+<ul>
+<li>$ (2,1,4,5,3)$ è uno spiazzamento</li>
+<li>$ (4,1,,2,)$ <strong>non</strong> è uno spiazzamento (3 è nella 3a posizione, 5 è nella 5a posizione)</li>
+</ul>
+<p><strong>numero di spiazzamenti $ z_n$</strong>:</p>
+<ul>
+<li>$ n $<br>
+<span class="math display">\[ z_n = n! \cdot \left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \ldots + (-1)^n \frac{1}{n!}\right) \]</span></li>
+</ul>
+<p>approsimmazione: $ z_n $</p>
+<p><strong>formule ricorsive</strong>:</p>
+<ul>
+<li>$ z_n = (n-1) (z_{n-1} + z_{n-2})$</li>
+<li>$ z_n = n z_{n-1} + (-1)^n$</li>
+</ul>
+</section>
+</section>
+<section id="teoria-dei-grafi" class="level2">
+<h2 class="anchored" data-anchor-id="teoria-dei-grafi">Teoria dei Grafi</h2>
+<section id="grafi-non-orientati" class="level3">
+<h3 class="anchored" data-anchor-id="grafi-non-orientati">Grafi non orientati</h3>
+<p><strong>grafo non orientato</strong>: $ G = (V, E)$ con</p>
+<ul>
+<li>$ V$ insieme di vertici</li>
+<li>$ E$ insieme di archi (coppia non orientata di vertici)</li>
+</ul>
+<p><strong>vertici adiacenti</strong>: $ (i,j V) (ij = e E)$</p>
+<p><strong>archi adiacenti</strong>: condividono un vertice</p>
+<p><strong>grado di un vertice $ d(v)$</strong>: numero di archi incidenti in $ v$</p>
+<p><strong>grafo regolare</strong>: tutti i nodi hanno lo stesso grado ($ d(i) = d(j)&nbsp;i,j V$)</p>
+<ul>
+<li><strong>grafo k-regolare</strong>: tutti i nodi hanno grado $ k$ ($ d(i) = k)$</li>
+</ul>
+<p><strong>vertice isolato</strong>: ha grado 0 ($ d(v) = 0$)</p>
+<p><strong>Teorema somma dei gradi dei vertici</strong>: <span class="math display">\[\sum_{v \in V} d(v) = 2 \vert E \vert \]</span> sommatoria dei gradi dei vertici è il doppio della cardinalità degli archi</p>
+<pre class="mermaid"><code>graph LR 
+  A((A)) --- B((B))</code></pre>
+<p>$ E = 1, ; d(A) + d(B) = 1 + 1 = 2 $</p>
+<p><br></p>
+<pre class="mermaid"><code>graph LR
+  A((A)) --- B((B))
+  B((B)) --- C((C))</code></pre>
+<p>$ E = 2, ; d(A) + d(B) + d(C) = 1 + 2 + 1 = 4 $</p>
+<p><strong>Teorema numero di vertici di grado dispari</strong>: in ogni grafo c’è un numero pari di vertici di grado dispari</p>
+<pre class="mermaid"><code>graph LR 
+    A((1)) --- B((2))
+    B((2)) --- C((..))
+    C((..)) --- D((2))
+    D((2)) --- E((1))    </code></pre>
+<p>$ $ deve esserci un altro nodo di grado dispari, magari NON adiacente</p>
+<p><br></p>
+<pre class="mermaid"><code>graph LR
+    A((1)) --- B((3))
+    B((3)) --- C((1))
+    B((3)) --- D((1))</code></pre>
+<p>$ v: d(v) = {a,b,c,d} = 4 $</p>
+<p><strong>Sequenza grafica</strong>: $ (d_1, , d_n)$ è una sequenza grafica se esiste un grafo $ G$ in cui $ d_1, , d_n$ corrisponde ai gradi di $ G$</p>
+<ul>
+<li>non ci può essere un numero $ n (d_i &lt; n)$</li>
+<li>non ci possono essere sia $ 0$ che $ n-1$</li>
+<li>ci devono essere un numero pari di dispari</li>
+<li>$ _{i=1}^n d_i $ sommatoria notevole di gauss</li>
+</ul>
+<p><strong>grafi isomorfi</strong>: quando è possibile rinominare i nodi di un grafo ottenendo l’altro grafo<br>
+presi $ G = (V, E), G’ = (V’, E’)$<br>
+$ f: V V’ f(v)f(w) E’ vw E$</p>
+<p><strong>sottografo</strong>: $ G’ = (V’, E’)$ è un sottografo di $ G = (V, E)$ se $ V’ V$ e $ E’ E$</p>
+<p><strong>grafo di supporto (spanning)</strong>: tutti i vertici, sottoinsieme degli archi<br>
+$ G’ = (V’, E’)$ è un grafo di supporto di $ G = (V, E)$ se $ V’ = V$ e $ E’ E$</p>
+<p><strong>sottografo indotto</strong>: scelto un sottoinsieme S dei nodi di un grafo, il grafo con gli archi di quei nodi<br>
+$ G_{[S]} = (S, E’)$ con $ S V$, è composto da $ ij E$ con $ i,j S$</p>
+<p><strong>grafo completo</strong>: ogni coppia di nodi è collegata da un arco</p>
+<ul>
+<li>Si indica con $ K_n$, con $ n$ vertici e $ E = $ lati</li>
+<li>Si chiama <strong>clique</strong> se è un sottografo</li>
+</ul>
+<p><strong>clique</strong>: sottografo completo. Insieme di elementi mutualmente compatibili</p>
+<p><strong>Grafo complementare</strong>: dato $ G = (V, E)$ si definisce con $ {G} = (V, {E})$ con $ {E} = {uw v,w V, vw E}$</p>
+<p><strong>Insieme indipendente (stabile) di vertici</strong>: dato $ S V,&nbsp;ij E&nbsp;i,j S$. Soltanto se il grafo indotto è una clique</p>
+<p><strong>Lati grafo completo $ n$ vertici</strong>: Sia $ G$ completo. $ V = n E = $</p>
+<p><strong>Cammino</strong>: sequenza di vertici $ v_0, v_1, , v_k$ per cui dato $ i (0, k-1)$ allora $ v_i v_{i+1} E$</p>
+<p><strong>Distanza</strong>: lunghezza del cammino minimo tra due vertici</p>
+<p><strong>diametro</strong>: distanza massima tra due vertici</p>
+<p><strong>ciclo</strong>: cammino chiuso, $ v_0 = v_k$</p>
+<p><strong>circuito hamiltoniano</strong>: circuito elementare che attraversa tutti i nodi di $ G$</p>
+<p><strong>circuito euleriano</strong>: circuito semplice (senza lati ripetuti) che attraversa tutti i nodi di $ G$</p>
+<p><strong>grafo connesso</strong>: ogni coppia di vertici è connessa da un cammino</p>
+<p><strong>taglio</strong>: insieme di lati che se rimossi aumento il numero di componenti connesse</p>
+<p>Partendo da $ S $, posso definire taglio</p>
+<p><span class="math display">\[ \delta(S):= \{ij : i \in S,\ j \in V-S \} \]</span> taglio, esiste coppia di nodi adiacenti ($ V,V-S $)</p>
+<p><strong>circuito hamiltoniano (permutazione circolare)</strong>: permutazione in cui ogni vertice è preceduto / seguito da un vertice che gli è adiacente in $ G$</p>
+<p><strong>grafo hamiltoniano</strong>: contiene un circuito hamiltoniano</p>
+<p><strong>grafo bipartito</strong> nodi ripartiti in 2 insiemi $ v_1$ e $ v_2$ tale che ogni arco collega un estremo in $ v_1$ e uno in $ v_2$.<br>
+Si denota con $ G = (V_1, V_2, E)$</p>
+<p><strong>Teorema</strong>: $ G$ bipartito se e solo se ogni ciclo in $ G$ numero pari di nodi<br>
+<em>nota</em>: $ G$ può essere bipartito con $ V $ dispari, ma in tal caso non hamiltoniano per il teorema precedente</p>
+<p><strong>grafo bipartito completo</strong>: $ ij E i V_1&nbsp;j V_2$</p>
+<pre class="mermaid"><code>graph LR
+    A((A)) --- D((D))
+    A((A)) --- E((E))
+    B((B)) --- D((D))
+    B((B)) --- E((E))
+    C((C)) --- D((D))
+    C((C)) --- E((E))</code></pre>
+<p><strong>Teorema</strong>: $ G = (V, E)$ con $ n $ vertici. Se $ d(v) + d(w) nv,w V $ allora è hamiltoniano</p>
+<p><strong>Corollario</strong>: $ v V d(v) G $</p>
+<p><strong>grafo planare</strong>: può essere disegnato senza che 2 archi si intersechino</p>
+<p><strong>grafo minore</strong>: grafo ottenibile tramite <strong>contrazione di un arco</strong></p>
+<ul>
+<li><p><strong>contrazione di un arco</strong>: rimuovo arco $ ij$ e sostituisco con nodo $ e’$. Gli archi in $ i$ e $ j$ ora coincidono in $ e’$.</p>
+<pre class="mermaid"><code>graph LR
+    A((a)) --- I((i))
+    I((i)) -.- J((j)) 
+    J((j)) --- B((b))</code></pre>
+<pre class="mermaid"><code>graph LR
+    A((a)) --- E((e'))
+    E((e')) --- B((b)) </code></pre></li>
+</ul>
+<p><strong>Teorema</strong>: $ G$ planare se e solo se non ha $ k_5$ o $ k_{3,3}$ fra i suoi minori</p>
+<p><strong>grafo euleriano</strong>: grafo che contiene un circuito euleriano (non attraversa 2 volte lo stesso arco)</p>
+<p><strong>Teorema</strong>: $ G$ è euleriano $ d(v)$ è pari per ogni $ v V$</p>
+<p><strong>cammino euleriano</strong>: cammino che attraversa tutti gli archi una e una sola volta</p>
+<p><strong>Corollario</strong>: $ G$ connesso ha un cammino euleriano $ $ ha al più $ 2$ vertici di grado dispari</p>
+</section>
+<section id="alberi" class="level3">
+<h3 class="anchored" data-anchor-id="alberi">Alberi</h3>
+<p><strong>foresta</strong>: grafo <strong>aciclico</strong></p>
+<p><strong>albero</strong>: grafo <strong>aciclico</strong> e <strong>connesso</strong></p>
+<p><strong>proprietà albero</strong>: $ n$ nodi, $ n-1$ archi</p>
+<ul>
+<li>grafo con $ n $ nodi e $ E n-1$ non è aciclico</li>
+<li>grafo con $ n $ nodi e $ E n-1$ non è connesso</li>
+</ul>
+<pre class="mermaid"><code>graph LR
+
+subgraph G1["&lt; n-1 archi"]
+    A((A)) --- B((B))
+    A((A)) -.- C((C))
+end
+
+subgraph G2["n-1 archi"]
+    D((D)) --- E((E))
+    D((D)) --- F((F))
+end
+
+subgraph G3["&gt; n-1 archi"]
+    G((G)) --- H((H))
+    G((G)) --- I((I))
+    H((H)) --- I((I))
+end
+
+G1 ~~~ G2 ~~~ G3</code></pre>
+<p><strong>proprietà albero</strong>:</p>
+<ol type="1">
+<li>connesso e aciclico (definizione)</li>
+<li>connesso e $ E = V $</li>
+<li>aciclico e $ E = V $</li>
+<li>connesso e $ i,j V$ esiste cammino $ ij$ ed è unico</li>
+<li>connesso e la rimozione di un qualsiasi arco sconnette $ G$</li>
+<li>aciciclico e $ i,j V : ij E$, se aggiungo l’arco $ ij$ diventa ciclico</li>
+</ol>
+<p><strong>foglia</strong>: se $ d(v) = 1$<br>
+<strong>nodo interno</strong>: se $ d(v) &gt; 1$</p>
+<p><strong>albero di diametro massimo</strong>: cammino lineare</p>
+<pre class="mermaid"><code>graph LR
+    A((A)) --- B((B))
+    B((B)) --- C((C))
+    C((C)) --- D((D))</code></pre>
+<p><strong>albero di diametro minimo</strong>: albero a stella (un solo nodo interno)</p>
+<pre class="mermaid"><code>graph LR
+    A((A)) --- B((B))
+    A((A)) --- C((C))
+    D((D)) --- A((A))
+    E((E)) --- A((A))</code></pre>
+<p><strong>albero di supporto</strong>: $ T = (V, E_T)$ dati i vertici di un grafo e <strong>alcuni</strong> archi appartenti a $ E$, la rimozione di un arco sconnette $ T$</p>
+<p><strong>taglio fondamentale</strong>: dato arco $ e=ij$ e $ T$ albero di supporto, arco $ e$ individua due partizioni di nodi:</p>
+<ul>
+<li>$ V_i$ : nodi raggiungibili da $ i$ senza passare per arco<br>
+$ e$)</li>
+<li>$ V_j = V - V_i$ : nodi raggiungibili da $ j$ senza passare per arco $ e$</li>
+</ul>
+<p><strong>circuito fondamentale associato ad $ a$ in $ T$</strong>: aggiungere a $ T$ l’arco $ a=ij E - E_T$ definisce circuito fondamentale da $ i$ a $ j$</p>
+<ul>
+<li>unico cammino da $ i$ a $ j$ in $ T$ + arco $ a = ij$</li>
+</ul>
+<p><strong>Teorema</strong>: $ n$ nodi $ n^{n-2}$ alberi distinti.<br>
+Inclusi isomorfi ma non identici: 3 nodi, 3 alberi. 3 nodi, 1 albero non isomorfo.</p>
+<p><strong>numero di alberi non isomorfi $ T_n$</strong>: <span class="math display">\[ \frac{n^{n-2}}{n!} \leq T_n \leq 4^{n-1}\]</span></p>
+</section>
+<section id="indici-di-wiener" class="level3">
+<h3 class="anchored" data-anchor-id="indici-di-wiener">Indici di Wiener</h3>
+<p><strong>indice</strong>: funzione che a ogni grafo associa un numero</p>
+<p><strong>indice di Wiener</strong>: <span class="math display">\[W(G) = \sum_{i,j \in V} d_G(i,j)\]</span></p>
+<ul>
+<li>valore basso: indica grafi compatti</li>
+<li>valore alto: grafi sparsi, cammini lunghi</li>
+</ul>
+<p>Rappresenta la sommatoria di tutte le distanze tra i vertici</p>
+<pre class="mermaid"><code>graph LR
+    A((1)) --- B((3))
+    C((1)) --- B((3)) 
+    B((3)) --- D((4))
+    E((1)) --- D((4))
+    D((4)) --- H((1))
+    D((4)) --- F((2))
+    F((2)) --- G((1))</code></pre>
+<p><strong>Teorema</strong>: $ t , 5$ esiste un grafo $ G$ tale che $ W(G) = t$</p>
+<p><strong>Lemma</strong>: Per ogni $ G = (V, E)$ di diametro $ 2$, $ G’ = (V,E {e})$ per ogni $ e E$ <span class="math display">\[W(G') = W(G) - 2\]</span></p>
+<p><strong>calcolo indice di Wiener</strong>: dato $ T=(V,E)$, arco $ e=uv E$</p>
+<ul>
+<li><strong>carico arco</strong>: $ (e) = n_u n_v$<br>
+$ n_u, n_v (= V - n_u)$ sono numero di nodi delle componenti connesse indotte dal taglio di $ e$ in $ T$</li>
+</ul>
+<p><strong>formula calcolo indice di Wiener</strong>:<br>
+<span class="math display">\[ W(T) = \sum_{e \in E} \lambda (e)\]</span></p>
+<p>per ogni arco calcolo il <strong>prodotto</strong> tra il <strong>numero di nodi</strong> delle due <strong>componenti connesse</strong>, poi <strong>sommo</strong> tutti i prodotti</p>
+<p><strong>lemma</strong>: $ T=(V,E) V $ dispari $ W(T)$ pari</p>
+<pre class="mermaid"><code>graph LR
+    A((A)) --- B((B))
+    B((B)) --- C((C))</code></pre>
+<p>$ W(T) = (AB) + (BC) = 1^{{A}} ^{{B,C}} + 2^{{A,B}} ^{{C}} = 4$</p>
+</section>
+<section id="grafi-orientati-diretto-digrafo" class="level3">
+<h3 class="anchored" data-anchor-id="grafi-orientati-diretto-digrafo">Grafi orientati (diretto, digrafo)</h3>
+<p>$ G=(N,A) N:{},&nbsp;A:{}$</p>
+<p><strong>arco</strong>: coppia orientata $ ij, i j$</p>
+<p>Dato un insieme di nodi $ S$:</p>
+<ul>
+<li><strong>insieme di archi uscenti</strong> $ ^+(S) := {ij A i S, j N-S}$</li>
+<li><strong>insieme di archi entranti</strong> $ ^-(S) := {ij A i N-S, j S}$</li>
+</ul>
+<p>circuiti e cammini definiti analogamente ai grafi non orientati</p>
+<p><strong>grafo non orientato sottostante</strong>: grafo ottenuto rimuovendo orientazione degli archi</p>
+<p><strong>grafo debolmente connesso</strong>: per ogni coppia $ i,j$ esiste un cammino</p>
+<ul>
+<li>nota: grafo fortemente connesso se e solo se ogni coppia di nodi è contenuta in un circuito</li>
+</ul>
+<p><strong>albero orientato (arborescenza)</strong>: grafo orientato aciclico</p>
+<ul>
+<li>con <strong>radice</strong> nodo $ r$, in cui esiste ed è unico il cammino per ogni nodo</li>
+<li>$ d^-(r) = 0$ radice non ha archi entranti</li>
+<li>$ d^+(v) = 1$ un solo arco uscente per ogni nodo</li>
+<li>nelle <strong>foglie</strong> $ d^+(v) = 0$ nessun arco uscente</li>
+</ul>
+<p><strong>albero $ k$-ario</strong>: se ogni nodo NON foglia ha $ k$ archi uscenti $ d^+(v) = k$</p>
+<p>Dato un albero orientato $ T$ $ k$-ario</p>
+<ul>
+<li><strong>livello nodo</strong>: lunghezza del cammino dalla radice al nodo</li>
+<li><strong>altezza</strong>: livello massimo di un qualsiasi nodo</li>
+<li><strong>numero di nodi</strong>: al più $ k^l$ nodi di livello $ l$</li>
+</ul>
+<pre class="mermaid"><code>graph TD
+    subgraph "Livello 0: 2^0 = 1 nodo"
+      A((Radice))
+    end
+
+    subgraph "Livello 1: 2^1 = 2 nodi"
+        B((B))
+        C((C))
+    end
+
+    subgraph "Livello 2: 2^2 = 4 nodi"
+        D((D))
+        E((E))
+        F((F))
+        G((G))
+    end
+
+    A --- B
+    A --- C
+    B --- D
+    B --- E
+    C --- F
+    C --- G</code></pre>
+</section>
+<section id="grafi-pesati" class="level3">
+<h3 class="anchored" data-anchor-id="grafi-pesati">Grafi pesati</h3>
+<p><strong>grafo pesato</strong>: $ G = (V,E,p)$ con $ p$ funzione $ p:E $ oppure $ p:V $<br>
+analogo se orientato $ G = (N,A,p)$</p>
+<p>$ p(e)/p(a)$: peso arco/lato<br>
+$ p(v)/p(n)$: peso vertice nodo</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
