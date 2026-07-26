@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>exbash – Wiki</title>
+<title>Esercizi Lezione bash – Wiki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -174,9 +174,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Esercizi Lezione bash</h1>
+</div>
 
 
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="esercizi-lezione-bash" class="level3">
@@ -337,14 +353,14 @@ osservazione: <code>ps</code> genera una tabella con molti spazi tra i campi, re
 <p><code>$ sed ’/^root/,/^bin/s/:x:/::/w disabled.txt’ /etc/passwd</code>: sostituisce la stringa x con la stringa vuota nelle righe in input comprese fra quella che inizia con root e quella che inizia con bin, tali righe poi accodate nel file disabled.txt</p>
 <p><code>$ cat /etc/passwd | sed 's?/bin/.*sh$?/usr/local&amp;?'</code> cerca tutte le righe in input in cui compare la stringa corrispondente all’espressione regolare <code>/bin/.*sh$</code> (ad esempio /bin/bash) e sostituisce quest’ultima con la stringa corrispondente a <code>/usr/local/bin/.*sh$</code> (ad esempio /usr/local/bin/bash). Si noti che, siccome il carattere separatore di sed compare nella stringa da cercare, si è usato il carattere ? come separatore. Inoltre il carattere &amp; viene rimpiazzato automaticamente da sed con la stringa cercata (corrispondente a /bin/.*sh$)</p>
 <p>Shell scripting</p>
-<pre><code>    $ cat &gt;dirsize
-    ls /usr/bin | wc -w 
-    Ctrl-d
-
-    $ chmod 700 dirsize
-
-    $ ./dirsize
-        1620</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>dirsize</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> /usr/bin <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-w</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ctrl-d</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> chmod 700 dirsize</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./dirsize</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="ex">1620</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>data</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">set-x</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> the date today is:</span>
@@ -357,25 +373,25 @@ osservazione: <code>ps</code> genera una tabella con molti spazi tra i campi, re
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">the</span> date today is:</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> date</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Tue</span> Oct 25 17:37:52 CEST 2005</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>    $ cat &gt;sost
-    set -v 
-    cd TEXT 
-    ls*.txt 
-    sed s/’#’/’;;;’/ file.txt 
-    Ctrl-d
-
-    $ more TEXT/file.txt
-    # questo è un commento
-    # in un programma
-
-    $ chmod u+x sost
-    $ ./sost
-    cd TEXT
-    ls *.txt
-    file.txt
-    sed d/'#'/';;;'/ file.txt
-    ;;; questo è un commento
-    ;;; in un programma</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>sost</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">set</span> <span class="at">-v</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> TEXT </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span><span class="pp">*</span>.txt </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> s/’#’/’<span class="kw">;;;</span><span class="ex">’/</span> file.txt </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ctrl-d</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> more TEXT/file.txt</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># questo è un commento</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># in un programma</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> chmod u+x sost</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./sost</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> TEXT</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="pp">*</span>.txt</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">file.txt</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> d/<span class="st">'#'</span>/<span class="st">';;;'</span>/ file.txt</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">;;;</span> <span class="ex">questo</span> è un commento</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">;;;</span> <span class="er">in</span> <span class="ex">un</span> programma</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>variabili</p>
 <pre><code>$ x=variabile
 $ echo $x
@@ -492,14 +508,14 @@ exit 0</code></pre>
 </section>
 <section id="osservazioni-interessanti" class="level3">
 <h3 class="anchored" data-anchor-id="osservazioni-interessanti">Osservazioni interessanti</h3>
-<pre><code>    file1.txt
-    Ciao, come stai? Io tutto bene. Spero valga lo stesso anche per te
-
-    file2.txt
-    Bella, io sto una meraviglia.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">file1.txt</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ciao,</span> come stai<span class="pp">?</span> Io tutto bene. Spero valga lo stesso anche per te</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">file2.txt</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Bella,</span> io sto una meraviglia.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>$ cat file1.txt file2.txt</code></p>
-<pre><code>    Ciao, come stai? Io tutto bene. Spero valga lo stesso anche per te
-    Bella, io sto una meraviglia.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ciao,</span> come stai<span class="pp">?</span> Io tutto bene. Spero valga lo stesso anche per te</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Bella,</span> io sto una meraviglia.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>differenze set -v, set -x</p>
 <pre><code>$ ./differenze              # file eseguibile
 imposto set -x
