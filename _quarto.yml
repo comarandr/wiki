@@ -8,10 +8,15 @@ website:
   site-url: "https://comarandr.github.io/wiki/"
   navbar:
     left:
-      - href: "https://comarandr.github.io/wiki/"
+      - href: "https://comarandr.github.io/"
         text: "Home"
-      - href: index.qmd
-        text: Home
+      - href: "http://comarandr.github.io/wiki/linguaggi/"
+        text: "Linguaggi"
+      - href: "http://comarandr.github.io/wiki/universita/"
+        text: "Università"
+      - href: "http://comarandr.github.io/wiki/personali/"
+        text: "Personali"
+    right:
       - href: about.qmd
         text: About
 
