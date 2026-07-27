@@ -237,7 +237,11 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#oggetti-wrapper" id="toc-oggetti-wrapper" class="nav-link" data-scroll-target="#oggetti-wrapper">Oggetti wrapper</a></li>
   </ul></li>
-  <li><a href="#object" id="toc-object" class="nav-link" data-scroll-target="#object">Object</a></li>
+  <li><a href="#object" id="toc-object" class="nav-link" data-scroll-target="#object">Object</a>
+  <ul class="collapse">
+  <li><a href="#confronto-e-.equals" id="toc-confronto-e-.equals" class="nav-link" data-scroll-target="#confronto-e-.equals">Confronto == e .equals()</a></li>
+  </ul></li>
+  <li><a href="#objects" id="toc-objects" class="nav-link" data-scroll-target="#objects">Objects</a></li>
   <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
   <li><a href="#string" id="toc-string" class="nav-link" data-scroll-target="#string">String</a>
   <ul class="collapse">
@@ -256,13 +260,14 @@ window.Quarto = {
   <li><a href="#metodi-di-creazione-sorgenti" id="toc-metodi-di-creazione-sorgenti" class="nav-link" data-scroll-target="#metodi-di-creazione-sorgenti">Metodi di creazione (Sorgenti)</a></li>
   <li><a href="#operazioni-intermedie-lazy" id="toc-operazioni-intermedie-lazy" class="nav-link" data-scroll-target="#operazioni-intermedie-lazy">Operazioni intermedie (Lazy)</a></li>
   <li><a href="#operazioni-terminali-eager" id="toc-operazioni-terminali-eager" class="nav-link" data-scroll-target="#operazioni-terminali-eager">Operazioni terminali (Eager)</a></li>
+  <li><a href="#metodi-mapto" id="toc-metodi-mapto" class="nav-link" data-scroll-target="#metodi-mapto">Metodi mapTo</a></li>
+  <li><a href="#metodi-statici-includi-con-mapto" id="toc-metodi-statici-includi-con-mapto" class="nav-link" data-scroll-target="#metodi-statici-includi-con-mapto">Metodi statici includi con MapTo</a></li>
   </ul></li>
   <li><a href="#stack" id="toc-stack" class="nav-link" data-scroll-target="#stack">Stack</a></li>
   <li><a href="#scegliere-come-rappresentare-una-collezione" id="toc-scegliere-come-rappresentare-una-collezione" class="nav-link" data-scroll-target="#scegliere-come-rappresentare-una-collezione">Scegliere come rappresentare una collezione</a>
   <ul class="collapse">
   <li><a href="#sintesi-dei-metodi" id="toc-sintesi-dei-metodi" class="nav-link" data-scroll-target="#sintesi-dei-metodi">Sintesi dei metodi</a></li>
   </ul></li>
-  <li><a href="#confronto-e-.equals" id="toc-confronto-e-.equals" class="nav-link" data-scroll-target="#confronto-e-.equals">Confronto == e .equals()</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -357,6 +362,7 @@ window.Quarto = {
 <section id="operatori-lambda" class="level4">
 <h4 class="anchored" data-anchor-id="operatori-lambda">Operatori lambda</h4>
 <p><code>-&gt;</code> : separa i parametri dalla funzione</p>
+<p><code>::</code> : separa il nome della funzione dalla classe a cui appartiene</p>
 </section>
 <section id="pacchetto-math" class="level4">
 <h4 class="anchored" data-anchor-id="pacchetto-math">Pacchetto Math</h4>
@@ -498,9 +504,64 @@ incremento: dopo ogni iterazione</p>
 </section>
 <section id="object" class="level3">
 <h3 class="anchored" data-anchor-id="object">Object</h3>
-<p><code>.requireNonNull(obj)</code>: lancia un’eccezione se obj è nullo</p>
 <p><code>instanceof</code>: restituisce true se obj è un’istanza di Tipo, altrimenti false</p>
 <p><code>.getClass()</code>: restituisce la classe dell’oggetto</p>
+<p><code>.hashCode()</code>: restituisce un valore intero che rappresenta l’oggetto, utile per confrontare oggetti</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>.toString()</code>: restituisce una rappresentazione testuale dell’oggetto</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Persona <span class="op">{</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> eta<span class="op">;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">eta</span> <span class="op">=</span> eta<span class="op">;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="bu">String</span> <span class="fu">toString</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">String</span><span class="op">.</span><span class="fu">format</span><span class="op">(</span><span class="st">"Persona: nome=</span><span class="sc">%s</span><span class="st">, eta=</span><span class="sc">%d</span><span class="st">"</span><span class="op">,</span> nome<span class="op">,</span> eta<span class="op">);</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>.equals(Objects obj)</code>: confronta due oggetti per valore (stesso contenuto)</p>
+<section id="confronto-e-.equals" class="level4">
+<h4 class="anchored" data-anchor-id="confronto-e-.equals">Confronto == e .equals()</h4>
+<p><code>==</code> : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi</p>
+<p><code>.equals(Objects obj)</code>: confronta due oggetti per valore (stesso contenuto)</p>
+<p><code>=</code> : assegna un valore ad una variabile</p>
+<p>Quando si implementa il metodo <code>.equals()</code>, è importante:</p>
+<ul>
+<li><code>this == obj</code> : se i riferimenti sono uguali, restituisce true</li>
+<li><code>obj == null</code> : se l’oggetto è nullo, restituisce false</li>
+<li><code>getClass() != obj.getClass()</code> : se gli oggetti sono di classi diverse, restituisce false</li>
+<li><code>Objects.equals(valori)</code> : confronta lo stato dell’oggetto, restituisce true</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// implementazione equals() per una classe Persona</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Persona <span class="op">{</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> eta<span class="op">;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">eta</span> <span class="op">=</span> eta<span class="op">;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span><span class="op">(</span><span class="bu">Object</span> obj<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span> <span class="op">==</span> obj<span class="op">)</span> <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span> <span class="co">// stesso riferimento</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>obj <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> <span class="fu">getClass</span><span class="op">()</span> <span class="op">!=</span> obj<span class="op">.</span><span class="fu">getClass</span><span class="op">())</span> <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span> <span class="co">// diverso tipo</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        Persona persona <span class="op">=</span> <span class="op">(</span>Persona<span class="op">)</span> obj<span class="op">;</span> <span class="co">// cast</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> eta <span class="op">==</span> persona<span class="op">.</span><span class="fu">eta</span> <span class="op">&amp;&amp;</span> Objects<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>nome<span class="op">,</span> persona<span class="op">.</span><span class="fu">nome</span><span class="op">);</span> <span class="co">// confronto per valore</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="objects" class="level3">
+<h3 class="anchored" data-anchor-id="objects">Objects</h3>
+<p>classe composta da metodi statici per operare su oggetti</p>
+<p><code>Objects.requireNonNull(obj)</code>: lancia un’eccezione se obj è nullo</p>
+<p><code>Objects.equals(obj1, obj2)</code>: confronta due oggetti per valore (stesso contenuto), restituisce true se sono uguali, altrimenti false</p>
+<p><code>Objects.hash(obj1, obj2, ...)</code>: restituisce un valore intero che rappresenta gli oggetti, utile per confrontare oggetti</p>
 </section>
 <section id="optional" class="level3">
 <h3 class="anchored" data-anchor-id="optional">Optional</h3>
@@ -523,7 +584,7 @@ incremento: dopo ogni iterazione</p>
 <p><code>.equalsIgnoreCase(String str)</code>: confronta due stringhe per uguaglianza ignorando il case</p>
 <p><code>.toUpperCase()</code>: restituisce la stringa in maiuscolo</p>
 <p><code>.toLowerCase()</code>: restituisce la stringa in minuscolo</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s <span class="op">=</span> <span class="st">"ciao"</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s <span class="op">=</span> <span class="st">"ciao"</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="array" class="level3">
@@ -541,10 +602,10 @@ incremento: dopo ogni iterazione</p>
 <li><code>tipo[][] nomeArray = new tipo[dimensione1][dimensione2];</code></li>
 <li><code>a = { {el11, el12}, {el21, el22} }</code></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> array <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span> <span class="co">// array di 5 interi</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>array<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// assegna 1 alla prima posizione</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> array2 <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span> <span class="co">// array di 5 interi con valori iniziali</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[][]</span> array3 <span class="op">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}</span> <span class="op">};</span> <span class="co">// matrice 2x2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> array <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span><span class="dv">5</span><span class="op">];</span> <span class="co">// array di 5 interi</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>array<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// assegna 1 alla prima posizione</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> array2 <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span> <span class="co">// array di 5 interi con valori iniziali</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[][]</span> array3 <span class="op">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}</span> <span class="op">};</span> <span class="co">// matrice 2x2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="list" class="level3">
 <h3 class="anchored" data-anchor-id="list">List</h3>
@@ -555,15 +616,16 @@ incremento: dopo ogni iterazione</p>
 <p><code>.set(int i, E e)</code>: sostituisce l’elemento alla posizione i con un nuovo elemento</p>
 <p><code>.contains(E e)</code>: verifica se un elemento è presente nella collezione</p>
 <p><code>.size()</code>: restituisce il numero di elementi nella collezione</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> lista <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span> <span class="co">// restituisce 2</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">set</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">);</span> <span class="co">// sostituisce 2 con 3</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">remove</span><span class="op">(</span><span class="dv">0</span><span class="op">);</span> <span class="co">// rimuove 1</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">contains</span><span class="op">(</span><span class="dv">3</span><span class="op">);</span> <span class="co">// restituisce true</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">size</span><span class="op">();</span> <span class="co">// restituisce 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>.copyOf(List l)</code>: restituisce una copia della lista</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> lista <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span> <span class="co">// restituisce 2</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">set</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">);</span> <span class="co">// sostituisce 2 con 3</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">remove</span><span class="op">(</span><span class="dv">0</span><span class="op">);</span> <span class="co">// rimuove 1</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">contains</span><span class="op">(</span><span class="dv">3</span><span class="op">);</span> <span class="co">// restituisce true</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">size</span><span class="op">();</span> <span class="co">// restituisce 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="set" class="level3">
 <h3 class="anchored" data-anchor-id="set">Set</h3>
@@ -574,7 +636,8 @@ incremento: dopo ogni iterazione</p>
 <p><code>.remove(E e)</code>: rimuove un elemento dalla collezione</p>
 <p><code>.contains(E e)</code>: verifica se un elemento è presente nella collezione</p>
 <p><code>.size()</code>: restituisce il numero di elementi nella collezione</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Set</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> insieme <span class="op">=</span> <span class="kw">new</span> <span class="bu">HashSet</span><span class="op">&lt;&gt;();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>.copyOf(Set s)</code>: restituisce una copia del set</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Set</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> insieme <span class="op">=</span> <span class="kw">new</span> <span class="bu">HashSet</span><span class="op">&lt;&gt;();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="map" class="level3">
 <h3 class="anchored" data-anchor-id="map">Map</h3>
@@ -585,39 +648,40 @@ incremento: dopo ogni iterazione</p>
 <p><code>.containsKey(K key)</code>: verifica se una chiave è presente nella collezione</p>
 <p><code>.containsValue(V value)</code>: verifica se un valore è presente nella collezione</p>
 <p><code>.size()</code>: restituisce il numero di coppie chiave-valore nella collezione</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> mappa <span class="op">=</span> <span class="kw">new</span> <span class="bu">HashMap</span><span class="op">&lt;&gt;();</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"uno"</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"due"</span><span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="st">"uno"</span><span class="op">);</span> <span class="co">// restituisce 1</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">remove</span><span class="op">(</span><span class="st">"uno"</span><span class="op">);</span> <span class="co">// rimuove la coppia chiave-valore "uno</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="st">", 1</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">containsKey</span><span class="op">(</span><span class="st">"uno"</span><span class="op">);</span> <span class="co">// restituisce false</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">containsValue</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span> <span class="co">// restituisce false</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">size</span><span class="op">();</span> <span class="co">// restituisce 0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>.copyOf(Map m)</code>: restituisce una copia della mappa</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Map</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> mappa <span class="op">=</span> <span class="kw">new</span> <span class="bu">HashMap</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"uno"</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">put</span><span class="op">(</span><span class="st">"due"</span><span class="op">,</span> <span class="dv">2</span><span class="op">);</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">get</span><span class="op">(</span><span class="st">"uno"</span><span class="op">);</span> <span class="co">// restituisce 1</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">remove</span><span class="op">(</span><span class="st">"uno"</span><span class="op">);</span> <span class="co">// rimuove la coppia chiave-valore "uno</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="st">", 1</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">containsKey</span><span class="op">(</span><span class="st">"uno"</span><span class="op">);</span> <span class="co">// restituisce false</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">containsValue</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span> <span class="co">// restituisce false</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>mappa<span class="op">.</span><span class="fu">size</span><span class="op">();</span> <span class="co">// restituisce 0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>concetto di entrySet()</strong>: restituisce un set di coppie chiave-valore, utile per iterare su una mappa</p>
 <p>Per iterare su una mappa si può usare un ciclo for-each con <code>entrySet()</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="bu">Map</span><span class="op">.</span><span class="fu">Entry</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> entry <span class="op">:</span> mappa<span class="op">.</span><span class="fu">entrySet</span><span class="op">())</span> <span class="op">{</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> key <span class="op">=</span> entry<span class="op">.</span><span class="fu">getKey</span><span class="op">();</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Integer</span> value <span class="op">=</span> entry<span class="op">.</span><span class="fu">getValue</span><span class="op">();</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>key <span class="op">+</span> <span class="st">": "</span> <span class="op">+</span> value<span class="op">);</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="bu">Map</span><span class="op">.</span><span class="fu">Entry</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> entry <span class="op">:</span> mappa<span class="op">.</span><span class="fu">entrySet</span><span class="op">())</span> <span class="op">{</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">String</span> key <span class="op">=</span> entry<span class="op">.</span><span class="fu">getKey</span><span class="op">();</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">Integer</span> value <span class="op">=</span> entry<span class="op">.</span><span class="fu">getValue</span><span class="op">();</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>key <span class="op">+</span> <span class="st">": "</span> <span class="op">+</span> value<span class="op">);</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pair" class="level3">
 <h3 class="anchored" data-anchor-id="pair">Pair</h3>
 <p>Collezione di due oggetti, utile per restituire più valori da un metodo</p>
 <p><code>.getKey()</code>: restituisce il primo elemento della coppia</p>
 <p><code>.getValue()</code>: restituisce il secondo elemento della coppia</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Pair<span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> coppia <span class="op">=</span> <span class="kw">new</span> Pair<span class="op">&lt;&gt;(</span><span class="st">"uno"</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> key <span class="op">=</span> coppia<span class="op">.</span><span class="fu">getKey</span><span class="op">();</span> <span class="co">// restituisce "uno"</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span> value <span class="op">=</span> coppia<span class="op">.</span><span class="fu">getValue</span><span class="op">();</span> <span class="co">// restituisce 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>Pair<span class="op">&lt;</span><span class="bu">String</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> coppia <span class="op">=</span> <span class="kw">new</span> Pair<span class="op">&lt;&gt;(</span><span class="st">"uno"</span><span class="op">,</span> <span class="dv">1</span><span class="op">);</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> key <span class="op">=</span> coppia<span class="op">.</span><span class="fu">getKey</span><span class="op">();</span> <span class="co">// restituisce "uno"</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span> value <span class="op">=</span> coppia<span class="op">.</span><span class="fu">getValue</span><span class="op">();</span> <span class="co">// restituisce 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="record" class="level3">
 <h3 class="anchored" data-anchor-id="record">Record</h3>
 <p>Struttura dati immutabile, utile per rappresentare un insieme di valori associati a nomi</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">record</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{}</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Persona p <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span><span class="op">(</span><span class="st">"Mario"</span><span class="op">,</span> <span class="dv">30</span><span class="op">);</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> nome <span class="op">=</span> p<span class="op">.</span><span class="fu">nome</span><span class="op">();</span> <span class="co">// restituisce "Mario"</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> eta <span class="op">=</span> p<span class="op">.</span><span class="fu">eta</span><span class="op">();</span> <span class="co">// restituisce 30</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">record</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{}</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Persona p <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span><span class="op">(</span><span class="st">"Mario"</span><span class="op">,</span> <span class="dv">30</span><span class="op">);</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> nome <span class="op">=</span> p<span class="op">.</span><span class="fu">nome</span><span class="op">();</span> <span class="co">// restituisce "Mario"</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> eta <span class="op">=</span> p<span class="op">.</span><span class="fu">eta</span><span class="op">();</span> <span class="co">// restituisce 30</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="predicate-bipredicate" class="level3">
 <h3 class="anchored" data-anchor-id="predicate-bipredicate">Predicate (BiPredicate)</h3>
@@ -628,18 +692,18 @@ incremento: dopo ogni iterazione</p>
 <p><code>.and(Predicate other)</code>: restituisce un predicato che rappresenta la congiunzione logica di questo predicato e di un altro</p>
 <p><code>.or(Predicate other)</code>: restituisce un predicato che rappresenta la disgiunzione logica di questo predicato e di un altro</p>
 <p><code>.negate()</code>: restituisce un predicato che rappresenta la negazione logica di questo predicato</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Predicate</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> isLongerThan3 <span class="op">=</span> s <span class="op">-&gt;</span> s<span class="op">.</span><span class="fu">length</span><span class="op">()</span> <span class="op">&gt;</span> <span class="dv">3</span><span class="op">;</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s <span class="op">=</span> <span class="st">"ciao"</span><span class="op">;</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> t <span class="op">=</span> <span class="st">"hi"</span><span class="op">;</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>isLongerThan3<span class="op">.</span><span class="fu">test</span><span class="op">(</span>s<span class="op">);</span> <span class="co">// restituisce true</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>isLongerThan3<span class="op">.</span><span class="fu">test</span><span class="op">(</span>t<span class="op">);</span> <span class="co">// restituisce false</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>BiPredicate<span class="op">&lt;</span><span class="bu">Integer</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> predicato2 <span class="op">=</span> <span class="op">(</span>x<span class="op">,</span> y<span class="op">)</span> <span class="op">-&gt;</span> x <span class="op">+</span> y <span class="op">&gt;</span> <span class="dv">10</span><span class="op">;</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span> <span class="co">// restituisce true</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">);</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Predicate</span><span class="op">&lt;</span><span class="bu">String</span><span class="op">&gt;</span> isLongerThan3 <span class="op">=</span> s <span class="op">-&gt;</span> s<span class="op">.</span><span class="fu">length</span><span class="op">()</span> <span class="op">&gt;</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s <span class="op">=</span> <span class="st">"ciao"</span><span class="op">;</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> t <span class="op">=</span> <span class="st">"hi"</span><span class="op">;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>isLongerThan3<span class="op">.</span><span class="fu">test</span><span class="op">(</span>s<span class="op">);</span> <span class="co">// restituisce true</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>isLongerThan3<span class="op">.</span><span class="fu">test</span><span class="op">(</span>t<span class="op">);</span> <span class="co">// restituisce false</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>BiPredicate<span class="op">&lt;</span><span class="bu">Integer</span><span class="op">,</span> <span class="bu">Integer</span><span class="op">&gt;</span> predicato2 <span class="op">=</span> <span class="op">(</span>x<span class="op">,</span> y<span class="op">)</span> <span class="op">-&gt;</span> x <span class="op">+</span> y <span class="op">&gt;</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span> <span class="co">// restituisce true</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">);</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="queue" class="level3">
 <h3 class="anchored" data-anchor-id="queue">Queue</h3>
@@ -655,13 +719,13 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <p><code>.element()</code>: restituisce l’elemento in testa alla coda senza rimuoverlo, lancia un’eccezione se la coda è vuota</p>
 <p><code>.peek()</code>: restituisce l’elemento in testa alla coda senza rimuoverlo</p>
 <p><code>.isEmpty()</code>: verifica se la coda è vuota</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Queue</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> coda <span class="op">=</span> <span class="kw">new</span> <span class="bu">PriorityQueue</span><span class="op">&lt;&gt;();</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">offer</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">remove</span><span class="op">();</span> <span class="co">// rimuove 1</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">poll</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce null</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">isEmpty</span><span class="op">();</span> <span class="co">// restituisce true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Queue</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> coda <span class="op">=</span> <span class="kw">new</span> <span class="bu">PriorityQueue</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">add</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">offer</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">remove</span><span class="op">();</span> <span class="co">// rimuove 1</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">poll</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce null</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">isEmpty</span><span class="op">();</span> <span class="co">// restituisce true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="stream" class="level3">
 <h3 class="anchored" data-anchor-id="stream">Stream</h3>
@@ -688,17 +752,30 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <p><code>.forEach(Consumer c)</code>: esegue l’operazione c su ogni elemento dello stream</p>
 <p><code>count()</code>: restituisce il numero di elementi dello stream</p>
 <p><code>.reduce(BinaryOperator op)</code>: riduce gli elementi dello stream ad un singolo valore utilizzando l’operatore binario op</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> numeri <span class="op">=</span> <span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">()</span>           <span class="co">// 1. Sorgente</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filter</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span>  <span class="co">// 2. Operazione intermedia</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">map</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">*</span> <span class="dv">2</span><span class="op">)</span>          <span class="co">// 2. Operazione intermedia</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">forEach</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">::</span>println<span class="op">);</span> <span class="co">// 3. Operazione terminale</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">().</span><span class="fu">filter</span><span class="op">().</span><span class="fu">map</span><span class="op">().</span><span class="fu">forEach</span><span class="op">();</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">// sorgente -&gt; pari -&gt;  * 2 -&gt; stampa</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="metodi-mapto" class="level4">
+<h4 class="anchored" data-anchor-id="metodi-mapto">Metodi mapTo</h4>
+<p><code>.mapToInt(ToIntFunction f)</code>: restituisce un nuovo stream di interi trasformati dalla funzione f</p>
+<p><code>.mapToDouble(ToDoubleFunction f)</code>: restituisce un nuovo stream di double trasformati dalla funzione f</p>
+<p><code>.mapToLong(ToLongFunction f)</code>: restituisce un nuovo stream di long trasformati dalla funzione f</p>
+</section>
+<section id="metodi-statici-includi-con-mapto" class="level4">
+<h4 class="anchored" data-anchor-id="metodi-statici-includi-con-mapto">Metodi statici includi con MapTo</h4>
+<p><code>.sum()</code>: restituisce la somma degli elementi dello stream</p>
+<p><code>.average()</code>: restituisce la media degli elementi dello stream</p>
+<p><code>.max()</code>: restituisce il massimo degli elementi dello stream</p>
+<p><code>.min()</code>: restituisce il minimo degli elementi dello stream</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">List</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> numeri <span class="op">=</span> <span class="bu">Arrays</span><span class="op">.</span><span class="fu">asList</span><span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">()</span>           <span class="co">// 1. Sorgente</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filter</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span><span class="op">)</span>  <span class="co">// 2. Operazione intermedia</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">map</span><span class="op">(</span>n <span class="op">-&gt;</span> n <span class="op">*</span> <span class="dv">2</span><span class="op">)</span>          <span class="co">// 2. Operazione intermedia</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">forEach</span><span class="op">(</span><span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">::</span>println<span class="op">);</span> <span class="co">// 3. Operazione terminale</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">().</span><span class="fu">filter</span><span class="op">().</span><span class="fu">map</span><span class="op">().</span><span class="fu">forEach</span><span class="op">();</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co">// sorgente -&gt; pari -&gt;  * 2 -&gt; stampa</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="stack" class="level3">
@@ -708,12 +785,12 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <p><code>.pop(arg)</code>: rimuove arg in cima alla collezione</p>
 <p><code>.peek()</code>: restituisce l’elemento in cima alla collezione senza rimuoverlo</p>
 <p><code>.empty()</code>: verifica se la collezione è vuota</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Stack</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> pila <span class="op">=</span> <span class="kw">new</span> <span class="bu">Stack</span><span class="op">&lt;&gt;();</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">pop</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce 1</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">empty</span><span class="op">();</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Stack</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> pila <span class="op">=</span> <span class="kw">new</span> <span class="bu">Stack</span><span class="op">&lt;&gt;();</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">push</span><span class="op">(</span><span class="dv">2</span><span class="op">);</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">pop</span><span class="op">();</span> <span class="co">// rimuove 2</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce 1</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">empty</span><span class="op">();</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="scegliere-come-rappresentare-una-collezione" class="level3">
 <h3 class="anchored" data-anchor-id="scegliere-come-rappresentare-una-collezione">Scegliere come rappresentare una collezione</h3>
@@ -741,41 +818,9 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <strong>Set</strong>: <code>.add()</code>, <code>.remove()</code>, <code>.contains()</code>, <code>.size()</code><br>
 <strong>Map</strong>: <code>.put()</code>, <code>.get()</code>, <code>.remove()</code>, <code>.containsKey()</code>, <code>.size()</code><br>
 <strong>Stream</strong>: <code>.filter()</code>, <code>.map()</code>, <code>.forEach()</code>, <code>.collect()</code>, <code>.reduce()</code></p>
-</section>
-</section>
-<section id="confronto-e-.equals" class="level3">
-<h3 class="anchored" data-anchor-id="confronto-e-.equals">Confronto == e .equals()</h3>
-<p><code>==</code> : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi</p>
-<p><code>.equals()</code>: confronta due oggetti per valore (stesso contenuto)</p>
-<p><code>=</code> : assegna un valore ad una variabile</p>
-<p>Quando si implementa il metodo <code>.equals()</code>, è importante:</p>
-<ul>
-<li><code>this == obj</code> : se i riferimenti sono uguali, restituisce true</li>
-<li><code>obj == null</code> : se l’oggetto è nullo, restituisce false</li>
-<li><code>getClass() != obj.getClass()</code> : se gli oggetti sono di classi diverse, restituisce false</li>
-<li><code>Objects.equals(valori)</code> : confronta lo stato dell’oggetto, restituisce true</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">// implementazione equals() per una classe Persona</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Persona <span class="op">{</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> eta<span class="op">;</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">eta</span> <span class="op">=</span> eta<span class="op">;</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span><span class="op">(</span><span class="bu">Object</span> obj<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span> <span class="op">==</span> obj<span class="op">)</span> <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span> <span class="co">// stesso riferimento</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>obj <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> <span class="fu">getClass</span><span class="op">()</span> <span class="op">!=</span> obj<span class="op">.</span><span class="fu">getClass</span><span class="op">())</span> <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span> <span class="co">// diverso tipo</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        Persona persona <span class="op">=</span> <span class="op">(</span>Persona<span class="op">)</span> obj<span class="op">;</span> <span class="co">// cast</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> eta <span class="op">==</span> persona<span class="op">.</span><span class="fu">eta</span> <span class="op">&amp;&amp;</span> Objects<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>nome<span class="op">,</span> persona<span class="op">.</span><span class="fu">nome</span><span class="op">);</span> <span class="co">// confronto per valore</span></span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
+</section>
 </section>
 </section>
 
