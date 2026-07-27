@@ -233,14 +233,36 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#foreach-con-lambda" id="toc-foreach-con-lambda" class="nav-link" data-scroll-target="#foreach-con-lambda">ForEach con lambda</a></li>
   </ul></li>
-  <li><a href="#tipi-di-variabili" id="toc-tipi-di-variabili" class="nav-link" data-scroll-target="#tipi-di-variabili">Tipi di variabili</a>
+  <li><a href="#tipi-primitivi" id="toc-tipi-primitivi" class="nav-link" data-scroll-target="#tipi-primitivi">Tipi primitivi</a>
   <ul class="collapse">
-  <li><a href="#tipi-primitivi" id="toc-tipi-primitivi" class="nav-link" data-scroll-target="#tipi-primitivi">Tipi primitivi</a></li>
-  <li><a href="#oggetti" id="toc-oggetti" class="nav-link" data-scroll-target="#oggetti">Oggetti</a></li>
-  <li><a href="#scegliere-come-rappresentare-una-collezione" id="toc-scegliere-come-rappresentare-una-collezione" class="nav-link" data-scroll-target="#scegliere-come-rappresentare-una-collezione">Scegliere come rappresentare una collezione</a></li>
-  <li><a href="#sintesi-dei-metodi" id="toc-sintesi-dei-metodi" class="nav-link" data-scroll-target="#sintesi-dei-metodi">Sintesi dei metodi</a></li>
-  <li><a href="#confronto-e-.equals" id="toc-confronto-e-.equals" class="nav-link" data-scroll-target="#confronto-e-.equals">Confronto == e .equals()</a></li>
+  <li><a href="#oggetti-wrapper" id="toc-oggetti-wrapper" class="nav-link" data-scroll-target="#oggetti-wrapper">Oggetti wrapper</a></li>
   </ul></li>
+  <li><a href="#object" id="toc-object" class="nav-link" data-scroll-target="#object">Object</a></li>
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  <li><a href="#string" id="toc-string" class="nav-link" data-scroll-target="#string">String</a>
+  <ul class="collapse">
+  <li><a href="#metodi" id="toc-metodi" class="nav-link" data-scroll-target="#metodi">metodi:</a></li>
+  </ul></li>
+  <li><a href="#array" id="toc-array" class="nav-link" data-scroll-target="#array">Array</a></li>
+  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list">List</a></li>
+  <li><a href="#set" id="toc-set" class="nav-link" data-scroll-target="#set">Set</a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map">Map</a></li>
+  <li><a href="#pair" id="toc-pair" class="nav-link" data-scroll-target="#pair">Pair</a></li>
+  <li><a href="#record" id="toc-record" class="nav-link" data-scroll-target="#record">Record</a></li>
+  <li><a href="#predicate-bipredicate" id="toc-predicate-bipredicate" class="nav-link" data-scroll-target="#predicate-bipredicate">Predicate (BiPredicate)</a></li>
+  <li><a href="#queue" id="toc-queue" class="nav-link" data-scroll-target="#queue">Queue</a></li>
+  <li><a href="#stream" id="toc-stream" class="nav-link" data-scroll-target="#stream">Stream</a>
+  <ul class="collapse">
+  <li><a href="#metodi-di-creazione-sorgenti" id="toc-metodi-di-creazione-sorgenti" class="nav-link" data-scroll-target="#metodi-di-creazione-sorgenti">Metodi di creazione (Sorgenti)</a></li>
+  <li><a href="#operazioni-intermedie-lazy" id="toc-operazioni-intermedie-lazy" class="nav-link" data-scroll-target="#operazioni-intermedie-lazy">Operazioni intermedie (Lazy)</a></li>
+  <li><a href="#operazioni-terminali-eager" id="toc-operazioni-terminali-eager" class="nav-link" data-scroll-target="#operazioni-terminali-eager">Operazioni terminali (Eager)</a></li>
+  </ul></li>
+  <li><a href="#stack" id="toc-stack" class="nav-link" data-scroll-target="#stack">Stack</a></li>
+  <li><a href="#scegliere-come-rappresentare-una-collezione" id="toc-scegliere-come-rappresentare-una-collezione" class="nav-link" data-scroll-target="#scegliere-come-rappresentare-una-collezione">Scegliere come rappresentare una collezione</a>
+  <ul class="collapse">
+  <li><a href="#sintesi-dei-metodi" id="toc-sintesi-dei-metodi" class="nav-link" data-scroll-target="#sintesi-dei-metodi">Sintesi dei metodi</a></li>
+  </ul></li>
+  <li><a href="#confronto-e-.equals" id="toc-confronto-e-.equals" class="nav-link" data-scroll-target="#confronto-e-.equals">Confronto == e .equals()</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -454,18 +476,16 @@ incremento: dopo ogni iterazione</p>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">forEach</span><span class="op">(</span>n <span class="op">-&gt;</span> <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>n<span class="op">));</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="tipi-di-variabili" class="level3">
-<h3 class="anchored" data-anchor-id="tipi-di-variabili">Tipi di variabili</h3>
-<section id="tipi-primitivi" class="level4">
-<h4 class="anchored" data-anchor-id="tipi-primitivi">Tipi primitivi</h4>
+<section id="tipi-primitivi" class="level3">
+<h3 class="anchored" data-anchor-id="tipi-primitivi">Tipi primitivi</h3>
 <p><code>boolean</code>: <code>#true</code>, <code>#false</code></p>
 <p><code>int</code>: numeri interi<br>
 <code>long</code>: numeri interi <span class="math inline">\(\in \mathbb{Z}\)</span><br>
 <code>float</code>: numeri decimali <span class="math inline">\(\in \mathbb{R}\)</span><br>
 <code>double</code>: numeri decimali <span class="math inline">\(\in \mathbb{R}\)</span></p>
 <p><code>char</code>: caratteri singoli ASCII</p>
-<section id="oggetti-wrapper" class="level5">
-<h5 class="anchored" data-anchor-id="oggetti-wrapper">Oggetti wrapper</h5>
+<section id="oggetti-wrapper" class="level4">
+<h4 class="anchored" data-anchor-id="oggetti-wrapper">Oggetti wrapper</h4>
 <p>Convertono i tipi primitivi in oggetti. Questo serve per poter sfruttare metodi di utilità (es. conversione stringhe) e per inserirli in strutture dati (es. Collection, Map, List, Set)</p>
 <p><code>boolean</code> → <code>Boolean</code></p>
 <p><code>int</code> → <code>Integer</code><br>
@@ -476,27 +496,25 @@ incremento: dopo ogni iterazione</p>
 <p>I wrapper possono assumere valore <code>null</code></p>
 </section>
 </section>
-<section id="oggetti" class="level4">
-<h4 class="anchored" data-anchor-id="oggetti">Oggetti</h4>
-<section id="object" class="level5">
-<h5 class="anchored" data-anchor-id="object">Object</h5>
+<section id="object" class="level3">
+<h3 class="anchored" data-anchor-id="object">Object</h3>
 <p><code>.requireNonNull(obj)</code>: lancia un’eccezione se obj è nullo</p>
 <p><code>instanceof</code>: restituisce true se obj è un’istanza di Tipo, altrimenti false</p>
 <p><code>.getClass()</code>: restituisce la classe dell’oggetto</p>
 </section>
-<section id="optional" class="level5">
-<h5 class="anchored" data-anchor-id="optional">Optional</h5>
+<section id="optional" class="level3">
+<h3 class="anchored" data-anchor-id="optional">Optional</h3>
 <p><code>.empty()</code>: restituisce un Optional vuoto</p>
 <p><code>.of(T value)</code>: restituisce un Optional contenente il valore</p>
 <p><code>.ofNullable(T value)</code>: restituisce un Optional contenente il valore se non è nullo, altrimenti un Optional vuoto</p>
 <p><code>.isPresent()</code>: restituisce true se l’Optional contiene un valore, altrimenti false</p>
 <p><code>.get()</code>: restituisce il valore contenuto nell’Optional, lancia un’eccezione se è vuoto</p>
 </section>
-<section id="string" class="level5">
-<h5 class="anchored" data-anchor-id="string">String</h5>
+<section id="string" class="level3">
+<h3 class="anchored" data-anchor-id="string">String</h3>
 <p>insieme di caratteri, immutabile, può essere concatenata con <code>+</code></p>
-<section id="metodi" class="level6">
-<h6 class="anchored" data-anchor-id="metodi">metodi:</h6>
+<section id="metodi" class="level4">
+<h4 class="anchored" data-anchor-id="metodi">metodi:</h4>
 <p><code>.length()</code>: restituisce la lunghezza della stringa</p>
 <p><code>.equals(String s)</code>: confronta due stringhe per uguaglianza</p>
 <p><code>.charAt(int i)</code>: restituisce il carattere alla posizione i</p>
@@ -508,8 +526,8 @@ incremento: dopo ogni iterazione</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> s <span class="op">=</span> <span class="st">"ciao"</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="array" class="level5">
-<h5 class="anchored" data-anchor-id="array">Array</h5>
+<section id="array" class="level3">
+<h3 class="anchored" data-anchor-id="array">Array</h3>
 <p>Un array generico si definisce come segue:</p>
 <p><code>tipo[] nomeArray = new tipo[dimensione];</code></p>
 <p>il tipo può essere un tipo primitivo o un oggetto</p>
@@ -528,8 +546,8 @@ incremento: dopo ogni iterazione</p>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[]</span> array2 <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">};</span> <span class="co">// array di 5 interi con valori iniziali</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span><span class="op">[][]</span> array3 <span class="op">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}</span> <span class="op">};</span> <span class="co">// matrice 2x2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="list" class="level5">
-<h5 class="anchored" data-anchor-id="list">List</h5>
+<section id="list" class="level3">
+<h3 class="anchored" data-anchor-id="list">List</h3>
 <p>Collezione di oggetti ordinata, può contenere duplicati (es. <code>ArrayList</code>, <code>LinkedList</code>)</p>
 <p><code>.add(E e)</code>: aggiunge un elemento alla collezione</p>
 <p><code>.remove(E e)</code>: rimuove un elemento dalla collezione</p>
@@ -547,8 +565,8 @@ incremento: dopo ogni iterazione</p>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">contains</span><span class="op">(</span><span class="dv">3</span><span class="op">);</span> <span class="co">// restituisce true</span></span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>lista<span class="op">.</span><span class="fu">size</span><span class="op">();</span> <span class="co">// restituisce 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="set" class="level5">
-<h5 class="anchored" data-anchor-id="set">Set</h5>
+<section id="set" class="level3">
+<h3 class="anchored" data-anchor-id="set">Set</h3>
 <p>Collezione di oggetti senza duplicati. Interfaccia, solitamente le implementazioni più comuni sono <code>HashSet</code> e <code>TreeSet</code>.</p>
 <p><strong>HashSet</strong> → non garantisce l’ordine degli elementi</p>
 <p><strong>TreeSet</strong> → garantisce l’ordine degli elementi</p>
@@ -558,8 +576,8 @@ incremento: dopo ogni iterazione</p>
 <p><code>.size()</code>: restituisce il numero di elementi nella collezione</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Set</span><span class="op">&lt;</span><span class="bu">Integer</span><span class="op">&gt;</span> insieme <span class="op">=</span> <span class="kw">new</span> <span class="bu">HashSet</span><span class="op">&lt;&gt;();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="map" class="level5">
-<h5 class="anchored" data-anchor-id="map">Map</h5>
+<section id="map" class="level3">
+<h3 class="anchored" data-anchor-id="map">Map</h3>
 <p>Collezione di più coppie chiave-valore, le chiavi sono univoche</p>
 <p><code>.put(K key, V value)</code>: aggiunge una coppia chiave-valore alla collezione</p>
 <p><code>.get(K key)</code>: restituisce il valore associato ad una chiave</p>
@@ -584,8 +602,8 @@ incremento: dopo ogni iterazione</p>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>key <span class="op">+</span> <span class="st">": "</span> <span class="op">+</span> value<span class="op">);</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="pair" class="level5">
-<h5 class="anchored" data-anchor-id="pair">Pair</h5>
+<section id="pair" class="level3">
+<h3 class="anchored" data-anchor-id="pair">Pair</h3>
 <p>Collezione di due oggetti, utile per restituire più valori da un metodo</p>
 <p><code>.getKey()</code>: restituisce il primo elemento della coppia</p>
 <p><code>.getValue()</code>: restituisce il secondo elemento della coppia</p>
@@ -593,16 +611,16 @@ incremento: dopo ogni iterazione</p>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> key <span class="op">=</span> coppia<span class="op">.</span><span class="fu">getKey</span><span class="op">();</span> <span class="co">// restituisce "uno"</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">Integer</span> value <span class="op">=</span> coppia<span class="op">.</span><span class="fu">getValue</span><span class="op">();</span> <span class="co">// restituisce 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="record" class="level5">
-<h5 class="anchored" data-anchor-id="record">Record</h5>
+<section id="record" class="level3">
+<h3 class="anchored" data-anchor-id="record">Record</h3>
 <p>Struttura dati immutabile, utile per rappresentare un insieme di valori associati a nomi</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">record</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{}</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Persona p <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span><span class="op">(</span><span class="st">"Mario"</span><span class="op">,</span> <span class="dv">30</span><span class="op">);</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">String</span> nome <span class="op">=</span> p<span class="op">.</span><span class="fu">nome</span><span class="op">();</span> <span class="co">// restituisce "Mario"</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> eta <span class="op">=</span> p<span class="op">.</span><span class="fu">eta</span><span class="op">();</span> <span class="co">// restituisce 30</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="predicate-bipredicate" class="level5">
-<h5 class="anchored" data-anchor-id="predicate-bipredicate">Predicate (BiPredicate)</h5>
+<section id="predicate-bipredicate" class="level3">
+<h3 class="anchored" data-anchor-id="predicate-bipredicate">Predicate (BiPredicate)</h3>
 <p>Accetta un argomento e restituisce un booleano, utile per filtrare collezioni</p>
 <p><code>.test(T t)</code>: verifica se l’argomento soddisfa la condizione del predicato</p>
 <p>Nel caso di BiPredicate, accetta due argomenti e restituisce un booleano</p>
@@ -623,8 +641,8 @@ incremento: dopo ogni iterazione</p>
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">);</span> <span class="co">// restituisce true</span></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>predicato2<span class="op">.</span><span class="fu">test</span><span class="op">(</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">);</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="queue" class="level5">
-<h5 class="anchored" data-anchor-id="queue">Queue</h5>
+<section id="queue" class="level3">
+<h3 class="anchored" data-anchor-id="queue">Queue</h3>
 <p>Collezione di oggetti con accesso FIFO (First In First Out).<br>
 Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</code> e <code>PriorityQueue</code>.</p>
 <p><em>Inserimento</em>: Aggiunge un elemento alla fine (coda) della struttura</p>
@@ -645,27 +663,26 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce null</span></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>coda<span class="op">.</span><span class="fu">isEmpty</span><span class="op">();</span> <span class="co">// restituisce true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="stream" class="level5">
-<h5 class="anchored" data-anchor-id="stream">Stream</h5>
+<section id="stream" class="level3">
+<h3 class="anchored" data-anchor-id="stream">Stream</h3>
 <p>Collezione di oggetti che permette di eseguire operazioni in sequenza (pipeline) su di essi, senza modificarli.</p>
-<section id="metodi-di-creazione-sorgenti" class="level6">
-<h6 class="anchored" data-anchor-id="metodi-di-creazione-sorgenti">Metodi di creazione (Sorgenti)</h6>
+<section id="metodi-di-creazione-sorgenti" class="level4">
+<h4 class="anchored" data-anchor-id="metodi-di-creazione-sorgenti">Metodi di creazione (Sorgenti)</h4>
 <p><code>.stream()</code>: crea uno stream a partire da una collezione</p>
 <p><code>Stream.of(T... values)</code>: crea uno stream a partire da un insieme di valori espliciti</p>
 <p><code>Arrays.stream(array)</code>: crea uno stream a partire da un array</p>
 <p><code>Stream.empty()</code>: crea uno stream vuoto</p>
 </section>
-<section id="operazioni-intermedie-lazy" class="level6">
-<h6 class="anchored" data-anchor-id="operazioni-intermedie-lazy">Operazioni intermedie (Lazy)</h6>
+<section id="operazioni-intermedie-lazy" class="level4">
+<h4 class="anchored" data-anchor-id="operazioni-intermedie-lazy">Operazioni intermedie (Lazy)</h4>
 <p>Restituiscono un flusso modificato e non vengono eseguite fino a quando non viene invocata un’operazione terminale.</p>
 <p><code>.filter(Predicate p)</code>: scarta elementi che non soddisfano la condizione del predicato p</p>
 <p><code>.map(Function f)</code>: restituisce un nuovo stream con gli elementi trasformati dalla funzione f</p>
 <p><code>sorted()</code>: restituisce un nuovo stream con gli elementi ordinati secondo l’ordine naturale</p>
 <p><code>.distinct()</code>: restituisce un nuovo stream con gli elementi distinti (senza duplicati)</p>
 </section>
-</section>
-<section id="operazioni-terminali-eager" class="level5">
-<h5 class="anchored" data-anchor-id="operazioni-terminali-eager">Operazioni terminali (Eager)</h5>
+<section id="operazioni-terminali-eager" class="level4">
+<h4 class="anchored" data-anchor-id="operazioni-terminali-eager">Operazioni terminali (Eager)</h4>
 <p>Chiudono la pipeline e restituiscono un valore o una collezione</p>
 <p><code>.collect(Collector)</code>: raccoglie gli elementi dello stream in una collezione o stringa. Es <code>Collectors.toList()</code>, <code>Collectors.toSet()</code></p>
 <p><code>.forEach(Consumer c)</code>: esegue l’operazione c su ogni elemento dello stream</p>
@@ -683,8 +700,9 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>numeri<span class="op">.</span><span class="fu">stream</span><span class="op">().</span><span class="fu">filter</span><span class="op">().</span><span class="fu">map</span><span class="op">().</span><span class="fu">forEach</span><span class="op">();</span></span>
 <span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">// sorgente -&gt; pari -&gt;  * 2 -&gt; stampa</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="stack" class="level5">
-<h5 class="anchored" data-anchor-id="stack">Stack</h5>
+</section>
+<section id="stack" class="level3">
+<h3 class="anchored" data-anchor-id="stack">Stack</h3>
 <p>Collezione di oggetti con accesso LIFO (Last In First Out)</p>
 <p><code>.push(arg)</code>: aggiunge arg in cima alla collezione</p>
 <p><code>.pop(arg)</code>: rimuove arg in cima alla collezione</p>
@@ -697,9 +715,8 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">peek</span><span class="op">();</span> <span class="co">// restituisce 1</span></span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>pila<span class="op">.</span><span class="fu">empty</span><span class="op">();</span> <span class="co">// restituisce false</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-</section>
-<section id="scegliere-come-rappresentare-una-collezione" class="level4">
-<h4 class="anchored" data-anchor-id="scegliere-come-rappresentare-una-collezione">Scegliere come rappresentare una collezione</h4>
+<section id="scegliere-come-rappresentare-una-collezione" class="level3">
+<h3 class="anchored" data-anchor-id="scegliere-come-rappresentare-una-collezione">Scegliere come rappresentare una collezione</h3>
 <p>Guida sintetica alla scelta della struttura dati più adatta:</p>
 <ul>
 <li><code>List</code> → elementi ordinati tramite indice, duplicati permessi
@@ -718,7 +735,6 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <li><code>TreeMap</code> → ordinato, più lento. Richiede <em>Comparable</em></li>
 </ul></li>
 </ul>
-</section>
 <section id="sintesi-dei-metodi" class="level4">
 <h4 class="anchored" data-anchor-id="sintesi-dei-metodi">Sintesi dei metodi</h4>
 <p><strong>List</strong>: <code>.add()</code>,<code>.remove()</code>, <code>.get()</code>, <code>.set()</code>, <code>.contains()</code>, <code>.size()</code><br>
@@ -726,34 +742,40 @@ Interfaccia, solitamente le implementazioni più comuni sono <code>LinkedList</c
 <strong>Map</strong>: <code>.put()</code>, <code>.get()</code>, <code>.remove()</code>, <code>.containsKey()</code>, <code>.size()</code><br>
 <strong>Stream</strong>: <code>.filter()</code>, <code>.map()</code>, <code>.forEach()</code>, <code>.collect()</code>, <code>.reduce()</code></p>
 </section>
-<section id="confronto-e-.equals" class="level4">
-<h4 class="anchored" data-anchor-id="confronto-e-.equals">Confronto == e .equals()</h4>
+</section>
+<section id="confronto-e-.equals" class="level3">
+<h3 class="anchored" data-anchor-id="confronto-e-.equals">Confronto == e .equals()</h3>
 <p><code>==</code> : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi</p>
 <p><code>.equals()</code>: confronta due oggetti per valore (stesso contenuto)</p>
 <p><code>=</code> : assegna un valore ad una variabile</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">// implementazione equals() per una classe Persona</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Persona <span class="op">{</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> eta<span class="op">;</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">eta</span> <span class="op">=</span> eta<span class="op">;</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span><span class="op">(</span><span class="bu">Object</span> obj<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span> <span class="op">==</span> obj<span class="op">)</span> <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span> <span class="co">// stesso riferimento</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>obj <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> <span class="fu">getClass</span><span class="op">()</span> <span class="op">!=</span> obj<span class="op">.</span><span class="fu">getClass</span><span class="op">())</span> <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span> <span class="co">// diverso tipo</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        Persona persona <span class="op">=</span> <span class="op">(</span>Persona<span class="op">)</span> obj<span class="op">;</span> <span class="co">// cast</span></span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> eta <span class="op">==</span> persona<span class="op">.</span><span class="fu">eta</span> <span class="op">&amp;&amp;</span> Objects<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>nome<span class="op">,</span> persona<span class="op">.</span><span class="fu">nome</span><span class="op">);</span> <span class="co">// confronto per valore</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Quando si implementa il metodo <code>.equals()</code>, è importante:</p>
+<ul>
+<li><code>this == obj</code> : se i riferimenti sono uguali, restituisce true</li>
+<li><code>obj == null</code> : se l’oggetto è nullo, restituisce false</li>
+<li><code>getClass() != obj.getClass()</code> : se gli oggetti sono di classi diverse, restituisce false</li>
+<li><code>Objects.equals(valori)</code> : confronta lo stato dell’oggetto, restituisce true</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode java code-with-copy"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">// implementazione equals() per una classe Persona</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> Persona <span class="op">{</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="bu">String</span> nome<span class="op">;</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">private</span> <span class="dt">int</span> eta<span class="op">;</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="fu">Persona</span><span class="op">(</span><span class="bu">String</span> nome<span class="op">,</span> <span class="dt">int</span> eta<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">eta</span> <span class="op">=</span> eta<span class="op">;</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">@Override</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">equals</span><span class="op">(</span><span class="bu">Object</span> obj<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span><span class="kw">this</span> <span class="op">==</span> obj<span class="op">)</span> <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span> <span class="co">// stesso riferimento</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>obj <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> <span class="fu">getClass</span><span class="op">()</span> <span class="op">!=</span> obj<span class="op">.</span><span class="fu">getClass</span><span class="op">())</span> <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span> <span class="co">// diverso tipo</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        Persona persona <span class="op">=</span> <span class="op">(</span>Persona<span class="op">)</span> obj<span class="op">;</span> <span class="co">// cast</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> eta <span class="op">==</span> persona<span class="op">.</span><span class="fu">eta</span> <span class="op">&amp;&amp;</span> Objects<span class="op">.</span><span class="fu">equals</span><span class="op">(</span>nome<span class="op">,</span> persona<span class="op">.</span><span class="fu">nome</span><span class="op">);</span> <span class="co">// confronto per valore</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
 </section>
 </section>
 
