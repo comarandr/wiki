@@ -1,0 +1,8 @@
+---
+title: Schemi minimi e tabelle
+permalink: /wiki/minimali/
+---
+
+Link ai schemi minimi e alle tabelle di ripasso:
+
+[Design pattern e classi in java](./minJava.qmd)

@@ -16,6 +16,8 @@ website:
         text: "Università"
       - href: "http://comarandr.github.io/wiki/personali/indexPers.html"
         text: "Personali"
+      - href: "http://comarandr.github.io/wiki/indexMin.html"
+        text: "Minimali"
     right:
       - href: about.qmd
         text: About
@@ -29,6 +31,4 @@ format:
     toc: true
     toc-depth: 4
   
-
-
 

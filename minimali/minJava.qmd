@@ -1,0 +1,91 @@
+
+---
+title: Minimi Design pattern e classi in java
+permalink: /wiki/minimali/minJava/
+---
+
+## Classi
+
+```java
+public class Persona {
+    //MISSION:
+    //RESPONSIBILITIES:
+    //STATO ASTRATTO:
+    //STATO CONCRETO:
+    //INVARIANTE:
+
+    private final String nome;
+    private final List<Integer> voti;
+```
+
+### Main
+
+```java
+public class Main {
+    public static void main(String[] args) {
+    }
+}
+````
+
+### Metodo
+
+```java
+
+//comportamento
+//PRE: nome != null && !nome.isEmpty()
+//POST: this.nome == nome
+public void setNome(String nome) {
+    this.nome = nome;
+}
+```
+
+### Costruttore
+
+```java
+
+public Persona(String nome) {
+    //PRE: nome != null && !nome.isEmpty()
+    //POST: this.nome == nome
+    this.nome = nome;
+}
+```
+
+se di classe concreta rispetto astratta
+
+```
+public Panna(Drink drink) {
+    this.drink = super(drink);
+}
+```
+
+Ricorda
+
+- `abstract` class: se ha metodi astratti
+
+### Interfaccia
+
+```java
+public interface Drink {
+    double getPrice();
+}
+```
+
+### Eccezioni
+
+
+
+### List
+
+- void: `List.add(E e)`: aggiunge un elemento alla lista
+- boolean: `List.remove(Object o)`: rimuove un elemento dalla lista
+
+- boolean: `List.contains(Object o)`: restituisce true se la lista contiene l'elemento
+
+- int: `List.size()`: restituisce il numero di elementi nella lista
+
+
+
+## Design pattern
+
+### Builder
+
