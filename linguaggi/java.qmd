@@ -98,6 +98,8 @@ variabili d'istanza: variabili che appartengono all'oggetto, rappresentate in ci
 
 `->` : separa i parametri dalla funzione
 
+`::` : separa il nome della funzione dalla classe a cui appartiene
+
 #### Pacchetto Math
 
 `Math.sqrt(x)` : radice quadrata di x
@@ -278,11 +280,86 @@ I wrapper possono assumere valore `null`
     
 ### Object
     
-`.requireNonNull(obj)`: lancia un'eccezione se obj è nullo
     
 `instanceof`: restituisce true se obj è un'istanza di Tipo, altrimenti false
     
 `.getClass()`: restituisce la classe dell'oggetto
+
+`.hashCode()`: restituisce un valore intero che rappresenta l'oggetto, utile per confrontare oggetti
+
+```java
+
+```
+
+`.toString()`: restituisce una rappresentazione testuale dell'oggetto
+
+```java
+public class Persona {
+    private String nome;
+    private int eta;
+
+    public Persona(String nome, int eta) {
+        this.nome = nome;
+        this.eta = eta;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Persona: nome=%s, eta=%d", nome, eta);
+    }
+```
+
+`.equals(Objects obj)`: confronta due oggetti per valore (stesso contenuto)
+
+
+
+#### Confronto == e .equals()
+
+`==` : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi
+
+`.equals(Objects obj)`: confronta due oggetti per valore (stesso contenuto)
+
+`=` : assegna un valore ad una variabile
+
+Quando si implementa il metodo `.equals()`, è importante:
+
+- `this == obj` : se i riferimenti sono uguali, restituisce true
+- `obj == null` : se l'oggetto è nullo, restituisce false
+- `getClass() != obj.getClass()` : se gli oggetti sono di classi diverse, restituisce false
+- `Objects.equals(valori)` : confronta lo stato dell'oggetto, restituisce true
+
+```java
+// implementazione equals() per una classe Persona
+
+public class Persona {
+    private String nome;
+    private int eta;
+
+    public Persona(String nome, int eta) {
+        this.nome = nome;
+        this.eta = eta;
+    } 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // stesso riferimento
+        if (obj == null || getClass() != obj.getClass()) return false; // diverso tipo
+        Persona persona = (Persona) obj; // cast
+        return eta == persona.eta && Objects.equals(nome, persona.nome); // confronto per valore
+    }
+}
+```
+
+### Objects
+
+classe composta da metodi statici per operare su oggetti
+
+`Objects.requireNonNull(obj)`: lancia un'eccezione se obj è nullo
+
+`Objects.equals(obj1, obj2)`: confronta due oggetti per valore (stesso contenuto), restituisce true se sono uguali, altrimenti false
+
+`Objects.hash(obj1, obj2, ...)`: restituisce un valore intero che rappresenta gli oggetti, utile per confrontare oggetti
+
     
 ### Optional
     
@@ -364,6 +441,8 @@ Collezione di oggetti ordinata, può contenere duplicati (es. `ArrayList`, `Link
 
 `.size()`: restituisce il numero di elementi nella collezione
 
+`.copyOf(List l)`: restituisce una copia della lista
+
 ```java
 List<Integer> lista = new ArrayList<>();
 
@@ -392,6 +471,8 @@ Collezione di oggetti senza duplicati. Interfaccia, solitamente le implementazio
 
 `.size()`: restituisce il numero di elementi nella collezione
 
+`.copyOf(Set s)`: restituisce una copia del set
+
 ```java
 Set<Integer> insieme = new HashSet<>();
 ```
@@ -411,6 +492,8 @@ Collezione di più coppie chiave-valore, le chiavi sono univoche
 `.containsValue(V value)`: verifica se un valore è presente nella collezione
 
 `.size()`: restituisce il numero di coppie chiave-valore nella collezione
+
+`.copyOf(Map m)`: restituisce una copia della mappa
 
 ```java
 Map<String, Integer> mappa = new HashMap<>();
@@ -565,6 +648,24 @@ Chiudono la pipeline e restituiscono un valore o una collezione
 
 `.reduce(BinaryOperator op)`: riduce gli elementi dello stream ad un singolo valore utilizzando l'operatore binario op
 
+#### Metodi mapTo
+
+`.mapToInt(ToIntFunction f)`: restituisce un nuovo stream di interi trasformati dalla funzione f
+
+`.mapToDouble(ToDoubleFunction f)`: restituisce un nuovo stream di double trasformati dalla funzione f
+
+`.mapToLong(ToLongFunction f)`: restituisce un nuovo stream di long trasformati dalla funzione f
+
+#### Metodi statici includi con MapTo
+
+`.sum()`: restituisce la somma degli elementi dello stream
+
+`.average()`: restituisce la media degli elementi dello stream
+
+`.max()`: restituisce il massimo degli elementi dello stream
+
+`.min()`: restituisce il minimo degli elementi dello stream
+
 ```java
 List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5, 6);
 
@@ -620,41 +721,3 @@ Guida sintetica alla scelta della struttura dati più adatta:
 **Set**: `.add()`, `.remove()`, `.contains()`, `.size()`
 **Map**: `.put()`, `.get()`, `.remove()`, `.containsKey()`, `.size()`
 **Stream**: `.filter()`, `.map()`, `.forEach()`, `.collect()`, `.reduce()`
-
-
-### Confronto == e .equals()
-
-`==` : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi
-
-`.equals()`: confronta due oggetti per valore (stesso contenuto)
-
-`=` : assegna un valore ad una variabile
-
-Quando si implementa il metodo `.equals()`, è importante:
-
-- `this == obj` : se i riferimenti sono uguali, restituisce true
-- `obj == null` : se l'oggetto è nullo, restituisce false
-- `getClass() != obj.getClass()` : se gli oggetti sono di classi diverse, restituisce false
-- `Objects.equals(valori)` : confronta lo stato dell'oggetto, restituisce true
-
-```java
-// implementazione equals() per una classe Persona
-
-public class Persona {
-    private String nome;
-    private int eta;
-
-    public Persona(String nome, int eta) {
-        this.nome = nome;
-        this.eta = eta;
-    } 
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true; // stesso riferimento
-        if (obj == null || getClass() != obj.getClass()) return false; // diverso tipo
-        Persona persona = (Persona) obj; // cast
-        return eta == persona.eta && Objects.equals(nome, persona.nome); // confronto per valore
-    }
-}
-```
