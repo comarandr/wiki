@@ -994,6 +994,34 @@
     "text": "sequenza di"
   },
   {
+    "objectID": "minimali/indexMin.html",
+    "href": "minimali/indexMin.html",
+    "title": "Schemi minimi e tabelle",
+    "section": "",
+    "text": "Link ai schemi minimi e alle tabelle di ripasso:\nDesign pattern e classi in java"
+  },
+  {
+    "objectID": "minimali/minJava.html",
+    "href": "minimali/minJava.html",
+    "title": "Minimi Design pattern e classi in java",
+    "section": "",
+    "text": "public class Persona {\n    //MISSION:\n    //RESPONSIBILITIES:\n    //STATO ASTRATTO:\n    //STATO CONCRETO:\n    //INVARIANTE:\n\n    private final String nome;\n    private final List&lt;Integer&gt; voti;\n\n\npublic class Main {\n    public static void main(String[] args) {\n    }\n}\n\n\n\n\n//comportamento\n//PRE: nome != null && !nome.isEmpty()\n//POST: this.nome == nome\npublic void setNome(String nome) {\n    this.nome = nome;\n}\n\n\n\n\npublic Persona(String nome) {\n    //PRE: nome != null && !nome.isEmpty()\n    //POST: this.nome == nome\n    this.nome = nome;\n}\nse di classe concreta rispetto astratta\npublic Panna(Drink drink) {\n    this.drink = super(drink);\n}\nRicorda\n\nabstract class: se ha metodi astratti\n\n\n\n\npublic interface Drink {\n    double getPrice();\n}\n\n\n\n\n\n\n\nvoid: List.add(E e): aggiunge un elemento alla lista\nboolean: List.remove(Object o): rimuove un elemento dalla lista\nboolean: List.contains(Object o): restituisce true se la lista contiene l’elemento\nint: List.size(): restituisce il numero di elementi nella lista"
+  },
+  {
+    "objectID": "minimali/minJava.html#classi",
+    "href": "minimali/minJava.html#classi",
+    "title": "Minimi Design pattern e classi in java",
+    "section": "",
+    "text": "public class Persona {\n    //MISSION:\n    //RESPONSIBILITIES:\n    //STATO ASTRATTO:\n    //STATO CONCRETO:\n    //INVARIANTE:\n\n    private final String nome;\n    private final List&lt;Integer&gt; voti;\n\n\npublic class Main {\n    public static void main(String[] args) {\n    }\n}\n\n\n\n\n//comportamento\n//PRE: nome != null && !nome.isEmpty()\n//POST: this.nome == nome\npublic void setNome(String nome) {\n    this.nome = nome;\n}\n\n\n\n\npublic Persona(String nome) {\n    //PRE: nome != null && !nome.isEmpty()\n    //POST: this.nome == nome\n    this.nome = nome;\n}\nse di classe concreta rispetto astratta\npublic Panna(Drink drink) {\n    this.drink = super(drink);\n}\nRicorda\n\nabstract class: se ha metodi astratti\n\n\n\n\npublic interface Drink {\n    double getPrice();\n}\n\n\n\n\n\n\n\nvoid: List.add(E e): aggiunge un elemento alla lista\nboolean: List.remove(Object o): rimuove un elemento dalla lista\nboolean: List.contains(Object o): restituisce true se la lista contiene l’elemento\nint: List.size(): restituisce il numero di elementi nella lista"
+  },
+  {
+    "objectID": "minimali/minJava.html#design-pattern",
+    "href": "minimali/minJava.html#design-pattern",
+    "title": "Minimi Design pattern e classi in java",
+    "section": "Design pattern",
+    "text": "Design pattern\n\nBuilder"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
