@@ -248,9 +248,8 @@ List<Integer> numeri = Arrays.asList(1, 2, 3, 4, 5, 6);
 numeri.forEach(n -> System.out.println(n));
 ```
 
-### Tipi di variabili
 
-#### Tipi primitivi
+### Tipi primitivi
 
 `boolean`: `#true`, `#false`
 
@@ -261,7 +260,7 @@ numeri.forEach(n -> System.out.println(n));
 
 `char`: caratteri singoli ASCII
 
-##### Oggetti wrapper
+#### Oggetti wrapper
 
 Convertono i tipi primitivi in oggetti. Questo serve per poter sfruttare metodi di utilità (es. conversione stringhe) e per inserirli in strutture dati (es. Collection, Map, List, Set)
 
@@ -276,9 +275,8 @@ Convertono i tipi primitivi in oggetti. Questo serve per poter sfruttare metodi 
 
 I wrapper possono assumere valore `null`
 
-#### Oggetti
     
-##### Object
+### Object
     
 `.requireNonNull(obj)`: lancia un'eccezione se obj è nullo
     
@@ -286,7 +284,7 @@ I wrapper possono assumere valore `null`
     
 `.getClass()`: restituisce la classe dell'oggetto
     
-##### Optional
+### Optional
     
 `.empty()`: restituisce un Optional vuoto
     
@@ -299,11 +297,11 @@ I wrapper possono assumere valore `null`
 `.get()`: restituisce il valore contenuto nell'Optional, lancia un'eccezione se è vuoto
 
 
-##### String
+### String
 
 insieme di caratteri, immutabile, può essere concatenata con `+`
 
-###### metodi:
+#### metodi:
 
 `.length()`: restituisce la lunghezza della stringa
 
@@ -325,7 +323,7 @@ insieme di caratteri, immutabile, può essere concatenata con `+`
 String s = "ciao";
 ```
 
-##### Array
+### Array
 
 Un array generico si definisce come segue:
 
@@ -350,7 +348,7 @@ int[] array2 = {1, 2, 3, 4, 5}; // array di 5 interi con valori iniziali
 int[][] array3 = { {1, 2}, {3, 4} }; // matrice 2x2
 ```
 
-##### List
+### List
 
 Collezione di oggetti ordinata, può contenere duplicati (es. `ArrayList`, `LinkedList`)
 
@@ -378,7 +376,7 @@ lista.contains(3); // restituisce true
 lista.size(); // restituisce 1
 ```
 
-##### Set
+### Set
 
 Collezione di oggetti senza duplicati. Interfaccia, solitamente le implementazioni più comuni sono `HashSet` e `TreeSet`.
 
@@ -398,7 +396,7 @@ Collezione di oggetti senza duplicati. Interfaccia, solitamente le implementazio
 Set<Integer> insieme = new HashSet<>();
 ```
 
-##### Map
+### Map
 
 Collezione di più coppie chiave-valore, le chiavi sono univoche
 
@@ -438,7 +436,7 @@ for (Map.Entry<String, Integer> entry : mappa.entrySet()) {
 }
 ```
 
-##### Pair
+### Pair
 
 Collezione di due oggetti, utile per restituire più valori da un metodo
 
@@ -452,7 +450,7 @@ String key = coppia.getKey(); // restituisce "uno"
 Integer value = coppia.getValue(); // restituisce 1
 ```
 
-##### Record
+### Record
 
 Struttura dati immutabile, utile per rappresentare un insieme di valori associati a nomi
 
@@ -463,7 +461,7 @@ String nome = p.nome(); // restituisce "Mario"
 int eta = p.eta(); // restituisce 30
 ```
 
-##### Predicate (BiPredicate)
+### Predicate (BiPredicate)
 
 Accetta un argomento e restituisce un booleano, utile per filtrare collezioni
 
@@ -494,7 +492,7 @@ predicato2.test(5, 6); // restituisce true
 predicato2.test(3, 4); // restituisce false
 ```
 
-##### Queue
+### Queue
 
 Collezione di oggetti con accesso FIFO (First In First Out).
 Interfaccia, solitamente le implementazioni più comuni sono `LinkedList` e `PriorityQueue`.
@@ -529,11 +527,11 @@ coda.peek(); // restituisce null
 coda.isEmpty(); // restituisce true
 ```
 
-##### Stream
+### Stream
 
 Collezione di oggetti che permette di eseguire operazioni in sequenza (pipeline) su di essi, senza modificarli.
 
-###### Metodi di creazione (Sorgenti)
+#### Metodi di creazione (Sorgenti)
 
 `.stream()`: crea uno stream a partire da una collezione
 
@@ -543,7 +541,7 @@ Collezione di oggetti che permette di eseguire operazioni in sequenza (pipeline)
 
 `Stream.empty()`: crea uno stream vuoto
 
-###### Operazioni intermedie (Lazy)
+#### Operazioni intermedie (Lazy)
 
 Restituiscono un flusso modificato e non vengono eseguite fino a quando non viene invocata un'operazione terminale.
 
@@ -555,7 +553,7 @@ Restituiscono un flusso modificato e non vengono eseguite fino a quando non vien
 
 `.distinct()`: restituisce un nuovo stream con gli elementi distinti (senza duplicati)
 
-##### Operazioni terminali (Eager)
+#### Operazioni terminali (Eager)
 
 Chiudono la pipeline e restituiscono un valore o una collezione
 
@@ -581,7 +579,7 @@ numeri.stream().filter().map().forEach();
 // sorgente -> pari ->  * 2 -> stampa
 ```
 
-##### Stack
+### Stack
 
 Collezione di oggetti con accesso LIFO (Last In First Out)
 
@@ -602,7 +600,7 @@ pila.peek(); // restituisce 1
 pila.empty(); // restituisce false
 ```
 
-#### Scegliere come rappresentare una collezione
+### Scegliere come rappresentare una collezione
 
 Guida sintetica alla scelta della struttura dati più adatta:
 
@@ -624,7 +622,7 @@ Guida sintetica alla scelta della struttura dati più adatta:
 **Stream**: `.filter()`, `.map()`, `.forEach()`, `.collect()`, `.reduce()`
 
 
-#### Confronto == e .equals()
+### Confronto == e .equals()
 
 `==` : confronta due oggetti per riferimento (stesso oggetto in memoria), ottimo per primitivi
 
@@ -632,8 +630,14 @@ Guida sintetica alla scelta della struttura dati più adatta:
 
 `=` : assegna un valore ad una variabile
 
-```java
+Quando si implementa il metodo `.equals()`, è importante:
 
+- `this == obj` : se i riferimenti sono uguali, restituisce true
+- `obj == null` : se l'oggetto è nullo, restituisce false
+- `getClass() != obj.getClass()` : se gli oggetti sono di classi diverse, restituisce false
+- `Objects.equals(valori)` : confronta lo stato dell'oggetto, restituisce true
+
+```java
 // implementazione equals() per una classe Persona
 
 public class Persona {
