@@ -30,5 +30,10 @@ format:
     css: styles.css
     toc: true
     toc-depth: 4
+
+execute: 
+  cache: true
+  echo: false
+  
   
 

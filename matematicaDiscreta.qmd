@@ -1,4 +1,60 @@
 ---
-title: "Matemática Discreta"
+title: "Matematica Discreta"
 ---
+
+```py
+#| label: fig-andamento
+#| fig-cap: "Grafico delle funzioni Seno e Coseno generato con Matplotlib."
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generazione dei dati numerici
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Creazione della figura e stile grafico
+plt.figure(figsize=(8, 4), dpi=100)
+plt.plot(x, y1, label='Seno', color='#1f77b4', linewidth=2)
+plt.plot(x, y2, label='Coseno', color='#ff7f0e', linestyle='--', linewidth=2)
+
+# Personalizzazione degli assi e legenda
+plt.title('Andamento Funzioni Trigonometriche', fontsize=3, fontweight='bold')
+plt.xlabel('Asse X (Tempo)', fontsize=11)
+plt.ylabel('Asse Y (Ampiezza)', fontsize=11)
+plt.grid(True, linestyle=':', alpha=0.6)
+plt.legend(loc='upper right', frameon=True)
+
+# Visualizzazione corretta all'interno del notebook/documento
+plt.show()
+````
+
+````{python}
+#| label: fig-andamento
+#| fig-cap: "Grafico delle funzioni Seno e Coseno generato con Matplotlib."
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generazione dei dati numerici
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Creazione della figura e stile grafico
+plt.figure(figsize=(8, 4), dpi=100)
+plt.plot(x, y1, label='Seno', color='#1f77b4', linewidth=2)
+plt.plot(x, y2, label='Coseno', color='#ff7f0e', linestyle='--', linewidth=2)
+
+# Personalizzazione degli assi e legenda
+plt.title('Andamento Funzioni Trigonometriche', fontsize=3, fontweight='bold')
+plt.xlabel('Asse X (Tempo)', fontsize=11)
+plt.ylabel('Asse Y (Ampiezza)', fontsize=11)
+plt.grid(True, linestyle=':', alpha=0.6)
+plt.legend(loc='upper right', frameon=True)
+
+# Visualizzazione corretta all'interno del notebook/documento
+plt.show()
+````
 
