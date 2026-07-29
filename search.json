@@ -1538,5 +1538,12 @@
     "title": "Indice Personale",
     "section": "",
     "text": "Strumenti di poesia"
+  },
+  {
+    "objectID": "matematicaDiscreta.html",
+    "href": "matematicaDiscreta.html",
+    "title": "Matematica Discreta",
+    "section": "",
+    "text": "#| label: fig-andamento\n#| fig-cap: \"Grafico delle funzioni Seno e Coseno generato con Matplotlib.\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Generazione dei dati numerici\nx = np.linspace(0, 10, 100)\ny1 = np.sin(x)\ny2 = np.cos(x)\n\n# Creazione della figura e stile grafico\nplt.figure(figsize=(8, 4), dpi=100)\nplt.plot(x, y1, label='Seno', color='#1f77b4', linewidth=2)\nplt.plot(x, y2, label='Coseno', color='#ff7f0e', linestyle='--', linewidth=2)\n\n# Personalizzazione degli assi e legenda\nplt.title('Andamento Funzioni Trigonometriche', fontsize=3, fontweight='bold')\nplt.xlabel('Asse X (Tempo)', fontsize=11)\nplt.ylabel('Asse Y (Ampiezza)', fontsize=11)\nplt.grid(True, linestyle=':', alpha=0.6)\nplt.legend(loc='upper right', frameon=True)\n\n# Visualizzazione corretta all'interno del notebook/documento\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: Grafico delle funzioni Seno e Coseno generato con Matplotlib."
   }
 ]
