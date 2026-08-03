@@ -1,0 +1,43 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/about.html",
+      "/universita/algebraSchemi.html",
+      "/universita/indexUni.html",
+      "/universita/architettura.html",
+      "/linguaggi/bash.html",
+      "/universita/BasiDati.html",
+      "/linguaggi/css.html",
+      "/universita/economiaAziendale.html",
+      "/universita/Terra.html",
+      "/universita/voli.html",
+      "/linguaggi/exbash.html",
+      "/universita/fisica/fisica.html",
+      "/universita/fisica_2026/fisica26.html",
+      "/linguaggi/git.html",
+      "/linguaggi/schemi_html/html.html",
+      "/universita/IngegneriaDelSoftware.html",
+      "/linguaggi/java.html",
+      "/linguaggi/json.html",
+      "/linguaggi/latex.html",
+      "/linguaggi/c.html",
+      "/linguaggi/csheet.html",
+      "/linguaggi/markdown.html",
+      "/universita/matematica/matematica.html",
+      "/matematicaDiscreta.html",
+      "/universita/MatematicaDiscreta.html",
+      "/universita/matematicaFinanziaria.html",
+      "/universita/microeconomia.html",
+      "/universita/oop.html",
+      "/universita/programmazione.html",
+      "/linguaggi/python/python.html",
+      "/linguaggi/scheme.html",
+      "/universita/sistemiOperativi.html",
+      "/personali/StrumentiPoesia.html",
+      "/linguaggi/yaml.html",
+      "/universita/analisiMatematica1.html",
+      "/universita/barcheoop.html"
+    ]
+  }
+]
