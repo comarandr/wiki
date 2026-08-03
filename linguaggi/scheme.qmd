@@ -2,7 +2,7 @@
 title: Scheme
 description: "Appunti di Scheme"
 categories: [linguaggi]
-image: https://upload.wikimedia.org/wikipedia/commons/3/3b/Scheme-logo.svg
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Lambda_lc.svg/1920px-Lambda_lc.svg.png?utm_source=it.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail
 ---
 
 

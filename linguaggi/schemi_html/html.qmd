@@ -3,6 +3,7 @@ title: HTML
 description: "Appunti di HTML"
 permalink: /wiki/linguaggi/html/
 categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=thumbnail
 ---
 
 ## Indice

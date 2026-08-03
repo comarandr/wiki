@@ -2,7 +2,7 @@
 title: Git
 description: "Appunti di git e relativi comandi"
 categories: [linguaggi]
-imagine: https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg
+image: https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg
 ---
 
 ## Creare una repository
