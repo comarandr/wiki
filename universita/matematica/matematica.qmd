@@ -1,5 +1,9 @@
 ---
 title: Matematica
+description: Appunti sugli strumenti matematici di base
+author: Andrea Comar
+categories: [università, informatica, economia]
+search: true
 permalink: /wiki/universita/matematica/
 ---
 

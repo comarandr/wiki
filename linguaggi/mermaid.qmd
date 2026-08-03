@@ -1,7 +1,8 @@
 ---
-layout: default
 title: Mermaid
-permalink: /wiki/linguaggi/mermaid/
+description: "Appunti di Mermaid"
+categories: [linguaggi]
+draft: true
 ---
 
 ## Diagrammi classe

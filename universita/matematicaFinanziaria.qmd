@@ -1,6 +1,8 @@
 ---
 title: Matematica Finanziaria
+description: "Appunti di matematica finanziaria del 2 anno di economia e commercio"
 permalink: /wiki/universita/matematicaFinanziaria/
+categories: [università, economia]
 ---
 
 ## Fondamenti

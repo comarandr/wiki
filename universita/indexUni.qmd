@@ -1,6 +1,7 @@
 ---
 title: Appunti di università
 permalink: /wiki/universita/
+search: false
 ---
 
 ## 1 anno informatica

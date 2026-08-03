@@ -1,0 +1,6 @@
+---
+title: "JavaScript"
+description: "Appunti di JavaScript"
+categories: [linguaggi]
+draft: true
+---

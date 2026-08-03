@@ -1,7 +1,8 @@
 ---
-layout: default
-title: Linguaggio C secondo sCagnetto
-permalink: /wiki/linguaggi/csheet/
+title: "Linguaggio C secondo sCagnetto"
+description: "Appunti di linguaggio C secondo sCagnetto"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=original
 ---
 
 ## concetti basilari (tipi, sintassi, ecc...)

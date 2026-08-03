@@ -1,6 +1,8 @@
 ---
-title: Esercizi Lezione bash
-permalink: /wiki/linguaggi/exbash/
+title: "Esercizi Lezione bash"
+description: "Appunti di bash e relativi comandi"
+categories: [linguaggi]
+imagine: https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg
 ---
 
 ### Esercizi Lezione bash

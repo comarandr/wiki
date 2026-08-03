@@ -1,6 +1,8 @@
 ---
 title: HTML
+description: "Appunti di HTML"
 permalink: /wiki/linguaggi/html/
+categories: [linguaggi]
 ---
 
 ## Indice

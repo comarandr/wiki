@@ -1,6 +1,8 @@
 ---
 title: Programmazione e laboratorio
+description: "Appunti di programmazione e laboratorio del 1 anno di informatica"
 permalink: /wiki/universita/programmazione/
+categories: [università, informatica]
 ---
 
 ## Programmazione funzionale

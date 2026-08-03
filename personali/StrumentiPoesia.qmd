@@ -1,5 +1,9 @@
 ---
 title: "Strumenti di poesia"
+description: dal libro omonimo, appunti su poesia italiana
+author: Andrea Comar
+categories: [personali, poesia]
+search: true
 permalink: /wiki/personali/StrumentiPoesia/
 ---
 

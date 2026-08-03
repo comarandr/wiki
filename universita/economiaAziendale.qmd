@@ -1,6 +1,8 @@
 ---
 title: Economia Aziendale
+description: "Appunti di economia aziendale del 1 anno di economia e commercio"
 permalink: /wiki/universita/economiaAziendale/
+categories: [università, economia]
 ---
 
 ## Rilevazioni e determinazioni quantitative d'azienda

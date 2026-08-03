@@ -1,6 +1,8 @@
 ---
 title: Python
-permalink: /wiki/linguaggi/python/
+description: "Appunti di python e relativi pacchetti"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/3/31/Python-logo.png
 ---
 
 ## Introduzione a Python

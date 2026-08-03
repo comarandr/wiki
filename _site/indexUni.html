@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Appunti di Json">
 
-<title>Json – Wiki</title>
+<title>Appunti di università – Wiki</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,61 +26,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,9 +75,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="../styles.css">
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      page: 18,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -121,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Wiki</span>
     </a>
   </div>
@@ -154,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -168,34 +193,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduzione" id="toc-introduzione" class="nav-link active" data-scroll-target="#introduzione">Introduzione</a></li>
-  <li><a href="#elementi-chiave" id="toc-elementi-chiave" class="nav-link" data-scroll-target="#elementi-chiave">Elementi chiave</a></li>
-  <li><a href="#tipi-di-dati" id="toc-tipi-di-dati" class="nav-link" data-scroll-target="#tipi-di-dati">Tipi di dati</a></li>
-  <li><a href="#nested-json-objects-and-nested-json-arrays" id="toc-nested-json-objects-and-nested-json-arrays" class="nav-link" data-scroll-target="#nested-json-objects-and-nested-json-arrays">Nested JSON Objects and nested JSON Arrays</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Json</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">linguaggi</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    Appunti di Json
-  </div>
+<h1 class="title">Appunti di università</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
@@ -210,67 +218,389 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduzione" class="level2">
-<h2 class="anchored" data-anchor-id="introduzione">Introduzione</h2>
-<p>JSON (JavaScript Object Notation) è un formato per lo scambio di dati.</p>
-<p>È costruito su due strutture:</p>
-<ul>
-<li>Una collezione di coppie chiave/valore (oggetto)</li>
-<li>Una lista ordinata di valori (array)</li>
-</ul>
-</section>
-<section id="elementi-chiave" class="level2">
-<h2 class="anchored" data-anchor-id="elementi-chiave">Elementi chiave</h2>
-<p><strong>Object</strong>: coppia non ordinata di nome/valore, delimitata da parentesi graffe <code>{}</code><br>
-Ogni nome è seguito da due punti <code>:</code> e le coppie sono separate da virgole <code>,</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">"name: "</span><span class="er">John</span><span class="dt">", "</span><span class="er">age</span><span class="dt">": 30, "</span><span class="er">city</span><span class="dt">": "</span><span class="er">New</span> <span class="er">York</span><span class="dt">"}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Array</strong>: una collezione ordinata di valori, delimitata da parentesi quadre <code>[]</code><br>
-I valori sono separati da virgole <code>,</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"fruits"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"apple"</span><span class="ot">,</span> <span class="st">"banana"</span><span class="ot">,</span> <span class="st">"cherry"</span><span class="ot">]</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="tipi-di-dati" class="level2">
-<h2 class="anchored" data-anchor-id="tipi-di-dati">Tipi di dati</h2>
-<ul>
-<li><strong>Stringa</strong>: testo racchiuso tra virgolette doppie <code>{"name": "John"}</code> o singole <code>{'name': 'John'}</code></li>
-<li><strong>Numero</strong>: interi o decimali <code>{"age": 30}</code> o <code>{"price": 19.99}</code></li>
-<li><strong>Oggetto</strong>: una collezione di coppie chiave/valore delimitata da parentesi graffe <code>{"employee": {"name": "John", "age": 30}}</code></li>
-<li><strong>Array</strong>: una collezione ordinata di valori delimitata da parentesi quadre <code>{"fruits": ["apple", "banana", "cherry"]}</code></li>
-<li><strong>Booleano</strong>: <code>true</code> o <code>false</code> <code>{"isStudent": true}</code></li>
-<li><strong>Null</strong>: rappresenta un valore nullo <code>{"middleName": null}</code></li>
-</ul>
-</section>
-<section id="nested-json-objects-and-nested-json-arrays" class="level2">
-<h2 class="anchored" data-anchor-id="nested-json-objects-and-nested-json-arrays">Nested JSON Objects and nested JSON Arrays</h2>
-<p>I valori in un oggetto JSON possono essere altri oggetti JSON o array</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="er">myObj</span> <span class="er">=</span> <span class="fu">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"John"</span><span class="fu">,</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"age"</span><span class="fu">:</span> <span class="dv">30</span><span class="fu">,</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"cars"</span><span class="fu">:</span> <span class="st">"Ford"</span><span class="fu">,</span> <span class="dt">"BMW"</span><span class="er">,</span> <span class="dt">"Fiat"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Ovviamente anche gli array possono essere annidati</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="er">myObj</span> <span class="er">=</span> <span class="fu">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"John"</span><span class="fu">,</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"age"</span><span class="fu">:</span> <span class="dv">30</span><span class="fu">,</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"cars"</span><span class="fu">:</span> <span class="ot">[</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span><span class="dt">"model"</span><span class="fu">:</span> <span class="st">"Ford"</span><span class="fu">,</span> <span class="dt">"models"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"Fiesta"</span><span class="ot">,</span> <span class="st">"Focus"</span><span class="ot">,</span> <span class="st">"Mustang"</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span><span class="dt">"model"</span><span class="fu">:</span> <span class="st">"BMW"</span><span class="fu">,</span> <span class="dt">"models"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"320"</span><span class="ot">,</span> <span class="st">"X3"</span><span class="ot">,</span> <span class="st">"X5"</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span><span class="dt">"model"</span><span class="fu">:</span> <span class="st">"Fiat"</span><span class="fu">,</span> <span class="dt">"models"</span><span class="fu">:</span> <span class="ot">[</span><span class="st">"500"</span><span class="ot">,</span> <span class="st">"500X"</span><span class="ot">]</span><span class="fu">}</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="ot">]</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Per accedere a un array annidato, usiamo un for-in loop per ogni array</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="er">for</span> <span class="er">(i</span> <span class="er">in</span> <span class="er">myObj.cars)</span> <span class="fu">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="er">x+=myObj.cars[i].model</span> <span class="er">+</span> <span class="dt">"&lt;/h1&gt;"</span><span class="er">;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="er">for</span> <span class="er">(j</span> <span class="er">in</span> <span class="er">myObj.cars[i].models)</span> <span class="er">{</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="er">x+=myObj.cars[i].models[j]</span> <span class="er">+</span> <span class="dt">"&lt;/h1&gt;"</span><span class="er">;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="er">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1785405802481" data-listing-reading-time-sort="14" data-listing-word-count-sort="2674">
+<a href="./universita/algebraSchemi.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Algebra lineare
+</h5>
+<div class="card-text listing-description delink">
+n-pla: $ (a_1, , a_n) $
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1785744360306" data-listing-reading-time-sort="1" data-listing-word-count-sort="147">
+<a href="./universita/indexUni.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Appunti di università
+</h5>
+<div class="card-text listing-description delink">
+extra:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1785099119410" data-listing-reading-time-sort="5" data-listing-word-count-sort="956">
+<a href="./universita/architettura.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Architettura degli elaboratori
+</h5>
+<div class="card-text listing-description delink">
+<strong>Architettura di calcolo</strong>: macchina capace di eseguire una sequenza di <em>istruzioni macchina</em>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1785099103397" data-listing-reading-time-sort="1" data-listing-word-count-sort="175">
+<a href="./universita/BasiDati.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Basi di dati
+</h5>
+<div class="card-text listing-description delink">
+Caratteristiche distintive di un database:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1785099098203" data-listing-reading-time-sort="1" data-listing-word-count-sort="197">
+<a href="./universita/economiaAziendale.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Economia Aziendale
+</h5>
+<div class="card-text listing-description delink">
+I metodi per le rilevazioni quantitative d’azienda si dividono in due grandi categorie:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1785099033374" data-listing-reading-time-sort="1" data-listing-word-count-sort="137">
+<a href="./universita/Terra.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Esempio Sapori di Terra oop
+</h5>
+<div class="card-text listing-description delink">
+<code>classDiagram
+
+class AnalisiProduzioni{
++ calcolaResaPerColtura() : Map&lt;String,Double&gt;
++ calcolaProduzioniPeriodo() : Map&lt;String,Double&gt;
++ calcolaResaMediaColtura() …</code>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1785099028311" data-listing-reading-time-sort="2" data-listing-word-count-sort="207">
+<a href="./universita/voli.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Esempio esame voli
+</h5>
+<div class="card-text listing-description delink">
+
+
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="7" data-listing-file-modified-sort="1785099147131" data-listing-reading-time-sort="11" data-listing-word-count-sort="2199">
+<a href="./universita/fisica/fisica.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="universita/fisica/AsseCoordinato.jpeg" alt="Asse Coordinato" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Fisica
+</h5>
+<div class="card-text listing-description delink">
+<strong>RISULTATO DI MISURA</strong>: $ x + x $
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="8" data-listing-file-modified-sort="1785099140390" data-listing-reading-time-sort="9" data-listing-word-count-sort="1672">
+<a href="./universita/fisica_2026/fisica26.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="universita/fisica_2026/vettoreVelocita.jpeg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Fisica 2026
+</h5>
+<div class="card-text listing-description delink">
+Fisica: descrizione dei fenomeni naturali attraverso modelli matematici.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="9" data-listing-file-modified-sort="1785099085200" data-listing-reading-time-sort="12" data-listing-word-count-sort="2247">
+<a href="./universita/IngegneriaDelSoftware.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Ingegneria del Software
+</h5>
+<div class="card-text listing-description delink">
+SOFTWARE: insieme dei programmi e relativa documentazione (modelli di progetto, manuali utente, siti web di supporto)
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="10" data-categories="dW5pdmVyc2l0JUMzJUEwJTJDbWF0ZW1hdGljYQ==" data-listing-file-modified-sort="1785746457561" data-listing-reading-time-sort="4" data-listing-word-count-sort="672">
+<a href="./universita/matematica/matematica.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img loading='lazy' src="universita/matematica/IntegraliLinea.jpeg" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Matematica
+</h5>
+<div class="card-text listing-description delink">
+<p>Appunti sugli strumenti matematici di base</p>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+Andrea Comar
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="11" data-listing-file-modified-sort="1785099079678" data-listing-reading-time-sort="21" data-listing-word-count-sort="4134">
+<a href="./universita/MatematicaDiscreta.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Matematica Discreta
+</h5>
+<div class="card-text listing-description delink">
+<strong>Insieme</strong>: concetto primitivo, collezione di oggetti detti elementi
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="12" data-listing-file-modified-sort="1785099073636" data-listing-reading-time-sort="1" data-listing-word-count-sort="37">
+<a href="./universita/matematicaFinanziaria.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Matematica Finanziaria
+</h5>
+<div class="card-text listing-description delink">
+<strong>Matematica finanziaria classica</strong>: tratta il problema del trasferimento nel tempo degli importi in condizioni di certezza.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="13" data-listing-file-modified-sort="1785099067970" data-listing-reading-time-sort="3" data-listing-word-count-sort="425">
+<a href="./universita/microeconomia.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Microeconomia
+</h5>
+<div class="card-text listing-description delink">
+Suddivisione dell’economia politica:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="14" data-listing-file-modified-sort="1785099338970" data-listing-reading-time-sort="38" data-listing-word-count-sort="7544">
+<a href="./universita/oop.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Programmazione a oggetti
+</h5>
+<div class="card-text listing-description delink">
+Utile il collegamento alla pagina di java
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="15" data-listing-file-modified-sort="1785099360326" data-listing-reading-time-sort="1" data-listing-word-count-sort="5">
+<a href="./universita/programmazione.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Programmazione e laboratorio
+</h5>
+<div class="card-text listing-description delink">
+Linguaggio: scheme
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="16" data-listing-file-modified-sort="1785099039107" data-listing-reading-time-sort="75" data-listing-word-count-sort="14978">
+<a href="./universita/sistemiOperativi.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Sistemi Operativi
+</h5>
+<div class="card-text listing-description delink">
+SISTEMA OPERATIVO:
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="17" data-listing-file-modified-sort="1785099461376" data-listing-reading-time-sort="4" data-listing-word-count-sort="726">
+<a href="./universita/barcheoop.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<div class="card-text listing-description delink">
+<code>---
+config:
+    class:
+        hideEmptyMembersBox: true
+---
+classDiagram
+    class Api{
+        GestoreBarche gestoreBarche
+        GestorePrenotazioni gestorePrenotazioni
+…</code>
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="18" data-listing-file-modified-sort="1784964487505">
+<a href="./universita/analisiMatematica1.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<div class="card-text listing-description delink">
+
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -1,6 +1,8 @@
 ---
 title: Architettura degli elaboratori
+description: "appunti di architettura degli elaboratori del Prof. Fontana"
 permalink: /wiki/universita/architettura/
+categories: [università, informatica]
 ---
 
 ## Introduzione e definizioni

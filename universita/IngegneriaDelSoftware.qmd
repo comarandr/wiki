@@ -1,6 +1,8 @@
 ---
 title: Ingegneria del Software
+description: "Appunti di ingegneria del software del 3 anno di informatica"
 permalink: /wiki/universita/ingegneriaDelSoftware/
+categories: [università, informatica]
 ---
 
 ## 1. CONCETTI FONDAMENTALI

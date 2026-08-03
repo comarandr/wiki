@@ -1,6 +1,8 @@
 ---
 title: Microeconomia
+description: "Appunti di microeconomia del 1 anno di economia e commercio"
 permalink: /wiki/universita/microeconomia/
+categories: [università, economia]
 ---
 
 ## Concetti base di microeconomia

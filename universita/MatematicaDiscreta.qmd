@@ -1,6 +1,8 @@
 ---
 title: Matematica Discreta
+description: "Appunti di matematica discreta del 1 anno di informatica"
 permalink: /wiki/universita/matematicaDiscreta/
+categories: [università, informatica]
 ---
 
 ## Insiemi

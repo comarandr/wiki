@@ -1,6 +1,8 @@
 ---
 title: Basi di dati
+description: "Appunti di basi di dati del 3 anno di informatica"
 permalink: /wiki/universita/basiDati/
+categories: [università, informatica]
 ---
 
 ## Introduzione

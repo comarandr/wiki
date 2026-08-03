@@ -1,6 +1,9 @@
 ---
 title: Fisica
+description: "Appunti di fisica (cinematica, dinamica) del prof. Santi"
 permalink: /wiki/universita/fisica/
+categories: [università, informatica]
+
 ---
 
 ## Fisica parte 1 - Cinematica

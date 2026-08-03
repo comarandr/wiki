@@ -1,7 +1,8 @@
 ---
-layout: default
-title: LaTeX
-permalink: /wiki/linguaggi/LaTeX/
+title: "LaTeX"
+description: "Appunti di LaTeX"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg
 ---
 
 ## Creare un documento

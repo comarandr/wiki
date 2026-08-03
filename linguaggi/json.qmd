@@ -1,7 +1,8 @@
 ---
-layout: default
 title: Json
-permalink: /wiki/linguaggi/Json/
+description: "Appunti di Json"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/c/c9/JSON_vector_logo.svg
 ---
 
 ## Introduzione

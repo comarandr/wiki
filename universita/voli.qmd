@@ -1,6 +1,7 @@
 ---
 title: Esempio esame voli
 permalink: /wiki/universita/voli/
+search: false
 ---
 
 ## Testo d'esame

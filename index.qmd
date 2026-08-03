@@ -1,13 +1,13 @@
 ---
 title: "Wiki"
+description: "Wiki contenente tutti gli schemi"
+listing:
+    contents: "*.qmd"
+    categories: true
+    type: grid
 ---
 
-This is a Quarto website.
+Questa wiki contiene tutti gli schemi prodotti nel corso di letture universitarie e saggistica. La sezione universitaria contiene principalmente gli appunti di informatica e di economia, mentre la sezione linguaggi contiene brei schemi dei linguaggi che conosco. La sezione personale contiene appunti che non rientrano nelle altre categorie.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-[linguaggi di programmazione](./linguaggi/indexLing.qmd)
-
-[università](./universita/indexUni.qmd)
-
-[personali](./personali/indexPers.qmd)

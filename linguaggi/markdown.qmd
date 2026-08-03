@@ -1,7 +1,8 @@
 ---
-layout: default
-title: Markdown
-permalink: /wiki/linguaggi/markdown/
+title: "Markdown"
+description: "Appunti di Markdown"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg
 ---
 
 ## Sintassi base

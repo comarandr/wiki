@@ -1,7 +1,8 @@
 ---
-layout: default
 title: Scheme
-permalink: /wiki/linguaggi/scheme/
+description: "Appunti di Scheme"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/3/3b/Scheme-logo.svg
 ---
 
 

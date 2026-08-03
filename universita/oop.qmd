@@ -1,6 +1,8 @@
 ---
 title: Programmazione a oggetti
+description: "Appunti di programmazione a oggetti del 2 anno di informatica"
 permalink: /wiki/universita/oop/
+categories: [università, informatica]
 ---
 
 ## Concetti di base

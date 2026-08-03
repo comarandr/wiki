@@ -1,6 +1,8 @@
 ---
 title: Fisica 2026
+description: "Appunti di fisica del nuovo programma, panoramica generica"
 permalink: /wiki/universita/fisica_2026/
+categories: [università, informatica]
 ---
 
 ## Introduzione

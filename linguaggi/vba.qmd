@@ -1,7 +1,8 @@
 ---
-layout: default
-title: VBA
-permalink: /wiki/linguaggi/VBA/
+title: "VBA"
+description: "Appunti di VBA"
+categories: [linguaggi]
+draft: true
 ---
 
 ## Introduzione a VBA

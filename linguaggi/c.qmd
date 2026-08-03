@@ -1,7 +1,8 @@
 ---
-layout: default
-title: Linguaggio C
-permalink: /wiki/linguaggi/c/
+title: "Linguaggio C"
+description: "Appunti di linguaggio C"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=original
 ---
 
 ## compilazione semplice
