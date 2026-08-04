@@ -101,10 +101,6 @@
     <lastmod>2026-08-03T12:07:07.110Z</lastmod>
   </url>
   <url>
-    <loc>https://comarandr.github.io/wiki/linguaggi/css.html</loc>
-    <lastmod>2026-08-03T11:50:40.226Z</lastmod>
-  </url>
-  <url>
     <loc>https://comarandr.github.io/wiki/linguaggi/scheme.html</loc>
     <lastmod>2026-08-03T13:09:05.497Z</lastmod>
   </url>
@@ -183,5 +179,9 @@
   <url>
     <loc>https://comarandr.github.io/wiki/indexUni.html</loc>
     <lastmod>2026-08-03T08:38:41.542Z</lastmod>
+  </url>
+  <url>
+    <loc>https://comarandr.github.io/wiki/linguaggi/arm.html</loc>
+    <lastmod>2026-08-04T07:45:38.558Z</lastmod>
   </url>
 </urlset>
