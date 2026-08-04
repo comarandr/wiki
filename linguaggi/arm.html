@@ -1,9 +1,910 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>CodeToHTML</title>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Appunti di linguaggio Assembly ARM">
+
+<title>Assembly ARM – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-<div style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: Consolas, 'Courier New', monospace; font-weight: normal; font-size: 14px; line-height: 19px; margin: auto; width: fit-content; overflow: auto; white-space: nowrap;"><div><span style="color: #000000;">CARATTERISTICHE&nbsp;GENERALI</span></div><div><span style="color: #000000;">assembly&nbsp;non&nbsp;distingue&nbsp;maiuscolo/minuscolo</span></div><div><span style="color: #000000;">memoria&nbsp;principale&nbsp;-&nbsp;4GB&nbsp;~&nbsp;</span><span style="color: #098658;">2</span><span style="color: #000000;">^</span><span style="color: #098658;">32</span><span style="color: #000000;">&nbsp;byte&nbsp;(</span><span style="color: #098658;">32</span><span style="color: #000000;">&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">)</span></div><div><span style="color: #000000;">registri&nbsp;-&nbsp;</span><span style="color: #098658;">16</span><span style="color: #000000;">&nbsp;registri&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,...,</span><span style="color: #0000ff;">r12</span><span style="color: #000000;">&nbsp;general&nbsp;purpose</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">r13</span><span style="color: #000000;">&nbsp;:&nbsp;</span><span style="color: #0000ff;">sp</span><span style="color: #000000;">&nbsp;(stack&nbsp;pointer)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">r14</span><span style="color: #000000;">&nbsp;:&nbsp;</span><span style="color: #0000ff;">lr</span><span style="color: #000000;">&nbsp;(link&nbsp;register)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000ff;">r15</span><span style="color: #000000;">&nbsp;:&nbsp;</span><span style="color: #0000ff;">pc</span><span style="color: #000000;">&nbsp;(program&nbsp;counter)</span></div><div><span style="color: #000000;">Ogni&nbsp;registro&nbsp;è&nbsp;di&nbsp;</span><span style="color: #098658;">32</span><span style="color: #000000;">&nbsp;b</span><span style="color: #cd3131;">it</span></div><div><br></div><div><span style="color: #000000;">LISTA&nbsp;COMANDI</span></div><div><span style="color: #000000;">numeri&nbsp;possono&nbsp;espressi&nbsp;in&nbsp;#cifra&nbsp;oppure&nbsp;con&nbsp;</span><span style="color: #008000;">#0x&nbsp;notazione&nbsp;esadecimale&nbsp;0&nbsp;1&nbsp;2&nbsp;3&nbsp;4&nbsp;5&nbsp;6&nbsp;7&nbsp;8&nbsp;9&nbsp;A=10&nbsp;B=11&nbsp;C=12&nbsp;D=13&nbsp;E=14&nbsp;F=15&nbsp;(es&nbsp;15&nbsp;=&nbsp;#0xF)</span></div><div><span style="color: #000000;">decimali:&nbsp;</span><span style="color: #098658;">#0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#1</span><span style="color: #000000;">,&nbsp;...&nbsp;,&nbsp;</span><span style="color: #098658;">#9</span></div><div><span style="color: #000000;">binari:&nbsp;</span><span style="color: #098658;">#0b1101</span></div><div><span style="color: #000000;">ottali:&nbsp;</span><span style="color: #008000;">#0h777</span></div><div><span style="color: #000000;">esadecimali:&nbsp;</span><span style="color: #098658;">#0xFDE7e</span></div><div><span style="color: #000000;">gli&nbsp;interi&nbsp;sono&nbsp;espressi&nbsp;in&nbsp;complemento&nbsp;a&nbsp;</span><span style="color: #098658;">2</span><span style="color: #000000;">&nbsp;(cambio&nbsp;di&nbsp;segno&nbsp;negando&nbsp;i&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">&nbsp;e&nbsp;sommando&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">)</span></div><div><span style="color: #000000;">+</span><span style="color: #098658;">9</span><span style="color: #000000;">&nbsp;=&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span></div><div><span style="color: #000000;">-</span><span style="color: #098658;">9</span><span style="color: #000000;">&nbsp;=&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div><span style="color: #000000;">Rappresentati&nbsp;in&nbsp;</span><span style="color: #098658;">12</span><span style="color: #000000;">&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">&nbsp;</span></div><div><br></div><div><span style="color: #000000;">somma:&nbsp;&nbsp;add&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;scrive&nbsp;su&nbsp;r0&nbsp;la&nbsp;somma&nbsp;r1+r2</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#8</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;soltanto&nbsp;il&nbsp;terzp&nbsp;argomento&nbsp;può&nbsp;essere&nbsp;una&nbsp;costante</span></div><div><br></div><div><span style="color: #000000;">sottrazione:&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r4</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;pone&nbsp;in&nbsp;r0&nbsp;la&nbsp;sottrazione&nbsp;r1-r4&nbsp;&nbsp;&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rsb&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r4</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;pone&nbsp;in&nbsp;r0&nbsp;la&nbsp;sottrazione&nbsp;r4-r1</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTA,&nbsp;costante&nbsp;accettata&nbsp;solo&nbsp;come&nbsp;terzo&nbsp;argomento&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#7</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;r1-#7</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rsb&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#7</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;#-r1</span></div><div><br></div><div><span style="color: #000000;">moltiplicazione&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mul&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;scrive&nbsp;in&nbsp;r0&nbsp;la&nbsp;moltiplicazione&nbsp;r2&nbsp;*&nbsp;r3</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NON&nbsp;ammette&nbsp;argomento&nbsp;costante</span></div><div><br></div><div><span style="color: #000000;">operazioni&nbsp;con&nbsp;il&nbsp;carry</span></div><div><span style="color: #000000;">somma&nbsp;&nbsp;&nbsp;adc&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r4</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;scrive&nbsp;in&nbsp;r0&nbsp;r1&nbsp;+&nbsp;r4&nbsp;+&nbsp;c&nbsp;se&nbsp;presente&nbsp;riporto&nbsp;nel&nbsp;cprs</span></div><div><span style="color: #000000;">sottrazione&nbsp;sbc&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r4</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;scrive&nbsp;in&nbsp;r0&nbsp;=&nbsp;r1&nbsp;-&nbsp;r4&nbsp;(-&nbsp;1)&nbsp;se&nbsp;carry&nbsp;=&nbsp;0&nbsp;se&nbsp;presente&nbsp;riporto&nbsp;nel&nbsp;cprs</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rsc&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r4</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;scrive&nbsp;in&nbsp;r0&nbsp;=&nbsp;r4&nbsp;-&nbsp;r1&nbsp;(&nbsp;-&nbsp;1&nbsp;se&nbsp;carry&nbsp;=&nbsp;0)</span></div><div><br></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;perché&nbsp;-&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;se&nbsp;carry&nbsp;=&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">?</span></div><div><br></div><div><span style="color: #000000;">moltiplicazione&nbsp;estesa</span></div><div><span style="color: #000000;">unsigned&nbsp;&nbsp;&nbsp;&nbsp;umull&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r4</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;calcola&nbsp;r2*r4&nbsp;a&nbsp;64&nbsp;bit&nbsp;senza&nbsp;segno&nbsp;,&nbsp;scrive&nbsp;cifre&nbsp;più&nbsp;significative&nbsp;in&nbsp;r1&nbsp;e&nbsp;quelle&nbsp;meno&nbsp;in&nbsp;r0&nbsp;r2*r4&nbsp;=&nbsp;r1r0</span></div><div><span style="color: #000000;">signed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smull&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r4</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;calcola&nbsp;r2*r4&nbsp;a&nbsp;64&nbsp;bit&nbsp;in&nbsp;complemento&nbsp;a&nbsp;2,&nbsp;scrive&nbsp;cifre&nbsp;più&nbsp;significative&nbsp;in&nbsp;r1&nbsp;e&nbsp;quelle&nbsp;meno&nbsp;in&nbsp;r0&nbsp;r2*r4&nbsp;=&nbsp;r1r0</span></div><div><br></div><div><span style="color: #000000;">operatori&nbsp;logici</span></div><div><br></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;in&nbsp;r0&nbsp;=&nbsp;r2&nbsp;AND&nbsp;r3&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orr&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;in&nbsp;r0&nbsp;=&nbsp;r2&nbsp;OR&nbsp;r3&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eor&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#5</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;in&nbsp;r0&nbsp;=&nbsp;r2&nbsp;XOR&nbsp;5&nbsp;Exclusive&nbsp;OR&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bic&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;in&nbsp;r0&nbsp;=&nbsp;r2&nbsp;and&nbsp;NOT(r3)&nbsp;and&nbsp;not</span></div><div><br></div><div><span style="color: #000000;">copiare&nbsp;registri&nbsp;(move)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mov&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008000;">;&nbsp;r2&nbsp;copiato&nbsp;in&nbsp;r0,&nbsp;r2&nbsp;-&gt;&nbsp;r0&nbsp;;&nbsp;r0&nbsp;=&nbsp;r2</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mvn&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008000;">;&nbsp;r0&nbsp;=&nbsp;NOT(r2),&nbsp;cioè&nbsp;move&nbsp;negate</span></div><div><br></div><div><span style="color: #000000;">rappresentazioni&nbsp;costanti</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #098658;">#5</span><span style="color: #000000;">&nbsp;:&nbsp;decimali</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #098658;">#0b1010</span><span style="color: #000000;">:&nbsp;binario</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #008000;">#0h777:&nbsp;ottali</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #098658;">#0xFDE</span><span style="color: #000000;">:&nbsp;esadecimali</span></div><div><br></div><div><span style="color: #000000;">traslazioni&nbsp;(&nbsp;parte&nbsp;dell'argomento)</span></div><div><span style="color: #000000;">sx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lsl&nbsp;traslazione&nbsp;a&nbsp;sinistra&nbsp;che&nbsp;elimina&nbsp;i&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">&nbsp;più&nbsp;significativi</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div><span style="color: #000000;">dx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lsr&nbsp;traslazione&nbsp;a&nbsp;destra&nbsp;che&nbsp;elimina&nbsp;i&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">&nbsp;meno&nbsp;sigificativi</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asr&nbsp;mantiene&nbsp;il&nbsp;segno&nbsp;del&nbsp;numero,&nbsp;equivale&nbsp;a&nbsp;una&nbsp;divisione&nbsp;per&nbsp;</span><span style="color: #098658;">2</span><span style="color: #000000;">^n,&nbsp;elimina&nbsp;i&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">&nbsp;meno&nbsp;significativi</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ror&nbsp;#n&nbsp;n&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">&nbsp;usciti&nbsp;a&nbsp;destra&nbsp;rientrano&nbsp;a&nbsp;sinistra</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rrx&nbsp;rotazione&nbsp;a&nbsp;destra&nbsp;includendo&nbsp;il&nbsp;b</span><span style="color: #cd3131;">it</span><span style="color: #000000;">&nbsp;di&nbsp;carry</span></div><div><br></div><div><span style="color: #000000;">accesso&nbsp;alla&nbsp;memoria</span></div><div><span style="color: #000000;">lettura&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldr&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldr&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">,&nbsp;[</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">]&nbsp;copia&nbsp;in&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">&nbsp;una&nbsp;word&nbsp;(32b~4B)&nbsp;a&nbsp;partire&nbsp;dall'INDIRIZZO&nbsp;in&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldr&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">[r0,&nbsp;</span><span style="color: #098658;">#8</span><span style="color: #0000ff;">]</span><span style="color: #000000;">&nbsp;...&nbsp;dall'indirizzo&nbsp;contenuto&nbsp;in&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">&nbsp;+&nbsp;8B&nbsp;(cioè&nbsp;offset)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldr&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">,&nbsp;[</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;lsl&nbsp;</span><span style="color: #098658;">#3</span><span style="color: #000000;">&nbsp;]&nbsp;...&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">&nbsp;destinazione,&nbsp;in&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">&nbsp;indirizzo,&nbsp;in&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">&nbsp;indicato&nbsp;offset&nbsp;che&nbsp;and</span><span style="color: #cd3131;">rà</span><span style="color: #000000;">&nbsp;traslato&nbsp;di&nbsp;3b</span></div><div><br></div><div><span style="color: #000000;">scrittura&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;str&nbsp;</span></div><div><br></div><div><span style="color: #000000;">aggiornamento&nbsp;&nbsp;&nbsp;ldr&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">[r0,&nbsp;</span><span style="color: #098658;">#8</span><span style="color: #0000ff;">]</span><span style="color: #000000;">&nbsp;nessun&nbsp;aggiornamento</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldr&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">[r0,&nbsp;</span><span style="color: #098658;">#8</span><span style="color: #0000ff;">]!</span><span style="color: #000000;">&nbsp;pre-aggiornamento&nbsp;(prima&nbsp;aggiorno,&nbsp;poi&nbsp;dato)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ldr&nbsp;</span><span style="color: #0000ff;">r3</span><span style="color: #000000;">,&nbsp;[</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">],&nbsp;</span><span style="color: #098658;">#8</span><span style="color: #000000;">&nbsp;post&nbsp;aggiornamento</span></div><div><br></div><div><span style="color: #000000;">NB:&nbsp;solo&nbsp;su&nbsp;parole&nbsp;allineate,&nbsp;indirizzo&nbsp;del&nbsp;primo&nbsp;byte&nbsp;multiplo&nbsp;di&nbsp;</span><span style="color: #098658;">4</span></div><div><span style="color: #000000;">ARM:&nbsp;little-endian&nbsp;(ma&nbsp;bi-endian)</span></div><div><br></div><div><span style="color: #000000;">[...]</span></div><div><br></div><div><span style="color: #000000;">STRUTTURA&nbsp;DEL&nbsp;PROGRAMMA</span></div><div><br></div><div><span style="color: #000000;">file.s</span></div><div><span style="color: #000000;">etichette&nbsp;-&nbsp;identificano&nbsp;indirizzo</span></div><div><span style="color: #000000;">direttive&nbsp;-&nbsp;indicazioni&nbsp;su&nbsp;come&nbsp;comportarsi</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">.text</span><span style="color: #000000;">&nbsp;testo&nbsp;successivo&nbsp;sono&nbsp;le&nbsp;ostruzioni</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">.data</span><span style="color: #000000;">&nbsp;testo&nbsp;che&nbsp;segue&nbsp;costanti</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end&nbsp;fine&nbsp;modulo</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;possono&nbsp;specificare&nbsp;anche&nbsp;tipo&nbsp;di&nbsp;dato&nbsp;(etichettabili)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #808080;">.word</span><span style="color: #000000;">&nbsp;ogni&nbsp;dato&nbsp;allineato&nbsp;su&nbsp;</span><span style="color: #098658;">4</span><span style="color: #000000;">&nbsp;locazioni</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.byte&nbsp;ogni&nbsp;dato&nbsp;occupa&nbsp;una&nbsp;locazione&nbsp;(</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;B)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ascii&nbsp;ogni&nbsp;char&nbsp;in&nbsp;ASCII&nbsp;in&nbsp;una&nbsp;locazione</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.asciz&nbsp;ogni&nbsp;char&nbsp;ASCII&nbsp;+&nbsp;locazione&nbsp;</span><span style="color: #098658;">0</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.skip&nbsp;allocazione&nbsp;n&nbsp;locazioni&nbsp;inizializzate&nbsp;</span><span style="color: #098658;">0</span></div><div><br></div><div><br></div><div><br></div><div><br></div><div><span style="color: #000000;">PSEUDO-ISTRUZIONI&nbsp;:&nbsp;carica&nbsp;nel&nbsp;registro&nbsp;indirizzo&nbsp;memoria&nbsp;etichettato</span></div><div><span style="color: #000000;">COMMENTO&nbsp;INLINE:&nbsp;preceduto&nbsp;da&nbsp;char&nbsp;</span><span style="color: #008000;">@</span></div><div><br></div><div><span style="color: #000000;">CONTROLLO&nbsp;DI&nbsp;FLUSSO&nbsp;(COSTRUTTI)</span></div><div><br></div><div><span style="color: #000000;">non&nbsp;si&nbsp;usano&nbsp;costrutti,&nbsp;bensì&nbsp;salto&nbsp;(anche&nbsp;condizionato)</span></div><div><span style="color: #000000;">salto&nbsp;relativo&nbsp;:&nbsp;b&nbsp;#costante</span></div><div><span style="color: #000000;">NOTA:&nbsp;argomento&nbsp;b&nbsp;spesso&nbsp;etichetta&nbsp;(specie&nbsp;se&nbsp;condizionato)</span></div><div><br></div><div><span style="color: #000000;">CONDIZIONI</span></div><div><br></div><div><span style="color: #000000;">suffisso&nbsp;di&nbsp;</span><span style="color: #098658;">1</span><span style="color: #000000;">&nbsp;o&nbsp;</span><span style="color: #098658;">2</span><span style="color: #000000;">&nbsp;lettere:&nbsp;specifica&nbsp;condizione&nbsp;per&nbsp;eseguire&nbsp;istruzione</span></div><div><br></div><div><span style="color: #000000;">condizione&nbsp;dipende&nbsp;da&nbsp;cprs</span></div><div><br></div><div><span style="color: #000000;">s:&nbsp;suffisso&nbsp;condizionante,&nbsp;operazione&nbsp;modifica&nbsp;registro&nbsp;stato</span></div><div><br></div><div><span style="color: #000000;">CONDIZIONI&nbsp;CPRS:</span></div><div><span style="color: #000000;">Z&nbsp;:&nbsp;zero</span></div><div><span style="color: #000000;">C:&nbsp;presenza&nbsp;carry</span></div><div><span style="color: #000000;">N:&nbsp;negativo</span></div><div><span style="color: #000000;">V:&nbsp;overflow&nbsp;</span></div><div><br></div><div><span style="color: #000000;">CONDIZIONI:</span></div><div><span style="color: #000000;">eq&nbsp;:&nbsp;equal,&nbsp;Z</span><span style="color: #0000ff;">=</span><span style="color: #000000;">=</span><span style="color: #098658;">0</span></div><div><span style="color: #000000;">ne&nbsp;:&nbsp;not&nbsp;equal</span></div><div><br></div><div><span style="color: #000000;">SALTO&nbsp;CONDIZIONATO:</span></div><div><span style="color: #000000;">bl&nbsp;:&nbsp;branch&nbsp;and&nbsp;link</span></div><div><br></div><div><br></div><div><br></div><div><span style="color: #000000;">ISTRUZIONI&nbsp;DI&nbsp;CONFRONTO&nbsp;(modificano&nbsp;CPRS)</span></div><div><br></div><div><span style="color: #000000;">comparazione:&nbsp;cmp&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;compara&nbsp;r0&nbsp;con&nbsp;r1,&nbsp;aggiorna&nbsp;come&nbsp;subs&nbsp;r&nbsp;r0&nbsp;r1;&nbsp;cioè&nbsp;r0-r1&nbsp;=&nbsp;0</span></div><div><br></div><div><span style="color: #000000;">comparazione&nbsp;negativo:&nbsp;cmn&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;confronto&nbsp;r0&nbsp;con&nbsp;-r1,&nbsp;aggiorna&nbsp;come&nbsp;adds&nbsp;r&nbsp;r0,&nbsp;r1&nbsp;;&nbsp;r0+r1&nbsp;=&nbsp;0</span></div><div><br></div><div><span style="color: #000000;">test:&nbsp;tst&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;aggiorna&nbsp;i&nbsp;flag&nbsp;come&nbsp;ands&nbsp;r&nbsp;r0&nbsp;r1</span></div><div><br></div><div><span style="color: #000000;">test&nbsp;equal:&nbsp;teq&nbsp;</span><span style="color: #0000ff;">r0</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;aggiorna&nbsp;come&nbsp;eors&nbsp;r&nbsp;r0&nbsp;r1&nbsp;(or&nbsp;esclusivo)</span></div><div><br></div><div><br></div><div><span style="color: #000000;">TRADUZIONE&nbsp;DEI&nbsp;COSTRUTTI&nbsp;</span></div><div><br></div><div><span style="color: #000000;">COSTRUTTO&nbsp;IF-ELSE</span></div><div><br></div><div><span style="color: #000000;">if(boolean)</span><span style="color: #0000ff;">{</span></div><div><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then&nbsp;com1</span></div><div><span style="color: #0000ff;">}</span><span style="color: #000000;">&nbsp;else&nbsp;</span><span style="color: #0000ff;">{</span></div><div><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com2</span></div><div><span style="color: #0000ff;">}</span></div><div><span style="color: #000000;">fi</span></div><div><br></div><div><span style="color: #000000;">assembly:</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eval&nbsp;boolean&nbsp;(valuta&nbsp;boolean)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b_cond&nbsp;then</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com2</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;fine</span></div><div><span style="color: #000000;">then&nbsp;:&nbsp;com1</span></div><div><span style="color: #000000;">fine:&nbsp;(proseguo&nbsp;programma&nbsp;immagino)</span></div><div><br></div><div><span style="color: #000000;">COSTRUTTO&nbsp;IF-THEN</span></div><div><br></div><div><span style="color: #000000;">if(boolean)</span><span style="color: #0000ff;">{</span></div><div><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then&nbsp;com1</span></div><div><span style="color: #0000ff;">}</span></div><div><span style="color: #000000;">fi</span></div><div><br></div><div><span style="color: #000000;">assembly:</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eval&nbsp;NOT&nbsp;boolean&nbsp;</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b_cond&nbsp;fine</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com1</span></div><div><span style="color: #000000;">fine:&nbsp;(proseguo&nbsp;programma&nbsp;immagino)</span></div><div><br></div><div><span style="color: #000000;">COSTRUTTO&nbsp;WHILE</span></div><div><br></div><div><span style="color: #000000;">while&nbsp;(boolean)</span><span style="color: #0000ff;">{</span></div><div><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;com1</span></div><div><span style="color: #0000ff;">}</span></div><div><br></div><div><span style="color: #000000;">assembly:</span></div><div><br></div><div><span style="color: #000000;">while:&nbsp;&nbsp;Eval&nbsp;not&nbsp;boolean</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b_cond&nbsp;fine</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;com1</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;while</span></div><div><br></div><div><span style="color: #000000;">fine:&nbsp;&nbsp;&nbsp;instr...</span></div><div><br></div><div><span style="color: #000000;">esempio:</span></div><div><span style="color: #000000;">while&nbsp;(i&nbsp;!=&nbsp;</span><span style="color: #098658;">0</span><span style="color: #000000;">)</span><span style="color: #0000ff;">{</span></div><div><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;=&nbsp;i&nbsp;-1;</span></div><div><span style="color: #0000ff;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j&nbsp;=&nbsp;j&nbsp;+&nbsp;1;</span></div><div><span style="color: #0000ff;">}</span></div><div><span style="color: #000000;">i&nbsp;in&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;j&nbsp;in&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #008000;">;</span></div><div><br></div><div><span style="color: #000000;">versione&nbsp;con&nbsp;salti</span></div><div><span style="color: #000000;">while:&nbsp;cmp&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#0</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;compara&nbsp;r1&nbsp;con&nbsp;#0</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;beq&nbsp;fine&nbsp;&nbsp;</span><span style="color: #008000;">;&nbsp;salta&nbsp;se&nbsp;condizione&nbsp;equal&nbsp;verificata,&nbsp;vai&nbsp;a&nbsp;fine</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sub&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#1</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;salva&nbsp;in&nbsp;r1&nbsp;il&nbsp;valore&nbsp;in&nbsp;r1&nbsp;-&nbsp;1</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addne&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#1</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;condizione&nbsp;non&nbsp;eq&nbsp;(nel&nbsp;ciclo)&nbsp;salva&nbsp;in&nbsp;r2&nbsp;il&nbsp;valore&nbsp;in&nbsp;r2&nbsp;+&nbsp;1</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bne&nbsp;while&nbsp;</span><span style="color: #008000;">;&nbsp;se&nbsp;condizione&nbsp;nequal&nbsp;verificata,&nbsp;rimani&nbsp;in&nbsp;while&nbsp;(etichetta)</span></div><div><br></div><div><span style="color: #000000;">fine:&nbsp;&nbsp;&nbsp;instr...&nbsp;</span></div><div><br></div><div><span style="color: #000000;">versione&nbsp;senza&nbsp;salti&nbsp;(elegante)</span></div><div><span style="color: #000000;">while:&nbsp;&nbsp;cmp&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#0</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;compara&nbsp;r1&nbsp;con&nbsp;#0</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subne&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r1</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#1</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;se&nbsp;cond&nbsp;nequal&nbsp;verificata&nbsp;fai&nbsp;sub</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addne&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #0000ff;">r2</span><span style="color: #000000;">,&nbsp;</span><span style="color: #098658;">#1</span><span style="color: #000000;">&nbsp;</span><span style="color: #008000;">;&nbsp;se&nbsp;con&nbsp;nequal&nbsp;verificata&nbsp;fai&nbsp;add</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bne&nbsp;while&nbsp;</span><span style="color: #008000;">;&nbsp;se&nbsp;cond&nbsp;nequal&nbsp;verificata&nbsp;fai&nbsp;while&nbsp;(etichetta)</span></div><div><span style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instru</span></div><div><br></div><div><br></div><div><br></div></div></body>
-</html>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/linguaggi/indexLing.html"> 
+<span class="menu-text">Linguaggi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/universita/indexUni.html"> 
+<span class="menu-text">Università</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/personali/indexPers.html"> 
+<span class="menu-text">Personali</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/indexMin.html"> 
+<span class="menu-text">Minimali</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#caratteristiche-generali" id="toc-caratteristiche-generali" class="nav-link active" data-scroll-target="#caratteristiche-generali">Caratteristiche generali</a></li>
+  <li><a href="#lista-comandi" id="toc-lista-comandi" class="nav-link" data-scroll-target="#lista-comandi">Lista comandi</a>
+  <ul>
+  <li><a href="#somma" id="toc-somma" class="nav-link" data-scroll-target="#somma">Somma</a></li>
+  <li><a href="#sottrazione" id="toc-sottrazione" class="nav-link" data-scroll-target="#sottrazione">Sottrazione</a></li>
+  <li><a href="#moltiplicazione" id="toc-moltiplicazione" class="nav-link" data-scroll-target="#moltiplicazione">Moltiplicazione</a></li>
+  <li><a href="#operazioni-con-il-carry-riporto" id="toc-operazioni-con-il-carry-riporto" class="nav-link" data-scroll-target="#operazioni-con-il-carry-riporto">Operazioni con il carry (riporto)</a></li>
+  <li><a href="#moltiplicazione-estesa" id="toc-moltiplicazione-estesa" class="nav-link" data-scroll-target="#moltiplicazione-estesa">Moltiplicazione estesa</a></li>
+  <li><a href="#operatori-logici" id="toc-operatori-logici" class="nav-link" data-scroll-target="#operatori-logici">Operatori logici</a></li>
+  <li><a href="#copiare-registri-move" id="toc-copiare-registri-move" class="nav-link" data-scroll-target="#copiare-registri-move">Copiare registri (move)</a></li>
+  <li><a href="#rappresentazioni-costanti" id="toc-rappresentazioni-costanti" class="nav-link" data-scroll-target="#rappresentazioni-costanti">Rappresentazioni costanti</a></li>
+  <li><a href="#traslazioni-parte-dellargomento" id="toc-traslazioni-parte-dellargomento" class="nav-link" data-scroll-target="#traslazioni-parte-dellargomento">Traslazioni ( parte dell’argomento)</a></li>
+  <li><a href="#accesso-alla-memoria-ldr-e-str" id="toc-accesso-alla-memoria-ldr-e-str" class="nav-link" data-scroll-target="#accesso-alla-memoria-ldr-e-str">Accesso alla memoria <code>ldr</code> e <code>str</code></a>
+  <ul class="collapse">
+  <li><a href="#lettura-ldr" id="toc-lettura-ldr" class="nav-link" data-scroll-target="#lettura-ldr">lettura <code>ldr</code></a></li>
+  <li><a href="#scrittura-str" id="toc-scrittura-str" class="nav-link" data-scroll-target="#scrittura-str">scrittura <code>str</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#struttura-del-programma" id="toc-struttura-del-programma" class="nav-link" data-scroll-target="#struttura-del-programma">Struttura del programma</a></li>
+  <li><a href="#controllo-di-flusso-costrutti" id="toc-controllo-di-flusso-costrutti" class="nav-link" data-scroll-target="#controllo-di-flusso-costrutti">Controllo di flusso (costrutti)</a>
+  <ul>
+  <li><a href="#condizioni" id="toc-condizioni" class="nav-link" data-scroll-target="#condizioni">Condizioni</a></li>
+  <li><a href="#condizioni-cprs" id="toc-condizioni-cprs" class="nav-link" data-scroll-target="#condizioni-cprs">Condizioni CPRS:</a></li>
+  <li><a href="#istruzioni-di-confronto-modificano-cprs" id="toc-istruzioni-di-confronto-modificano-cprs" class="nav-link" data-scroll-target="#istruzioni-di-confronto-modificano-cprs">Istruzioni di confronto (modificano CPRS)</a></li>
+  <li><a href="#traduzione-dei-costrutti-di-controllo-di-flusso" id="toc-traduzione-dei-costrutti-di-controllo-di-flusso" class="nav-link" data-scroll-target="#traduzione-dei-costrutti-di-controllo-di-flusso">Traduzione dei costrutti di controllo di flusso</a>
+  <ul class="collapse">
+  <li><a href="#costrutto-if-else" id="toc-costrutto-if-else" class="nav-link" data-scroll-target="#costrutto-if-else">Costrutto IF-ELSE</a></li>
+  <li><a href="#costrutto-if-then" id="toc-costrutto-if-then" class="nav-link" data-scroll-target="#costrutto-if-then">Costrutto IF-THEN</a></li>
+  <li><a href="#costrutto-while" id="toc-costrutto-while" class="nav-link" data-scroll-target="#costrutto-while">Costrutto WHILE</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assembly ARM</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">linguaggi</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Appunti di linguaggio Assembly ARM
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="caratteristiche-generali" class="level2">
+<h2 class="anchored" data-anchor-id="caratteristiche-generali">Caratteristiche generali</h2>
+<p>Assembly non distingue maiuscolo/minuscolo</p>
+<p>Nella nostra versione consideriamo una memoria principale di 4 GB ~ <span class="math inline">\(2^{32}\)</span> byte (indirizzo di 32 bit)</p>
+<p>16 registri:</p>
+<ul>
+<li><code>r0</code>, …, <code>r12</code>: generali</li>
+<li><code>r13</code>: stack pointer (sp)</li>
+<li><code>r14</code>: link register (lr)</li>
+<li><code>r15</code>: program counter (pc)</li>
+</ul>
+<p>Ogni registro è a 32 bit</p>
+</section>
+<section id="lista-comandi" class="level2">
+<h2 class="anchored" data-anchor-id="lista-comandi">Lista comandi</h2>
+<p>I <strong>numeri</strong> possono essere espressi in <code>#cifra</code>oppure con <code>#0x</code> + notazione esadecimale:</p>
+<p>0 1 2 3 4 5 6 7 8 9 A=10 B=11 C=12 D=13 E=14 F=15 (es 15 = #0xF)</p>
+<ul>
+<li>decimali: <code>#0</code>, <code>#1</code>, … , <code>#9</code></li>
+<li>binari: <code>#0b1101</code></li>
+<li>ottali: <code>#0o777</code></li>
+<li>esadecimali: <code>#0xFDE7</code></li>
+</ul>
+<p>gli interi sono espressi in <strong>complemento a due</strong> (cambio di segno negando i bit e sommando 1):<br>
++9 = 0 0 0 0 1 0 0 1<br>
+-9 = 1 1 1 1 0 1 1 1<br>
+Rappresentati in 12 bit</p>
+<section id="somma" class="level3">
+<h3 class="anchored" data-anchor-id="somma">Somma</h3>
+<p><code>add r0, r1, r2</code>: scrive su r0 la somma r1+r2<br>
+<code>add r0, r1, #8</code>: soltanto il terzo argomento può essere una costante</p>
+</section>
+<section id="sottrazione" class="level3">
+<h3 class="anchored" data-anchor-id="sottrazione">Sottrazione</h3>
+<p><code>sub r0, r1, r4</code>: pone in r0 la sottrazione r1-r4<br>
+<code>rsb r0, r1, r4</code>: pone in r0 la sottrazione r4-r1<br>
+NOTA, costante accettata solo come terzo argomento<br>
+<code>sub r0, r1, #7</code>: r1-#7<br>
+<code>rsb r0, r1, #7</code>: #-r1</p>
+</section>
+<section id="moltiplicazione" class="level3">
+<h3 class="anchored" data-anchor-id="moltiplicazione">Moltiplicazione</h3>
+<p><code>mul r0, r2, r3</code>: scrive in r0 la moltiplicazione r2 * r3<br>
+NON ammette argomento costante</p>
+</section>
+<section id="operazioni-con-il-carry-riporto" class="level3">
+<h3 class="anchored" data-anchor-id="operazioni-con-il-carry-riporto">Operazioni con il carry (riporto)</h3>
+<p><strong>somma:</strong><br>
+<code>adc r0, r1, r4</code>: scrive in r0 r1 + r4 + c se presente riporto nel cprs<br>
+<strong>sottrazione:</strong><br>
+<code>sbc r0, r1, r4</code>: scrive in r0 = r1 - r4 (- 1) se carry = 0 se presente riporto nel cprs</p>
+<p><code>rsc r0, r1, r4</code>: scrive in r0 = r4 - r1 ( - 1 se carry = 0)</p>
+<pre><code>    perché - 1 se carry = 0?</code></pre>
+</section>
+<section id="moltiplicazione-estesa" class="level3">
+<h3 class="anchored" data-anchor-id="moltiplicazione-estesa">Moltiplicazione estesa</h3>
+<p><strong>unsigned</strong>:<br>
+<code>umull r0, r1, r2, r4</code>: calcola r2*r4 a 64 bit senza segno , scrive cifre più significative in r1 e quelle meno in r0 r2*r4 = r1r0<br>
+<strong>signed</strong>:<br>
+<code>smull r0, r1, r2, r4</code>: calcola r2*r4 a 64 bit in complemento a 2, scrive cifre più significative in r1 e quelle meno in r0 r2*r4 = r1r0</p>
+</section>
+<section id="operatori-logici" class="level3">
+<h3 class="anchored" data-anchor-id="operatori-logici">Operatori logici</h3>
+<p><code>and r0, r2, r3</code>: in r0 = r2 AND r3<br>
+<code>orr r0, r2, r3</code>: in r0 = r2 OR r3<br>
+<code>eor r0, r2, #5</code>: in r0 = r2 XOR 5 Exclusive OR<br>
+<code>bic r0, r2, r3</code>: in r0 = r2 and NOT(r3) and not</p>
+</section>
+<section id="copiare-registri-move" class="level3">
+<h3 class="anchored" data-anchor-id="copiare-registri-move">Copiare registri (move)</h3>
+<p><code>mov r0, r2</code>: r2 copiato in r0, r2 -&gt; r0 ; r0 = r2<br>
+<code>mvn r0, r2</code>: r0 = NOT(r2), cioè move negate</p>
+</section>
+<section id="rappresentazioni-costanti" class="level3">
+<h3 class="anchored" data-anchor-id="rappresentazioni-costanti">Rappresentazioni costanti</h3>
+<p><code>#5</code> : decimali<br>
+<code>#0b1010</code>: binario<br>
+<code>#0h777</code>: ottali<br>
+<code>#0xFDE</code>: esadecimali</p>
+</section>
+<section id="traslazioni-parte-dellargomento" class="level3">
+<h3 class="anchored" data-anchor-id="traslazioni-parte-dellargomento">Traslazioni ( parte dell’argomento)</h3>
+<p><strong>a sinistra <code>lsl</code></strong>: traslazione a sinistra che elimina i bit più significativi</p>
+<p><strong>a destra</strong>:<br>
+<code>lsr</code>: traslazione a destra che elimina i bit meno sigificativi<br>
+<code>asr</code> mantiene il segno del numero, equivale a una divisione per 2^n, elimina i bit meno significativi<br>
+<code>ror</code> #n n bit usciti a destra rientrano a sinistra<br>
+<code>rrx</code> rotazione a destra includendo il bit di carry</p>
+</section>
+<section id="accesso-alla-memoria-ldr-e-str" class="level3">
+<h3 class="anchored" data-anchor-id="accesso-alla-memoria-ldr-e-str">Accesso alla memoria <code>ldr</code> e <code>str</code></h3>
+<section id="lettura-ldr" class="level4">
+<h4 class="anchored" data-anchor-id="lettura-ldr">lettura <code>ldr</code></h4>
+<p><code>ldr r3, [r0]</code> copia in r3 una word (32b~4B) a partire dall’INDIRIZZO in r0<br>
+<code>ldr r3, [r0, #8]</code> … dall’indirizzo contenuto in r0 + 8B (cioè offset)<br>
+<code>ldr r3, [r0, r1, lsl #3 ]</code> … r3 destinazione, in r0 indirizzo, in r1 indicato offset che andrà traslato di 3b</p>
+</section>
+<section id="scrittura-str" class="level4">
+<h4 class="anchored" data-anchor-id="scrittura-str">scrittura <code>str</code></h4>
+<p><strong>aggiornamento:</strong><br>
+<code>ldr r3, [r0, #8]</code> nessun aggiornamento<br>
+<code>ldr r3, [r0, #8]!</code> pre-aggiornamento (prima aggiorno, poi dato)<br>
+<code>ldr r3, [r0], #8</code> post aggiornamento</p>
+<p>NB: solo su parole allineate, indirizzo del primo byte multiplo di 4<br>
+ARM: little-endian (ma bi-endian)</p>
+<p>[…]</p>
+</section>
+</section>
+</section>
+<section id="struttura-del-programma" class="level2">
+<h2 class="anchored" data-anchor-id="struttura-del-programma">Struttura del programma</h2>
+<p>file.s<br>
+<strong>etichette</strong>: identificano indirizzo<br>
+<strong>direttive</strong>:</p>
+<ul>
+<li><p>indicazioni su come comportarsi<br>
+<code>.text</code>: testo successivo sono le ostruzioni<br>
+<code>.data</code>: testo che segue costanti<br>
+<code>.end</code>: fine modulo</p></li>
+<li><p>possono specificare anche tipo di dato (etichettabili)<br>
+<code>.word</code>: ogni dato allineato su 4 locazioni<br>
+<code>.byte</code>: ogni dato occupa una locazione (1 B)<br>
+<code>.ascii</code>: ogni char in ASCII in una locazione<br>
+<code>.asciz</code>: ogni char ASCII + locazione 0<br>
+<code>.skip</code>: allocazione n locazioni inizializzate 0</p></li>
+</ul>
+<p><strong>Pseudo-istruzione</strong>: carica nel registro indirizzo memoria etichettato<br>
+<strong>Commento inline</strong>: preceduto da carattere <code>@</code></p>
+</section>
+<section id="controllo-di-flusso-costrutti" class="level2">
+<h2 class="anchored" data-anchor-id="controllo-di-flusso-costrutti">Controllo di flusso (costrutti)</h2>
+<p>non si usano costrutti, bensì salto (anche condizionato)<br>
+salto relativo : <code>b #costante</code><br>
+NOTA: argomento <code>b</code> spesso etichetta (specie se condizionato)</p>
+<section id="condizioni" class="level3">
+<h3 class="anchored" data-anchor-id="condizioni">Condizioni</h3>
+<p>suffisso di 1 o 2 lettere: specifica condizione per eseguire istruzione</p>
+<p>condizione dipende da cprs</p>
+<p><code>s</code>: suffisso condizionante, operazione modifica registro stato</p>
+</section>
+<section id="condizioni-cprs" class="level3">
+<h3 class="anchored" data-anchor-id="condizioni-cprs">Condizioni CPRS:</h3>
+<p>Z : zero<br>
+C: presenza carry<br>
+N: negativo<br>
+V: overflow</p>
+<p>CONDIZIONI:<br>
+<code>eq</code> : equal, Z==0<br>
+<code>ne</code> : not equal</p>
+<p>SALTO CONDIZIONATO:<br>
+<code>bl</code> : branch and link</p>
+</section>
+<section id="istruzioni-di-confronto-modificano-cprs" class="level3">
+<h3 class="anchored" data-anchor-id="istruzioni-di-confronto-modificano-cprs">Istruzioni di confronto (modificano CPRS)</h3>
+<p><strong>comparazione</strong><br>
+<code>cmp r0, r1</code>: compara r0 con r1, aggiorna come subs r r0 r1; cioè r0-r1 = 0</p>
+<p><strong>comparazione negativo</strong><br>
+<code>cmn r0, r1</code>: confronto r0 con -r1, aggiorna come adds r r0, r1 ; r0+r1 = 0</p>
+<p><strong>test</strong><br>
+<code>tst r0, r1</code>: aggiorna i flag come ands r r0 r1</p>
+<p><strong>test equal</strong><br>
+<code>teq r0, r2</code>: aggiorna come eors r r0 r1 (or esclusivo)</p>
+</section>
+<section id="traduzione-dei-costrutti-di-controllo-di-flusso" class="level3">
+<h3 class="anchored" data-anchor-id="traduzione-dei-costrutti-di-controllo-di-flusso">Traduzione dei costrutti di controllo di flusso</h3>
+<section id="costrutto-if-else" class="level4">
+<h4 class="anchored" data-anchor-id="costrutto-if-else">Costrutto IF-ELSE</h4>
+<pre><code>    if(boolean){
+            then com1
+    } else {
+            com2
+    }
+    fi</code></pre>
+<p>assembly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>        Eval boolean <span class="op">(</span>valuta boolean<span class="op">)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        b_cond then</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        com2</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        b fine</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>then <span class="op">:</span> com1</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fine:</span> (proseguo programma immagino<span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="costrutto-if-then" class="level4">
+<h4 class="anchored" data-anchor-id="costrutto-if-then">Costrutto IF-THEN</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">if</span><span class="op">(</span>boolean<span class="op">){</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        then com1</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>assembly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>        Eval <span class="op">NOT</span> boolean </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        b_cond fine</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        com1</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fine:</span> (proseguo programma immagino<span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="costrutto-while" class="level4">
+<h4 class="anchored" data-anchor-id="costrutto-while">Costrutto WHILE</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">while</span> <span class="op">(</span>boolean<span class="op">){</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>        do com1</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>assembly:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">while:</span>  Eval <span class="op">not</span> boolean</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        b_cond fine</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        com1</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        b while</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fine:</span>   instr<span class="op">...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Esempio while:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">while</span> <span class="op">(</span>i <span class="op">!=</span> <span class="dv">0</span><span class="op">){</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> i <span class="op">-</span><span class="dv">1</span><span class="co">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        j <span class="op">=</span> j <span class="op">+</span> <span class="dv">1</span><span class="co">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>i in r1<span class="op">,</span> j in r2<span class="co">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol type="1">
+<li>implementazione con salti:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">while:</span> <span class="bu">cmp</span> r1<span class="op">,</span> <span class="op">#</span><span class="dv">0</span> <span class="co">; compara r1 con #0</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>        beq fine  <span class="co">; salta se condizione equal verificata, vai a fine</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">sub</span> r1<span class="op">,</span> r1<span class="op">,</span> <span class="op">#</span><span class="dv">1</span> <span class="co">;salva in r1 il valore in r1 - 1</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        addne r2<span class="op">,</span> r2<span class="op">,</span> <span class="op">#</span><span class="dv">1</span> <span class="co">; condizione non eq (nel ciclo) salva in r2 il valore in r2 + 1</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        bne while <span class="co">; se condizione nequal verificata, rimani in while (etichetta)</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fine:</span>   instr<span class="op">...</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>implementazione senza salti (elegante):</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode asm code-with-copy"><code class="sourceCode fasm"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">while:</span>  <span class="bu">cmp</span> r1<span class="op">,</span> <span class="op">#</span><span class="dv">0</span> <span class="co">; compara r1 con #0</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>        subne r1<span class="op">,</span> r1<span class="op">,</span> <span class="op">#</span><span class="dv">1</span> <span class="co">; se cond nequal verificata fai sub</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        addne r2<span class="op">,</span> r2<span class="op">,</span> <span class="op">#</span><span class="dv">1</span> <span class="co">; se con nequal verificata fai add</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        bne while <span class="co">; se cond nequal verificata fai while (etichetta)</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        instru</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
