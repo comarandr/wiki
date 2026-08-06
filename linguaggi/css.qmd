@@ -2,7 +2,7 @@
 title: CSS
 description: "Appunti di CSS"
 categories: [linguaggi]
-draft: true
+listing: false
 ---
 
 ## Fogli di stile

@@ -1,0 +1,6 @@
+---
+title: Analisi Matematica 1
+description: "Appunti di analisi matematica 1 del 1 anno di informatica
+draft: true
+categories: [universita]
+---

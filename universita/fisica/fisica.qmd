@@ -3,6 +3,7 @@ title: Fisica
 description: "Appunti di fisica (cinematica, dinamica) del prof. Santi"
 permalink: /wiki/universita/fisica/
 categories: [università, informatica]
+image: https://www.matematicamente.it/wp-content/uploads/2017/02/gli-urti.png
 
 ---
 

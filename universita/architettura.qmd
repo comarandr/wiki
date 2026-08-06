@@ -3,6 +3,7 @@ title: Architettura degli elaboratori
 description: "appunti di architettura degli elaboratori del Prof. Fontana"
 permalink: /wiki/universita/architettura/
 categories: [università, informatica]
+image: https://static.vecteezy.com/ti/vettori-gratis/p1/101678-cpu-vettoriale.jpg
 ---
 
 ## Introduzione e definizioni

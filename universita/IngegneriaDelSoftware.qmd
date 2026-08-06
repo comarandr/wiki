@@ -3,6 +3,7 @@ title: Ingegneria del Software
 description: "Appunti di ingegneria del software del 3 anno di informatica"
 permalink: /wiki/universita/ingegneriaDelSoftware/
 categories: [università, informatica]
+image: https://cdn-images.visual-paradigm.com/guide/uml/what-is-class-diagram/12-uml-class-diagram-example.png
 ---
 
 ## 1. CONCETTI FONDAMENTALI

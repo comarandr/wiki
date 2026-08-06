@@ -1,7 +1,8 @@
 ---
 title: "Formulario di Fisica"
 description: "Formulario di Fisica"
-categories: [universita]
+categories: [università, informatica]
+image: https://www.matematicamente.it/wp-content/uploads/2017/02/gli-urti.png
 ---
 
 <style>

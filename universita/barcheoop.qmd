@@ -1,6 +1,7 @@
 ---
 permalink: /wiki/universita/barcheoop
 search: false
+draft: true
 ---
 
 ```mermaid

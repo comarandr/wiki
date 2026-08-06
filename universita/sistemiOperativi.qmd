@@ -3,6 +3,7 @@ title: Sistemi Operativi
 description: "Appunti di sistemi operativi del 2 anno di informatica"
 permalink: /wiki/universita/sistemiOperativi/
 categories: [università, informatica]
+image: https://www.educolor.it/img/thumbnails/0/computer-25546.jpg
 ---
 
 SISTEMA OPERATIVO:
