@@ -1,8 +1,9 @@
 ---
 title: Algebra lineare
-description: "Appunti di algebra lineare, spazi vettoriali, matrici, sistemi lineari"
+description: "Appunti sintetici di algebra lineare del 1 anno di informatica"
 permalink: /wiki/universita/algebraLineare/
 categories: [università, informatica]
+imagine: https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Linear_subspaces_with_shading.svg/3840px-Linear_subspaces_with_shading.svg.png?utm_source=it.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail
 ---
 
 ## operazioni

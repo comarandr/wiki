@@ -1,0 +1,45 @@
+---
+title: "Formulario di Fisica"
+description: "Formulario di Fisica"
+categories: [universita]
+---
+
+<style>
+/* Centra verticalmente il contenuto di tutte le celle della tabella */
+table td, table th {
+  vertical-align: middle !important;
+}
+</style>
+
+## Introduzione
+
+## Cinematica
+
+### Velocità
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica |
+|:---|:---:|
+| Velocità scalare media | $$v_m = \frac{s(t_2)-s(t_1)}{t_2-t_1}$$|
+| Velocità istantanea | $$v = \lim_{\Delta t \to 0} \frac{s(t + \Delta t)-s(t)}{\Delta t} = \frac{ds}{dt}$$ |
+| calcolo dimensionale | $$[V] = \frac{[L]}{[T]}$$ |
+| Modulo vettore | $$| \vec{v} | = \sqrt{v_x^2 + v_y^2}$$ |
+| Modulo componente orizzontale $\vert \vec{v_x} \vert$ | $$\vert \vec{v_x} \vert = \vert \vec{v} \vert \cos{\alpha}$$ |
+| Modulo componente verticale $\vert \vec{v_y} \vert$ | $$\vert \vec{v_y} \vert = \vert \vec{v} \vert \sin{\alpha}$$ |
+
+: Velocità {#tbl-matematiche}
+
+:::
+
+## Dinamica
+
+## Elettricità
+
+## Magnetismo
+
+## Termodinamica
+
+## Fluidi
+
+## Statica rotazioni
