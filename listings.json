@@ -2,16 +2,13 @@
   {
     "listing": "/index.html",
     "items": [
-      "/about.html",
       "/universita/algebraSchemi.html",
-      "/universita/indexUni.html",
       "/universita/architettura.html",
       "/linguaggi/arm.html",
       "/linguaggi/bash.html",
       "/universita/BasiDati.html",
+      "/linguaggi/css.html",
       "/universita/economiaAziendale.html",
-      "/universita/Terra.html",
-      "/universita/voli.html",
       "/linguaggi/exbash.html",
       "/universita/fisica/fisica.html",
       "/universita/fisica_2026/fisica26.html",
@@ -36,9 +33,7 @@
       "/linguaggi/scheme.html",
       "/universita/sistemiOperativi.html",
       "/personali/StrumentiPoesia.html",
-      "/linguaggi/yaml.html",
-      "/universita/analisiMatematica1.html",
-      "/universita/barcheoop.html"
+      "/linguaggi/yaml.html"
     ]
   }
 ]
