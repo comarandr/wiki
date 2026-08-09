@@ -5,9 +5,8 @@ categories: [linguaggi]
 image: https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg
 ---
 
-### Esercizi Lezione bash
 
-###### Esempi slide lezione 1
+## Esempi slide lezione 1
 
 `ls -l /bin`  
 
@@ -15,7 +14,7 @@ image: https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg
 |--|--|--|--|--|--|--|
 | lrwxrwxrwx| 1| root| root| 7 |apr 22  2024 | /bin -> usr/bin|  
 
-###### soluzioni lezione 1
+## soluzioni lezione 1
 
 qual è il pathname della home directory? `~` oppure `/home/user`, per spostarsi basta `$cd`  
 
@@ -52,7 +51,7 @@ commenta i seguenti comandi
 `chmod 444 d1` : setta i permessi -r--r--r--  
 `cd d1` : provo a entrare nella cartella ma fallisco perché non ho permesso esecuzione  
 
-###### Soluzioni lezione 2
+## Soluzioni lezione 2
 
 pipeline per copiare il contenuto della directory _dir1_ in _dir2_:  
 
@@ -74,7 +73,7 @@ effetto dei comandi
 `who | wc -l` : numero di utenti collegati a sistema
 `ps -e | wc -l` : numero di tutti i processi anche non collegati al terminale +1 (intestazione)
 
-###### Soluzioni lezione 3
+## Soluzioni lezione 3
 
 ridefinisci rm in modo che non sia chiesta conferma prima della cancellazione dei file:  `$ alias rm='rm -f'`  
 definire rmi (rm interattivo) che chiede conferma prima di rimuovere un file: `$ alias rmi='rm -i'`  
@@ -92,7 +91,7 @@ scrivere una pipeline che fornisca in output il numero di processi appartenenti 
 
 il primo comando provoca l'avvio di un processo in background, il secondo l-avvio in foreground
 
-###### Esempi lezione 4
+## Esempi lezione 4
 
 `$ find . -name '*.c' -print`: 
 `$ find . -name '*.bak' -ls -exec rm {} \;`  
@@ -120,7 +119,7 @@ il primo comando provoca l'avvio di un processo in background, il secondo l-avvi
 ti sposta in home (`cd`), estrae il primo campo delimitato da ':' del file /etc/passwd e lo stampa in p1.txt (`cut -d: -f1 /etc/passwd > p1.txt`),  
 estrae il sesto campo delimitato da ':' del file /etc/passwd e lo stampa in p6.txt (`cut -d: -f6 /etc/passwd > p6.txt`), infine combina le righe dei due file nello standard output (`paste p1.txt p6.txt`)  
 
-###### Soluzioni lezione 4
+## Soluzioni lezione 4
 
 quanto spazio occupa il contenuto della propria home directory, visualizzando soltanto il numero di blocchi:  
 `(du ~ | tail -1) | cut -f1` , vale lo stesso senza parentesi . Soluzione del prof `du -s ~ | cut -f1`  
@@ -143,7 +142,7 @@ La soluzione del prof è `cat nome_file | sort | uniq -c | sort -k1,1 -ns | tail
 visualizzare su standard output, senza ripetizioni, lo UID degli utenti che hanno almeno un processo attivo nel sistema: `ps -el --no-header | tr -s ' ' : | cut -d: -f3 | sort -n | uniq`
 osservazione: `ps` genera una tabella con molti spazi tra i campi, rendendo impossibile l'uso del comando `cut` con qualsiasi delimitatore. Per questo è necessario usare `tr -s ' ' :` per comprimere gli spazi in un unico carattere utilizzabile per delimitare i campi. In questo caso è stato scelto :, rendendo poi possibile operare con `cut`, `sort` e `uniq`. Poichè `uniq` funziona solo su linee adiacenti, era necessario riordinarle con `sort`, in questo caso in ordine numerico (`sort -n`).
 
-###### Esempi lezione 5
+## Esempi lezione 5
 
 `$ sed '4,$d' /etc/passwd`: stampa a video soltanto le prime 3 righe del file /etc/passwd, `d` (delete) cancella le righe a partire dalla quarta  
 `$ sed 3q /etc/passwd`: sed esce `q` (quit) dopo aver elaborato la 3 riga  
@@ -158,7 +157,7 @@ sostituzione con sed: `s/expr/new/flags`
 
 Shell scripting
 
-```sh
+```bash
     $ cat >dirsize
     ls /usr/bin | wc -w 
     Ctrl-d
@@ -169,7 +168,7 @@ Shell scripting
         1620
 ```
 
-```sh
+```bash
     $ cat >data
     set-x
     echo the date today is:
@@ -184,7 +183,7 @@ Shell scripting
     Tue Oct 25 17:37:52 CEST 2005
 ```
 
-```sh
+```bash
     $ cat >sost
     set -v 
     cd TEXT 
@@ -208,11 +207,13 @@ Shell scripting
 
 variabili
 
+```bash
     $ x=variabile
     $ echo $x
     variabile
+```
 
-###### Soluzioni lezione 5
+## Soluzioni lezione 5
 
 creare sottocartella bin della home directory in modo che possano essere invocati da qualunque directory con il nome del file senza specificare l'intero pathname:
 
@@ -241,7 +242,7 @@ script che prende come parametri una stringa e un file e controlla se la stringa
 script che estrae i commenti da file .java sostituiendo // con la stringa linea di commento del file \<nome file>, inoltre i commenti estratti devono essere salvati nel file fornito come secondo argomento:
 `sed "s//?linea di commento del file $1:?w $2" -n $1?` (va commentata)
 
-###### Esempi lezione 6
+## Esempi lezione 6
 
 comando condizionale
 
@@ -344,7 +345,7 @@ Esempio di scripting: script lisfiles che data una directory(\$1) e la dimension
 
     exit 0
 
-### Osservazioni interessanti
+## Osservazioni interessanti
 
 ```bash
     file1.txt
@@ -356,13 +357,14 @@ Esempio di scripting: script lisfiles che data una directory(\$1) e la dimension
 
 `$ cat file1.txt file2.txt`
 
-```sh
+```bash
     Ciao, come stai? Io tutto bene. Spero valga lo stesso anche per te
     Bella, io sto una meraviglia.
 ```
 
 differenze set -v, set -x
 
+```bash
     $ ./differenze              # file eseguibile
     imposto set -x
     ++ ps -el --no-header
@@ -381,3 +383,4 @@ differenze set -v, set -x
     1000
     set -
     fine
+```

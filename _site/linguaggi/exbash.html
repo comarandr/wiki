@@ -153,10 +153,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -173,7 +169,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#esercizi-lezione-bash" id="toc-esercizi-lezione-bash" class="nav-link active" data-scroll-target="#esercizi-lezione-bash">Esercizi Lezione bash</a></li>
+  <li><a href="#esempi-slide-lezione-1" id="toc-esempi-slide-lezione-1" class="nav-link active" data-scroll-target="#esempi-slide-lezione-1">Esempi slide lezione 1</a></li>
+  <li><a href="#soluzioni-lezione-1" id="toc-soluzioni-lezione-1" class="nav-link" data-scroll-target="#soluzioni-lezione-1">soluzioni lezione 1</a></li>
+  <li><a href="#soluzioni-lezione-2" id="toc-soluzioni-lezione-2" class="nav-link" data-scroll-target="#soluzioni-lezione-2">Soluzioni lezione 2</a></li>
+  <li><a href="#soluzioni-lezione-3" id="toc-soluzioni-lezione-3" class="nav-link" data-scroll-target="#soluzioni-lezione-3">Soluzioni lezione 3</a></li>
+  <li><a href="#esempi-lezione-4" id="toc-esempi-lezione-4" class="nav-link" data-scroll-target="#esempi-lezione-4">Esempi lezione 4</a></li>
+  <li><a href="#soluzioni-lezione-4" id="toc-soluzioni-lezione-4" class="nav-link" data-scroll-target="#soluzioni-lezione-4">Soluzioni lezione 4</a></li>
+  <li><a href="#esempi-lezione-5" id="toc-esempi-lezione-5" class="nav-link" data-scroll-target="#esempi-lezione-5">Esempi lezione 5</a></li>
+  <li><a href="#soluzioni-lezione-5" id="toc-soluzioni-lezione-5" class="nav-link" data-scroll-target="#soluzioni-lezione-5">Soluzioni lezione 5</a></li>
+  <li><a href="#esempi-lezione-6" id="toc-esempi-lezione-6" class="nav-link" data-scroll-target="#esempi-lezione-6">Esempi lezione 6</a></li>
   <li><a href="#osservazioni-interessanti" id="toc-osservazioni-interessanti" class="nav-link" data-scroll-target="#osservazioni-interessanti">Osservazioni interessanti</a></li>
   </ul>
 </nav>
@@ -208,10 +212,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="esercizi-lezione-bash" class="level3">
-<h3 class="anchored" data-anchor-id="esercizi-lezione-bash">Esercizi Lezione bash</h3>
-<section id="esempi-slide-lezione-1" class="level6">
-<h6 class="anchored" data-anchor-id="esempi-slide-lezione-1">Esempi slide lezione 1</h6>
+<section id="esempi-slide-lezione-1" class="level2">
+<h2 class="anchored" data-anchor-id="esempi-slide-lezione-1">Esempi slide lezione 1</h2>
 <p><code>ls -l /bin</code></p>
 <table class="caption-top table">
 <colgroup>
@@ -247,8 +249,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="soluzioni-lezione-1" class="level6">
-<h6 class="anchored" data-anchor-id="soluzioni-lezione-1">soluzioni lezione 1</h6>
+<section id="soluzioni-lezione-1" class="level2">
+<h2 class="anchored" data-anchor-id="soluzioni-lezione-1">soluzioni lezione 1</h2>
 <p>qual è il pathname della home directory? <code>~</code> oppure <code>/home/user</code>, per spostarsi basta <code>$cd</code></p>
 <p>visualizzare i file della home directory ordinati in base alla data di ultima modifica: <code>ls -t</code></p>
 <p>Che differenza c’è tra i comandi <code>cat</code>,<code>more</code>,<code>tail</code>?</p>
@@ -281,8 +283,8 @@ $ cd d1</code></pre>
 <code>chmod 444 d1</code> : setta i permessi -r–r–r–<br>
 <code>cd d1</code> : provo a entrare nella cartella ma fallisco perché non ho permesso esecuzione</p>
 </section>
-<section id="soluzioni-lezione-2" class="level6">
-<h6 class="anchored" data-anchor-id="soluzioni-lezione-2">Soluzioni lezione 2</h6>
+<section id="soluzioni-lezione-2" class="level2">
+<h2 class="anchored" data-anchor-id="soluzioni-lezione-2">Soluzioni lezione 2</h2>
 <p>pipeline per copiare il contenuto della directory <em>dir1</em> in <em>dir2</em>:</p>
 <ul>
 <li>dir2 non esiste: <code>cp -r dir1 dir2</code><br>
@@ -301,8 +303,8 @@ nota: se usassi <code>$ ls -R | wc -l</code> non funzionerebbe perché <code>ls 
 <code>who | wc -l</code> : numero di utenti collegati a sistema<br>
 <code>ps -e | wc -l</code> : numero di tutti i processi anche non collegati al terminale +1 (intestazione)</p>
 </section>
-<section id="soluzioni-lezione-3" class="level6">
-<h6 class="anchored" data-anchor-id="soluzioni-lezione-3">Soluzioni lezione 3</h6>
+<section id="soluzioni-lezione-3" class="level2">
+<h2 class="anchored" data-anchor-id="soluzioni-lezione-3">Soluzioni lezione 3</h2>
 <p>ridefinisci rm in modo che non sia chiesta conferma prima della cancellazione dei file: <code>$ alias rm='rm -f'</code><br>
 definire rmi (rm interattivo) che chiede conferma prima di rimuovere un file: <code>$ alias rmi='rm -i'</code><br>
 pipeline per numero di tutti processi in esecuzione : <code>ps -el --no-header | wc -l</code><br>
@@ -316,8 +318,8 @@ lista dei file della home che iniziano con -al : <code>ls -d ~/al*</code> e <cod
 $ emacs</code></pre>
 <p>il primo comando provoca l’avvio di un processo in background, il secondo l-avvio in foreground</p>
 </section>
-<section id="esempi-lezione-4" class="level6">
-<h6 class="anchored" data-anchor-id="esempi-lezione-4">Esempi lezione 4</h6>
+<section id="esempi-lezione-4" class="level2">
+<h2 class="anchored" data-anchor-id="esempi-lezione-4">Esempi lezione 4</h2>
 <p><code>$ find . -name '*.c' -print</code>:<br>
 <code>$ find . -name '*.bak' -ls -exec rm {} \;</code><br>
 <code>$ find /etc -type d -print</code></p>
@@ -337,8 +339,8 @@ $ paste p1.txt p6.txt</code></pre>
 <p>ti sposta in home (<code>cd</code>), estrae il primo campo delimitato da ‘:’ del file /etc/passwd e lo stampa in p1.txt (<code>cut -d: -f1 /etc/passwd &gt; p1.txt</code>),<br>
 estrae il sesto campo delimitato da ‘:’ del file /etc/passwd e lo stampa in p6.txt (<code>cut -d: -f6 /etc/passwd &gt; p6.txt</code>), infine combina le righe dei due file nello standard output (<code>paste p1.txt p6.txt</code>)</p>
 </section>
-<section id="soluzioni-lezione-4" class="level6">
-<h6 class="anchored" data-anchor-id="soluzioni-lezione-4">Soluzioni lezione 4</h6>
+<section id="soluzioni-lezione-4" class="level2">
+<h2 class="anchored" data-anchor-id="soluzioni-lezione-4">Soluzioni lezione 4</h2>
 <p>quanto spazio occupa il contenuto della propria home directory, visualizzando soltanto il numero di blocchi:<br>
 <code>(du ~ | tail -1) | cut -f1</code> , vale lo stesso senza parentesi . Soluzione del prof <code>du -s ~ | cut -f1</code></p>
 <p>l’effetto di <code>$ sort file &gt;file</code> è quello di sovrascrivere il file prima che <code>sort</code> venga effettuato</p>
@@ -356,8 +358,8 @@ La soluzione del prof è <code>cat nome_file | sort | uniq -c | sort -k1,1 -ns |
 <p>visualizzare su standard output, senza ripetizioni, lo UID degli utenti che hanno almeno un processo attivo nel sistema: <code>ps -el --no-header | tr -s ' ' : | cut -d: -f3 | sort -n | uniq</code><br>
 osservazione: <code>ps</code> genera una tabella con molti spazi tra i campi, rendendo impossibile l’uso del comando <code>cut</code> con qualsiasi delimitatore. Per questo è necessario usare <code>tr -s ' ' :</code> per comprimere gli spazi in un unico carattere utilizzabile per delimitare i campi. In questo caso è stato scelto :, rendendo poi possibile operare con <code>cut</code>, <code>sort</code> e <code>uniq</code>. Poichè <code>uniq</code> funziona solo su linee adiacenti, era necessario riordinarle con <code>sort</code>, in questo caso in ordine numerico (<code>sort -n</code>).</p>
 </section>
-<section id="esempi-lezione-5" class="level6">
-<h6 class="anchored" data-anchor-id="esempi-lezione-5">Esempi lezione 5</h6>
+<section id="esempi-lezione-5" class="level2">
+<h2 class="anchored" data-anchor-id="esempi-lezione-5">Esempi lezione 5</h2>
 <p><code>$ sed '4,$d' /etc/passwd</code>: stampa a video soltanto le prime 3 righe del file /etc/passwd, <code>d</code> (delete) cancella le righe a partire dalla quarta<br>
 <code>$ sed 3q /etc/passwd</code>: sed esce <code>q</code> (quit) dopo aver elaborato la 3 riga<br>
 <code>$ sed /sh/y/:0/_%/ /etc/passwc</code>: in tutte le righe che contengono sh sostituisce : con _ e 0 con %<br>
@@ -366,7 +368,7 @@ osservazione: <code>ps</code> genera una tabella con molti spazi tra i campi, re
 <p><code>$ sed ’/^root/,/^bin/s/:x:/::/w disabled.txt’ /etc/passwd</code>: sostituisce la stringa x con la stringa vuota nelle righe in input comprese fra quella che inizia con root e quella che inizia con bin, tali righe poi accodate nel file disabled.txt</p>
 <p><code>$ cat /etc/passwd | sed 's?/bin/.*sh$?/usr/local&amp;?'</code> cerca tutte le righe in input in cui compare la stringa corrispondente all’espressione regolare <code>/bin/.*sh$</code> (ad esempio /bin/bash) e sostituisce quest’ultima con la stringa corrispondente a <code>/usr/local/bin/.*sh$</code> (ad esempio /usr/local/bin/bash). Si noti che, siccome il carattere separatore di sed compare nella stringa da cercare, si è usato il carattere ? come separatore. Inoltre il carattere &amp; viene rimpiazzato automaticamente da sed con la stringa cercata (corrispondente a /bin/.*sh$)</p>
 <p>Shell scripting</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>dirsize</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>dirsize</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> /usr/bin <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-w</span> </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ctrl-d</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -374,7 +376,7 @@ osservazione: <code>ps</code> genera una tabella con molti spazi tra i campi, re
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./dirsize</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="ex">1620</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>data</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>data</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">set-x</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> the date today is:</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">date</span></span>
@@ -386,7 +388,7 @@ osservazione: <code>ps</code> genera una tabella con molti spazi tra i campi, re
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">the</span> date today is:</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> date</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Tue</span> Oct 25 17:37:52 CEST 2005</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>sost</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> cat <span class="op">&gt;</span>sost</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">set</span> <span class="at">-v</span> </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> TEXT </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span><span class="pp">*</span>.txt </span>
@@ -406,12 +408,12 @@ osservazione: <code>ps</code> genera una tabella con molti spazi tra i campi, re
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">;;;</span> <span class="ex">questo</span> è un commento</span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">;;;</span> <span class="er">in</span> <span class="ex">un</span> programma</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>variabili</p>
-<pre><code>$ x=variabile
-$ echo $x
-variabile</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> x=variabile</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> echo <span class="va">$x</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">variabile</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="soluzioni-lezione-5" class="level6">
-<h6 class="anchored" data-anchor-id="soluzioni-lezione-5">Soluzioni lezione 5</h6>
+<section id="soluzioni-lezione-5" class="level2">
+<h2 class="anchored" data-anchor-id="soluzioni-lezione-5">Soluzioni lezione 5</h2>
 <p>creare sottocartella bin della home directory in modo che possano essere invocati da qualunque directory con il nome del file senza specificare l’intero pathname:</p>
 <pre><code>mkdir ~/bin
 export  PATH=$PATH:~/bin</code></pre>
@@ -431,8 +433,8 @@ alias lo='exit'</code></pre>
 <p>script che estrae i commenti da file .java sostituiendo // con la stringa linea di commento del file &lt;nome file&gt;, inoltre i commenti estratti devono essere salvati nel file fornito come secondo argomento:<br>
 <code>sed "s//?linea di commento del file $1:?w $2" -n $1?</code> (va commentata)</p>
 </section>
-<section id="esempi-lezione-6" class="level6">
-<h6 class="anchored" data-anchor-id="esempi-lezione-6">Esempi lezione 6</h6>
+<section id="esempi-lezione-6" class="level2">
+<h2 class="anchored" data-anchor-id="esempi-lezione-6">Esempi lezione 6</h2>
 <p>comando condizionale</p>
 <pre><code>if grep "^$1:" /etc/passwd &gt;/dev/null 2&gt;/dev/null
 then
@@ -518,36 +520,35 @@ done
 
 exit 0</code></pre>
 </section>
-</section>
-<section id="osservazioni-interessanti" class="level3">
-<h3 class="anchored" data-anchor-id="osservazioni-interessanti">Osservazioni interessanti</h3>
+<section id="osservazioni-interessanti" class="level2">
+<h2 class="anchored" data-anchor-id="osservazioni-interessanti">Osservazioni interessanti</h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">file1.txt</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ciao,</span> come stai<span class="pp">?</span> Io tutto bene. Spero valga lo stesso anche per te</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">file2.txt</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Bella,</span> io sto una meraviglia.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>$ cat file1.txt file2.txt</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ciao,</span> come stai<span class="pp">?</span> Io tutto bene. Spero valga lo stesso anche per te</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Ciao,</span> come stai<span class="pp">?</span> Io tutto bene. Spero valga lo stesso anche per te</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">Bella,</span> io sto una meraviglia.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>differenze set -v, set -x</p>
-<pre><code>$ ./differenze              # file eseguibile
-imposto set -x
-++ ps -el --no-header
-++ tr -s ' ' :
-++ cut -d: -f3
-++ uniq
-++ sort -n
-++ tail -2
-996
-1000
-++ set -
-ho tolto set -x
-ora imposto set -v
-ps -el --no-header | tr -s ' ' : | cut -d: -f3 | sort -n | uniq | tail -2
-996
-1000
-set -
-fine</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">$</span> ./differenze              <span class="co"># file eseguibile</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">imposto</span> set <span class="at">-x</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> ps <span class="at">-el</span> <span class="at">--no-header</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> tr <span class="at">-s</span> <span class="st">' '</span> :</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> cut <span class="at">-d:</span> <span class="at">-f3</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> uniq</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> sort <span class="at">-n</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> tail <span class="at">-2</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">996</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1000</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">++</span> set <span class="at">-</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ho</span> tolto set <span class="at">-x</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">ora</span> imposto set <span class="at">-v</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ps</span> <span class="at">-el</span> <span class="at">--no-header</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="at">-s</span> <span class="st">' '</span> : <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d:</span> <span class="at">-f3</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-2</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">996</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">1000</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">set</span> <span class="at">-</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">fine</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

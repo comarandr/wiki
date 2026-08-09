@@ -5,25 +5,6 @@ categories: [linguaggi]
 image: https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg
 ---
 
-## Creare una repository
-
-`git init` : Crea una nuova repository Git nella directory corrente
-`git clone <url>` : Clona una repository esistente da un URL. Imposta automaticamente il tracciamento del branch remoto "origin" e del branch "master" (o "main")
-
-## Salvare le modifiche
-
-**area di staging** : è una zona temporanea dove si preparano i file prima di eseguire un commit
-
-`git add <file>` : Aggiunge un file specifico all'area di staging
-
-`git add .` : Aggiunge tutti i file modificati all'area di staging
-
-`git commit -m "messaggio"` : Crea un commit con i file presenti nell'area di staging e un messaggio descrittivo
-
-`git commit` : Apre l'editor predefinito per inserire un messaggio di commit dettagliato (riassunto + descrizione)
-
-`git status` : Mostra lo stato dei file nella directory di lavoro (branch attivo, file modificati, file in staging, file non tracciati)
-
 ## Creare nuovi branch
 
 `git branch` : Elenca i branch locali
@@ -45,19 +26,7 @@ image: https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg
 - `git checkout -b <nome-branch>` : Crea un nuovo branch e passa ad esso
 - `git checkout -d <nome-branch>` : Elimina un branch
 
-## Spostarsi tra i commit
 
-### visualizzare la cronologia dei commit
-
-`git log` : Mostra la cronologia dei commit
-
-`git log --oneline` : Mostra la cronologia dei commit in formato compatto (una riga per commit)
-
-`git log --graph` : Mostra la cronologia dei commit con una rappresentazione grafica dei branch e dei merge
-
-`git log --all` : Mostra la cronologia dei commit di tutti i branch
-
-`git log --remote` : Mostra la cronologia dei commit dei branch remoti
 
 ### spostarsi in un commit specifico
 
@@ -155,10 +124,6 @@ in assenza di conflitti non sarà necessario risolvere manualmente le modifiche
 
 `git checkout -b <branch-locale> <nome-remoto>/<branch-remoto>` : Imposta il tracking del branch remoto con il branch locale
 
-
-## Learn Git
-
-appunti presi da: https://learngitbranching.js.org
 
 ## Come funziona Git
 
@@ -350,8 +315,9 @@ nothing to commit, working tree clean #nessun file untracked
 ```
 
 
+## Lavorare e modificare file
 
-## Staging/tracking di un file
+### Staging/tracking di un file
 
 `$ git add NEW_FILE`: permette di tracciare il nuovo file
 
@@ -361,4 +327,229 @@ nothing to commit, working tree clean #nessun file untracked
 
 Devi creare un file script di nome `.gitignore`. Le regole per la sintassi sono quelle per lo scripting bash
 
+### Rimuovere i file
 
+`$ git rm FILE`: rimuove un file dalla staging area. Puoi passare come argomento anche cartelle o variabili in linguaggio bash
+
+### Muovere un file
+
+`$ git mv FILE_FROM FILE_TO`: serve a segnalare uno spostamento a git, cosa che altrimenti non potrebbe capire
+
+### Osservare la Commit History
+
+La commit history è la cronologia di tutti i commit, conservata nella cartella .git
+
+Per vederla si usa il comando `$ git log`
+
+Esistono numerosi argomenti per `git log`, per visualizzare formato, grafici, scelta metadati, ecc
+
+- default (senza argomenti): elenco commit in ordine cronologico inverso, dal più recente al meno
+- `git log -p`: patch, mostra le differenze introdotte da ogni commit
+- `git log --stat`: mostra le statistiche, cià file cambiati, inserzioni, cancellazioni
+- `git log --graph`: nostra un grafico ascii
+- `git log --oneline`: mostra i commit in un sola linea
+- `git log --all` : mostra la cronologia dei commit di tutti i branch
+- `git log --remote` : mostra la cronologia dei commit dei branch remoti
+
+Ovviamente ci sono numerose altre opzioni
+
+### Modificare ultimo commit
+
+`$ git commit --amend`: permette di modificare l'ultimo commit
+
+### Rimuovere modifiche 
+
+`$ git reset FILE`: rimuove dalla staging area
+
+`$ git checkout -- FILE`: git rimpiazza il file con le ultime modifiche in staging area o in repo. ATTENZIONE
+
+`$ git restore --staged FILE`: rimuove un file dalla staging area
+
+`$ git restore FILE`: rimpiazza il file con ultima versione in repo. ATTENZIONE
+
+## Lavorare con i Remotes
+
+### Conoscere repo remote
+
+`$ git remote`: mostra le repo remote
+`$ git remote -v`: mostra gli url
+
+```bash
+$ git remote
+origin
+
+$ git remote -v
+origin https://github.com/schacon/ticgit (fetch)
+origin https://github.com/schacon/ticgit (push)
+```
+
+### Aggiunge repo remota
+
+`$ git clone`: aggiunge implicitamente una repo remota origin
+
+Se invece vuoi aggiungerla esplicitamente:
+
+`$ git remote add <shortname> <url>``
+
+### Rinominare repo remota
+
+`git remote rename <old_shortname> <new_shortname>: permette di cambiare lo shortname della cartella remota
+
+### Fare fetch e pull
+
+per ottenere dati dalla cartella remota, devi fare un **fetch**
+
+`$ git fetch <remote>`: facendo un fetch, scarichi tutti i lavori di una repo remota sulla tua copia locale. Scarica soltanto, non fa il merge!
+
+per mandare i tuoi dati alla cartella remota, devi fare un **push**
+
+`git push <remote> <branch>`: funziona se hai permessi di scrittura nella cartella remota e nessuno ha fatto un push nel mentre. Questo comando copia il tuo branch (i commit) nella cartella remota.
+
+
+### Ispezionare cartella remota
+
+`$ git remote show origin`: permette di mostrare branch e altri dati del remote
+
+### Rimuovere cartella remota
+
+`$ git remote remove <shortname>: rimuove la cartella remota
+
+## Tagging
+
+Puoi taggare alcuni punti specifici nella storia della repo in modo da contrassegnarli come importanti
+
+### Elencare i tag presenti
+
+`$ git tag`: elenca tutti i tag di una repo, in ordine alfabetico
+
+### creare dei tag
+
+Esistono due tipi di tag
+
+- lightweight: è simile a un puntatore a un commit specifico
+- annotated: è un oggetto completo, con tanto di metadati e informazioni
+
+`$ git tag -a <name> -m "messaggio"`: permette di creare un tag annotato (argomenot `-a`)
+
+`git tag <name>: crea un tag lightweight
+
+per taggare un commit esistente, basta specificare il commit (in particolare parte del checksum) a fine comando
+
+esempio in cui attribuiamo il tag v1.2 a un commit specifico 
+```bash
+$ git log --prettY=oneline
+166ae0c4d3f420721acbb115cc33848dfcc2121a Create write support
+9fceb02d0ae598e95dc970b74767f19372d61af8 Update rakefile
+964f16d36dfccde844893cac5b347e7b3d44abbc Commit the todo
+8a5cbc430f1a9c3d00faaeffd07798508422908a Update readme
+
+$ git tag -a v1.2 9fceb02
+```
+
+### Condividere tag con remote
+
+La condivisione dei tag con la repository remote non avviene in automatico, ma va esplicitato con il comando `git push origin <tagname>``
+
+`$ git push origin --tags`: permette di condividere tutti i tag
+
+### Eliminare i tag
+
+Basta semplicemente usare l'argomento `-d` all'interno del comando `tag``
+
+`$ git tag -d <tag_name>`: elimina il tag specifico, ma NON dal server remoto
+
+Per eliminare un tag dal server remoto ci sono due comandi
+
+`$ git push origin :refs/tags/tag_name`
+
+`$ git push origin --delete <tag_name>`
+
+### Spostarsi tra i commit
+
+Per spostarsi a un commit specifico puoi usare il tag
+
+`$ git checkout <tag_name>`
+
+## Aliasing
+
+Per velocizzare il lavoro e la digitazione, puoi settare degli **alias**
+
+esempio:
+
+```bash
+$ git config --global alias.ci commit
+
+$ git ci 
+```
+
+oppure 
+
+```bash
+$ git config --global alias.unstage 'reset HEAD --'
+
+# ora se digito:
+
+$ git unstage FILE
+
+# equivale a digitare:
+# $ git reset HEAD-- FILE
+```
+
+## Branching
+
+### Come funziona il branching
+
+Quando fai un commit, git salva un oggetto commit che contiene:
+
+- un puntatore allo snapshot del contenuto che hai salvato
+- nome e email dell'autore
+- messaggio che hai scritto
+- puntatori ai genitori: nessuno per il commit iniziale, uno per un commit classico, di più se è il risultato di un merge
+
+Per intenderci, questo è l'aspetto di un commit
+
+```{mermaid}
+graph LR
+    %% Nodi
+    C["<b>98ca9</b><br/>-----------------------------------<br/><b>commit</b> size<br/>tree 92ec2<br/>author Scott<br/>committer Scott<br/><br/><small>The initial commit of my project</small>"]
+    
+    T["<b>92ec2</b><br/>-----------------------------------<br/><b>tree</b> size<br/><b>blob</b> 5b1d3 README<br/><b>blob</b> 911e7 LICENSE<br/><b>blob</b> cba0a test.rb"]
+    
+    B1["<b>5b1d3</b><br/>-----------------------------------<br/><b>blob</b> size<br/><br/>== Testing library<br/><br/>This library is used to test<br/>Ruby projects."]
+    
+    B2["<b>911e7</b><br/>-----------------------------------<br/><b>blob</b> size<br/><br/>The MIT License<br/><br/>Copyright (c) 2008 Scott Chacon<br/><br/>Permission is hereby granted,<br/>free of charge, to any person"]
+    
+    B3["<b>cba0a</b><br/>-----------------------------------<br/><b>blob</b> size<br/><br/>require 'logger'<br/>require 'test/unit'<br/><br/>class Test::Unit::TestCase"]
+
+    %% Collegamenti
+    C --> T
+    T --> B1
+    T --> B2
+    T --> B3
+
+    %% Stili personalizzati per i colori
+    style C fill:#F2F0E6,stroke:#D3D1C7,stroke-width:1px,color:#333
+    style T fill:#008080,stroke:#006666,stroke-width:1px,color:#FFF
+    style B1 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B2 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B3 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+```
+
+
+Se ora facessi un nuovo commit, quest'ultimo avrebbe un puntatore anche al padre, e così via
+
+```{mermaid}
+graph LR
+C["<b>98ca9</b><br/>----------------------------------<br/><b>commit</b> size<br/>tree 92ec2<br/>author Scott<br/>committer Scott<br/><br/><small>The initial commit of my project</small>"]
+S["Snapshot A"]
+D["<b>34ac2</b><br/>----------------------------------<br/><b>commit</b> size<br/>tree 184ca<br/>parent 98ca9<br/>author Scott<br/>committer Scott<br/><br/><small>Bug Fix</small>"]
+T["Snapshot B"]
+
+C --> S
+D --> T
+D --> C
+```
+
+Un **branch** in Git è semplicemente un puntatore mobile puntato su uno di questi commit. Il branch di default è **main**. Ogni volta che fai un commit, il main avanza automaticamente all'ultimo commit.
+
+link utile: https://learngitbranching.js.org
