@@ -27,6 +27,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -74,6 +109,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -134,12 +172,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#creare-una-repository" id="toc-creare-una-repository" class="nav-link active" data-scroll-target="#creare-una-repository">Creare una repository</a></li>
-  <li><a href="#salvare-le-modifiche" id="toc-salvare-le-modifiche" class="nav-link" data-scroll-target="#salvare-le-modifiche">Salvare le modifiche</a></li>
-  <li><a href="#creare-nuovi-branch" id="toc-creare-nuovi-branch" class="nav-link" data-scroll-target="#creare-nuovi-branch">Creare nuovi branch</a></li>
-  <li><a href="#spostarsi-tra-i-commit" id="toc-spostarsi-tra-i-commit" class="nav-link" data-scroll-target="#spostarsi-tra-i-commit">Spostarsi tra i commit</a>
+  <li><a href="#creare-nuovi-branch" id="toc-creare-nuovi-branch" class="nav-link active" data-scroll-target="#creare-nuovi-branch">Creare nuovi branch</a>
   <ul>
-  <li><a href="#visualizzare-la-cronologia-dei-commit" id="toc-visualizzare-la-cronologia-dei-commit" class="nav-link" data-scroll-target="#visualizzare-la-cronologia-dei-commit">visualizzare la cronologia dei commit</a></li>
   <li><a href="#spostarsi-in-un-commit-specifico" id="toc-spostarsi-in-un-commit-specifico" class="nav-link" data-scroll-target="#spostarsi-in-un-commit-specifico">spostarsi in un commit specifico</a></li>
   <li><a href="#operatori-di-riferimento-e" id="toc-operatori-di-riferimento-e" class="nav-link" data-scroll-target="#operatori-di-riferimento-e">operatori di riferimento ^ e ~</a></li>
   <li><a href="#forzatura-di-un-branch" id="toc-forzatura-di-un-branch" class="nav-link" data-scroll-target="#forzatura-di-un-branch">forzatura di un branch</a></li>
@@ -154,6 +188,52 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#scaricare-e-modificare-direttamente" id="toc-scaricare-e-modificare-direttamente" class="nav-link" data-scroll-target="#scaricare-e-modificare-direttamente">scaricare e modificare direttamente</a></li>
   </ul></li>
   <li><a href="#tracking" id="toc-tracking" class="nav-link" data-scroll-target="#tracking">Tracking</a></li>
+  <li><a href="#come-funziona-git" id="toc-come-funziona-git" class="nav-link" data-scroll-target="#come-funziona-git">Come funziona Git</a></li>
+  <li><a href="#git-setup" id="toc-git-setup" class="nav-link" data-scroll-target="#git-setup">Git Setup</a>
+  <ul>
+  <li><a href="#trovare-file-con-configurazioni" id="toc-trovare-file-con-configurazioni" class="nav-link" data-scroll-target="#trovare-file-con-configurazioni">trovare file con configurazioni</a></li>
+  <li><a href="#impostare-nome-e-email" id="toc-impostare-nome-e-email" class="nav-link" data-scroll-target="#impostare-nome-e-email">Impostare nome e email</a></li>
+  <li><a href="#cambiare-default-branch-name" id="toc-cambiare-default-branch-name" class="nav-link" data-scroll-target="#cambiare-default-branch-name">cambiare default branch name</a></li>
+  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help">Help</a></li>
+  </ul></li>
+  <li><a href="#inizializzare-una-repo" id="toc-inizializzare-una-repo" class="nav-link" data-scroll-target="#inizializzare-una-repo">Inizializzare una repo</a>
+  <ul>
+  <li><a href="#da-una-cartella-esistente" id="toc-da-una-cartella-esistente" class="nav-link" data-scroll-target="#da-una-cartella-esistente">Da una cartella esistente</a></li>
+  <li><a href="#clonare-una-repo-già-esistente" id="toc-clonare-una-repo-già-esistente" class="nav-link" data-scroll-target="#clonare-una-repo-già-esistente">Clonare una repo già esistente</a></li>
+  </ul></li>
+  <li><a href="#status-dei-file" id="toc-status-dei-file" class="nav-link" data-scroll-target="#status-dei-file">Status dei file</a></li>
+  <li><a href="#lavorare-e-modificare-file" id="toc-lavorare-e-modificare-file" class="nav-link" data-scroll-target="#lavorare-e-modificare-file">Lavorare e modificare file</a>
+  <ul>
+  <li><a href="#stagingtracking-di-un-file" id="toc-stagingtracking-di-un-file" class="nav-link" data-scroll-target="#stagingtracking-di-un-file">Staging/tracking di un file</a></li>
+  <li><a href="#ignorare-un-file" id="toc-ignorare-un-file" class="nav-link" data-scroll-target="#ignorare-un-file">Ignorare un file</a></li>
+  <li><a href="#rimuovere-i-file" id="toc-rimuovere-i-file" class="nav-link" data-scroll-target="#rimuovere-i-file">Rimuovere i file</a></li>
+  <li><a href="#muovere-un-file" id="toc-muovere-un-file" class="nav-link" data-scroll-target="#muovere-un-file">Muovere un file</a></li>
+  <li><a href="#osservare-la-commit-history" id="toc-osservare-la-commit-history" class="nav-link" data-scroll-target="#osservare-la-commit-history">Osservare la Commit History</a></li>
+  <li><a href="#modificare-ultimo-commit" id="toc-modificare-ultimo-commit" class="nav-link" data-scroll-target="#modificare-ultimo-commit">Modificare ultimo commit</a></li>
+  <li><a href="#rimuovere-modifiche" id="toc-rimuovere-modifiche" class="nav-link" data-scroll-target="#rimuovere-modifiche">Rimuovere modifiche</a></li>
+  </ul></li>
+  <li><a href="#lavorare-con-i-remotes" id="toc-lavorare-con-i-remotes" class="nav-link" data-scroll-target="#lavorare-con-i-remotes">Lavorare con i Remotes</a>
+  <ul>
+  <li><a href="#conoscere-repo-remote" id="toc-conoscere-repo-remote" class="nav-link" data-scroll-target="#conoscere-repo-remote">Conoscere repo remote</a></li>
+  <li><a href="#aggiunge-repo-remota" id="toc-aggiunge-repo-remota" class="nav-link" data-scroll-target="#aggiunge-repo-remota">Aggiunge repo remota</a></li>
+  <li><a href="#rinominare-repo-remota" id="toc-rinominare-repo-remota" class="nav-link" data-scroll-target="#rinominare-repo-remota">Rinominare repo remota</a></li>
+  <li><a href="#fare-fetch-e-pull" id="toc-fare-fetch-e-pull" class="nav-link" data-scroll-target="#fare-fetch-e-pull">Fare fetch e pull</a></li>
+  <li><a href="#ispezionare-cartella-remota" id="toc-ispezionare-cartella-remota" class="nav-link" data-scroll-target="#ispezionare-cartella-remota">Ispezionare cartella remota</a></li>
+  <li><a href="#rimuovere-cartella-remota" id="toc-rimuovere-cartella-remota" class="nav-link" data-scroll-target="#rimuovere-cartella-remota">Rimuovere cartella remota</a></li>
+  </ul></li>
+  <li><a href="#tagging" id="toc-tagging" class="nav-link" data-scroll-target="#tagging">Tagging</a>
+  <ul>
+  <li><a href="#elencare-i-tag-presenti" id="toc-elencare-i-tag-presenti" class="nav-link" data-scroll-target="#elencare-i-tag-presenti">Elencare i tag presenti</a></li>
+  <li><a href="#creare-dei-tag" id="toc-creare-dei-tag" class="nav-link" data-scroll-target="#creare-dei-tag">creare dei tag</a></li>
+  <li><a href="#condividere-tag-con-remote" id="toc-condividere-tag-con-remote" class="nav-link" data-scroll-target="#condividere-tag-con-remote">Condividere tag con remote</a></li>
+  <li><a href="#eliminare-i-tag" id="toc-eliminare-i-tag" class="nav-link" data-scroll-target="#eliminare-i-tag">Eliminare i tag</a></li>
+  <li><a href="#spostarsi-tra-i-commit" id="toc-spostarsi-tra-i-commit" class="nav-link" data-scroll-target="#spostarsi-tra-i-commit">Spostarsi tra i commit</a></li>
+  </ul></li>
+  <li><a href="#aliasing" id="toc-aliasing" class="nav-link" data-scroll-target="#aliasing">Aliasing</a></li>
+  <li><a href="#branching" id="toc-branching" class="nav-link" data-scroll-target="#branching">Branching</a>
+  <ul>
+  <li><a href="#come-funziona-il-branching" id="toc-come-funziona-il-branching" class="nav-link" data-scroll-target="#come-funziona-il-branching">Come funziona il branching</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -187,20 +267,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="creare-una-repository" class="level2">
-<h2 class="anchored" data-anchor-id="creare-una-repository">Creare una repository</h2>
-<p><code>git init</code> : Crea una nuova repository Git nella directory corrente<br>
-<code>git clone &lt;url&gt;</code> : Clona una repository esistente da un URL. Imposta automaticamente il tracciamento del branch remoto “origin” e del branch “master” (o “main”)</p>
-</section>
-<section id="salvare-le-modifiche" class="level2">
-<h2 class="anchored" data-anchor-id="salvare-le-modifiche">Salvare le modifiche</h2>
-<p><strong>area di staging</strong> : è una zona temporanea dove si preparano i file prima di eseguire un commit</p>
-<p><code>git add &lt;file&gt;</code> : Aggiunge un file specifico all’area di staging</p>
-<p><code>git add .</code> : Aggiunge tutti i file modificati all’area di staging</p>
-<p><code>git commit -m "messaggio"</code> : Crea un commit con i file presenti nell’area di staging e un messaggio descrittivo</p>
-<p><code>git commit</code> : Apre l’editor predefinito per inserire un messaggio di commit dettagliato (riassunto + descrizione)</p>
-<p><code>git status</code> : Mostra lo stato dei file nella directory di lavoro (branch attivo, file modificati, file in staging, file non tracciati)</p>
-</section>
 <section id="creare-nuovi-branch" class="level2">
 <h2 class="anchored" data-anchor-id="creare-nuovi-branch">Creare nuovi branch</h2>
 <p><code>git branch</code> : Elenca i branch locali</p>
@@ -223,17 +289,6 @@ ul.task-list li input[type="checkbox"] {
 <li><code>git checkout -b &lt;nome-branch&gt;</code> : Crea un nuovo branch e passa ad esso</li>
 <li><code>git checkout -d &lt;nome-branch&gt;</code> : Elimina un branch</li>
 </ul>
-</section>
-<section id="spostarsi-tra-i-commit" class="level2">
-<h2 class="anchored" data-anchor-id="spostarsi-tra-i-commit">Spostarsi tra i commit</h2>
-<section id="visualizzare-la-cronologia-dei-commit" class="level3">
-<h3 class="anchored" data-anchor-id="visualizzare-la-cronologia-dei-commit">visualizzare la cronologia dei commit</h3>
-<p><code>git log</code> : Mostra la cronologia dei commit</p>
-<p><code>git log --oneline</code> : Mostra la cronologia dei commit in formato compatto (una riga per commit)</p>
-<p><code>git log --graph</code> : Mostra la cronologia dei commit con una rappresentazione grafica dei branch e dei merge</p>
-<p><code>git log --all</code> : Mostra la cronologia dei commit di tutti i branch</p>
-<p><code>git log --remote</code> : Mostra la cronologia dei commit dei branch remoti</p>
-</section>
 <section id="spostarsi-in-un-commit-specifico" class="level3">
 <h3 class="anchored" data-anchor-id="spostarsi-in-un-commit-specifico">spostarsi in un commit specifico</h3>
 <p><code>git checkout &lt;commit&gt;</code> : Passa a un commit specifico (modalità detached HEAD)</p>
@@ -323,8 +378,423 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="tracking">Tracking</h2>
 <p><code>git branch -u &lt;nome-remoto&gt;/&lt;branch-remoto&gt; &lt;branch-locale&gt;</code> : Imposta il tracking del branch remoto con il branch locale. Se stiamo lavorando giù sul branch locale possiamo ometterlo</p>
 <p><code>git checkout -b &lt;branch-locale&gt; &lt;nome-remoto&gt;/&lt;branch-remoto&gt;</code> : Imposta il tracking del branch remoto con il branch locale</p>
+</section>
+<section id="come-funziona-git" class="level2">
+<h2 class="anchored" data-anchor-id="come-funziona-git">Come funziona Git</h2>
+<p>Git è uno strumento di <strong>version control</strong>, ovvero un sistema che traccia i diversi cambiamenti di un file o di un insieme di file nel tempo, in modo tale da poter richiamare una determinata versione dei file in futuro. In pratica registra le diverse fasi, in modo da poter passare da una all’altra.</p>
+<p>Git ragiona in termini di flusso di snapshots. Se il file non viene modificato, non salva nuovamente il file ma produce un riferimento allo stesso identico file precedentemente salvato.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+    subgraph V1["Version 1"]
+        direction TB
+        V1A["File A"]
+        V1B["File B"]
+        V1C["File C"]
+
+        V1A --- V1B
+        V1B --- V1C
+
+    end
+
+    subgraph V2["Version 2"]
+        direction TB
+        V2A["A1"]
+        V2B["B"]
+        V2C["C1"]
+
+        V2A --- V2B
+        V2B --- V2C
+    end
+
+    style V2B stroke-dasharray: 5 5
+
+    subgraph V3["Version 3"]
+        direction TB
+        V3A["A1"]
+        V3B["B"]
+        V3C["C2"]
+
+        V3A --- V3B
+        V3B --- V3C
+    end
+
+    style V3A stroke-dasharray: 5 5
+    style V3B stroke-dasharray: 5 5
+
+    subgraph V4["Version 4"]
+        direction TB
+        V4A["A2"]
+        V4B["B1"]
+        V4C["C2"]
+
+        V4A --- V4B
+        V4B --- V4C
+
+        style V4C stroke-dasharray: 5 5
+    end
 
 
+
+    subgraph V5["Version 5"]
+        direction TB
+        V5A["A2"]
+        V5B["B2"]
+        V5C["C3"]
+
+        V5A --- V5B
+        V5B --- V5C
+
+        style V5A stroke-dasharray: 5 5
+    end
+
+    %% Ordine orizzontale
+    V1 ~~~ V2
+    V2 ~~~ V3
+    V3 ~~~ V4
+    V4 ~~~ V5
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>In git ogni file può essere in uno dei 3 stati:</p>
+<ul>
+<li><strong>modified</strong>: file modificati ma che non hanno ricevuto un commit nel tuo database locale</li>
+<li><strong>staged</strong>: il file modificato è stato contrassegnato per essere salvato nel prossimo snapshot con le modifiche attuali</li>
+<li><strong>committed</strong>: i dati sono stati salvati nel tuo database locale</li>
+</ul>
+<p>In base a questi tre stati possiamo capire le principali sezioni di Git:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant WD as Working&lt;br/&gt;Directory
+    participant SA as Staging&lt;br/&gt;Area
+    participant GD as .git directory&lt;br/&gt;(Repository)
+
+    GD-&gt;&gt;WD: Checkout the project
+    WD-&gt;&gt;SA: Stage Fixes
+    SA-&gt;&gt;GD: Commit
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Il <strong>working tree</strong> è una copia (un singolo <code>checkout</code>) di una precisa versione del progetto. I file vengono presi dal database e copiati nel disco pronti per essere usati.</p>
+<p>La <strong>staging area</strong> (in gergo tecnico sarebbe l’index) contiene le informazioni su cosa caricherai nel prossimo commit.</p>
+<p>La <strong>repository</strong> contiene i metadati e gli oggetti del database del tuo progetto, ed è quello che vai a copiare quando effettui un <code>git clone</code>.</p>
+<p>In pratica il flusso di lavoro è il seguente:</p>
+<ol type="1">
+<li>modifichi i file nel tuo working tree</li>
+<li>selezioni i file che faranno parte del prossimo commit, e aggiungi unicamente questi nella staging area (<code>git add</code>)</li>
+<li>Fai un commit, salvando le modifiche in staging area e i metadati in uno snapshot all’interno della tua cartella Git.</li>
+</ol>
+<p>File nella working directory possono essere:</p>
+<ul>
+<li>tracked: sono file di cui Git è a conoscenza (possono essere: unmodified, modified, staged)</li>
+<li>untracked: file della cartella che non sono nell’ultimo snapshot e nemmeno nella staging area.</li>
+</ul>
+<p>Dopo aver inizializzato il working tree, tutti i file sono tracciati e non modificati.</p>
+<p>Se li modifichi, Git li vede come <strong>modified</strong>, in quanto sono tracciati ma non staged.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+  participant UT as Untracked
+  participant UM as Unmodified
+  participant M as Modified
+  participant S as Staged
+
+  UT -&gt;&gt; S: Add the file
+  UM -&gt;&gt; M: Edit the file
+  M -&gt;&gt; S: Stage the file
+  UM -&gt;&gt; UT: Remove the file
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="git-setup" class="level2">
+<h2 class="anchored" data-anchor-id="git-setup">Git Setup</h2>
+<section id="trovare-file-con-configurazioni" class="level3">
+<h3 class="anchored" data-anchor-id="trovare-file-con-configurazioni">trovare file con configurazioni</h3>
+<p>Dopo l’installazione, è ora di vedere quali sono i parametri di setup di git</p>
+<p><code>$ git config --list --show-origin</code>: per vedere tutte i setting e da dove provengono</p>
+<p><code>$ git config --list</code>: per vedere le opzioni di configurazione</p>
+<p><code>$ git config &lt;key&gt;</code>: per vedere la singola opzione (es.user.name)</p>
+</section>
+<section id="impostare-nome-e-email" class="level3">
+<h3 class="anchored" data-anchor-id="impostare-nome-e-email">Impostare nome e email</h3>
+<p><code>$ git config --global user.name "nome"</code><br>
+<code>$ git config --global user.email johndoe@example.com</code></p>
+<p>senza l’opzione <code>--global</code> puoi configurare i dati per progetti specifici</p>
+</section>
+<section id="cambiare-default-branch-name" class="level3">
+<h3 class="anchored" data-anchor-id="cambiare-default-branch-name">cambiare default branch name</h3>
+<p><code>$ git config --global init.defaultBranch main</code> per configurare il nome</p>
+</section>
+<section id="help" class="level3">
+<h3 class="anchored" data-anchor-id="help">Help</h3>
+<p><code>git help &lt;verb&gt;</code></p>
+<p><code>git add -h</code>: esempio dell’uso di `-h``</p>
+</section>
+</section>
+<section id="inizializzare-una-repo" class="level2">
+<h2 class="anchored" data-anchor-id="inizializzare-una-repo">Inizializzare una repo</h2>
+<section id="da-una-cartella-esistente" class="level3">
+<h3 class="anchored" data-anchor-id="da-una-cartella-esistente">Da una cartella esistente</h3>
+<p>Dalla cartella del tuo progetto devi inizializzare con <code>git init</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd <span class="pp">[</span><span class="ss">path</span><span class="pp">]</span>/my_project</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>questo crea la cartella .git che contiene tutti i file necessari</p>
+</section>
+<section id="clonare-una-repo-già-esistente" class="level3">
+<h3 class="anchored" data-anchor-id="clonare-una-repo-già-esistente">Clonare una repo già esistente</h3>
+<p>Sempre dalla cartella del progetto devi utilizzare <code>git clone &lt;url&gt;</code>. Questo comando copierà tutti file della repo, ovvero tutta la struttura ad albero.</p>
+</section>
+</section>
+<section id="status-dei-file" class="level2">
+<h2 class="anchored" data-anchor-id="status-dei-file">Status dei file</h2>
+<p><code>$ git status</code>: ti mostra uno status generale della situazione</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git status</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch master <span class="co"># in quale branch sei</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Your</span> branch is up-to-date with <span class="st">'origin/master'</span>. <span class="co">#nessuna divergenza con server</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working tree clean <span class="co">#nessun file untracked</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lavorare-e-modificare-file" class="level2">
+<h2 class="anchored" data-anchor-id="lavorare-e-modificare-file">Lavorare e modificare file</h2>
+<section id="stagingtracking-di-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="stagingtracking-di-un-file">Staging/tracking di un file</h3>
+<p><code>$ git add NEW_FILE</code>: permette di tracciare il nuovo file</p>
+<p><code>$ git add MODIFIED_FILE</code>: permette di inserire il file in staging area, con le modifiche effettuate fino al momento del comando.</p>
+</section>
+<section id="ignorare-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="ignorare-un-file">Ignorare un file</h3>
+<p>Devi creare un file script di nome <code>.gitignore</code>. Le regole per la sintassi sono quelle per lo scripting bash</p>
+</section>
+<section id="rimuovere-i-file" class="level3">
+<h3 class="anchored" data-anchor-id="rimuovere-i-file">Rimuovere i file</h3>
+<p><code>$ git rm FILE</code>: rimuove un file dalla staging area. Puoi passare come argomento anche cartelle o variabili in linguaggio bash</p>
+</section>
+<section id="muovere-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="muovere-un-file">Muovere un file</h3>
+<p><code>$ git mv FILE_FROM FILE_TO</code>: serve a segnalare uno spostamento a git, cosa che altrimenti non potrebbe capire</p>
+</section>
+<section id="osservare-la-commit-history" class="level3">
+<h3 class="anchored" data-anchor-id="osservare-la-commit-history">Osservare la Commit History</h3>
+<p>La commit history è la cronologia di tutti i commit, conservata nella cartella .git</p>
+<p>Per vederla si usa il comando <code>$ git log</code></p>
+<p>Esistono numerosi argomenti per <code>git log</code>, per visualizzare formato, grafici, scelta metadati, ecc</p>
+<ul>
+<li>default (senza argomenti): elenco commit in ordine cronologico inverso, dal più recente al meno</li>
+<li><code>git log -p</code>: patch, mostra le differenze introdotte da ogni commit</li>
+<li><code>git log --stat</code>: mostra le statistiche, cià file cambiati, inserzioni, cancellazioni</li>
+<li><code>git log --graph</code>: nostra un grafico ascii</li>
+<li><code>git log --oneline</code>: mostra i commit in un sola linea</li>
+<li><code>git log --all</code> : mostra la cronologia dei commit di tutti i branch</li>
+<li><code>git log --remote</code> : mostra la cronologia dei commit dei branch remoti</li>
+</ul>
+<p>Ovviamente ci sono numerose altre opzioni</p>
+</section>
+<section id="modificare-ultimo-commit" class="level3">
+<h3 class="anchored" data-anchor-id="modificare-ultimo-commit">Modificare ultimo commit</h3>
+<p><code>$ git commit --amend</code>: permette di modificare l’ultimo commit</p>
+</section>
+<section id="rimuovere-modifiche" class="level3">
+<h3 class="anchored" data-anchor-id="rimuovere-modifiche">Rimuovere modifiche</h3>
+<p><code>$ git reset FILE</code>: rimuove dalla staging area</p>
+<p><code>$ git checkout -- FILE</code>: git rimpiazza il file con le ultime modifiche in staging area o in repo. ATTENZIONE</p>
+<p><code>$ git restore --staged FILE</code>: rimuove un file dalla staging area</p>
+<p><code>$ git restore FILE</code>: rimpiazza il file con ultima versione in repo. ATTENZIONE</p>
+</section>
+</section>
+<section id="lavorare-con-i-remotes" class="level2">
+<h2 class="anchored" data-anchor-id="lavorare-con-i-remotes">Lavorare con i Remotes</h2>
+<section id="conoscere-repo-remote" class="level3">
+<h3 class="anchored" data-anchor-id="conoscere-repo-remote">Conoscere repo remote</h3>
+<p><code>$ git remote</code>: mostra le repo remote<br>
+<code>$ git remote -v</code>: mostra gli url</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote <span class="at">-v</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span> https://github.com/schacon/ticgit <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span> https://github.com/schacon/ticgit <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="aggiunge-repo-remota" class="level3">
+<h3 class="anchored" data-anchor-id="aggiunge-repo-remota">Aggiunge repo remota</h3>
+<p><code>$ git clone</code>: aggiunge implicitamente una repo remota origin</p>
+<p>Se invece vuoi aggiungerla esplicitamente:</p>
+<p>`$ git remote add <shortname> <url>``</url></shortname></p>
+</section>
+<section id="rinominare-repo-remota" class="level3">
+<h3 class="anchored" data-anchor-id="rinominare-repo-remota">Rinominare repo remota</h3>
+<p>`git remote rename <old_shortname> <new_shortname>: permette di cambiare lo shortname della cartella remota</new_shortname></old_shortname></p>
+</section>
+<section id="fare-fetch-e-pull" class="level3">
+<h3 class="anchored" data-anchor-id="fare-fetch-e-pull">Fare fetch e pull</h3>
+<p>per ottenere dati dalla cartella remota, devi fare un <strong>fetch</strong></p>
+<p><code>$ git fetch &lt;remote&gt;</code>: facendo un fetch, scarichi tutti i lavori di una repo remota sulla tua copia locale. Scarica soltanto, non fa il merge!</p>
+<p>per mandare i tuoi dati alla cartella remota, devi fare un <strong>push</strong></p>
+<p><code>git push &lt;remote&gt; &lt;branch&gt;</code>: funziona se hai permessi di scrittura nella cartella remota e nessuno ha fatto un push nel mentre. Questo comando copia il tuo branch (i commit) nella cartella remota.</p>
+</section>
+<section id="ispezionare-cartella-remota" class="level3">
+<h3 class="anchored" data-anchor-id="ispezionare-cartella-remota">Ispezionare cartella remota</h3>
+<p><code>$ git remote show origin</code>: permette di mostrare branch e altri dati del remote</p>
+</section>
+<section id="rimuovere-cartella-remota" class="level3">
+<h3 class="anchored" data-anchor-id="rimuovere-cartella-remota">Rimuovere cartella remota</h3>
+<p>`$ git remote remove <shortname>: rimuove la cartella remota</shortname></p>
+</section>
+</section>
+<section id="tagging" class="level2">
+<h2 class="anchored" data-anchor-id="tagging">Tagging</h2>
+<p>Puoi taggare alcuni punti specifici nella storia della repo in modo da contrassegnarli come importanti</p>
+<section id="elencare-i-tag-presenti" class="level3">
+<h3 class="anchored" data-anchor-id="elencare-i-tag-presenti">Elencare i tag presenti</h3>
+<p><code>$ git tag</code>: elenca tutti i tag di una repo, in ordine alfabetico</p>
+</section>
+<section id="creare-dei-tag" class="level3">
+<h3 class="anchored" data-anchor-id="creare-dei-tag">creare dei tag</h3>
+<p>Esistono due tipi di tag</p>
+<ul>
+<li>lightweight: è simile a un puntatore a un commit specifico</li>
+<li>annotated: è un oggetto completo, con tanto di metadati e informazioni</li>
+</ul>
+<p><code>$ git tag -a &lt;name&gt; -m "messaggio"</code>: permette di creare un tag annotato (argomenot <code>-a</code>)</p>
+<p>`git tag <name>: crea un tag lightweight</name></p>
+<p>per taggare un commit esistente, basta specificare il commit (in particolare parte del checksum) a fine comando</p>
+<p>esempio in cui attribuiamo il tag v1.2 a un commit specifico</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--prettY</span><span class="op">=</span>oneline</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">166ae0c4d3f420721acbb115cc33848dfcc2121a</span> Create write support</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">9fceb02d0ae598e95dc970b74767f19372d61af8</span> Update rakefile</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">964f16d36dfccde844893cac5b347e7b3d44abbc</span> Commit the todo</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">8a5cbc430f1a9c3d00faaeffd07798508422908a</span> Update readme</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git tag <span class="at">-a</span> v1.2 9fceb02</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="condividere-tag-con-remote" class="level3">
+<h3 class="anchored" data-anchor-id="condividere-tag-con-remote">Condividere tag con remote</h3>
+<p>La condivisione dei tag con la repository remote non avviene in automatico, ma va esplicitato con il comando `git push origin <tagname>``</tagname></p>
+<p><code>$ git push origin --tags</code>: permette di condividere tutti i tag</p>
+</section>
+<section id="eliminare-i-tag" class="level3">
+<h3 class="anchored" data-anchor-id="eliminare-i-tag">Eliminare i tag</h3>
+<p>Basta semplicemente usare l’argomento <code>-d</code> all’interno del comando `tag``</p>
+<p><code>$ git tag -d &lt;tag_name&gt;</code>: elimina il tag specifico, ma NON dal server remoto</p>
+<p>Per eliminare un tag dal server remoto ci sono due comandi</p>
+<p><code>$ git push origin :refs/tags/tag_name</code></p>
+<p><code>$ git push origin --delete &lt;tag_name&gt;</code></p>
+</section>
+<section id="spostarsi-tra-i-commit" class="level3">
+<h3 class="anchored" data-anchor-id="spostarsi-tra-i-commit">Spostarsi tra i commit</h3>
+<p>Per spostarsi a un commit specifico puoi usare il tag</p>
+<p><code>$ git checkout &lt;tag_name&gt;</code></p>
+</section>
+</section>
+<section id="aliasing" class="level2">
+<h2 class="anchored" data-anchor-id="aliasing">Aliasing</h2>
+<p>Per velocizzare il lavoro e la digitazione, puoi settare degli <strong>alias</strong></p>
+<p>esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.ci commit</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git ci </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>oppure</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.unstage <span class="st">'reset HEAD --'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ora se digito:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git unstage FILE</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># equivale a digitare:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># $ git reset HEAD-- FILE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="branching" class="level2">
+<h2 class="anchored" data-anchor-id="branching">Branching</h2>
+<section id="come-funziona-il-branching" class="level3">
+<h3 class="anchored" data-anchor-id="come-funziona-il-branching">Come funziona il branching</h3>
+<p>Quando fai un commit, git salva un oggetto commit che contiene:</p>
+<ul>
+<li>un puntatore allo snapshot del contenuto che hai salvato</li>
+<li>nome e email dell’autore</li>
+<li>messaggio che hai scritto</li>
+<li>puntatori ai genitori: nessuno per il commit iniziale, uno per un commit classico, di più se è il risultato di un merge</li>
+</ul>
+<p>Per intenderci, questo è l’aspetto di un commit</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    %% Nodi
+    C["&lt;b&gt;98ca9&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 92ec2&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;The initial commit of my project&lt;/small&gt;"]
+    
+    T["&lt;b&gt;92ec2&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;tree&lt;/b&gt; size&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; 5b1d3 README&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; 911e7 LICENSE&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; cba0a test.rb"]
+    
+    B1["&lt;b&gt;5b1d3&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; size&lt;br/&gt;&lt;br/&gt;== Testing library&lt;br/&gt;&lt;br/&gt;This library is used to test&lt;br/&gt;Ruby projects."]
+    
+    B2["&lt;b&gt;911e7&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; size&lt;br/&gt;&lt;br/&gt;The MIT License&lt;br/&gt;&lt;br/&gt;Copyright (c) 2008 Scott Chacon&lt;br/&gt;&lt;br/&gt;Permission is hereby granted,&lt;br/&gt;free of charge, to any person"]
+    
+    B3["&lt;b&gt;cba0a&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; size&lt;br/&gt;&lt;br/&gt;require 'logger'&lt;br/&gt;require 'test/unit'&lt;br/&gt;&lt;br/&gt;class Test::Unit::TestCase"]
+
+    %% Collegamenti
+    C --&gt; T
+    T --&gt; B1
+    T --&gt; B2
+    T --&gt; B3
+
+    %% Stili personalizzati per i colori
+    style C fill:#F2F0E6,stroke:#D3D1C7,stroke-width:1px,color:#333
+    style T fill:#008080,stroke:#006666,stroke-width:1px,color:#FFF
+    style B1 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B2 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B3 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Se ora facessi un nuovo commit, quest’ultimo avrebbe un puntatore anche al padre, e così via</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+C["&lt;b&gt;98ca9&lt;/b&gt;&lt;br/&gt;----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 92ec2&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;The initial commit of my project&lt;/small&gt;"]
+S["Snapshot A"]
+D["&lt;b&gt;34ac2&lt;/b&gt;&lt;br/&gt;----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 184ca&lt;br/&gt;parent 98ca9&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;Bug Fix&lt;/small&gt;"]
+T["Snapshot B"]
+
+C --&gt; S
+D --&gt; T
+D --&gt; C
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Un <strong>branch</strong> in Git è semplicemente un puntatore mobile puntato su uno di questi commit. Il branch di default è <strong>main</strong>. Ogni volta che fai un commit, il main avanza automaticamente all’ultimo commit.</p>
+<p>link utile: https://learngitbranching.js.org</p>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
