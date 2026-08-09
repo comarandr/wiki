@@ -154,3 +154,211 @@ in assenza di conflitti non sarà necessario risolvere manualmente le modifiche
 `git branch -u <nome-remoto>/<branch-remoto> <branch-locale>` : Imposta il tracking del branch remoto con il branch locale. Se stiamo lavorando giù sul branch locale possiamo ometterlo
 
 `git checkout -b <branch-locale> <nome-remoto>/<branch-remoto>` : Imposta il tracking del branch remoto con il branch locale
+
+
+## Learn Git
+
+appunti presi da: https://learngitbranching.js.org
+
+## Come funziona Git
+
+Git è uno strumento di **version control**, ovvero un sistema che traccia i diversi cambiamenti di un file o di un insieme di file nel tempo, in modo tale da poter richiamare una determinata versione dei file in futuro. In pratica registra le diverse fasi, in modo da poter passare da una all'altra.
+
+Git ragiona in termini di flusso di snapshots. Se il file non viene modificato, non salva nuovamente il file ma produce un riferimento allo stesso identico file precedentemente salvato.
+
+```{mermaid}
+flowchart LR
+
+    subgraph V1["Version 1"]
+        direction TB
+        V1A["File A"]
+        V1B["File B"]
+        V1C["File C"]
+
+        V1A --- V1B
+        V1B --- V1C
+
+    end
+
+    subgraph V2["Version 2"]
+        direction TB
+        V2A["A1"]
+        V2B["B"]
+        V2C["C1"]
+
+        V2A --- V2B
+        V2B --- V2C
+    end
+
+    style V2B stroke-dasharray: 5 5
+
+    subgraph V3["Version 3"]
+        direction TB
+        V3A["A1"]
+        V3B["B"]
+        V3C["C2"]
+
+        V3A --- V3B
+        V3B --- V3C
+    end
+
+    style V3A stroke-dasharray: 5 5
+    style V3B stroke-dasharray: 5 5
+
+    subgraph V4["Version 4"]
+        direction TB
+        V4A["A2"]
+        V4B["B1"]
+        V4C["C2"]
+
+        V4A --- V4B
+        V4B --- V4C
+
+        style V4C stroke-dasharray: 5 5
+    end
+
+
+
+    subgraph V5["Version 5"]
+        direction TB
+        V5A["A2"]
+        V5B["B2"]
+        V5C["C3"]
+
+        V5A --- V5B
+        V5B --- V5C
+
+        style V5A stroke-dasharray: 5 5
+    end
+
+    %% Ordine orizzontale
+    V1 ~~~ V2
+    V2 ~~~ V3
+    V3 ~~~ V4
+    V4 ~~~ V5
+```
+
+In git ogni file può essere in uno dei 3 stati:
+
+- **modified**: file modificati ma che non hanno ricevuto un commit nel tuo database locale
+- **staged**: il file modificato è stato contrassegnato per essere salvato nel prossimo snapshot con le modifiche attuali
+- **committed**: i dati sono stati salvati nel tuo database locale
+
+In base a questi tre stati possiamo capire le principali sezioni di Git: 
+
+```{mermaid}
+sequenceDiagram
+    participant WD as Working<br/>Directory
+    participant SA as Staging<br/>Area
+    participant GD as .git directory<br/>(Repository)
+
+    GD->>WD: Checkout the project
+    WD->>SA: Stage Fixes
+    SA->>GD: Commit
+```
+
+Il **working tree** è una copia (un singolo `checkout`) di una precisa versione del progetto. I file vengono presi dal database e copiati nel disco pronti per essere usati.
+
+La **staging area** (in gergo tecnico sarebbe l'index) contiene le informazioni su cosa caricherai nel prossimo commit.
+
+La **repository** contiene i metadati e gli oggetti del database del tuo progetto, ed è quello che vai a copiare quando effettui un `git clone`.
+
+In pratica il flusso di lavoro è il seguente:
+
+1. modifichi i file nel tuo working tree
+2. selezioni i file che faranno parte del prossimo commit, e aggiungi unicamente questi nella staging area (`git add`)
+3. Fai un commit, salvando le modifiche in staging area e i metadati in uno snapshot all'interno della tua cartella Git.
+
+File nella working directory possono essere:
+
+- tracked: sono file di cui Git è a conoscenza (possono essere: unmodified, modified, staged)
+- untracked: file della cartella che non sono nell'ultimo snapshot e nemmeno nella staging area.
+
+Dopo aver inizializzato il working tree, tutti i file sono tracciati e non modificati.
+
+Se li modifichi, Git li vede come **modified**, in quanto sono tracciati ma non staged.
+
+```{mermaid}
+sequenceDiagram
+  participant UT as Untracked
+  participant UM as Unmodified
+  participant M as Modified
+  participant S as Staged
+
+  UT ->> S: Add the file
+  UM ->> M: Edit the file
+  M ->> S: Stage the file
+  UM ->> UT: Remove the file
+```
+
+
+## Git Setup
+
+### trovare file con configurazioni
+
+Dopo l'installazione, è ora di vedere quali sono i parametri di setup di git
+
+`$ git config --list --show-origin`: per vedere tutte i setting e da dove provengono
+
+`$ git config --list`: per vedere le opzioni di configurazione
+
+`$ git config <key>`: per vedere la singola opzione (es.user.name)
+
+### Impostare nome e email
+
+`$ git config --global user.name "nome"`
+`$ git config --global user.email johndoe@example.com`
+
+senza l'opzione `--global` puoi configurare i dati per progetti specifici
+
+### cambiare default branch name
+
+`$ git config --global init.defaultBranch main` per configurare il nome
+
+### Help
+
+`git help <verb>`
+
+`git add -h`: esempio dell'uso di `-h``
+
+## Inizializzare una repo
+
+### Da una cartella esistente
+
+Dalla cartella del tuo progetto devi inizializzare con `git init`
+
+```sh
+$ cd [path]/my_project
+$ git init
+```
+
+questo crea la cartella .git che contiene tutti i file necessari
+
+### Clonare una repo già esistente
+
+Sempre dalla cartella del progetto devi utilizzare `git clone <url>`. Questo comando copierà tutti file della repo, ovvero tutta la struttura ad albero.
+
+## Status dei file
+
+`$ git status`: ti mostra uno status generale della situazione
+
+```sh
+$ git status
+On branch master # in quale branch sei
+Your branch is up-to-date with 'origin/master'. #nessuna divergenza con server
+nothing to commit, working tree clean #nessun file untracked
+```
+
+
+
+## Staging/tracking di un file
+
+`$ git add NEW_FILE`: permette di tracciare il nuovo file
+
+`$ git add MODIFIED_FILE`: permette di inserire il file in staging area, con le modifiche effettuate fino al momento del comando.
+
+### Ignorare un file
+
+Devi creare un file script di nome `.gitignore`. Le regole per la sintassi sono quelle per lo scripting bash
+
+

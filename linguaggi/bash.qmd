@@ -100,7 +100,7 @@ visualizzare elenco file:
 
 visualizzare elenco file per estensione: `$ ls [arg] path/*.estensione`, nella _pwd_ basta `ls *.estensione`
 
-```txt
+```sh
 $ ls -r /home/andrea/Documents/*.txt
 > /home/andrea/Documents/c.txt
   /home/andrea/Documents/b.txt
@@ -110,7 +110,7 @@ visualizzazione `$ ls -l`
 
 [tipofile] [permessi] [num hardlink] [proprietario] [nomegruppo] [dim] [data ultima mod] [nomefile]  
 
-```txt
+```sh
 -rwxrwxrwx      1 root      root     5395 Jul 13 1998 ciao.txt  
 lrwxrwxrwx      1 root      root        4 Dec  5 2000 awk -> gwak
 ```
@@ -280,16 +280,16 @@ s|t : l'elemento s oppure l'elemento t
 
 esempi:
 
-```c
-fgrp rossi /etc/passwd     //out: linee di /etc/passwd che contengono stringa fissata rossi
+```sh
+fgrp rossi /etc/passwd     #out: linee di /etc/passwd che contengono stringa fissata rossi
 
-egrep -nv '[agt]+' relazione.txt //out: linee relazione.txt che NON hanno stringhe composte dai char a,g,t
+egrep -nv '[agt]+' relazione.txt #out: linee relazione.txt che NON hanno stringhe composte dai char a,g,t
 
-grep -w print *.c   //out: le linee di tutti i file .c che contengono la parola intera print
+grep -w print *.c   #out: le linee di tutti i file .c che contengono la parola intera print
 
-ls -al . | grep '^d.......w.'  //out: le sottodirectory della pwd modificabili dagli utenti ordinari
+ls -al . | grep '^d.......w.'  #out: le sottodirectory della pwd modificabili dagli utenti ordinari
 
-egrep '[a-c]+z' doc.txt //out: linee doc.txt con stringa prefisso non nullo costituito da a,b,c seguito da z
+egrep '[a-c]+z' doc.txt #out: linee doc.txt con stringa prefisso non nullo costituito da a,b,c seguito da z
 ```
 
 ###### ordinare linee input
@@ -308,8 +308,8 @@ prende in input delle linee di testo, le ordina secondo le opzioni e le invia in
 
 esempi:
 
-```c
-sort -t: -k3,3 -n /etc/passwd  //ordina le righe di etc/passwd in ordine numerico (-n) in base al terzo campo
+```sh
+sort -t: -k3,3 -n /etc/passwd  #ordina le righe di etc/passwd in ordine numerico (-n) in base al terzo campo
 > root:x:0:blablabla
   daemon:x:1:blablabla
   bin:x:2:blablabla
@@ -328,10 +328,10 @@ sort -t: -k3,3 -n /etc/passwd  //ordina le righe di etc/passwd in ordine numeric
 
 esempi:
 
-```c
-tr a-z A-Z //converte minuscole in maiuscole
-tr -c A-Za-z0-9 ' ' //sostituisce caratteri NON alfanumerici con spazi (opzione -c)
-tr -d str //cancella caratteri contenuti nella stringa str
+```sh
+tr a-z A-Z #converte minuscole in maiuscole
+tr -c A-Za-z0-9 ' ' #sostituisce caratteri NON alfanumerici con spazi (opzione -c)
+tr -d str #cancella caratteri contenuti nella stringa str
 ```
 
 ###### estrarre colonne specifiche da linee di testo in input
@@ -344,7 +344,7 @@ tr -d str //cancella caratteri contenuti nella stringa str
 
 esempio
 
-```c
+```sh
 $ cut -d: -f1 /etc/passwd
 >root
  daemon
@@ -354,7 +354,7 @@ $ cut -d: -f1 /etc/passwd
 
 `$ paste f1 f2` (combina le righe corrisponendi di un file inserendo un delimitatore, default : \<tab>)  
 
-```c
+```sh
 
 ```
 
@@ -369,14 +369,14 @@ gli indirizzi di linea possono essere specificati come numeri o espressioni rego
 >`-e` in caso di più azioni, precede le azioni  
 >`-f` specifica file da cui leggere le azioni da fare  
 
-```c
-$sed '4,$d' /etc/passwd  //stampa prime 3 righe, cancella da output a partire dalla 4
+```sh
+$sed '4,$d' /etc/passwd  #stampa prime 3 righe, cancella da output a partire dalla 4
 
-$sed 3q /etc/passwd //stampa prime 3 righe, sed esce dopo aver elaborato la 3
+$sed 3q /etc/passwd #stampa prime 3 righe, sed esce dopo aver elaborato la 3
 
-$sed  /sh/y/:0_%/  /etc/passwd  //sostituisce nelle le righe con "sh" il char : con _ e il char 0 con %
+$sed  /sh/y/:0_%/  /etc/passwd  #sostituisce nelle le righe con "sh" il char : con _ e il char 0 con %
 
-$sed  '/sh/!y/:0/_%/'  /etc/passwd //analogo ma nelle stringhe che non contengono sh. quoting ' ' per !
+$sed  '/sh/!y/:0/_%/'  /etc/passwd #analogo ma nelle stringhe che non contengono sh. quoting ' ' per !
 ```
 
 sostituzione testo con sed:  
@@ -390,17 +390,17 @@ _s_ : substitute, _expr_ : stringa da cercare, _new_ : stringa da sostituire
 >`n`: silent mode, senza emettere output  
 >`w [file1]`: in caso di sostituzione la linea corrente viene accodata in file1  
 
-```c
+```sh
 $ sed '/^root/,/^bin/s/:x:/::/w disabled.txt' /etc/passwd 
-//sostituisce(s) la x (in :x:) con la stringa vuota (quindi ::) 
-//nelle righe in input comprese fra quella che inizia(^) con root e quella con bin;
-//tali righe sono accodate poi in disabled.txt
+#sostituisce(s) la x (in :x:) con la stringa vuota (quindi ::) 
+#nelle righe in input comprese fra quella che inizia(^) con root e quella con bin;
+#tali righe sono accodate poi in disabled.txt
 
 $ cat /etc/passed | sed 's?/bin/.*sh$?/usr/local&?'
-//cerca tutte righe in input in cui compare /bin/.*sh$ 
-// e sostituisce quest'ultima con /user/local/bin/.*sh$ (& = stringa cercata)
-// ? serve da separatore tra s e / in quanto anche questo compare nella stringa
-//quoting '' necessario per evitare interpretazioni della shell
+#cerca tutte righe in input in cui compare /bin/.*sh$ 
+# e sostituisce quest'ultima con /user/local/bin/.*sh$ (& = stringa cercata)
+# ? serve da separatore tra s e / in quanto anche questo compare nella stringa
+#quoting '' necessario per evitare interpretazioni della shell
 ```
 
 #### SCRIPTING
@@ -429,7 +429,7 @@ variabili speciali (parametro): `$1,$2,...,$9` associate al primo, ... , nono pa
 
 esempio script "copia"
 
-```txt
+```sh
 testo dello script:
 mkdir $1
 mv $2 $1/$2
@@ -437,7 +437,7 @@ mv $2 $1/$2
 
 esecuzione
 
-```txt
+```sh
 $ ./copia nuovadir testo
 > ls nuovadir
 testo
@@ -460,7 +460,7 @@ variabili di stato:
 
 COSTRUTTO IF
 
-```txt
+```sh
 if condition_command  (condition exit status)
 then (exit 0)  
     true_commands  
@@ -471,7 +471,7 @@ fi
 
 esempio:
 
-```txt
+```sh
 if grep"^$1" /etc/passwd >/dev/null 2>/dev/null
 then
     echo $1 is a valid login name
@@ -522,7 +522,7 @@ costruzioni numeri complesse: `$[espressione]` Nota: le quadre vanno messe
 
 esempio:
 
-```txt
+```sh
 > num1=2
 > num1=$[$num1*3+1]
 > echo $num1
@@ -531,14 +531,14 @@ esempio:
 
 CICLO WHILE (finché vero continuo)  
 
-```txt
+```sh
 while condition_command  
 do  
     commands  
 done  
 ```
 
-```py
+```sh
 while test -e $1   #finché file primo argomento esiste
 do
     sleep 2        #sospenditi 2 secondi
@@ -552,7 +552,7 @@ finché la condition_command è vera vengono eseguiti i comandi
 
 DO-WHILE: non c'è, alternativa
 
-```py
+```sh
 while true; do
     #comandi
     if condizione terminazione; then
@@ -564,14 +564,14 @@ done
 
 CICLO UNTIL (finché falso continuo)  
 
-```txt
+```sh
 until condition_command  
     do  
         commands  
     done
 ```
 
-```py
+```sh
 until false #sempre verificata
 do
     read firstword restofline #apre stdout e arg1=firstword, resto=restofline
@@ -588,7 +588,7 @@ finché la condition_command è falsa vengono eseguiti i comandi
 
 CICLO FOR  
 
-```txt
+```sh
 for var in wordlist  
 do  
     commands  
@@ -597,7 +597,7 @@ done
 
 esempio uso classico:
 
-```py
+```sh
 for i in 1 2 3 4 5
 do
     echo the value of i is $1
@@ -608,13 +608,13 @@ exit 0
 nota: puoi usare il for anche per scorrere i file presenti in una cartella:
 esempio:
 
-```py
+```sh
 for i in $1/*    #$1 è una cartella, scorre tutti i file della cartella
 ```
 
 CASE SELECTION  
 
-```txt
+```sh
 case string in  
 expression_1)  
     commands_1  
@@ -631,7 +631,7 @@ esac
 
 esempio script append:
 
-```py
+```sh
 case $# in    #numeri degli argomenti ($#)
 1)                  #caso $# = 1
     cat >>$1 #apri std input e poi redireziona out in $1
@@ -650,7 +650,7 @@ COMMAND SUBSTITUTION
 sostituire a un comando o pipeline quanto stampato sullo standard output dal comando stesso prevede uso dei \` \` backquote  
 esempio :  
 
-```txt
+```sh
 > date  
 Tue Nov 19 17:50:10 2002  
 > vardata=`date`  
