@@ -3,6 +3,8 @@ title: Git
 description: "Appunti di git e relativi comandi"
 categories: [linguaggi]
 image: https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg
+mermaid:
+  theme: default
 ---
 
 ## Creare nuovi branch
@@ -437,7 +439,7 @@ per taggare un commit esistente, basta specificare il commit (in particolare par
 
 esempio in cui attribuiamo il tag v1.2 a un commit specifico 
 ```bash
-$ git log --prettY=oneline
+$ git log --pretty=oneline
 166ae0c4d3f420721acbb115cc33848dfcc2121a Create write support
 9fceb02d0ae598e95dc970b74767f19372d61af8 Update rakefile
 964f16d36dfccde844893cac5b347e7b3d44abbc Commit the todo
@@ -497,6 +499,8 @@ $ git unstage FILE
 
 ## Branching
 
+link utile: https://learngitbranching.js.org
+
 ### Come funziona il branching
 
 Quando fai un commit, git salva un oggetto commit che contiene:
@@ -539,7 +543,7 @@ graph LR
 Se ora facessi un nuovo commit, quest'ultimo avrebbe un puntatore anche al padre, e così via
 
 ```{mermaid}
-graph LR
+graph RL
 C["<b>98ca9</b><br/>----------------------------------<br/><b>commit</b> size<br/>tree 92ec2<br/>author Scott<br/>committer Scott<br/><br/><small>The initial commit of my project</small>"]
 S["Snapshot A"]
 D["<b>34ac2</b><br/>----------------------------------<br/><b>commit</b> size<br/>tree 184ca<br/>parent 98ca9<br/>author Scott<br/>committer Scott<br/><br/><small>Bug Fix</small>"]
@@ -552,4 +556,116 @@ D --> C
 
 Un **branch** in Git è semplicemente un puntatore mobile puntato su uno di questi commit. Il branch di default è **main**. Ogni volta che fai un commit, il main avanza automaticamente all'ultimo commit.
 
-link utile: https://learngitbranching.js.org
+### Creare un nuovo branch
+
+`$ git branch <name_branch>`: crea un nuovo branch nel commit in cui sei in quel momento.
+
+Per esempio:
+
+
+```bash
+$ git branch testing
+```
+
+```{mermaid}
+graph RL
+
+C1[98ca9]
+C2[34ac2]
+C3[f30ab]
+M[main]
+T[testing]
+H[HEAD]
+
+C2 --> C1
+C3 --> C2
+M --> C3
+T --> C3
+H --> M
+
+style C1 fill:white 
+
+style C2 fill:white
+
+style C3 fill:white
+
+style M fill:orange
+
+style T fill:orange
+```
+
+### Spostarsi di branch
+
+Git possiede un puntatore speciale chiamato **HEAD** che indica il branch in quale sei in questo momento. Quando crei un branch nuovo non ti sposti in quest'ultimo.
+
+Lo spostamento va fatto esplicitamente mediante `$ git checkout <branch>. 
+
+Una volta spostato il puntatore HEAD, ogni commit aggiuntivo riguarderà il branch selezionato.
+
+```bash
+$ git branch testing 
+$ git checkout testing
+$ git commit -m "commit C4"
+```
+Il risultato sarà il seguente:
+
+```{dot}
+digraph{
+  rankdir=RL;
+
+  C3 -> C2
+  main -> C3
+  C4 -> C3
+  testing -> C4
+  HEAD -> testing
+}
+```
+
+Se fai un movimento all'indietro con `$ git checkout main` avverranno due cose:
+
+- HEAD punterà al nuovo branch (main nell'esempio)
+- i file della working directory verranno riportati allo stato del commit puntato da main
+
+Se modificassimo i file ulteriormente, la storia del progetto divergerebbe.
+
+### Switch e checkout
+
+Per creare e spostarsi direttamente a un nuovo branch puoi usare `$ git checkout -b <newbranchname>`
+
+Le nuove versioni di git prediligono l'utilizzo del comando `git switch``
+
+`$ git switch <branch>`per spostarsi in un branch esistente
+
+`$ git switch -c branch`per creare un branch e spostarsi direttamente in esso
+
+`$ git switch -`per tornare al branch precedente
+
+### Storia divergente
+
+La storia divergente quando due branch prendono direzioni diverse. Graficamente
+
+
+```{mermaid}
+flowchart BT
+    %% Definizione degli stili per i blocchi
+    classDef commit fill:#f1f0e8,stroke:#f1f0e8,color:#333333,font-family:monospace;
+    classDef branch fill:#ff3b00,stroke:#ff3b00,color:#ffffff,font-family:monospace;
+    classDef head fill:#d49a00,stroke:#d49a00,color:#ffffff,font-family:monospace;
+
+    %% Nodi e relazioni
+    HEAD["HEAD"]:::head --> master["master"]:::branch
+    master --> c2b9e:::commit
+    c2b9e --> f30ab
+    87ab2:::commit --> f30ab
+    testing["testing"]:::branch --> 87ab2
+    
+    f30ab["f30ab"]:::commit --> 34ac2["34ac2"]:::commit
+    34ac2 --> 98ca9["98ca9"]:::commit
+```
+
+Un ottimo metodo per vedere l'intera situazione è tramite `$ git log --oneline --decorate
+--graph --all`
+
+### Merging
+
+Per riunire le modifiche di due branch di solito si usa il comando `git merge`

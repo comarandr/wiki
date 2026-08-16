@@ -20,22 +20,152 @@ table td, table th {
 
 ::: {.striped .hover}
 
-| Descrizione | Formula Matematica |
-|:---|:---:|
-| Velocità scalare media | $$v_m = \frac{s(t_2)-s(t_1)}{t_2-t_1}$$|
-| Velocità istantanea | $$v = \lim_{\Delta t \to 0} \frac{s(t + \Delta t)-s(t)}{\Delta t} = \frac{ds}{dt}$$ |
-| calcolo dimensionale | $$[V] = \frac{[L]}{[T]}$$ |
-| Modulo vettore | $$| \vec{v} | = \sqrt{v_x^2 + v_y^2}$$ |
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Velocità scalare media | $$v_m = \frac{s(t_2)-s(t_1)}{t_2-t_1}$$| $$\frac{m}{s}$$ |
+| Velocità istantanea | $$v = \lim_{\Delta t \to 0} \frac{s(t + \Delta t)-s(t)}{\Delta t} = \frac{ds}{dt}$$ |  $$\frac{m}{s}$$ |
+| Modulo vettore | $$| \vec{v} | = \sqrt{v_x^2 + v_y^2}$$ | none |
 | Modulo componente orizzontale $\vert \vec{v_x} \vert$ | $$\vert \vec{v_x} \vert = \vert \vec{v} \vert \cos{\alpha}$$ |
 | Modulo componente verticale $\vert \vec{v_y} \vert$ | $$\vert \vec{v_y} \vert = \vert \vec{v} \vert \sin{\alpha}$$ |
 
-: Velocità {#tbl-matematiche}
+:::
+
+### Accelerazione
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Accelerazione scalare media | $$a_m = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}$$| $$\frac{m}{s^2}$$ |
+| Velocità istantanea | $$\vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$$ |  $$\frac{m}{s^2}$$ |
+
+:::
+
+### Moto rettilineo uniforme ($\vec{v}$ costante, $a = 0$)
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Legge oraria | $$x = x_0 + v_0 \cdot t $$| $$m$$ |
+
+:::
+
+### Moto rettilineo uniformemente accelerato
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Legge oraria | $$x = x_0 + v_0 t + \frac{1}{2} a t^2 $$| $$m$$ |
+| velocità | $$ v = v_0 + at $$ | $$\frac{m}{s}$$ |
+|velocità media | $$ v_m = v_0 + \frac{1}{2} a t $$| $$\frac{m}{s}$$ |
+
+:::
+
+### Moto Circolare Uniforme
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| velocità angolare | $$ \omega = \frac{\Delta \theta}{\Delta t}$$ | $$\frac{rad}{s}$$ |
+| periodo | $$T = \frac{1}{f}$$ |
+| velocità | $$v = R \omega $$ | $$\frac{rad}{s}$$ |
+| accelerazione | $$a = v \omega = R {\omega}^2$$ |
+
+:::
+
+(aggiungere componenti)
+
+### Moto Armonico
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| legge oraria | $$x = A \cos{(\omega t + \phi)}$$ | $$m$$ |
+| velocità angolare | $$ \omega = 2 \pi f $$ | 
+| accelerazione | $$- {\omega}^2 x$$ |
 
 :::
 
 ## Dinamica
 
+### Leggi di Newton
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| da | fa | re |
+
+:::
+
 ## Elettricità
+
+### Campo elettrico
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Legge di Coulomb | $$\vec{F} = K \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$| roba |
+| Costante K | $$ K = \frac{1}{4 \pi {\epsilon}_0}$$|
+| Legge di Coulomb mezzi materiali | $$\vec{F} = \frac{K}{{\epsilon}_r} \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$|
+| Vettore intensità campo elettrico | $$\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})$$|
+
+:::
+
+### Lavoro e potenziale campo elettrico
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Lavoro | $$\frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$$| roba |
+| Energia potenziale | $$U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$|
+| Potenziale elettrico | $$V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$|
+| Differenza potenziale | $$\Delta V_{AB} = V_B - V_A$$|
+| Flusso elettrico | $$\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S$$
+| Energia uscita? | $$E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma $$ |
+
+:::
+
+### Condensatori
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Capacità | $$C = \frac{Q}{\Delta V}$$ |
+| Densità carica superficiale | $$\sigma = \frac{Q}{S}$$|
+| Capacità condensatore cilindrico | $$C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$$|
+| Capacità condensatori in serie | $$ \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$$ |
+| Capacità condensatori in parallelo | $$ C = C_1 + C_2 $$ |
+| Lavoro carica condensatore | $$L = \frac{1}{2} C V^2$$ |
+(formule senza nome)
+
+:::
+
+### Corrente elettrica
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Intensità di corrente | $$i = \frac{\Delta q}{\Delta t}$$ | A |
+| Densità di corrente | $$J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}$$ | A |
+| Legge di Ohm | $$ \vec{J} = \sigma \vec{E} $$ | A |
+| Legge di Ohm | $$ I = \frac{V}{R}$$ | 
+| Resistenza elettrica | $$R = \rho \frac{l}{S}$$ |
+
+:::
+
+### Soluzioni elettroliti
+
+**anioni**
+**cationi**
 
 ## Magnetismo
 
@@ -44,3 +174,87 @@ table td, table th {
 ## Fluidi
 
 ## Statica rotazioni
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Equazione punto materiale | $$\sum_{i}{\vec{F_i} = 0}$$ | none |
+| Centro di massa | $$R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}$$ | boh |
+| Baricentro | $$R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$$ | boh|
+| Momento | $$\vec{M}= $$ | boh |
+| Momento vettore | $$\vec{M} = r \sin{(\phi)}$$ | boh |
+| Momento angolare corpo | $$\vec{L_{TOT}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$$ |
+| Momento angolare | $$M = mvr$$ |
+| Momento angolare corpo esteso | $$L_{TOT} = \sum_{i}{m_i r_i^2 \omega} = I \omega$$ |
+| Momento di inerzia del corpo | $$I = \sum_{i}{m_i r_i^2}$$ |
+| Momento istantaneo? | $$\frac{\partial\vec{L}_{TOT} }{ \partial t} = \vec{M}_{TOT}$$ |
+| Equilibrio del corpo esteso | $$\vec{F}_{TOT}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0 $$|
+
+:::
+
+### Leve
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| relazione | $$b_m F_m = b_r F_r$$ |
+| rapporto | $$G = \frac{F_r}{F_m} = \frac{b_m}{b_r}$$|
+| I tipo | fulcro intermedio|
+| II tipo | R intermedio |
+| III tipo | M intermedio |
+
+:::
+
+### Elasticità
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Legge di Hooke | $$ \frac{F}{A} = E \frac{\Delta l}{l} $$ |
+| Stress | $$\frac{F}{A}$$ |
+| Stiramento | $$\frac{\Delta l}{l}$$ |
+
+:::
+
+## Fluidi (completa deformabilità)
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Densità | $$ d = \frac{M}{V}$$ |
+| Pressione | $$ p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$$ |
+| Legge di Stevino | $$p = p_0 + \rho g d$$ |
+| Forza di Archimede | $$ F_A = \rho g V$$|
+| Principio di Archimede | $$F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V $$ |
+
+:::
+
+### Fluidi viscosi
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+
+:::
+
+## Entropia
+
+**Macrostato** &rarr; gas occupa un determinato volume e ha una temperatura
+**Microstato** &rarr; molecola 1 occupa la posizione $x_1$, la molecola 2 occupa la posizione $x_2$, ...
+
+**Entropia**
+: misura numero di microstati compatibili con il macrostato. Offre una misura della mancanza di informazione
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Mancanza informazione | $$ S = K_B \log{W} $$ |
+| Costante di Boltzmann | $$ K_b = \frac{R}{N_{AV}}$$ |
+
+:::

@@ -1,0 +1,7 @@
+---
+title: "Insetti italiani"
+description: "riassunto del libro atlante degli insetti"
+categorie: [personali, animali]
+imagine: https://thumbs.dreamstime.com/b/illustrazione-antica-dell-incisione-del-mantide-71003099.jpg
+---
+

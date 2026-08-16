@@ -109,6 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -233,6 +234,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#branching" id="toc-branching" class="nav-link" data-scroll-target="#branching">Branching</a>
   <ul>
   <li><a href="#come-funziona-il-branching" id="toc-come-funziona-il-branching" class="nav-link" data-scroll-target="#come-funziona-il-branching">Come funziona il branching</a></li>
+  <li><a href="#creare-un-nuovo-branch" id="toc-creare-un-nuovo-branch" class="nav-link" data-scroll-target="#creare-un-nuovo-branch">Creare un nuovo branch</a></li>
+  <li><a href="#spostarsi-di-branch" id="toc-spostarsi-di-branch" class="nav-link" data-scroll-target="#spostarsi-di-branch">Spostarsi di branch</a></li>
+  <li><a href="#switch-e-checkout" id="toc-switch-e-checkout" class="nav-link" data-scroll-target="#switch-e-checkout">Switch e checkout</a></li>
+  <li><a href="#storia-divergente" id="toc-storia-divergente" class="nav-link" data-scroll-target="#storia-divergente">Storia divergente</a></li>
+  <li><a href="#merging" id="toc-merging" class="nav-link" data-scroll-target="#merging">Merging</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -678,7 +684,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>`git tag <name>: crea un tag lightweight</name></p>
 <p>per taggare un commit esistente, basta specificare il commit (in particolare parte del checksum) a fine comando</p>
 <p>esempio in cui attribuiamo il tag v1.2 a un commit specifico</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--prettY</span><span class="op">=</span>oneline</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--pretty</span><span class="op">=</span>oneline</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">166ae0c4d3f420721acbb115cc33848dfcc2121a</span> Create write support</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">9fceb02d0ae598e95dc970b74767f19372d61af8</span> Update rakefile</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">964f16d36dfccde844893cac5b347e7b3d44abbc</span> Commit the todo</span>
@@ -724,6 +730,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="branching" class="level2">
 <h2 class="anchored" data-anchor-id="branching">Branching</h2>
+<p>link utile: https://learngitbranching.js.org</p>
 <section id="come-funziona-il-branching" class="level3">
 <h3 class="anchored" data-anchor-id="come-funziona-il-branching">Come funziona il branching</h3>
 <p>Quando fai un commit, git salva un oggetto commit che contiene:</p>
@@ -740,7 +747,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">graph LR
-    %% Nodii
+    %% Nodi
     C["&lt;b&gt;98ca9&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 92ec2&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;The initial commit of my project&lt;/small&gt;"]
     
     T["&lt;b&gt;92ec2&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;tree&lt;/b&gt; size&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; 5b1d3 README&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; 911e7 LICENSE&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; cba0a test.rb"]
@@ -769,7 +776,209 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>link utile: https://learngitbranching.js.org</p>
+<p>Se ora facessi un nuovo commit, quest’ultimo avrebbe un puntatore anche al padre, e così via</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph RL
+C["&lt;b&gt;98ca9&lt;/b&gt;&lt;br/&gt;----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 92ec2&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;The initial commit of my project&lt;/small&gt;"]
+S["Snapshot A"]
+D["&lt;b&gt;34ac2&lt;/b&gt;&lt;br/&gt;----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 184ca&lt;br/&gt;parent 98ca9&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;Bug Fix&lt;/small&gt;"]
+T["Snapshot B"]
+
+C --&gt; S
+D --&gt; T
+D --&gt; C
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Un <strong>branch</strong> in Git è semplicemente un puntatore mobile puntato su uno di questi commit. Il branch di default è <strong>main</strong>. Ogni volta che fai un commit, il main avanza automaticamente all’ultimo commit.</p>
+</section>
+<section id="creare-un-nuovo-branch" class="level3">
+<h3 class="anchored" data-anchor-id="creare-un-nuovo-branch">Creare un nuovo branch</h3>
+<p><code>$ git branch &lt;name_branch&gt;</code>: crea un nuovo branch nel commit in cui sei in quel momento.</p>
+<p>Per esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git branch testing</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph RL
+
+C1[98ca9]
+C2[34ac2]
+C3[f30ab]
+M[main]
+T[testing]
+H[HEAD]
+
+C2 --&gt; C1
+C3 --&gt; C2
+M --&gt; C3
+T --&gt; C3
+H --&gt; M
+
+style C1 fill:white 
+
+style C2 fill:white
+
+style C3 fill:white
+
+style M fill:orange
+
+style T fill:orange
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="spostarsi-di-branch" class="level3">
+<h3 class="anchored" data-anchor-id="spostarsi-di-branch">Spostarsi di branch</h3>
+<p>Git possiede un puntatore speciale chiamato <strong>HEAD</strong> che indica il branch in quale sei in questo momento. Quando crei un branch nuovo non ti sposti in quest’ultimo.</p>
+<p>Lo spostamento va fatto esplicitamente mediante `$ git checkout <branch>.</branch></p>
+<p>Una volta spostato il puntatore HEAD, ogni commit aggiuntivo riguarderà il branch selezionato.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git branch testing </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout testing</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"commit C4"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Il risultato sarà il seguente:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 469.98 98.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-94 465.98,-94 465.98,4 -4,4"></polygon>
+<!-- C3 -->
+<g id="node1" class="node">
+<title>C3</title>
+<ellipse fill="none" stroke="black" cx="117" cy="-45" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="117" y="-40.8" font-family="Times,serif" font-size="14.00">C3</text>
+</g>
+<!-- C2 -->
+<g id="node2" class="node">
+<title>C2</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-45" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-40.8" font-family="Times,serif" font-size="14.00">C2</text>
+</g>
+<!-- C3&#45;&gt;C2 -->
+<g id="edge1" class="edge">
+<title>C3-&gt;C2</title>
+<path fill="none" stroke="black" d="M89.6,-45C81.61,-45 72.69,-45 64.18,-45"></path>
+<polygon fill="black" stroke="black" points="64.08,-41.5 54.08,-45 64.08,-48.5 64.08,-41.5"></polygon>
+</g>
+<!-- main -->
+<g id="node3" class="node">
+<title>main</title>
+<ellipse fill="none" stroke="black" cx="210.35" cy="-72" rx="30.19" ry="18"></ellipse>
+<text text-anchor="middle" x="210.35" y="-67.8" font-family="Times,serif" font-size="14.00">main</text>
+</g>
+<!-- main&#45;&gt;C3 -->
+<g id="edge2" class="edge">
+<title>main-&gt;C3</title>
+<path fill="none" stroke="black" d="M182.92,-64.19C173.2,-61.32 162.06,-58.02 151.78,-54.98"></path>
+<polygon fill="black" stroke="black" points="152.45,-51.53 141.87,-52.05 150.47,-58.25 152.45,-51.53"></polygon>
+</g>
+<!-- C4 -->
+<g id="node4" class="node">
+<title>C4</title>
+<ellipse fill="none" stroke="black" cx="210.35" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="210.35" y="-13.8" font-family="Times,serif" font-size="14.00">C4</text>
+</g>
+<!-- C4&#45;&gt;C3 -->
+<g id="edge3" class="edge">
+<title>C4-&gt;C3</title>
+<path fill="none" stroke="black" d="M185.35,-25.09C175.15,-28.11 163.07,-31.68 151.98,-34.96"></path>
+<polygon fill="black" stroke="black" points="150.75,-31.67 142.16,-37.86 152.74,-38.38 150.75,-31.67"></polygon>
+</g>
+<!-- testing -->
+<g id="node5" class="node">
+<title>testing</title>
+<ellipse fill="none" stroke="black" cx="313.48" cy="-18" rx="36.57" ry="18"></ellipse>
+<text text-anchor="middle" x="313.48" y="-13.8" font-family="Times,serif" font-size="14.00">testing</text>
+</g>
+<!-- testing&#45;&gt;C4 -->
+<g id="edge4" class="edge">
+<title>testing-&gt;C4</title>
+<path fill="none" stroke="black" d="M276.54,-18C267.22,-18 257.17,-18 247.82,-18"></path>
+<polygon fill="black" stroke="black" points="247.63,-14.5 237.63,-18 247.63,-21.5 247.63,-14.5"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node6" class="node">
+<title>HEAD</title>
+<ellipse fill="none" stroke="black" cx="424.12" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="424.12" y="-13.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;testing -->
+<g id="edge5" class="edge">
+<title>HEAD-&gt;testing</title>
+<path fill="none" stroke="black" d="M386.04,-18C377.82,-18 369.02,-18 360.49,-18"></path>
+<polygon fill="black" stroke="black" points="360.29,-14.5 350.29,-18 360.29,-21.5 360.29,-14.5"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Se fai un movimento all’indietro con <code>$ git checkout main</code> avverranno due cose:</p>
+<ul>
+<li>HEAD punterà al nuovo branch (main nell’esempio)</li>
+<li>i file della working directory verranno riportati allo stato del commit puntato da main</li>
+</ul>
+<p>Se modificassimo i file ulteriormente, la storia del progetto divergerebbe.</p>
+</section>
+<section id="switch-e-checkout" class="level3">
+<h3 class="anchored" data-anchor-id="switch-e-checkout">Switch e checkout</h3>
+<p>Per creare e spostarsi direttamente a un nuovo branch puoi usare <code>$ git checkout -b &lt;newbranchname&gt;</code></p>
+<p>Le nuove versioni di git prediligono l’utilizzo del comando `git switch``</p>
+<p><code>$ git switch &lt;branch&gt;</code>per spostarsi in un branch esistente</p>
+<p><code>$ git switch -c branch</code>per creare un branch e spostarsi direttamente in esso</p>
+<p><code>$ git switch -</code>per tornare al branch precedente</p>
+</section>
+<section id="storia-divergente" class="level3">
+<h3 class="anchored" data-anchor-id="storia-divergente">Storia divergente</h3>
+<p>La storia divergente quando due branch prendono direzioni diverse. Graficamente</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart BT
+    %% Definizione degli stili per i blocchi
+    classDef commit fill:#f1f0e8,stroke:#f1f0e8,color:#333333,font-family:monospace;
+    classDef branch fill:#ff3b00,stroke:#ff3b00,color:#ffffff,font-family:monospace;
+    classDef head fill:#d49a00,stroke:#d49a00,color:#ffffff,font-family:monospace;
+
+    %% Nodi e relazioni
+    HEAD["HEAD"]:::head --&gt; master["master"]:::branch
+    master --&gt; c2b9e:::commit
+    c2b9e --&gt; f30ab
+    87ab2:::commit --&gt; f30ab
+    testing["testing"]:::branch --&gt; 87ab2
+    
+    f30ab["f30ab"]:::commit --&gt; 34ac2["34ac2"]:::commit
+    34ac2 --&gt; 98ca9["98ca9"]:::commit
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Un ottimo metodo per vedere l’intera situazione è tramite <code>$ git log --oneline --decorate --graph --all</code></p>
+</section>
+<section id="merging" class="level3">
+<h3 class="anchored" data-anchor-id="merging">Merging</h3>
+<p>Per riunire le modifiche di due branch di solito si usa il comando <code>git merge</code></p>
 
 
 </section>
