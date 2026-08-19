@@ -24,9 +24,9 @@ table td, table th {
 |:---|:---:|:---:|
 | Velocità scalare media | $$v_m = \frac{s(t_2)-s(t_1)}{t_2-t_1}$$| $$\frac{m}{s}$$ |
 | Velocità istantanea | $$v = \lim_{\Delta t \to 0} \frac{s(t + \Delta t)-s(t)}{\Delta t} = \frac{ds}{dt}$$ |  $$\frac{m}{s}$$ |
-| Modulo vettore | $$| \vec{v} | = \sqrt{v_x^2 + v_y^2}$$ | none |
-| Modulo componente orizzontale $\vert \vec{v_x} \vert$ | $$\vert \vec{v_x} \vert = \vert \vec{v} \vert \cos{\alpha}$$ |
-| Modulo componente verticale $\vert \vec{v_y} \vert$ | $$\vert \vec{v_y} \vert = \vert \vec{v} \vert \sin{\alpha}$$ |
+| Modulo vettore | $$| \vec{v} | = \sqrt{v_x^2 + v_y^2}$$ | $$\frac{m}{s}$$ |
+| Modulo componente orizzontale $\vert \vec{v_x} \vert$ | $$\vert \vec{v_x} \vert = \vert \vec{v} \vert \cos{\alpha}$$ | $$\frac{m}{s}$$ |
+| Modulo componente verticale $\vert \vec{v_y} \vert$ | $$\vert \vec{v_y} \vert = \vert \vec{v} \vert \sin{\alpha}$$ | $$\frac{m}{s}$$ |
 
 :::
 
@@ -70,9 +70,11 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | velocità angolare | $$ \omega = \frac{\Delta \theta}{\Delta t}$$ | $$\frac{rad}{s}$$ |
-| periodo | $$T = \frac{1}{f}$$ |
-| velocità | $$v = R \omega $$ | $$\frac{rad}{s}$$ |
-| accelerazione | $$a = v \omega = R {\omega}^2$$ |
+| periodo | $$T = \frac{1}{f}$$ | $$s$$ |
+| velocità | $$v = \frac{R \Delta \theta}{\Delta t} = R \omega  $$ | $$\frac{rad}{s}$$ |
+| accelerazione | $$a = v \omega = R {\omega}^2$$ | $$\frac{rad}{s^2}$$ |
+| accelerazione centripeta | verso interno | |
+| accelerazione centrifuga | verso esterno | |
 
 :::
 
@@ -80,13 +82,25 @@ table td, table th {
 
 ### Moto Armonico
 
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Ampiezza | $$A$$ | $$m$$ |
+| Pulsazione | $$ \omega = 2 \pi f $$ | $$\frac{rad}{s}$$ |
+| Fase iniziale | $$\phi$$ | $$m, \; \phi \in [0,A]$$ |
+
+
+:::
+
 ::: {.striped .hover}
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | legge oraria | $$x = A \cos{(\omega t + \phi)}$$ | $$m$$ |
-| velocità angolare | $$ \omega = 2 \pi f $$ | 
-| accelerazione | $$- {\omega}^2 x$$ |
+| velocità | $$ v = A \omega \sin(\omega t + \phi) $$ | 
+| accelerazione | $$ a = - A {\omega}^2 \cos(\omega t + \phi)$$ |
 
 :::
 
@@ -104,16 +118,17 @@ table td, table th {
 
 ## Elettricità
 
-### Campo elettrico
+### Elettrostatica
 
 ::: {.striped .hover}
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge di Coulomb | $$\vec{F} = K \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$| roba |
-| Costante K | $$ K = \frac{1}{4 \pi {\epsilon}_0}$$|
-| Legge di Coulomb mezzi materiali | $$\vec{F} = \frac{K}{{\epsilon}_r} \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$|
-| Vettore intensità campo elettrico | $$\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})$$|
+| Legge di Coulomb | $$\vec{F} = K \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$| $$N$$ |
+| Costante K | $$ K = \frac{1}{4 \pi {\epsilon}_0}$$| $$ \frac{N m^2}{C^2}$$ |
+| Costante dialettrica nel vuoto | $$ \epsilon_0 = 8,854 $$ | $$\frac{C^2}{N m^2}$$ |
+| Legge di Coulomb mezzi materiali | $$\vec{F} = \frac{K}{{\epsilon}_r} \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$| $$N$$ |
+| Vettore intensità di campo elettrico | $$\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})$$| $$\frac{N}{C}$$ |
 
 :::
 
@@ -123,11 +138,11 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Lavoro | $$\frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$$| roba |
-| Energia potenziale | $$U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$|
-| Potenziale elettrico | $$V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$|
+| Lavoro | $$\frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$$| $$J$$ |
+| Energia potenziale | $$U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$| $$J$$ |
+| Potenziale elettrico | $$V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$| $$V = 1 \frac{J}{C}$$ |
 | Differenza potenziale | $$\Delta V_{AB} = V_B - V_A$$|
-| Flusso elettrico | $$\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S$$
+| Flusso elettrico | $$\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S$$ | $$V \cdot m$$ |
 | Energia uscita? | $$E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma $$ |
 
 :::
@@ -138,12 +153,12 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Capacità | $$C = \frac{Q}{\Delta V}$$ |
-| Densità carica superficiale | $$\sigma = \frac{Q}{S}$$|
-| Capacità condensatore cilindrico | $$C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$$|
-| Capacità condensatori in serie | $$ \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$$ |
-| Capacità condensatori in parallelo | $$ C = C_1 + C_2 $$ |
-| Lavoro carica condensatore | $$L = \frac{1}{2} C V^2$$ |
+| Capacità | $$C = \frac{Q}{\Delta V}$$ | $$ F = \frac{C}{V}$$|
+| Densità carica superficiale | $$\sigma = \frac{Q}{S}$$| $$\frac{C}{m^2}$$|
+| Capacità condensatore cilindrico | $$C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$$| $$F$$ |
+| Capacità condensatori in serie | $$ \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$$ | $$F$$ |
+| Capacità condensatori in parallelo | $$ C = C_1 + C_2 $$ | $$F$$ |
+| Lavoro carica condensatore | $$L = \frac{1}{2} C V^2$$ | $$J$$ |
 (formule senza nome)
 
 :::
@@ -157,15 +172,52 @@ table td, table th {
 | Intensità di corrente | $$i = \frac{\Delta q}{\Delta t}$$ | A |
 | Densità di corrente | $$J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}$$ | A |
 | Legge di Ohm | $$ \vec{J} = \sigma \vec{E} $$ | A |
-| Legge di Ohm | $$ I = \frac{V}{R}$$ | 
-| Resistenza elettrica | $$R = \rho \frac{l}{S}$$ |
+| conducibilità elettrica | $$\sigma$$ | $$\frac{C^2}{s m}$$ |
+| Legge di Ohm | $$ I = \frac{V}{R}$$ | $$A$$|
+| Resistenza elettrica | $$R = \rho \frac{l}{S}$$ | $$\Omega = V A$$ |
+| Resistenza specifica o resistività | $$\rho$$ |
 
 :::
 
 ### Soluzioni elettroliti
 
-**anioni**
-**cationi**
+**anioni** (b) &rarr; $-z_b e$
+**cationi** (a) &rarr; $+z_a e$
+
+Forza sottoposti ioni: $ZeE$
+Forza di attrito: $F_A=-fv$ (proporzionale alla velocità)
+
+equilibrio: $F = F + F_A = ZeE - fv = 0$
+
+velocità trascinamento $v = \frac{ZeE}{f} = \mu E$
+
+#### Cella Elettrolitica
+
+### Generatori
+
+```{=latex}
+\begin{circuitikz}[american]
+  \draw
+    (0,0) to[V, l=\(V_s\)] (0,3)
+    -- (2,3)
+    to[R, l=\(R_1\)] (4,3)
+    -- (4,0)
+    to[C, l=\(C_1\)] (0,0);
+\end{circuitikz}
+```
+
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Forza elettromotrice (lavoro) | $$fem = f$$ | $$V$$ |
+| Lavoro generatore aperto (non eroga corrente) | $$f = V_A - V_B$$ | $$V$$ |
+| Lavoro generatore chiuso (eroga corrente) | $$V_A - V_B = f - r l $$ | $$V$$ |
+| Differenza di potenziale | $$\Delta V  = f \frac{R}{R + r} = RI $$ | $$V$$ |
+
+
+:::
 
 ## Magnetismo
 
@@ -184,12 +236,12 @@ table td, table th {
 | Baricentro | $$R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$$ | boh|
 | Momento | $$\vec{M}= $$ | boh |
 | Momento vettore | $$\vec{M} = r \sin{(\phi)}$$ | boh |
-| Momento angolare corpo | $$\vec{L_{TOT}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$$ |
+| Momento angolare corpo | $$\vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$$ |
 | Momento angolare | $$M = mvr$$ |
-| Momento angolare corpo esteso | $$L_{TOT} = \sum_{i}{m_i r_i^2 \omega} = I \omega$$ |
+| Momento angolare corpo esteso | $$L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$$ |
 | Momento di inerzia del corpo | $$I = \sum_{i}{m_i r_i^2}$$ |
-| Momento istantaneo? | $$\frac{\partial\vec{L}_{TOT} }{ \partial t} = \vec{M}_{TOT}$$ |
-| Equilibrio del corpo esteso | $$\vec{F}_{TOT}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0 $$|
+| Momento istantaneo? | $$\frac{\partial\vec{L}_{tot} }{ \partial t} = \vec{M}_{TOT}$$ |
+| Equilibrio del corpo esteso | $$\vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0 $$|
 
 :::
 
@@ -230,8 +282,23 @@ table td, table th {
 | Legge di Stevino | $$p = p_0 + \rho g d$$ |
 | Forza di Archimede | $$ F_A = \rho g V$$|
 | Principio di Archimede | $$F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V $$ |
+| Leve idrauliche | $$p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$$|
+| Portata o flusso | $$Q = \frac{S v \Delta t}{\Delta t} = S v$$ |
+:::
+
+### Liquido incomprimibile in 2 sezioni
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Costanza della portata | $$S_1 v_1 = S_2 v_2$$ |
+| Lavoro | $$L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2$$ |
+| Teorema di Bernoulli | $$p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}$$ |
+| Teorema di Torricelli | forse non ha formula|
 
 :::
+
 
 ### Fluidi viscosi
 
@@ -239,8 +306,13 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-
+| Bernoulli | $$p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A $$ |
+| Energia attrito | $$ E_A = p_1 - p_2$$ |
+| Resistenza di un condotto | $$ R = \frac{\Delta p}{Q}$$ |
+| Legge di Poiseuille | $$Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
+| Resistenza in un condotto cilindrico | $$R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
 :::
+
 
 ## Entropia
 
