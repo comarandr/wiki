@@ -195,16 +195,6 @@ velocità trascinamento $v = \frac{ZeE}{f} = \mu E$
 
 ### Generatori
 
-```{=latex}
-\begin{circuitikz}
-    \draw (0,0) to[battery, l=E] (0,3)
-          to[resistor, l=R] (3,3)
-          -- (3,0)
-          to[lamp] (0,0);
-\end{circuitikz}
-```
-
-
 ::: {.striped .hover}
 
 | Descrizione | Formula Matematica | Unità di misura |
