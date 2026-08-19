@@ -43,7 +43,8 @@ jobs:
           Rscript -e 'install.packages(c("knitr", "rmarkdown"), repos = "https://cloud.r-project.org")'
 
       - name: Install pacchetti Latex
-        uses: tlmgr install pgf circuitikz siunitx xstring
+        run: | 
+          tlmgr install pgf circuitikz siunitx xstring
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
