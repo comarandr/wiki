@@ -184,12 +184,20 @@ table td, table th {
 **anioni** (b) &rarr; $-z_b e$
 **cationi** (a) &rarr; $+z_a e$
 
+per semplicità possiamo porre $z_a = z_b = z = 1$, indicando gli ioni con $a^+$ e $b^-$
+
 Forza sottoposti ioni: $ZeE$
 Forza di attrito: $F_A=-fv$ (proporzionale alla velocità)
 
 equilibrio: $F = F + F_A = ZeE - fv = 0$
 
 velocità trascinamento $v = \frac{ZeE}{f} = \mu E$
+
+concentrazione: grammoione/litro 
+
+**grammoione**: massa di di una mole, ovvero un numero di Avogadro di ioni. 
+
+**costante di Faraday $\mathcal{F}$**: $96489 \ C mol^-1$
 
 #### Cella Elettrolitica
 
