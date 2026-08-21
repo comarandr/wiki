@@ -171,27 +171,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#schemi-bash-linux" id="toc-schemi-bash-linux" class="nav-link active" data-scroll-target="#schemi-bash-linux">Schemi bash linux</a>
   <ul>
-  <li><a href="#shell-sessione" id="toc-shell-sessione" class="nav-link" data-scroll-target="#shell-sessione">SHELL &amp; SESSIONE</a>
-  <ul class="collapse">
-  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">HISTORY</a></li>
-  </ul></li>
-  <li><a href="#caratteri" id="toc-caratteri" class="nav-link" data-scroll-target="#caratteri">CARATTERI</a>
-  <ul class="collapse">
-  <li><a href="#metacaratteri" id="toc-metacaratteri" class="nav-link" data-scroll-target="#metacaratteri">METACARATTERI</a></li>
-  <li><a href="#quoting" id="toc-quoting" class="nav-link" data-scroll-target="#quoting">QUOTING</a></li>
-  <li><a href="#caratteri-speciali" id="toc-caratteri-speciali" class="nav-link" data-scroll-target="#caratteri-speciali">CARATTERI SPECIALI</a></li>
+  <li><a href="#pathname" id="toc-pathname" class="nav-link" data-scroll-target="#pathname">Pathname</a></li>
+  <li><a href="#login-e-clear-shell" id="toc-login-e-clear-shell" class="nav-link" data-scroll-target="#login-e-clear-shell">Login e clear shell</a></li>
+  <li><a href="#history-dei-comandi" id="toc-history-dei-comandi" class="nav-link" data-scroll-target="#history-dei-comandi">History dei comandi</a></li>
+  <li><a href="#creazione-di-alias" id="toc-creazione-di-alias" class="nav-link" data-scroll-target="#creazione-di-alias">Creazione di Alias</a></li>
+  <li><a href="#metacaratteri" id="toc-metacaratteri" class="nav-link" data-scroll-target="#metacaratteri">Metacaratteri</a></li>
+  <li><a href="#quoting-per-inibire-caratteri" id="toc-quoting-per-inibire-caratteri" class="nav-link" data-scroll-target="#quoting-per-inibire-caratteri">Quoting per inibire caratteri</a></li>
+  <li><a href="#caratteri-di-spaziatura" id="toc-caratteri-di-spaziatura" class="nav-link" data-scroll-target="#caratteri-di-spaziatura">Caratteri di spaziatura</a></li>
   </ul></li>
   <li><a href="#comandi-per-manipolare-file-e-directory" id="toc-comandi-per-manipolare-file-e-directory" class="nav-link" data-scroll-target="#comandi-per-manipolare-file-e-directory">COMANDI PER MANIPOLARE FILE E DIRECTORY</a>
-  <ul class="collapse">
-  <li><a href="#file-system-in-breve" id="toc-file-system-in-breve" class="nav-link" data-scroll-target="#file-system-in-breve">file system in breve</a></li>
+  <ul>
+  <li><a href="#spostarsi-tra-le-cartelle" id="toc-spostarsi-tra-le-cartelle" class="nav-link" data-scroll-target="#spostarsi-tra-le-cartelle">Spostarsi tra le cartelle</a></li>
+  <li><a href="#elencare-file-di-una-cartella-listing" id="toc-elencare-file-di-una-cartella-listing" class="nav-link" data-scroll-target="#elencare-file-di-una-cartella-listing">Elencare file di una cartella (listing)</a></li>
+  <li><a href="#copiare-un-file" id="toc-copiare-un-file" class="nav-link" data-scroll-target="#copiare-un-file">Copiare un file</a></li>
+  <li><a href="#confrontare-file" id="toc-confrontare-file" class="nav-link" data-scroll-target="#confrontare-file">Confrontare file</a></li>
+  <li><a href="#ricercare-un-file" id="toc-ricercare-un-file" class="nav-link" data-scroll-target="#ricercare-un-file">Ricercare un file</a></li>
   </ul></li>
-  <li><a href="#processi-e-job" id="toc-processi-e-job" class="nav-link" data-scroll-target="#processi-e-job">PROCESSI E JOB</a>
+  <li><a href="#file-system-in-breve" id="toc-file-system-in-breve" class="nav-link" data-scroll-target="#file-system-in-breve">File system in breve</a>
+  <ul>
+  <li><a href="#informazioni-sullo-spazio-disponibile" id="toc-informazioni-sullo-spazio-disponibile" class="nav-link" data-scroll-target="#informazioni-sullo-spazio-disponibile">Informazioni sullo spazio disponibile</a></li>
+  <li><a href="#processi-e-job" id="toc-processi-e-job" class="nav-link" data-scroll-target="#processi-e-job">Processi e job</a>
   <ul class="collapse">
-  <li><a href="#visualizzazione" id="toc-visualizzazione" class="nav-link" data-scroll-target="#visualizzazione">VISUALIZZAZIONE</a></li>
-  <li><a href="#filtro" id="toc-filtro" class="nav-link" data-scroll-target="#filtro">FILTRO</a></li>
-  <li><a href="#scripting" id="toc-scripting" class="nav-link" data-scroll-target="#scripting">SCRIPTING</a></li>
+  <li><a href="#terminare-un-processo" id="toc-terminare-un-processo" class="nav-link" data-scroll-target="#terminare-un-processo">Terminare un processo</a></li>
+  <li><a href="#processi-in-background-job" id="toc-processi-in-background-job" class="nav-link" data-scroll-target="#processi-in-background-job">Processi in background (job)</a></li>
+  <li><a href="#informarsi-sullo-spazio-occupato" id="toc-informarsi-sullo-spazio-occupato" class="nav-link" data-scroll-target="#informarsi-sullo-spazio-occupato">Informarsi sullo spazio occupato</a></li>
   </ul></li>
-  <li><a href="#controllo-di-flusso" id="toc-controllo-di-flusso" class="nav-link" data-scroll-target="#controllo-di-flusso">CONTROLLO DI FLUSSO</a>
+  <li><a href="#visualizzare-un-file" id="toc-visualizzare-un-file" class="nav-link" data-scroll-target="#visualizzare-un-file">Visualizzare un file</a></li>
+  <li><a href="#inode-e-link" id="toc-inode-e-link" class="nav-link" data-scroll-target="#inode-e-link">Inode E Link</a></li>
+  <li><a href="#filtraggio" id="toc-filtraggio" class="nav-link" data-scroll-target="#filtraggio">Filtraggio</a>
+  <ul class="collapse">
+  <li><a href="#numero-di-lineeparolecaratteri-di-un-file" id="toc-numero-di-lineeparolecaratteri-di-un-file" class="nav-link" data-scroll-target="#numero-di-lineeparolecaratteri-di-un-file">Numero di linee,parole,caratteri di un file</a></li>
+  <li><a href="#segnalare-o-cancellare-linee-ripetute-in-un-file" id="toc-segnalare-o-cancellare-linee-ripetute-in-un-file" class="nav-link" data-scroll-target="#segnalare-o-cancellare-linee-ripetute-in-un-file">Segnalare o cancellare linee ripetute in un file</a></li>
+  <li><a href="#restituire-linee-di-un-input-che-contengono-un-determinato-pattern" id="toc-restituire-linee-di-un-input-che-contengono-un-determinato-pattern" class="nav-link" data-scroll-target="#restituire-linee-di-un-input-che-contengono-un-determinato-pattern">Restituire linee di un input che contengono un determinato pattern</a></li>
+  </ul></li>
+  <li><a href="#metacaratteri-delle-espressioni-regolari" id="toc-metacaratteri-delle-espressioni-regolari" class="nav-link" data-scroll-target="#metacaratteri-delle-espressioni-regolari">Metacaratteri delle espressioni regolari</a></li>
+  <li><a href="#ordinare-linee-in-input" id="toc-ordinare-linee-in-input" class="nav-link" data-scroll-target="#ordinare-linee-in-input">Ordinare linee in input</a></li>
+  <li><a href="#conversione-di-caratteri" id="toc-conversione-di-caratteri" class="nav-link" data-scroll-target="#conversione-di-caratteri">Conversione di caratteri</a></li>
+  <li><a href="#estrarre-colonne-specifiche-da-linee-di-testo-in-input" id="toc-estrarre-colonne-specifiche-da-linee-di-testo-in-input" class="nav-link" data-scroll-target="#estrarre-colonne-specifiche-da-linee-di-testo-in-input">Estrarre colonne specifiche da linee di testo in input</a></li>
+  <li><a href="#combinare-due-righe-corrispondenti-di-due-file" id="toc-combinare-due-righe-corrispondenti-di-due-file" class="nav-link" data-scroll-target="#combinare-due-righe-corrispondenti-di-due-file">Combinare due righe corrispondenti di due file</a></li>
+  <li><a href="#editare-testo-passato-da-un-comando-allaltro-in-una-pipeline" id="toc-editare-testo-passato-da-un-comando-allaltro-in-una-pipeline" class="nav-link" data-scroll-target="#editare-testo-passato-da-un-comando-allaltro-in-una-pipeline">Editare testo passato da un comando all’altro in una pipeline</a></li>
+  </ul></li>
+  <li><a href="#scripting" id="toc-scripting" class="nav-link" data-scroll-target="#scripting">Scripting</a>
+  <ul>
+  <li><a href="#visualizzare-i-comandi-di-uno-script" id="toc-visualizzare-i-comandi-di-uno-script" class="nav-link" data-scroll-target="#visualizzare-i-comandi-di-uno-script">Visualizzare i comandi di uno script</a></li>
+  <li><a href="#acccesso-e-assegnamento-variabili-in-uno-script" id="toc-acccesso-e-assegnamento-variabili-in-uno-script" class="nav-link" data-scroll-target="#acccesso-e-assegnamento-variabili-in-uno-script">Acccesso e assegnamento variabili in uno script</a></li>
+  <li><a href="#variabili-dambiente" id="toc-variabili-dambiente" class="nav-link" data-scroll-target="#variabili-dambiente">Variabili d’ambiente</a></li>
+  <li><a href="#variabili-speciali" id="toc-variabili-speciali" class="nav-link" data-scroll-target="#variabili-speciali">Variabili speciali</a></li>
+  <li><a href="#variabili-di-stato" id="toc-variabili-di-stato" class="nav-link" data-scroll-target="#variabili-di-stato">Variabili di stato</a></li>
+  <li><a href="#esempio-script" id="toc-esempio-script" class="nav-link" data-scroll-target="#esempio-script">Esempio script</a></li>
+  <li><a href="#controllo-di-flusso-costrutti" id="toc-controllo-di-flusso-costrutti" class="nav-link" data-scroll-target="#controllo-di-flusso-costrutti">Controllo di flusso (costrutti)</a>
   <ul class="collapse">
   <li><a href="#in-caso-non-sia-valutabile-lexit-status" id="toc-in-caso-non-sia-valutabile-lexit-status" class="nav-link" data-scroll-target="#in-caso-non-sia-valutabile-lexit-status">in caso non sia valutabile l’exit status</a></li>
   </ul></li>
@@ -231,6 +259,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="schemi-bash-linux" class="level2">
 <h2 class="anchored" data-anchor-id="schemi-bash-linux">Schemi bash linux</h2>
+<section id="pathname" class="level3">
+<h3 class="anchored" data-anchor-id="pathname">Pathname</h3>
 <p>I file sono riferiti con il PATHNAME:</p>
 <ul>
 <li>assoluto: <code>/home/bianchi/progetto/a</code><br>
@@ -238,14 +268,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>relativo: <code>progetto/a</code> ~pwd: <code>/home/bianchi</code></li>
 </ul>
 <p>NOTA: <code>dir1/*</code> rappresenta il nome di tutti i file dentro la cartella dir1</p>
-<section id="shell-sessione" class="level3">
-<h3 class="anchored" data-anchor-id="shell-sessione">SHELL &amp; SESSIONE</h3>
+</section>
+<section id="login-e-clear-shell" class="level3">
+<h3 class="anchored" data-anchor-id="login-e-clear-shell">Login e clear shell</h3>
 <p>bash e altri tipi di SHELL<br>
 logout</p>
 <p>uscire dalla shell: <code>$ exit</code><br>
 pulire lo schermo: <code>$ clear</code></p>
-<section id="history" class="level4">
-<h4 class="anchored" data-anchor-id="history">HISTORY</h4>
+</section>
+<section id="history-dei-comandi" class="level3">
+<h3 class="anchored" data-anchor-id="history-dei-comandi">History dei comandi</h3>
 <p>Come vedere lista comandi: <code>$ history</code> → [num. evento] [evento = comando]<br>
 rieseguire ultimo comando: <code>$ !!</code><br>
 eseguire un comando con numero evento: <code>$ !num.evento</code><br>
@@ -253,48 +285,47 @@ ricercare stringa a inizio comando: <code>$ ![evento]</code> → es <code>$ !ls<
 ricercare stringa in un punto qualsiasi: <code>$ !?[stringa]?</code> → <code>$ !?ls?</code> cerca <code>ls</code> in tutto il comando</p>
 <p>ricerca di un evento e sostituzione argomenti<br>
 <code>$ ![evento]:s/[stringa1]/[stringa2]/</code> <code>$ [evento] [stringa1]</code> → <code>$ [evento] [stringa2]</code></p>
+</section>
+<section id="creazione-di-alias" class="level3">
+<h3 class="anchored" data-anchor-id="creazione-di-alias">Creazione di Alias</h3>
 <p>creare un alias: <code>$ alias nome_alias='[comando_alias]'</code><br>
 rimuovere alias: <code>$ unalias nome_alias</code></p>
 <p>sostituzione eventi: <code>:s</code> <code>/</code> <code>[stringa da cercare]</code> <code>/</code> <code>[nuova stringa]</code></p>
 </section>
+<section id="metacaratteri" class="level3">
+<h3 class="anchored" data-anchor-id="metacaratteri">Metacaratteri</h3>
+<p><code>*</code> : stringa di 0 o più caratteri<br>
+<code>?</code>: singolo carattere</p>
+<p><code>[]</code> : singolo carattere tra quelli elencati (valgono intervalli es. a-zA-Z)<br>
+<code>{}</code> : sequenza di stringe</p>
+<p><code>&gt;</code> : redirezione output (sovrascrive)<br>
+<code>&gt;&gt;</code> : redirezione output append (non sovrascrive)</p>
+<p><code>&lt;</code>: redirezione input (input non da tastiera)<br>
+<code>&lt;&lt;</code> : redirezione input dalla linea di comando</p>
+<p><code>2&gt;</code> : redirezione messaggi errore</p>
+<p><code>|</code> : pipe, compone comandi a cascata, eseguiti in parallelo<br>
+<code>;</code> : sequenza di comandi<br>
+<code>||</code> : esecuzione condizionale, esegue se il precedente fallisce<br>
+<code>&amp;&amp;</code> : esecuzione condizionale, esegue se il precedente termina con successo<br>
+<code>(...)</code> : raggruppamento comandi<br>
+<code>!</code> : ripetizione comadni memorizzati history list</p>
 </section>
-<section id="caratteri" class="level3">
-<h3 class="anchored" data-anchor-id="caratteri">CARATTERI</h3>
-<section id="metacaratteri" class="level4">
-<h4 class="anchored" data-anchor-id="metacaratteri">METACARATTERI</h4>
-<p>* : stringa di 0 o più caratteri<br>
-? : singolo carattere<br>
-[] : singolo carattere tra quelli elencati (valgono intervalli es. a-zA-Z)<br>
-{} : sequenza di stringe<br>
-&gt; : redirezione output (sovrascrive)<br>
-&gt;&gt; : redirezione output append (non sovrascrive)<br>
-&lt; : redirezione input (input non da tastiera)<br>
-&lt;&lt; : redirezione input dalla linea di comando<br>
-2&gt; : redirezione messaggi errore</p>
-<p>| : pipe, compone comandi a cascata, eseguiti in parallelo<br>
-; : sequenza di comandi<br>
-|| : esecuzione condizionale, esegue se il precedente fallisce<br>
-&amp;&amp; : esecuzione condizionale, esegue se il precedente termina con successo<br>
-(…) : raggruppamento comandi<br>
-! : ripetizione comadni memorizzati history list</p>
+<section id="quoting-per-inibire-caratteri" class="level3">
+<h3 class="anchored" data-anchor-id="quoting-per-inibire-caratteri">Quoting per inibire caratteri</h3>
+<p><code>\</code> : inibisce il metacarattere successivo<br>
+<code>' '</code>: inibisce metacaratteri racchiusi<br>
+<code>"  "</code>: inibisce alcuni metacaratteri</p>
 </section>
-<section id="quoting" class="level4">
-<h4 class="anchored" data-anchor-id="quoting">QUOTING</h4>
-<p>&nbsp;: inibisce il metacarattere successivo<br>
-’ ’: inibisce metacaratteri racchiusi<br>
-” “: inibisce alcuni metacaratteri</p>
-</section>
-<section id="caratteri-speciali" class="level4">
-<h4 class="anchored" data-anchor-id="caratteri-speciali">CARATTERI SPECIALI</h4>
-<p>\n: newline<br>
-\t: tab</p>
+<section id="caratteri-di-spaziatura" class="level3">
+<h3 class="anchored" data-anchor-id="caratteri-di-spaziatura">Caratteri di spaziatura</h3>
+<p><code>\n</code>: newline<br>
+<code>\t</code>: tab</p>
 </section>
 </section>
-<section id="comandi-per-manipolare-file-e-directory" class="level3">
-<h3 class="anchored" data-anchor-id="comandi-per-manipolare-file-e-directory">COMANDI PER MANIPOLARE FILE E DIRECTORY</h3>
-<ul>
-<li>spostarsi tra le cartelle</li>
-</ul>
+<section id="comandi-per-manipolare-file-e-directory" class="level2">
+<h2 class="anchored" data-anchor-id="comandi-per-manipolare-file-e-directory">COMANDI PER MANIPOLARE FILE E DIRECTORY</h2>
+<section id="spostarsi-tra-le-cartelle" class="level3">
+<h3 class="anchored" data-anchor-id="spostarsi-tra-le-cartelle">Spostarsi tra le cartelle</h3>
 <p>cartella corrente: <code>$ pwd</code> es <code>$ /home/user</code><br>
 spostarsi cartella: <code>$ cd [pathname]</code> (nota: accesso serve permesso esecuzione) es: <code>$ cd /home/andrea/Downloads</code><br>
 spostarsi sottocartella pwd: <code>$ cd [nome_cartella]</code> es. in /home <code>$ cd andrea</code><br>
@@ -304,9 +335,11 @@ creare cartella: <code>$ mkdir [nome]</code><br>
 creare più cartelle: <code>$ mkdir [path]/{dir1, dir2, dir3}</code> → crea 3 cartelle dir1, dir2, dir3 dentro nel percorso <em>path</em><br>
 rimuovere cartella: <code>$ rmdir [nome]</code><br>
 rimuovere file: <code>$ rm [argomenti] f1</code> argomenti: -r (recursive), -d (empty dir), -i (prompt before), -f (force)</p>
-<p>visualizzare elenco file:</p>
+</section>
+<section id="elencare-file-di-una-cartella-listing" class="level3">
+<h3 class="anchored" data-anchor-id="elencare-file-di-una-cartella-listing">Elencare file di una cartella (listing)</h3>
 <blockquote class="blockquote">
-<p><code>$ls</code> [argomenti] [pathname]<br>
+<p><code>$ls</code> [argomenti] <a href="#pathname">pathname</a><br>
 <br><br>
 <em>argomenti</em>:<br>
 <code>-l</code> : long<br>
@@ -333,33 +366,44 @@ metodo classico: <code>$ chmod u=rwx go=r f1</code> u=owner, g=group, o=world<br
 = imposta i comandi esattamente come seguono <code>$ chmod g=r</code> → r–<br>
 + aggiunge permessi che seguono <code>$ chmod g+r f1</code> (-w- → rw-)<br>
 - toglie i permessi che seguono <code>$ chmod g-r f1</code> (rw- → -w-)</p>
+</section>
+<section id="copiare-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="copiare-un-file">Copiare un file</h3>
 <p>copiare un file f1 in f2: <code>$ cp [f1] [f2]</code> → f2 può non esistere<br>
 copiare: <code>$ cp [options]</code><br>
 copiare più file in una dir: <code>$ cp [f1] ... [fn] [dir1]</code> → obbligo cartella ultimo argomento<br>
 spostare/rinominare file: <code>$ mv f1 f2</code><br>
 spostare più file: <code>$ mv [f1] ... [f2] [dir1]</code></p>
 <p>aggiorna data ultima modifica: <code>$touch f1</code> → se f1 non esiste viene creato (salvo arg <code>-c</code> o <code>-h</code>)</p>
-<p>confronto file:<br>
-<code>$ cmp f1 f2</code> → primo byte e numero di linea in cui f1 e f2 differiscono<br>
+</section>
+<section id="confrontare-file" class="level3">
+<h3 class="anchored" data-anchor-id="confrontare-file">Confrontare file</h3>
+<p><code>$ cmp f1 f2</code> → primo byte e numero di linea in cui f1 e f2 differiscono<br>
 <code>$ diff f1 f2</code> → lista di cambiamenti da apportare in f1 per renderlo come f2</p>
-<p>ricercare un file:<br>
-<code>$ find [pathnames] [expression]</code><br>
+</section>
+<section id="ricercare-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="ricercare-un-file">Ricercare un file</h3>
+<p><code>$ find [pathnames] [expression]</code><br>
 attraversa ricorsivamente le directory in [pathnames] applicando le regole [expression]<br>
 expression può essere: <em>opzione</em>, <em>condizione</em>, <em>azione</em></p>
 <p>esempi:<br>
 <code>$ find . -name '*.c' -print</code> , ricerca ricorsivamente a partire dalla directory corrente tutti i file .c e li stampa<br>
 <code>$ find . -name '*.bak' -ls -exec rm {} \;</code> cerca ricorsivamente .bak li stampa con attibuti (-ls) e li cancella<br>
 <code>$ find /etc -type d -print</code></p>
-<section id="file-system-in-breve" class="level4">
-<h4 class="anchored" data-anchor-id="file-system-in-breve">file system in breve</h4>
-<p>L’informazione è memorizzata in dischi fissi_ suddiviso in una o più <em>partizioni</em>, ognuna delle quali può contenere un file system con una propria <em>top level directory</em>. In UNIX abbiamo un’unica struttura gerarchica.<br>
-Le opzioni sui filesystem da montare al boot sono in <code>/etc/fstab</code>. ,mentre il comando per montare è <code>mount &lt;file speciale&gt;&lt;mount point&gt;</code>. Solo root può usarlo, <code>mount</code> senza argomenti indica i filesystem in uso nel sistema.</p>
+</section>
+</section>
+<section id="file-system-in-breve" class="level2">
+<h2 class="anchored" data-anchor-id="file-system-in-breve">File system in breve</h2>
+<p>L’informazione è memorizzata in <em>dischi fissi</em> suddivisi in una o più <em>partizioni</em>, ognuna delle quali può contenere un file system con una propria <em>top level directory</em>.<br>
+In UNIX abbiamo un’unica struttura gerarchica.<br>
+Le opzioni sui filesystem da montare al boot sono in <code>/etc/fstab</code> ,mentre il comando per montare è <code>mount &lt;file speciale&gt;&lt;mount point&gt;</code>. Solo root può usarlo, <code>mount</code> senza argomenti indica i filesystem in uso nel sistema.</p>
+<section id="informazioni-sullo-spazio-disponibile" class="level3">
+<h3 class="anchored" data-anchor-id="informazioni-sullo-spazio-disponibile">Informazioni sullo spazio disponibile</h3>
 <p>Controllo della quantità di spazio: <code>df</code><br>
 Controllo quantità di spazio: <code>du [cartella]</code>, con argomento <code>-s</code> per vedere soltanto il totale</p>
 </section>
-</section>
 <section id="processi-e-job" class="level3">
-<h3 class="anchored" data-anchor-id="processi-e-job">PROCESSI E JOB</h3>
+<h3 class="anchored" data-anchor-id="processi-e-job">Processi e job</h3>
 <p>stampare informazioni riguardo user che sono loggati correntemente:<code>$ who [opzioni]</code></p>
 <p>vedere i processi dell’utente associati al terminale corrente:<br>
 <code>$ ps  [argomenti]</code></p>
@@ -438,20 +482,28 @@ ADDR: indirizzo in memoria<br>
 SZ: memopria virtuale utilizzata<br>
 WCHAN: evento su cui il processo è sleeping<br>
 TTY: terminale</p>
+<section id="terminare-un-processo" class="level4">
+<h4 class="anchored" data-anchor-id="terminare-un-processo">Terminare un processo</h4>
 <p>terminare un processo: <code>$ kill PID_processo</code><br>
-processo sigkill: <code>$ kill -s kill PID_processo</code><br>
-aprire un processo in background: <code>$[comando] &amp;</code><br>
+processo sigkill: <code>$ kill -s kill PID_processo</code></p>
+</section>
+<section id="processi-in-background-job" class="level4">
+<h4 class="anchored" data-anchor-id="processi-in-background-job">Processi in background (job)</h4>
+<p>aprire un processo in background: <code>$[comando] &amp;</code><br>
 vedere i job in esecuzione: <code>$ jobs</code><br>
 resume del job in foreground: <code>$ fg</code><br>
 resume del job in background: <code>$ bg</code><br>
-terminare un job: <code>$ kill %numerojob</code><br>
-informazioni sulla memoria: <code>$ top</code><br>
+terminare un job: <code>$ kill %numerojob</code></p>
+</section>
+<section id="informarsi-sullo-spazio-occupato" class="level4">
+<h4 class="anchored" data-anchor-id="informarsi-sullo-spazio-occupato">Informarsi sullo spazio occupato</h4>
+<p>informazioni sulla memoria: <code>$ top</code><br>
 informazioni su spazio occupato nel disco: <code>$ df</code><br>
 blocchi memoria occupati da una cartella: <code>$ du [cartella]</code></p>
-<section id="visualizzazione" class="level4">
-<h4 class="anchored" data-anchor-id="visualizzazione">VISUALIZZAZIONE</h4>
-<section id="visualizzare-un-file" class="level5">
-<h5 class="anchored" data-anchor-id="visualizzare-un-file">visualizzare un file</h5>
+</section>
+</section>
+<section id="visualizzare-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="visualizzare-un-file">Visualizzare un file</h3>
 <p><code>$ cat [f1]</code> → visualizzo l’intero file<br>
 <code>$ more [f1]</code> → scorro il testo<br>
 <code>$ tail [-n] [f1]</code> → ultime n righe [default n = 10]<br>
@@ -460,17 +512,16 @@ blocchi memoria occupati da una cartella: <code>$ du [cartella]</code></p>
 <code>$ read</code> : legge una linea dallo standard input e la divide in campi, oppure da un file tramite <code>-u file</code><br>
 <code>$ basename</code>: restituisce il nome di un file senza il path</p>
 </section>
-<section id="inode-e-link" class="level5">
-<h5 class="anchored" data-anchor-id="inode-e-link">INODE E LINK</h5>
+<section id="inode-e-link" class="level3">
+<h3 class="anchored" data-anchor-id="inode-e-link">Inode E Link</h3>
 <p>creazione hardlink: <code>$ln [file1] [link1]</code><br>
 creazione link simbolico <code>ln -s [file1] [link1]</code><br>
 Posso creare link simbolici che puntano a link, creando catene fino a un massimo di 6 link simbolici.</p>
 </section>
-</section>
-<section id="filtro" class="level4">
-<h4 class="anchored" data-anchor-id="filtro">FILTRO</h4>
-<section id="numero-di-lineeparolecaratteri-di-un-file" class="level5">
-<h5 class="anchored" data-anchor-id="numero-di-lineeparolecaratteri-di-un-file">numero di linee,parole,caratteri di un file</h5>
+<section id="filtraggio" class="level3">
+<h3 class="anchored" data-anchor-id="filtraggio">Filtraggio</h3>
+<section id="numero-di-lineeparolecaratteri-di-un-file" class="level4">
+<h4 class="anchored" data-anchor-id="numero-di-lineeparolecaratteri-di-un-file">Numero di linee,parole,caratteri di un file</h4>
 <blockquote class="blockquote">
 <p><code>$ wc [opzioni] [file]</code><br><br>
 <em>opzioni:</em><br>
@@ -480,8 +531,9 @@ Posso creare link simbolici che puntano a link, creando catene fino a un massimo
 <code>-w</code> : numero di parole (word)<br>
 [default] : linee, parole, byte</p>
 </blockquote>
-<section id="segnalare-o-cancellare-linee-ripetute-in-un-file" class="level6">
-<h6 class="anchored" data-anchor-id="segnalare-o-cancellare-linee-ripetute-in-un-file">segnalare o cancellare linee ripetute in un file</h6>
+</section>
+<section id="segnalare-o-cancellare-linee-ripetute-in-un-file" class="level4">
+<h4 class="anchored" data-anchor-id="segnalare-o-cancellare-linee-ripetute-in-un-file">Segnalare o cancellare linee ripetute in un file</h4>
 <blockquote class="blockquote">
 <p><code>$ uniq [file]</code><br><br>
 <em>opzioni:</em><br>
@@ -490,8 +542,8 @@ Posso creare link simbolici che puntano a link, creando catene fino a un massimo
 <code>-u</code> : visualizza righe non ripetute</p>
 </blockquote>
 </section>
-<section id="restituire-linee-di-un-input-che-contengono-un-determinato-pattern" class="level6">
-<h6 class="anchored" data-anchor-id="restituire-linee-di-un-input-che-contengono-un-determinato-pattern">restituire linee di un input che contengono un determinato pattern</h6>
+<section id="restituire-linee-di-un-input-che-contengono-un-determinato-pattern" class="level4">
+<h4 class="anchored" data-anchor-id="restituire-linee-di-un-input-che-contengono-un-determinato-pattern">Restituire linee di un input che contengono un determinato pattern</h4>
 <blockquote class="blockquote">
 <p><code>grep [options] pattern [filename]</code> (General Regular Expression Parser)<br><br>
 <code>fgrep [options] pattern [filename]</code> (Fixed General Expression Parser)<br><br>
@@ -505,7 +557,10 @@ Posso creare link simbolici che puntano a link, creando catene fino a un massimo
 <code>-x</code>: linee che coincidono perfettamente con il pattern</p>
 </blockquote>
 <p>esempi:</p>
-<p>METACARATTERI DELLE ESPRESSIONI REGOLARI</p>
+</section>
+</section>
+<section id="metacaratteri-delle-espressioni-regolari" class="level3">
+<h3 class="anchored" data-anchor-id="metacaratteri-delle-espressioni-regolari">Metacaratteri delle espressioni regolari</h3>
 <p>Due tipi di sequenze di caratteri:</p>
 <ul>
 <li>B (basic) utilizzabili sia in <code>grep</code> che in <code>egrep</code><br>
@@ -513,24 +568,24 @@ Posso creare link simbolici che puntano a link, creando catene fino a un massimo
 <li>E (extended) utilizzabili solo in <code>egrep</code> oppure in <code>grep (-e)</code></li>
 </ul>
 <p>tipo B:<br>
-^ : inizio della linea<br>
-$: fine della linea<br>
-\&lt;: inizio di una parola<br>
-\&gt;: fine di una parola<br>
-. : singolo carattere (qualsiasi)<br>
-[str] : un qualunque carattere in str<br>
-[^str] : un qualunque carattere non in str<br>
-[a-z] : un qualunque carattere tra a e z<br>
-&nbsp;: inibisce carattere successivo<br>
-* : zero o più ripetizioni dell’elemento precedente</p>
+<code>^</code>: inizio della linea<br>
+<code>$</code>: fine della linea<br>
+<code>&lt;</code>: inizio di una parola<br>
+<code>&gt;</code>: fine di una parola<br>
+<code>.</code> : singolo carattere (qualsiasi)<br>
+<code>[str]</code> : un qualunque carattere in str<br>
+<code>[^str]</code> : un qualunque carattere non in str<br>
+<code>[a-z]</code> : un qualunque carattere tra a e z<br>
+<code>:</code>: inibisce carattere successivo<br>
+<code>*</code> : zero o più ripetizioni dell’elemento precedente</p>
 <p>tipo E:<br>
-+ : una o più ripetizioni dell’elemento precedente<br>
-? : zero o una ripetizioni dell’elemento precedente<br>
-{j,k} : un numero di ripetizioni compreso tra j e k dell’elemento precedente<br>
-s|t : l’elemento s oppure l’elemento t<br>
-(exp) : raggruppamento di exp come singolo elemento</p>
+<code>+</code> : una o più ripetizioni dell’elemento precedente<br>
+<code>?</code> : zero o una ripetizioni dell’elemento precedente<br>
+<code>{j,k}</code> : un numero di ripetizioni compreso tra j e k dell’elemento precedente<br>
+<code>s|t</code> : l’elemento s oppure l’elemento t<br>
+<code>(exp)</code> : raggruppamento di exp come singolo elemento</p>
 <p>esempi:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">fgrp</span> rossi /etc/passwd     <span class="co">#out: linee di /etc/passwd che contengono stringa fissata rossi</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fgrep</span> rossi /etc/passwd     <span class="co">#out: linee di /etc/passwd che contengono stringa fissata rossi</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="at">-nv</span> <span class="st">'[agt]+'</span> relazione.txt <span class="co">#out: linee relazione.txt che NON hanno stringhe composte dai char a,g,t</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -540,62 +595,56 @@ s|t : l’elemento s oppure l’elemento t<br>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">egrep</span> <span class="st">'[a-c]+z'</span> doc.txt <span class="co">#out: linee doc.txt con stringa prefisso non nullo costituito da a,b,c seguito da z</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="ordinare-linee-input" class="level6">
-<h6 class="anchored" data-anchor-id="ordinare-linee-input">ordinare linee input</h6>
+<section id="ordinare-linee-in-input" class="level3">
+<h3 class="anchored" data-anchor-id="ordinare-linee-in-input">Ordinare linee in input</h3>
 <p><code>$ sort</code> (default: alfabetico)<br>
-prende in input delle linee di testo, le ordina secondo le opzioni e le invia in output<br>
-&gt;<em>opzioni</em>:<br>
-&gt;<code>-b</code> ignora spazi chiavi di ordinamento<br>
-&gt;<code>-f</code> ignora distinzione maiuscole/minuscole<br>
-&gt;<code>-n</code> considera numerica la chiave di ordinamento<br>
-&gt;<code>-r</code> ordina in modo decrescente<br>
-&gt;<code>-o [f1]</code> invia output al file f1<br>
-&gt;<code>-t[c]</code> usa s come separatore di campo(es <code>-t:</code> oppure <code>-t' '</code>)<br>
-&gt;<code>-k s1,s2</code> usa i campi da s1 a s2 come chiavi di ordinamento, i successivi in caso di pareggio (si conta partendo da 1)<br>
-&gt;<code>-s</code> rende stabile il confronto, senza passare ai successivi in caso di pareggio</p>
+prende in input delle linee di testo, le ordina secondo le opzioni e le invia in output</p>
+<p><em>opzioni</em>:<br>
+<code>-b</code> ignora spazi chiavi di ordinamento<br>
+<code>-f</code> ignora distinzione maiuscole/minuscole<br>
+<code>-n</code> considera numerica la chiave di ordinamento<br>
+<code>-r</code> ordina in modo decrescente<br>
+<code>-o [f1]</code> invia output al file f1<br>
+<code>-t[c]</code> usa s come separatore di campo(es <code>-t:</code> oppure <code>-t' '</code>)<br>
+<code>-k s1,s2</code> usa i campi da s1 a s2 come chiavi di ordinamento, i successivi in caso di pareggio (si conta partendo da 1)<br>
+<code>-s</code> rende stabile il confronto, senza passare ai successivi in caso di pareggio</p>
 <p>esempi:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-t:</span> <span class="at">-k3,3</span> <span class="at">-n</span> /etc/passwd  <span class="co">#ordina le righe di etc/passwd in ordine numerico (-n) in base al terzo campo</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> root:x:0:blablabla</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">daemon:x:1:blablabla</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="ex">bin:x:2:blablabla</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="conversione-di-carattere" class="level6">
-<h6 class="anchored" data-anchor-id="conversione-di-carattere">conversione di carattere</h6>
-<blockquote class="blockquote">
-<p><code>$ tr</code> (soltanto standard I/O, necessità di pipe/ridirezioni in caso contrario)<br>
-<br><br>
-<code>$ tr</code> <em>[stringa1]</em> <em>[stringa2]</em> → i caratteri in stringa1 vengono sostituiti con caratteri corrispondenti in stringa2<br>
-<br><br>
-<em>opzioni:</em><br>
+<section id="conversione-di-caratteri" class="level3">
+<h3 class="anchored" data-anchor-id="conversione-di-caratteri">Conversione di caratteri</h3>
+<p><code>$ tr</code> (soltanto standard I/O, necessità di pipe/ridirezioni in caso contrario)</p>
+<p><code>$ tr [stringa1] [stringa2]</code> → i caratteri in stringa1 vengono sostituiti con caratteri corrispondenti in stringa2</p>
+<p><em>opzioni:</em><br>
 <code>-c</code> complemento<br>
 <code>-s</code> squeeze, compressione<br>
 <code>-d</code> cancella caratteri</p>
-</blockquote>
 <p>esempi:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> a-z A-Z <span class="co">#converte minuscole in maiuscole</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-c</span> A-Za-z0-9 <span class="st">' '</span> <span class="co">#sostituisce caratteri NON alfanumerici con spazi (opzione -c)</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tr</span> <span class="at">-d</span> str <span class="co">#cancella caratteri contenuti nella stringa str</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="estrarre-colonne-specifiche-da-linee-di-testo-in-input" class="level6">
-<h6 class="anchored" data-anchor-id="estrarre-colonne-specifiche-da-linee-di-testo-in-input">estrarre colonne specifiche da linee di testo in input</h6>
+<section id="estrarre-colonne-specifiche-da-linee-di-testo-in-input" class="level3">
+<h3 class="anchored" data-anchor-id="estrarre-colonne-specifiche-da-linee-di-testo-in-input">Estrarre colonne specifiche da linee di testo in input</h3>
 <p><code>$ cut</code></p>
-<blockquote class="blockquote">
-<p><em>opzioni:</em><br>
-<code>-d</code> separatore (se non specificato &lt;Tab&gt;)<br>
+<p><em>opzioni:</em></p>
+<p><code>-d</code> separatore (se non specificato &lt;Tab&gt;)<br>
 <code>-f</code> campo da estrarre (partono da 1)</p>
-</blockquote>
 <p>esempio</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cut <span class="at">-d:</span> <span class="at">-f1</span> /etc/passwd</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>root</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="ex">daemon</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="combinare-due-righe-corrispondenti-di-due-file" class="level6">
-<h6 class="anchored" data-anchor-id="combinare-due-righe-corrispondenti-di-due-file">combinare due righe corrispondenti di due file</h6>
+<section id="combinare-due-righe-corrispondenti-di-due-file" class="level3">
+<h3 class="anchored" data-anchor-id="combinare-due-righe-corrispondenti-di-due-file">Combinare due righe corrispondenti di due file</h3>
 <p><code>$ paste f1 f2</code> (combina le righe corrisponendi di un file inserendo un delimitatore, default : &lt;tab&gt;)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="editare-testo-passato-da-un-comando-allaltro-in-una-pipeline" class="level6">
-<h6 class="anchored" data-anchor-id="editare-testo-passato-da-un-comando-allaltro-in-una-pipeline">editare testo passato da un comando all’altro in una pipeline</h6>
+<section id="editare-testo-passato-da-un-comando-allaltro-in-una-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="editare-testo-passato-da-un-comando-allaltro-in-una-pipeline">Editare testo passato da un comando all’altro in una pipeline</h3>
 <p><code>$ sed [actions] [files]</code> nota: può prendere in input anche file<br>
 il comportamento standard è stampare in standard output le linee in input<br>
 salvo specifiche di indirizzo applica l’azione a tutte le linee in input<br>
@@ -613,14 +662,16 @@ gli indirizzi di linea possono essere specificati come numeri o espressioni rego
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="va">$sed</span>  <span class="st">'/sh/!y/:0/_%/'</span>  /etc/passwd <span class="co">#analogo ma nelle stringhe che non contengono sh. quoting ' ' per !</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>sostituzione testo con sed:<br>
-&gt;<code>$ sed s/[expr]/[new]/[flags]</code></p>
-<p><em>s</em> : substitute, <em>expr</em> : stringa da cercare, <em>new</em> : stringa da sostituire<br>
-&gt;flag possibili:<br>
-&gt;<code>num</code> tra <code>1</code> e <code>9</code> (quale occorrenza di expr sostituita, default <code>1</code> = prima)<br>
-&gt;<code>g</code>: ogni occorrenza sostituita<br>
-&gt;<code>p</code>: linea corrente viene stampata a video in caso di sostituzione<br>
-&gt;<code>n</code>: silent mode, senza emettere output<br>
-&gt;<code>w [file1]</code>: in caso di sostituzione la linea corrente viene accodata in file1</p>
+<code>$ sed s/[expr]/[new]/[flags]</code></p>
+<p><code>s</code> : substitute<br>
+<code>expr</code> : stringa da cercare<br>
+<code>new</code> : stringa da sostituire</p>
+<p>flag possibili:<br>
+<code>num</code> tra <code>1</code> e <code>9</code> (quale occorrenza di expr sostituita, default <code>1</code> = prima)<br>
+<code>g</code>: ogni occorrenza sostituita<br>
+<code>p</code>: linea corrente viene stampata a video in caso di sostituzione<br>
+<code>n</code>: silent mode, senza emettere output<br>
+<code>w [file1]</code>: in caso di sostituzione la linea corrente viene accodata in file1</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'/^root/,/^bin/s/:x:/::/w disabled.txt'</span> /etc/passwd </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sostituisce(s) la x (in :x:) con la stringa vuota (quindi ::) </span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#nelle righe in input comprese fra quella che inizia(^) con root e quella con bin;</span></span>
@@ -633,37 +684,46 @@ gli indirizzi di linea possono essere specificati come numeri o espressioni rego
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#quoting '' necessario per evitare interpretazioni della shell</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-</section>
-<section id="scripting" class="level4">
-<h4 class="anchored" data-anchor-id="scripting">SCRIPTING</h4>
+<section id="scripting" class="level2">
+<h2 class="anchored" data-anchor-id="scripting">Scripting</h2>
 <p>programma interpretato dalla shell scritto in comandi UNIX. Viene eseguito in una sottoshell della shell corrente.<br>
 Nota: si commenta con il char #</p>
+<section id="visualizzare-i-comandi-di-uno-script" class="level3">
+<h3 class="anchored" data-anchor-id="visualizzare-i-comandi-di-uno-script">Visualizzare i comandi di uno script</h3>
 <p><code>set -x</code> : visualizza i comandi nel momento in cui li esegue<br>
 <code>set -v</code> : visualizza i comandi nel momento in cui li legge<br>
 <code>set -</code> : annulla gli effetti di set -x, set -v</p>
+</section>
+<section id="acccesso-e-assegnamento-variabili-in-uno-script" class="level3">
+<h3 class="anchored" data-anchor-id="acccesso-e-assegnamento-variabili-in-uno-script">Acccesso e assegnamento variabili in uno script</h3>
 <p>assegnamento: <code>variabile=valore</code> (nota, = senza spazi è assegnazione)<br>
 accesso a una variabile <code>$variabile</code><br>
 le variabili sono locali alla shell o allo script in cui sono definite<br>
 promuovere a variabile globale (<em>variabile d’ambiente</em>): <code>export</code></p>
-<blockquote class="blockquote">
-<p>variabili d’ambiente:<br>
-<code>PS1</code>: prompt primario<br>
-<code>PS2</code>: prompt secondario<br>
-<code>PWD</code>: pathname assoluto directory corrente<br>
-<code>UID</code>: ID user corrente<br>
-<code>PATH</code>: lista di pathname in cui la shell cerca i comandi<br>
-<code>HOME</code>: pathname assoluto della home directory</p>
-</blockquote>
+</section>
+<section id="variabili-dambiente" class="level3">
+<h3 class="anchored" data-anchor-id="variabili-dambiente">Variabili d’ambiente</h3>
+<ul>
+<li><code>PS1</code>: prompt primario<br>
+</li>
+<li><code>PS2</code>: prompt secondario<br>
+</li>
+<li><code>PWD</code>: pathname assoluto directory corrente<br>
+</li>
+<li><code>UID</code>: ID user corrente<br>
+</li>
+<li><code>PATH</code>: lista di pathname in cui la shell cerca i comandi<br>
+</li>
+<li><code>HOME</code>: pathname assoluto della home directory</li>
+</ul>
+</section>
+<section id="variabili-speciali" class="level3">
+<h3 class="anchored" data-anchor-id="variabili-speciali">Variabili speciali</h3>
 <p>variabili speciali (parametro): <code>$1,$2,...,$9</code> associate al primo, … , nono parametro <em>passati su linea di comando</em></p>
-<p>esempio script “copia”</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">testo</span> dello script:</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="va">$1</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="va">$2</span> <span class="va">$1</span>/<span class="va">$2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>esecuzione</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./copia nuovadir testo</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> ls <span class="ex">nuovadir</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">testo</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>aumentare numero parametri con shift a sx: <code>shift [n]</code></p>
+</section>
+<section id="variabili-di-stato" class="level3">
+<h3 class="anchored" data-anchor-id="variabili-di-stato">Variabili di stato</h3>
 <p>variabili di stato automatiche, gestiscono lo stato</p>
 <p>variabili di stato:<br>
 $? : exit status ultimo comando (0 successo, errore altrimenti)<br>
@@ -674,25 +734,35 @@ $# : numero parametri forniti allo script su linea di comando<br>
 $* : lista dei parametri passati allo script su linea di comando<br>
 $@ : lista dei parametri passati allo script su linea di comando</p>
 </section>
+<section id="esempio-script" class="level3">
+<h3 class="anchored" data-anchor-id="esempio-script">Esempio script</h3>
+<p>testo dello script <code>copia</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="va">$1</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="va">$2</span> <span class="va">$1</span>/<span class="va">$2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>esecuzione dello script contenuto in <code>./copia</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./copia nuovadir testo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Controllo dell’esecuzione dello script</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> nuovadir</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> testo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="controllo-di-flusso" class="level3">
-<h3 class="anchored" data-anchor-id="controllo-di-flusso">CONTROLLO DI FLUSSO</h3>
+<section id="controllo-di-flusso-costrutti" class="level3">
+<h3 class="anchored" data-anchor-id="controllo-di-flusso-costrutti">Controllo di flusso (costrutti)</h3>
 <p>COSTRUTTO IF</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ex">condition_command</span>  <span class="er">(</span><span class="ex">condition</span> exit status<span class="kw">)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">then</span> <span class="kw">(</span><span class="bu">exit</span> 0<span class="kw">)</span>  </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">true_commands</span>  </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> <span class="kw">(</span><span class="bu">exit</span> =/= 0<span class="kw">)</span>  </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">false_commands</span>  </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ex">condition_command</span>  <span class="er">(</span><span class="ex">condition</span> exit status<span class="kw">)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">then</span> <span class="kw">(</span><span class="bu">exit</span> 0<span class="kw">)</span>  </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">true_commands</span>  </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span> <span class="kw">(</span><span class="bu">exit</span> =/= 0<span class="kw">)</span>  </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="ex">false_commands</span>  </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>esempio:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ex">grep</span><span class="st">"^</span><span class="va">$1</span><span class="st">"</span> /etc/passwd <span class="op">&gt;</span>/dev/null <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">then</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$1</span> is a valid login name</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$1</span> is not a valid login name</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ex">grep</span><span class="st">"^</span><span class="va">$1</span><span class="st">"</span> /etc/passwd <span class="op">&gt;</span>/dev/null <span class="dv">2</span><span class="op">&gt;</span>/dev/null</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">then</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$1</span> is a valid login name</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$1</span> is not a valid login name</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="in-caso-non-sia-valutabile-lexit-status" class="level4">
 <h4 class="anchored" data-anchor-id="in-caso-non-sia-valutabile-lexit-status">in caso non sia valutabile l’exit status</h4>
 <blockquote class="blockquote">
@@ -740,95 +810,95 @@ $@ : lista dei parametri passati allo script su linea di comando</p>
 </blockquote>
 <p>costruzioni numeri complesse: <code>$[espressione]</code> Nota: le quadre vanno messe</p>
 <p>esempio:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> num1=2</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> num1=$<span class="pp">[</span><span class="ss">$num1*3+1</span><span class="pp">]</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> echo <span class="va">$num1</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> num1=2</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> num1=$<span class="pp">[</span><span class="ss">$num1*3+1</span><span class="pp">]</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> echo <span class="va">$num1</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="ex">7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>CICLO WHILE (finché vero continuo)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="ex">condition_command</span>  </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span>  </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span>  </span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">test</span> <span class="at">-e</span> <span class="va">$1</span>   <span class="co">#finché file primo argomento esiste</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sleep</span> 2        <span class="co">#sospenditi 2 secondi</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> file <span class="va">$1</span> does not exist  <span class="co">#se non esiste stampa questo</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="ex">condition_command</span>  </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span>  </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span>  </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">test</span> <span class="at">-e</span> <span class="va">$1</span>   <span class="co">#finché file primo argomento esiste</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sleep</span> 2        <span class="co">#sospenditi 2 secondi</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> file <span class="va">$1</span> does not exist  <span class="co">#se non esiste stampa questo</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>finché la condition_command è vera vengono eseguiti i comandi</p>
 <p>DO-WHILE: non c’è, alternativa</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="fu">true</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#comandi</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="ex">condizione</span> terminazione<span class="kw">;</span> <span class="cf">then</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">#comandi</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="fu">true</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#comandi</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="ex">condizione</span> terminazione<span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">#comandi</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>CICLO UNTIL (finché falso continuo)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">until</span> <span class="ex">condition_command</span>  </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span>  </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">commands</span>  </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">until</span> <span class="fu">false</span> <span class="co">#sempre verificata</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">read</span> <span class="va">firstword</span> <span class="va">restofline</span> <span class="co">#apre stdout e arg1=firstword, resto=restofline</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">test</span> <span class="va">$firstword</span> = end </span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">then</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">exit</span> 0</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="va">$firstword</span> <span class="va">$restofline</span> <span class="co">#echo e ricomincia finché arg1 = end</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">until</span> <span class="ex">condition_command</span>  </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span>  </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">commands</span>  </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">until</span> <span class="fu">false</span> <span class="co">#sempre verificata</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">read</span> <span class="va">firstword</span> <span class="va">restofline</span> <span class="co">#apre stdout e arg1=firstword, resto=restofline</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">test</span> <span class="va">$firstword</span> = end </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">then</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">exit</span> 0</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="va">$firstword</span> <span class="va">$restofline</span> <span class="co">#echo e ricomincia finché arg1 = end</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">fi</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>finché la condition_command è falsa vengono eseguiti i comandi</p>
 <p>CICLO FOR</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> var <span class="kw">in</span> wordlist  </span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span>  </span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span>  </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> var <span class="kw">in</span> wordlist  </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span>  </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands</span>  </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>esempio uso classico:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> the value of i is <span class="va">$1</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>                            <span class="co">#stamperà 5 volte "the value of..."</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> 1 2 3 4 5</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> the value of i is <span class="va">$1</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span>                            <span class="co">#stamperà 5 volte "the value of..."</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>nota: puoi usare il for anche per scorrere i file presenti in una cartella:<br>
 esempio:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="va">$1</span>/<span class="pp">*</span>    <span class="co">#$1 è una cartella, scorre tutti i file della cartella</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="va">$1</span>/<span class="pp">*</span>    <span class="co">#$1 è una cartella, scorre tutti i file della cartella</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>CASE SELECTION</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">case</span> string <span class="kw">in</span>  </span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ss">expression_1</span><span class="kw">)</span>  </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands_1</span>  </span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span>  </span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ss">expression_2</span><span class="kw">)</span>  </span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands_2</span>  </span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span>  </span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="ss">...</span>  </span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="pp">*</span><span class="kw">)</span>  </span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="ex">default_commands</span>  </span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="cf">;;</span>  </span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="cf">esac</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">case</span> string <span class="kw">in</span>  </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ss">expression_1</span><span class="kw">)</span>  </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands_1</span>  </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span>  </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="ss">expression_2</span><span class="kw">)</span>  </span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">commands_2</span>  </span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span>  </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="ss">...</span>  </span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="pp">*</span><span class="kw">)</span>  </span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="ex">default_commands</span>  </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="cf">;;</span>  </span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="cf">esac</span>  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>esempio script append:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">case</span> <span class="va">$#</span> <span class="kw">in</span>    <span class="co">#numeri degli argomenti ($#)</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ss">1</span><span class="kw">)</span>                  <span class="co">#caso $# = 1</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> <span class="op">&gt;&gt;</span><span class="va">$1</span> <span class="co">#apri std input e poi redireziona out in $1</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="ss">2</span><span class="kw">)</span>                <span class="co"># caso $# = 2</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> <span class="op">&gt;&gt;</span><span class="va">$1</span> <span class="op">&lt;</span><span class="va">$2</span> <span class="co">#append testo $2 in $1 </span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="pp">*</span><span class="kw">)</span>             <span class="co"># tutti altri casi (default)</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"usage: append out_file [in_file]"</span> </span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="cf">esac</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">case</span> <span class="va">$#</span> <span class="kw">in</span>    <span class="co">#numeri degli argomenti ($#)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ss">1</span><span class="kw">)</span>                  <span class="co">#caso $# = 1</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> <span class="op">&gt;&gt;</span><span class="va">$1</span> <span class="co">#apri std input e poi redireziona out in $1</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ss">2</span><span class="kw">)</span>                <span class="co"># caso $# = 2</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> <span class="op">&gt;&gt;</span><span class="va">$1</span> <span class="op">&lt;</span><span class="va">$2</span> <span class="co">#append testo $2 in $1 </span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="pp">*</span><span class="kw">)</span>             <span class="co"># tutti altri casi (default)</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"usage: append out_file [in_file]"</span> </span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">;;</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="cf">esac</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="bu">exit</span> 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>COMMAND SUBSTITUTION<br>
 sostituire a un comando o pipeline quanto stampato sullo standard output dal comando stesso prevede uso dei ` ` backquote<br>
 esempio :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> date  </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Tue</span> Nov 19 17:50:10 2002  </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> vardata=<span class="kw">`</span><span class="fu">date</span><span class="kw">`</span>  </span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> echo <span class="va">$vardata</span>  </span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Tue</span> Nov 19 17:51:28 2002  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> date  </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Tue</span> Nov 19 17:50:10 2002  </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> vardata=<span class="kw">`</span><span class="fu">date</span><span class="kw">`</span>  </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> echo <span class="va">$vardata</span>  </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Tue</span> Nov 19 17:51:28 2002  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
