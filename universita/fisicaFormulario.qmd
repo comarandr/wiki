@@ -1,6 +1,6 @@
 ---
 title: "Formulario di Fisica"
-description: "Formulario di Fisica"
+description: "tutte informazioni basilari per esame, formule semplici"
 categories: [università, informatica]
 image: https://www.matematicamente.it/wp-content/uploads/2017/02/gli-urti.png
 ---
@@ -14,6 +14,63 @@ table td, table th {
 
 ## Introduzione
 
+### Ordini di grandezza
+
+#### Maggiori 10
+
+:::{.striped .hover}
+
+| Nome | Simbolo | Potenza | Descrizione |
+|:---:|:---:|:---|:---|
+| tera | $T$ | $10^{12}$||
+| giga | $G$ | $10^{9}$|miliardo|
+| mega | $M$ | $10^{6}$|milione|
+| chilo | $k$ | $10^{3}$|mille|
+| etto | $h$ | $10^{2}$|cento|
+| deca | $da$ | $10^{1}$|dieci|
+
+:::
+
+#### Minori di 1
+
+:::{.striped .hover}
+
+| Nome | Simbolo | Potenza | Descrizione |
+|:---:|:---:|:---|:---|
+| deci | $d$ | $10^{-1}$|decimo|
+| centi | $c$ | $10^{-2}$|centesimo|
+| milli | $m$ | $10^{-3}$|millesimo|
+| micro | $\mu$ | $10^{-6}$|milionesimo|
+| nano | $n$ |$10^{-9}$|miliardesimo|
+| pico | $p$ |$10^{-12}$||
+
+:::
+
+### Grandezze e unità di misura
+
+:::{.striped .hover}
+
+| Grandezza | Unità di misura | Simbolo | Formula |
+|:---:|:---:|:---|:---|
+| lunghezza | metro | $m$| fondamentale |
+| tempo | secondo | $s$| fondamentale |
+| massa | kilogrammo | $kg$| fondamentale |
+| Corrente elettrica | Ampere | $A$ | fondamentale |
+| elettricità | Coulomb |$C$| fondamentale |
+| potenziale elettrico | Volt |$V$||
+| Lavoro | Joule| $$J$$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
+| Energia | Joule| $$J$$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
+
+:::
+
+### Costanti essenziali
+
+### Elementi di calcolo essenziale
+
+#### Trigonometria
+
+#### Vettori
+
 ## Cinematica
 
 ### Velocità
@@ -22,7 +79,7 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Velocità scalare media | $$v_m = \frac{s(t_2)-s(t_1)}{t_2-t_1}$$| $$\frac{m}{s}$$ |
+| Velocità scalare media | $$v_m = \frac{\Delta s}{\Delta t} = \frac{s(t_2)-s(t_1)}{t_2-t_1}$$| $$\frac{m}{s}$$ |
 | Velocità istantanea | $$v = \lim_{\Delta t \to 0} \frac{s(t + \Delta t)-s(t)}{\Delta t} = \frac{ds}{dt}$$ |  $$\frac{m}{s}$$ |
 | Modulo vettore | $$| \vec{v} | = \sqrt{v_x^2 + v_y^2}$$ | $$\frac{m}{s}$$ |
 | Modulo componente orizzontale $\vert \vec{v_x} \vert$ | $$\vert \vec{v_x} \vert = \vert \vec{v} \vert \cos{\alpha}$$ | $$\frac{m}{s}$$ |
@@ -36,7 +93,7 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Accelerazione scalare media | $$a_m = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}$$| $$\frac{m}{s^2}$$ |
+| Accelerazione scalare media | $$a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}$$| $$\frac{m}{s^2}$$ |
 | Velocità istantanea | $$\vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$$ |  $$\frac{m}{s^2}$$ |
 
 :::
@@ -58,6 +115,7 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Legge oraria | $$x = x_0 + v_0 t + \frac{1}{2} a t^2 $$| $$m$$ |
+| velocità finale | $$v_f^2 = v_0^2 + 2 a \Delta x$$ | $$\frac{m}{s^2}$$| 
 | velocità | $$ v = v_0 + at $$ | $$\frac{m}{s}$$ |
 |velocità media | $$ v_m = v_0 + \frac{1}{2} a t $$| $$\frac{m}{s}$$ |
 
@@ -112,7 +170,179 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| da | fa | re |
+| 1 principio (principio di inerzia) | $$\sum \vec{F} = 0$$ | re |
+| 2 principio | $$F = m \cdot a, \\ m>0$$ | Newton |
+| 3 principio (principio di azione e reazione) | | |
+
+:::
+
+### Quantità di moto
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| quantità di moto | $$p = m v$$ | $$ \frac{kg \cdot m}{s}$$ |
+| principio conservazione quantità di moto | $$\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$$ | | 
+
+:::
+
+### Forze apparenti
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Forza sistema non inerziale | $$F + F' = m \cdot a_{NI} \\ F - m a_c = m \cdot a_{NI} $$ | 
+
+:::
+
+### Moto in campi di forze
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Moto in un campo di forze nulle |
+| Moto in un campo di forze elastiche | $$ F_x = -k x = m a_x $$ |
+| Moto in un campo di forze uniforme |
+
+:::
+
+### Gravità
+
+| Descrizione | Formula matematica | Unità di misura |
+|:---|:---:|:---:|
+| forza gravitazionale |
+| forza peso | $$F_p = -gm$$ |
+
+### Forze di attrito
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Forza attrito statico | $$F_s = \mu_{s} \cdot F_n$$ | $$N$$ |
+| Forza attrito dinamico | $$F_d = \mu_{d} \cdot F_n$$ | $$N$$ |
+
+:::
+
+### Lavoro ed Energia
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Lavoro | $$L = F \cdot s \cdot \cos(\alpha)$$ | $$J$$ |
+| Energia cinetica | $$T = \frac{1}{2} m v^2$$ | $$J$$ |
+| Teorema energia cinetica | $$L = T, \\ T = T_{fin} - T_{in} $$ | $$J$$|
+| Energia potenziale | $$L_{AB} = U(A) - U(B) = - \Delta U$$ | $$J$$|
+| Teorema conservazione energia meccanica | 
+
+:::
+
+### Urti
+
+### Potenza
+
+## Statica rotazioni
+
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Equazione punto materiale | $$\sum_{i}{\vec{F_i} = 0}$$ | none |
+| Centro di massa | $$R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}$$ | boh |
+| Baricentro | $$R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$$ | boh|
+| Momento | $$\vec{M}= $$ | boh |
+| Momento vettore | $$\vec{M} = r \sin{(\phi)}$$ | boh |
+| Momento angolare corpo | $$\vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$$ |
+| Momento angolare | $$M = mvr$$ |
+| Momento angolare corpo esteso | $$L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$$ |
+| Momento di inerzia del corpo | $$I = \sum_{i}{m_i r_i^2}$$ |
+| Equilibrio del corpo esteso | $$\vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0 $$|
+
+:::
+
+### Leve
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| relazione | $$b_m F_m = b_r F_r$$ |
+| rapporto | $$G = \frac{F_r}{F_m} = \frac{b_m}{b_r}$$|
+| principio delle leve idrauliche | $$ \frac{F_1}{S_1} = \frac{F_2}{S_2} $$ | 
+| I tipo | fulcro intermedio|
+| II tipo | R intermedio |
+| III tipo | M intermedio |
+
+:::
+
+### Elasticità
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Legge di Hooke | $$ \frac{F}{A} = E \frac{\Delta l}{l} $$ |
+| Stress | $$\frac{F}{A}$$ |
+| Stiramento | $$\frac{\Delta l}{l}$$ |
+
+:::
+
+## Fluidi (completa deformabilità)
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Densità | $$ d = \frac{M}{V}$$ |
+| Pressione | $$ p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$$ |
+| Legge di Stevino | $$p = p_0 + \rho g d$$ |
+| Forza di Archimede | $$ F_A = \rho g V$$|
+| Principio di Archimede | $$F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V $$ |
+| Leve idrauliche | $$p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$$|
+| Portata o flusso | $$Q = \frac{S v \Delta t}{\Delta t} = S v$$ |
+
+:::
+
+### Liquido incomprimibile in 2 sezioni
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Costanza della portata | $$S_1 v_1 = S_2 v_2$$ |
+| Lavoro | $$L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2$$ |
+| Teorema di Bernoulli | $$p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}$$ |
+| Teorema di Torricelli | forse non ha formula|
+
+:::
+
+
+### Fluidi viscosi
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Bernoulli | $$p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A $$ |
+| Energia attrito | $$ E_A = p_1 - p_2$$ |
+| Resistenza di un condotto | $$ R = \frac{\Delta p}{Q}$$ |
+| Legge di Poiseuille | $$Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
+| Resistenza in un condotto cilindrico | $$R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
+:::
+
+## Termodinamica 
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Principio 0 della termodinamica | $a,b$ in eq. termico con $c$ $\rightarrow$ $a$ in equilibrio termico con $b$ |
+| Calore | 
 
 :::
 
@@ -173,8 +403,8 @@ table td, table th {
 | Densità di corrente | $$J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}$$ | A |
 | Legge di Ohm | $$ \vec{J} = \sigma \vec{E} $$ | A |
 | conducibilità elettrica | $$\sigma$$ | $$\frac{C^2}{s m}$$ |
-| Legge di Ohm | $$ I = \frac{V}{R}$$ | $$A$$|
-| Resistenza elettrica | $$R = \rho \frac{l}{S}$$ | $$\Omega = V A$$ |
+| I Legge di Ohm (Intensità di corrente) | $$ I = \frac{V}{R}$$ | $$A$$|
+| II Legge di Ohm (Resistenza elettrica) | $$R = \rho \frac{l}{S}$$ | $$\Omega = V A$$ |
 | Resistenza specifica o resistività | $$\rho$$ |
 
 :::
@@ -214,101 +444,6 @@ concentrazione: grammoione/litro
 
 
 :::
-
-## Magnetismo
-
-## Termodinamica
-
-## Fluidi
-
-## Statica rotazioni
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| Equazione punto materiale | $$\sum_{i}{\vec{F_i} = 0}$$ | none |
-| Centro di massa | $$R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}$$ | boh |
-| Baricentro | $$R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$$ | boh|
-| Momento | $$\vec{M}= $$ | boh |
-| Momento vettore | $$\vec{M} = r \sin{(\phi)}$$ | boh |
-| Momento angolare corpo | $$\vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$$ |
-| Momento angolare | $$M = mvr$$ |
-| Momento angolare corpo esteso | $$L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$$ |
-| Momento di inerzia del corpo | $$I = \sum_{i}{m_i r_i^2}$$ |
-| Momento istantaneo? | $$\frac{\partial\vec{L}_{tot} }{ \partial t} = \vec{M}_{TOT}$$ |
-| Equilibrio del corpo esteso | $$\vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0 $$|
-
-:::
-
-### Leve
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| relazione | $$b_m F_m = b_r F_r$$ |
-| rapporto | $$G = \frac{F_r}{F_m} = \frac{b_m}{b_r}$$|
-| I tipo | fulcro intermedio|
-| II tipo | R intermedio |
-| III tipo | M intermedio |
-
-:::
-
-### Elasticità
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| Legge di Hooke | $$ \frac{F}{A} = E \frac{\Delta l}{l} $$ |
-| Stress | $$\frac{F}{A}$$ |
-| Stiramento | $$\frac{\Delta l}{l}$$ |
-
-:::
-
-## Fluidi (completa deformabilità)
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| Densità | $$ d = \frac{M}{V}$$ |
-| Pressione | $$ p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$$ |
-| Legge di Stevino | $$p = p_0 + \rho g d$$ |
-| Forza di Archimede | $$ F_A = \rho g V$$|
-| Principio di Archimede | $$F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V $$ |
-| Leve idrauliche | $$p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$$|
-| Portata o flusso | $$Q = \frac{S v \Delta t}{\Delta t} = S v$$ |
-:::
-
-### Liquido incomprimibile in 2 sezioni
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| Costanza della portata | $$S_1 v_1 = S_2 v_2$$ |
-| Lavoro | $$L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2$$ |
-| Teorema di Bernoulli | $$p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}$$ |
-| Teorema di Torricelli | forse non ha formula|
-
-:::
-
-
-### Fluidi viscosi
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| Bernoulli | $$p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A $$ |
-| Energia attrito | $$ E_A = p_1 - p_2$$ |
-| Resistenza di un condotto | $$ R = \frac{\Delta p}{Q}$$ |
-| Legge di Poiseuille | $$Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
-| Resistenza in un condotto cilindrico | $$R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
-:::
-
 
 ## Entropia
 
