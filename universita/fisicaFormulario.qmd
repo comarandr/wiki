@@ -342,7 +342,55 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Principio 0 della termodinamica | $a,b$ in eq. termico con $c$ $\rightarrow$ $a$ in equilibrio termico con $b$ |
-| Calore | 
+| Calore | $$\Delta Q = C \Delta T$$ | 
+| calore specifico | $$\Delta Q = c \cdot m \cdot \Delta T$$ |
+| irraggiamento (Stefan-Boltzmann) | $$P = \epsilon A \sigma T^4$$ |
+
+:::
+
+### Gas Ideali
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| formula gas ideali | $$p \cdot V = C_{BM}(T)$$|
+| leggi di Charles / Gay-Lussac | $$V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) $$ |
+| principio di Avogadro | $$V = C" \cdot n$$ T,P costanti |
+| legge dei gas perfetti | $$pV = nRT$$ |
+| R | $$R = \frac{pV}{nT}$$ |
+
+:::
+
+### Teoria Cinetica dei Gas
+
+::: {.striped .hover}
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+|  | $$E_c = \frac{3}{2} RT$$|
+| leggi di Charles / Gay-Lussac | $$V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) $$ |
+| legge di dalton | $$P_{tot} = P_1 + \ldots + P_n$$ |
+| umidità relativa | $$\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100$$ |
+
+:::
+
+### Equazioni di stato
+
+### Trasformazioni termodinamiche
+
+::: {.striped .hover}
+
+| Tipologia | Formula Matematica | Descrizione |
+|:---|:---:|:---:|
+| I principio termodinamica | $$\Delta E = E_2 - E_1 = \Delta Q + \Delta W$$ |
+| trasformazione isotermica <br> Temperatura costante | $$\Delta Q = - \Delta W$$|
+| isocora (volume costante) | $$\Delta E = \Delta Q = n \cdot C_v \Delta T$$ |
+| isobara (P costante) | $$ \Delta Q = n \cdot (C_v + R)dT$$|
+| adiabatica (dq = 0) | $$\Delta E = n \cdot C_v \Delta T$$|
+| Entalpia | $$H = E + PV$$ |
+| Legge di Hess | |
+| Equilibrio termico | |
 
 :::
 

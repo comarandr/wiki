@@ -213,7 +213,13 @@ window.Quarto = {
   <li><a href="#liquido-incomprimibile-in-2-sezioni" id="toc-liquido-incomprimibile-in-2-sezioni" class="nav-link" data-scroll-target="#liquido-incomprimibile-in-2-sezioni">Liquido incomprimibile in 2 sezioni</a></li>
   <li><a href="#fluidi-viscosi" id="toc-fluidi-viscosi" class="nav-link" data-scroll-target="#fluidi-viscosi">Fluidi viscosi</a></li>
   </ul></li>
-  <li><a href="#termodinamica" id="toc-termodinamica" class="nav-link" data-scroll-target="#termodinamica">Termodinamica</a></li>
+  <li><a href="#termodinamica" id="toc-termodinamica" class="nav-link" data-scroll-target="#termodinamica">Termodinamica</a>
+  <ul>
+  <li><a href="#gas-ideali" id="toc-gas-ideali" class="nav-link" data-scroll-target="#gas-ideali">Gas Ideali</a></li>
+  <li><a href="#teoria-cinetica-dei-gas" id="toc-teoria-cinetica-dei-gas" class="nav-link" data-scroll-target="#teoria-cinetica-dei-gas">Teoria Cinetica dei Gas</a></li>
+  <li><a href="#equazioni-di-stato" id="toc-equazioni-di-stato" class="nav-link" data-scroll-target="#equazioni-di-stato">Equazioni di stato</a></li>
+  <li><a href="#trasformazioni-termodinamiche" id="toc-trasformazioni-termodinamiche" class="nav-link" data-scroll-target="#trasformazioni-termodinamiche">Trasformazioni termodinamiche</a></li>
+  </ul></li>
   <li><a href="#elettricità" id="toc-elettricità" class="nav-link" data-scroll-target="#elettricità">Elettricità</a>
   <ul>
   <li><a href="#elettrostatica" id="toc-elettrostatica" class="nav-link" data-scroll-target="#elettrostatica">Elettrostatica</a></li>
@@ -1254,17 +1260,178 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Principio 0 della termodinamica</td>
-<td style="text-align: center;"><span class="math inline">\(a,b\)</span> in eq. termico con <span class="math inline">\(c\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(a\)</span> in equilibrio termico con $b</td>
+<td style="text-align: center;"><span class="math inline">\(a,b\)</span> in eq. termico con <span class="math inline">\(c\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(a\)</span> in equilibrio termico con <span class="math inline">\(b\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Calore</td>
+<td style="text-align: center;"><span class="math display">\[\Delta Q = C \Delta T\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">calore specifico</td>
+<td style="text-align: center;"><span class="math display">\[\Delta Q = c \cdot m \cdot \Delta T\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">irraggiamento (Stefan-Boltzmann)</td>
+<td style="text-align: center;"><span class="math display">\[P = \epsilon A \sigma T^4\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="gas-ideali" class="level3">
+<h3 class="anchored" data-anchor-id="gas-ideali">Gas Ideali</h3>
+<div class="striped hover">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">formula gas ideali</td>
+<td style="text-align: center;"><span class="math display">\[p \cdot V = C_{BM}(T)\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leggi di Charles / Gay-Lussac</td>
+<td style="text-align: center;"><span class="math display">\[V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) \]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">principio di Avogadro</td>
+<td style="text-align: center;"><span class="math display">\[V = C" \cdot n\]</span> T,P costanti</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">legge dei gas perfetti</td>
+<td style="text-align: center;"><span class="math display">\[pV = nRT\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R</td>
+<td style="text-align: center;"><span class="math display">\[R = \frac{pV}{nT}\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="teoria-cinetica-dei-gas" class="level3">
+<h3 class="anchored" data-anchor-id="teoria-cinetica-dei-gas">Teoria Cinetica dei Gas</h3>
+<div class="striped hover">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><span class="math display">\[E_c = \frac{3}{2} RT\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">leggi di Charles / Gay-Lussac</td>
+<td style="text-align: center;"><span class="math display">\[V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) \]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">legge di dalton</td>
+<td style="text-align: center;"><span class="math display">\[P_{tot} = P_1 + \ldots + P_n\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">umidità relativa</td>
+<td style="text-align: center;"><span class="math display">\[\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="equazioni-di-stato" class="level3">
+<h3 class="anchored" data-anchor-id="equazioni-di-stato">Equazioni di stato</h3>
+</section>
+<section id="trasformazioni-termodinamiche" class="level3">
+<h3 class="anchored" data-anchor-id="trasformazioni-termodinamiche">Trasformazioni termodinamiche</h3>
+<div class="striped hover">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipologia</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">I principio termodinamica</td>
+<td style="text-align: center;"><span class="math display">\[\Delta E = E_2 - E_1 = \Delta Q + \Delta W\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trasformazione isotermica <br> Temperatura costante</td>
+<td style="text-align: center;"><span class="math display">\[\Delta Q = - \Delta W\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">isocora (volume costante)</td>
+<td style="text-align: center;"><span class="math display">\[\Delta E = \Delta Q = n \cdot C_v \Delta T\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">isobara (P costante)</td>
+<td style="text-align: center;"><span class="math display">\[ \Delta Q = n \cdot (C_v + R)dT\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">adiabatica (dq = 0)</td>
+<td style="text-align: center;"><span class="math display">\[\Delta E = n \cdot C_v \Delta T\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Entalpia</td>
+<td style="text-align: center;"><span class="math display">\[H = E + PV\]</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Legge di Hess</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Equilibrio termico</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
 </div>
+</section>
 </section>
 <section id="elettricità" class="level2">
 <h2 class="anchored" data-anchor-id="elettricità">Elettricità</h2>
