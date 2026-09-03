@@ -171,7 +171,11 @@ window.Quarto = {
   <li><a href="#minori-di-1" id="toc-minori-di-1" class="nav-link" data-scroll-target="#minori-di-1">Minori di 1</a></li>
   </ul></li>
   <li><a href="#grandezze-e-unità-di-misura" id="toc-grandezze-e-unità-di-misura" class="nav-link" data-scroll-target="#grandezze-e-unità-di-misura">Grandezze e unità di misura</a></li>
-  <li><a href="#costanti-essenziali" id="toc-costanti-essenziali" class="nav-link" data-scroll-target="#costanti-essenziali">Costanti essenziali</a></li>
+  <li><a href="#costanti-essenziali" id="toc-costanti-essenziali" class="nav-link" data-scroll-target="#costanti-essenziali">Costanti essenziali</a>
+  <ul class="collapse">
+  <li><a href="#cinematica-e-dinamica" id="toc-cinematica-e-dinamica" class="nav-link" data-scroll-target="#cinematica-e-dinamica">Cinematica e dinamica</a></li>
+  <li><a href="#elettricità-e-magnetismo" id="toc-elettricità-e-magnetismo" class="nav-link" data-scroll-target="#elettricità-e-magnetismo">Elettricità e magnetismo</a></li>
+  </ul></li>
   <li><a href="#elementi-di-calcolo-essenziale" id="toc-elementi-di-calcolo-essenziale" class="nav-link" data-scroll-target="#elementi-di-calcolo-essenziale">Elementi di calcolo essenziale</a>
   <ul class="collapse">
   <li><a href="#trigonometria" id="toc-trigonometria" class="nav-link" data-scroll-target="#trigonometria">Trigonometria</a></li>
@@ -216,6 +220,10 @@ window.Quarto = {
   <li><a href="#equazioni-di-stato" id="toc-equazioni-di-stato" class="nav-link" data-scroll-target="#equazioni-di-stato">Equazioni di stato</a></li>
   <li><a href="#trasformazioni-termodinamiche" id="toc-trasformazioni-termodinamiche" class="nav-link" data-scroll-target="#trasformazioni-termodinamiche">Trasformazioni termodinamiche</a></li>
   </ul></li>
+  <li><a href="#entropia" id="toc-entropia" class="nav-link" data-scroll-target="#entropia">Entropia</a>
+  <ul>
+  <li><a href="#entropia-e-principali-trasformazioni-termodinamiche" id="toc-entropia-e-principali-trasformazioni-termodinamiche" class="nav-link" data-scroll-target="#entropia-e-principali-trasformazioni-termodinamiche">Entropia e principali trasformazioni termodinamiche</a></li>
+  </ul></li>
   <li><a href="#elettricità" id="toc-elettricità" class="nav-link" data-scroll-target="#elettricità">Elettricità</a>
   <ul>
   <li><a href="#elettrostatica" id="toc-elettrostatica" class="nav-link" data-scroll-target="#elettrostatica">Elettrostatica</a></li>
@@ -228,7 +236,6 @@ window.Quarto = {
   </ul></li>
   <li><a href="#generatori" id="toc-generatori" class="nav-link" data-scroll-target="#generatori">Generatori</a></li>
   </ul></li>
-  <li><a href="#entropia" id="toc-entropia" class="nav-link" data-scroll-target="#entropia">Entropia</a></li>
   </ul>
 </nav>
     </div>
@@ -275,8 +282,7 @@ table td, table th {
 <h3 class="anchored" data-anchor-id="ordini-di-grandezza">Ordini di grandezza</h3>
 <section id="maggiori-10" class="level4">
 <h4 class="anchored" data-anchor-id="maggiori-10">Maggiori 10</h4>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Nome</th>
@@ -290,7 +296,7 @@ table td, table th {
 <td style="text-align: center;">tera</td>
 <td style="text-align: center;"><span class="math inline">\(T\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(10^{12}\)</span></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">mille miliardi</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">giga</td>
@@ -324,12 +330,10 @@ table td, table th {
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="minori-di-1" class="level4">
 <h4 class="anchored" data-anchor-id="minori-di-1">Minori di 1</h4>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Nome</th>
@@ -373,17 +377,15 @@ table td, table th {
 <td style="text-align: center;">pico</td>
 <td style="text-align: center;"><span class="math inline">\(p\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(10^{-12}\)</span></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">bilionesimo</td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 </section>
 <section id="grandezze-e-unità-di-misura" class="level3">
 <h3 class="anchored" data-anchor-id="grandezze-e-unità-di-misura">Grandezze e unità di misura</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 27%">
@@ -402,57 +404,152 @@ table td, table th {
 <tr class="odd">
 <td style="text-align: center;">lunghezza</td>
 <td style="text-align: center;">metro</td>
-<td style="text-align: left;"><span class="math inline">\(m\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{m}\)</span></td>
 <td style="text-align: left;">fondamentale</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">tempo</td>
 <td style="text-align: center;">secondo</td>
-<td style="text-align: left;"><span class="math inline">\(s\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{s}\)</span></td>
 <td style="text-align: left;">fondamentale</td>
 </tr>
 <tr class="odd">
+<td style="text-align: center;">velocità</td>
+<td style="text-align: center;">metro al secondo</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
+<td style="text-align: left;">derivata di lunghezza rispetto al tempo</td>
+</tr>
+<tr class="even">
 <td style="text-align: center;">massa</td>
 <td style="text-align: center;">kilogrammo</td>
-<td style="text-align: left;"><span class="math inline">\(kg\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{kg}\)</span></td>
+<td style="text-align: left;">fondamentale</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">temperatura</td>
+<td style="text-align: center;">kelvin</td>
+<td style="text-align: left;"><span class="math inline">\(\text{K}\)</span></td>
 <td style="text-align: left;">fondamentale</td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">quantità di materia</td>
+<td style="text-align: center;">mole</td>
+<td style="text-align: left;"><span class="math inline">\(\text{mol}\)</span></td>
+<td style="text-align: left;">fondamentale</td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">Corrente elettrica</td>
 <td style="text-align: center;">Ampere</td>
-<td style="text-align: left;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{A}\)</span></td>
 <td style="text-align: left;">fondamentale</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">elettricità</td>
 <td style="text-align: center;">Coulomb</td>
-<td style="text-align: left;"><span class="math inline">\(C\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{C}\)</span></td>
 <td style="text-align: left;">fondamentale</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">potenziale elettrico</td>
 <td style="text-align: center;">Volt</td>
-<td style="text-align: left;"><span class="math inline">\(V\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \text{V}\)</span></td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">Lavoro</td>
 <td style="text-align: center;">Joule</td>
-<td style="text-align: left;"><span class="math display">\[J\]</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{J}\)</span></td>
 <td style="text-align: left;">lavoro compiuto da forza di <span class="math inline">\(1\)</span> <span class="math inline">\(N\)</span> per spostamento di <span class="math inline">\(1\)</span> <span class="math inline">\(m\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">Energia</td>
 <td style="text-align: center;">Joule</td>
-<td style="text-align: left;"><span class="math display">\[J\]</span></td>
+<td style="text-align: left;"><span class="math inline">\(\text{J}\)</span></td>
 <td style="text-align: left;">lavoro compiuto da forza di <span class="math inline">\(1\)</span> <span class="math inline">\(N\)</span> per spostamento di <span class="math inline">\(1\)</span> <span class="math inline">\(m\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="costanti-essenziali" class="level3">
 <h3 class="anchored" data-anchor-id="costanti-essenziali">Costanti essenziali</h3>
+<section id="cinematica-e-dinamica" class="level4">
+<h4 class="anchored" data-anchor-id="cinematica-e-dinamica">Cinematica e dinamica</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: left;">valore</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">velocità della luce nel vuoto</td>
+<td style="text-align: left;"><span class="math inline">\(c = 2,998 \cdot 10^8 \frac{m}{s}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Costante di gravitazione universale</td>
+<td style="text-align: left;"><span class="math inline">\(G = 6,67 \cdot 10^{-11} \frac{N m^2}{kg^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Accelerazione di gravità</td>
+<td style="text-align: left;"><span class="math inline">\(g = 9,81 \frac{m}{s^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="elettricità-e-magnetismo" class="level4">
+<h4 class="anchored" data-anchor-id="elettricità-e-magnetismo">Elettricità e magnetismo</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: left;">valore</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Costante di Coulomb</td>
+<td style="text-align: left;"><span class="math inline">\(K = 8,99 \cdot 10^9 \frac{N m^2}{C^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">costante dialettrica nel vuoto</td>
+<td style="text-align: left;"><span class="math inline">\(\epsilon_0 = 8,854 \cdot 10^{-12} \frac{C^2}{N m^2}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">carica elementare</td>
+<td style="text-align: left;"><span class="math inline">\(e = 1,602 \cdot 10^{-19} C\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Costante di Boltzmann</td>
+<td style="text-align: left;"><span class="math inline">\(K_B = 1,38 \cdot 10^{-23} \frac{J}{K}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Costante di Avogadro</td>
+<td style="text-align: left;"><span class="math inline">\(N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Costante universale dei gas</td>
+<td style="text-align: left;"><span class="math inline">\(R = 8,314 \frac{J}{mol K}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Costante di Planck</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Costante dei gas perfetti</td>
+<td style="text-align: left;"><span class="math inline">\(R = 8,314 \frac{J}{mol K}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="elementi-di-calcolo-essenziale" class="level3">
 <h3 class="anchored" data-anchor-id="elementi-di-calcolo-essenziale">Elementi di calcolo essenziale</h3>
@@ -468,8 +565,8 @@ table td, table th {
 <h2 class="anchored" data-anchor-id="cinematica">Cinematica</h2>
 <section id="velocità" class="level3">
 <h3 class="anchored" data-anchor-id="velocità">Velocità</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
+<caption>Formule della cinematica e dei vettori velocità</caption>
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -485,37 +582,30 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Velocità scalare media</td>
-<td style="text-align: center;"><span class="math display">\[v_m = \frac{\Delta s}{\Delta t} = \frac{s(t_2)-s(t_1)}{t_2-t_1}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {v_m = \frac{\Delta s}{\Delta t} = \frac{s(t_2)-s(t_1)}{t_2-t_1}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Velocità istantanea</td>
-<td style="text-align: center;"><span class="math display">\[v = \lim_{\Delta t \to 0} \frac{s(t + \Delta t)-s(t)}{\Delta t} = \frac{ds}{dt}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s}\]</span></td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Modulo vettore</td>
-<td style="text-align: center;"><span class="math display">\[| \vec{v} | = \sqrt{v_x^2 + v_y^2}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s}\]</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Modulo componente orizzontale <span class="math inline">\(\vert \vec{v_x} \vert\)</span></td>
-<td style="text-align: center;"><span class="math display">\[\vert \vec{v_x} \vert = \vert \vec{v} \vert \cos{\alpha}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vert \vec{v} \vert= \sqrt{v_x^2 + v_y^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Modulo componente verticale <span class="math inline">\(\vert \vec{v_y} \vert\)</span></td>
-<td style="text-align: center;"><span class="math display">\[\vert \vec{v_y} \vert = \vert \vec{v} \vert \sin{\alpha}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s}\]</span></td>
+<td style="text-align: left;">Modulo componente orizzontale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle |v_x| = \vert \vec{v} \vert \cos{\alpha}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Modulo componente verticale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle |v_y| = \vert \vec{v} \vert \sin{\alpha}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="accelerazione" class="level3">
 <h3 class="anchored" data-anchor-id="accelerazione">Accelerazione</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -531,22 +621,20 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Accelerazione scalare media</td>
-<td style="text-align: center;"><span class="math display">\[a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s^2}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\text{m}}{\text{s}^2}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Velocità istantanea</td>
-<td style="text-align: center;"><span class="math display">\[\vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s^2}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\text{m}}{\text{s}^2}\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="moto-rettilineo-uniforme-vecv-costante-a-0" class="level3">
 <h3 class="anchored" data-anchor-id="moto-rettilineo-uniforme-vecv-costante-a-0">Moto rettilineo uniforme (<span class="math inline">\(\vec{v}\)</span> costante, <span class="math inline">\(a = 0\)</span>)</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -557,22 +645,15 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Legge oraria</td>
-<td style="text-align: center;"><span class="math display">\[x = x_0 + v_0 \cdot t \]</span></td>
-<td style="text-align: center;"><span class="math display">\[m\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(x = x_0 + v_0 \cdot t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{m}\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="moto-rettilineo-uniformemente-accelerato" class="level3">
 <h3 class="anchored" data-anchor-id="moto-rettilineo-uniformemente-accelerato">Moto rettilineo uniformemente accelerato</h3>
-<div class="striped hover">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 35%">
-<col style="width: 35%">
-</colgroup>
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -583,32 +664,30 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Legge oraria</td>
-<td style="text-align: center;"><span class="math display">\[x = x_0 + v_0 t + \frac{1}{2} a t^2 \]</span></td>
-<td style="text-align: center;"><span class="math display">\[m\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(x = x_0 + v_0 t + \frac{1}{2} a t^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">velocità finale</td>
-<td style="text-align: center;"><span class="math display">\[v_f^2 = v_0^2 + 2 a \Delta x\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s^2}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(v_f^2 = v_0^2 + 2 a \Delta x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{m}{s^2}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">velocità</td>
-<td style="text-align: center;"><span class="math display">\[ v = v_0 + at \]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(v = v_0 + at\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{m}{s}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">velocità media</td>
-<td style="text-align: center;"><span class="math display">\[ v_m = v_0 + \frac{1}{2} a t \]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{m}{s}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(v_m = v_0 + \frac{1}{2} a t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{m}{s}\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="moto-circolare-uniforme" class="level3">
 <h3 class="anchored" data-anchor-id="moto-circolare-uniforme">Moto Circolare Uniforme</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -624,43 +703,46 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">velocità angolare</td>
-<td style="text-align: center;"><span class="math display">\[ \omega = \frac{\Delta \theta}{\Delta t}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{rad}{s}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\omega = \frac{\Delta \theta}{\Delta t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{rad}{s}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">periodo</td>
-<td style="text-align: center;"><span class="math display">\[T = \frac{1}{f}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[s\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(T = \frac{1}{f}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(s\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">velocità</td>
-<td style="text-align: center;"><span class="math display">\[v = \frac{R \Delta \theta}{\Delta t} = R \omega  \]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{rad}{s}\]</span></td>
+<td style="text-align: left;">frequenza</td>
+<td style="text-align: center;"><span class="math inline">\(f = \frac{1}{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{s}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">accelerazione</td>
-<td style="text-align: center;"><span class="math display">\[a = v \omega = R {\omega}^2\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{rad}{s^2}\]</span></td>
+<td style="text-align: left;">velocità</td>
+<td style="text-align: center;"><span class="math inline">\(v = \frac{R \Delta \theta}{\Delta t} = R \omega\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{rad}{s}\)</span></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">accelerazione</td>
+<td style="text-align: center;"><span class="math inline">\(a = v \omega = R {\omega}^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{rad}{s^2}\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">accelerazione centripeta</td>
 <td style="text-align: center;">verso interno</td>
 <td style="text-align: center;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">accelerazione centrifuga</td>
 <td style="text-align: center;">verso esterno</td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>(aggiungere componenti)</p>
 </section>
 <section id="moto-armonico" class="level3">
 <h3 class="anchored" data-anchor-id="moto-armonico">Moto Armonico</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -671,24 +753,22 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Ampiezza</td>
-<td style="text-align: center;"><span class="math display">\[A\]</span></td>
-<td style="text-align: center;"><span class="math display">\[m\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Pulsazione</td>
-<td style="text-align: center;"><span class="math display">\[ \omega = 2 \pi f \]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{rad}{s}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\omega = 2 \pi f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{rad}{s}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Fase iniziale</td>
-<td style="text-align: center;"><span class="math display">\[\phi\]</span></td>
-<td style="text-align: center;"><span class="math display">\[m, \; \phi \in [0,A]\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\phi\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(m, \; \phi \in [0,A]\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -699,30 +779,28 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">legge oraria</td>
-<td style="text-align: center;"><span class="math display">\[x = A \cos{(\omega t + \phi)}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[m\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(x = A \cos{(\omega t + \phi)}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">velocità</td>
-<td style="text-align: center;"><span class="math display">\[ v = A \omega \sin(\omega t + \phi) \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(v = A \omega \sin(\omega t + \phi)\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">accelerazione</td>
-<td style="text-align: center;"><span class="math display">\[ a = - A {\omega}^2 \cos(\omega t + \phi)\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(a = - A {\omega}^2 \cos(\omega t + \phi)\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 </section>
 <section id="dinamica" class="level2">
 <h2 class="anchored" data-anchor-id="dinamica">Dinamica</h2>
 <section id="leggi-di-newton" class="level3">
 <h3 class="anchored" data-anchor-id="leggi-di-newton">Leggi di Newton</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -733,12 +811,12 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">1 principio (principio di inerzia)</td>
-<td style="text-align: center;"><span class="math display">\[\sum \vec{F} = 0\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum \vec{F} = 0\)</span></td>
 <td style="text-align: center;">re</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2 principio</td>
-<td style="text-align: center;"><span class="math display">\[F = m \cdot a, \\ m&gt;0\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(F = m \cdot a, \\ m&gt;0\)</span></td>
 <td style="text-align: center;">Newton</td>
 </tr>
 <tr class="odd">
@@ -748,12 +826,10 @@ table td, table th {
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="quantità-di-moto" class="level3">
 <h3 class="anchored" data-anchor-id="quantità-di-moto">Quantità di moto</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -769,22 +845,20 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">quantità di moto</td>
-<td style="text-align: center;"><span class="math display">\[p = m v\]</span></td>
-<td style="text-align: center;"><span class="math display">\[ \frac{kg \cdot m}{s}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(p = m v\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{kg \cdot m}{s}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">principio conservazione quantità di moto</td>
-<td style="text-align: center;"><span class="math display">\[\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="forze-apparenti" class="level3">
 <h3 class="anchored" data-anchor-id="forze-apparenti">Forze apparenti</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -799,18 +873,21 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Forza centrifuga</td>
+<td style="text-align: center;"><span class="math inline">\(F_c = m \frac{v^2}{r}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Forza sistema non inerziale</td>
-<td style="text-align: center;"><span class="math display">\[F + F' = m \cdot a_{NI} \\ F - m a_c = m \cdot a_{NI} \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(F + F' = m \cdot a_{NI} \\ F - m a_c = m \cdot a_{NI}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="moto-in-campi-di-forze" class="level3">
 <h3 class="anchored" data-anchor-id="moto-in-campi-di-forze">Moto in campi di forze</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -826,7 +903,7 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Moto in un campo di forze elastiche</td>
-<td style="text-align: center;"><span class="math display">\[ F_x = -k x = m a_x \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(F_x = -k x = m a_x\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
@@ -836,7 +913,6 @@ table td, table th {
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="gravità" class="level3">
 <h3 class="anchored" data-anchor-id="gravità">Gravità</h3>
@@ -856,7 +932,7 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">forza peso</td>
-<td style="text-align: center;"><span class="math display">\[F_p = -gm\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(F_p = -gm\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
@@ -864,8 +940,7 @@ table td, table th {
 </section>
 <section id="forze-di-attrito" class="level3">
 <h3 class="anchored" data-anchor-id="forze-di-attrito">Forze di attrito</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -876,27 +951,20 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Forza attrito statico</td>
-<td style="text-align: center;"><span class="math display">\[F_s = \mu_{s} \cdot F_n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[N\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(F_s = \mu_{s} \cdot F_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Forza attrito dinamico</td>
-<td style="text-align: center;"><span class="math display">\[F_d = \mu_{d} \cdot F_n\]</span></td>
-<td style="text-align: center;"><span class="math display">\[N\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(F_d = \mu_{d} \cdot F_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="lavoro-ed-energia" class="level3">
 <h3 class="anchored" data-anchor-id="lavoro-ed-energia">Lavoro ed Energia</h3>
-<div class="striped hover">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 28%">
-<col style="width: 35%">
-<col style="width: 35%">
-</colgroup>
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -907,23 +975,23 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Lavoro</td>
-<td style="text-align: center;"><span class="math display">\[L = F \cdot s \cdot \cos(\alpha)\]</span></td>
-<td style="text-align: center;"><span class="math display">\[J\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(L = F \cdot s \cdot \cos(\alpha)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(J\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Energia cinetica</td>
-<td style="text-align: center;"><span class="math display">\[T = \frac{1}{2} m v^2\]</span></td>
-<td style="text-align: center;"><span class="math display">\[J\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(T = \frac{1}{2} m v^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(J\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Teorema energia cinetica</td>
-<td style="text-align: center;"><span class="math display">\[L = T, \\ T = T_{fin} - T_{in} \]</span></td>
-<td style="text-align: center;"><span class="math display">\[J\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(L = T, \\ T = T_{fin} - T_{in}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(J\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Energia potenziale</td>
-<td style="text-align: center;"><span class="math display">\[L_{AB} = U(A) - U(B) = - \Delta U\]</span></td>
-<td style="text-align: center;"><span class="math display">\[J\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(L_{AB} = U(A) - U(B) = - \Delta U\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(J\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Teorema conservazione energia meccanica</td>
@@ -932,7 +1000,6 @@ table td, table th {
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="urti" class="level3">
 <h3 class="anchored" data-anchor-id="urti">Urti</h3>
@@ -943,8 +1010,7 @@ table td, table th {
 </section>
 <section id="statica-rotazioni" class="level2">
 <h2 class="anchored" data-anchor-id="statica-rotazioni">Statica rotazioni</h2>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -960,61 +1026,59 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Equazione punto materiale</td>
-<td style="text-align: center;"><span class="math display">\[\sum_{i}{\vec{F_i} = 0}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sum_{i}{\vec{F_i} = 0}\)</span></td>
 <td style="text-align: center;">none</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Centro di massa</td>
-<td style="text-align: center;"><span class="math display">\[R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}\)</span></td>
 <td style="text-align: center;">boh</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Baricentro</td>
-<td style="text-align: center;"><span class="math display">\[R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}\)</span></td>
 <td style="text-align: center;">boh</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Momento</td>
-<td style="text-align: center;"><span class="math display">\[\vec{M}= \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{M}=\)</span></td>
 <td style="text-align: center;">boh</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Momento vettore</td>
-<td style="text-align: center;"><span class="math display">\[\vec{M} = r \sin{(\phi)}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{M} = r \sin{(\phi)}\)</span></td>
 <td style="text-align: center;">boh</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Momento angolare corpo</td>
-<td style="text-align: center;"><span class="math display">\[\vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Momento angolare</td>
-<td style="text-align: center;"><span class="math display">\[M = mvr\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle M = mvr\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Momento angolare corpo esteso</td>
-<td style="text-align: center;"><span class="math display">\[L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Momento di inerzia del corpo</td>
-<td style="text-align: center;"><span class="math display">\[I = \sum_{i}{m_i r_i^2}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle I = \sum_{i}{m_i r_i^2}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Equilibrio del corpo esteso</td>
-<td style="text-align: center;"><span class="math display">\[\vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0 \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 <section id="leve" class="level3">
 <h3 class="anchored" data-anchor-id="leve">Leve</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1030,17 +1094,17 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">relazione</td>
-<td style="text-align: center;"><span class="math display">\[b_m F_m = b_r F_r\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(b_m F_m = b_r F_r\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rapporto</td>
-<td style="text-align: center;"><span class="math display">\[G = \frac{F_r}{F_m} = \frac{b_m}{b_r}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle G = \frac{F_r}{F_m} = \frac{b_m}{b_r}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">principio delle leve idrauliche</td>
-<td style="text-align: center;"><span class="math display">\[ \frac{F_1}{S_1} = \frac{F_2}{S_2} \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{F_1}{S_1} = \frac{F_2}{S_2}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
@@ -1060,12 +1124,10 @@ table td, table th {
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="elasticità" class="level3">
 <h3 class="anchored" data-anchor-id="elasticità">Elasticità</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -1076,28 +1138,26 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Legge di Hooke</td>
-<td style="text-align: center;"><span class="math display">\[ \frac{F}{A} = E \frac{\Delta l}{l} \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{F}{A} = E \frac{\Delta l}{l}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Stress</td>
-<td style="text-align: center;"><span class="math display">\[\frac{F}{A}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{F}{A}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Stiramento</td>
-<td style="text-align: center;"><span class="math display">\[\frac{\Delta l}{l}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\Delta l}{l}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 </section>
 <section id="fluidi-completa-deformabilità" class="level2">
 <h2 class="anchored" data-anchor-id="fluidi-completa-deformabilità">Fluidi (completa deformabilità)</h2>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1113,46 +1173,44 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Densità</td>
-<td style="text-align: center;"><span class="math display">\[ d = \frac{M}{V}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(d = \frac{M}{V}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Pressione</td>
-<td style="text-align: center;"><span class="math display">\[ p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Legge di Stevino</td>
-<td style="text-align: center;"><span class="math display">\[p = p_0 + \rho g d\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(p = p_0 + \rho g d\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Forza di Archimede</td>
-<td style="text-align: center;"><span class="math display">\[ F_A = \rho g V\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle F_A = \rho g V\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Principio di Archimede</td>
-<td style="text-align: center;"><span class="math display">\[F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Leve idrauliche</td>
-<td style="text-align: center;"><span class="math display">\[p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Portata o flusso</td>
-<td style="text-align: center;"><span class="math display">\[Q = \frac{S v \Delta t}{\Delta t} = S v\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 <section id="liquido-incomprimibile-in-2-sezioni" class="level3">
 <h3 class="anchored" data-anchor-id="liquido-incomprimibile-in-2-sezioni">Liquido incomprimibile in 2 sezioni</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1168,32 +1226,35 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Costanza della portata</td>
-<td style="text-align: center;"><span class="math display">\[S_1 v_1 = S_2 v_2\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle S_1 v_1 = S_2 v_2\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Lavoro</td>
-<td style="text-align: center;"><span class="math display">\[L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2\]</span></td>
+<td style="text-align: left;">Continuità</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{S_1}{S_2} = \frac{v_2}{v_1}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Teorema di Bernoulli</td>
-<td style="text-align: center;"><span class="math display">\[p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}\]</span></td>
+<td style="text-align: left;">Lavoro</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Teorema di Bernoulli</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Teorema di Torricelli</td>
-<td style="text-align: center;">forse non ha formula</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle v = \sqrt{2gh}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="fluidi-viscosi" class="level3">
 <h3 class="anchored" data-anchor-id="fluidi-viscosi">Fluidi viscosi</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1209,38 +1270,62 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Bernoulli</td>
-<td style="text-align: center;"><span class="math display">\[p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Energia attrito</td>
-<td style="text-align: center;"><span class="math display">\[ E_A = p_1 - p_2\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle E_A = p_1 - p_2\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Resistenza di un condotto</td>
-<td style="text-align: center;"><span class="math display">\[ R = \frac{\Delta p}{Q}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle R = \frac{\Delta p}{Q}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Legge di Poiseuille</td>
-<td style="text-align: center;"><span class="math display">\[Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Resistenza in un condotto cilindrico</td>
-<td style="text-align: center;"><span class="math display">\[R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 </section>
 <section id="termodinamica" class="level2">
 <h2 class="anchored" data-anchor-id="termodinamica">Termodinamica</h2>
-<div class="striped hover">
 <table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Stato</th>
+<th style="text-align: center;">Volume proprio</th>
+<th style="text-align: center;">Forma propria</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Solido</strong></td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">SI</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Liquido</strong></td>
+<td style="text-align: center;">SI</td>
+<td style="text-align: center;">NO</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Gas</strong></td>
+<td style="text-align: center;">NO</td>
+<td style="text-align: center;">NO</td>
+</tr>
+</tbody>
+</table>
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1261,26 +1346,24 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Calore</td>
-<td style="text-align: center;"><span class="math display">\[\Delta Q = C \Delta T\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = C \Delta T\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">calore specifico</td>
-<td style="text-align: center;"><span class="math display">\[\Delta Q = c \cdot m \cdot \Delta T\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = c \cdot m \cdot \Delta T\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">irraggiamento (Stefan-Boltzmann)</td>
-<td style="text-align: center;"><span class="math display">\[P = \epsilon A \sigma T^4\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(P = \epsilon A \sigma T^4\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 <section id="gas-ideali" class="level3">
 <h3 class="anchored" data-anchor-id="gas-ideali">Gas Ideali</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1296,37 +1379,35 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">formula gas ideali</td>
-<td style="text-align: center;"><span class="math display">\[p \cdot V = C_{BM}(T)\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(p \cdot V = C_{BM}(T)\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">leggi di Charles / Gay-Lussac</td>
-<td style="text-align: center;"><span class="math display">\[V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c)\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">principio di Avogadro</td>
-<td style="text-align: center;"><span class="math display">\[V = C" \cdot n\]</span> T,P costanti</td>
+<td style="text-align: center;"><span class="math inline">\(V = C" \cdot n \quad\)</span> T,P costanti</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">legge dei gas perfetti</td>
-<td style="text-align: center;"><span class="math display">\[pV = nRT\]</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(pV = nRT\)</span></td>
+<td style="text-align: center;">funzione di stato che esprime lavoro o energia</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">R</td>
-<td style="text-align: center;"><span class="math display">\[R = \frac{pV}{nT}\]</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: left;">R: costante universale dei gas</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle R = \frac{pV}{nT}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(R = 8,314 \frac{\text{J}}{\text{mol K}}\)</span> oppure <br> <span class="math inline">\(R = 0,0821 \frac{\text{L} \cdot \text{atm}}{\text{mol K}}\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="teoria-cinetica-dei-gas" class="level3">
 <h3 class="anchored" data-anchor-id="teoria-cinetica-dei-gas">Teoria Cinetica dei Gas</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1342,35 +1423,33 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"></td>
-<td style="text-align: center;"><span class="math display">\[E_c = \frac{3}{2} RT\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle E_c = \frac{3}{2} RT\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">leggi di Charles / Gay-Lussac</td>
-<td style="text-align: center;"><span class="math display">\[V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c)\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">legge di dalton</td>
-<td style="text-align: center;"><span class="math display">\[P_{tot} = P_1 + \ldots + P_n\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(P_{tot} = P_1 + \ldots + P_n\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">umidità relativa</td>
-<td style="text-align: center;"><span class="math display">\[\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="equazioni-di-stato" class="level3">
 <h3 class="anchored" data-anchor-id="equazioni-di-stato">Equazioni di stato</h3>
 </section>
 <section id="trasformazioni-termodinamiche" class="level3">
 <h3 class="anchored" data-anchor-id="trasformazioni-termodinamiche">Trasformazioni termodinamiche</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1386,38 +1465,38 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">I principio termodinamica</td>
-<td style="text-align: center;"><span class="math display">\[\Delta E = E_2 - E_1 = \Delta Q + \Delta W\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta E = E_2 - E_1 = \Delta Q + \Delta W\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">trasformazione isotermica <br> Temperatura costante</td>
-<td style="text-align: center;"><span class="math display">\[\Delta Q = - \Delta W\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = - \Delta W\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">isocora (volume costante)</td>
-<td style="text-align: center;"><span class="math display">\[\Delta E = \Delta Q = n \cdot C_v \Delta T\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta E = \Delta Q = n \cdot C_v \Delta T\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">isobara (P costante)</td>
-<td style="text-align: center;"><span class="math display">\[ \Delta Q = n \cdot (C_v + R)dT\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = n \cdot (C_v + R)dT\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">adiabatica (dq = 0)</td>
-<td style="text-align: center;"><span class="math display">\[\Delta E = n \cdot C_v \Delta T\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta E = n \cdot C_v \Delta T\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Entalpia</td>
-<td style="text-align: center;"><span class="math display">\[H = E + PV\]</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(H = E + PV\)</span></td>
+<td style="text-align: center;">funzione di stato, misura energia interna + lavoro espansione</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Legge di Hess</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\({\Delta H_{AD} = \Delta H_{AB} + \Delta H_{BC} + \Delta H_{CD}}\)</span></td>
+<td style="text-align: center;">variazione totale uguale alla somma delle singole variazioni</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Equilibrio termico</td>
@@ -1426,15 +1505,89 @@ table td, table th {
 </tr>
 </tbody>
 </table>
-</div>
+</section>
+</section>
+<section id="entropia" class="level2">
+<h2 class="anchored" data-anchor-id="entropia">Entropia</h2>
+<p><strong>Macrostato</strong> → gas occupa un determinato volume e ha una temperatura<br>
+<strong>Microstato</strong> → molecola 1 occupa la posizione <span class="math inline">\(x_1\)</span>, la molecola 2 occupa la posizione <span class="math inline">\(x_2\)</span>, …</p>
+<dl>
+<dt><strong>Entropia</strong></dt>
+<dd>
+misura numero di microstati compatibili con il macrostato. Offre una misura della mancanza di informazione
+</dd>
+</dl>
+<table class="table-striped table-hover caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mancanza informazione</td>
+<td style="text-align: center;"><span class="math inline">\(S = K_B \log{W}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Costante di Boltzmann</td>
+<td style="text-align: center;"><span class="math inline">\(K_b = \frac{R}{N_{AV}}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<section id="entropia-e-principali-trasformazioni-termodinamiche" class="level3">
+<h3 class="anchored" data-anchor-id="entropia-e-principali-trasformazioni-termodinamiche">Entropia e principali trasformazioni termodinamiche</h3>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Trasformazioni isoterme</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = \frac{\Delta Q}{T}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trasformazioni adiabatiche</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = 0\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trasformazioni isobare (<span class="math inline">\(C_p\)</span> costante)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = C_P \log{\frac{T_2}{T_1}}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trasformazioni isocore (<span class="math inline">\(C_V\)</span> costante)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = C_V \log{\frac{T_2}{T_1}}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">transizioni di fase (p e T costanti)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S_{tr} = \frac{\Delta H_{tr}}{T}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="elettricità" class="level2">
 <h2 class="anchored" data-anchor-id="elettricità">Elettricità</h2>
 <section id="elettrostatica" class="level3">
 <h3 class="anchored" data-anchor-id="elettrostatica">Elettrostatica</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1450,37 +1603,40 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Legge di Coulomb</td>
-<td style="text-align: center;"><span class="math display">\[\vec{F} = K \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[N\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F} = K \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Costante K</td>
-<td style="text-align: center;"><span class="math display">\[ K = \frac{1}{4 \pi {\epsilon}_0}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[ \frac{N m^2}{C^2}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle K = \frac{1}{4 \pi {\epsilon}_0}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{N m}^2}{\text{C}^2}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Costante dialettrica nel vuoto</td>
-<td style="text-align: center;"><span class="math display">\[ \epsilon_0 = 8,854 \]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{C^2}{N m^2}\]</span></td>
+<td style="text-align: left;">Costante dielettrica</td>
+<td style="text-align: center;"><span class="math inline">\(\epsilon_0 = 8,854 \times 10^{-12}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{C}^2}{\text{N m}^2}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Legge di Coulomb mezzi materiali</td>
-<td style="text-align: center;"><span class="math display">\[\vec{F} = \frac{K}{{\epsilon}_r} \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[N\]</span></td>
+<td style="text-align: left;">Costante relativa dielettrica</td>
+<td style="text-align: center;"><span class="math inline">\(\epsilon_r\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Legge di Coulomb mezzi materiali</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F} = \frac{K}{{\epsilon}_r} \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Vettore intensità di campo elettrico</td>
-<td style="text-align: center;"><span class="math display">\[\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{N}{C}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle{\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {\frac{\text{N}}{\text{C}} }\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="lavoro-e-potenziale-campo-elettrico" class="level3">
 <h3 class="anchored" data-anchor-id="lavoro-e-potenziale-campo-elettrico">Lavoro e potenziale campo elettrico</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1495,42 +1651,45 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Lavoro</td>
-<td style="text-align: center;"><span class="math display">\[\frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})\]</span></td>
-<td style="text-align: center;"><span class="math display">\[J\]</span></td>
+<td style="text-align: left;">Forza tra <span class="math inline">\(q\)</span> e <span class="math inline">\(Q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Qq}{r^2} (\frac{\vec{r}}{r})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Energia potenziale</td>
-<td style="text-align: center;"><span class="math display">\[U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) \]</span></td>
-<td style="text-align: center;"><span class="math display">\[J\]</span></td>
+<td style="text-align: left;">Lavoro A → B campo radiale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle L_{AB} = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Potenziale elettrico</td>
-<td style="text-align: center;"><span class="math display">\[V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) \]</span></td>
-<td style="text-align: center;"><span class="math display">\[V = 1 \frac{J}{C}\]</span></td>
+<td style="text-align: left;">Energia potenziale di <span class="math inline">\(q\)</span> in campo di <span class="math inline">\(Q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Potenziale elettrico</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle V = 1 \frac{J}{C}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Differenza potenziale</td>
-<td style="text-align: center;"><span class="math display">\[\Delta V_{AB} = V_B - V_A\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta V_{AB} = V_B - V_A\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Flusso elettrico</td>
-<td style="text-align: center;"><span class="math display">\[\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S\]</span></td>
-<td style="text-align: center;"><span class="math display">\[V \cdot m\]</span></td>
-</tr>
 <tr class="even">
+<td style="text-align: left;">Flusso elettrico</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle{\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V \cdot m\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Energia uscita?</td>
-<td style="text-align: center;"><span class="math display">\[E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="condensatori" class="level3">
 <h3 class="anchored" data-anchor-id="condensatori">Condensatori</h3>
-<div class="striped hover">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 28%">
@@ -1547,43 +1706,46 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Capacità</td>
-<td style="text-align: center;"><span class="math display">\[C = \frac{Q}{\Delta V}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[ F = \frac{C}{V}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(C = \frac{Q}{\Delta V}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(F = \frac{C}{V}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Densità carica superficiale</td>
-<td style="text-align: center;"><span class="math display">\[\sigma = \frac{Q}{S}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{C}{m^2}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sigma = \frac{Q}{S}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{C}{m^2}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Capacità condensatore cilindrico</td>
-<td style="text-align: center;"><span class="math display">\[C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[F\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(F\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Capacità condensatori in serie</td>
-<td style="text-align: center;"><span class="math display">\[ \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[F\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(F\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Capacità condensatori in parallelo</td>
-<td style="text-align: center;"><span class="math display">\[ C = C_1 + C_2 \]</span></td>
-<td style="text-align: center;"><span class="math display">\[F\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(C = C_1 + C_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(F\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Lavoro carica condensatore</td>
-<td style="text-align: center;"><span class="math display">\[L = \frac{1}{2} C V^2\]</span></td>
-<td style="text-align: center;"><span class="math display">\[J\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(L = \frac{1}{2} C V^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(J\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>(formule senza nome)</p>
-</div>
+<dl>
+<dt>(formule senza nome)</dt>
+<dd>
+<p>{ .striped .hover}</p>
+</dd>
+</dl>
 </section>
 <section id="corrente-elettrica" class="level3">
 <h3 class="anchored" data-anchor-id="corrente-elettrica">Corrente elettrica</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1599,42 +1761,41 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Intensità di corrente</td>
-<td style="text-align: center;"><span class="math display">\[i = \frac{\Delta q}{\Delta t}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(i = \frac{\Delta q}{\Delta t}\)</span></td>
 <td style="text-align: center;">A</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Densità di corrente</td>
-<td style="text-align: center;"><span class="math display">\[J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}\)</span></td>
 <td style="text-align: center;">A</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Legge di Ohm</td>
-<td style="text-align: center;"><span class="math display">\[ \vec{J} = \sigma \vec{E} \]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{J} = \sigma \vec{E}\)</span></td>
 <td style="text-align: center;">A</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">conducibilità elettrica</td>
-<td style="text-align: center;"><span class="math display">\[\sigma\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\frac{C^2}{s m}\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sigma\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{C^2}{s m}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">I Legge di Ohm (Intensità di corrente)</td>
-<td style="text-align: center;"><span class="math display">\[ I = \frac{V}{R}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[A\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(I = \frac{V}{R}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">II Legge di Ohm (Resistenza elettrica)</td>
-<td style="text-align: center;"><span class="math display">\[R = \rho \frac{l}{S}\]</span></td>
-<td style="text-align: center;"><span class="math display">\[\Omega = V A\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(R = \rho \frac{l}{S}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Omega = V A\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Resistenza specifica o resistività</td>
-<td style="text-align: center;"><span class="math display">\[\rho\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\rho\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="soluzioni-elettroliti" class="level3">
 <h3 class="anchored" data-anchor-id="soluzioni-elettroliti">Soluzioni elettroliti</h3>
@@ -1654,8 +1815,7 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 </section>
 <section id="generatori" class="level3">
 <h3 class="anchored" data-anchor-id="generatori">Generatori</h3>
-<div class="striped hover">
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1671,64 +1831,29 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Forza elettromotrice (lavoro)</td>
-<td style="text-align: center;"><span class="math display">\[fem = f\]</span></td>
-<td style="text-align: center;"><span class="math display">\[V\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(fem = f\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Lavoro generatore aperto (non eroga corrente)</td>
-<td style="text-align: center;"><span class="math display">\[f = V_A - V_B\]</span></td>
-<td style="text-align: center;"><span class="math display">\[V\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(f = V_A - V_B\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Lavoro generatore chiuso (eroga corrente)</td>
-<td style="text-align: center;"><span class="math display">\[V_A - V_B = f - r l \]</span></td>
-<td style="text-align: center;"><span class="math display">\[V\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(V_A - V_B = f - r l\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Differenza di potenziale</td>
-<td style="text-align: center;"><span class="math display">\[\Delta V  = f \frac{R}{R + r} = RI \]</span></td>
-<td style="text-align: center;"><span class="math display">\[V\]</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta V  = f \frac{R}{R + r} = RI\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V\)</span></td>
 </tr>
 </tbody>
 </table>
-</div>
-</section>
-</section>
-<section id="entropia" class="level2">
-<h2 class="anchored" data-anchor-id="entropia">Entropia</h2>
-<p><strong>Macrostato</strong> → gas occupa un determinato volume e ha una temperatura<br>
-<strong>Microstato</strong> → molecola 1 occupa la posizione <span class="math inline">\(x_1\)</span>, la molecola 2 occupa la posizione <span class="math inline">\(x_2\)</span>, …</p>
-<dl>
-<dt><strong>Entropia</strong></dt>
-<dd>
-misura numero di microstati compatibili con il macrostato. Offre una misura della mancanza di informazione
-</dd>
-</dl>
-<div class="striped hover">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Descrizione</th>
-<th style="text-align: center;">Formula Matematica</th>
-<th style="text-align: center;">Unità di misura</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Mancanza informazione</td>
-<td style="text-align: center;"><span class="math display">\[ S = K_B \log{W} \]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Costante di Boltzmann</td>
-<td style="text-align: center;"><span class="math display">\[ K_b = \frac{R}{N_{AV}}\]</span></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
