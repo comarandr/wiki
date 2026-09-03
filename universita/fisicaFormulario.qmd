@@ -211,8 +211,13 @@ table td, table th {
 
 | Descrizione | Formula matematica | Unità di misura |
 |:---|:---:|:---:|
-| forza gravitazionale |
 | forza peso | $F_p = -gm$ |
+| forza gravitazionale | $\displaystyle F_g = -G \frac{M_T m}{r^2}(\frac{\vec{r}}{r})$ | $\text{N}$ |
+| Campo gravitazionale | $\displaystyle \vec{g} = -G \frac{M_T}{r^2}(\frac{\vec{r}}{r})$ | $\displaystyle \frac{\text{N}}{\text{kg}}$ |
+| Energia potenziale gravitazionale | $\displaystyle U(\vec{r}) = mgh$ | $\text{J}$ |
+| Potenziale gravitazionale | $\displaystyle V(\vec{r}) = \frac{U(\vec{r})}{m} = gh$ | $\displaystyle \frac{\text{J}}{\text{kg}}$ |
+
+: { .striped .hover}
 
 ### Forze di attrito
 
@@ -418,15 +423,23 @@ table td, table th {
 
 : { .striped .hover}
 
-### Lavoro e potenziale campo elettrico
+### Lavoro e potenziale campo elettrico ($q$ carica di prova, $Q$ carica sorgente)
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Forza tra $q$ e $Q$ | $\displaystyle \vec{F} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Qq}{r^2} (\frac{\vec{r}}{r})$| $\text{N}$ |
-| Lavoro A &rarr; B campo radiale | $\displaystyle L_{AB} = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$| $\text{J}$ |
-| Energia potenziale di $q$ in campo di $Q$ | $\displaystyle U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})$| $\text{J}$ |
-| Potenziale elettrico | $\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})}$| $\displaystyle V = 1 \frac{J}{C}$ |
+| Campo elettrico tra $q$ e $Q$ | $\displaystyle{\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})}$| $\displaystyle {\frac{\text{N}}{\text{C}}}$ |
+| Energia potenziale di $q$ in campo di $Q$ | $\displaystyle U(\vec{r}) = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{qQ}{r})$| $\text{J}$ |
+| Potenziale elettrostatico | $\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{Q}{r})}$| $\displaystyle V = 1 \frac{J}{C}$ |
 | Differenza potenziale | $\Delta V_{AB} = V_B - V_A$|
+| Lavoro A &rarr; B campo radiale | $\displaystyle L_{AB} = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$| $\text{J}$ |
+
+: { .striped .hover}
+
+### Teorema di Gauss e flusso elettrico
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Legge di Gauss |
 | Flusso elettrico | $\displaystyle{\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S}$ | $V \cdot m$ |
 | Energia uscita? | $E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma$ |
 
@@ -436,15 +449,16 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Capacità | $C = \frac{Q}{\Delta V}$ | $F = \frac{C}{V}$|
-| Densità carica superficiale | $\sigma = \frac{Q}{S}$| $\frac{C}{m^2}$|
-| Capacità condensatore cilindrico | $C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$| $F$ |
-| Capacità condensatori in serie | $\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$ | $F$ |
-| Capacità condensatori in parallelo | $C = C_1 + C_2$ | $F$ |
-| Lavoro carica condensatore | $L = \frac{1}{2} C V^2$ | $J$ |
-(formule senza nome)
+| Capacità | $\displaystyle C = \frac{Q}{\Delta V}$ | $\displaystyle F = \frac{C}{V}$ |
+| Densità carica superficiale | $\displaystyle \sigma = \frac{Q}{S}$| $\frac{C}{m^2}$ |
+| Capacità condensatore cilindrico | $\displaystyle C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$| $F$ |
+| Capacità condensatori in serie | $\displaystyle \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$ | $F$ |
+| Capacità condensatori in parallelo | $\displaystyle C = C_1 + C_2$ | $F$ |
+| Lavoro carica condensatore | $\displaystyle L = \frac{1}{2} C V^2$ | $J$ |
 
 : { .striped .hover}
+
+(formule senza nome)
 
 ### Corrente elettrica
 
