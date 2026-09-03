@@ -18,22 +18,20 @@ table td, table th {
 
 #### Maggiori 10
 
-:::{.striped .hover}
-
 | Nome | Simbolo | Potenza | Descrizione |
 |:---:|:---:|:---|:---|
-| tera | $T$ | $10^{12}$||
-| giga | $G$ | $10^{9}$|miliardo|
-| mega | $M$ | $10^{6}$|milione|
-| chilo | $k$ | $10^{3}$|mille|
-| etto | $h$ | $10^{2}$|cento|
-| deca | $da$ | $10^{1}$|dieci|
+| tera | $T$ | $10^{12}$ |mille miliardi |
+| giga | $G$ | $10^{9}$ | miliardo |
+| mega | $M$ | $10^{6}$ | milione |
+| chilo | $k$ | $10^{3}$ | mille |
+| etto | $h$ | $10^{2}$ | cento |
+| deca | $da$ | $10^{1}$ | dieci |
 
-:::
+: { .striped .hover}
+
 
 #### Minori di 1
 
-:::{.striped .hover}
 
 | Nome | Simbolo | Potenza | Descrizione |
 |:---:|:---:|:---|:---|
@@ -42,28 +40,49 @@ table td, table th {
 | milli | $m$ | $10^{-3}$|millesimo|
 | micro | $\mu$ | $10^{-6}$|milionesimo|
 | nano | $n$ |$10^{-9}$|miliardesimo|
-| pico | $p$ |$10^{-12}$||
+| pico | $p$ |$10^{-12}$|bilionesimo|
 
-:::
+: { .striped .hover}
 
 ### Grandezze e unità di misura
 
-:::{.striped .hover}
-
 | Grandezza | Unità di misura | Simbolo | Formula |
 |:---:|:---:|:---|:---|
-| lunghezza | metro | $m$| fondamentale |
-| tempo | secondo | $s$| fondamentale |
-| massa | kilogrammo | $kg$| fondamentale |
-| Corrente elettrica | Ampere | $A$ | fondamentale |
-| elettricità | Coulomb |$C$| fondamentale |
-| potenziale elettrico | Volt |$V$||
-| Lavoro | Joule| $$J$$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
-| Energia | Joule| $$J$$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
+| lunghezza | metro | $\text{m}$| fondamentale |
+| tempo | secondo | $\text{s}$| fondamentale |
+| velocità | metro al secondo | $\displaystyle \frac{\text{m}}{\text{s}}$| derivata di lunghezza rispetto al tempo |
+| massa | kilogrammo | $\text{kg}$| fondamentale |
+| temperatura | kelvin | $\text{K}$| fondamentale |
+| quantità di materia | mole | $\text{mol}$| fondamentale |
+| Corrente elettrica | Ampere | $\text{A}$ | fondamentale |
+| elettricità | Coulomb |$\text{C}$| fondamentale |
+| potenziale elettrico | Volt |$\displaystyle \text{V}$||
+| Lavoro | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
+| Energia | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
 
-:::
+: {.striped .hover}
 
 ### Costanti essenziali
+
+#### Cinematica e dinamica
+| Descrizione | valore |
+|:---|:---|
+| velocità della luce nel vuoto | $c = 2,998 \cdot 10^8 \frac{m}{s}$ |
+| Costante di gravitazione universale | $G = 6,67 \cdot 10^{-11} \frac{N m^2}{kg^2}$ |
+| Accelerazione di gravità | $g = 9,81 \frac{m}{s^2}$ |
+
+#### Elettricità e magnetismo
+| Descrizione | valore |
+|:---|:---|
+| Costante di Coulomb | $K = 8,99 \cdot 10^9 \frac{N m^2}{C^2}$ |
+| costante dialettrica nel vuoto | $\epsilon_0 = 8,854 \cdot 10^{-12} \frac{C^2}{N m^2}$ |
+| carica elementare | $e = 1,602 \cdot 10^{-19} C$ |
+| Costante di Boltzmann | $K_B = 1,38 \cdot 10^{-23} \frac{J}{K}$ |
+| Costante di Avogadro | $N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}$ |
+| Costante universale dei gas | $R = 8,314 \frac{J}{mol K}$ |
+| Costante di Planck | | $h = 6,626 \cdot 10^{-34} J s$ |
+| Costante dei gas perfetti | $R = 8,314 \frac{J}{mol K}$ |
+
 
 ### Elementi di calcolo essenziale
 
@@ -75,171 +94,146 @@ table td, table th {
 
 ### Velocità
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| Velocità scalare media | $$v_m = \frac{\Delta s}{\Delta t} = \frac{s(t_2)-s(t_1)}{t_2-t_1}$$| $$\frac{m}{s}$$ |
-| Velocità istantanea | $$v = \lim_{\Delta t \to 0} \frac{s(t + \Delta t)-s(t)}{\Delta t} = \frac{ds}{dt}$$ |  $$\frac{m}{s}$$ |
-| Modulo vettore | $$| \vec{v} | = \sqrt{v_x^2 + v_y^2}$$ | $$\frac{m}{s}$$ |
-| Modulo componente orizzontale $\vert \vec{v_x} \vert$ | $$\vert \vec{v_x} \vert = \vert \vec{v} \vert \cos{\alpha}$$ | $$\frac{m}{s}$$ |
-| Modulo componente verticale $\vert \vec{v_y} \vert$ | $$\vert \vec{v_y} \vert = \vert \vec{v} \vert \sin{\alpha}$$ | $$\frac{m}{s}$$ |
+| :--- | :---: | :---: |
+| Velocità scalare media | $\displaystyle {v_m = \frac{\Delta s}{\Delta t} = \frac{s(t_2)-s(t_1)}{t_2-t_1}}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| Modulo vettore | $\displaystyle \vert \vec{v} \vert= \sqrt{v_x^2 + v_y^2}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| Modulo componente orizzontale | $\displaystyle |v_x| = \vert \vec{v} \vert \cos{\alpha}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| Modulo componente verticale | $\displaystyle |v_y| = \vert \vec{v} \vert \sin{\alpha}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
 
-:::
+: Formule della cinematica e dei vettori velocità {.striped .hover}
+
+
 
 ### Accelerazione
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Accelerazione scalare media | $$a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}$$| $$\frac{m}{s^2}$$ |
-| Velocità istantanea | $$\vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$$ |  $$\frac{m}{s^2}$$ |
+| Accelerazione scalare media | $a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}$| $\frac{\text{m}}{\text{s}^2}$ |
+| Velocità istantanea | $\vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$ |  $\frac{\text{m}}{\text{s}^2}$ |
 
-:::
+: {.striped .hover}
 
 ### Moto rettilineo uniforme ($\vec{v}$ costante, $a = 0$)
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge oraria | $$x = x_0 + v_0 \cdot t $$| $$m$$ |
+| Legge oraria | $x = x_0 + v_0 \cdot t$ | $\text{m}$ |
 
-:::
+: {.striped .hover}
 
 ### Moto rettilineo uniformemente accelerato
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge oraria | $$x = x_0 + v_0 t + \frac{1}{2} a t^2 $$| $$m$$ |
-| velocità finale | $$v_f^2 = v_0^2 + 2 a \Delta x$$ | $$\frac{m}{s^2}$$| 
-| velocità | $$ v = v_0 + at $$ | $$\frac{m}{s}$$ |
-|velocità media | $$ v_m = v_0 + \frac{1}{2} a t $$| $$\frac{m}{s}$$ |
+| Legge oraria | $x = x_0 + v_0 t + \frac{1}{2} a t^2$ | $m$ |
+| velocità finale | $v_f^2 = v_0^2 + 2 a \Delta x$ | $\frac{m}{s^2}$| 
+| velocità | $v = v_0 + at$ | $\frac{m}{s}$ |
+|velocità media | $v_m = v_0 + \frac{1}{2} a t$| $\frac{m}{s}$ |
 
-:::
+: {.striped .hover}
 
 ### Moto Circolare Uniforme
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| velocità angolare | $$ \omega = \frac{\Delta \theta}{\Delta t}$$ | $$\frac{rad}{s}$$ |
-| periodo | $$T = \frac{1}{f}$$ | $$s$$ |
-| velocità | $$v = \frac{R \Delta \theta}{\Delta t} = R \omega  $$ | $$\frac{rad}{s}$$ |
-| accelerazione | $$a = v \omega = R {\omega}^2$$ | $$\frac{rad}{s^2}$$ |
+| velocità angolare | $\omega = \frac{\Delta \theta}{\Delta t}$ | $\frac{rad}{s}$ |
+| periodo | $T = \frac{1}{f}$ | $s$ |
+| frequenza | $f = \frac{1}{T}$ | $\frac{1}{s}$ |
+| velocità | $v = \frac{R \Delta \theta}{\Delta t} = R \omega$ | $\frac{rad}{s}$ |
+| accelerazione | $a = v \omega = R {\omega}^2$ | $\frac{rad}{s^2}$ |
 | accelerazione centripeta | verso interno | |
 | accelerazione centrifuga | verso esterno | |
 
-:::
+: {.striped .hover}
 
 (aggiungere componenti)
 
 ### Moto Armonico
 
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Ampiezza | $A$ | $m$ |
+| Pulsazione | $\omega = 2 \pi f$ | $\frac{rad}{s}$ |
+| Fase iniziale | $\phi$ | $m, \; \phi \in [0,A]$ |
 
-::: {.striped .hover}
+: {.striped .hover}
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Ampiezza | $$A$$ | $$m$$ |
-| Pulsazione | $$ \omega = 2 \pi f $$ | $$\frac{rad}{s}$$ |
-| Fase iniziale | $$\phi$$ | $$m, \; \phi \in [0,A]$$ |
+| legge oraria | $x = A \cos{(\omega t + \phi)}$ | $m$ |
+| velocità | $v = A \omega \sin(\omega t + \phi)$ | 
+| accelerazione | $a = - A {\omega}^2 \cos(\omega t + \phi)$ |
 
-
-:::
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| legge oraria | $$x = A \cos{(\omega t + \phi)}$$ | $$m$$ |
-| velocità | $$ v = A \omega \sin(\omega t + \phi) $$ | 
-| accelerazione | $$ a = - A {\omega}^2 \cos(\omega t + \phi)$$ |
-
-:::
+: {.striped .hover}
 
 ## Dinamica
 
 ### Leggi di Newton
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| 1 principio (principio di inerzia) | $$\sum \vec{F} = 0$$ | re |
-| 2 principio | $$F = m \cdot a, \\ m>0$$ | Newton |
+| 1 principio (principio di inerzia) | $\sum \vec{F} = 0$ | re |
+| 2 principio | $F = m \cdot a, \\ m>0$ | Newton |
 | 3 principio (principio di azione e reazione) | | |
 
-:::
+: {.striped .hover}
 
 ### Quantità di moto
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| quantità di moto | $$p = m v$$ | $$ \frac{kg \cdot m}{s}$$ |
-| principio conservazione quantità di moto | $$\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$$ | | 
+| quantità di moto | $p = m v$ | $\frac{kg \cdot m}{s}$ |
+| principio conservazione quantità di moto | $\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$ | | 
 
-:::
+: {.striped .hover}
 
 ### Forze apparenti
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Forza sistema non inerziale | $$F + F' = m \cdot a_{NI} \\ F - m a_c = m \cdot a_{NI} $$ | 
+| Forza centrifuga | $F_c = m \frac{v^2}{r}$ | $N$ |
+| Forza sistema non inerziale | $F + F' = m \cdot a_{NI} \\ F - m a_c = m \cdot a_{NI}$ | 
 
-:::
+: {.striped .hover}
 
 ### Moto in campi di forze
-
-::: {.striped .hover}
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Moto in un campo di forze nulle |
-| Moto in un campo di forze elastiche | $$ F_x = -k x = m a_x $$ |
+| Moto in un campo di forze elastiche | $F_x = -k x = m a_x$ |
 | Moto in un campo di forze uniforme |
 
-:::
+: { .striped .hover}
 
 ### Gravità
 
 | Descrizione | Formula matematica | Unità di misura |
 |:---|:---:|:---:|
 | forza gravitazionale |
-| forza peso | $$F_p = -gm$$ |
+| forza peso | $F_p = -gm$ |
 
 ### Forze di attrito
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Forza attrito statico | $$F_s = \mu_{s} \cdot F_n$$ | $$N$$ |
-| Forza attrito dinamico | $$F_d = \mu_{d} \cdot F_n$$ | $$N$$ |
+| Forza attrito statico | $F_s = \mu_{s} \cdot F_n$ | $N$ |
+| Forza attrito dinamico | $F_d = \mu_{d} \cdot F_n$ | $N$ |
 
-:::
+: {.striped .hover}
 
 ### Lavoro ed Energia
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Lavoro | $$L = F \cdot s \cdot \cos(\alpha)$$ | $$J$$ |
-| Energia cinetica | $$T = \frac{1}{2} m v^2$$ | $$J$$ |
-| Teorema energia cinetica | $$L = T, \\ T = T_{fin} - T_{in} $$ | $$J$$|
-| Energia potenziale | $$L_{AB} = U(A) - U(B) = - \Delta U$$ | $$J$$|
+| Lavoro | $L = F \cdot s \cdot \cos(\alpha)$ | $J$ |
+| Energia cinetica | $T = \frac{1}{2} m v^2$ | $J$ |
+| Teorema energia cinetica | $L = T, \\ T = T_{fin} - T_{in}$ | $J$|
+| Energia potenziale | $L_{AB} = U(A) - U(B) = - \Delta U$ | $J$|
 | Teorema conservazione energia meccanica | 
 
-:::
+: { .striped .hover}
 
 ### Urti
 
@@ -247,215 +241,224 @@ table td, table th {
 
 ## Statica rotazioni
 
-
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Equazione punto materiale | $$\sum_{i}{\vec{F_i} = 0}$$ | none |
-| Centro di massa | $$R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}$$ | boh |
-| Baricentro | $$R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$$ | boh|
-| Momento | $$\vec{M}= $$ | boh |
-| Momento vettore | $$\vec{M} = r \sin{(\phi)}$$ | boh |
-| Momento angolare corpo | $$\vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$$ |
-| Momento angolare | $$M = mvr$$ |
-| Momento angolare corpo esteso | $$L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$$ |
-| Momento di inerzia del corpo | $$I = \sum_{i}{m_i r_i^2}$$ |
-| Equilibrio del corpo esteso | $$\vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0 $$|
+| Equazione punto materiale | $\displaystyle \sum_{i}{\vec{F_i} = 0}$ | none |
+| Centro di massa | $\displaystyle R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}$ | boh |
+| Baricentro | $\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$ | boh|
+| Momento | $\vec{M}=$ | boh |
+| Momento vettore | $\vec{M} = r \sin{(\phi)}$ | boh |
+| Momento angolare corpo | $\displaystyle \vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$ |
+| Momento angolare | $\displaystyle M = mvr$ |
+| Momento angolare corpo esteso | $\displaystyle L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$ |
+| Momento di inerzia del corpo | $\displaystyle I = \sum_{i}{m_i r_i^2}$ |
+| Equilibrio del corpo esteso | $\displaystyle \vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0$ |
 
-:::
+: { .striped .hover}
 
 ### Leve
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| relazione | $$b_m F_m = b_r F_r$$ |
-| rapporto | $$G = \frac{F_r}{F_m} = \frac{b_m}{b_r}$$|
-| principio delle leve idrauliche | $$ \frac{F_1}{S_1} = \frac{F_2}{S_2} $$ | 
+| relazione | $b_m F_m = b_r F_r$ |
+| rapporto | $\displaystyle G = \frac{F_r}{F_m} = \frac{b_m}{b_r}$|
+| principio delle leve idrauliche | $\frac{F_1}{S_1} = \frac{F_2}{S_2}$ | 
 | I tipo | fulcro intermedio|
 | II tipo | R intermedio |
 | III tipo | M intermedio |
 
-:::
+: { .striped .hover}
 
 ### Elasticità
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge di Hooke | $$ \frac{F}{A} = E \frac{\Delta l}{l} $$ |
-| Stress | $$\frac{F}{A}$$ |
-| Stiramento | $$\frac{\Delta l}{l}$$ |
+| Legge di Hooke | $\frac{F}{A} = E \frac{\Delta l}{l}$ |
+| Stress | $\frac{F}{A}$ |
+| Stiramento | $\frac{\Delta l}{l}$ |
 
-:::
+: { .striped .hover}
 
 ## Fluidi (completa deformabilità)
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Densità | $$ d = \frac{M}{V}$$ |
-| Pressione | $$ p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$$ |
-| Legge di Stevino | $$p = p_0 + \rho g d$$ |
-| Forza di Archimede | $$ F_A = \rho g V$$|
-| Principio di Archimede | $$F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V $$ |
-| Leve idrauliche | $$p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$$|
-| Portata o flusso | $$Q = \frac{S v \Delta t}{\Delta t} = S v$$ |
+| Densità | $d = \frac{M}{V}$ |
+| Pressione | $p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ |
+| Legge di Stevino | $p = p_0 + \rho g d$ |
+| Forza di Archimede | $\displaystyle F_A = \rho g V$|
+| Principio di Archimede | $\displaystyle {F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V}$ |
+| Leve idrauliche | $\displaystyle p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$|
+| Portata o flusso | $\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v$ |
 
-:::
+: { .striped .hover}
 
 ### Liquido incomprimibile in 2 sezioni
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Costanza della portata | $$S_1 v_1 = S_2 v_2$$ |
-| Lavoro | $$L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2$$ |
-| Teorema di Bernoulli | $$p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}$$ |
-| Teorema di Torricelli | forse non ha formula|
+| Costanza della portata | $\displaystyle S_1 v_1 = S_2 v_2$ |
+| Continuità | $\displaystyle \frac{S_1}{S_2} = \frac{v_2}{v_1}$ |
+| Lavoro | $\displaystyle L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2$ |
+| Teorema di Bernoulli | $\displaystyle p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}$ |
+| Teorema di Torricelli | $\displaystyle v = \sqrt{2gh}$ |
 
-:::
+: { .striped .hover}
 
 
 ### Fluidi viscosi
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Bernoulli | $$p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A $$ |
-| Energia attrito | $$ E_A = p_1 - p_2$$ |
-| Resistenza di un condotto | $$ R = \frac{\Delta p}{Q}$$ |
-| Legge di Poiseuille | $$Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
-| Resistenza in un condotto cilindrico | $$R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$$|
-:::
+| Bernoulli | $\displaystyle p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A$ |
+| Energia attrito | $\displaystyle E_A = p_1 - p_2$ |
+| Resistenza di un condotto | $\displaystyle R = \frac{\Delta p}{Q}$ |
+| Legge di Poiseuille | $\displaystyle Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$|
+| Resistenza in un condotto cilindrico | $\displaystyle R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$|
+
+: { .striped .hover}
 
 ## Termodinamica 
 
-::: {.striped .hover}
+| Stato | Volume proprio | Forma propria |
+|:---|:---:|:---:|
+| **Solido** | SI | SI |
+| **Liquido** | SI | NO |
+| **Gas** | NO | NO |
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Principio 0 della termodinamica | $a,b$ in eq. termico con $c$ $\rightarrow$ $a$ in equilibrio termico con $b$ |
-| Calore | $$\Delta Q = C \Delta T$$ | 
-| calore specifico | $$\Delta Q = c \cdot m \cdot \Delta T$$ |
-| irraggiamento (Stefan-Boltzmann) | $$P = \epsilon A \sigma T^4$$ |
+| Calore | $\Delta Q = C \Delta T$ | 
+| calore specifico | $\Delta Q = c \cdot m \cdot \Delta T$ |
+| irraggiamento (Stefan-Boltzmann) | $P = \epsilon A \sigma T^4$ |
 
-:::
+: { .striped .hover}
 
 ### Gas Ideali
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| formula gas ideali | $$p \cdot V = C_{BM}(T)$$|
-| leggi di Charles / Gay-Lussac | $$V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) $$ |
-| principio di Avogadro | $$V = C" \cdot n$$ T,P costanti |
-| legge dei gas perfetti | $$pV = nRT$$ |
-| R | $$R = \frac{pV}{nT}$$ |
+| formula gas ideali | $p \cdot V = C_{BM}(T)$|
+| leggi di Charles / Gay-Lussac | $V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c)$ |
+| principio di Avogadro | $V = C" \cdot n \quad$ T,P costanti |
+| legge dei gas perfetti | $pV = nRT$ | funzione di stato che esprime lavoro o energia |
+| R: costante universale dei gas | $\displaystyle R = \frac{pV}{nT}$ | $R = 8,314 \frac{\text{J}}{\text{mol K}}$ oppure <br> $R = 0,0821 \frac{\text{L} \cdot \text{atm}}{\text{mol K}}$ |
 
-:::
+: { .striped .hover}
 
 ### Teoria Cinetica dei Gas
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-|  | $$E_c = \frac{3}{2} RT$$|
-| leggi di Charles / Gay-Lussac | $$V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c) $$ |
-| legge di dalton | $$P_{tot} = P_1 + \ldots + P_n$$ |
-| umidità relativa | $$\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100$$ |
+|  | $\displaystyle E_c = \frac{3}{2} RT$|
+| leggi di Charles / Gay-Lussac | $V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c)$ |
+| legge di dalton | $P_{tot} = P_1 + \ldots + P_n$ |
+| umidità relativa | $\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100$ |
 
-:::
+: { .striped .hover}
 
 ### Equazioni di stato
 
 ### Trasformazioni termodinamiche
 
-::: {.striped .hover}
-
 | Tipologia | Formula Matematica | Descrizione |
 |:---|:---:|:---:|
-| I principio termodinamica | $$\Delta E = E_2 - E_1 = \Delta Q + \Delta W$$ |
-| trasformazione isotermica <br> Temperatura costante | $$\Delta Q = - \Delta W$$|
-| isocora (volume costante) | $$\Delta E = \Delta Q = n \cdot C_v \Delta T$$ |
-| isobara (P costante) | $$ \Delta Q = n \cdot (C_v + R)dT$$|
-| adiabatica (dq = 0) | $$\Delta E = n \cdot C_v \Delta T$$|
-| Entalpia | $$H = E + PV$$ |
-| Legge di Hess | |
+| I principio termodinamica | $\Delta E = E_2 - E_1 = \Delta Q + \Delta W$ |
+| trasformazione isotermica <br> Temperatura costante | $\Delta Q = - \Delta W$|
+| isocora (volume costante) | $\Delta E = \Delta Q = n \cdot C_v \Delta T$ |
+| isobara (P costante) | $\Delta Q = n \cdot (C_v + R)dT$|
+| adiabatica (dq = 0) | $\Delta E = n \cdot C_v \Delta T$|
+| Entalpia | $H = E + PV$ | funzione di stato, misura energia interna + lavoro espansione |
+| Legge di Hess | ${\Delta H_{AD} = \Delta H_{AB} + \Delta H_{BC} + \Delta H_{CD}}$ | variazione totale uguale alla somma delle singole variazioni |
 | Equilibrio termico | |
 
-:::
+: { .striped .hover}
+
+## Entropia
+
+**Macrostato** &rarr; gas occupa un determinato volume e ha una temperatura
+**Microstato** &rarr; molecola 1 occupa la posizione $x_1$, la molecola 2 occupa la posizione $x_2$, ...
+
+**Entropia**
+: misura numero di microstati compatibili con il macrostato. Offre una misura della mancanza di informazione
+
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Mancanza informazione | $S = K_B \log{W}$ |
+| Costante di Boltzmann | $K_b = \frac{R}{N_{AV}}$ |
+
+: { .striped .hover}
+
+### Entropia e principali trasformazioni termodinamiche
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Trasformazioni isoterme | $\displaystyle \Delta S = \frac{\Delta Q}{T}$ |
+| trasformazioni adiabatiche | $\displaystyle \Delta S = 0$ |
+| trasformazioni isobare ($C_p$ costante) | $\displaystyle \Delta S = C_P \log{\frac{T_2}{T_1}}$ |
+| trasformazioni isocore ($C_V$ costante) | $\displaystyle \Delta S = C_V \log{\frac{T_2}{T_1}}$ |
+| transizioni di fase (p e T costanti) | $\displaystyle \Delta S_{tr} = \frac{\Delta H_{tr}}{T}$ |
+
+: { .striped .hover}
 
 ## Elettricità
 
 ### Elettrostatica
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge di Coulomb | $$\vec{F} = K \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$| $$N$$ |
-| Costante K | $$ K = \frac{1}{4 \pi {\epsilon}_0}$$| $$ \frac{N m^2}{C^2}$$ |
-| Costante dialettrica nel vuoto | $$ \epsilon_0 = 8,854 $$ | $$\frac{C^2}{N m^2}$$ |
-| Legge di Coulomb mezzi materiali | $$\vec{F} = \frac{K}{{\epsilon}_r} \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$$| $$N$$ |
-| Vettore intensità di campo elettrico | $$\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})$$| $$\frac{N}{C}$$ |
+| Legge di Coulomb | $\displaystyle \vec{F} = K \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$| $\text{N}$ |
+| Costante K | $\displaystyle K = \frac{1}{4 \pi {\epsilon}_0}$| $\displaystyle \frac{\text{N m}^2}{\text{C}^2}$ |
+| Costante dielettrica | $\epsilon_0 = 8,854 \times 10^{-12}$ | $\displaystyle \frac{\text{C}^2}{\text{N m}^2}$ |
+| Costante relativa dielettrica | $\epsilon_r$ | $-$ |
+| Legge di Coulomb mezzi materiali | $\displaystyle \vec{F} = \frac{K}{{\epsilon}_r} \frac{q_1 q_2}{r^2} \frac{\vec{r}}{r}$| $N$ |
+| Vettore intensità di campo elettrico | $\displaystyle{\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})}$| $\displaystyle {\frac{\text{N}}{\text{C}} }$ |
 
-:::
+: { .striped .hover}
 
 ### Lavoro e potenziale campo elettrico
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Lavoro | $$\frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$$| $$J$$ |
-| Energia potenziale | $$U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$| $$J$$ |
-| Potenziale elettrico | $$V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r}) $$| $$V = 1 \frac{J}{C}$$ |
-| Differenza potenziale | $$\Delta V_{AB} = V_B - V_A$$|
-| Flusso elettrico | $$\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S$$ | $$V \cdot m$$ |
-| Energia uscita? | $$E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma $$ |
+| Forza tra $q$ e $Q$ | $\displaystyle \vec{F} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Qq}{r^2} (\frac{\vec{r}}{r})$| $\text{N}$ |
+| Lavoro A &rarr; B campo radiale | $\displaystyle L_{AB} = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$| $\text{J}$ |
+| Energia potenziale di $q$ in campo di $Q$ | $\displaystyle U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})$| $\text{J}$ |
+| Potenziale elettrico | $\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})}$| $\displaystyle V = 1 \frac{J}{C}$ |
+| Differenza potenziale | $\Delta V_{AB} = V_B - V_A$|
+| Flusso elettrico | $\displaystyle{\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S}$ | $V \cdot m$ |
+| Energia uscita? | $E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma$ |
 
-:::
+: { .striped .hover}
 
 ### Condensatori
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Capacità | $$C = \frac{Q}{\Delta V}$$ | $$ F = \frac{C}{V}$$|
-| Densità carica superficiale | $$\sigma = \frac{Q}{S}$$| $$\frac{C}{m^2}$$|
-| Capacità condensatore cilindrico | $$C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$$| $$F$$ |
-| Capacità condensatori in serie | $$ \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$$ | $$F$$ |
-| Capacità condensatori in parallelo | $$ C = C_1 + C_2 $$ | $$F$$ |
-| Lavoro carica condensatore | $$L = \frac{1}{2} C V^2$$ | $$J$$ |
+| Capacità | $C = \frac{Q}{\Delta V}$ | $F = \frac{C}{V}$|
+| Densità carica superficiale | $\sigma = \frac{Q}{S}$| $\frac{C}{m^2}$|
+| Capacità condensatore cilindrico | $C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$| $F$ |
+| Capacità condensatori in serie | $\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$ | $F$ |
+| Capacità condensatori in parallelo | $C = C_1 + C_2$ | $F$ |
+| Lavoro carica condensatore | $L = \frac{1}{2} C V^2$ | $J$ |
 (formule senza nome)
 
-:::
+: { .striped .hover}
 
 ### Corrente elettrica
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Intensità di corrente | $$i = \frac{\Delta q}{\Delta t}$$ | A |
-| Densità di corrente | $$J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}$$ | A |
-| Legge di Ohm | $$ \vec{J} = \sigma \vec{E} $$ | A |
-| conducibilità elettrica | $$\sigma$$ | $$\frac{C^2}{s m}$$ |
-| I Legge di Ohm (Intensità di corrente) | $$ I = \frac{V}{R}$$ | $$A$$|
-| II Legge di Ohm (Resistenza elettrica) | $$R = \rho \frac{l}{S}$$ | $$\Omega = V A$$ |
-| Resistenza specifica o resistività | $$\rho$$ |
+| Intensità di corrente | $i = \frac{\Delta q}{\Delta t}$ | A |
+| Densità di corrente | $J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}$ | A |
+| Legge di Ohm | $\vec{J} = \sigma \vec{E}$ | A |
+| conducibilità elettrica | $\sigma$ | $\frac{C^2}{s m}$ |
+| I Legge di Ohm (Intensità di corrente) | $I = \frac{V}{R}$ | $A$|
+| II Legge di Ohm (Resistenza elettrica) | $R = \rho \frac{l}{S}$ | $\Omega = V A$ |
+| Resistenza specifica o resistività | $\rho$ |
 
-:::
+: { .striped .hover}
 
 ### Soluzioni elettroliti
 
@@ -481,31 +484,11 @@ concentrazione: grammoione/litro
 
 ### Generatori
 
-::: {.striped .hover}
-
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Forza elettromotrice (lavoro) | $$fem = f$$ | $$V$$ |
-| Lavoro generatore aperto (non eroga corrente) | $$f = V_A - V_B$$ | $$V$$ |
-| Lavoro generatore chiuso (eroga corrente) | $$V_A - V_B = f - r l $$ | $$V$$ |
-| Differenza di potenziale | $$\Delta V  = f \frac{R}{R + r} = RI $$ | $$V$$ |
+| Forza elettromotrice (lavoro) | $fem = f$ | $V$ |
+| Lavoro generatore aperto (non eroga corrente) | $f = V_A - V_B$ | $V$ |
+| Lavoro generatore chiuso (eroga corrente) | $V_A - V_B = f - r l$ | $V$ |
+| Differenza di potenziale | $\Delta V  = f \frac{R}{R + r} = RI$ | $V$ |
 
-
-:::
-
-## Entropia
-
-**Macrostato** &rarr; gas occupa un determinato volume e ha una temperatura
-**Microstato** &rarr; molecola 1 occupa la posizione $x_1$, la molecola 2 occupa la posizione $x_2$, ...
-
-**Entropia**
-: misura numero di microstati compatibili con il macrostato. Offre una misura della mancanza di informazione
-
-::: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| Mancanza informazione | $$ S = K_B \log{W} $$ |
-| Costante di Boltzmann | $$ K_b = \frac{R}{N_{AV}}$$ |
-
-:::
+: { .striped .hover}
