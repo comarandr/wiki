@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e3adbaa939bcd423dddc8c8a834270b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -227,7 +227,8 @@ window.Quarto = {
   <li><a href="#elettricità" id="toc-elettricità" class="nav-link" data-scroll-target="#elettricità">Elettricità</a>
   <ul>
   <li><a href="#elettrostatica" id="toc-elettrostatica" class="nav-link" data-scroll-target="#elettrostatica">Elettrostatica</a></li>
-  <li><a href="#lavoro-e-potenziale-campo-elettrico" id="toc-lavoro-e-potenziale-campo-elettrico" class="nav-link" data-scroll-target="#lavoro-e-potenziale-campo-elettrico">Lavoro e potenziale campo elettrico</a></li>
+  <li><a href="#lavoro-e-potenziale-campo-elettrico-q-carica-di-prova-q-carica-sorgente" id="toc-lavoro-e-potenziale-campo-elettrico-q-carica-di-prova-q-carica-sorgente" class="nav-link" data-scroll-target="#lavoro-e-potenziale-campo-elettrico-q-carica-di-prova-q-carica-sorgente">Lavoro e potenziale campo elettrico (<span class="math inline">\(q\)</span> carica di prova, <span class="math inline">\(Q\)</span> carica sorgente)</a></li>
+  <li><a href="#teorema-di-gauss-e-flusso-elettrico" id="toc-teorema-di-gauss-e-flusso-elettrico" class="nav-link" data-scroll-target="#teorema-di-gauss-e-flusso-elettrico">Teorema di Gauss e flusso elettrico</a></li>
   <li><a href="#condensatori" id="toc-condensatori" class="nav-link" data-scroll-target="#condensatori">Condensatori</a></li>
   <li><a href="#corrente-elettrica" id="toc-corrente-elettrica" class="nav-link" data-scroll-target="#corrente-elettrica">Corrente elettrica</a></li>
   <li><a href="#soluzioni-elettroliti" id="toc-soluzioni-elettroliti" class="nav-link" data-scroll-target="#soluzioni-elettroliti">Soluzioni elettroliti</a>
@@ -916,7 +917,12 @@ table td, table th {
 </section>
 <section id="gravità" class="level3">
 <h3 class="anchored" data-anchor-id="gravità">Gravità</h3>
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -926,14 +932,29 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">forza gravitazionale</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">forza peso</td>
 <td style="text-align: center;"><span class="math inline">\(F_p = -gm\)</span></td>
 <td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">forza gravitazionale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle F_g = -G \frac{M_T m}{r^2}(\frac{\vec{r}}{r})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Campo gravitazionale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{g} = -G \frac{M_T}{r^2}(\frac{\vec{r}}{r})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{N}}{\text{kg}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Energia potenziale gravitazionale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle U(\vec{r}) = mgh\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Potenziale gravitazionale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle V(\vec{r}) = \frac{U(\vec{r})}{m} = gh\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{kg}}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1634,8 +1655,8 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 </tbody>
 </table>
 </section>
-<section id="lavoro-e-potenziale-campo-elettrico" class="level3">
-<h3 class="anchored" data-anchor-id="lavoro-e-potenziale-campo-elettrico">Lavoro e potenziale campo elettrico</h3>
+<section id="lavoro-e-potenziale-campo-elettrico-q-carica-di-prova-q-carica-sorgente" class="level3">
+<h3 class="anchored" data-anchor-id="lavoro-e-potenziale-campo-elettrico-q-carica-di-prova-q-carica-sorgente">Lavoro e potenziale campo elettrico (<span class="math inline">\(q\)</span> carica di prova, <span class="math inline">\(Q\)</span> carica sorgente)</h3>
 <table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
@@ -1656,23 +1677,52 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Lavoro A → B campo radiale</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle L_{AB} = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
+<td style="text-align: left;">Campo elettrico tra <span class="math inline">\(q\)</span> e <span class="math inline">\(Q\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle{\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {\frac{\text{N}}{\text{C}}}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Energia potenziale di <span class="math inline">\(q\)</span> in campo di <span class="math inline">\(Q\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle U(\vec{r}) = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle U(\vec{r}) = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{qQ}{r})\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Potenziale elettrico</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{Q}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r})}\)</span></td>
+<td style="text-align: left;">Potenziale elettrostatico</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{Q}{r})}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle V = 1 \frac{J}{C}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Differenza potenziale</td>
 <td style="text-align: center;"><span class="math inline">\(\Delta V_{AB} = V_B - V_A\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lavoro A → B campo radiale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle L_{AB} = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="teorema-di-gauss-e-flusso-elettrico" class="level3">
+<h3 class="anchored" data-anchor-id="teorema-di-gauss-e-flusso-elettrico">Teorema di Gauss e flusso elettrico</h3>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Legge di Gauss</td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
@@ -1690,7 +1740,7 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 </section>
 <section id="condensatori" class="level3">
 <h3 class="anchored" data-anchor-id="condensatori">Condensatori</h3>
-<table class="caption-top table">
+<table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
 <col style="width: 35%">
@@ -1706,42 +1756,37 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Capacità</td>
-<td style="text-align: center;"><span class="math inline">\(C = \frac{Q}{\Delta V}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(F = \frac{C}{V}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle C = \frac{Q}{\Delta V}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle F = \frac{C}{V}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Densità carica superficiale</td>
-<td style="text-align: center;"><span class="math inline">\(\sigma = \frac{Q}{S}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sigma = \frac{Q}{S}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\frac{C}{m^2}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Capacità condensatore cilindrico</td>
-<td style="text-align: center;"><span class="math inline">\(C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(F\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Capacità condensatori in serie</td>
-<td style="text-align: center;"><span class="math inline">\(\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(F\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Capacità condensatori in parallelo</td>
-<td style="text-align: center;"><span class="math inline">\(C = C_1 + C_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle C = C_1 + C_2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(F\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Lavoro carica condensatore</td>
-<td style="text-align: center;"><span class="math inline">\(L = \frac{1}{2} C V^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle L = \frac{1}{2} C V^2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(J\)</span></td>
 </tr>
 </tbody>
 </table>
-<dl>
-<dt>(formule senza nome)</dt>
-<dd>
-<p>{ .striped .hover}</p>
-</dd>
-</dl>
+<p>(formule senza nome)</p>
 </section>
 <section id="corrente-elettrica" class="level3">
 <h3 class="anchored" data-anchor-id="corrente-elettrica">Corrente elettrica</h3>
