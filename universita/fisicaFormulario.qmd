@@ -55,10 +55,14 @@ table td, table th {
 | temperatura | kelvin | $\text{K}$| fondamentale |
 | quantità di materia | mole | $\text{mol}$| fondamentale |
 | Corrente elettrica | Ampere | $\text{A}$ | fondamentale |
+| forza | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
 | elettricità | Coulomb |$\text{C}$| fondamentale |
 | potenziale elettrico | Volt |$\displaystyle \text{V}$||
 | Lavoro | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
-| Energia | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
+| Energia | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$|
+| Calore | Joule o Caloria | $\text{J}$ o $\text{cal}$ | $1 \; \text{cal} = 4,184 \; \text{J}$| 
+| Magnetismo | Tesla | $\text{T}$ | $1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}$ |
+| flusso campo magnetico | Weber | $\text{Wb}$ | $1 \; \text{Wb} = 1 \; \text{T m}^2$ |
 
 : {.striped .hover}
 
@@ -82,6 +86,7 @@ table td, table th {
 | Costante universale dei gas | $R = 8,314 \frac{J}{mol K}$ |
 | Costante di Planck | | $h = 6,626 \cdot 10^{-34} J s$ |
 | Costante dei gas perfetti | $R = 8,314 \frac{J}{mol K}$ |
+| permeabilità magnetica nel vuoto | $\mu_0 = 4 \pi \cdot 10^{-7} \frac{kg \cdot m}{C^2}$ |
 
 
 ### Elementi di calcolo essenziale
@@ -162,7 +167,7 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | legge oraria | $x = A \cos{(\omega t + \phi)}$ | $m$ |
-| velocità | $v = A \omega \sin(\omega t + \phi)$ | 
+| velocità | $v = A \omega \sin(\omega t + \phi)$ | $\frac{m}{s}$ |
 | accelerazione | $a = - A {\omega}^2 \cos(\omega t + \phi)$ |
 
 : {.striped .hover}
@@ -439,9 +444,12 @@ table td, table th {
 ### Teorema di Gauss e flusso elettrico
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge di Gauss |
-| Flusso elettrico | $\displaystyle{\Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q = E_{out} \Delta S = \frac{1}{{\epsilon}_0 \epsilon} \sigma \Delta S}$ | $V \cdot m$ |
-| Energia uscita? | $E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma$ |
+| Teorema di Gauss | $\Phi_{TOT}$ attraverso $S$ chiusa = carica totale interno ad $S \cdot 4 \pi$ | 
+| Flusso elettrico superficie chiusa | $\displaystyle \Phi(\vec{E}) = \frac{1}{{\epsilon}_0 \epsilon} Q$ | $V \cdot m$ |
+| densità carica superficiale conduttore | $\displaystyle \sigma = \frac{Q}{S}$ | $\displaystyle \frac{\text{C}}{\text{m}^2}$ |
+| flusso elettrico superficie conduttore | $\displaystyle \Phi= E_{out} \Delta S$ | $V \cdot m$ |
+| valore campo elettrico superficie conduttore | $\displaystyle E_{out} = \frac{1}{{\epsilon}_0 \epsilon} \sigma$ | $\displaystyle \frac{N}{C}$ |
+| capacità del conduttore| $\displaystyle C = \frac{Q}{\Delta V}$ | $\displaystyle \text{F} = \frac{\text{C}}{\text{V}}$ |
 
 : { .striped .hover}
 
@@ -449,28 +457,31 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Capacità | $\displaystyle C = \frac{Q}{\Delta V}$ | $\displaystyle F = \frac{C}{V}$ |
-| Densità carica superficiale | $\displaystyle \sigma = \frac{Q}{S}$| $\frac{C}{m^2}$ |
+| Capacità elettrica condensatore | $\displaystyle C = \frac{Q}{\Delta V}$| $\text{F}$ |
+| differenza di potenziale | $\displaystyle {\Delta V = \frac{L}{q} = Q \frac{d}{S} \frac{1}{\epsilon_0 \epsilon_r}}$ | $\text{V}$ |
+| Capacità condensatore | $\displaystyle C = {\epsilon}_0 {\epsilon}_r \frac{S}{d}$ | $\text{F}$ |
 | Capacità condensatore cilindrico | $\displaystyle C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$| $F$ |
+| differenza di potenziale condensatori in serie | $\displaystyle {\Delta V = \Delta V_1 + \Delta V_2 = Q ( \frac{1}{C_1} + \frac{1}{C_2})}$ | $V$ |
 | Capacità condensatori in serie | $\displaystyle \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$ | $F$ |
+| differenza di potenziale condensatori in parallelo | $\displaystyle {\Delta V = \Delta V_1 = \Delta V_2}$ | $V$ |
 | Capacità condensatori in parallelo | $\displaystyle C = C_1 + C_2$ | $F$ |
-| Lavoro carica condensatore | $\displaystyle L = \frac{1}{2} C V^2$ | $J$ |
+| Energia condensatore carico (lavoro per caricarlo) | $\displaystyle L = \frac{1}{2} C V^2$ | $J$ |
+| dal teorema di Gauss | $\displaystyle ES = \frac{\sigma S}{\epsilon_0 \epsilon_r}$ | $V \cdot m$ |
+| dal teorema di Gauss | $\displaystyle E = \frac{\sigma}{\epsilon_0 \epsilon_r}$ | $V \cdot m$ |
 
 : { .striped .hover}
 
-(formule senza nome)
-
-### Corrente elettrica
+### Corrente elettrica (moto di cariche elettriche)
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Intensità di corrente | $i = \frac{\Delta q}{\Delta t}$ | A |
-| Densità di corrente | $J = \frac{\Delta}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}$ | A |
-| Legge di Ohm | $\vec{J} = \sigma \vec{E}$ | A |
-| conducibilità elettrica | $\sigma$ | $\frac{C^2}{s m}$ |
-| I Legge di Ohm (Intensità di corrente) | $I = \frac{V}{R}$ | $A$|
-| II Legge di Ohm (Resistenza elettrica) | $R = \rho \frac{l}{S}$ | $\Omega = V A$ |
-| Resistenza specifica o resistività | $\rho$ |
+| Intensità di corrente | $\displaystyle i = \frac{\Delta q}{\Delta t}$ | $\text{A}$ |
+| Densità di corrente | $\displaystyle {J = \frac{\Delta q}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}}$ | $\text{A}/\text{m}^2$ |
+| Legge di Ohm | $\vec{J} = \sigma \vec{E}$ | $\text{A}/\text{m}^2$ |
+| conducibilità elettrica | $\sigma$ | $\displaystyle \frac{C^2}{s m}$ |
+| I Legge di Ohm (Intensità di corrente) | $\displaystyle I = \frac{V}{R}$ | $\text{A}$|
+| II Legge di Ohm (Resistenza elettrica) | $\displaystyle R = \rho \frac{l}{S}$ | $\Omega = V A$ |
+| Resistenza specifica o resistività | $\displaystyle \rho = \frac{1}{\sigma}$ |
 
 : { .striped .hover}
 
@@ -500,9 +511,113 @@ concentrazione: grammoione/litro
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Forza elettromotrice (lavoro) | $fem = f$ | $V$ |
-| Lavoro generatore aperto (non eroga corrente) | $f = V_A - V_B$ | $V$ |
-| Lavoro generatore chiuso (eroga corrente) | $V_A - V_B = f - r l$ | $V$ |
-| Differenza di potenziale | $\Delta V  = f \frac{R}{R + r} = RI$ | $V$ |
+| Forza elettromotrice (lavoro) | $\displaystyle fem = f = ddp$ | $V$ |
+| Lavoro generatore aperto (non eroga corrente) | $\displaystyle f = V_A - V_B$ | $V$ |
+| Lavoro generatore chiuso (eroga corrente) | $\displaystyle V_A - V_B = f - r l = R I$ | $V$ |
+| Differenza di potenziale | $\displaystyle \Delta V  = f \frac{R}{R + r}$ | $V$ |
+| I principio kirchhoff (corrente nodo) | $\displaystyle \sum_{i=1}^{n} i_i = 0$ | $A$ |
 
 : { .striped .hover}
+
+### Resistenze
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| I principio di Kirchhoff (corrente nodo) | $\displaystyle \sum_{i=1}^{n} i_i = 0$ | $A$ |
+| II principio di Kirchhoff (corrente maglia) con generatore | $\displaystyle R_1 I_1 + R_2 I_2 = \Delta V$ | $V$ |
+| II principio di Kirchhoff (corrente maglia) senza generatore | $\displaystyle {R_3 I_3 + R_4 I_4 - R_2 I_2 = 0}$ | $V$ |
+| Resistenze in serie | $\displaystyle R_{tot} = R_1 + R_2$ | $\Omega$ |
+| Resistenze in parallelo | $\displaystyle {\frac{1}{R_{tot}} = \frac{I}{V_A - V_B} = \frac{1}{R_1} + \frac{1}{R_2}}$ | $\Omega$ |
+
+: { .striped .hover}
+
+### Effetto Joule
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Lavoro (ddp / corrente costanti) | $\displaystyle L = I \cdot \Delta t \cdot \Delta V$ | $\text{J}$ |
+| Potenza nel circuito | $\displaystyle W = \frac{L}{\Delta t} = I \cdot \Delta V$ | $\text{W}$ |
+| Potenza dissipata | $\displaystyle W = I^2 R = \frac{V^2}{R}$ | $\text{W}$ |
+| calore dissipato | $\displaystyle Q(J) = W \Delta t = \frac{V^2}{R} \Delta t$ | $\text{J}$ , $\text{cal}$ |
+
+: { .striped .hover}
+
+### Carica e scarica condensatori (circuito RC)
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Carica del condensatore | $\displaystyle Q = C \cdot V_0, \quad V_0 = fem$ | $\text{C}$ |
+| Tensione del condensatore | $\displaystyle V = \frac{Q}{C}$ | $\text{V}$ |
+| potenziale circuito rc in serie in $t$ | $V_0 = V_R(t) + V_C(t)$ | $\text{V}$ |
+| Energia immagazzinata | $\displaystyle U = \frac{1}{2} C V^2 = \frac{1}{2} \frac{Q^2}{C}$ | $\text{J}$ |
+
+: { .striped .hover}
+
+## Magnetismo
+
+### Corrente genera campo magnetico
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Forza tra 2 conduttori filiformi paralleli | $\displaystyle F = \frac{\mu_0}{2 \pi} \frac{I_1 I_2 \Delta l}{d}$ | $\text{N}$ |
+| campo magnetico generato da un conduttore filiforme (Biot-Savart) | $\displaystyle B = \frac{\mu}{2 \pi} \frac{I}{d}$ | $\displaystyle \frac{\text{N}}{\text{A m}}$ |
+| Forza sul campo magnetostatico | $\displaystyle F = B I_2 \Delta l$ | $\text{N}$ |
+| Forza agente su tratto di filo $\Delta l$ | $\displaystyle \vec{F} = I \Delta l \wedge \vec{B}$ | $\text{N}$ |
+| Forza di Lorentz su $q$ con velocità $v$ | $\displaystyle \vec{F} = q \vec{v} \wedge \vec{B}$ | $\text{N}$ |
+| campo magnetico di una spira attraversata da corrente $I$ (al centro) | $\displaystyle B = \frac{\mu I}{2 r}$ | $\displaystyle \frac{\text{N}}{\text{A m}}$ |
+| $n$ spire percorse da corrente $I$ (interno) con lunghezza $L$ | $\displaystyle B = \frac{\mu n I}{L}$ | $\displaystyle \frac{\text{N}}{\text{A m}}$ |
+| momento magnetico su una spira | $\displaystyle \vec{\tau} = I \vec{S} \vec{n} \times \vec{B}$ | $\displaystyle \frac{\text{A m}^2}{\text{N}}$ |
+| momento di dipolo magnetico | $\displaystyle \vec{m} = IS\vec{n}$ | $\text{N m}$ |
+| permeabilità magnetica relativa | $\mu = \mu_0 \mu_r$ | $-$ |
+| campo vettore intensità magnetica | $\displaystyle \vec{H} = \frac{\vec{B}}{\mu}$ | $\displaystyle \frac{\text{C}}{\text{s m}}$ |
+
+: { .striped .hover}
+
+### campo magnetico genera corrente
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| flusso magnetico | $\displaystyle \Phi_B = \int_S \vec{B} d\vec{S} = \int_S BdS \cos ( \alpha )$ | $\text{Wb}$ |
+| corrente indotta (circuito chiuso) | $\displaystyle i = \frac{\Delta \Phi_B}{R \Delta t}$ | $\text{A}$ |
+| ddp indotta (circuito aperto) | $\displaystyle \Delta V = \frac{\Delta \Phi_B}{\Delta t}$ | $\text{V}$ |
+| Legge di Faraday-Neumann-Lenz | $\displaystyle \mathcal{E} = - \frac{d \Phi_B}{dt}$ | $\text{V}$ |
+| autoinduzione variazione flusso su circuito | $\displaystyle \Phi(\vec{B}) = LI$ | $\text{V}$ |
+| coefficiente di autoinduzione (induttanza) | $\displaystyle L = \frac{\Phi(\vec{B})}{I}$ | $\text{H}$ |
+| fem indotta da autoinduzione (opposta a fem) | $\displaystyle V_i = - \frac{d\Phi}{dt} = - L \frac{dI}{dt}$ | $\text{V}$ |
+
+: { .striped .hover}
+
+### Corrente alternata (corrente variabile nel tempo)
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| ddp alternata | $\displaystyle V(t) = V_0 \sin(\omega t + \phi)$ | $\text{V}$ |
+| corrente alternata | $\displaystyle I(t) = I_0 \sin(\omega t)$ | $\text{A}$ |
+| tensione istantanea resistenza | $\displaystyle V_R (t) = R I_0 \sin(\omega t)$ | $\Omega$ |
+| tensione istantanea induttore | $\displaystyle V_L (t) = L \frac{dI}{dt} = L \omega I_0 \cos(\omega t)$ | $\Omega$ |
+| tensione istantanea condensatore | $\displaystyle V_C (t) = \frac{Q(t)}{C} = \frac{I_0}{\omega C} \sin(\omega t)$ | $\Omega$ |
+| potenza assorbita da resistenza | $\displaystyle P_R = V_R I = R I^2$ | $\text{W}$ |
+
+: { .striped .hover}
+
+## Fenomeni ondulatori
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| funzione di perturbazione | $f(x,t) = f(x - vt)$ | $m$ |
+| funzione d'onda | $\displaystyle f(x,t) = {A \sin( 2\pi (\frac{x}{\lambda} - \frac{t}{T}) + \phi)}$ | $m$ |
+| velocità di propagazione | $\displaystyle v = \frac{\lambda}{T} = \lambda f$ | $\frac{m}{s}$ |
+| numero d'onda | $\displaystyle k = \frac{1}{\lambda}$ | $\displaystyle \frac{rad}{m}$ |
+| frequenza (numero oscillazioni al secondo)| $\displaystyle \nu = \frac{1}{T}$ | $\displaystyle \frac{\text{Hz}}{\text{s}}$ |
+| riscrittura funzione d'onda | $\displaystyle f(x,t) = {A \sin(2\pi (kx - \nu t) + \phi)}$ | $\text{m}$ |
+| riscrittura velocità di propagazione | $\displaystyle v = \lambda \nu$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità propagazione campo elettromagnetico | $\displaystyle v = \frac{1}{\sqrt{\mu \epsilon}}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità propagazione campo elettromagnetico nel vuoto | $\displaystyle v = \frac{1}{\sqrt{\mu_0 \epsilon_0}} = c$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| indice di rifrazione (legge di Snell) | $\displaystyle n = \sqrt{\epsilon_r \mu_r}$ | $-$ |
+| densità energia campo elettrico | $\displaystyle u_E = \frac{1}{2} \epsilon_0 E^2$ | $\displaystyle \frac{\text{J}}{\text{m}^3}$ |
+| densità energia campo magnetico | $\displaystyle u_B = \frac{1}{2} \frac{B^2}{\mu_0}$ | $\displaystyle \frac{\text{J}}{\text{m}^3}$ |
+| densità energia campo elettromagnetico | $\displaystyle u_{EM} = u_E + u_B ={ \epsilon_0 E^2 = \frac{B^2}{\mu_0}}$ | $\displaystyle \frac{\text{J}}{\text{m}^3}$ |
+| legge di Planck | $\displaystyle E = h \nu$ | $\text{J}$ |
+
+: { .striped .hover}
+  
