@@ -174,6 +174,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#cinematica" id="toc-cinematica" class="nav-link" data-scroll-target="#cinematica">Cinematica</a></li>
   <li><a href="#dinamica" id="toc-dinamica" class="nav-link" data-scroll-target="#dinamica">Dinamica</a></li>
+  <li><a href="#fluidi" id="toc-fluidi" class="nav-link" data-scroll-target="#fluidi">Fluidi</a></li>
   </ul></li>
   <li><a href="#costanti-essenziali" id="toc-costanti-essenziali" class="nav-link" data-scroll-target="#costanti-essenziali">Costanti essenziali</a>
   <ul class="collapse">
@@ -220,8 +221,9 @@ window.Quarto = {
   </ul></li>
   <li><a href="#fluidi-completa-deformabilità" id="toc-fluidi-completa-deformabilità" class="nav-link" data-scroll-target="#fluidi-completa-deformabilità">Fluidi (completa deformabilità)</a>
   <ul>
-  <li><a href="#liquido-incomprimibile-in-2-sezioni" id="toc-liquido-incomprimibile-in-2-sezioni" class="nav-link" data-scroll-target="#liquido-incomprimibile-in-2-sezioni">Liquido incomprimibile in 2 sezioni</a></li>
+  <li><a href="#fluidi-non-viscosi-ideali" id="toc-fluidi-non-viscosi-ideali" class="nav-link" data-scroll-target="#fluidi-non-viscosi-ideali">Fluidi non viscosi (ideali)</a></li>
   <li><a href="#fluidi-viscosi" id="toc-fluidi-viscosi" class="nav-link" data-scroll-target="#fluidi-viscosi">Fluidi viscosi</a></li>
+  <li><a href="#moto-laminare" id="toc-moto-laminare" class="nav-link" data-scroll-target="#moto-laminare">Moto laminare</a></li>
   </ul></li>
   <li><a href="#termodinamica" id="toc-termodinamica" class="nav-link" data-scroll-target="#termodinamica">Termodinamica</a>
   <ul>
@@ -505,62 +507,21 @@ table td, table th {
 <td style="text-align: left;"><span class="math inline">\(\text{W}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(1 \; \text{W} = 1 \; \frac{\text{J}}{\text{s}}\)</span></td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;">temperatura</td>
-<td style="text-align: center;">kelvin</td>
-<td style="text-align: left;"><span class="math inline">\(\text{K}\)</span></td>
-<td style="text-align: left;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">quantità di materia</td>
-<td style="text-align: center;">mole</td>
-<td style="text-align: left;"><span class="math inline">\(\text{mol}\)</span></td>
-<td style="text-align: left;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Corrente elettrica</td>
-<td style="text-align: center;">Ampere</td>
-<td style="text-align: left;"><span class="math inline">\(\text{A}\)</span></td>
-<td style="text-align: left;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">elettricità</td>
-<td style="text-align: center;">Coulomb</td>
-<td style="text-align: left;"><span class="math inline">\(\text{C}\)</span></td>
-<td style="text-align: left;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">potenziale elettrico</td>
-<td style="text-align: center;">Volt</td>
-<td style="text-align: left;"><span class="math inline">\(\displaystyle \text{V}\)</span></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Energia</td>
-<td style="text-align: center;">Joule</td>
-<td style="text-align: left;"><span class="math inline">\(\text{J}\)</span></td>
-<td style="text-align: left;">lavoro compiuto da forza di <span class="math inline">\(1\)</span> <span class="math inline">\(N\)</span> per spostamento di <span class="math inline">\(1\)</span> <span class="math inline">\(m\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Calore</td>
-<td style="text-align: center;">Joule o Caloria</td>
-<td style="text-align: left;"><span class="math inline">\(\text{J}\)</span> o <span class="math inline">\(\text{cal}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(1 \; \text{cal} = 4,184 \; \text{J}\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Magnetismo</td>
-<td style="text-align: center;">Tesla</td>
-<td style="text-align: left;"><span class="math inline">\(\text{T}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">flusso campo magnetico</td>
-<td style="text-align: center;">Weber</td>
-<td style="text-align: left;"><span class="math inline">\(\text{Wb}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(1 \; \text{Wb} = 1 \; \text{T m}^2\)</span></td>
-</tr>
 </tbody>
 </table>
+</section>
+<section id="fluidi" class="level4">
+<h4 class="anchored" data-anchor-id="fluidi">Fluidi</h4>
+<div class="line-block">pressione | Pascal | <span class="math inline">\(\text{Pa}\)</span> | <span class="math inline">\(1 \; \text{Pa} = 1 \; \frac{\text{N}}{\text{m}^2}\)</span> |<br>
+temperatura | kelvin | <span class="math inline">\(\text{K}\)</span>| - |<br>
+quantità di materia | mole | <span class="math inline">\(\text{mol}\)</span>| - |<br>
+Corrente elettrica | Ampere | <span class="math inline">\(\text{A}\)</span> | - |<br>
+elettricità | Coulomb |<span class="math inline">\(\text{C}\)</span>| - |<br>
+potenziale elettrico | Volt |<span class="math inline">\(\displaystyle \text{V}\)</span>||<br>
+Energia | Joule| <span class="math inline">\(\text{J}\)</span> | lavoro compiuto da forza di <span class="math inline">\(1\)</span> <span class="math inline">\(N\)</span> per spostamento di <span class="math inline">\(1\)</span> <span class="math inline">\(m\)</span>|<br>
+Calore | Joule o Caloria | <span class="math inline">\(\text{J}\)</span> o <span class="math inline">\(\text{cal}\)</span> | <span class="math inline">\(1 \; \text{cal} = 4,184 \; \text{J}\)</span>|<br>
+Magnetismo | Tesla | <span class="math inline">\(\text{T}\)</span> | <span class="math inline">\(1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}\)</span> |<br>
+flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> | <span class="math inline">\(1 \; \text{Wb} = 1 \; \text{T m}^2\)</span> |</div>
 </section>
 </section>
 <section id="costanti-essenziali" class="level3">
@@ -1412,8 +1373,8 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">potenza</td>
-<td style="text-align: center;"><span class="math inline">\(W = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{W} = \frac{\text{J}}{\text{s}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle W = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \text{W} = \frac{\text{J}}{\text{s}}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rendimento</td>
@@ -1443,17 +1404,17 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Equazione punto materiale</td>
+<td style="text-align: left;">equazione punto materiale</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \sum_{i}{\vec{F_i} = 0}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Centro di massa</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle R_{CM} = \frac{\sum_{i}{m_i \vec{r_i}}}{M} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}\)</span></td>
+<td style="text-align: left;">centro di massa</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {R_{CM} = \frac{\sum_{i}{m_i \vec{r_i}}}{M} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">baricentro</td>
+<td style="text-align: left;">baricentro (centro di gravità)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
@@ -1507,6 +1468,37 @@ table td, table th {
 </section>
 <section id="corpi-vincolati" class="level3">
 <h3 class="anchored" data-anchor-id="corpi-vincolati">Corpi vincolati</h3>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Reazione vincolare</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{R} = - \sum_{i}{\vec{F_i}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">equilibrio corpo ext. vinc. in un punto (equilibrio rotazionale)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sum_{i}{\vec{M_i}} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eq. corpo ext. ruota attorno a un asse <span class="math inline">\(z\)</span> (somma componenti asse <span class="math inline">\(Z\)</span> momenti)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sum_{i}{\vec{M_{i,}z}} = \sum_{i}{\vec{M_{i}} \cdot \hat{z}} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\cdot\text{m}\)</span></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="leve" class="level3">
 <h3 class="anchored" data-anchor-id="leve">Leve</h3>
@@ -1551,7 +1543,7 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">principio delle leve idrauliche</td>
-<td style="text-align: center;"><span class="math inline">\(\frac{F_1}{S_1} = \frac{F_2}{S_2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{F_1}{S_1} = \frac{F_2}{S_2}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 </tbody>
@@ -1580,12 +1572,12 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Stress</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{F}{A}\)</span></td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sigma = \frac{F}{A}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Stiramento</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\Delta l}{l}\)</span></td>
+<td style="text-align: left;">Stiramento (strain)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \varepsilon = \frac{\Delta l}{l}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
@@ -1625,13 +1617,13 @@ table td, table th {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">pressione</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}\)</span></td>
+<td style="text-align: center;">$</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">legge di Stevino</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle p = p_0 + \rho g d\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\rho\)</span>: densità del fluido, <span class="math inline">\(g\)</span>: accelerazione di gravità, <span class="math inline">\(d\)</span>: profondità</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">forza di Archimede</td>
@@ -1651,12 +1643,12 @@ table td, table th {
 <tr class="even">
 <td style="text-align: left;">portata o flusso</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}^3}{\text{s}}\)</span></td>
 </tr>
 </tbody>
 </table>
-<section id="liquido-incomprimibile-in-2-sezioni" class="level3">
-<h3 class="anchored" data-anchor-id="liquido-incomprimibile-in-2-sezioni">Liquido incomprimibile in 2 sezioni</h3>
+<section id="fluidi-non-viscosi-ideali" class="level3">
+<h3 class="anchored" data-anchor-id="fluidi-non-viscosi-ideali">Fluidi non viscosi (ideali)</h3>
 <table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
@@ -1682,7 +1674,7 @@ table td, table th {
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Lavoro</td>
+<td style="text-align: left;">Lavoro delle forze di pressione</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \begin{aligned} L_1 + L_2 &amp;= p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} &amp;= m g h_1 - m g h_2 \end{aligned}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -1692,7 +1684,7 @@ table td, table th {
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Teorema di Torricelli</td>
+<td style="text-align: left;">Teorema di Torricelli (recipiente con foro ad altezza <span class="math inline">\(h\)</span>)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle v = \sqrt{2gh}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -1716,26 +1708,45 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Bernoulli</td>
+<td style="text-align: left;">Bernoulli con attrito</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Energia attrito</td>
+<td style="text-align: left;">forza di attrito</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle E_A = p_1 - p_2\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Resistenza di un condotto</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R = \frac{\Delta p}{Q}\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{Pa}}{\text{m}^3/\text{s}}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="moto-laminare" class="level3">
+<h3 class="anchored" data-anchor-id="moto-laminare">Moto laminare</h3>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Legge di Poiseuille (fluidi moto laminare in condotti cilindrici)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle Q = \frac{\pi r^4}{8 \eta l} \Delta p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\eta\)</span>: viscosità del fluido, <span class="math inline">\(l\)</span>: lunghezza condotto, <span class="math inline">\(r\)</span>: raggio condotto</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Legge di Poiseuille</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}\)</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Resistenza in un condotto cilindrico</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}\)</span></td>
 <td style="text-align: center;"></td>
@@ -2381,17 +2392,17 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <tr class="odd">
 <td style="text-align: left;">I principio di Kirchhoff (corrente nodo)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \sum_{i=1}^{n} i_i = 0\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{A}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">II principio di Kirchhoff (corrente maglia) con generatore</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R_1 I_1 + R_2 I_2 = \Delta V\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">II principio di Kirchhoff (corrente maglia) senza generatore</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle {R_3 I_3 + R_4 I_4 - R_2 I_2 = 0}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}¢\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Resistenze in serie</td>
@@ -2684,17 +2695,17 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <tr class="odd">
 <td style="text-align: left;">funzione di perturbazione</td>
 <td style="text-align: center;"><span class="math inline">\(f(x,t) = f(x - vt)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{m}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">funzione d’onda</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle f(x,t) = {A \sin( 2\pi (\frac{x}{\lambda} - \frac{t}{T}) + \phi)}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(m\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{m}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">velocità di propagazione</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle v = \frac{\lambda}{T} = \lambda f\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\frac{m}{s}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">numero d’onda</td>
