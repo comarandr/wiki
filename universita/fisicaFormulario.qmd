@@ -64,6 +64,9 @@ table td, table th {
 | peso | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
 | Lavoro | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
 | Potenza | Watt | $\text{W}$ | $1 \; \text{W} = 1 \; \frac{\text{J}}{\text{s}}$ |
+
+#### Fluidi
+| pressione | Pascal | $\text{Pa}$ | $1 \; \text{Pa} = 1 \; \frac{\text{N}}{\text{m}^2}$ |
 | temperatura | kelvin | $\text{K}$| - |
 | quantità di materia | mole | $\text{mol}$| - |
 | Corrente elettrica | Ampere | $\text{A}$ | - |
@@ -321,7 +324,7 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| potenza | $W = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}$ | $\text{W} = \frac{\text{J}}{\text{s}}$ |
+| potenza | $\displaystyle W = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}$ | $\displaystyle \text{W} = \frac{\text{J}}{\text{s}}$ |
 | rendimento | $\displaystyle \eta = \frac{L}{E_t}$ | - |
 
 ## Statica
@@ -330,9 +333,9 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Equazione punto materiale | $\displaystyle \sum_{i}{\vec{F_i} = 0}$ | - |
-| Centro di massa | $\displaystyle R_{CM} = \frac{\sum_{i}{m_i \vec{r_i}}}{M} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}$ | - |
-| baricentro | $\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$ | - |
+| equazione punto materiale | $\displaystyle \sum_{i}{\vec{F_i} = 0}$ | - |
+| centro di massa | $\displaystyle {R_{CM} = \frac{\sum_{i}{m_i \vec{r_i}}}{M} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}}$ | - |
+| baricentro (centro di gravità)| $\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$ | - |
 | equivalenza se $g$ uguale per ogni punto | $R_B = R_{CM}$ | - |
 | momento di una forza | $\vec{M}= \vec{r} \wedge \vec{F}$ | $\text{N}\cdot\text{m}$ |
 | modulo momento | $M = r F \sin{(\phi)}$ | $\text{N}\cdot\text{m}$ |
@@ -347,6 +350,14 @@ table td, table th {
 
 ### Corpi vincolati
 
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Reazione vincolare | $\displaystyle \vec{R} = - \sum_{i}{\vec{F_i}}$ | $\text{N}$ |
+| equilibrio corpo ext. vinc. in un punto (equilibrio rotazionale) | $\displaystyle \sum_{i}{\vec{M_i}} = 0$ | $\text{N}$ |
+| eq. corpo ext. ruota attorno a un asse $z$ (somma componenti asse $Z$ momenti)| $\displaystyle \sum_{i}{\vec{M_{i,}z}} = \sum_{i}{\vec{M_{i}} \cdot \hat{z}} = 0$ | $\text{N}\cdot\text{m}$ |
+
+: { .striped .hover}
+
 ### Leve
 
 | Descrizione | Formula Matematica | Unità di misura |
@@ -356,7 +367,7 @@ table td, table th {
 | I tipo | $G < 1 \vee G > 1$ | fulcro intermedio|
 | II tipo | $G > 1$ | R intermedio |
 | III tipo | $G < 1$ | M intermedio |
-| principio delle leve idrauliche | $\frac{F_1}{S_1} = \frac{F_2}{S_2}$ | - |
+| principio delle leve idrauliche | $\displaystyle \frac{F_1}{S_1} = \frac{F_2}{S_2}$ | - |
 
 : { .striped .hover}
 
@@ -365,8 +376,8 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Legge di Hooke (deformazione)| $\displaystyle \frac{F}{A} = E \frac{\Delta l}{l}$ |
-| Stress | $\displaystyle \frac{F}{A}$ | - |
-| Stiramento | $\displaystyle \frac{\Delta l}{l}$ | - |
+| Stress | $\displaystyle \sigma = \frac{F}{A}$ | $\text{Pa}$ |
+| Stiramento (strain) | $\displaystyle \varepsilon = \frac{\Delta l}{l}$ | - |
 | Modulo di Young | $E$ | dipende dal materiale |
 
 : { .striped .hover}
@@ -377,36 +388,42 @@ table td, table th {
 |:---|:---:|:---:|
 | densità | $\displaystyle D = \frac{M}{V}$ | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ |
 | densità relativa | $\displaystyle d_r = \frac{d}{d_{H_2O}}$ | - |
-| pressione | $\displaystyle p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ |
-| legge di Stevino | $\displaystyle p = p_0 + \rho g d$ |
+| pressione | $\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ | $\text{Pa} |
+| legge di Stevino | $\displaystyle p = p_0 + \rho g d$ | $\rho$: densità del fluido, $g$: accelerazione di gravità, $d$: profondità |
 | forza di Archimede | $\displaystyle F_A = \rho g V$|
 | principio di Archimede | $\displaystyle \begin{aligned} F_{tot} &= F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V &= ({\rho}_c - {\rho}_f) g V \end{aligned}$ |
 | leve idrauliche | $\displaystyle p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$|
-| portata o flusso | $\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v$ |
+| portata o flusso | $\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v$ | $\displaystyle \frac{\text{m}^3}{\text{s}}$ |
 
 : { .striped .hover}
 
-### Liquido incomprimibile in 2 sezioni
+### Fluidi non viscosi (ideali)
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Costanza della portata | $\displaystyle S_1 v_1 = S_2 v_2$ |
 | Continuità | $\displaystyle \frac{S_1}{S_2} = \frac{v_2}{v_1}$ |
-| Lavoro | $\displaystyle \begin{aligned} L_1 + L_2 &= p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} &= m g h_1 - m g h_2 \end{aligned}$ |
+| Lavoro delle forze di pressione | $\displaystyle \begin{aligned} L_1 + L_2 &= p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} &= m g h_1 - m g h_2 \end{aligned}$ |
 | Teorema di Bernoulli | $\displaystyle p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}$ |
-| Teorema di Torricelli | $\displaystyle v = \sqrt{2gh}$ |
+| Teorema di Torricelli (recipiente con foro ad altezza $h$) | $\displaystyle v = \sqrt{2gh}$ |
 
 : { .striped .hover}
-
 
 ### Fluidi viscosi
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Bernoulli | $\displaystyle p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A$ |
-| Energia attrito | $\displaystyle E_A = p_1 - p_2$ |
-| Resistenza di un condotto | $\displaystyle R = \frac{\Delta p}{Q}$ |
-| Legge di Poiseuille | $\displaystyle Q = \frac{\pi r^4}{8 \eta l} \Delta p \rightarrow R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$|
+| Bernoulli con attrito | $\displaystyle p_1 + \rho g h_1 + \frac{1}{2} \rho v_1^2 = p_2 + \rho g h_2 + \frac{1}{2} \rho v_2^2 + E_A$ |
+| forza di attrito | $\displaystyle E_A = p_1 - p_2$ | $\text{Pa}$ |
+| Resistenza di un condotto | $\displaystyle R = \frac{\Delta p}{Q}$ | $\displaystyle \frac{\text{Pa}}{\text{m}^3/\text{s}}$ |
+
+: { .striped .hover}
+
+### Moto laminare
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Legge di Poiseuille (fluidi moto laminare in condotti cilindrici) | $\displaystyle Q = \frac{\pi r^4}{8 \eta l} \Delta p$| $\eta$: viscosità del fluido, $l$: lunghezza condotto, $r$: raggio condotto |
 | Resistenza in un condotto cilindrico | $\displaystyle R = \frac{\Delta p}{Q} = \frac{8 \eta l}{\pi r^4}$|
 
 : { .striped .hover}
@@ -605,9 +622,9 @@ concentrazione: grammoione/litro
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| I principio di Kirchhoff (corrente nodo) | $\displaystyle \sum_{i=1}^{n} i_i = 0$ | $A$ |
-| II principio di Kirchhoff (corrente maglia) con generatore | $\displaystyle R_1 I_1 + R_2 I_2 = \Delta V$ | $V$ |
-| II principio di Kirchhoff (corrente maglia) senza generatore | $\displaystyle {R_3 I_3 + R_4 I_4 - R_2 I_2 = 0}$ | $V$ |
+| I principio di Kirchhoff (corrente nodo) | $\displaystyle \sum_{i=1}^{n} i_i = 0$ | $\text{A}$ |
+| II principio di Kirchhoff (corrente maglia) con generatore | $\displaystyle R_1 I_1 + R_2 I_2 = \Delta V$ | $\text{V}$ |
+| II principio di Kirchhoff (corrente maglia) senza generatore | $\displaystyle {R_3 I_3 + R_4 I_4 - R_2 I_2 = 0}$ | $\text{V}¢$ |
 | Resistenze in serie | $\displaystyle R_{tot} = R_1 + R_2$ | $\Omega$ |
 | Resistenze in parallelo | $\displaystyle {\frac{1}{R_{tot}} = \frac{I}{V_A - V_B} = \frac{1}{R_1} + \frac{1}{R_2}}$ | $\Omega$ |
 
@@ -686,9 +703,9 @@ concentrazione: grammoione/litro
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| funzione di perturbazione | $f(x,t) = f(x - vt)$ | $m$ |
-| funzione d'onda | $\displaystyle f(x,t) = {A \sin( 2\pi (\frac{x}{\lambda} - \frac{t}{T}) + \phi)}$ | $m$ |
-| velocità di propagazione | $\displaystyle v = \frac{\lambda}{T} = \lambda f$ | $\frac{m}{s}$ |
+| funzione di perturbazione | $f(x,t) = f(x - vt)$ | $\text{m}$ |
+| funzione d'onda | $\displaystyle f(x,t) = {A \sin( 2\pi (\frac{x}{\lambda} - \frac{t}{T}) + \phi)}$ | $\text{m}$ |
+| velocità di propagazione | $\displaystyle v = \frac{\lambda}{T} = \lambda f$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
 | numero d'onda | $\displaystyle k = \frac{1}{\lambda}$ | $\displaystyle \frac{rad}{m}$ |
 | frequenza (numero oscillazioni al secondo)| $\displaystyle \nu = \frac{1}{T}$ | $\displaystyle \frac{\text{Hz}}{\text{s}}$ |
 | riscrittura funzione d'onda | $\displaystyle f(x,t) = {A \sin(2\pi (kx - \nu t) + \phi)}$ | $\text{m}$ |
