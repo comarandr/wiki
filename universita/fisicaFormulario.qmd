@@ -46,25 +46,33 @@ table td, table th {
 
 ### Grandezze e unità di misura
 
+#### Cinematica
+
 | Grandezza | Unità di misura | Simbolo | Formula |
 |:---:|:---:|:---|:---|
-| lunghezza | metro | $\text{m}$| fondamentale |
-| tempo | secondo | $\text{s}$| fondamentale |
+| lunghezza | metro | $\text{m}$| - |
+| tempo | secondo | $\text{s}$| - |
 | velocità | metro al secondo | $\displaystyle \frac{\text{m}}{\text{s}}$| derivata di lunghezza rispetto al tempo |
-| massa | kilogrammo | $\text{kg}$| fondamentale |
-| temperatura | kelvin | $\text{K}$| fondamentale |
-| quantità di materia | mole | $\text{mol}$| fondamentale |
-| Corrente elettrica | Ampere | $\text{A}$ | fondamentale |
+| accelerazione | metro al secondo quadrato | $\displaystyle \frac{\text{m}}{\text{s}^2}$| derivata di velocità rispetto al tempo |
+
+#### Dinamica
+| Grandezza | Unità di misura | Simbolo | Formula |
+|:---:|:---:|:---|:---|
+| massa | kilogrammo | $\text{kg}$| - |
 | forza | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
-| elettricità | Coulomb |$\text{C}$| fondamentale |
-| potenziale elettrico | Volt |$\displaystyle \text{V}$||
+| quantità di moto | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}$ | - | derivata di quantità di moto rispetto al tempo |
+| peso | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
 | Lavoro | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
+| Potenza | Watt | $\text{W}$ | $1 \; \text{W} = 1 \; \frac{\text{J}}{\text{s}}$ |
+| temperatura | kelvin | $\text{K}$| - |
+| quantità di materia | mole | $\text{mol}$| - |
+| Corrente elettrica | Ampere | $\text{A}$ | - |
+| elettricità | Coulomb |$\text{C}$| - |
+| potenziale elettrico | Volt |$\displaystyle \text{V}$||
 | Energia | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$|
 | Calore | Joule o Caloria | $\text{J}$ o $\text{cal}$ | $1 \; \text{cal} = 4,184 \; \text{J}$| 
 | Magnetismo | Tesla | $\text{T}$ | $1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}$ |
 | flusso campo magnetico | Weber | $\text{Wb}$ | $1 \; \text{Wb} = 1 \; \text{T m}^2$ |
-
-: {.striped .hover}
 
 ### Costanti essenziali
 
@@ -76,6 +84,7 @@ table td, table th {
 | Accelerazione di gravità | $g = 9,81 \frac{m}{s^2}$ |
 
 #### Elettricità e magnetismo
+
 | Descrizione | valore |
 |:---|:---|
 | Costante di Coulomb | $K = 8,99 \cdot 10^9 \frac{N m^2}{C^2}$ |
@@ -84,7 +93,7 @@ table td, table th {
 | Costante di Boltzmann | $K_B = 1,38 \cdot 10^{-23} \frac{J}{K}$ |
 | Costante di Avogadro | $N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}$ |
 | Costante universale dei gas | $R = 8,314 \frac{J}{mol K}$ |
-| Costante di Planck | | $h = 6,626 \cdot 10^{-34} J s$ |
+| Costante di Planck | $h = 6,626 \cdot 10^{-34} J s$ |
 | Costante dei gas perfetti | $R = 8,314 \frac{J}{mol K}$ |
 | permeabilità magnetica nel vuoto | $\mu_0 = 4 \pi \cdot 10^{-7} \frac{kg \cdot m}{C^2}$ |
 
@@ -93,7 +102,45 @@ table td, table th {
 
 #### Trigonometria
 
+| Descrizione | Formula Matematica |
+|:---|:---|
+| angolo | $\displaystyle \alpha = \frac{\text{arco}}{\text{raggio}} \alpha_{gradi}$ |
+| angolo giro | $\displaystyle \alpha = \frac{2 \pi r}{r} = 2 \pi$ |
+| arco | $l = \alpha r$ |
+
+: { .striped .hover}
+
 #### Vettori
+
+| Descrizione | Formula Matematica |
+|:---|:---|
+| componente asse $r$ | $\displaystyle v_r = \vert \vec{v} \vert \cos{\alpha}$ |
+| modulo vettore | $\displaystyle \vert \vec{v} \vert= \sqrt{v_x^2 + v_y^2}$ |
+| somma tra vettori | regola del parallelogramma |
+| somma tra vettori (componenti) | $\displaystyle \begin{cases} v_{tot,x} = v_{1,x} + v_{2,x} \\ v_{tot,y} = v_{1,y} + v_{2,y} \end{cases}$ |
+| differenza tra vettori | regola del parallelogramma (altra diagonale) |
+| differenza tra vettori | $\displaystyle \begin{cases} v_{tot,x} = v_{1,x} - v_{2,x} \\ v_{tot,y} = v_{1,y} - v_{2,y} \end{cases}$ |
+| prodotto scalare | $\displaystyle \vec{v_1} \cdot \vec{v_2} = \vert \vec{v_1} \vert \cdot \vert \vec{v_2} \vert \cos{\alpha}$ |
+| prodotto scalari particolari | $\displaystyle \begin{aligned} \text{paralleli } \vec{v_1} \cdot \vec{v_2} &= v_1 v_2 \\ \text{ortogonali } \vec{v_1} \cdot \vec{v_2} &= 0 \\ \text{opposti } \vec{v_1} \cdot \vec{v_2} &= -v_1 v_2 \end{aligned}$ |
+| prodotto vettoriale | $\displaystyle \vec{v_1} \times \vec{v_2} = \vert \vec{v_1} \vert \cdot \vert \vec{v_2} \vert \sin{\alpha}$ |
+| modulo prodotto vettoriale | $\displaystyle \vert \vec{v_1} \times \vec{v_2} \vert = v_1 v_2 \sin{\alpha}$ |
+| moduli prodotti vettoriali particolari | $\displaystyle \begin{aligned} \text{paralleli } \vec{v_1} \times \vec{v_2} &= 0 \\ \text{ortogonali } \vert \vec{v_1} \times \vec{v_2} \vert &= \vert \vec{v_1} \vert \vert \vec{v_2} \vert \end{aligned}$ |
+
+: { .striped .hover}
+
+### Derivate e integrali
+
+| $f(x)$ | $f'(x)$ |
+|:---|:---|
+| $x$ | $1$ |
+| $x^n$ | $n x^{n-1}$ |
+| $e^x$ | $e^x$ |
+| $e^{kx}$ | $k e^{kx}$ |
+| $\ln{x}$ | $\displaystyle \frac{1}{x}$ |
+| $\sin{x}$ | $\cos{x}$ |
+| $\cos{x}$ | $-\sin{x}$ |
+
+: { .striped .hover}
 
 ## Cinematica
 
@@ -102,20 +149,21 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 | :--- | :---: | :---: |
 | Velocità scalare media | $\displaystyle {v_m = \frac{\Delta s}{\Delta t} = \frac{s(t_2)-s(t_1)}{t_2-t_1}}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
-| Modulo vettore | $\displaystyle \vert \vec{v} \vert= \sqrt{v_x^2 + v_y^2}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
-| Modulo componente orizzontale | $\displaystyle |v_x| = \vert \vec{v} \vert \cos{\alpha}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
-| Modulo componente verticale | $\displaystyle |v_y| = \vert \vec{v} \vert \sin{\alpha}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità scalare istantanea | $\displaystyle v = \frac{\partial s}{\partial t}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| modulo vettore | $\displaystyle \vert \vec{v} \vert= \sqrt{v_x^2 + v_y^2}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| modulo componente orizzontale | $\displaystyle |v_x| = \vert \vec{v} \vert \cos{\alpha}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| modulo componente verticale | $\displaystyle |v_y| = \vert \vec{v} \vert \sin{\alpha}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità vettoriale media | $\displaystyle \vec{v_m} = \frac{\vec{x}(t_2)-\vec{x}(t_1)}{t_2-t_1}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità vettoriale istantanea | $\displaystyle \vec{v} = \frac{\partial \vec{x}(t_1)}{\partial t}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
 
 : Formule della cinematica e dei vettori velocità {.striped .hover}
-
-
 
 ### Accelerazione
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Accelerazione scalare media | $a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}$| $\frac{\text{m}}{\text{s}^2}$ |
-| Velocità istantanea | $\vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$ |  $\frac{\text{m}}{\text{s}^2}$ |
+| accelerazione scalare media | $\displaystyle {a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}}$| $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
+| velocità istantanea | $\displaystyle \vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$ |  $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
 
 : {.striped .hover}
 
@@ -123,7 +171,9 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge oraria | $x = x_0 + v_0 \cdot t$ | $\text{m}$ |
+| legge oraria | $x = x_0 + v_0 \cdot t$ | $\text{m}$ |
+| velocità | $v = v_0$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| accelerazione | $a = 0$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
 
 : {.striped .hover}
 
@@ -131,10 +181,10 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge oraria | $x = x_0 + v_0 t + \frac{1}{2} a t^2$ | $m$ |
-| velocità finale | $v_f^2 = v_0^2 + 2 a \Delta x$ | $\frac{m}{s^2}$| 
-| velocità | $v = v_0 + at$ | $\frac{m}{s}$ |
-|velocità media | $v_m = v_0 + \frac{1}{2} a t$| $\frac{m}{s}$ |
+| legge oraria | $x = x_0 + v_0 t + \frac{1}{2} a t^2$ | $\text{m}$ |
+| velocità | $v = v_0 + at$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità media | $v_m = v_0 + \frac{1}{2} a t$| $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità finale | $v_f =\sqrt{v_0^2 + 2 a \Delta x}$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$| 
 
 : {.striped .hover}
 
@@ -142,33 +192,38 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| velocità angolare | $\omega = \frac{\Delta \theta}{\Delta t}$ | $\frac{rad}{s}$ |
-| periodo | $T = \frac{1}{f}$ | $s$ |
-| frequenza | $f = \frac{1}{T}$ | $\frac{1}{s}$ |
-| velocità | $v = \frac{R \Delta \theta}{\Delta t} = R \omega$ | $\frac{rad}{s}$ |
-| accelerazione | $a = v \omega = R {\omega}^2$ | $\frac{rad}{s^2}$ |
+| velocità angolare | $\displaystyle \omega = \frac{\Delta \theta}{\Delta t}$ | $\displaystyle \frac{\text{rad}}{\text{s}}$ |
+| periodo | $\displaystyle T = \frac{1}{f}$ | $\text{s}$ |
+| frequenza | $\displaystyle f = \frac{1}{T}$ | $\displaystyle \frac{1}{\text{s}}$ |
+| velocità | $\displaystyle v = \frac{r \Delta \theta}{\Delta t} = \omega r$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| accelerazione | $\displaystyle a = v \omega = {\omega}^2 r$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
 | accelerazione centripeta | verso interno | |
 | accelerazione centrifuga | verso esterno | |
 
 : {.striped .hover}
 
-(aggiungere componenti)
+#### Componenti assi
+
+| componente | asse x | asse y |
+|:---|:---:|:---:|
+| legge oraria | $x = A \cos(\omega t + \phi)$ | $y = A \sin(\omega t + \phi)$ |
+| velocità | $- \omega A \sin(\omega t + \phi)$ | $\omega A \cos(\omega t + \phi)$ |
+| accelerazione | $- {\omega}^2 A \cos(\omega t + \phi)$ | $- {\omega}^2 A \sin(\omega t + \phi)$ |
+
+: {.striped .hover}
 
 ### Moto Armonico
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Ampiezza | $A$ | $m$ |
-| Pulsazione | $\omega = 2 \pi f$ | $\frac{rad}{s}$ |
-| Fase iniziale | $\phi$ | $m, \; \phi \in [0,A]$ |
-
-: {.striped .hover}
-
-| Descrizione | Formula Matematica | Unità di misura |
-|:---|:---:|:---:|
-| legge oraria | $x = A \cos{(\omega t + \phi)}$ | $m$ |
-| velocità | $v = A \omega \sin(\omega t + \phi)$ | $\frac{m}{s}$ |
-| accelerazione | $a = - A {\omega}^2 \cos(\omega t + \phi)$ |
+|legge oraria | $\displaystyle x = A \cos{(\omega t + \phi)}$ | $\text{m}$ |
+| velocità | $\displaystyle v = A \omega \sin(\omega t + \phi)$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| accelerazione | $a = - A {\omega}^2 \cos(\omega t + \phi) = - \omega^2 x$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
+| Ampiezza | $\displaystyle A$ | $\displaystyle m$ |
+| Pulsazione | $\displaystyle \omega = 2 \pi f$ | $\displaystyle \frac{\text{rad}}{\text{s}}$ |
+| Frequenza | $\displaystyle f = \frac{1}{T}$ | $\displaystyle \frac{1}{\text{s}}$ |
+| Periodo | $\displaystyle T = \frac{1}{f}$ | $\text{s}$ |
+| Fase iniziale | $\displaystyle \phi$ | $\displaystyle \text{m}, \; \phi \in [0,A]$ |
 
 : {.striped .hover}
 
@@ -178,9 +233,10 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| 1 principio (principio di inerzia) | $\sum \vec{F} = 0$ | re |
-| 2 principio | $F = m \cdot a, \\ m>0$ | Newton |
-| 3 principio (principio di azione e reazione) | | |
+| principio relatività galileiana | leggi invarianti nei sistemi di riferimento inerziali | - |
+| 1 principio (principio di inerzia) | $\sum \vec{F} = 0$ | - |
+| 2 principio | $F = m \cdot a, \quad m>0$ | Newton |
+| 3 principio (principio di azione e reazione) | $\vec{F}_{12} = -\vec{F}_{21}$ | - |
 
 : {.striped .hover}
 
@@ -188,17 +244,35 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| quantità di moto | $p = m v$ | $\frac{kg \cdot m}{s}$ |
-| principio conservazione quantità di moto | $\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$ | | 
+| quantità di moto | $p = m v$ | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}$ |
+| principio conservazione quantità di moto | $\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$ | - |
+| Forza | $\displaystyle F = \frac{\Delta p}{\Delta t}$ | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
 
 : {.striped .hover}
+
+### Gravità
+
+| Descrizione | Formula matematica | Unità di misura |
+|:---|:---:|:---:|
+| forza peso | $F_p = -gm$ |
+| forza gravitazionale tra 2 masse | $\displaystyle F_g = -G \frac{m_1 m_2}{r^2}(\frac{\vec{r}}{r})$ | $\text{N}$ |
+| forza gravitazionale terrestre | $\displaystyle F_g = -G \frac{M_T m}{r^2}(\frac{\vec{r}}{r})$ | $\text{N}$ |
+| peso | $F_p = m g$ | $\text{N }$ o $\text{ kg}_{\text{peso}}$ |
+| campo gravitazionale | $\displaystyle \vec{g} = -G \frac{M_T}{r^2}(\frac{\vec{r}}{r})$ | $\displaystyle \frac{\text{N}}{\text{kg}}$ |
+| energia potenziale gravitazionale | $\displaystyle U(\vec{r}) = mgh$ | $\text{J}$ |
+| potenziale gravitazionale | $\displaystyle V(\vec{r}) = \frac{U(\vec{r})}{m} = gh$ | $\displaystyle \frac{\text{J}}{\text{kg}}$ |
+
+: { .striped .hover}
 
 ### Forze apparenti
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Forza centrifuga | $F_c = m \frac{v^2}{r}$ | $N$ |
-| Forza sistema non inerziale | $F + F' = m \cdot a_{NI} \\ F - m a_c = m \cdot a_{NI}$ | 
+| forze totali | $F + F' = m \cdot a_{NI}$ | $\text{N}$ |
+| accelerazione | $a = a_{NI} + a_c$ | $a_{NI}$: accelerazione nel sistema non inerziale <br> $a_c$: accelerazione rispetto suolo |
+| forza non inerziale | $\displaystyle F' = - m a_c$ | $\text{N}$ |
+| forza centrifuga | $\displaystyle F_c = m \frac{v^2}{r}$ | $\text{N}$ |
+| forza sistema non inerziale | $\begin{aligned} F + F' &= m \cdot a_{NI} \\ F - m a_c &= m \cdot a_{NI} \end{aligned}$ | 
 
 : {.striped .hover}
 
@@ -206,21 +280,10 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
+| Forza generica | $F = F(x,y,z)$ | $\text{N}$ |
 | Moto in un campo di forze nulle |
 | Moto in un campo di forze elastiche | $F_x = -k x = m a_x$ |
 | Moto in un campo di forze uniforme |
-
-: { .striped .hover}
-
-### Gravità
-
-| Descrizione | Formula matematica | Unità di misura |
-|:---|:---:|:---:|
-| forza peso | $F_p = -gm$ |
-| forza gravitazionale | $\displaystyle F_g = -G \frac{M_T m}{r^2}(\frac{\vec{r}}{r})$ | $\text{N}$ |
-| Campo gravitazionale | $\displaystyle \vec{g} = -G \frac{M_T}{r^2}(\frac{\vec{r}}{r})$ | $\displaystyle \frac{\text{N}}{\text{kg}}$ |
-| Energia potenziale gravitazionale | $\displaystyle U(\vec{r}) = mgh$ | $\text{J}$ |
-| Potenziale gravitazionale | $\displaystyle V(\vec{r}) = \frac{U(\vec{r})}{m} = gh$ | $\displaystyle \frac{\text{J}}{\text{kg}}$ |
 
 : { .striped .hover}
 
@@ -228,8 +291,8 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Forza attrito statico | $F_s = \mu_{s} \cdot F_n$ | $N$ |
-| Forza attrito dinamico | $F_d = \mu_{d} \cdot F_n$ | $N$ |
+| Forza attrito statico | $F_s = \mu_{s} \cdot F_n$ | $\text{N}$ |
+| Forza attrito dinamico | $F_d = \mu_{d} \cdot F_n$ | $\text{N}$ |
 
 : {.striped .hover}
 
@@ -237,45 +300,63 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Lavoro | $L = F \cdot s \cdot \cos(\alpha)$ | $J$ |
-| Energia cinetica | $T = \frac{1}{2} m v^2$ | $J$ |
-| Teorema energia cinetica | $L = T, \\ T = T_{fin} - T_{in}$ | $J$|
-| Energia potenziale | $L_{AB} = U(A) - U(B) = - \Delta U$ | $J$|
-| Teorema conservazione energia meccanica | 
+| Lavoro | $L = F \cdot s \cdot \cos(\alpha)$ | $\text{J}$ |
+| Energia cinetica | $T = \frac{1}{2} m v^2$ | $\text{J}$ |
+| Teorema energia cinetica | $\begin{aligned} L &= T, \\ T &= T_{fin} - T_{in} \end{aligned}$ | $\text{J}$|
+| Energia potenziale | $L_{AB} = U(A) - U(B) = - \Delta U$ | $\text{J}$|
+| Teorema conservazione energia meccanica | $\begin{aligned} \Delta T &= - \Delta U \\ U_1 + T_1 &= U_2 + T_2 =\text{costante} \end{aligned}$ | - |
 
 : { .striped .hover}
 
 ### Urti
 
-### Potenza
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Urti elastici | $m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f}$ | $\text{kg}\cdot\text{m}/\text{s}$, $\text{J}$ |
+| Urti anelastici | $m_1 v_{1i} + m_2 v_{2i} = (m_1 + m_2) v_f$ | $\text{kg}\cdot\text{m}/\text{s}$, $\text{J}$ |
 
-## Statica rotazioni
+: { .striped .hover}
+
+### Potenza e rendimento
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Equazione punto materiale | $\displaystyle \sum_{i}{\vec{F_i} = 0}$ | none |
-| Centro di massa | $\displaystyle R_{cm} = \frac{\sum_{i}{m_i \vec{r_i}}}{M}$ | boh |
-| Baricentro | $\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$ | boh|
-| Momento | $\vec{M}=$ | boh |
-| Momento vettore | $\vec{M} = r \sin{(\phi)}$ | boh |
-| Momento angolare corpo | $\displaystyle \vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$ |
-| Momento angolare | $\displaystyle M = mvr$ |
-| Momento angolare corpo esteso | $\displaystyle L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$ |
-| Momento di inerzia del corpo | $\displaystyle I = \sum_{i}{m_i r_i^2}$ |
-| Equilibrio del corpo esteso | $\displaystyle \vec{F}_{tot}^{ext} = \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} = \sum_{i}{\vec{M}_{i}} = 0$ |
+| potenza | $W = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}$ | $\text{W} = \frac{\text{J}}{\text{s}}$ |
+| rendimento | $\displaystyle \eta = \frac{L}{E_t}$ | - |
+
+## Statica
+
+### Rotazioni e momento
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| Equazione punto materiale | $\displaystyle \sum_{i}{\vec{F_i} = 0}$ | - |
+| Centro di massa | $\displaystyle R_{CM} = \frac{\sum_{i}{m_i \vec{r_i}}}{M} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}$ | - |
+| baricentro | $\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$ | - |
+| equivalenza se $g$ uguale per ogni punto | $R_B = R_{CM}$ | - |
+| momento di una forza | $\vec{M}= \vec{r} \wedge \vec{F}$ | $\text{N}\cdot\text{m}$ |
+| modulo momento | $M = r F \sin{(\phi)}$ | $\text{N}\cdot\text{m}$ |
+| momento vettore | $\vec{M} = r \sin{(\phi)}$ | $\text{N}\cdot\text{m}$ |
+| momento angolare corpo | $\displaystyle \vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
+| momento angolare massa attorno a un asse | $\displaystyle M = mvr$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
+| momento angolare corpo esteso | $\displaystyle L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
+| momento di inerzia del corpo | $\displaystyle I = \sum_{i}{m_i r_i^2}$ | $\text{kg}\cdot\text{m}^2$ |
+| Equilibrio del corpo esteso | $\displaystyle \begin{aligned} \vec{F}_{tot}^{ext} &= \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} &= \sum_{i}{\vec{M}_{i}} = 0 \end{aligned}$ |
 
 : { .striped .hover}
+
+### Corpi vincolati
 
 ### Leve
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| relazione | $b_m F_m = b_r F_r$ |
-| rapporto | $\displaystyle G = \frac{F_r}{F_m} = \frac{b_m}{b_r}$|
-| principio delle leve idrauliche | $\frac{F_1}{S_1} = \frac{F_2}{S_2}$ | 
-| I tipo | fulcro intermedio|
-| II tipo | R intermedio |
-| III tipo | M intermedio |
+| condizione di equilibrio | $b_m F_m = b_r F_r$ | - |
+| guadagno meccanico | $\displaystyle G = \frac{F_r}{F_m} = \frac{b_m}{b_r}$| - |
+| I tipo | $G < 1 \vee G > 1$ | fulcro intermedio|
+| II tipo | $G > 1$ | R intermedio |
+| III tipo | $G < 1$ | M intermedio |
+| principio delle leve idrauliche | $\frac{F_1}{S_1} = \frac{F_2}{S_2}$ | - |
 
 : { .striped .hover}
 
@@ -283,9 +364,10 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Legge di Hooke | $\frac{F}{A} = E \frac{\Delta l}{l}$ |
-| Stress | $\frac{F}{A}$ |
-| Stiramento | $\frac{\Delta l}{l}$ |
+| Legge di Hooke (deformazione)| $\displaystyle \frac{F}{A} = E \frac{\Delta l}{l}$ |
+| Stress | $\displaystyle \frac{F}{A}$ | - |
+| Stiramento | $\displaystyle \frac{\Delta l}{l}$ | - |
+| Modulo di Young | $E$ | dipende dal materiale |
 
 : { .striped .hover}
 
@@ -293,13 +375,14 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Densità | $d = \frac{M}{V}$ |
-| Pressione | $p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ |
-| Legge di Stevino | $p = p_0 + \rho g d$ |
-| Forza di Archimede | $\displaystyle F_A = \rho g V$|
-| Principio di Archimede | $\displaystyle {F_{tot} = F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V = ({\rho}_c - {\rho}_f) g V}$ |
-| Leve idrauliche | $\displaystyle p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$|
-| Portata o flusso | $\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v$ |
+| densità | $\displaystyle D = \frac{M}{V}$ | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ |
+| densità relativa | $\displaystyle d_r = \frac{d}{d_{H_2O}}$ | - |
+| pressione | $\displaystyle p = \frac{\vec{F} \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ |
+| legge di Stevino | $\displaystyle p = p_0 + \rho g d$ |
+| forza di Archimede | $\displaystyle F_A = \rho g V$|
+| principio di Archimede | $\displaystyle \begin{aligned} F_{tot} &= F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V &= ({\rho}_c - {\rho}_f) g V \end{aligned}$ |
+| leve idrauliche | $\displaystyle p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$|
+| portata o flusso | $\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v$ |
 
 : { .striped .hover}
 
@@ -309,7 +392,7 @@ table td, table th {
 |:---|:---:|:---:|
 | Costanza della portata | $\displaystyle S_1 v_1 = S_2 v_2$ |
 | Continuità | $\displaystyle \frac{S_1}{S_2} = \frac{v_2}{v_1}$ |
-| Lavoro | $\displaystyle L_1 + L_2 = p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} = m g h_1 - m g h_2$ |
+| Lavoro | $\displaystyle \begin{aligned} L_1 + L_2 &= p_1 S_1 \Delta x_1 - p_2 S_2 \Delta x_2 \\ L_{g12} &= m g h_1 - m g h_2 \end{aligned}$ |
 | Teorema di Bernoulli | $\displaystyle p + \rho g h + \frac{1}{2} \rho v^2 = \text{costante}$ |
 | Teorema di Torricelli | $\displaystyle v = \sqrt{2gh}$ |
 
@@ -350,7 +433,7 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | formula gas ideali | $p \cdot V = C_{BM}(T)$|
-| leggi di Charles / Gay-Lussac | $V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c)$ |
+| leggi di Charles / Gay-Lussac | $\begin{aligned} V &= V_0 (1 + \alpha T_c) \\ P &= p_0(1+ \beta T_c) \end{aligned}$ |
 | principio di Avogadro | $V = C" \cdot n \quad$ T,P costanti |
 | legge dei gas perfetti | $pV = nRT$ | funzione di stato che esprime lavoro o energia |
 | R: costante universale dei gas | $\displaystyle R = \frac{pV}{nT}$ | $R = 8,314 \frac{\text{J}}{\text{mol K}}$ oppure <br> $R = 0,0821 \frac{\text{L} \cdot \text{atm}}{\text{mol K}}$ |
@@ -362,7 +445,7 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 |  | $\displaystyle E_c = \frac{3}{2} RT$|
-| leggi di Charles / Gay-Lussac | $V = V_0 (1 + \alpha T_c) \\ P = p_0(1+ \beta T_c)$ |
+| leggi di Charles / Gay-Lussac | $\begin{aligned} V &= V_0 (1 + \alpha T_c) \\ P &= p_0(1+ \beta T_c) \end{aligned}$ |
 | legge di dalton | $P_{tot} = P_1 + \ldots + P_n$ |
 | umidità relativa | $\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100$ |
 
@@ -515,7 +598,6 @@ concentrazione: grammoione/litro
 | Lavoro generatore aperto (non eroga corrente) | $\displaystyle f = V_A - V_B$ | $V$ |
 | Lavoro generatore chiuso (eroga corrente) | $\displaystyle V_A - V_B = f - r l = R I$ | $V$ |
 | Differenza di potenziale | $\displaystyle \Delta V  = f \frac{R}{R + r}$ | $V$ |
-| I principio kirchhoff (corrente nodo) | $\displaystyle \sum_{i=1}^{n} i_i = 0$ | $A$ |
 
 : { .striped .hover}
 
