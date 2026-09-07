@@ -552,7 +552,7 @@ graph LR
 - grafo con $n \geq 3$ nodi e $\vert E \vert \gt n-1$ non è aciclico
 - grafo con $n \geq 3$ nodi e $\vert E \vert \lt n-1$ non è connesso
 
-```mermaid
+```{mermaid}
 graph LR
 
 subgraph G1["< n-1 archi"]
@@ -588,7 +588,7 @@ G1 ~~~ G2 ~~~ G3
 
 **albero di diametro massimo**: cammino lineare
 
-```mermaid
+```{mermaid}
 graph LR
     A((A)) --- B((B))
     B((B)) --- C((C))
