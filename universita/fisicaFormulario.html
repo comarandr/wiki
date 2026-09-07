@@ -175,11 +175,14 @@ window.Quarto = {
   <li><a href="#cinematica" id="toc-cinematica" class="nav-link" data-scroll-target="#cinematica">Cinematica</a></li>
   <li><a href="#dinamica" id="toc-dinamica" class="nav-link" data-scroll-target="#dinamica">Dinamica</a></li>
   <li><a href="#fluidi" id="toc-fluidi" class="nav-link" data-scroll-target="#fluidi">Fluidi</a></li>
+  <li><a href="#termodinamica" id="toc-termodinamica" class="nav-link" data-scroll-target="#termodinamica">Termodinamica</a></li>
+  <li><a href="#elettricità-e-magnetismo" id="toc-elettricità-e-magnetismo" class="nav-link" data-scroll-target="#elettricità-e-magnetismo">Elettricità e magnetismo</a></li>
   </ul></li>
   <li><a href="#costanti-essenziali" id="toc-costanti-essenziali" class="nav-link" data-scroll-target="#costanti-essenziali">Costanti essenziali</a>
   <ul class="collapse">
   <li><a href="#cinematica-e-dinamica" id="toc-cinematica-e-dinamica" class="nav-link" data-scroll-target="#cinematica-e-dinamica">Cinematica e dinamica</a></li>
-  <li><a href="#elettricità-e-magnetismo" id="toc-elettricità-e-magnetismo" class="nav-link" data-scroll-target="#elettricità-e-magnetismo">Elettricità e magnetismo</a></li>
+  <li><a href="#termodinamica-1" id="toc-termodinamica-1" class="nav-link" data-scroll-target="#termodinamica-1">Termodinamica</a></li>
+  <li><a href="#elettricità-e-magnetismo-1" id="toc-elettricità-e-magnetismo-1" class="nav-link" data-scroll-target="#elettricità-e-magnetismo-1">Elettricità e magnetismo</a></li>
   </ul></li>
   <li><a href="#elementi-di-calcolo-essenziale" id="toc-elementi-di-calcolo-essenziale" class="nav-link" data-scroll-target="#elementi-di-calcolo-essenziale">Elementi di calcolo essenziale</a>
   <ul class="collapse">
@@ -225,8 +228,10 @@ window.Quarto = {
   <li><a href="#fluidi-viscosi" id="toc-fluidi-viscosi" class="nav-link" data-scroll-target="#fluidi-viscosi">Fluidi viscosi</a></li>
   <li><a href="#moto-laminare" id="toc-moto-laminare" class="nav-link" data-scroll-target="#moto-laminare">Moto laminare</a></li>
   </ul></li>
-  <li><a href="#termodinamica" id="toc-termodinamica" class="nav-link" data-scroll-target="#termodinamica">Termodinamica</a>
+  <li><a href="#termodinamica-2" id="toc-termodinamica-2" class="nav-link" data-scroll-target="#termodinamica-2">Termodinamica</a>
   <ul>
+  <li><a href="#calore-e-capacità-termica" id="toc-calore-e-capacità-termica" class="nav-link" data-scroll-target="#calore-e-capacità-termica">Calore e capacità termica</a></li>
+  <li><a href="#trasmissione-del-calore" id="toc-trasmissione-del-calore" class="nav-link" data-scroll-target="#trasmissione-del-calore">Trasmissione del calore</a></li>
   <li><a href="#gas-ideali" id="toc-gas-ideali" class="nav-link" data-scroll-target="#gas-ideali">Gas Ideali</a></li>
   <li><a href="#teoria-cinetica-dei-gas" id="toc-teoria-cinetica-dei-gas" class="nav-link" data-scroll-target="#teoria-cinetica-dei-gas">Teoria Cinetica dei Gas</a></li>
   <li><a href="#equazioni-di-stato" id="toc-equazioni-di-stato" class="nav-link" data-scroll-target="#equazioni-di-stato">Equazioni di stato</a></li>
@@ -499,7 +504,7 @@ table td, table th {
 <td style="text-align: center;">Lavoro</td>
 <td style="text-align: center;">Joule</td>
 <td style="text-align: left;"><span class="math inline">\(\text{J}\)</span></td>
-<td style="text-align: left;">lavoro compiuto da forza di <span class="math inline">\(1\)</span> <span class="math inline">\(N\)</span> per spostamento di <span class="math inline">\(1\)</span> <span class="math inline">\(m\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{J} = 1 \; \frac{\text{N} \cdot \text{m}}{\text{s}}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Potenza</td>
@@ -512,16 +517,132 @@ table td, table th {
 </section>
 <section id="fluidi" class="level4">
 <h4 class="anchored" data-anchor-id="fluidi">Fluidi</h4>
-<div class="line-block">pressione | Pascal | <span class="math inline">\(\text{Pa}\)</span> | <span class="math inline">\(1 \; \text{Pa} = 1 \; \frac{\text{N}}{\text{m}^2}\)</span> |<br>
-temperatura | kelvin | <span class="math inline">\(\text{K}\)</span>| - |<br>
-quantità di materia | mole | <span class="math inline">\(\text{mol}\)</span>| - |<br>
-Corrente elettrica | Ampere | <span class="math inline">\(\text{A}\)</span> | - |<br>
-elettricità | Coulomb |<span class="math inline">\(\text{C}\)</span>| - |<br>
-potenziale elettrico | Volt |<span class="math inline">\(\displaystyle \text{V}\)</span>||<br>
-Energia | Joule| <span class="math inline">\(\text{J}\)</span> | lavoro compiuto da forza di <span class="math inline">\(1\)</span> <span class="math inline">\(N\)</span> per spostamento di <span class="math inline">\(1\)</span> <span class="math inline">\(m\)</span>|<br>
-Calore | Joule o Caloria | <span class="math inline">\(\text{J}\)</span> o <span class="math inline">\(\text{cal}\)</span> | <span class="math inline">\(1 \; \text{cal} = 4,184 \; \text{J}\)</span>|<br>
-Magnetismo | Tesla | <span class="math inline">\(\text{T}\)</span> | <span class="math inline">\(1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}\)</span> |<br>
-flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> | <span class="math inline">\(1 \; \text{Wb} = 1 \; \text{T m}^2\)</span> |</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Grandezza</th>
+<th style="text-align: center;">Unità di misura</th>
+<th style="text-align: left;">Simbolo</th>
+<th style="text-align: left;">Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">pressione</td>
+<td style="text-align: center;">Pascal</td>
+<td style="text-align: left;"><span class="math inline">\(\text{Pa}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{Pa} = 1 \; \frac{\text{N}}{\text{m}^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">densità</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{kg}}{\text{m}^3}\)</span></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="termodinamica" class="level4">
+<h4 class="anchored" data-anchor-id="termodinamica">Termodinamica</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Grandezza</th>
+<th style="text-align: center;">Unità di misura</th>
+<th style="text-align: left;">Simbolo</th>
+<th style="text-align: left;">Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">temperatura</td>
+<td style="text-align: center;">kelvin</td>
+<td style="text-align: left;"><span class="math inline">\(\text{K}\)</span></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">quantità di materia</td>
+<td style="text-align: center;">mole</td>
+<td style="text-align: left;"><span class="math inline">\(\text{mol}\)</span></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Energia</td>
+<td style="text-align: center;">Joule</td>
+<td style="text-align: left;"><span class="math inline">\(\text{J}\)</span></td>
+<td style="text-align: left;">lavoro compiuto da forza di <span class="math inline">\(1\)</span> <span class="math inline">\(N\)</span> per spostamento di <span class="math inline">\(1\)</span> <span class="math inline">\(m\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Calore</td>
+<td style="text-align: center;">Joule o Caloria</td>
+<td style="text-align: left;"><span class="math inline">\(\text{J}\)</span> o <span class="math inline">\(\text{cal}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{cal} = 4,184 \; \text{J}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="elettricità-e-magnetismo" class="level4">
+<h4 class="anchored" data-anchor-id="elettricità-e-magnetismo">Elettricità e magnetismo</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Grandezza</th>
+<th style="text-align: center;">Unità di misura</th>
+<th style="text-align: left;">Simbolo</th>
+<th style="text-align: left;">Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Corrente elettrica</td>
+<td style="text-align: center;">Ampere</td>
+<td style="text-align: left;"><span class="math inline">\(\text{A}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{A} = 1 \; \frac{\text{C}}{\text{s}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">elettricità</td>
+<td style="text-align: center;">Coulomb</td>
+<td style="text-align: left;"><span class="math inline">\(\text{C}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{C} = 1 \; \frac{\text{A}}{\text{s}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">potenziale elettrico</td>
+<td style="text-align: center;">Volt</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \text{V}\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Magnetismo</td>
+<td style="text-align: center;">Tesla</td>
+<td style="text-align: left;"><span class="math inline">\(\text{T}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">flusso campo magnetico</td>
+<td style="text-align: center;">Weber</td>
+<td style="text-align: left;"><span class="math inline">\(\text{Wb}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{Wb} = 1 \; \text{T m}^2\)</span></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="costanti-essenziali" class="level3">
@@ -555,8 +676,41 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 </tbody>
 </table>
 </section>
-<section id="elettricità-e-magnetismo" class="level4">
-<h4 class="anchored" data-anchor-id="elettricità-e-magnetismo">Elettricità e magnetismo</h4>
+<section id="termodinamica-1" class="level4">
+<h4 class="anchored" data-anchor-id="termodinamica-1">Termodinamica</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: left;">valore</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Costante di Planck</td>
+<td style="text-align: left;"><span class="math inline">\(h = 6,626 \cdot 10^{-34} J s\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Costante dei gas perfetti</td>
+<td style="text-align: left;"><span class="math inline">\(R = 8,314 \frac{J}{mol K}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">permeabilità magnetica nel vuoto</td>
+<td style="text-align: left;"><span class="math inline">\(\mu_0 = 4 \pi \cdot 10^{-7} \frac{kg \cdot m}{C^2}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">temperatura di riferimento</td>
+<td style="text-align: left;"><span class="math inline">\(T_0 = 273,15 K\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="elettricità-e-magnetismo-1" class="level4">
+<h4 class="anchored" data-anchor-id="elettricità-e-magnetismo-1">Elettricità e magnetismo</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -588,22 +742,6 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 <tr class="odd">
 <td style="text-align: left;">Costante di Avogadro</td>
 <td style="text-align: left;"><span class="math inline">\(N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Costante universale dei gas</td>
-<td style="text-align: left;"><span class="math inline">\(R = 8,314 \frac{J}{mol K}\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Costante di Planck</td>
-<td style="text-align: left;"><span class="math inline">\(h = 6,626 \cdot 10^{-34} J s\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Costante dei gas perfetti</td>
-<td style="text-align: left;"><span class="math inline">\(R = 8,314 \frac{J}{mol K}\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">permeabilità magnetica nel vuoto</td>
-<td style="text-align: left;"><span class="math inline">\(\mu_0 = 4 \pi \cdot 10^{-7} \frac{kg \cdot m}{C^2}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1618,7 +1756,7 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 <tr class="odd">
 <td style="text-align: left;">pressione</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}\)</span></td>
-<td style="text-align: center;">$</td>
+<td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">legge di Stevino</td>
@@ -1755,8 +1893,8 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 </table>
 </section>
 </section>
-<section id="termodinamica" class="level2">
-<h2 class="anchored" data-anchor-id="termodinamica">Termodinamica</h2>
+<section id="termodinamica-2" class="level2">
+<h2 class="anchored" data-anchor-id="termodinamica-2">Termodinamica</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1783,6 +1921,8 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 </tr>
 </tbody>
 </table>
+<section id="calore-e-capacità-termica" class="level3">
+<h3 class="anchored" data-anchor-id="calore-e-capacità-termica">Calore e capacità termica</h3>
 <table class="table-striped table-hover caption-top table">
 <colgroup>
 <col style="width: 28%">
@@ -1800,25 +1940,60 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 <tr class="odd">
 <td style="text-align: left;">Principio 0 della termodinamica</td>
 <td style="text-align: center;"><span class="math inline">\(a,b\)</span> in eq. termico con <span class="math inline">\(c\)</span> <span class="math inline">\(\rightarrow\)</span> <span class="math inline">\(a\)</span> in equilibrio termico con <span class="math inline">\(b\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Calore</td>
 <td style="text-align: center;"><span class="math inline">\(\Delta Q = C \Delta T\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">calore specifico</td>
-<td style="text-align: center;"><span class="math inline">\(\Delta Q = c \cdot m \cdot \Delta T\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: left;">capacità termica</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle C = \frac{\Delta Q}{\Delta T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{K}}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">irraggiamento (Stefan-Boltzmann)</td>
-<td style="text-align: center;"><span class="math inline">\(P = \epsilon A \sigma T^4\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: left;">quantità di calore ceduta</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = c \cdot m \cdot \Delta T\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{K}}\)</span></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="trasmissione-del-calore" class="level3">
+<h3 class="anchored" data-anchor-id="trasmissione-del-calore">Trasmissione del calore</h3>
+<table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Descrizione</th>
+<th style="text-align: center;">Formula Matematica</th>
+<th style="text-align: center;">Unità di misura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">conduzione</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{dQ}{dt} = -k A \frac{dT}{dx}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{W}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">convezione</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{dQ}{dt} = h A (T_s - T_f)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{W}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">irraggiamento (Stefan-Boltzmann)</td>
+<td style="text-align: center;"><span class="math inline">\(P = \epsilon A \sigma T^4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{W}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="gas-ideali" class="level3">
 <h3 class="anchored" data-anchor-id="gas-ideali">Gas Ideali</h3>
 <table class="table-striped table-hover caption-top table">
@@ -1838,24 +2013,29 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 <tr class="odd">
 <td style="text-align: left;">formula gas ideali</td>
 <td style="text-align: center;"><span class="math inline">\(p \cdot V = C_{BM}(T)\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(C_{BM}(T)\)</span>: costante dipende dalla temperatura</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">leggi di Charles / Gay-Lussac</td>
-<td style="text-align: center;"><span class="math inline">\(\begin{aligned} V &amp;= V_0 (1 + \alpha T_c) \\ P &amp;= p_0(1+ \beta T_c) \end{aligned}\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\begin{aligned} V &amp;= V_0 (1 + \alpha T_c) \\ p &amp;= p_0(1+ \beta T_c) \end{aligned}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V_0\)</span>, <span class="math inline">\(p_0\)</span>: a 0°C <span class="math inline">\(\; \alpha\)</span>, <span class="math inline">\(\beta\)</span>: coefficienti</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">costanti</td>
+<td style="text-align: center;"><span class="math inline">\(\alpha = \beta = \frac{1}{273,15}\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">principio di Avogadro</td>
 <td style="text-align: center;"><span class="math inline">\(V = C" \cdot n \quad\)</span> T,P costanti</td>
 <td style="text-align: center;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">legge dei gas perfetti</td>
 <td style="text-align: center;"><span class="math inline">\(pV = nRT\)</span></td>
-<td style="text-align: center;">funzione di stato che esprime lavoro o energia</td>
+<td style="text-align: center;">-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">R: costante universale dei gas</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R = \frac{pV}{nT}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(R = 8,314 \frac{\text{J}}{\text{mol K}}\)</span> oppure <br> <span class="math inline">\(R = 0,0821 \frac{\text{L} \cdot \text{atm}}{\text{mol K}}\)</span></td>
@@ -1880,23 +2060,43 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"></td>
+<td style="text-align: left;">energia cinetica media particella</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle E_c = \frac{3}{2} RT\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">leggi di Charles / Gay-Lussac</td>
-<td style="text-align: center;"><span class="math inline">\(\begin{aligned} V &amp;= V_0 (1 + \alpha T_c) \\ P &amp;= p_0(1+ \beta T_c) \end{aligned}\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: left;">radice velocità quadratica media</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle v_{rms} = \sqrt{\frac{3RT}{M}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">equazione di van der Waals (gas reali)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \left(p + \frac{a}{V^2}\right)(V - b) = RT\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">legge di dalton</td>
-<td style="text-align: center;"><span class="math inline">\(P_{tot} = P_1 + \ldots + P_n\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(p_{tot} = p_1 + \ldots + p_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">frazione molecolare</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle x_i = \frac{n_i}{n_{tot}}\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">concentrazione molare</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle c_i = \frac{n_i}{V}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{mol}}{\text{L}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">legge di dalton per le miscele</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle p = \sum_{i} p_i = \sum_{i} c_i R T \cdot 10^3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">umidità relativa</td>
-<td style="text-align: center;"><span class="math inline">\(\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100\)</span></td>
+<td style="text-align: center;"><span class="math inline">\({\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
@@ -1922,44 +2122,84 @@ flusso campo magnetico | Weber | <span class="math inline">\(\text{Wb}\)</span> 
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Lavoro</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle P_{est} = \frac{F}{A}, \; P_{est} \approx P_{gas}\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lavoro</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta W = F \cdot \Delta h = P_{est} \Delta V\)</span></td>
+<td style="text-align: center;">lavoro compiuto dal gas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lavoro sul gas</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta W = - P_{est} \Delta V\)</span></td>
+<td style="text-align: center;">lavoro compiuto sul gas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">calore</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = n C \Delta T\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">I principio termodinamica</td>
 <td style="text-align: center;"><span class="math inline">\(\Delta E = E_2 - E_1 = \Delta Q + \Delta W\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">trasformazione isotermica <br> Temperatura costante</td>
-<td style="text-align: center;"><span class="math inline">\(\Delta Q = - \Delta W\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: left;">lavoro processo irreversibile</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta W = - P_{est} \Delta V\)</span></td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">lavoro processo irreversibile (2 fasi)</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta W = - (P_m \Delta V_1 + P_f \Delta V_2)\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">lavoro processo reversibile</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta W = \sum_{n} - P \partial V_n\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trasformazione isotermica (Temperatura costante)</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = - \Delta W\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">isocora (volume costante)</td>
 <td style="text-align: center;"><span class="math inline">\(\Delta E = \Delta Q = n \cdot C_v \Delta T\)</span></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">isobara (P costante)</td>
-<td style="text-align: center;"><span class="math inline">\(\Delta Q = n \cdot (C_v + R)dT\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">adiabatica (dq = 0)</td>
-<td style="text-align: center;"><span class="math inline">\(\Delta E = n \cdot C_v \Delta T\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: left;">isobara (P costante)</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q_P = \left(E_2 + P V_2 \right) - \left(E_1 + P V_1 \right) = \Delta H\)</span></td>
+<td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">adiabatica (no scambio di calore)</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta E = n \cdot C_v \Delta T\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Entalpia</td>
 <td style="text-align: center;"><span class="math inline">\(H = E + PV\)</span></td>
 <td style="text-align: center;">funzione di stato, misura energia interna + lavoro espansione</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Legge di Hess</td>
 <td style="text-align: center;"><span class="math inline">\({\Delta H_{AD} = \Delta H_{AB} + \Delta H_{BC} + \Delta H_{CD}}\)</span></td>
 <td style="text-align: center;">variazione totale uguale alla somma delle singole variazioni</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Equilibrio termico</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(c_1 m_1 (T - T_1) = c_2 m_2 (T_2 - T)\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">capacità termica molare</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \bar{C_p} = a + bT +\frac{c}{T^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{mol K}}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1976,6 +2216,11 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 </dd>
 </dl>
 <table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -1992,6 +2237,11 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <tr class="even">
 <td style="text-align: left;">Costante di Boltzmann</td>
 <td style="text-align: center;"><span class="math inline">\(K_b = \frac{R}{N_{AV}}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">secondo principio della termodinamica</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta S = \Delta S_{sist} + \Delta S_{amb} \geq 0\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
