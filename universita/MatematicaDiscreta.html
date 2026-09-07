@@ -767,7 +767,12 @@ Si denota con <span class="math inline">\(G = (V_1, V_2, E)\)</span></p>
 <li>grafo con <span class="math inline">\(n \geq 3\)</span> nodi e <span class="math inline">\(\vert E \vert \gt n-1\)</span> non è aciclico</li>
 <li>grafo con <span class="math inline">\(n \geq 3\)</span> nodi e <span class="math inline">\(\vert E \vert \lt n-1\)</span> non è connesso</li>
 </ul>
-<pre class="mermaid"><code>graph LR
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
 
 subgraph G1["&lt; n-1 archi"]
     A((A)) --- B((B))
@@ -785,7 +790,13 @@ subgraph G3["&gt; n-1 archi"]
     H((H)) --- I((I))
 end
 
-G1 ~~~ G2 ~~~ G3</code></pre>
+G1 ~~~ G2 ~~~ G3
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>proprietà albero</strong>:</p>
 <ol type="1">
 <li>connesso e aciclico (definizione)</li>
@@ -798,10 +809,21 @@ G1 ~~~ G2 ~~~ G3</code></pre>
 <p><strong>foglia</strong>: se <span class="math inline">\(d(v) = 1\)</span><br>
 <strong>nodo interno</strong>: se <span class="math inline">\(d(v) &gt; 1\)</span></p>
 <p><strong>albero di diametro massimo</strong>: cammino lineare</p>
-<pre class="mermaid"><code>graph LR
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
     A((A)) --- B((B))
     B((B)) --- C((C))
-    C((C)) --- D((D))</code></pre>
+    C((C)) --- D((D))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>albero di diametro minimo</strong>: albero a stella (un solo nodo interno)</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
