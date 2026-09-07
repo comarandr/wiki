@@ -62,18 +62,29 @@ table td, table th {
 | forza | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
 | quantità di moto | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}$ | - | derivata di quantità di moto rispetto al tempo |
 | peso | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
-| Lavoro | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$| 
+| Lavoro | Joule| $\text{J}$ | $1 \; \text{J} = 1 \; \frac{\text{N} \cdot \text{m}}{\text{s}}$ |
 | Potenza | Watt | $\text{W}$ | $1 \; \text{W} = 1 \; \frac{\text{J}}{\text{s}}$ |
 
 #### Fluidi
+| Grandezza | Unità di misura | Simbolo | Formula |
+|:---:|:---:|:---|:---|
 | pressione | Pascal | $\text{Pa}$ | $1 \; \text{Pa} = 1 \; \frac{\text{N}}{\text{m}^2}$ |
+| densità | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ | - | - |
+
+#### Termodinamica
+| Grandezza | Unità di misura | Simbolo | Formula |
+|:---:|:---:|:---|:---|
 | temperatura | kelvin | $\text{K}$| - |
 | quantità di materia | mole | $\text{mol}$| - |
-| Corrente elettrica | Ampere | $\text{A}$ | - |
-| elettricità | Coulomb |$\text{C}$| - |
-| potenziale elettrico | Volt |$\displaystyle \text{V}$||
 | Energia | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$|
 | Calore | Joule o Caloria | $\text{J}$ o $\text{cal}$ | $1 \; \text{cal} = 4,184 \; \text{J}$| 
+
+#### Elettricità e magnetismo
+| Grandezza | Unità di misura | Simbolo | Formula |
+|:---:|:---:|:---|:---|
+| Corrente elettrica | Ampere | $\text{A}$ | $1 \; \text{A} = 1 \; \frac{\text{C}}{\text{s}}$ |
+| elettricità | Coulomb |$\text{C}$| $1 \; \text{C} = 1 \; \frac{\text{A}}{\text{s}}$ |
+| potenziale elettrico | Volt |$\displaystyle \text{V}$||
 | Magnetismo | Tesla | $\text{T}$ | $1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}$ |
 | flusso campo magnetico | Weber | $\text{Wb}$ | $1 \; \text{Wb} = 1 \; \text{T m}^2$ |
 
@@ -86,6 +97,14 @@ table td, table th {
 | Costante di gravitazione universale | $G = 6,67 \cdot 10^{-11} \frac{N m^2}{kg^2}$ |
 | Accelerazione di gravità | $g = 9,81 \frac{m}{s^2}$ |
 
+#### Termodinamica
+| Descrizione | valore |
+|:---|:---|
+| Costante di Planck | $h = 6,626 \cdot 10^{-34} J s$ |
+| Costante dei gas perfetti | $R = 8,314 \frac{J}{mol K}$ |
+| permeabilità magnetica nel vuoto | $\mu_0 = 4 \pi \cdot 10^{-7} \frac{kg \cdot m}{C^2}$ |
+| temperatura di riferimento | $T_0 = 273,15 K$ |
+
 #### Elettricità e magnetismo
 
 | Descrizione | valore |
@@ -95,10 +114,7 @@ table td, table th {
 | carica elementare | $e = 1,602 \cdot 10^{-19} C$ |
 | Costante di Boltzmann | $K_B = 1,38 \cdot 10^{-23} \frac{J}{K}$ |
 | Costante di Avogadro | $N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}$ |
-| Costante universale dei gas | $R = 8,314 \frac{J}{mol K}$ |
-| Costante di Planck | $h = 6,626 \cdot 10^{-34} J s$ |
-| Costante dei gas perfetti | $R = 8,314 \frac{J}{mol K}$ |
-| permeabilità magnetica nel vuoto | $\mu_0 = 4 \pi \cdot 10^{-7} \frac{kg \cdot m}{C^2}$ |
+
 
 
 ### Elementi di calcolo essenziale
@@ -388,7 +404,7 @@ table td, table th {
 |:---|:---:|:---:|
 | densità | $\displaystyle D = \frac{M}{V}$ | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ |
 | densità relativa | $\displaystyle d_r = \frac{d}{d_{H_2O}}$ | - |
-| pressione | $\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ | $\text{Pa} |
+| pressione | $\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ | $\text{Pa}$ |
 | legge di Stevino | $\displaystyle p = p_0 + \rho g d$ | $\rho$: densità del fluido, $g$: accelerazione di gravità, $d$: profondità |
 | forza di Archimede | $\displaystyle F_A = \rho g V$|
 | principio di Archimede | $\displaystyle \begin{aligned} F_{tot} &= F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V &= ({\rho}_c - {\rho}_f) g V \end{aligned}$ |
@@ -436,12 +452,24 @@ table td, table th {
 | **Liquido** | SI | NO |
 | **Gas** | NO | NO |
 
+### Calore e capacità termica
+
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Principio 0 della termodinamica | $a,b$ in eq. termico con $c$ $\rightarrow$ $a$ in equilibrio termico con $b$ |
-| Calore | $\Delta Q = C \Delta T$ | 
-| calore specifico | $\Delta Q = c \cdot m \cdot \Delta T$ |
-| irraggiamento (Stefan-Boltzmann) | $P = \epsilon A \sigma T^4$ |
+| Principio 0 della termodinamica | $a,b$ in eq. termico con $c$ $\rightarrow$ $a$ in equilibrio termico con $b$ | - |
+| Calore | $\Delta Q = C \Delta T$ | $\text{J}$ |
+| capacità termica | $\displaystyle C = \frac{\Delta Q}{\Delta T}$ | $\displaystyle \frac{\text{J}}{\text{K}}$ |
+| quantità di calore ceduta | $\Delta Q = c \cdot m \cdot \Delta T$ | $\displaystyle \frac{\text{J}}{\text{K}}$ |
+
+: { .striped .hover}
+
+### Trasmissione del calore
+
+| Descrizione | Formula Matematica | Unità di misura |
+|:---|:---:|:---:|
+| conduzione | $\displaystyle \frac{dQ}{dt} = -k A \frac{dT}{dx}$ | $\text{W}$ |
+| convezione | $\displaystyle \frac{dQ}{dt} = h A (T_s - T_f)$ | $\text{W}$ |
+| irraggiamento (Stefan-Boltzmann) | $P = \epsilon A \sigma T^4$ | $\text{W}$ |
 
 : { .striped .hover}
 
@@ -449,10 +477,11 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| formula gas ideali | $p \cdot V = C_{BM}(T)$|
-| leggi di Charles / Gay-Lussac | $\begin{aligned} V &= V_0 (1 + \alpha T_c) \\ P &= p_0(1+ \beta T_c) \end{aligned}$ |
+| formula gas ideali | $p \cdot V = C_{BM}(T)$| $C_{BM}(T)$: costante dipende dalla temperatura |
+| leggi di Charles / Gay-Lussac | $\begin{aligned} V &= V_0 (1 + \alpha T_c) \\ p &= p_0(1+ \beta T_c) \end{aligned}$ | $V_0$, $p_0$: a 0°C $\; \alpha$, $\beta$: coefficienti |
+| costanti | $\alpha = \beta = \frac{1}{273,15}$ | - |
 | principio di Avogadro | $V = C" \cdot n \quad$ T,P costanti |
-| legge dei gas perfetti | $pV = nRT$ | funzione di stato che esprime lavoro o energia |
+| legge dei gas perfetti | $pV = nRT$ | - |
 | R: costante universale dei gas | $\displaystyle R = \frac{pV}{nT}$ | $R = 8,314 \frac{\text{J}}{\text{mol K}}$ oppure <br> $R = 0,0821 \frac{\text{L} \cdot \text{atm}}{\text{mol K}}$ |
 
 : { .striped .hover}
@@ -461,10 +490,14 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-|  | $\displaystyle E_c = \frac{3}{2} RT$|
-| leggi di Charles / Gay-Lussac | $\begin{aligned} V &= V_0 (1 + \alpha T_c) \\ P &= p_0(1+ \beta T_c) \end{aligned}$ |
-| legge di dalton | $P_{tot} = P_1 + \ldots + P_n$ |
-| umidità relativa | $\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100$ |
+| energia cinetica media particella | $\displaystyle E_c = \frac{3}{2} RT$| $\text{J}$ |
+| radice velocità quadratica media | $\displaystyle v_{rms} = \sqrt{\frac{3RT}{M}}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| equazione di van der Waals (gas reali)| $\displaystyle \left(p + \frac{a}{V^2}\right)(V - b) = RT$ | - |
+| legge di dalton | $p_{tot} = p_1 + \ldots + p_n$ | $\text{Pa}$ |
+| frazione molecolare | $\displaystyle x_i = \frac{n_i}{n_{tot}}$ | - |
+| concentrazione molare | $\displaystyle c_i = \frac{n_i}{V}$ | $\displaystyle \frac{\text{mol}}{\text{L}}$ |
+| legge di dalton per le miscele | $\displaystyle p = \sum_{i} p_i = \sum_{i} c_i R T \cdot 10^3$ | $\text{Pa}$ | 
+| umidità relativa | ${\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100}$ |
 
 : { .striped .hover}
 
@@ -474,14 +507,22 @@ table td, table th {
 
 | Tipologia | Formula Matematica | Descrizione |
 |:---|:---:|:---:|
-| I principio termodinamica | $\Delta E = E_2 - E_1 = \Delta Q + \Delta W$ |
-| trasformazione isotermica <br> Temperatura costante | $\Delta Q = - \Delta W$|
-| isocora (volume costante) | $\Delta E = \Delta Q = n \cdot C_v \Delta T$ |
-| isobara (P costante) | $\Delta Q = n \cdot (C_v + R)dT$|
-| adiabatica (dq = 0) | $\Delta E = n \cdot C_v \Delta T$|
+| Lavoro | $\displaystyle P_{est} = \frac{F}{A}, \; P_{est} \approx P_{gas}$ | - |
+| Lavoro | $\Delta W = F \cdot \Delta h = P_{est} \Delta V$ | lavoro compiuto dal gas |
+| Lavoro sul gas | $\Delta W = - P_{est} \Delta V$ | lavoro compiuto sul gas |
+| calore | $\Delta Q = n C \Delta T$ | - |
+| I principio termodinamica | $\Delta E = E_2 - E_1 = \Delta Q + \Delta W$ | - |
+| lavoro processo irreversibile | $\Delta W = - P_{est} \Delta V$ | - |
+| lavoro processo irreversibile (2 fasi) | $\Delta W = - (P_m \Delta V_1 + P_f \Delta V_2)$ | - |
+| lavoro processo reversibile | $\Delta W = \sum_{n} - P \partial V_n$ | - |
+| trasformazione isotermica (Temperatura costante) | $\Delta Q = - \Delta W$| - |
+| isocora (volume costante) | $\Delta E = \Delta Q = n \cdot C_v \Delta T$ | - |
+| isobara (P costante) | $\Delta Q_P = \left(E_2 + P V_2 \right) - \left(E_1 + P V_1 \right) = \Delta H$ | - |
+| adiabatica (no scambio di calore) | $\Delta E = n \cdot C_v \Delta T$| - |
 | Entalpia | $H = E + PV$ | funzione di stato, misura energia interna + lavoro espansione |
 | Legge di Hess | ${\Delta H_{AD} = \Delta H_{AB} + \Delta H_{BC} + \Delta H_{CD}}$ | variazione totale uguale alla somma delle singole variazioni |
-| Equilibrio termico | |
+| Equilibrio termico | $c_1 m_1 (T - T_1) = c_2 m_2 (T_2 - T)$ | - |
+| capacità termica molare | $\displaystyle \bar{C_p} = a + bT +\frac{c}{T^2}$ | $\displaystyle \frac{\text{J}}{\text{mol K}}$ |
 
 : { .striped .hover}
 
@@ -498,6 +539,7 @@ table td, table th {
 |:---|:---:|:---:|
 | Mancanza informazione | $S = K_B \log{W}$ |
 | Costante di Boltzmann | $K_b = \frac{R}{N_{AV}}$ |
+| secondo principio della termodinamica | $\Delta S = \Delta S_{sist} + \Delta S_{amb} \geq 0$ |
 
 : { .striped .hover}
 
