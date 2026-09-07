@@ -77,17 +77,17 @@ $$\sum_{k=1}^n a_k\ = a_1 + a_2 + \ldots + a_n$$
 
 ### Regole
 
-$\sum_{k \in K}\ \textbf{c} \cdot a_k = \textbf{c} \cdot \sum_{k \in K}\ a_k$
+$\displaystyle \sum_{k \in K}\ \textbf{c} \cdot a_k = \textbf{c} \cdot \sum_{k \in K}\ a_k$
 
-$\sum_{k \in K}\ (a_k + b_k) = \sum_{k \in K}\ a_k + \sum_{k \in K}\ b_k$
+$\displaystyle \sum_{k \in K}\ (a_k + b_k) = \sum_{k \in K}\ a_k + \sum_{k \in K}\ b_k$
 
-$\sum_{k \in K}\ a_k = \sum_{\Pi (k) \in K}\ a_{\Pi(k)}$
+$\displaystyle \sum_{k \in K}\ a_k = \sum_{\Pi (k) \in K}\ a_{\Pi(k)}$
 
-$\sum_{k=1}^\textbf{m}\ a_k + \sum_{k = \textbf{m}}^n\ a_k = a_{\textbf{m}} + \sum_{k=1}^n\ a_k$
+$\displaystyle \sum_{k=1}^\textbf{m}\ a_k + \sum_{k = \textbf{m}}^n\ a_k = a_{\textbf{m}} + \sum_{k=1}^n\ a_k$
 
-$\sum_{k \in K}\ a_k = \sum_{(k + c) \in K}\ a_{(k + c)}$
+$\displaystyle \sum_{k \in K}\ a_k = \sum_{(k + c) \in K}\ a_{(k + c)}$
 
-$\sum_{k = 1}^n\ a_k = \sum_{k = 1}^{\textbf{m}}\ a_k + \sum_{k = \textbf{m+1}}^n\ a_k$
+$\displaystyle \sum_{k = 1}^n\ a_k = \sum_{k = 1}^{\textbf{m}}\ a_k + \sum_{k = \textbf{m+1}}^n\ a_k$
 
 ### Somme multiple
 
