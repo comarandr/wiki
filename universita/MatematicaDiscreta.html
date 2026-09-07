@@ -74,6 +74,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -166,7 +169,7 @@ window.Quarto = {
   <li><a href="#insiemi" id="toc-insiemi" class="nav-link active" data-scroll-target="#insiemi">Insiemi</a></li>
   <li><a href="#relazioni" id="toc-relazioni" class="nav-link" data-scroll-target="#relazioni">Relazioni</a>
   <ul>
-  <li><a href="#congruenza-modulo-n-x-_n-y" id="toc-congruenza-modulo-n-x-_n-y" class="nav-link" data-scroll-target="#congruenza-modulo-n-x-_n-y">Congruenza modulo $ n $ $ x _n y $</a></li>
+  <li><a href="#congruenza-modulo-n-x-equiv_n-y" id="toc-congruenza-modulo-n-x-equiv_n-y" class="nav-link" data-scroll-target="#congruenza-modulo-n-x-equiv_n-y">Congruenza modulo <span class="math inline">\(n\)</span> <span class="math inline">\(x \equiv_n y\)</span></a></li>
   </ul></li>
   <li><a href="#funzioni" id="toc-funzioni" class="nav-link" data-scroll-target="#funzioni">Funzioni</a></li>
   <li><a href="#induzione" id="toc-induzione" class="nav-link" data-scroll-target="#induzione">Induzione</a></li>
@@ -251,75 +254,75 @@ window.Quarto = {
 <section id="insiemi" class="level2">
 <h2 class="anchored" data-anchor-id="insiemi">Insiemi</h2>
 <p><strong>Insieme</strong>: concetto primitivo, collezione di oggetti detti elementi</p>
-<p><strong>Cardinalità $ A $</strong>: numero di elementi di un insieme $ A$</p>
-<p><strong>Insieme vuoto $ $</strong>: insieme senza elementi, $ = 0$</p>
-<p><strong>A sottoinsieme di B</strong>: $ A B$ se ogni elemento di A è anche in B</p>
-<p><strong>prodotto cartesiano $ A B$</strong>: insieme di tutte le coppie $ (a, b)$ con $ a A$ e $ b B$</p>
+<p><strong>Cardinalità <span class="math inline">\(\vert A \vert\)</span></strong>: numero di elementi di un insieme <span class="math inline">\(A\)</span></p>
+<p><strong>Insieme vuoto <span class="math inline">\(\emptyset\)</span></strong>: insieme senza elementi, <span class="math inline">\(\vert \emptyset \vert = 0\)</span></p>
+<p><strong>A sottoinsieme di B</strong>: <span class="math inline">\(A \subseteq B\)</span> se ogni elemento di A è anche in B</p>
+<p><strong>prodotto cartesiano <span class="math inline">\(A \times B\)</span></strong>: insieme di tutte le coppie <span class="math inline">\((a, b)\)</span> con <span class="math inline">\(a \in A\)</span> e <span class="math inline">\(b \in B\)</span></p>
 </section>
 <section id="relazioni" class="level2">
 <h2 class="anchored" data-anchor-id="relazioni">Relazioni</h2>
 <ul>
-<li><p><strong>riflessiva</strong>: $ x x&nbsp;x $</p></li>
-<li><p><strong>antiriflessiva</strong>: $ (x x)&nbsp;x $</p></li>
-<li><p><strong>simmetrica</strong>: $ x y y x $</p></li>
-<li><p><strong>antisimmetrica</strong>: $ x y&nbsp;(y x) $</p></li>
-<li><p><strong>transitiva</strong>: $ (x y) (y z) (x z) $</p></li>
+<li><p><strong>riflessiva</strong>: <span class="math inline">\(x \smile x\ \forall x\)</span></p></li>
+<li><p><strong>antiriflessiva</strong>: <span class="math inline">\(\neg (x \smile x)\ \forall x\)</span></p></li>
+<li><p><strong>simmetrica</strong>: <span class="math inline">\(x \smile y \implies y \smile x\)</span></p></li>
+<li><p><strong>antisimmetrica</strong>: <span class="math inline">\(x \smile y\ \implies \neg (y \smile x)\)</span></p></li>
+<li><p><strong>transitiva</strong>: <span class="math inline">\((x \smile y) \land (y \smile z) \implies (x \smile z)\)</span></p></li>
 </ul>
 <p><strong>D’ORDINE</strong>: irriflessiva, antisimmetrica e transitiva</p>
 <p><strong>D’EQUIVALENZA</strong>: riflessiva, simmetrica e transitiva</p>
 <p>Le relazioni d’equivalenza implicano una partizione dell’insieme in classi di equivalenza</p>
-<section id="congruenza-modulo-n-x-_n-y" class="level3">
-<h3 class="anchored" data-anchor-id="congruenza-modulo-n-x-_n-y">Congruenza modulo $ n $ $ x _n y $</h3>
+<section id="congruenza-modulo-n-x-equiv_n-y" class="level3">
+<h3 class="anchored" data-anchor-id="congruenza-modulo-n-x-equiv_n-y">Congruenza modulo <span class="math inline">\(n\)</span> <span class="math inline">\(x \equiv_n y\)</span></h3>
 <p>Resto della divisione intera tra due numeri</p>
-<p>$ 12 = 0$ | $ -12 = 0$<br>
-$ 13 = 1$ | $ -13 = 2$<br>
-$ 14 = 2$ | $ -14 = 1$</p>
-<p>dato $ x _n y$ allora:</p>
+<p><span class="math inline">\(12 \mod 3 = 0 \qquad -12 \mod 3 = 0\)</span><br>
+<span class="math inline">\(13 \mod 3 = 1 \qquad -13 \mod 3 = 2\)</span><br>
+<span class="math inline">\(14 \mod 3 = 2 \qquad -14 \mod 3 = 1\)</span></p>
+<p>dato <span class="math inline">\(x \equiv_n y\)</span> allora:</p>
 <ul>
-<li>$ x-y _n 0 $</li>
-<li>$ x + z _n y + z $</li>
-<li>$ x z _n y z $</li>
+<li><span class="math inline">\(x-y \equiv_n 0\)</span></li>
+<li><span class="math inline">\(x + z \equiv_n y + z\)</span></li>
+<li><span class="math inline">\(x \cdot z \equiv_n y \cdot z\)</span></li>
 </ul>
-<p>considerando anche $ z_1 _n z_2 $:</p>
+<p>considerando anche <span class="math inline">\(z_1 \equiv_n z_2\)</span>:</p>
 <ul>
-<li>$ x+z_1 _n y+z_2 $</li>
-<li>$ x z_1 _n y z_2 $</li>
+<li><span class="math inline">\(x+z_1 \equiv_n y+z_2\)</span></li>
+<li><span class="math inline">\(x \cdot z_1 \equiv_n y \cdot z_2\)</span></li>
 </ul>
 </section>
 </section>
 <section id="funzioni" class="level2">
 <h2 class="anchored" data-anchor-id="funzioni">Funzioni</h2>
 <ul>
-<li><p><strong>iniettiva</strong>: $ x x’ f(x) f(x’) $</p></li>
-<li><p><strong>suriettiva</strong>: $ f: A B&nbsp;f(A) = B $</p></li>
+<li><p><strong>iniettiva</strong>: <span class="math inline">\(x \neq x' \implies f(x) \neq f(x')\)</span></p></li>
+<li><p><strong>suriettiva</strong>: <span class="math inline">\(f: A \to B\ f(A) = B\)</span></p></li>
 <li><p><strong>biiettiva</strong>: iniettiva e suriettiva, invertibile</p></li>
-<li><p><strong>ceiling</strong>: $ x = {v : v x} $ più piccolo intero maggiore o uguale a $ x$</p></li>
-<li><p><strong>floor</strong>: $ x = {v : v x} $ più grande intero minore o uguale a $ x $</p></li>
+<li><p><strong>ceiling</strong>: <span class="math inline">\(\lceil x \rceil = \min \{v \in \mathbb{Z} : v \geq x\}\)</span> più piccolo intero maggiore o uguale a <span class="math inline">\(x\)</span></p></li>
+<li><p><strong>floor</strong>: <span class="math inline">\(\lfloor x \rfloor = \max \{v \in \mathbb{Z} : v \leq x\}\)</span> più grande intero minore o uguale a <span class="math inline">\(x\)</span></p></li>
 </ul>
-<p><strong>composta</strong>: $ f g(x) = f(g(x)) $</p>
+<p><strong>composta</strong>: <span class="math inline">\(f \circ g(x) = f(g(x))\)</span></p>
 </section>
 <section id="induzione" class="level2">
 <h2 class="anchored" data-anchor-id="induzione">Induzione</h2>
 <ul>
-<li>Base: $ P(0) $ è vera</li>
-<li>Passo induttivo: $ n ,&nbsp;P(n+1)&nbsp;vera P(n)&nbsp;vera $</li>
+<li>Base: <span class="math inline">\(P(0)\)</span> è vera</li>
+<li>Passo induttivo: <span class="math inline">\(\forall n \geq 0,\ P(n+1)\ vera \implies P(n)\ vera\)</span></li>
 </ul>
 </section>
 <section id="sommatorie" class="level2">
 <h2 class="anchored" data-anchor-id="sommatorie">Sommatorie</h2>
-<p><span class="math display">\[ \sum_{k=1}^n a_k\ = a_1 + a_2 + \ldots + a_n \]</span></p>
+<p><span class="math display">\[\sum_{k=1}^n a_k\ = a_1 + a_2 + \ldots + a_n\]</span></p>
 <section id="regole" class="level3">
 <h3 class="anchored" data-anchor-id="regole">Regole</h3>
-<p>$ <em>{k K}&nbsp; a_k = </em>{k K}&nbsp;a_k $</p>
-<p>$ <em>{k K}&nbsp;(a_k + b_k) = </em>{k K}&nbsp;a_k + _{k K}&nbsp;b_k $</p>
-<p>$ <em>{k K}&nbsp;a_k = </em>{(k) K}&nbsp;a_{(k)} $</p>
-<p>$ <em>{k=1}^&nbsp;a_k + </em>{k = }^n&nbsp;a_k = a_{} + _{k=1}^n&nbsp;a_k $</p>
-<p>$ <em>{k K}&nbsp;a_k = </em>{(k + c) K}&nbsp;a_{(k + c)} $</p>
-<p>$ <em>{k = 1}^n&nbsp;a_k = </em>{k = 1}^{}&nbsp;a_k + _{k = }^n&nbsp;a_k $</p>
+<p><span class="math inline">\(\sum_{k \in K}\ \textbf{c} \cdot a_k = \textbf{c} \cdot \sum_{k \in K}\ a_k\)</span></p>
+<p><span class="math inline">\(\sum_{k \in K}\ (a_k + b_k) = \sum_{k \in K}\ a_k + \sum_{k \in K}\ b_k\)</span></p>
+<p><span class="math inline">\(\sum_{k \in K}\ a_k = \sum_{\Pi (k) \in K}\ a_{\Pi(k)}\)</span></p>
+<p><span class="math inline">\(\sum_{k=1}^\textbf{m}\ a_k + \sum_{k = \textbf{m}}^n\ a_k = a_{\textbf{m}} + \sum_{k=1}^n\ a_k\)</span></p>
+<p><span class="math inline">\(\sum_{k \in K}\ a_k = \sum_{(k + c) \in K}\ a_{(k + c)}\)</span></p>
+<p><span class="math inline">\(\sum_{k = 1}^n\ a_k = \sum_{k = 1}^{\textbf{m}}\ a_k + \sum_{k = \textbf{m+1}}^n\ a_k\)</span></p>
 </section>
 <section id="somme-multiple" class="level3">
 <h3 class="anchored" data-anchor-id="somme-multiple">Somme multiple</h3>
-<p><span class="math display">\[ \begin{matrix} a_1 b_1 &amp; a_1 b_2 &amp; a_1 b_3 \\ a_2 b_1 &amp; a_2 b_2 &amp; a_2 b_3 \\ a_3 b_1 &amp; a_3 b_2 &amp; a_3 b_3 \end{matrix} \]</span></p>
+<p><span class="math display">\[\begin{matrix} a_1 b_1 &amp; a_1 b_2 &amp; a_1 b_3 \\ a_2 b_1 &amp; a_2 b_2 &amp; a_2 b_3 \\ a_3 b_1 &amp; a_3 b_2 &amp; a_3 b_3 \end{matrix}\]</span></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -336,76 +339,63 @@ $ 14 = 2$ | $ -14 = 1$</p>
 <tbody>
 <tr class="odd">
 <td>per righe</td>
-<td><span class="math display">\[ \sum_{i=1}^3\ \sum_{j=1}^3\ a_i b_j \]</span></td>
-<td><span class="math display">\[ a_1 \sum_{j=1}^3 b_j + a_2 \sum_{j=1}^3 b_j + a_3 \sum_{j=1}^3 b_j \]</span></td>
+<td><span class="math inline">\(\displaystyle {\sum_{i=1}^3\ \sum_{j=1}^3\ a_i b_j}\)</span></td>
+<td><span class="math inline">\(\displaystyle {a_1 \sum_{j=1}^3 b_j + a_2 \sum_{j=1}^3 b_j + a_3 \sum_{j=1}^3 b_j}\)</span></td>
 </tr>
 <tr class="even">
 <td>per colonne</td>
-<td><span class="math display">\[ \sum_{j=1}^3\ \sum_{i=1}^3\ a_i b_j \]</span></td>
-<td><span class="math display">\[ \sum_{i = 1}^3 (a_i)\ b_1 + \sum_{i = 1}^3 (a_i)\ b_2 + \sum_{i = 1}^3 (a_i)\ b_3 \]</span></td>
+<td><span class="math inline">\(\displaystyle {\sum_{j=1}^3\ \sum_{i=1}^3\ a_i b_j}\)</span></td>
+<td><span class="math inline">\(\displaystyle {\sum_{i = 1}^3 (a_i)\ b_1 + \sum_{i = 1}^3 (a_i)\ b_2 + \sum_{i = 1}^3 (a_i)\ b_3}\)</span></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="scambio-di-indici" class="level3">
 <h3 class="anchored" data-anchor-id="scambio-di-indici">Scambio di indici</h3>
-<p><span class="math display">\[ \sum_{i \in I} \sum_{j \in J(i)} a_{ij} = \sum_{j \in J} \sum_{i \in I(j)} a_{ij} \]</span></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><span class="math display">\[ \sum_{i=0}^n \sum_{j=i}^n s_ij \]</span></th>
-<th><span class="math display">\[ \sum_{j=0}^n \sum_{i=0}^j s_ij \]</span></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-<p>$ J(i) = {0, , n} $<br>
-$ I(j) = {0, , j} $</p>
+<p><span class="math display">\[\sum_{i \in I} \sum_{j \in J(i)} a_{ij} = \sum_{j \in J} \sum_{i \in I(j)} a_{ij}\]</span></p>
+<p><span class="math display">\[{\sum_{i=0}^n \sum_{j=i}^n s_ij} \qquad {\sum_{j=0}^n \sum_{i=0}^j s_ij}\]</span></p>
+<p><span class="math inline">\(J(i) = \{0, \ldots, n\}\)</span><br>
+<span class="math inline">\(I(j) = \{0, \ldots, j\}\)</span></p>
 </section>
 <section id="somme-notevoli" class="level3">
 <h3 class="anchored" data-anchor-id="somme-notevoli">Somme notevoli</h3>
 <ul>
-<li><p>somma numeri consecutivi: <span class="math display">\[ \sum_{i=1}^n i = \frac{n(n+1)}{2} \]</span></p></li>
-<li><p>somma quadrati numeri consecutivi: <span class="math display">\[ \sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6} \]</span></p></li>
-<li><p>somma potenze consecutive: <span class="math display">\[ \sum_{k=1}^n k^m = \frac{1}{m+1} \sum_{j=0}^m \binom{m+1}{j} B_j n^{m+1-j} \]</span></p></li>
+<li><p>somma numeri consecutivi: <span class="math display">\[\sum_{i=1}^n i = \frac{n(n+1)}{2}\]</span></p></li>
+<li><p>somma quadrati numeri consecutivi: <span class="math display">\[\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}\]</span></p></li>
+<li><p>somma potenze consecutive: <span class="math display">\[\sum_{k=1}^n k^m = \frac{1}{m+1} \sum_{j=0}^m \binom{m+1}{j} B_j n^{m+1-j}\]</span></p></li>
 </ul>
 </section>
 <section id="metodo-di-perturbazione" class="level3">
 <h3 class="anchored" data-anchor-id="metodo-di-perturbazione">Metodo di perturbazione</h3>
-<p><span class="math display">\[ s_n + a_{n+1} = \sum_{k=0}^{n+1} a_k = \sum_{k=0}^n a_{k+1} \]</span></p>
-<p><span class="math display">\[ s_n + a_{n+1} = a_0 + \sum_{k=0}^n a_{k+1} \]</span></p>
-<p>$ s(n) $ sia a sinistra che a destra ma con coefficienti diversi per non elidersi</p>
+<p><span class="math display">\[s_n + a_{n+1} = \sum_{k=0}^{n+1} a_k = \sum_{k=0}^n a_{k+1}\]</span></p>
+<p><span class="math display">\[s_n + a_{n+1} = a_0 + \sum_{k=0}^n a_{k+1}\]</span></p>
+<p><span class="math inline">\(s(n)\)</span> sia a sinistra che a destra ma con coefficienti diversi per non elidersi</p>
 </section>
 </section>
 <section id="probabilità" class="level2">
 <h2 class="anchored" data-anchor-id="probabilità">Probabilità</h2>
-<p><strong>universo $ S $</strong>: $ Pr(S) = P S = 1 $</p>
-<p><strong>distribuita uniforme</strong>: $ Pr(A) = p A = $</p>
-<p><strong>probabilità condizionata</strong>: $ Pr(A B) = $</p>
-<p><strong>probabilità eventi indipendenti</strong>: $ Pr(A B) = Pr(A) Pr(B) $</p>
-<p><strong>teorema di Bayes</strong>: $ Pr(B A) = $</p>
+<p><strong>universo <span class="math inline">\(S\)</span></strong>: <span class="math inline">\(Pr(S) = P \vert S \vert = 1\)</span></p>
+<p><strong>distribuita uniforme</strong>: <span class="math inline">\(Pr(A) = p \vert A \vert= \frac{\vert A \vert}{\vert S \vert}\)</span></p>
+<p><strong>probabilità condizionata</strong>: <span class="math inline">\(Pr(A \vert B) = \frac{Pr(A \cap B)}{Pr(B)}\)</span></p>
+<p><strong>probabilità eventi indipendenti</strong>: <span class="math inline">\(Pr(A \cap B) = Pr(A) \cdot Pr(B)\)</span></p>
+<p><strong>teorema di Bayes</strong>: <span class="math inline">\(Pr(B \vert A) = \frac{Pr(A \vert B) \cdot Pr(B)}{Pr(A)}\)</span></p>
 </section>
 <section id="matematica-degli-interi" class="level2">
 <h2 class="anchored" data-anchor-id="matematica-degli-interi">Matematica degli interi</h2>
 <section id="divisibilità-mcd-mcm" class="level3">
 <h3 class="anchored" data-anchor-id="divisibilità-mcd-mcm">divisibilità, MCD, mcm</h3>
-<p><strong>divisibilità:</strong> $ a b $ se $ m : &nbsp; $</p>
-<p><strong>MCD (a,b)</strong>: $ $<br>
-<strong>mcm (a,b)</strong>: $ $</p>
+<p><strong>divisibilità:</strong> <span class="math inline">\(a \mid b\)</span> se <span class="math inline">\(\exists m \in \mathbb{Z} : \textbf{b =}\ \textbf{a} \cdot \textbf{m}\)</span></p>
+<p><strong>MCD (a,b)</strong>: <span class="math inline">\(\max \text{\{divisori a,b\}}\)</span><br>
+<strong>mcm (a,b)</strong>: <span class="math inline">\(\min \text{\{multipli a,b\}}\)</span></p>
 <p><strong>Algoritmo di Euclide</strong>:</p>
-<p>Calcolo di $ MCD(a,b) $</p>
+<p>Calcolo di <span class="math inline">\(MCD(a,b)\)</span></p>
 <ol type="1">
-<li>$ a : b = r $</li>
-<li>$ r = 0 MCD(a,b) = b $</li>
-<li>$ r b : r = … $ (ricomincio)</li>
+<li><span class="math inline">\(a : b = r\)</span></li>
+<li><span class="math inline">\(r = 0 \implies MCD(a,b) = b\)</span></li>
+<li><span class="math inline">\(r \neq 0 \implies b : r = ...\)</span> (ricomincio)</li>
 </ol>
-<p><strong>Teorema di Bezout</strong>: $ MCD(a,b) = ax + by $<br>
-$ 1 = ax + by $ allora $ a $ e $ b $ sono coprimi</p>
+<p><strong>Teorema di Bezout</strong>: <span class="math inline">\(MCD(a,b) = ax + by\)</span><br>
+<span class="math inline">\(1 = ax + by\)</span> allora <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> sono coprimi</p>
 </section>
 <section id="numeri-primi" class="level3">
 <h3 class="anchored" data-anchor-id="numeri-primi">Numeri primi</h3>
@@ -413,43 +403,43 @@ $ 1 = ax + by $ allora $ a $ e $ b $ sono coprimi</p>
 <ul>
 <li>1 no primo, no composto</li>
 </ul>
-<p><strong>primi in intervallo di n naturali</strong>: $ (N) $</p>
-<p><strong>Primi di Mersenne</strong>: $ M(n) = 2^n - 1&nbsp; n&nbsp; $</p>
-<p><strong>Primi di Fermat</strong>: $ F(n) = 2<sup>{2</sup>n} + 1 $</p>
+<p><strong>primi in intervallo di n naturali</strong>: <span class="math inline">\(\Pi(N) \sim \frac{N}{\ln N}\)</span></p>
+<p><strong>Primi di Mersenne</strong>: <span class="math inline">\(M(n) = 2^n - 1\ \text{primo} \implies n\ \text{primo}\)</span></p>
+<p><strong>Primi di Fermat</strong>: <span class="math inline">\(F(n) = 2^{2^n} + 1\)</span></p>
 <p><strong>Fattorizzazione in numeri primi</strong>:</p>
-<p>$ p , p . $</p>
+<p><span class="math inline">\(p \in \mathbb{N}, p \gt 1.\)</span></p>
 <ul>
-<li>$ p a, b &nbsp;p ab p a p b $</li>
-<li>$ p a_1 a_2 a_r p a_i i ) $</li>
+<li><span class="math inline">\(p \text{ primo} \iff \forall a, b \in \mathbb{N} \text{ se } \ p \vert  ab \implies p \vert a \lor p \vert b\)</span></li>
+<li><span class="math inline">\(\text{se } p \mid a_1 \cdot a_2 \cdot \ldots \cdot a_r \implies p \vert a_i \left( \text{ almeno un } i \in [1, r]\right)\)</span></li>
 </ul>
 <p><strong>Teorema fondamentale dell’aritmetica</strong>:</p>
-<p><span class="math display">\[ \forall n \in \mathbb{N}, n \geq 2\\ n = p_1 \cdot p_2 \cdot \ldots \cdot p_i \ \text{ con } p_i = \text{fattore primo} \]</span></p>
-<p>Per cui dati $ a,b $ con $ a = p_1^{n_1} p_2^{n_2} p_k^{n_k}$ e $ b = p_1^{m_1} p_2^{m_2} p_k^{m_k} $</p>
+<p><span class="math display">\[\forall n \in \mathbb{N}, n \geq 2\\ n = p_1 \cdot p_2 \cdot \ldots \cdot p_i \ \text{ con } p_i = \text{fattore primo}\]</span></p>
+<p>Per cui dati <span class="math inline">\(a,b\)</span> con <span class="math inline">\(\quad a = p_1^{n_1} \cdot p_2^{n_2} \cdot \ldots \cdot p_k^{n_k} \quad\)</span> e <span class="math inline">\(\quad b = p_1^{m_1} \cdot p_2^{m_2} \cdot \ldots \cdot p_k^{m_k}\)</span></p>
 <ul>
-<li><span class="math display">\[ mcm(a,b) = p_1^{\max(n_1,m_1)} \cdot p_2^{\max(n_2,m_2)} \cdot \ldots \cdot p_k^{\max(n_k,m_k)} \]</span></li>
-<li><span class="math display">\[ MCD(a,b) = p_1^{\min(n_1,m_1)} \cdot p_2^{\min(n_2,m_2)} \cdot \ldots \cdot p_k^{\min(n_k,m_k)} \]</span></li>
+<li><span class="math display">\[mcm(a,b) = p_1^{\max(n_1,m_1)} \cdot p_2^{\max(n_2,m_2)} \cdot \ldots \cdot p_k^{\max(n_k,m_k)}\]</span></li>
+<li><span class="math display">\[MCD(a,b) = p_1^{\min(n_1,m_1)} \cdot p_2^{\min(n_2,m_2)} \cdot \ldots \cdot p_k^{\min(n_k,m_k)}\]</span></li>
 </ul>
-<p><strong>Primo contenuto in un fattoriale $ N!$</strong></p>
-<p>$ p $ in $ n! $ contenuto $ _{k } $ volte</p>
-<p>$ n! = _{k } $ quante volte $ p $ è contenuto in $ n $</p>
-<p>esempio con $ 15!$</p>
+<p><strong>Primo contenuto in un fattoriale <span class="math inline">\(N!\)</span></strong></p>
+<p><span class="math inline">\(p\)</span> in <span class="math inline">\(n!\)</span> contenuto <span class="math inline">\(\sum_{k \geq 1} \lfloor \frac{n}{p^k} \rfloor\)</span> volte</p>
+<p><span class="math inline">\(n! = \sum_{k \geq 1} \lfloor \frac{n}{p^k} \rfloor\)</span> quante volte <span class="math inline">\(p\)</span> è contenuto in <span class="math inline">\(n\)</span></p>
+<p>esempio con <span class="math inline">\(15!\)</span></p>
 <ul>
-<li>quante volte $ 2 $ contenuto in $ 15! $:<br>
-<span class="math display">\[ \lfloor \frac{15}{2} \rfloor + \lfloor \frac{15}{2^2} \rfloor + \lfloor \frac{15}{2^3} \rfloor = 7 + 3 + 1 = 11 \]</span></li>
-<li>quante volte $ 3 $ contenuto in $ 15! $: <span class="math display">\[ \lfloor \frac{15}{3} \rfloor + \lfloor \frac{15}{9} \rfloor + \lfloor \frac{15}{27} \rfloor = 5 + 1 + 0 = 6 \]</span></li>
+<li>quante volte <span class="math inline">\(2\)</span> contenuto in <span class="math inline">\(15!\)</span>:<br>
+<span class="math display">\[\lfloor \frac{15}{2} \rfloor + \lfloor \frac{15}{2^2} \rfloor + \lfloor \frac{15}{2^3} \rfloor = 7 + 3 + 1 = 11\]</span></li>
+<li>quante volte <span class="math inline">\(3\)</span> contenuto in <span class="math inline">\(15!\)</span>: <span class="math display">\[\lfloor \frac{15}{3} \rfloor + \lfloor \frac{15}{9} \rfloor + \lfloor \frac{15}{27} \rfloor = 5 + 1 + 0 = 6\]</span></li>
 </ul>
 <p><strong>proprietà</strong>:</p>
-<p>$ a ,&nbsp;p $</p>
+<p><span class="math inline">\(a \in \mathbb{Z},\ p \text{ primo}\)</span></p>
 <ul>
-<li>$ p a ia _p ja&nbsp; &nbsp;i,j {1, 2, , p-1} $</li>
-<li>$ p a a^{p-1} _p 1 $</li>
-<li>$ a^p _p a $</li>
+<li><span class="math inline">\(p \nmid a \implies ia \not\equiv_p ja\ \text{ con } \ i,j \in\{1, 2, \ldots, p-1\}\)</span></li>
+<li><span class="math inline">\(p \nmid a \implies a^{p-1} \equiv_p 1\)</span></li>
+<li><span class="math inline">\(a^p \equiv_p a\)</span></li>
 </ul>
 </section>
 <section id="segno-permutazioni-parità-e-disparità" class="level3">
 <h3 class="anchored" data-anchor-id="segno-permutazioni-parità-e-disparità">Segno permutazioni (parità e disparità)</h3>
-<p>$ S_n = {1,2, , n} $: insieme permutazioni</p>
-<p>data $ ={_1, , _n} $ permutazione, tutti i modi per trasformarla in permutazione identica</p>
+<p><span class="math inline">\(S_n = \pi \{1,2, \ldots, n\}\)</span>: insieme permutazioni</p>
+<p>data <span class="math inline">\(\pi ={\pi_1, \ldots, \pi_n}\)</span> permutazione, tutti i modi per trasformarla in permutazione identica</p>
 <ul>
 <li>o richiedono un numero <strong>pari</strong> di trasposizioni</li>
 <li>o richiedono un numero <strong>dispari</strong> di trasposizioni</li>
@@ -458,128 +448,128 @@ $ 1 = ax + by $ allora $ a $ e $ b $ sono coprimi</p>
 </section>
 <section id="principio-della-piccionaia" class="level2">
 <h2 class="anchored" data-anchor-id="principio-della-piccionaia">Principio della piccionaia</h2>
-<p><strong>Teorema</strong>: $ n+1 $ oggetti in $ n $ contenitori, un contenitore ha $ 2 $ o più oggetti</p>
-<p><strong>Teorema</strong>: se $ r_1 + r_2 + + r_n - n + 1 $ oggetti in $ n $ contenitori, allora o 1 contiene ha $ r_1 $ o 2 contiene $ r_2 $ o n-esimo contiene $ r_n $</p>
+<p><strong>Teorema</strong>: <span class="math inline">\(n+1\)</span> oggetti in <span class="math inline">\(n\)</span> contenitori, un contenitore ha <span class="math inline">\(2\)</span> o più oggetti</p>
+<p><strong>Teorema</strong>: se <span class="math inline">\(r_1 + r_2 + \ldots + r_n - n + 1\)</span> oggetti in <span class="math inline">\(n\)</span> contenitori, allora o 1 contiene ha <span class="math inline">\(r_1\)</span> o 2 contiene <span class="math inline">\(r_2\)</span> o n-esimo contiene <span class="math inline">\(r_n\)</span></p>
 </section>
 <section id="principio-di-somma-e-del-prodotto" class="level2">
 <h2 class="anchored" data-anchor-id="principio-di-somma-e-del-prodotto">Principio di somma e del prodotto</h2>
-<p>$ k $ elementi diversi, $ n_1 $ del primo tipo, $ n_2 $ del secondo tipo, $ $, $ n_k $ del k-esimo tipo. In quanti modi posso</p>
+<p><span class="math inline">\(k\)</span> elementi diversi, <span class="math inline">\(n_1\)</span> del primo tipo, <span class="math inline">\(n_2\)</span> del secondo tipo, <span class="math inline">\(\ldots\)</span>, <span class="math inline">\(n_k\)</span> del k-esimo tipo. In quanti modi posso</p>
 <ul>
 <li>un elemento del primo tipo <strong>o</strong> del secondo <strong>o</strong> …</li>
 <li>un elemento del primo tipo <strong>e</strong> del secondo <strong>e</strong> …</li>
 </ul>
 <section id="principio-di-somma" class="level3">
 <h3 class="anchored" data-anchor-id="principio-di-somma">Principio di somma</h3>
-<p>$ S = S_1 S_2 S_k $<br>
-$ S = S_1 + S_2 + + S_k $</p>
-<p><strong>conteggio indiretto</strong>: $ A = S + S’ S = A - S’ $</p>
+<p><span class="math inline">\(S = S_1 \cup S_2 \cup \ldots \cup S_k\)</span><br>
+<span class="math inline">\(\vert S \vert = \vert S_1 \vert + \vert S_2 \vert + \ldots + \vert S_k \vert\)</span></p>
+<p><strong>conteggio indiretto</strong>: <span class="math inline">\(\vert A \vert = \vert S \vert + \vert S' \vert \implies \vert S \vert = \vert A \vert - \vert S' \vert\)</span></p>
 </section>
 <section id="principio-di-prodotto" class="level3">
 <h3 class="anchored" data-anchor-id="principio-di-prodotto">Principio di prodotto</h3>
-<p>$ S$: insieme di tute le coppie $ (a,b)$: $ a$ in $ p$ modi, $ b$ in $ q$ modi dato il primo</p>
-<p>$ S = p q$</p>
+<p><span class="math inline">\(S\)</span>: insieme di tute le coppie <span class="math inline">\((a,b)\)</span>: <span class="math inline">\(a\)</span> in <span class="math inline">\(p\)</span> modi, <span class="math inline">\(b\)</span> in <span class="math inline">\(q\)</span> modi dato il primo</p>
+<p><span class="math inline">\(\vert S \vert = p \cdot q\)</span></p>
 <p>dimostrazione mediate principio somma</p>
 </section>
 <section id="scelte-su-sequenze" class="level3">
 <h3 class="anchored" data-anchor-id="scelte-su-sequenze">Scelte su sequenze</h3>
-<p>$ a_1 a_2 a_3 a_n$ con $ a_1 $ in $ p_1 $ modi, $ a_2 $ in $ p_2 $ modi</p>
-<p><span class="math display">\[ \text{n-ple: } S = p_1 \cdot p_2 \cdot \ldots \cdot p_n \]</span></p>
+<p><span class="math inline">\(a_1 a_2 a_3 \ldots a_n\)</span> con <span class="math inline">\(a_1\)</span> in <span class="math inline">\(p_1\)</span> modi, <span class="math inline">\(a_2\)</span> in <span class="math inline">\(p_2\)</span> modi</p>
+<p><span class="math display">\[\text{n-ple: } S = p_1 \cdot p_2 \cdot \ldots \cdot p_n\]</span></p>
 </section>
 <section id="combinazioni-sottoinsiemi" class="level3">
 <h3 class="anchored" data-anchor-id="combinazioni-sottoinsiemi">Combinazioni (sottoinsiemi)</h3>
-<p>dato $ A = {a_1, a_2, , a_n} $ il sottoinsieme è un booleano per ogni elemento (è incluso? T/F)</p>
-<p><span class="math display">\[\mathcal{P}(A) = 2^{\vert A \vert} \]</span></p>
+<p>dato <span class="math inline">\(A = \{a_1, a_2, \ldots, a_n\}\)</span> il sottoinsieme è un booleano per ogni elemento (è incluso? T/F)</p>
+<p><span class="math display">\[\mathcal{P}(A) = 2^{\vert A \vert}\]</span></p>
 </section>
 </section>
 <section id="coefficiente-binomiale" class="level2">
 <h2 class="anchored" data-anchor-id="coefficiente-binomiale">Coefficiente binomiale</h2>
-<p>$ $ k-oggetti su $ n$</p>
-<p><span class="math display">\[\binom{n}{k} = \frac{n!}{k! (n-k)!} \]</span></p>
-<p>sottoinsiemi di $ k$ elementi su $ n $</p>
+<p><span class="math inline">\(\binom{n}{k}\)</span> k-oggetti su <span class="math inline">\(n\)</span></p>
+<p><span class="math display">\[\binom{n}{k} = \frac{n!}{k! (n-k)!}\]</span></p>
+<p>sottoinsiemi di <span class="math inline">\(k\)</span> elementi su <span class="math inline">\(n\)</span></p>
 <p><strong>proprietà del coefficiente binomiale</strong>:</p>
 <ol type="1">
-<li><p><span class="math display">\[ \binom{n}{k} = \binom{n}{n-k} \]</span><br>
-stesso numero di sottoinsiemi per $ k $ elementi o $ n-k $ elementi (in quanto complementare)</p></li>
-<li><p><span class="math display">\[ \binom{n}{n} = 1 \text{ , } \binom{n}{1}=n \]</span><br>
+<li><p><span class="math display">\[\binom{n}{k} = \binom{n}{n-k}\]</span><br>
+stesso numero di sottoinsiemi per <span class="math inline">\(k\)</span> elementi o <span class="math inline">\(n-k\)</span> elementi (in quanto complementare)</p></li>
+<li><p><span class="math display">\[\binom{n}{n} = 1 \text{ , } \binom{n}{1}=n\]</span><br>
 insieme completo e numero sottoinsiemi di un elemento</p></li>
-<li><p><span class="math display">\[ \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1} \]</span></p></li>
-<li><p><span class="math display">\[ \binom{n}{k} = \sum_{i=0}^p \binom{p}{i} \binom{n-p}{k-i} \]</span></p></li>
-<li><p><span class="math display">\[ \binom{n}{k} = \sum_{m = k}^n \binom{m-1}{k-1} \]</span></p></li>
-<li><p><span class="math display">\[ \sum_{k=0}^n \binom{n}{k} = 2^n \]</span></p></li>
-<li><p><span class="math display">\[ \text{con } 0 \leq k \leq \frac{n}{\lfloor 2 \rfloor} \text{ succede } \binom{2k}{k} \leq \binom{n}{k} \]</span></p></li>
-<li><p><span class="math display">\[ \text{con } 0 \leq k \leq n \text{ succede } \binom{n}{k} \leq \binom{n}{\frac{n}{\lfloor 2 \rfloor}} \]</span></p></li>
-<li><p><span class="math display">\[ \forall n \gt 1 \in \mathbb{N} \text{ succede } \binom{2n}{n} \geq 2^n \]</span></p></li>
-<li><p><span class="math display">\[ \forall n \in \mathbb{N^+} \text{ succede } \binom{2n}{n} \geq \frac{2^n}{2n} \]</span></p></li>
-<li><p><span class="math display">\[ \sum_{k=1}^n k \cdot \binom{n}{k} = n \cdot 2^{n-1} \]</span></p></li>
-<li><p><span class="math display">\[ \sum_{k=0}^n \binom{n}{k} 2^k = 3^n \]</span></p></li>
+<li><p><span class="math display">\[\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}\]</span></p></li>
+<li><p><span class="math display">\[\binom{n}{k} = \sum_{i=0}^p \binom{p}{i} \binom{n-p}{k-i}\]</span></p></li>
+<li><p><span class="math display">\[\binom{n}{k} = \sum_{m = k}^n \binom{m-1}{k-1}\]</span></p></li>
+<li><p><span class="math display">\[\sum_{k=0}^n \binom{n}{k} = 2^n\]</span></p></li>
+<li><p><span class="math display">\[\text{con } 0 \leq k \leq \frac{n}{\lfloor 2 \rfloor} \text{ succede } \binom{2k}{k} \leq \binom{n}{k}\]</span></p></li>
+<li><p><span class="math display">\[\text{con } 0 \leq k \leq n \text{ succede } \binom{n}{k} \leq \binom{n}{\frac{n}{\lfloor 2 \rfloor}}\]</span></p></li>
+<li><p><span class="math display">\[\forall n \gt 1 \in \mathbb{N} \text{ succede } \binom{2n}{n} \geq 2^n\]</span></p></li>
+<li><p><span class="math display">\[\forall n \in \mathbb{N^+} \text{ succede } \binom{2n}{n} \geq \frac{2^n}{2n}\]</span></p></li>
+<li><p><span class="math display">\[\sum_{k=1}^n k \cdot \binom{n}{k} = n \cdot 2^{n-1}\]</span></p></li>
+<li><p><span class="math display">\[\sum_{k=0}^n \binom{n}{k} 2^k = 3^n\]</span></p></li>
 </ol>
 <section id="triangolo-di-pascal" class="level3">
 <h3 class="anchored" data-anchor-id="triangolo-di-pascal">Triangolo di Pascal</h3>
-<p><span class="math display">\[ (a+b)^n = \sum_{i=0}^n \binom{n}{i} a^i b^{n-i} \]</span></p>
+<p><span class="math display">\[(a+b)^n = \sum_{i=0}^n \binom{n}{i} a^i b^{n-i}\]</span></p>
 </section>
 <section id="processi-bernoulliani" class="level3">
 <h3 class="anchored" data-anchor-id="processi-bernoulliani">Processi Bernoulliani</h3>
-<p>Gli esiti sono indipendenti dai precedenti: $ p $, $ q = 1-p $</p>
-<p>probabilità di $ k $ successi in $ n $ prove:<br>
-<span class="math display">\[ Pr(n,k) = \binom{n}{k} p^k q^{n-k} \]</span></p>
-<p>probabilità di almeno $ k $ successi in $ n $ prove:<br>
-<span class="math display">\[ Pr(n, \geq k) = \sum_{i=k}^n \binom{n}{i} p^i q^{n-i} \]</span></p>
+<p>Gli esiti sono indipendenti dai precedenti: <span class="math inline">\(p\)</span>, <span class="math inline">\(q = 1-p\)</span></p>
+<p>probabilità di <span class="math inline">\(k\)</span> successi in <span class="math inline">\(n\)</span> prove:<br>
+<span class="math display">\[Pr(n,k) = \binom{n}{k} p^k q^{n-k}\]</span></p>
+<p>probabilità di almeno <span class="math inline">\(k\)</span> successi in <span class="math inline">\(n\)</span> prove:<br>
+<span class="math display">\[Pr(n, \geq k) = \sum_{i=k}^n \binom{n}{i} p^i q^{n-i}\]</span></p>
 </section>
 <section id="disposizioni-insiemi-ordinati" class="level3">
 <h3 class="anchored" data-anchor-id="disposizioni-insiemi-ordinati">Disposizioni (insiemi ordinati)</h3>
 <p>prendere un sottoinsieme ma l’ordine conta</p>
-<p><span class="math display">\[ D(n,k) = \binom{n}{k} \cdot k! \]</span></p>
-<p>$ $: in quanti modi posso scegliere il sottoinsieme (quanti sottoinsiemi ci sono)<br>
-$ k! $: permutazioni possibili del sottoinsieme</p>
+<p><span class="math display">\[D(n,k) = \binom{n}{k} \cdot k!\]</span></p>
+<p><span class="math inline">\(\binom{n}{k}\)</span>: in quanti modi posso scegliere il sottoinsieme (quanti sottoinsiemi ci sono)<br>
+<span class="math inline">\(k!\)</span>: permutazioni possibili del sottoinsieme</p>
 </section>
 <section id="multinsiemi-insiemi-con-elementi-ripetuti" class="level3">
 <h3 class="anchored" data-anchor-id="multinsiemi-insiemi-con-elementi-ripetuti">Multinsiemi (insiemi con elementi ripetuti)</h3>
-<p>$ S = {a_1, a_2, , a_k} $ con $ {a_1 n_1, a_2 n_2, , a_k n_k} $</p>
-<p><strong>permutazioni</strong>: <span class="math display">\[ \Pi_s=\frac{n!}{n_1! \cdot n_2! \cdot \ldots \cdot n_k!} \]</span></p>
+<p><span class="math inline">\(S = \{a_1, a_2, \ldots, a_k\}\)</span> con <span class="math inline">\(\{a_1 \cdot n_1, a_2 \cdot n_2, \ldots, a_k \cdot n_k\}\)</span></p>
+<p><strong>permutazioni</strong>: <span class="math display">\[\Pi_s=\frac{n!}{n_1! \cdot n_2! \cdot \ldots \cdot n_k!}\]</span></p>
 </section>
 <section id="combinazioni-con-ripetizioni" class="level3">
 <h3 class="anchored" data-anchor-id="combinazioni-con-ripetizioni">Combinazioni con ripetizioni</h3>
-<p><strong>r-combinazioni</strong>: sottoinsiemi di un multinsieme $ S = {a_1 n_1, , a_k n_k} $</p>
+<p><strong>r-combinazioni</strong>: sottoinsiemi di un multinsieme <span class="math inline">\(S = \{a_1 \cdot n_1, \ldots, a_k \cdot n_k\}\)</span></p>
 <ul>
-<li>$ n_i r&nbsp;i $<br>
-<span class="math display">\[ \binom{r-k+1}{r} \text{ oppure } \binom{r+k-1}{k-1} \]</span><br>
-$ r $: cardinalità r-combinazione<br>
-$ k $: tipologie di elementi</li>
+<li><span class="math inline">\(n_i \geq r\ \forall i\)</span><br>
+<span class="math display">\[\binom{r-k+1}{r} \text{ oppure } \binom{r+k-1}{k-1}\]</span><br>
+<span class="math inline">\(r\)</span>: cardinalità r-combinazione<br>
+<span class="math inline">\(k\)</span>: tipologie di elementi</li>
 </ul>
 <p><strong>a valori interi limitati - lower bound</strong>:</p>
-<p><span class="math display">\[ r \geq \sum_{i=1}^k b_i \]</span></p>
-<p>quante soluzioni intere ha l’equazione $ _{i=1}^k x_i = r $ con $ x_i b_i&nbsp;i $?</p>
-<p><span class="math display">\[ x_1 + x_2 + \ldots + x_k = r \]</span></p>
-<p>sostituisco con $ y_i = x_i - b_i x_i = y_i + b_i $ ovvero mi riconduco al caso senza vincoli</p>
-<p><span class="math display">\[ \sum_{i=1}^k y_i = r - \sum_{i=1}^k b_i \implies \binom{r - \sum_{i=1}^k b_i - k + 1}{k - 1} \]</span></p>
+<p><span class="math display">\[r \geq \sum_{i=1}^k b_i\]</span></p>
+<p>quante soluzioni intere ha l’equazione <span class="math inline">\(\displaystyle \sum_{i=1}^k x_i = r\)</span> con <span class="math inline">\(x_i \geq b_i\ \forall i \in [1, \ldots, k]\)</span>?</p>
+<p><span class="math display">\[x_1 + x_2 + \ldots + x_k = r\]</span></p>
+<p>sostituisco con <span class="math inline">\(y_i = x_i - b_i \implies x_i = y_i + b_i\)</span> ovvero mi riconduco al caso senza vincoli</p>
+<p><span class="math display">\[\sum_{i=1}^k y_i = r - \sum_{i=1}^k b_i \implies \binom{r - \sum_{i=1}^k b_i - k + 1}{k - 1}\]</span></p>
 </section>
 </section>
 <section id="principio-di-inclusione-esclusione" class="level2">
 <h2 class="anchored" data-anchor-id="principio-di-inclusione-esclusione">Principio di inclusione-esclusione</h2>
 <section id="principio-base" class="level3">
 <h3 class="anchored" data-anchor-id="principio-base">Principio base</h3>
-<p>$ S = p_1, p_2, , p_m $</p>
-<p>insieme degli elementi che non possiedono alcuna proprietà $ p_1, , p_m $:</p>
-<p><span class="math display">\[ \begin{array}{ll} \vert \bar{A_1} \cap \bar{A_2} \cap \ldots \cap \bar{A_m}  \vert = &amp; \vert S \vert \\ \; &amp; - \sum \vert A_{i_1} \vert \\ \; &amp; + \sum \vert A_{i_1} \cap A_{i_2} \vert \\ \; &amp; \ldots \\ \; &amp; + (-1)^d \vert A_1 \cap A_2 \cap \ldots \cap A_d \vert \\ \; &amp; \ldots \\ \; &amp; + (-1)^m \vert A_1 \cap A_2 \cap \ldots \cap A_m \vert \end{array} \]</span></p>
+<p><span class="math inline">\(S = \text{\{insieme di elementi con } p_1, p_2, \ldots, p_m \text{ proprietà\}}\)</span></p>
+<p>insieme degli elementi che non possiedono alcuna proprietà <span class="math inline">\(p_1, \ldots, p_m\)</span>:</p>
+<p><span class="math display">\[\begin{array}{ll} \vert \bar{A_1} \cap \bar{A_2} \cap \ldots \cap \bar{A_m}  \vert = &amp; \vert S \vert \\ \; &amp; - \sum \vert A_{i_1} \vert \\ \; &amp; + \sum \vert A_{i_1} \cap A_{i_2} \vert \\ \; &amp; \ldots \\ \; &amp; + (-1)^d \vert A_1 \cap A_2 \cap \ldots \cap A_d \vert \\ \; &amp; \ldots \\ \; &amp; + (-1)^m \vert A_1 \cap A_2 \cap \ldots \cap A_m \vert \end{array}\]</span></p>
 </section>
 <section id="spiazzamenti" class="level3">
 <h3 class="anchored" data-anchor-id="spiazzamenti">Spiazzamenti</h3>
-<p><strong>spiazzamento</strong>: permutazione $ = (_1, _2, , _n)$ con $ _i i&nbsp;i $</p>
+<p><strong>spiazzamento</strong>: permutazione <span class="math inline">\(\pi = (\pi_1, \pi_2, \ldots, \pi_n)\)</span> con <span class="math inline">\(\pi_i \neq i\ \forall i \in [1, \ldots, n]\)</span></p>
 <p>esempi:</p>
 <ul>
-<li>$ (2,1,4,5,3)$ è uno spiazzamento</li>
-<li>$ (4,1,,2,)$ <strong>non</strong> è uno spiazzamento (3 è nella 3a posizione, 5 è nella 5a posizione)</li>
+<li><span class="math inline">\((2,1,4,5,3)\)</span> è uno spiazzamento</li>
+<li><span class="math inline">\((4,1,\textbf{3},2,\textbf{5})\)</span> <strong>non</strong> è uno spiazzamento (3 è nella 3a posizione, 5 è nella 5a posizione)</li>
 </ul>
-<p><strong>numero di spiazzamenti $ z_n$</strong>:</p>
+<p><strong>numero di spiazzamenti <span class="math inline">\(z_n\)</span></strong>:</p>
 <ul>
-<li>$ n $<br>
-<span class="math display">\[ z_n = n! \cdot \left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \ldots + (-1)^n \frac{1}{n!}\right) \]</span></li>
+<li><span class="math inline">\(n \geq 1\)</span><br>
+<span class="math display">\[z_n = n! \cdot \left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \ldots + (-1)^n \frac{1}{n!}\right)\]</span></li>
 </ul>
-<p>approsimmazione: $ z_n $</p>
+<p>approsimmazione: <span class="math inline">\(z_n \approx \frac{n!}{e}\)</span></p>
 <p><strong>formule ricorsive</strong>:</p>
 <ul>
-<li>$ z_n = (n-1) (z_{n-1} + z_{n-2})$</li>
-<li>$ z_n = n z_{n-1} + (-1)^n$</li>
+<li><span class="math inline">\(z_n = (n-1) \cdot (z_{n-1} + z_{n-2})\)</span></li>
+<li><span class="math inline">\(z_n = n \cdot z_{n-1} + (-1)^n\)</span></li>
 </ul>
 </section>
 </section>
@@ -587,117 +577,194 @@ $ k $: tipologie di elementi</li>
 <h2 class="anchored" data-anchor-id="teoria-dei-grafi">Teoria dei Grafi</h2>
 <section id="grafi-non-orientati" class="level3">
 <h3 class="anchored" data-anchor-id="grafi-non-orientati">Grafi non orientati</h3>
-<p><strong>grafo non orientato</strong>: $ G = (V, E)$ con</p>
+<p><strong>grafo non orientato</strong>: <span class="math inline">\(G = (V, E)\)</span> con</p>
 <ul>
-<li>$ V$ insieme di vertici</li>
-<li>$ E$ insieme di archi (coppia non orientata di vertici)</li>
+<li><span class="math inline">\(V\)</span> insieme di vertici</li>
+<li><span class="math inline">\(E\)</span> insieme di archi (coppia non orientata di vertici)</li>
 </ul>
-<p><strong>vertici adiacenti</strong>: $ (i,j V) (ij = e E)$</p>
+<p><strong>vertici adiacenti</strong>: <span class="math inline">\((i,j \in V) \land (ij = e \in E)\)</span></p>
 <p><strong>archi adiacenti</strong>: condividono un vertice</p>
-<p><strong>grado di un vertice $ d(v)$</strong>: numero di archi incidenti in $ v$</p>
-<p><strong>grafo regolare</strong>: tutti i nodi hanno lo stesso grado ($ d(i) = d(j)&nbsp;i,j V$)</p>
+<p><strong>grado di un vertice <span class="math inline">\(d(v)\)</span></strong>: numero di archi incidenti in <span class="math inline">\(v\)</span></p>
+<p><strong>grafo regolare</strong>: tutti i nodi hanno lo stesso grado (<span class="math inline">\(d(i) = d(j)\ \forall i,j \in V\)</span>)</p>
 <ul>
-<li><strong>grafo k-regolare</strong>: tutti i nodi hanno grado $ k$ ($ d(i) = k)$</li>
+<li><strong>grafo k-regolare</strong>: tutti i nodi hanno grado <span class="math inline">\(k\)</span> (<span class="math inline">\(d(i) = k)\)</span></li>
 </ul>
-<p><strong>vertice isolato</strong>: ha grado 0 ($ d(v) = 0$)</p>
-<p><strong>Teorema somma dei gradi dei vertici</strong>: <span class="math display">\[\sum_{v \in V} d(v) = 2 \vert E \vert \]</span> sommatoria dei gradi dei vertici è il doppio della cardinalità degli archi</p>
-<pre class="mermaid"><code>graph LR 
-  A((A)) --- B((B))</code></pre>
-<p>$ E = 1, ; d(A) + d(B) = 1 + 1 = 2 $</p>
-<p><br></p>
-<pre class="mermaid"><code>graph LR
+<p><strong>vertice isolato</strong>: ha grado 0 (<span class="math inline">\(d(v) = 0\)</span>)</p>
+<p><strong>Teorema somma dei gradi dei vertici</strong>: <span class="math display">\[\sum_{v \in V} d(v) = 2 \vert E \vert\]</span> sommatoria dei gradi dei vertici è il doppio della cardinalità degli archi</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR 
   A((A)) --- B((B))
-  B((B)) --- C((C))</code></pre>
-<p>$ E = 2, ; d(A) + d(B) + d(C) = 1 + 2 + 1 = 4 $</p>
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(\vert E \vert = 1, \; d(A) + d(B) = 1 + 1 = 2\)</span></p>
+<p><br></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+  A((A)) --- B((B))
+  B((B)) --- C((C))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(\vert E \vert = 2, \; d(A) + d(B) + d(C) = 1 + 2 + 1 = 4\)</span></p>
 <p><strong>Teorema numero di vertici di grado dispari</strong>: in ogni grafo c’è un numero pari di vertici di grado dispari</p>
-<pre class="mermaid"><code>graph LR 
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR 
     A((1)) --- B((2))
     B((2)) --- C((..))
     C((..)) --- D((2))
-    D((2)) --- E((1))    </code></pre>
-<p>$ $ deve esserci un altro nodo di grado dispari, magari NON adiacente</p>
+    D((2)) --- E((1))    
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(\implies\)</span> deve esserci un altro nodo di grado dispari, magari NON adiacente</p>
 <p><br></p>
-<pre class="mermaid"><code>graph LR
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
     A((1)) --- B((3))
     B((3)) --- C((1))
-    B((3)) --- D((1))</code></pre>
-<p>$ v: d(v) = {a,b,c,d} = 4 $</p>
-<p><strong>Sequenza grafica</strong>: $ (d_1, , d_n)$ è una sequenza grafica se esiste un grafo $ G$ in cui $ d_1, , d_n$ corrisponde ai gradi di $ G$</p>
+    B((3)) --- D((1))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(\implies \vert v: d(v) \text{ dispari} \vert = \vert \{a,b,c,d\} \vert = 4\)</span></p>
+<p><strong>Sequenza grafica</strong>: <span class="math inline">\((d_1, \ldots, d_n)\)</span> è una sequenza grafica se esiste un grafo <span class="math inline">\(G\)</span> in cui <span class="math inline">\(d_1, \ldots, d_n\)</span> corrisponde ai gradi di <span class="math inline">\(G\)</span></p>
 <ul>
-<li>non ci può essere un numero $ n (d_i &lt; n)$</li>
-<li>non ci possono essere sia $ 0$ che $ n-1$</li>
+<li>non ci può essere un numero <span class="math inline">\(\geq n \implies (d_i &lt; n)\)</span></li>
+<li>non ci possono essere sia <span class="math inline">\(0\)</span> che <span class="math inline">\(n-1\)</span></li>
 <li>ci devono essere un numero pari di dispari</li>
-<li>$ _{i=1}^n d_i $ sommatoria notevole di gauss</li>
+<li><span class="math inline">\(\sum_{i=1}^n d_i \leq \frac{n(n-1)}{2}\)</span> sommatoria notevole di gauss</li>
 </ul>
 <p><strong>grafi isomorfi</strong>: quando è possibile rinominare i nodi di un grafo ottenendo l’altro grafo<br>
-presi $ G = (V, E), G’ = (V’, E’)$<br>
-$ f: V V’ f(v)f(w) E’ vw E$</p>
-<p><strong>sottografo</strong>: $ G’ = (V’, E’)$ è un sottografo di $ G = (V, E)$ se $ V’ V$ e $ E’ E$</p>
+presi <span class="math inline">\(G = (V, E), G' = (V', E')\)</span><br>
+<span class="math inline">\(\exists f: V \to V' \mid f(v)f(w) \in E' \iff vw \in E\)</span></p>
+<p><strong>sottografo</strong>: <span class="math inline">\(G' = (V', E')\)</span> è un sottografo di <span class="math inline">\(G = (V, E)\)</span> se <span class="math inline">\(V' \subseteq V\)</span> e <span class="math inline">\(E' \subseteq E\)</span></p>
 <p><strong>grafo di supporto (spanning)</strong>: tutti i vertici, sottoinsieme degli archi<br>
-$ G’ = (V’, E’)$ è un grafo di supporto di $ G = (V, E)$ se $ V’ = V$ e $ E’ E$</p>
+<span class="math inline">\(G' = (V', E')\)</span> è un grafo di supporto di <span class="math inline">\(G = (V, E)\)</span> se <span class="math inline">\(V' = V\)</span> e <span class="math inline">\(E' \subseteq E\)</span></p>
 <p><strong>sottografo indotto</strong>: scelto un sottoinsieme S dei nodi di un grafo, il grafo con gli archi di quei nodi<br>
-$ G_{[S]} = (S, E’)$ con $ S V$, è composto da $ ij E$ con $ i,j S$</p>
+<span class="math inline">\(G_{[S]} = (S, E')\)</span> con <span class="math inline">\(S \subseteq V\)</span>, è composto da <span class="math inline">\(ij \in E\)</span> con <span class="math inline">\(i,j \in S\)</span></p>
 <p><strong>grafo completo</strong>: ogni coppia di nodi è collegata da un arco</p>
 <ul>
-<li>Si indica con $ K_n$, con $ n$ vertici e $ E = $ lati</li>
+<li>Si indica con <span class="math inline">\(K_n\)</span>, con <span class="math inline">\(n\)</span> vertici e <span class="math inline">\(\vert E \vert = \frac{n(n-1)}{2}\)</span> lati</li>
 <li>Si chiama <strong>clique</strong> se è un sottografo</li>
 </ul>
 <p><strong>clique</strong>: sottografo completo. Insieme di elementi mutualmente compatibili</p>
-<p><strong>Grafo complementare</strong>: dato $ G = (V, E)$ si definisce con $ {G} = (V, {E})$ con $ {E} = {uw v,w V, vw E}$</p>
-<p><strong>Insieme indipendente (stabile) di vertici</strong>: dato $ S V,&nbsp;ij E&nbsp;i,j S$. Soltanto se il grafo indotto è una clique</p>
-<p><strong>Lati grafo completo $ n$ vertici</strong>: Sia $ G$ completo. $ V = n E = $</p>
-<p><strong>Cammino</strong>: sequenza di vertici $ v_0, v_1, , v_k$ per cui dato $ i (0, k-1)$ allora $ v_i v_{i+1} E$</p>
+<p><strong>Grafo complementare</strong>: dato <span class="math inline">\(G = (V, E)\)</span> si definisce con <span class="math inline">\(\bar{G} = (V, \bar{E})\)</span> con <span class="math inline">\(\bar{E} = \{uw \mid v,w \in V, vw \not\in E\}\)</span></p>
+<p><strong>Insieme indipendente (stabile) di vertici</strong>: dato <span class="math inline">\(S \subseteq V,\ ij \not\in E\ \forall i,j \in S\)</span>. Soltanto se il grafo indotto è una clique</p>
+<p><strong>Lati grafo completo <span class="math inline">\(n\)</span> vertici</strong>: Sia <span class="math inline">\(G\)</span> completo. <span class="math inline">\(\vert V \vert = n \implies \vert E \vert = \frac{n(n-1)}{2}\)</span></p>
+<p><strong>Cammino</strong>: sequenza di vertici <span class="math inline">\(v_0, v_1, \ldots, v_k\)</span> per cui dato <span class="math inline">\(i \in (0, k-1)\)</span> allora <span class="math inline">\(v_i v_{i+1} \in E\)</span></p>
 <p><strong>Distanza</strong>: lunghezza del cammino minimo tra due vertici</p>
 <p><strong>diametro</strong>: distanza massima tra due vertici</p>
-<p><strong>ciclo</strong>: cammino chiuso, $ v_0 = v_k$</p>
-<p><strong>circuito hamiltoniano</strong>: circuito elementare che attraversa tutti i nodi di $ G$</p>
-<p><strong>circuito euleriano</strong>: circuito semplice (senza lati ripetuti) che attraversa tutti i nodi di $ G$</p>
+<p><strong>ciclo</strong>: cammino chiuso, <span class="math inline">\(v_0 = v_k\)</span></p>
+<p><strong>circuito hamiltoniano</strong>: circuito elementare che attraversa tutti i nodi di <span class="math inline">\(G\)</span></p>
+<p><strong>circuito euleriano</strong>: circuito semplice (senza lati ripetuti) che attraversa tutti i nodi di <span class="math inline">\(G\)</span></p>
 <p><strong>grafo connesso</strong>: ogni coppia di vertici è connessa da un cammino</p>
 <p><strong>taglio</strong>: insieme di lati che se rimossi aumento il numero di componenti connesse</p>
-<p>Partendo da $ S $, posso definire taglio</p>
-<p><span class="math display">\[ \delta(S):= \{ij : i \in S,\ j \in V-S \} \]</span> taglio, esiste coppia di nodi adiacenti ($ V,V-S $)</p>
-<p><strong>circuito hamiltoniano (permutazione circolare)</strong>: permutazione in cui ogni vertice è preceduto / seguito da un vertice che gli è adiacente in $ G$</p>
+<p>Partendo da <span class="math inline">\(S\)</span>, posso definire taglio</p>
+<p><span class="math display">\[\delta(S):= \{ij : i \in S,\ j \in V-S \}\]</span> taglio, esiste coppia di nodi adiacenti (<span class="math inline">\(V,V-S\)</span>)</p>
+<p><strong>circuito hamiltoniano (permutazione circolare)</strong>: permutazione in cui ogni vertice è preceduto / seguito da un vertice che gli è adiacente in <span class="math inline">\(G\)</span></p>
 <p><strong>grafo hamiltoniano</strong>: contiene un circuito hamiltoniano</p>
-<p><strong>grafo bipartito</strong> nodi ripartiti in 2 insiemi $ v_1$ e $ v_2$ tale che ogni arco collega un estremo in $ v_1$ e uno in $ v_2$.<br>
-Si denota con $ G = (V_1, V_2, E)$</p>
-<p><strong>Teorema</strong>: $ G$ bipartito se e solo se ogni ciclo in $ G$ numero pari di nodi<br>
-<em>nota</em>: $ G$ può essere bipartito con $ V $ dispari, ma in tal caso non hamiltoniano per il teorema precedente</p>
-<p><strong>grafo bipartito completo</strong>: $ ij E i V_1&nbsp;j V_2$</p>
-<pre class="mermaid"><code>graph LR
+<p><strong>grafo bipartito</strong> nodi ripartiti in 2 insiemi <span class="math inline">\(v_1\)</span> e <span class="math inline">\(v_2\)</span> tale che ogni arco collega un estremo in <span class="math inline">\(v_1\)</span> e uno in <span class="math inline">\(v_2\)</span>.<br>
+Si denota con <span class="math inline">\(G = (V_1, V_2, E)\)</span></p>
+<p><strong>Teorema</strong>: <span class="math inline">\(G\)</span> bipartito se e solo se ogni ciclo in <span class="math inline">\(G\)</span> numero pari di nodi<br>
+<em>nota</em>: <span class="math inline">\(G\)</span> può essere bipartito con <span class="math inline">\(\vert V \vert\)</span> dispari, ma in tal caso non hamiltoniano per il teorema precedente</p>
+<p><strong>grafo bipartito completo</strong>: <span class="math inline">\(ij \in E \quad \forall i \in V_1\ \land \forall j \in V_2\)</span></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
     A((A)) --- D((D))
     A((A)) --- E((E))
     B((B)) --- D((D))
     B((B)) --- E((E))
     C((C)) --- D((D))
-    C((C)) --- E((E))</code></pre>
-<p><strong>Teorema</strong>: $ G = (V, E)$ con $ n $ vertici. Se $ d(v) + d(w) nv,w V $ allora è hamiltoniano</p>
-<p><strong>Corollario</strong>: $ v V d(v) G $</p>
+    C((C)) --- E((E))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>Teorema</strong>: <span class="math inline">\(G = (V, E)\)</span> con <span class="math inline">\(n \geq 3\)</span> vertici. Se <span class="math inline">\(d(v) + d(w) \geq n\quad \forall v,w \in V\)</span> allora è hamiltoniano</p>
+<p><strong>Corollario</strong>: <span class="math inline">\(\forall v \in V \quad d(v) \geq \frac{n}{2} \implies G \text{ è hamiltoniano}\)</span></p>
 <p><strong>grafo planare</strong>: può essere disegnato senza che 2 archi si intersechino</p>
 <p><strong>grafo minore</strong>: grafo ottenibile tramite <strong>contrazione di un arco</strong></p>
 <ul>
-<li><p><strong>contrazione di un arco</strong>: rimuovo arco $ ij$ e sostituisco con nodo $ e’$. Gli archi in $ i$ e $ j$ ora coincidono in $ e’$.</p>
-<pre class="mermaid"><code>graph LR
-    A((a)) --- I((i))
-    I((i)) -.- J((j)) 
-    J((j)) --- B((b))</code></pre>
-<pre class="mermaid"><code>graph LR
-    A((a)) --- E((e'))
-    E((e')) --- B((b)) </code></pre></li>
+<li><strong>contrazione di un arco</strong>: rimuovo arco <span class="math inline">\(ij\)</span> e sostituisco con nodo <span class="math inline">\(e'\)</span>. Gli archi in <span class="math inline">\(i\)</span> e <span class="math inline">\(j\)</span> ora coincidono in <span class="math inline">\(e'\)</span>.</li>
 </ul>
-<p><strong>Teorema</strong>: $ G$ planare se e solo se non ha $ k_5$ o $ k_{3,3}$ fra i suoi minori</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">  graph LR
+      A((a)) --- I((i))
+      I((i)) -.- J((j)) 
+      J((j)) --- B((b))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">  graph LR
+      A((a)) --- E((e'))
+      E((e')) --- B((b)) 
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>Teorema</strong>: <span class="math inline">\(G\)</span> planare se e solo se non ha <span class="math inline">\(k_5\)</span> o <span class="math inline">\(k_{3,3}\)</span> fra i suoi minori</p>
 <p><strong>grafo euleriano</strong>: grafo che contiene un circuito euleriano (non attraversa 2 volte lo stesso arco)</p>
-<p><strong>Teorema</strong>: $ G$ è euleriano $ d(v)$ è pari per ogni $ v V$</p>
+<p><strong>Teorema</strong>: <span class="math inline">\(G\)</span> è euleriano <span class="math inline">\(\iff d(v)\)</span> è pari per ogni <span class="math inline">\(v \in V\)</span></p>
 <p><strong>cammino euleriano</strong>: cammino che attraversa tutti gli archi una e una sola volta</p>
-<p><strong>Corollario</strong>: $ G$ connesso ha un cammino euleriano $ $ ha al più $ 2$ vertici di grado dispari</p>
+<p><strong>Corollario</strong>: <span class="math inline">\(G\)</span> connesso ha un cammino euleriano <span class="math inline">\(\iff\)</span> ha al più <span class="math inline">\(2\)</span> vertici di grado dispari</p>
 </section>
 <section id="alberi" class="level3">
 <h3 class="anchored" data-anchor-id="alberi">Alberi</h3>
 <p><strong>foresta</strong>: grafo <strong>aciclico</strong></p>
 <p><strong>albero</strong>: grafo <strong>aciclico</strong> e <strong>connesso</strong></p>
-<p><strong>proprietà albero</strong>: $ n$ nodi, $ n-1$ archi</p>
+<p><strong>proprietà albero</strong>: <span class="math inline">\(n\)</span> nodi, <span class="math inline">\(n-1\)</span> archi</p>
 <ul>
-<li>grafo con $ n $ nodi e $ E n-1$ non è aciclico</li>
-<li>grafo con $ n $ nodi e $ E n-1$ non è connesso</li>
+<li>grafo con <span class="math inline">\(n \geq 3\)</span> nodi e <span class="math inline">\(\vert E \vert \gt n-1\)</span> non è aciclico</li>
+<li>grafo con <span class="math inline">\(n \geq 3\)</span> nodi e <span class="math inline">\(\vert E \vert \lt n-1\)</span> non è connesso</li>
 </ul>
 <pre class="mermaid"><code>graph LR
 
@@ -721,39 +788,49 @@ G1 ~~~ G2 ~~~ G3</code></pre>
 <p><strong>proprietà albero</strong>:</p>
 <ol type="1">
 <li>connesso e aciclico (definizione)</li>
-<li>connesso e $ E = V $</li>
-<li>aciclico e $ E = V $</li>
-<li>connesso e $ i,j V$ esiste cammino $ ij$ ed è unico</li>
-<li>connesso e la rimozione di un qualsiasi arco sconnette $ G$</li>
-<li>aciciclico e $ i,j V : ij E$, se aggiungo l’arco $ ij$ diventa ciclico</li>
+<li>connesso e <span class="math inline">\(\vert E \vert = \vert V \vert -1\)</span></li>
+<li>aciclico e <span class="math inline">\(\vert E \vert = \vert V \vert -1\)</span></li>
+<li>connesso e <span class="math inline">\(\forall i,j \in V\)</span> esiste cammino <span class="math inline">\(ij\)</span> ed è unico</li>
+<li>connesso e la rimozione di un qualsiasi arco sconnette <span class="math inline">\(G\)</span></li>
+<li>aciciclico e <span class="math inline">\(\forall i,j \in V : ij \not\in E\)</span>, se aggiungo l’arco <span class="math inline">\(ij\)</span> diventa ciclico</li>
 </ol>
-<p><strong>foglia</strong>: se $ d(v) = 1$<br>
-<strong>nodo interno</strong>: se $ d(v) &gt; 1$</p>
+<p><strong>foglia</strong>: se <span class="math inline">\(d(v) = 1\)</span><br>
+<strong>nodo interno</strong>: se <span class="math inline">\(d(v) &gt; 1\)</span></p>
 <p><strong>albero di diametro massimo</strong>: cammino lineare</p>
 <pre class="mermaid"><code>graph LR
     A((A)) --- B((B))
     B((B)) --- C((C))
     C((C)) --- D((D))</code></pre>
 <p><strong>albero di diametro minimo</strong>: albero a stella (un solo nodo interno)</p>
-<pre class="mermaid"><code>graph LR
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
     A((A)) --- B((B))
     A((A)) --- C((C))
     D((D)) --- A((A))
-    E((E)) --- A((A))</code></pre>
-<p><strong>albero di supporto</strong>: $ T = (V, E_T)$ dati i vertici di un grafo e <strong>alcuni</strong> archi appartenti a $ E$, la rimozione di un arco sconnette $ T$</p>
-<p><strong>taglio fondamentale</strong>: dato arco $ e=ij$ e $ T$ albero di supporto, arco $ e$ individua due partizioni di nodi:</p>
+    E((E)) --- A((A))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>albero di supporto</strong>: <span class="math inline">\(T = (V, E_T)\)</span> dati i vertici di un grafo e <strong>alcuni</strong> archi appartenti a <span class="math inline">\(E\)</span>, la rimozione di un arco sconnette <span class="math inline">\(T\)</span></p>
+<p><strong>taglio fondamentale</strong>: dato arco <span class="math inline">\(e=ij\)</span> e <span class="math inline">\(T\)</span> albero di supporto, arco <span class="math inline">\(e\)</span> individua due partizioni di nodi:</p>
 <ul>
-<li>$ V_i$ : nodi raggiungibili da $ i$ senza passare per arco<br>
-$ e$)</li>
-<li>$ V_j = V - V_i$ : nodi raggiungibili da $ j$ senza passare per arco $ e$</li>
+<li><span class="math inline">\(V_i\)</span> : nodi raggiungibili da <span class="math inline">\(i\)</span> senza passare per arco <span class="math inline">\(e\)</span></li>
+<li><span class="math inline">\(V_j = V - V_i\)</span> : nodi raggiungibili da <span class="math inline">\(j\)</span> senza passare per arco <span class="math inline">\(e\)</span></li>
 </ul>
-<p><strong>circuito fondamentale associato ad $ a$ in $ T$</strong>: aggiungere a $ T$ l’arco $ a=ij E - E_T$ definisce circuito fondamentale da $ i$ a $ j$</p>
+<p><strong>circuito fondamentale associato ad <span class="math inline">\(a\)</span> in <span class="math inline">\(T\)</span></strong>: aggiungere a <span class="math inline">\(T\)</span> l’arco <span class="math inline">\(a=ij \in E - E_T\)</span> definisce circuito fondamentale da <span class="math inline">\(i\)</span> a <span class="math inline">\(j\)</span></p>
 <ul>
-<li>unico cammino da $ i$ a $ j$ in $ T$ + arco $ a = ij$</li>
+<li>unico cammino da <span class="math inline">\(i\)</span> a <span class="math inline">\(j\)</span> in <span class="math inline">\(T\)</span> + arco <span class="math inline">\(a = ij\)</span></li>
 </ul>
-<p><strong>Teorema</strong>: $ n$ nodi $ n^{n-2}$ alberi distinti.<br>
+<p><strong>Teorema</strong>: <span class="math inline">\(n\)</span> nodi <span class="math inline">\(\implies n^{n-2}\)</span> alberi distinti.<br>
 Inclusi isomorfi ma non identici: 3 nodi, 3 alberi. 3 nodi, 1 albero non isomorfo.</p>
-<p><strong>numero di alberi non isomorfi $ T_n$</strong>: <span class="math display">\[ \frac{n^{n-2}}{n!} \leq T_n \leq 4^{n-1}\]</span></p>
+<p><strong>numero di alberi non isomorfi <span class="math inline">\(T_n\)</span></strong>: <span class="math display">\[\frac{n^{n-2}}{n!} \leq T_n \leq 4^{n-1}\]</span></p>
 </section>
 <section id="indici-di-wiener" class="level3">
 <h3 class="anchored" data-anchor-id="indici-di-wiener">Indici di Wiener</h3>
@@ -764,60 +841,87 @@ Inclusi isomorfi ma non identici: 3 nodi, 3 alberi. 3 nodi, 1 albero non isomorf
 <li>valore alto: grafi sparsi, cammini lunghi</li>
 </ul>
 <p>Rappresenta la sommatoria di tutte le distanze tra i vertici</p>
-<pre class="mermaid"><code>graph LR
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
     A((1)) --- B((3))
     C((1)) --- B((3)) 
     B((3)) --- D((4))
     E((1)) --- D((4))
     D((4)) --- H((1))
     D((4)) --- F((2))
-    F((2)) --- G((1))</code></pre>
-<p><strong>Teorema</strong>: $ t , 5$ esiste un grafo $ G$ tale che $ W(G) = t$</p>
-<p><strong>Lemma</strong>: Per ogni $ G = (V, E)$ di diametro $ 2$, $ G’ = (V,E {e})$ per ogni $ e E$ <span class="math display">\[W(G') = W(G) - 2\]</span></p>
-<p><strong>calcolo indice di Wiener</strong>: dato $ T=(V,E)$, arco $ e=uv E$</p>
+    F((2)) --- G((1))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>Teorema</strong>: <span class="math inline">\(\forall t \neq 2, 5\)</span> esiste un grafo <span class="math inline">\(G\)</span> tale che <span class="math inline">\(W(G) = t\)</span></p>
+<p><strong>Lemma</strong>: Per ogni <span class="math inline">\(G = (V, E)\)</span> di diametro <span class="math inline">\(2\)</span>, <span class="math inline">\(G' = (V,E \cup \{e\})\)</span> per ogni <span class="math inline">\(e \not\in E\)</span> <span class="math display">\[W(G') = W(G) - 2\]</span></p>
+<p><strong>calcolo indice di Wiener</strong>: dato <span class="math inline">\(T=(V,E)\)</span>, arco <span class="math inline">\(e=uv \in E\)</span></p>
 <ul>
-<li><strong>carico arco</strong>: $ (e) = n_u n_v$<br>
-$ n_u, n_v (= V - n_u)$ sono numero di nodi delle componenti connesse indotte dal taglio di $ e$ in $ T$</li>
+<li><strong>carico arco</strong>: <span class="math inline">\(\lambda (e) = n_u \cdot n_v\)</span><br>
+<span class="math inline">\(n_u, n_v (= \vert V \vert - n_u)\)</span> sono numero di nodi delle componenti connesse indotte dal taglio di <span class="math inline">\(e\)</span> in <span class="math inline">\(T\)</span></li>
 </ul>
 <p><strong>formula calcolo indice di Wiener</strong>:<br>
-<span class="math display">\[ W(T) = \sum_{e \in E} \lambda (e)\]</span></p>
+<span class="math display">\[W(T) = \sum_{e \in E} \lambda (e)\]</span></p>
 <p>per ogni arco calcolo il <strong>prodotto</strong> tra il <strong>numero di nodi</strong> delle due <strong>componenti connesse</strong>, poi <strong>sommo</strong> tutti i prodotti</p>
-<p><strong>lemma</strong>: $ T=(V,E) V $ dispari $ W(T)$ pari</p>
-<pre class="mermaid"><code>graph LR
+<p><strong>lemma</strong>: <span class="math inline">\(T=(V,E) \quad \vert V \vert\)</span> dispari <span class="math inline">\(\implies W(T)\)</span> pari</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
     A((A)) --- B((B))
-    B((B)) --- C((C))</code></pre>
-<p>$ W(T) = (AB) + (BC) = 1^{{A}} ^{{B,C}} + 2^{{A,B}} ^{{C}} = 4$</p>
+    B((B)) --- C((C))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><span class="math inline">\(W(T) = \lambda (AB) + \lambda (BC) = 1^{\{A\}} \cdot 2^{\{B,C\}} + 2^{\{A,B\}} \cdot 1^{\{C\}} = 4\)</span></p>
 </section>
 <section id="grafi-orientati-diretto-digrafo" class="level3">
 <h3 class="anchored" data-anchor-id="grafi-orientati-diretto-digrafo">Grafi orientati (diretto, digrafo)</h3>
-<p>$ G=(N,A) N:{},&nbsp;A:{}$</p>
-<p><strong>arco</strong>: coppia orientata $ ij, i j$</p>
-<p>Dato un insieme di nodi $ S$:</p>
+<p><span class="math inline">\(G=(N,A) \quad N:\{\text{nodi}\},\ A:\{\text{archi}\}\)</span></p>
+<p><strong>arco</strong>: coppia orientata <span class="math inline">\(ij, i \neq j\)</span></p>
+<p>Dato un insieme di nodi <span class="math inline">\(S\)</span>:</p>
 <ul>
-<li><strong>insieme di archi uscenti</strong> $ ^+(S) := {ij A i S, j N-S}$</li>
-<li><strong>insieme di archi entranti</strong> $ ^-(S) := {ij A i N-S, j S}$</li>
+<li><strong>insieme di archi uscenti</strong> <span class="math inline">\(\delta^+(S) := \{ij \in A \mid i \in S, j \in N-S\}\)</span></li>
+<li><strong>insieme di archi entranti</strong> <span class="math inline">\(\delta^-(S) := \{ij \in A \mid i \in N-S, j \in S\}\)</span></li>
 </ul>
 <p>circuiti e cammini definiti analogamente ai grafi non orientati</p>
 <p><strong>grafo non orientato sottostante</strong>: grafo ottenuto rimuovendo orientazione degli archi</p>
-<p><strong>grafo debolmente connesso</strong>: per ogni coppia $ i,j$ esiste un cammino</p>
+<p><strong>grafo debolmente connesso</strong>: per ogni coppia <span class="math inline">\(i,j\)</span> esiste un cammino</p>
 <ul>
 <li>nota: grafo fortemente connesso se e solo se ogni coppia di nodi è contenuta in un circuito</li>
 </ul>
 <p><strong>albero orientato (arborescenza)</strong>: grafo orientato aciclico</p>
 <ul>
-<li>con <strong>radice</strong> nodo $ r$, in cui esiste ed è unico il cammino per ogni nodo</li>
-<li>$ d^-(r) = 0$ radice non ha archi entranti</li>
-<li>$ d^+(v) = 1$ un solo arco uscente per ogni nodo</li>
-<li>nelle <strong>foglie</strong> $ d^+(v) = 0$ nessun arco uscente</li>
+<li>con <strong>radice</strong> nodo <span class="math inline">\(r\)</span>, in cui esiste ed è unico il cammino per ogni nodo</li>
+<li><span class="math inline">\(d^-(r) = 0\)</span> radice non ha archi entranti</li>
+<li><span class="math inline">\(d^+(v) = 1\)</span> un solo arco uscente per ogni nodo</li>
+<li>nelle <strong>foglie</strong> <span class="math inline">\(d^+(v) = 0\)</span> nessun arco uscente</li>
 </ul>
-<p><strong>albero $ k$-ario</strong>: se ogni nodo NON foglia ha $ k$ archi uscenti $ d^+(v) = k$</p>
-<p>Dato un albero orientato $ T$ $ k$-ario</p>
+<p><strong>albero <span class="math inline">\(k\)</span>-ario</strong>: se ogni nodo NON foglia ha <span class="math inline">\(k\)</span> archi uscenti <span class="math inline">\(d^+(v) = k\)</span></p>
+<p>Dato un albero orientato <span class="math inline">\(T\)</span> <span class="math inline">\(k\)</span>-ario</p>
 <ul>
 <li><strong>livello nodo</strong>: lunghezza del cammino dalla radice al nodo</li>
 <li><strong>altezza</strong>: livello massimo di un qualsiasi nodo</li>
-<li><strong>numero di nodi</strong>: al più $ k^l$ nodi di livello $ l$</li>
+<li><strong>numero di nodi</strong>: al più <span class="math inline">\(k^l\)</span> nodi di livello <span class="math inline">\(l\)</span></li>
 </ul>
-<pre class="mermaid"><code>graph TD
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
     subgraph "Livello 0: 2^0 = 1 nodo"
       A((Radice))
     end
@@ -839,14 +943,20 @@ $ n_u, n_v (= V - n_u)$ sono numero di nodi delle componenti connesse indotte da
     B --- D
     B --- E
     C --- F
-    C --- G</code></pre>
+    C --- G
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="grafi-pesati" class="level3">
 <h3 class="anchored" data-anchor-id="grafi-pesati">Grafi pesati</h3>
-<p><strong>grafo pesato</strong>: $ G = (V,E,p)$ con $ p$ funzione $ p:E $ oppure $ p:V $<br>
-analogo se orientato $ G = (N,A,p)$</p>
-<p>$ p(e)/p(a)$: peso arco/lato<br>
-$ p(v)/p(n)$: peso vertice nodo</p>
+<p><strong>grafo pesato</strong>: <span class="math inline">\(G = (V,E,p)\)</span> con <span class="math inline">\(p\)</span> funzione <span class="math inline">\(p:E \rightarrow \mathbb{R}\)</span> oppure <span class="math inline">\(p:V \rightarrow \mathbb{R}\)</span><br>
+analogo se orientato <span class="math inline">\(G = (N,A,p)\)</span></p>
+<p><span class="math inline">\(p(e)/p(a)\)</span>: peso arco/lato<br>
+<span class="math inline">\(p(v)/p(n)\)</span>: peso vertice nodo</p>
 
 
 </section>
