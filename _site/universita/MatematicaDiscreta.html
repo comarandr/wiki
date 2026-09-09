@@ -74,6 +74,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="default">
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -317,12 +318,12 @@ window.Quarto = {
 <p><span class="math display">\[\sum_{k=1}^n a_k\ = a_1 + a_2 + \ldots + a_n\]</span></p>
 <section id="regole" class="level3">
 <h3 class="anchored" data-anchor-id="regole">Regole</h3>
-<p><span class="math inline">\(\sum_{k \in K}\ \textbf{c} \cdot a_k = \textbf{c} \cdot \sum_{k \in K}\ a_k\)</span></p>
-<p><span class="math inline">\(\sum_{k \in K}\ (a_k + b_k) = \sum_{k \in K}\ a_k + \sum_{k \in K}\ b_k\)</span></p>
-<p><span class="math inline">\(\sum_{k \in K}\ a_k = \sum_{\Pi (k) \in K}\ a_{\Pi(k)}\)</span></p>
-<p><span class="math inline">\(\sum_{k=1}^\textbf{m}\ a_k + \sum_{k = \textbf{m}}^n\ a_k = a_{\textbf{m}} + \sum_{k=1}^n\ a_k\)</span></p>
-<p><span class="math inline">\(\sum_{k \in K}\ a_k = \sum_{(k + c) \in K}\ a_{(k + c)}\)</span></p>
-<p><span class="math inline">\(\sum_{k = 1}^n\ a_k = \sum_{k = 1}^{\textbf{m}}\ a_k + \sum_{k = \textbf{m+1}}^n\ a_k\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k \in K}\ \textbf{c} \cdot a_k = \textbf{c} \cdot \sum_{k \in K}\ a_k\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k \in K}\ (a_k + b_k) = \sum_{k \in K}\ a_k + \sum_{k \in K}\ b_k\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k \in K}\ a_k = \sum_{\Pi (k) \in K}\ a_{\Pi(k)}\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k=1}^\textbf{m}\ a_k + \sum_{k = \textbf{m}}^n\ a_k = a_{\textbf{m}} + \sum_{k=1}^n\ a_k\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k \in K}\ a_k = \sum_{(k + c) \in K}\ a_{(k + c)}\)</span></p>
+<p><span class="math inline">\(\displaystyle \sum_{k = 1}^n\ a_k = \sum_{k = 1}^{\textbf{m}}\ a_k + \sum_{k = \textbf{m+1}}^n\ a_k\)</span></p>
 </section>
 <section id="somme-multiple" class="level3">
 <h3 class="anchored" data-anchor-id="somme-multiple">Somme multiple</h3>
@@ -770,7 +771,12 @@ Si denota con <span class="math inline">\(G = (V_1, V_2, E)\)</span></p>
 <li>grafo con <span class="math inline">\(n \geq 3\)</span> nodi e <span class="math inline">\(\vert E \vert \gt n-1\)</span> non è aciclico</li>
 <li>grafo con <span class="math inline">\(n \geq 3\)</span> nodi e <span class="math inline">\(\vert E \vert \lt n-1\)</span> non è connesso</li>
 </ul>
-<pre class="mermaid"><code>graph LR
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
 
 subgraph G1["&lt; n-1 archi"]
     A((A)) --- B((B))
@@ -788,7 +794,13 @@ subgraph G3["&gt; n-1 archi"]
     H((H)) --- I((I))
 end
 
-G1 ~~~ G2 ~~~ G3</code></pre>
+G1 ~~~ G2 ~~~ G3
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>proprietà albero</strong>:</p>
 <ol type="1">
 <li>connesso e aciclico (definizione)</li>
@@ -801,10 +813,21 @@ G1 ~~~ G2 ~~~ G3</code></pre>
 <p><strong>foglia</strong>: se <span class="math inline">\(d(v) = 1\)</span><br>
 <strong>nodo interno</strong>: se <span class="math inline">\(d(v) &gt; 1\)</span></p>
 <p><strong>albero di diametro massimo</strong>: cammino lineare</p>
-<pre class="mermaid"><code>graph LR
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
     A((A)) --- B((B))
     B((B)) --- C((C))
-    C((C)) --- D((D))</code></pre>
+    C((C)) --- D((D))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>albero di diametro minimo</strong>: albero a stella (un solo nodo interno)</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">

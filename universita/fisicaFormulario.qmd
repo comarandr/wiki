@@ -70,6 +70,8 @@ table td, table th {
 |:---:|:---:|:---|:---|
 | pressione | Pascal | $\text{Pa}$ | $1 \; \text{Pa} = 1 \; \frac{\text{N}}{\text{m}^2}$ |
 | densità | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ | - | - |
+| volume | metro cubo | $\text{m}^3$ | - |
+| volume | litro | $\text{L}$ | $1 \; \text{L} = 10^{-3} \; \text{m}^3$ |
 
 #### Termodinamica
 | Grandezza | Unità di misura | Simbolo | Formula |
@@ -110,12 +112,16 @@ table td, table th {
 | Descrizione | valore |
 |:---|:---|
 | Costante di Coulomb | $K = 8,99 \cdot 10^9 \frac{N m^2}{C^2}$ |
-| costante dialettrica nel vuoto | $\epsilon_0 = 8,854 \cdot 10^{-12} \frac{C^2}{N m^2}$ |
+| costante dielettrica nel vuoto | $\epsilon_0 = 8,854 \cdot 10^{-12} \frac{C^2}{N m^2}$ |
 | carica elementare | $e = 1,602 \cdot 10^{-19} C$ |
 | Costante di Boltzmann | $K_B = 1,38 \cdot 10^{-23} \frac{J}{K}$ |
 | Costante di Avogadro | $N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}$ |
 
+#### Sostanze e valori
 
+| Descrizione | valore |
+|:---|:---|
+| densità acqua | $d_{H_2O} = 1000 \frac{kg}{m^3}$ |
 
 ### Elementi di calcolo essenziale
 
@@ -136,6 +142,7 @@ table td, table th {
 | componente asse $r$ | $\displaystyle v_r = \vert \vec{v} \vert \cos{\alpha}$ |
 | modulo vettore | $\displaystyle \vert \vec{v} \vert= \sqrt{v_x^2 + v_y^2}$ |
 | somma tra vettori | regola del parallelogramma |
+| teorema del coseno | $\displaystyle c^2 = {a^2 + b^2 + 2 a b \cos{\alpha}}$ |
 | somma tra vettori (componenti) | $\displaystyle \begin{cases} v_{tot,x} = v_{1,x} + v_{2,x} \\ v_{tot,y} = v_{1,y} + v_{2,y} \end{cases}$ |
 | differenza tra vettori | regola del parallelogramma (altra diagonale) |
 | differenza tra vettori | $\displaystyle \begin{cases} v_{tot,x} = v_{1,x} - v_{2,x} \\ v_{tot,y} = v_{1,y} - v_{2,y} \end{cases}$ |
@@ -294,6 +301,8 @@ table td, table th {
 | forza sistema non inerziale | $\begin{aligned} F + F' &= m \cdot a_{NI} \\ F - m a_c &= m \cdot a_{NI} \end{aligned}$ | 
 
 : {.striped .hover}
+
+### Tensione
 
 ### Moto in campi di forze
 
@@ -691,6 +700,7 @@ concentrazione: grammoione/litro
 | Tensione del condensatore | $\displaystyle V = \frac{Q}{C}$ | $\text{V}$ |
 | potenziale circuito rc in serie in $t$ | $V_0 = V_R(t) + V_C(t)$ | $\text{V}$ |
 | Energia immagazzinata | $\displaystyle U = \frac{1}{2} C V^2 = \frac{1}{2} \frac{Q^2}{C}$ | $\text{J}$ |
+| tempo di carica | $\displaystyle \tau = RC$ | $\text{s}$ |
 
 : { .striped .hover}
 
@@ -719,6 +729,7 @@ concentrazione: grammoione/litro
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | flusso magnetico | $\displaystyle \Phi_B = \int_S \vec{B} d\vec{S} = \int_S BdS \cos ( \alpha )$ | $\text{Wb}$ |
+| flusso magnetico (superficie piana) | $\displaystyle \Phi_B = B S \cos ( \alpha )$ | $\text{Wb}$ |
 | corrente indotta (circuito chiuso) | $\displaystyle i = \frac{\Delta \Phi_B}{R \Delta t}$ | $\text{A}$ |
 | ddp indotta (circuito aperto) | $\displaystyle \Delta V = \frac{\Delta \Phi_B}{\Delta t}$ | $\text{V}$ |
 | Legge di Faraday-Neumann-Lenz | $\displaystyle \mathcal{E} = - \frac{d \Phi_B}{dt}$ | $\text{V}$ |
