@@ -412,11 +412,13 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | densità | $\displaystyle D = \frac{M}{V}$ | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ |
-| densità relativa | $\displaystyle d_r = \frac{d}{d_{H_2O}}$ | - |
+| densità relativa | $\displaystyle d_r = \frac{d}{d_{h2o}}$ | - |
 | pressione | $\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ | $\text{Pa}$ |
 | legge di Stevino | $\displaystyle p = p_0 + \rho g d$ | $\rho$: densità del fluido, $g$: accelerazione di gravità, $d$: profondità |
+| principio di Archimede | $\displaystyle \begin{aligned} F_{tot} &= F_P + S_A = \\ {\rho}_c g V - {\rho}_f g V &= ({\rho}_c - {\rho}_f) g V \end{aligned}$ |
+| Principio di archimede (condizione di galleggiamento) | $F_{ap} = F_{tot} - S_A$ |
 | forza di Archimede | $\displaystyle F_A = \rho g V$|
-| principio di Archimede | $\displaystyle \begin{aligned} F_{tot} &= F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V &= ({\rho}_c - {\rho}_f) g V \end{aligned}$ |
+| spinta di Archimede (acqua) | $\displaystyle S_A = \rho_{h2o} g V$ |
 | leve idrauliche | $\displaystyle p_1 = \frac{F_1}{S_1} = \frac{F_2}{S_2} = p_2$|
 | portata o flusso | $\displaystyle Q = \frac{S v \Delta t}{\Delta t} = S v$ | $\displaystyle \frac{\text{m}^3}{\text{s}}$ |
 
@@ -700,7 +702,7 @@ concentrazione: grammoione/litro
 | Tensione del condensatore | $\displaystyle V = \frac{Q}{C}$ | $\text{V}$ |
 | potenziale circuito rc in serie in $t$ | $V_0 = V_R(t) + V_C(t)$ | $\text{V}$ |
 | Energia immagazzinata | $\displaystyle U = \frac{1}{2} C V^2 = \frac{1}{2} \frac{Q^2}{C}$ | $\text{J}$ |
-| tempo di carica | $\displaystyle \tau = RC$ | $\text{s}$ |
+| tempo di carica/scarica | $\displaystyle \tau = RC$ | $\text{s}$ |
 
 : { .striped .hover}
 
