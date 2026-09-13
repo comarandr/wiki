@@ -79,7 +79,8 @@ table td, table th {
 | temperatura | kelvin | $\text{K}$| - |
 | quantità di materia | mole | $\text{mol}$| - |
 | Energia | Joule| $\text{J}$ | lavoro compiuto da forza di $1$ $N$ per spostamento di $1$ $m$|
-| Calore | Joule o Caloria | $\text{J}$ o $\text{cal}$ | $1 \; \text{cal} = 4,184 \; \text{J}$| 
+| Calore | Joule o Caloria | $\text{J}$ o $\text{cal}$ | $1 \; \text{cal} = 4,184 \; \text{J}$|
+| elettronVolt | $\text{eV}$ | - | $1 \; \text{eV} = 1,602 \cdot 10^{-19} \; \text{J}$ | 
 
 #### Elettricità e magnetismo
 | Grandezza | Unità di misura | Simbolo | Formula |
@@ -251,7 +252,7 @@ table td, table th {
 | Pulsazione | $\displaystyle \omega = 2 \pi f$ | $\displaystyle \frac{\text{rad}}{\text{s}}$ |
 | Frequenza | $\displaystyle f = \frac{1}{T}$ | $\displaystyle \frac{1}{\text{s}} = \text{Hz}$ |
 | Periodo | $\displaystyle T = \frac{1}{f}$ | $\text{s}$ |
-| Fase iniziale | $\displaystyle \phi$ | $\displaystyle \text{m}, \; \phi \in [0,A]$ |
+| Fase iniziale | $\displaystyle \phi$ | $\displaystyle \text{m o rad}, \; \phi \in [0,A]$ |
 
 : {.striped .hover}
 
@@ -262,8 +263,8 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | principio relatività galileiana | leggi invarianti nei sistemi di riferimento inerziali | - |
-| 1 principio (principio di inerzia) | $\sum \vec{F} = 0$ | - |
-| 2 principio | $F = m \cdot a, \quad m>0$ | Newton |
+| 1 principio (principio di inerzia) | $\sum \vec{F} = 0 \rightarrow \vec{v} = \text{costante}$ | - |
+| 2 principio | $\sum \vec{F} = m \cdot \vec{a}, \quad m>0$ | N |
 | 3 principio (principio di azione e reazione) | $\vec{F}_{12} = -\vec{F}_{21}$ | - |
 
 : {.striped .hover}
@@ -273,7 +274,7 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | quantità di moto | $p = m v$ | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}$ |
-| principio conservazione quantità di moto | $\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$ | - |
+| principio conservazione quantità di moto | $\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$ | sse $\sum \vec{F} = 0$ |
 | Forza media | $\displaystyle F = \frac{\Delta p}{\Delta t}$ | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
 
 : {.striped .hover}
@@ -282,7 +283,7 @@ table td, table th {
 
 | Descrizione | Formula matematica | Unità di misura |
 |:---|:---:|:---:|
-| forza peso | $F_p = -gm$ |
+| forza peso | $\vec{F_p} = m \vec{g} \implies F_p = - m g$ | $\text{N}$ |
 | forza gravitazionale tra 2 masse | $\displaystyle F_g = -G \frac{m_1 m_2}{r^2}(\frac{\vec{r}}{r})$ | $\text{N}$ |
 | forza gravitazionale terrestre | $\displaystyle F_g = -G \frac{M_T m}{r^2}(\frac{\vec{r}}{r})$ | $\text{N}$ |
 | peso | $F_p = m g$ | $\text{N }$ o $\text{ kg}_{\text{peso}}$ |
@@ -299,7 +300,8 @@ table td, table th {
 | forze totali | $F + F' = m \cdot a_{NI}$ | $\text{N}$ |
 | accelerazione | $a = a_{NI} + a_c$ | $a_{NI}$: accelerazione nel sistema non inerziale <br> $a_c$: accelerazione rispetto suolo |
 | forza non inerziale | $\displaystyle F' = - m a_c$ | $\text{N}$ |
-| forza centrifuga | $\displaystyle F_c = m \frac{v^2}{r}$ | $\text{N}$ |
+| forza centrifuga | $ F_{cf} = m \omega^2 r = m \frac{v^2}{r}$ | $\text{N}$ |
+| forza centripeta | $\displaystyle F_c = m \frac{v^2}{r}$ | $\text{N}$ |
 | forza sistema non inerziale | $\begin{aligned} F + F' &= m \cdot a_{NI} \\ F - m a_c &= m \cdot a_{NI} \end{aligned}$ | 
 
 : {.striped .hover}
@@ -311,9 +313,10 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Forza generica | $F = F(x,y,z)$ | $\text{N}$ |
-| Moto in un campo di forze nulle |
+| Moto in un campo di forze nulle | $\begin{cases} x(t) = x_0 + v_{0x} t \\ y(t) = y_0 + v_{0y} t \\ z(t) = z_0 + v_{0z} t \end{cases}$ |
 | Moto in un campo di forze elastiche | $F_x = -k x = m a_x$ |
-| Moto in un campo di forze uniforme |
+| Moto in un campo di forze uniforme (terra) | $\begin{cases} F_x = 0 \\ F_y = 0 \\ F_z = -m g \end{cases}$ |
+| Moto in un campo di forza uniforme | $\begin{cases} x(t) = x_0 + v_{0x} t \\ y = - \frac{1}{2} g t^2  + v_{0y} t + y_0 \end{cases}$ |
 
 : { .striped .hover}
 
@@ -321,8 +324,9 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Forza attrito statico | $F_s = \mu_{s} \cdot F_n$ | $\text{N}$ |
-| Forza attrito dinamico | $F_d = \mu_{d} \cdot F_n$ | $\text{N}$ |
+| Forza attrito statico | $F_s \leq \mu_{s} \cdot F_n$ | $\text{N}$ |
+| Massima forza attrito statico | $F_s = \mu_{s} \cdot F_n$ | $\text{N}$ |
+| Forza attrito dinamico radente| $F_d = \mu_{d} \cdot F_n$ | $\text{N}$ |
 
 : {.striped .hover}
 
@@ -330,11 +334,11 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Lavoro | $L = F \cdot s \cdot \cos(\alpha)$ | $\text{J}$ |
-| Energia cinetica | $T = \frac{1}{2} m v^2$ | $\text{J}$ |
-| Teorema energia cinetica | $\begin{aligned} L &= T, \\ T &= T_{fin} - T_{in} \end{aligned}$ | $\text{J}$|
-| Energia potenziale | $L_{AB} = U(A) - U(B) = - \Delta U$ | $\text{J}$|
-| Teorema conservazione energia meccanica | $\begin{aligned} \Delta T &= - \Delta U \\ U_1 + T_1 &= U_2 + T_2 =\text{costante} \end{aligned}$ | - |
+| Lavoro forza costante| $L = F \cdot s \cdot \cos(\alpha)$ | $\text{J}$ |
+| Energia cinetica | $K = \frac{1}{2} m v^2$ | $\text{J}$ |
+| Teorema energia cinetica | $\begin{aligned} L_{tot} &= \Delta K, \\ \Delta K &= K_{fin} - K_{in} \end{aligned}$ | $\text{J}$|
+| Energia potenziale conservativa | $L_{AB} = U(A) - U(B) = - \Delta U$ | $\text{J}$|
+| Teorema conservazione energia meccanica conservativa | $\begin{aligned} \Delta T &= - \Delta U \\ U_1 + T_1 &= U_2 + T_2 =\text{costante} \end{aligned}$ | - |
 
 : { .striped .hover}
 
@@ -342,8 +346,9 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
+| urto elastico | $\begin{cases} m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f} \\ \frac{1}{2} m_1 {v_{1i}}^2 + \frac{1}{2} m_2 {v_{2i}}^2 = \frac{1}{2} m_1 {v_{1f}}^2 + \frac{1}{2} m_2 {v_{2f}}^2 \end{cases}$ | $\text{kg}\cdot\text{m}/\text{s}$, $\text{J}$ |
 | Urti elastici | $m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f}$ | $\text{kg}\cdot\text{m}/\text{s}$, $\text{J}$ |
-| Urti anelastici | $m_1 v_{1i} + m_2 v_{2i} = (m_1 + m_2) v_f$ | $\text{kg}\cdot\text{m}/\text{s}$, $\text{J}$ |
+| Urti perfettamente anelastici | $m_1 v_{1i} + m_2 v_{2i} = (m_1 + m_2) v_f$ | $\text{kg}\cdot\text{m}/\text{s}$, $\text{J}$ |
 
 : { .striped .hover}
 
@@ -351,8 +356,8 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| potenza | $\displaystyle W = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}$ | $\displaystyle \text{W} = \frac{\text{J}}{\text{s}}$ |
-| rendimento | $\displaystyle \eta = \frac{L}{E_t}$ | - |
+| potenza | $\displaystyle P = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}$ | $\displaystyle \text{W} = \frac{\text{J}}{\text{s}}$ |
+| rendimento | $\displaystyle {\eta = \frac{L}{E_t} = \frac{\text{Lavoro utile}}{\text{Lavoro fornito}} = \frac{\text{Potenza utile}}{\text{Potenza fornita}}}$ | - |
 
 ## Statica
 
@@ -362,13 +367,14 @@ table td, table th {
 |:---|:---:|:---:|
 | equazione punto materiale | $\displaystyle \sum_{i}{\vec{F_i} = 0}$ | - |
 | centro di massa | $\displaystyle {R_{CM} = \frac{\sum_{i}{m_i \vec{r_i}}}{M} = \frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}}$ | - |
-| baricentro (centro di gravità)| $\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}$ | - |
+| baricentro (centro di gravità)| $\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg} = \frac{\sum_{i}{m_i g_i \vec{r}_i \vec{r}}}{\sum_{i}{m_i g_i}}$ | - |
 | equivalenza se $g$ uguale per ogni punto | $R_B = R_{CM}$ | - |
-| momento di una forza | $\vec{M}= \vec{r} \wedge \vec{F}$ | $\text{N}\cdot\text{m}$ |
+| momento di una forza | $\vec{M}= \vec{r} \wedge \vec{F} \implies \vec{\tau} = \vec{r} \times \vec{F}$ | $\text{N}\cdot\text{m}$ |
 | modulo momento | $M = r F \sin{(\phi)}$ | $\text{N}\cdot\text{m}$ |
 | momento vettore | $\vec{M} = r \sin{(\phi)}$ | $\text{N}\cdot\text{m}$ |
 | momento angolare corpo | $\displaystyle \vec{L_{tot}} = \sum_{i}{m_i \vec{r_i} \wedge \vec{v_i}}$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
-| momento angolare massa attorno a un asse | $\displaystyle M = mvr$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
+| momento angolare massa attorno a un asse | $\vec{L} = \vec{r} \times \vec{p}$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
+| momento angolare massa attorno a un asse | $\displaystyle L = mvr \quad \vec{r} \perp \vec{v}$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
 | momento angolare corpo esteso | $\displaystyle L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega$ | $\text{kg}\cdot\text{m}^2/\text{s}$ |
 | momento di inerzia del corpo | $\displaystyle I = \sum_{i}{m_i r_i^2}$ | $\text{kg}\cdot\text{m}^2$ |
 | Equilibrio del corpo esteso | $\displaystyle \begin{aligned} \vec{F}_{tot}^{ext} &= \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} &= \sum_{i}{\vec{M}_{i}} = 0 \end{aligned}$ |
@@ -380,7 +386,7 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Reazione vincolare | $\displaystyle \vec{R} = - \sum_{i}{\vec{F_i}}$ | $\text{N}$ |
-| equilibrio corpo ext. vinc. in un punto (equilibrio rotazionale) | $\displaystyle \sum_{i}{\vec{M_i}} = 0$ | $\text{N}$ |
+| equilibrio corpo ext. vinc. in un punto (equilibrio rotazionale) | $\displaystyle \sum_{i}{\vec{M_i}} = 0$ | $\text{N} \cdot \text{m}$ |
 | eq. corpo ext. ruota attorno a un asse $z$ (somma componenti asse $Z$ momenti)| $\displaystyle \sum_{i}{\vec{M_{i,}z}} = \sum_{i}{\vec{M_{i}} \cdot \hat{z}} = 0$ | $\text{N}\cdot\text{m}$ |
 
 : { .striped .hover}
@@ -394,7 +400,7 @@ table td, table th {
 | I tipo | $G < 1 \vee G > 1$ | fulcro intermedio|
 | II tipo | $G > 1$ | R intermedio |
 | III tipo | $G < 1$ | M intermedio |
-| principio delle leve idrauliche | $\displaystyle \frac{F_1}{S_1} = \frac{F_2}{S_2}$ | - |
+| principio delle leve idrauliche (Pascal) | $\displaystyle \frac{F_1}{S_1} = \frac{F_2}{S_2}$ | - |
 
 : { .striped .hover}
 
@@ -405,7 +411,7 @@ table td, table th {
 | Legge di Hooke (deformazione)| $\displaystyle \frac{F}{A} = E \frac{\Delta l}{l}$ |
 | Stress | $\displaystyle \sigma = \frac{F}{A}$ | $\text{Pa}$ |
 | Stiramento (strain) | $\displaystyle \varepsilon = \frac{\Delta l}{l}$ | - |
-| Modulo di Young | $E$ | dipende dal materiale |
+| Modulo di Young (rigidità dipende dal materiale) | $E = \frac{\sigma}{\varepsilon}$ | $\text{Pa}$ |
 
 : { .striped .hover}
 
@@ -413,11 +419,11 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| densità | $\displaystyle D = \frac{M}{V}$ | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ |
+| densità | $\displaystyle D = \rho = \frac{M}{V}$ | $\displaystyle \frac{\text{kg}}{\text{m}^3}$ |
 | densità relativa | $\displaystyle d_r = \frac{d}{d_{h2o}}$ | - |
-| pressione | $\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}$ | $\text{Pa}$ |
+| pressione | $\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S} = \frac{F_N}{A}$ | $\text{Pa}$ |
 | legge di Stevino | $\displaystyle p = p_0 + \rho g d$ | $\rho$: densità del fluido, $g$: accelerazione di gravità, $d$: profondità |
-| principio di Archimede | $\displaystyle \begin{aligned} F_{tot} &= F_P + S_A = \\ {\rho}_c g V - {\rho}_f g V &= ({\rho}_c - {\rho}_f) g V \end{aligned}$ |
+| principio di Archimede (ris. verticale) | $\displaystyle \begin{aligned} F_{tot} &= F_P + S_A = \\ {\rho}_c g V - {\rho}_f g V &= ({\rho}_c - {\rho}_f) g V \end{aligned}$ |
 | Principio di archimede (condizione di galleggiamento) | $F_{ap} = F_{tot} - S_A$ |
 | forza di Archimede | $\displaystyle F_A = \rho g V$|
 | spinta di Archimede (acqua) | $\displaystyle S_A = \rho_{h2o} g V$ |
@@ -472,7 +478,7 @@ table td, table th {
 | Principio 0 della termodinamica | $a,b$ in eq. termico con $c$ $\rightarrow$ $a$ in equilibrio termico con $b$ | - |
 | Calore | $\Delta Q = C \Delta T$ | $\text{J}$ |
 | capacità termica | $\displaystyle C = \frac{\Delta Q}{\Delta T}$ | $\displaystyle \frac{\text{J}}{\text{K}}$ |
-| quantità di calore ceduta | $\Delta Q = c \cdot m \cdot \Delta T$ | $\displaystyle \frac{\text{J}}{\text{K}}$ |
+| quantità di calore ceduta | $\Delta Q = Q = c \cdot m \cdot \Delta T$ | $\text{J}$ |
 
 : { .striped .hover}
 
@@ -480,9 +486,10 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| conduzione | $\displaystyle \frac{dQ}{dt} = -k A \frac{dT}{dx}$ | $\text{W}$ |
+| conduzione (unidimensionale) | $\displaystyle \frac{dQ}{dt} = -k A \frac{dT}{dx}$ | $\text{W}$ |
 | convezione | $\displaystyle \frac{dQ}{dt} = h A (T_s - T_f)$ | $\text{W}$ |
 | irraggiamento (Stefan-Boltzmann) | $P = \epsilon A \sigma T^4$ | $\text{W}$ |
+| irraggiamento (ambiente) | $P = \epsilon A \sigma (T^4 - T_{\text{amb}}^4)$ | $\text{W}$ |
 
 : { .striped .hover}
 
@@ -492,7 +499,9 @@ table td, table th {
 |:---|:---:|:---:|
 | formula gas ideali | $p \cdot V = C_{BM}(T)$| $C_{BM}(T)$: costante dipende dalla temperatura |
 | leggi di Charles / Gay-Lussac | $\begin{aligned} V &= V_0 (1 + \alpha T_c) \\ p &= p_0(1+ \beta T_c) \end{aligned}$ | $V_0$, $p_0$: a 0°C $\; \alpha$, $\beta$: coefficienti |
-| costanti | $\alpha = \beta = \frac{1}{273,15}$ | - |
+| costanti | $\alpha = \beta = \frac{1}{273,15}$ | - ($K^{-1}$) |
+| Charles/Gay-Lussac pressione costante | $\displaystyle \frac{V_1}{T_1} = \frac{V_2}{T_2} = \text{costante}$ | - |
+| Charles/Gay-Lussac volume costante | $\displaystyle \frac{p_1}{T_1} = \frac{p_2}{T_2} = \text{costante}$ | - |
 | principio di Avogadro | $V = C" \cdot n \quad$ T,P costanti |
 | legge dei gas perfetti | $pV = nRT$ | - |
 | R: costante universale dei gas | $\displaystyle R = \frac{pV}{nT}$ | $R = 8,314 \frac{\text{J}}{\text{mol K}}$ oppure <br> $R = 0,0821 \frac{\text{L} \cdot \text{atm}}{\text{mol K}}$ |
@@ -503,13 +512,16 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| energia cinetica media particella | $\displaystyle E_c = \frac{3}{2} RT$| $\text{J}$ |
-| radice velocità quadratica media | $\displaystyle v_{rms} = \sqrt{\frac{3RT}{M}}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| energia cinetica media mole | $\displaystyle E_c = \frac{3}{2} RT$| $\text{J}$ |
+| energia cinetica media particella | $\displaystyle E_c = \frac{3}{2} k_B T$ | $\text{J}$ |
+| radice velocità quadratica media | $\displaystyle v_{rms} = \sqrt{\frac{3RT}{M}} \qquad \text{M = massa molare kg/mol}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
 | equazione di van der Waals (gas reali)| $\displaystyle \left(p + \frac{a}{V^2}\right)(V - b) = RT$ | - |
+| van der Waals (generale) | $\displaystyle \left(p + \frac{a n^2}{V^2}\right)(V - nb) = nRT$ | - |
 | legge di dalton | $p_{tot} = p_1 + \ldots + p_n$ | $\text{Pa}$ |
 | frazione molecolare | $\displaystyle x_i = \frac{n_i}{n_{tot}}$ | - |
 | concentrazione molare | $\displaystyle c_i = \frac{n_i}{V}$ | $\displaystyle \frac{\text{mol}}{\text{L}}$ |
-| legge di dalton per le miscele | $\displaystyle p = \sum_{i} p_i = \sum_{i} c_i R T \cdot 10^3$ | $\text{Pa}$ | 
+| legge di dalton per le miscele | $\displaystyle p = \sum_{i} p_i = \sum_{i} c_i R T \cdot 10^3$ | $\text{Pa}$ |
+| legge di dalton | $p_i = x_i p_{tot}$ | $\text{Pa}$ | 
 | umidità relativa | ${\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100}$ |
 
 : { .striped .hover}
@@ -529,9 +541,12 @@ table td, table th {
 | lavoro processo irreversibile (2 fasi) | $\Delta W = - (P_m \Delta V_1 + P_f \Delta V_2)$ | - |
 | lavoro processo reversibile | $\Delta W = \sum_{n} - P \partial V_n$ | - |
 | trasformazione isotermica (Temperatura costante) | $\Delta Q = - \Delta W$| - |
+| isoterma (gas ideale) | $\Delta W = - nRT \log{\frac{V_2}{V_1}}$ | - |
 | isocora (volume costante) | $\Delta E = \Delta Q = n \cdot C_v \Delta T$ | - |
 | isobara (P costante) | $\Delta Q_P = \left(E_2 + P V_2 \right) - \left(E_1 + P V_1 \right) = \Delta H$ | - |
+| isobara (gas ideale) | $\Delta H = n C_p \Delta T$ | - |
 | adiabatica (no scambio di calore) | $\Delta E = n \cdot C_v \Delta T$| - |
+| adiabatica (no scambio di calore) | $\displaystyle \Delta E = - \Delta W$ | - |
 | Entalpia | $H = E + PV$ | funzione di stato, misura energia interna + lavoro espansione |
 | Legge di Hess | ${\Delta H_{AD} = \Delta H_{AB} + \Delta H_{BC} + \Delta H_{CD}}$ | variazione totale uguale alla somma delle singole variazioni |
 | Equilibrio termico | $c_1 m_1 (T - T_1) = c_2 m_2 (T_2 - T)$ | - |
@@ -560,10 +575,12 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Trasformazioni isoterme | $\displaystyle \Delta S = \frac{\Delta Q}{T}$ |
-| trasformazioni adiabatiche | $\displaystyle \Delta S = 0$ |
-| trasformazioni isobare ($C_p$ costante) | $\displaystyle \Delta S = C_P \log{\frac{T_2}{T_1}}$ |
-| trasformazioni isocore ($C_V$ costante) | $\displaystyle \Delta S = C_V \log{\frac{T_2}{T_1}}$ |
+| Trasformazioni isoterme (calore reversibile a T costante) | $\displaystyle \Delta S = \frac{\Delta Q}{T}$ |
+| trasformazione isoterma gas ideale | $\displaystyle \Delta S = n R \log{\frac{V_2}{V_1}}$ |
+| trasformazioni adiabatiche reversibile | $\displaystyle \Delta S = 0$ |
+| trasformazioni adiabatiche irreversibile | $\displaystyle \Delta S > 0$ |
+| trasformazioni isobare ($C_p$ costante) | $\displaystyle \Delta S = C_P \log{\frac{T_2}{T_1}}$ | in caso moltiplicato per $n$ moli|
+| trasformazioni isocore ($C_V$ costante) | $\displaystyle \Delta S = C_V \log{\frac{T_2}{T_1}}$ | in caso moltiplicato per $n$ moli|
 | transizioni di fase (p e T costanti) | $\displaystyle \Delta S_{tr} = \frac{\Delta H_{tr}}{T}$ |
 
 : { .striped .hover}
@@ -590,7 +607,7 @@ table td, table th {
 | Forza tra $q$ e $Q$ | $\displaystyle \vec{F} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Qq}{r^2} (\frac{\vec{r}}{r})$| $\text{N}$ |
 | Campo elettrico tra $q$ e $Q$ | $\displaystyle{\vec{E} = \frac{\vec{F}}{q} = \frac{1}{4 \pi {\epsilon}_0 {\epsilon}} \frac{Q}{r^2} (\frac{\vec{r}}{r})}$| $\displaystyle {\frac{\text{N}}{\text{C}}}$ |
 | Energia potenziale di $q$ in campo di $Q$ | $\displaystyle U(\vec{r}) = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{qQ}{r})$| $\text{J}$ |
-| Potenziale elettrostatico | $\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{Q}{r})}$| $\displaystyle V = 1 \frac{J}{C}$ |
+| Potenziale elettrostatico | $\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{Q}{r})}$| $\displaystyle V = \frac{J}{C}$ |
 | Differenza potenziale | $\Delta V_{AB} = V_B - V_A$|
 | Lavoro A &rarr; B campo radiale | $\displaystyle L_{AB} = \frac{Qq}{4 \pi {\epsilon}_0 \epsilon} (\frac{1}{r_A} - \frac{1}{r_B})$| $\text{J}$ |
 
@@ -613,16 +630,16 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Capacità elettrica condensatore | $\displaystyle C = \frac{Q}{\Delta V}$| $\text{F}$ |
-| differenza di potenziale | $\displaystyle {\Delta V = \frac{L}{q} = Q \frac{d}{S} \frac{1}{\epsilon_0 \epsilon_r}}$ | $\text{V}$ |
+| differenza di potenziale | $\displaystyle {\Delta V = \frac{L}{q} = Q \frac{d}{S} \frac{1}{\epsilon_0 \epsilon_r} = Ed}$ | $\text{V}$ |
 | Capacità condensatore | $\displaystyle C = {\epsilon}_0 {\epsilon}_r \frac{S}{d}$ | $\text{F}$ |
 | Capacità condensatore cilindrico | $\displaystyle C ={\epsilon}_0 {\epsilon}_r \frac{2 \pi r l}{d}$| $F$ |
 | differenza di potenziale condensatori in serie | $\displaystyle {\Delta V = \Delta V_1 + \Delta V_2 = Q ( \frac{1}{C_1} + \frac{1}{C_2})}$ | $V$ |
 | Capacità condensatori in serie | $\displaystyle \frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$ | $F$ |
 | differenza di potenziale condensatori in parallelo | $\displaystyle {\Delta V = \Delta V_1 = \Delta V_2}$ | $V$ |
 | Capacità condensatori in parallelo | $\displaystyle C = C_1 + C_2$ | $F$ |
-| Energia condensatore carico (lavoro per caricarlo) | $\displaystyle L = \frac{1}{2} C V^2$ | $J$ |
+| Energia condensatore carico (lavoro per caricarlo) | $\displaystyle L = \frac{1}{2} C V^2 = \frac{1}{2}QV$ | $J$ |
 | dal teorema di Gauss | $\displaystyle ES = \frac{\sigma S}{\epsilon_0 \epsilon_r}$ | $V \cdot m$ |
-| dal teorema di Gauss | $\displaystyle E = \frac{\sigma}{\epsilon_0 \epsilon_r}$ | $V \cdot m$ |
+| dal teorema di Gauss | $\displaystyle E = \frac{\sigma}{\epsilon_0 \epsilon_r}$ | $\displaystyle \frac{N}{C} = \frac{V}{m}$ |
 
 : { .striped .hover}
 
@@ -630,13 +647,13 @@ table td, table th {
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Intensità di corrente | $\displaystyle i = \frac{\Delta q}{\Delta t}$ | $\text{A}$ |
-| Densità di corrente | $\displaystyle {J = \frac{\Delta q}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}}$ | $\text{A}/\text{m}^2$ |
+| Intensità di corrente media | $\displaystyle i = \frac{\Delta q}{\Delta t}$ | $\text{A}$ |
+| Densità di corrente | $\displaystyle {J = \frac{\Delta q}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S} = \frac{I}{A}}$ | $\text{A}/\text{m}^2$ |
 | Legge di Ohm | $\vec{J} = \sigma \vec{E}$ | $\text{A}/\text{m}^2$ |
-| conducibilità elettrica | $\sigma$ | $\displaystyle \frac{C^2}{s m}$ |
+| conducibilità elettrica | $\sigma$ | $\displaystyle \frac{C^2}{s m} = \frac{\text{S}}{\text{m}}$ |
 | I Legge di Ohm (Intensità di corrente) | $\displaystyle I = \frac{V}{R}$ | $\text{A}$|
-| II Legge di Ohm (Resistenza elettrica) | $\displaystyle R = \rho \frac{l}{S}$ | $\Omega = V A$ |
-| Resistenza specifica o resistività | $\displaystyle \rho = \frac{1}{\sigma}$ |
+| II Legge di Ohm (Resistenza elettrica) | $\displaystyle R = \rho \frac{l}{S}$ | $\displaystyle \Omega = \frac{V}{A}$ |
+| Resistenza specifica o resistività | $\displaystyle \rho = \frac{1}{\sigma}$ | $ \Omega \cdot \text{m}$ |
 
 : { .striped .hover}
 
@@ -647,12 +664,12 @@ table td, table th {
 
 per semplicità possiamo porre $z_a = z_b = z = 1$, indicando gli ioni con $a^+$ e $b^-$
 
-Forza sottoposti ioni: $ZeE$
+Forza sottoposti ioni: $\vec{F} = q\vec{E} = Ze\vec{E}$
 Forza di attrito: $F_A=-fv$ (proporzionale alla velocità)
 
 equilibrio: $F = F + F_A = ZeE - fv = 0$
 
-velocità trascinamento $v = \frac{ZeE}{f} = \mu E$
+velocità trascinamento (attrito lineare) $v = \frac{ZeE}{f} = \mu E$, $f$ coefficiente di attrito, $\mu = \frac{Ze}{f}$ mobilità ionica
 
 concentrazione: grammoione/litro 
 
@@ -667,8 +684,8 @@ concentrazione: grammoione/litro
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | Forza elettromotrice (lavoro) | $\displaystyle fem = f = ddp$ | $V$ |
-| Lavoro generatore aperto (non eroga corrente) | $\displaystyle f = V_A - V_B$ | $V$ |
-| Lavoro generatore chiuso (eroga corrente) | $\displaystyle V_A - V_B = f - r l = R I$ | $V$ |
+| Lavoro generatore aperto (non eroga corrente) | $\displaystyle f = V_A - V_B = V$ | $V$ |
+| Lavoro generatore chiuso (eroga corrente) | $\displaystyle V_A - V_B = f - r I = R I$ | $V$, $r$: resistenza interna, $R$: resistenza esterna |
 | Differenza di potenziale | $\displaystyle \Delta V  = f \frac{R}{R + r}$ | $V$ |
 
 : { .striped .hover}
@@ -678,8 +695,9 @@ concentrazione: grammoione/litro
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | I principio di Kirchhoff (corrente nodo) | $\displaystyle \sum_{i=1}^{n} i_i = 0$ | $\text{A}$ |
+| II principio di Kirchhoff (generale) | $\displaystyle \sum_{maglia} \Delta V = 0$ | $\text{V}$ |
 | II principio di Kirchhoff (corrente maglia) con generatore | $\displaystyle R_1 I_1 + R_2 I_2 = \Delta V$ | $\text{V}$ |
-| II principio di Kirchhoff (corrente maglia) senza generatore | $\displaystyle {R_3 I_3 + R_4 I_4 - R_2 I_2 = 0}$ | $\text{V}¢$ |
+| II principio di Kirchhoff (corrente maglia) senza generatore | $\displaystyle {R_3 I_3 + R_4 I_4 - R_2 I_2 = 0}$ | $\text{V}$ |
 | Resistenze in serie | $\displaystyle R_{tot} = R_1 + R_2$ | $\Omega$ |
 | Resistenze in parallelo | $\displaystyle {\frac{1}{R_{tot}} = \frac{I}{V_A - V_B} = \frac{1}{R_1} + \frac{1}{R_2}}$ | $\Omega$ |
 
@@ -689,10 +707,10 @@ concentrazione: grammoione/litro
 
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
-| Lavoro (ddp / corrente costanti) | $\displaystyle L = I \cdot \Delta t \cdot \Delta V$ | $\text{J}$ |
+| Lavoro ($\Delta V$ / $I$ costanti) | $\displaystyle L = I \cdot \Delta t \cdot \Delta V$ | $\text{J}$ |
 | Potenza nel circuito | $\displaystyle W = \frac{L}{\Delta t} = I \cdot \Delta V$ | $\text{W}$ |
 | Potenza dissipata | $\displaystyle W = I^2 R = \frac{V^2}{R}$ | $\text{W}$ |
-| calore dissipato | $\displaystyle Q(J) = W \Delta t = \frac{V^2}{R} \Delta t$ | $\text{J}$ , $\text{cal}$ |
+| calore dissipato | $\displaystyle Q(J) = P \Delta t = \frac{V^2}{R} \Delta t$ | $\text{J}$ , $\text{cal}$ |
 
 : { .striped .hover}
 
@@ -717,14 +735,15 @@ concentrazione: grammoione/litro
 | Forza tra 2 conduttori filiformi paralleli | $\displaystyle F = \frac{\mu_0}{2 \pi} \frac{I_1 I_2 \Delta l}{d}$ | $\text{N}$ |
 | campo magnetico generato da un conduttore filiforme (Biot-Savart) | $\displaystyle B = \frac{\mu}{2 \pi} \frac{I}{d}$ | $\displaystyle \frac{\text{N}}{\text{A m}}$ |
 | Forza sul campo magnetostatico | $\displaystyle F = B I_2 \Delta l$ | $\text{N}$ |
-| Forza agente su tratto di filo $\Delta l$ | $\displaystyle \vec{F} = I \Delta l \wedge \vec{B}$ | $\text{N}$ |
-| Forza di Lorentz su $q$ con velocità $v$ | $\displaystyle \vec{F} = q \vec{v} \wedge \vec{B}$ | $\text{N}$ |
+| Forza agente su tratto di filo $\Delta l$ | $\displaystyle \vec{F} = I \Delta l \times \vec{B}$ | $\text{N}$ |
+| Forza di Lorentz su $q$ con velocità $v$ | $\displaystyle \vec{F} = q \vec{v} \times \vec{B}$ | $\text{N}$ |
+| Forza di Lorentz completa | $\vec{F} = q \left( \vec{E} + \vec{v} \times \vec{B} \right)$ | $\text{N}$ |
 | campo magnetico di una spira attraversata da corrente $I$ (al centro) | $\displaystyle B = \frac{\mu I}{2 r}$ | $\displaystyle \frac{\text{N}}{\text{A m}}$ |
-| $n$ spire percorse da corrente $I$ (interno) con lunghezza $L$ | $\displaystyle B = \frac{\mu n I}{L}$ | $\displaystyle \frac{\text{N}}{\text{A m}}$ |
+| $N$ spire percorse da corrente $I$ (interno) con lunghezza $L$ (solenoide) | $\displaystyle B = \frac{\mu N I}{L}$ | $\displaystyle \frac{\text{N}}{\text{A m}}$ |
+| momento di dipolo magnetico | $\displaystyle \vec{m} = IS\vec{n}$ | $\text{A m}^2$ |
 | momento magnetico su una spira | $\displaystyle \vec{\tau} = I \vec{S} \vec{n} \times \vec{B}$ | $\displaystyle \frac{\text{A m}^2}{\text{N}}$ |
-| momento di dipolo magnetico | $\displaystyle \vec{m} = IS\vec{n}$ | $\text{N m}$ |
 | permeabilità magnetica relativa | $\mu = \mu_0 \mu_r$ | $-$ |
-| campo vettore intensità magnetica | $\displaystyle \vec{H} = \frac{\vec{B}}{\mu}$ | $\displaystyle \frac{\text{C}}{\text{s m}}$ |
+| campo vettore intensità magnetica | $\displaystyle \vec{H} = \frac{\vec{B}}{\mu}$ | $\displaystyle \frac{\text{C}}{\text{s m}} = \frac{\text{A}}{\text{m}}$ |
 
 : { .striped .hover}
 
@@ -733,11 +752,12 @@ concentrazione: grammoione/litro
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | flusso magnetico | $\displaystyle \Phi_B = \int_S \vec{B} d\vec{S} = \int_S BdS \cos ( \alpha )$ | $\text{Wb}$ |
-| flusso magnetico (superficie piana) | $\displaystyle \Phi_B = B S \cos ( \alpha )$ | $\text{Wb}$ |
-| corrente indotta (circuito chiuso) | $\displaystyle i = \frac{\Delta \Phi_B}{R \Delta t}$ | $\text{A}$ |
+| flusso magnetico (superficie piana e campo uniforme) | $\displaystyle \Phi_B = B S \cos ( \alpha )$ | $\text{Wb}$ |
 | ddp indotta (circuito aperto) | $\displaystyle \Delta V = \frac{\Delta \Phi_B}{\Delta t}$ | $\text{V}$ |
 | Legge di Faraday-Neumann-Lenz | $\displaystyle \mathcal{E} = - \frac{d \Phi_B}{dt}$ | $\text{V}$ |
-| autoinduzione variazione flusso su circuito | $\displaystyle \Phi(\vec{B}) = LI$ | $\text{V}$ |
+| corrente indotta | $\displaystyle I = \frac{f}{R}$ | $\text{A}$ |
+| corrente indotta (circuito chiuso) | $\displaystyle i = \frac{\Delta \Phi_B}{R \Delta t}$ | $\text{A}$ |
+| autoinduzione variazione flusso su circuito | $\displaystyle (N) \Phi(\vec{B}) = LI$ | $\text{V}$ |
 | coefficiente di autoinduzione (induttanza) | $\displaystyle L = \frac{\Phi(\vec{B})}{I}$ | $\text{H}$ |
 | fem indotta da autoinduzione (opposta a fem) | $\displaystyle V_i = - \frac{d\Phi}{dt} = - L \frac{dI}{dt}$ | $\text{V}$ |
 
@@ -749,10 +769,10 @@ concentrazione: grammoione/litro
 |:---|:---:|:---:|
 | ddp alternata | $\displaystyle V(t) = V_0 \sin(\omega t + \phi)$ | $\text{V}$ |
 | corrente alternata | $\displaystyle I(t) = I_0 \sin(\omega t)$ | $\text{A}$ |
-| tensione istantanea resistenza | $\displaystyle V_R (t) = R I_0 \sin(\omega t)$ | $\Omega$ |
-| tensione istantanea induttore | $\displaystyle V_L (t) = L \frac{dI}{dt} = L \omega I_0 \cos(\omega t)$ | $\Omega$ |
-| tensione istantanea condensatore | $\displaystyle V_C (t) = \frac{Q(t)}{C} = \frac{I_0}{\omega C} \sin(\omega t)$ | $\Omega$ |
-| potenza assorbita da resistenza | $\displaystyle P_R = V_R I = R I^2$ | $\text{W}$ |
+| tensione istantanea resistenza | $\displaystyle V_R (t) = R I_0 \sin(\omega t)$ | $\text{V}$ |
+| tensione istantanea induttore | $\displaystyle V_L (t) = L \frac{dI}{dt} = L \omega I_0 \cos(\omega t)$ | $\text{V}$ |
+| tensione istantanea condensatore | $\displaystyle V_C (t) = \frac{Q(t)}{C} = -\frac{I_0}{\omega C} \cos(\omega t)$ | $\text{V}$ |
+| potenza assorbita da resistenza | $\displaystyle P_R = V_R I \cos(\phi) = R I^2$ | $\text{W}$ |
 
 : { .striped .hover}
 
@@ -763,8 +783,8 @@ concentrazione: grammoione/litro
 | funzione di perturbazione | $f(x,t) = f(x - vt)$ | $\text{m}$ |
 | funzione d'onda | $\displaystyle f(x,t) = {A \sin( 2\pi (\frac{x}{\lambda} - \frac{t}{T}) + \phi)}$ | $\text{m}$ |
 | velocità di propagazione | $\displaystyle v = \frac{\lambda}{T} = \lambda f$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
-| numero d'onda | $\displaystyle k = \frac{1}{\lambda}$ | $\displaystyle \frac{rad}{m}$ |
-| frequenza (numero oscillazioni al secondo)| $\displaystyle \nu = \frac{1}{T}$ | $\displaystyle \frac{\text{Hz}}{\text{s}}$ |
+| numero d'onda | $\displaystyle k = \frac{1}{\lambda} = \frac{2\pi}{\lambda}$ | $\displaystyle \frac{rad}{m}$ |
+| frequenza (numero oscillazioni al secondo)| $\displaystyle \nu = \frac{1}{T}$ | $\text{Hz}$ |
 | riscrittura funzione d'onda | $\displaystyle f(x,t) = {A \sin(2\pi (kx - \nu t) + \phi)}$ | $\text{m}$ |
 | riscrittura velocità di propagazione | $\displaystyle v = \lambda \nu$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
 | velocità propagazione campo elettromagnetico | $\displaystyle v = \frac{1}{\sqrt{\mu \epsilon}}$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
@@ -772,7 +792,7 @@ concentrazione: grammoione/litro
 | indice di rifrazione (legge di Snell) | $\displaystyle n = \sqrt{\epsilon_r \mu_r}$ | $-$ |
 | densità energia campo elettrico | $\displaystyle u_E = \frac{1}{2} \epsilon_0 E^2$ | $\displaystyle \frac{\text{J}}{\text{m}^3}$ |
 | densità energia campo magnetico | $\displaystyle u_B = \frac{1}{2} \frac{B^2}{\mu_0}$ | $\displaystyle \frac{\text{J}}{\text{m}^3}$ |
-| densità energia campo elettromagnetico | $\displaystyle u_{EM} = u_E + u_B ={ \epsilon_0 E^2 = \frac{B^2}{\mu_0}}$ | $\displaystyle \frac{\text{J}}{\text{m}^3}$ |
+| onda elettromagnetica nel vuoto | $\displaystyle u_{EM} = u_E + u_B ={ \epsilon_0 E^2 = \frac{B^2}{\mu_0}}$ | $\displaystyle \frac{\text{J}}{\text{m}^3}$ |
 | legge di Planck | $\displaystyle E = h \nu$ | $\text{J}$ |
 
 : { .striped .hover}
