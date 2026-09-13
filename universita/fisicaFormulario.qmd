@@ -60,9 +60,9 @@ table td, table th {
 |:---:|:---:|:---|:---|
 | massa | kilogrammo | $\text{kg}$| - |
 | forza | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
-| quantità di moto | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}$ | - | derivata di quantità di moto rispetto al tempo |
 | peso | Newton | $\text{N}$ | $1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
-| Lavoro | Joule| $\text{J}$ | $1 \; \text{J} = 1 \; \frac{\text{N} \cdot \text{m}}{\text{s}}$ |
+| quantità di moto | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}$ | - |  |
+| Lavoro | Joule| $\text{J}$ | $1 \; \text{J} = 1 \; {\text{N} \cdot \text{m}}$ |
 | Potenza | Watt | $\text{W}$ | $1 \; \text{W} = 1 \; \frac{\text{J}}{\text{s}}$ |
 
 #### Fluidi
@@ -85,10 +85,11 @@ table td, table th {
 | Grandezza | Unità di misura | Simbolo | Formula |
 |:---:|:---:|:---|:---|
 | Corrente elettrica | Ampere | $\text{A}$ | $1 \; \text{A} = 1 \; \frac{\text{C}}{\text{s}}$ |
-| elettricità | Coulomb |$\text{C}$| $1 \; \text{C} = 1 \; \frac{\text{A}}{\text{s}}$ |
-| potenziale elettrico | Volt |$\displaystyle \text{V}$||
+| elettricità | Coulomb |$\text{C}$| $1 \; \text{C} = 1 \; \text{A} \cdot \text{s}$ |
+| potenziale elettrico | Volt |$\displaystyle \text{V}$|$\displaystyle 1 \; \text{V} = 1 \; \frac{\text{J}}{\text{C}}$|
+| resistenza elettrica | Ohm | $\displaystyle \Omega$ | $\displaystyle 1 \; \Omega = 1 \; \frac{\text{V}}{\text{A}}$ |
 | Magnetismo | Tesla | $\text{T}$ | $1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}$ |
-| flusso campo magnetico | Weber | $\text{Wb}$ | $1 \; \text{Wb} = 1 \; \text{T m}^2$ |
+| flusso campo magnetico | Weber | $\text{Wb}$ | ${1 \; \text{Wb} = 1 \; \text{T m}^2}$ |
 
 ### Costanti essenziali
 
@@ -114,8 +115,8 @@ table td, table th {
 | Costante di Coulomb | $K = 8,99 \cdot 10^9 \frac{N m^2}{C^2}$ |
 | costante dielettrica nel vuoto | $\epsilon_0 = 8,854 \cdot 10^{-12} \frac{C^2}{N m^2}$ |
 | carica elementare | $e = 1,602 \cdot 10^{-19} C$ |
-| Costante di Boltzmann | $K_B = 1,38 \cdot 10^{-23} \frac{J}{K}$ |
-| Costante di Avogadro | $N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}$ |
+| Costante di Boltzmann | $k_B = 1,38 \cdot 10^{-23} \frac{J}{K}$ |
+| Costante di Avogadro | $N_A = 6,022 \cdot 10^{23} mol\frac{particelle}{mol}$ |
 
 #### Sostanze e valori
 
@@ -129,7 +130,8 @@ table td, table th {
 
 | Descrizione | Formula Matematica |
 |:---|:---|
-| angolo | $\displaystyle \alpha = \frac{\text{arco}}{\text{raggio}} \alpha_{gradi}$ |
+| angolo | $\displaystyle \alpha = \frac{\text{arco}}{\text{raggio}}$ |
+| angolo in gradi | $\displaystyle \alpha = \frac{180 \cdot \text{arco}}{\pi r} = \alpha_{rad} \cdot \frac{180}{\pi}$ |
 | angolo giro | $\displaystyle \alpha = \frac{2 \pi r}{r} = 2 \pi$ |
 | arco | $l = \alpha r$ |
 
@@ -142,7 +144,7 @@ table td, table th {
 | componente asse $r$ | $\displaystyle v_r = \vert \vec{v} \vert \cos{\alpha}$ |
 | modulo vettore | $\displaystyle \vert \vec{v} \vert= \sqrt{v_x^2 + v_y^2}$ |
 | somma tra vettori | regola del parallelogramma |
-| teorema del coseno | $\displaystyle c^2 = {a^2 + b^2 + 2 a b \cos{\alpha}}$ |
+| teorema del coseno | $\displaystyle c^2 = {a^2 + b^2 - 2 a b \cos{\gamma}}$ |
 | somma tra vettori (componenti) | $\displaystyle \begin{cases} v_{tot,x} = v_{1,x} + v_{2,x} \\ v_{tot,y} = v_{1,y} + v_{2,y} \end{cases}$ |
 | differenza tra vettori | regola del parallelogramma (altra diagonale) |
 | differenza tra vettori | $\displaystyle \begin{cases} v_{tot,x} = v_{1,x} - v_{2,x} \\ v_{tot,y} = v_{1,y} - v_{2,y} \end{cases}$ |
@@ -189,7 +191,7 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 | accelerazione scalare media | $\displaystyle {a_m = \frac{\Delta v}{\Delta t} = \frac{\vec{v}(t_2)-\vec{v}(t_1)}{t_2-t_1}}$| $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
-| velocità istantanea | $\displaystyle \vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$ |  $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
+| accelerazione istantanea | $\displaystyle \vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}$ |  $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
 
 : {.striped .hover}
 
@@ -210,7 +212,7 @@ table td, table th {
 | legge oraria | $x = x_0 + v_0 t + \frac{1}{2} a t^2$ | $\text{m}$ |
 | velocità | $v = v_0 + at$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
 | velocità media | $v_m = v_0 + \frac{1}{2} a t$| $\displaystyle \frac{\text{m}}{\text{s}}$ |
-| velocità finale | $v_f =\sqrt{v_0^2 + 2 a \Delta x}$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$| 
+| velocità finale | $v^2_f =v_0^2 + 2 a \Delta x$ | $\displaystyle \frac{\text{m}}{\text{s}}$| 
 
 : {.striped .hover}
 
@@ -222,9 +224,9 @@ table td, table th {
 | periodo | $\displaystyle T = \frac{1}{f}$ | $\text{s}$ |
 | frequenza | $\displaystyle f = \frac{1}{T}$ | $\displaystyle \frac{1}{\text{s}}$ |
 | velocità | $\displaystyle v = \frac{r \Delta \theta}{\Delta t} = \omega r$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
-| accelerazione | $\displaystyle a = v \omega = {\omega}^2 r$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
+| accelerazione centripeta| $\displaystyle a_c = v \omega = {\omega}^2 r$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
 | accelerazione centripeta | verso interno | |
-| accelerazione centrifuga | verso esterno | |
+| accelerazione centrifuga | apparente, in un sistema rotante | |
 
 : {.striped .hover}
 
@@ -243,11 +245,11 @@ table td, table th {
 | Descrizione | Formula Matematica | Unità di misura |
 |:---|:---:|:---:|
 |legge oraria | $\displaystyle x = A \cos{(\omega t + \phi)}$ | $\text{m}$ |
-| velocità | $\displaystyle v = A \omega \sin(\omega t + \phi)$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
+| velocità | $\displaystyle v = - A \omega \sin(\omega t + \phi)$ | $\displaystyle \frac{\text{m}}{\text{s}}$ |
 | accelerazione | $a = - A {\omega}^2 \cos(\omega t + \phi) = - \omega^2 x$ | $\displaystyle \frac{\text{m}}{\text{s}^2}$ |
 | Ampiezza | $\displaystyle A$ | $\displaystyle m$ |
 | Pulsazione | $\displaystyle \omega = 2 \pi f$ | $\displaystyle \frac{\text{rad}}{\text{s}}$ |
-| Frequenza | $\displaystyle f = \frac{1}{T}$ | $\displaystyle \frac{1}{\text{s}}$ |
+| Frequenza | $\displaystyle f = \frac{1}{T}$ | $\displaystyle \frac{1}{\text{s}} = \text{Hz}$ |
 | Periodo | $\displaystyle T = \frac{1}{f}$ | $\text{s}$ |
 | Fase iniziale | $\displaystyle \phi$ | $\displaystyle \text{m}, \; \phi \in [0,A]$ |
 
@@ -272,7 +274,7 @@ table td, table th {
 |:---|:---:|:---:|
 | quantità di moto | $p = m v$ | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}$ |
 | principio conservazione quantità di moto | $\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}$ | - |
-| Forza | $\displaystyle F = \frac{\Delta p}{\Delta t}$ | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
+| Forza media | $\displaystyle F = \frac{\Delta p}{\Delta t}$ | $\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}^2}$ |
 
 : {.striped .hover}
 
