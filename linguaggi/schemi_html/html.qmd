@@ -8,19 +8,75 @@ image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_
 
 ## Indice
 
-1. [Introduzione](#introduzione)
-2. [Struttura di un documento HTML](#struttura-di-un-documento-html)
-3. [Attributi principali](#attributi-principali)
-4. [Entità](#entità)
-5. [Immagini](#immagini)
-6. [Righe orizzontali](#righe-orizzontali)
-7. [Tabelle](#tabelle)
-8. [Link e ipertesti](#link-e-ipertesti)
-9. [Ancore e link interni](#ancore-e-link-interni)
-10. [Mappe d'immagine](#mappe-dimmagine)
-11. [Frame](#frame)
-12. [Moduli](#moduli)
-13. [Input \<input>](#input-input)
+1. [Cos'è HTML]
+2. [HTML, CSS e JavaScript]
+3. [Struttura minima di una pagina]
+  1. [<!DOCTYPE html>]
+  2. [Tag <html>]
+  3. [Tag <head>]
+  4. [Tag <body>]
+4. [Testo]
+  1. [h1-h6]
+  2. [p]
+  3. [strong / em]
+  4. [b / i]
+  5. [br]
+  6. [code / pre / ...]
+5. [Semantica]
+  1. [header]
+  2. [nav]
+  3. [main]
+  4. [section]
+  5. [article]
+  6. [aside]
+  7. [footer]
+6. [Attributi]
+  1. [id]
+  2. [class]
+  3. [lang]
+  4. [title]
+  5. [data-*]
+7. [Collegamenti]
+  1. [href]
+  2. [URL]
+  3. [fragment]
+  4. [target/rel]
+8. [Immagini e multimedia]
+  1. [img]
+  2. [figure]
+  3. [picture]
+  4. [video]
+  5. [audio]
+  6. [iframe]
+9. [Liste]
+  1. [ul / ol / li]
+  2. [dl / dt / dd]
+10. [Tabelle]
+  1. [table / tr / td / th]
+  2. [caption]
+  3. [thead / tbody / tfoot]
+11. [Form]
+  1. [form]
+  2. [label]
+  3. [input]
+  4. [select]
+  5. [textarea]
+  6. [button]
+  7. [fieldset]
+  8. [legend]
+  9. [validazione]
+12. [accessibilità]
+  1. [alt]
+  2. [aria-*]
+  3. [tabindex]
+13. [Metadata e <head>]
+14. [HTML e DOM]
+15. [Validazione e debugging]
+16. [HTML obsoleto]
+
+
+
+
 
 ## Introduzione
 

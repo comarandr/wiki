@@ -735,3 +735,24 @@ analogo se orientato $G = (N,A,p)$
 
 $p(e)/p(a)$: peso arco/lato
 $p(v)/p(n)$: peso vertice nodo
+
+## Esercizi
+
+**Esercizio 1**: Dimostra che per $3^{2n} - 1$ è multiplo di $8 \qquad \forall n \geq 0$
+
+$$
+\begin{aligned}
+P(0): &= 3^0 -1 \\
+&= 1 - 1 \\
+&= 0 \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+P(n+1): &= 3^{2(n+1)} - 1 \\
+&= 3^{2n+1} - 1\\
+&= 3^2 \cdot 3^{2n} - 1 \\
+&= 9 \cdot 3^{2n} - 1 \\
+\end{aligned}
+$$
