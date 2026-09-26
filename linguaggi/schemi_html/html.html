@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -170,15 +170,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#indice" id="toc-indice" class="nav-link active" data-scroll-target="#indice">Indice</a></li>
-  <li><a href="#introduzione" id="toc-introduzione" class="nav-link" data-scroll-target="#introduzione">Introduzione</a></li>
+  <li><a href="#cosè-html" id="toc-cosè-html" class="nav-link" data-scroll-target="#cosè-html">Cos’è HTML</a></li>
+  <li><a href="#html-css-e-javascript" id="toc-html-css-e-javascript" class="nav-link" data-scroll-target="#html-css-e-javascript">HTML, CSS e JavaScript</a></li>
+  <li><a href="#struttura-minima-di-una-pagina" id="toc-struttura-minima-di-una-pagina" class="nav-link" data-scroll-target="#struttura-minima-di-una-pagina">Struttura minima di una pagina</a>
+  <ul>
+  <li><a href="#doctype-html" id="toc-doctype-html" class="nav-link" data-scroll-target="#doctype-html">&lt;!DOCTYPE html&gt;</a></li>
+  </ul></li>
+  <li><a href="#testo" id="toc-testo" class="nav-link" data-scroll-target="#testo">Testo</a>
+  <ul>
+  <li><a href="#h1-h6" id="toc-h1-h6" class="nav-link" data-scroll-target="#h1-h6">h1-h6</a></li>
+  <li><a href="#p" id="toc-p" class="nav-link" data-scroll-target="#p">p</a></li>
+  <li><a href="#strong-em" id="toc-strong-em" class="nav-link" data-scroll-target="#strong-em">strong / em</a></li>
+  <li><a href="#b-i" id="toc-b-i" class="nav-link" data-scroll-target="#b-i">b / i</a></li>
+  <li><a href="#br" id="toc-br" class="nav-link" data-scroll-target="#br">br</a></li>
+  <li><a href="#code-pre" id="toc-code-pre" class="nav-link" data-scroll-target="#code-pre">code / pre / …</a></li>
+  </ul></li>
+  <li><a href="#semantica" id="toc-semantica" class="nav-link" data-scroll-target="#semantica">Semantica</a>
+  <ul>
+  <li><a href="#header" id="toc-header" class="nav-link" data-scroll-target="#header">header</a></li>
+  <li><a href="#nav" id="toc-nav" class="nav-link" data-scroll-target="#nav">nav</a></li>
+  <li><a href="#main" id="toc-main" class="nav-link" data-scroll-target="#main">main</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">section</a></li>
+  <li><a href="#article" id="toc-article" class="nav-link" data-scroll-target="#article">article</a></li>
+  <li><a href="#aside" id="toc-aside" class="nav-link" data-scroll-target="#aside">aside</a></li>
+  <li><a href="#footer" id="toc-footer" class="nav-link" data-scroll-target="#footer">footer</a></li>
+  </ul></li>
+  <li><a href="#attributi" id="toc-attributi" class="nav-link" data-scroll-target="#attributi">Attributi</a>
+  <ul>
+  <li><a href="#id" id="toc-id" class="nav-link" data-scroll-target="#id">id</a></li>
+  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class">class</a></li>
+  <li><a href="#lang" id="toc-lang" class="nav-link" data-scroll-target="#lang">lang</a></li>
+  <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title">title</a></li>
+  <li><a href="#data-" id="toc-data-" class="nav-link" data-scroll-target="#data-">data-*</a></li>
+  </ul></li>
+  <li><a href="#collegamenti" id="toc-collegamenti" class="nav-link" data-scroll-target="#collegamenti">Collegamenti</a>
+  <ul>
+  <li><a href="#href" id="toc-href" class="nav-link" data-scroll-target="#href">href</a></li>
+  <li><a href="#url" id="toc-url" class="nav-link" data-scroll-target="#url">URL</a></li>
+  <li><a href="#fragment" id="toc-fragment" class="nav-link" data-scroll-target="#fragment">fragment</a></li>
+  <li><a href="#targetrel" id="toc-targetrel" class="nav-link" data-scroll-target="#targetrel">target/rel</a></li>
+  </ul></li>
+  <li><a href="#immagini-e-multimedia" id="toc-immagini-e-multimedia" class="nav-link" data-scroll-target="#immagini-e-multimedia">Immagini e multimedia</a>
+  <ul>
+  <li><a href="#img" id="toc-img" class="nav-link" data-scroll-target="#img">img</a></li>
+  <li><a href="#figure" id="toc-figure" class="nav-link" data-scroll-target="#figure">figure</a></li>
+  <li><a href="#picture" id="toc-picture" class="nav-link" data-scroll-target="#picture">picture</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">video</a></li>
+  <li><a href="#audio" id="toc-audio" class="nav-link" data-scroll-target="#audio">audio</a></li>
+  <li><a href="#iframe" id="toc-iframe" class="nav-link" data-scroll-target="#iframe">iframe</a></li>
+  </ul></li>
+  <li><a href="#liste" id="toc-liste" class="nav-link" data-scroll-target="#liste">Liste</a>
+  <ul>
+  <li><a href="#ul-ol-li" id="toc-ul-ol-li" class="nav-link" data-scroll-target="#ul-ol-li">ul / ol / li</a></li>
+  <li><a href="#dl-dt-dd" id="toc-dl-dt-dd" class="nav-link" data-scroll-target="#dl-dt-dd">dl / dt / dd</a></li>
+  </ul></li>
+  <li><a href="#tabelle" id="toc-tabelle" class="nav-link" data-scroll-target="#tabelle">Tabelle</a>
+  <ul>
+  <li><a href="#table-tr-td-th" id="toc-table-tr-td-th" class="nav-link" data-scroll-target="#table-tr-td-th">table / tr / td / th</a></li>
+  <li><a href="#caption" id="toc-caption" class="nav-link" data-scroll-target="#caption">caption</a></li>
+  <li><a href="#thead-tbody-tfoot" id="toc-thead-tbody-tfoot" class="nav-link" data-scroll-target="#thead-tbody-tfoot">thead / tbody / tfoot</a></li>
+  </ul></li>
+  <li><a href="#form" id="toc-form" class="nav-link" data-scroll-target="#form">Form</a>
+  <ul>
+  <li><a href="#form-1" id="toc-form-1" class="nav-link" data-scroll-target="#form-1">form</a></li>
+  <li><a href="#label" id="toc-label" class="nav-link" data-scroll-target="#label">label</a></li>
+  <li><a href="#input" id="toc-input" class="nav-link" data-scroll-target="#input">input</a></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select">select</a></li>
+  <li><a href="#textarea" id="toc-textarea" class="nav-link" data-scroll-target="#textarea">textarea</a></li>
+  <li><a href="#button" id="toc-button" class="nav-link" data-scroll-target="#button">button</a></li>
+  <li><a href="#fieldset" id="toc-fieldset" class="nav-link" data-scroll-target="#fieldset">fieldset</a></li>
+  <li><a href="#legend" id="toc-legend" class="nav-link" data-scroll-target="#legend">legend</a></li>
+  <li><a href="#validazione" id="toc-validazione" class="nav-link" data-scroll-target="#validazione">validazione</a></li>
+  </ul></li>
+  <li><a href="#accessibilità" id="toc-accessibilità" class="nav-link" data-scroll-target="#accessibilità">Accessibilità</a>
+  <ul>
+  <li><a href="#alt" id="toc-alt" class="nav-link" data-scroll-target="#alt">alt</a></li>
+  <li><a href="#aria-" id="toc-aria-" class="nav-link" data-scroll-target="#aria-">aria-*</a></li>
+  <li><a href="#tabindex" id="toc-tabindex" class="nav-link" data-scroll-target="#tabindex">tabindex</a></li>
+  </ul></li>
+  <li><a href="#html-e-dom" id="toc-html-e-dom" class="nav-link" data-scroll-target="#html-e-dom">HTML e DOM</a></li>
+  <li><a href="#validazione-e-debugging" id="toc-validazione-e-debugging" class="nav-link" data-scroll-target="#validazione-e-debugging">Validazione e debugging</a></li>
+  <li><a href="#html-obsoleto" id="toc-html-obsoleto" class="nav-link" data-scroll-target="#html-obsoleto">HTML obsoleto</a></li>
   <li><a href="#struttura-di-un-documento-html" id="toc-struttura-di-un-documento-html" class="nav-link" data-scroll-target="#struttura-di-un-documento-html">Struttura di un documento HTML</a></li>
   <li><a href="#attributi-principali" id="toc-attributi-principali" class="nav-link" data-scroll-target="#attributi-principali">Attributi principali</a></li>
   <li><a href="#entità" id="toc-entità" class="nav-link" data-scroll-target="#entità">Entità</a></li>
-  <li><a href="#liste" id="toc-liste" class="nav-link" data-scroll-target="#liste">Liste</a></li>
+  <li><a href="#liste-1" id="toc-liste-1" class="nav-link" data-scroll-target="#liste-1">Liste</a></li>
   <li><a href="#commenti" id="toc-commenti" class="nav-link" data-scroll-target="#commenti">Commenti</a></li>
   <li><a href="#immagini" id="toc-immagini" class="nav-link" data-scroll-target="#immagini">Immagini</a></li>
   <li><a href="#righe-orizzontali" id="toc-righe-orizzontali" class="nav-link" data-scroll-target="#righe-orizzontali">Righe orizzontali</a></li>
-  <li><a href="#tabelle" id="toc-tabelle" class="nav-link" data-scroll-target="#tabelle">Tabelle</a></li>
+  <li><a href="#tabelle-1" id="toc-tabelle-1" class="nav-link" data-scroll-target="#tabelle-1">Tabelle</a></li>
   <li><a href="#link-e-ipertesti" id="toc-link-e-ipertesti" class="nav-link" data-scroll-target="#link-e-ipertesti">Link e ipertesti</a></li>
   <li><a href="#ancore-e-link-interni" id="toc-ancore-e-link-interni" class="nav-link" data-scroll-target="#ancore-e-link-interni">Ancore e link interni</a></li>
   <li><a href="#mappe-dimmagine" id="toc-mappe-dimmagine" class="nav-link" data-scroll-target="#mappe-dimmagine">Mappe d’immagine</a></li>
@@ -221,75 +301,267 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indice" class="level2">
 <h2 class="anchored" data-anchor-id="indice">Indice</h2>
 <ol type="1">
-<li>[Cos’è HTML]</li>
-<li>[HTML, CSS e JavaScript]</li>
-<li>[Struttura minima di una pagina]</li>
-<li>[&lt;!DOCTYPE html&gt;]</li>
+<li><a href="#cosè-html">Cos’è HTML</a></li>
+<li><a href="#html-css-e-javascript">HTML, CSS e JavaScript</a></li>
+<li><a href="#struttura-minima-di-una-pagina">Struttura minima di una pagina</a></li>
+<li><a href="#doctype-html">&lt;!DOCTYPE html&gt;</a></li>
 <li>[Tag ]</li>
 <li>[Tag ]</li>
 <li>[Tag ]</li>
-<li>[Testo]</li>
-<li>[h1-h6]</li>
-<li>[p]</li>
-<li>[strong / em]</li>
-<li>[b / i]</li>
-<li>[br]</li>
-<li>[code / pre / …]</li>
-<li>[Semantica]</li>
-<li>[header]</li>
-<li>[nav]</li>
-<li>[main]</li>
-<li>[section]</li>
-<li>[article]</li>
-<li>[aside]</li>
-<li>[footer]</li>
-<li>[Attributi]</li>
-<li>[id]</li>
-<li>[class]</li>
-<li>[lang]</li>
-<li>[title]</li>
-<li>[data-*]</li>
-<li>[Collegamenti]</li>
-<li>[href]</li>
-<li>[URL]</li>
-<li>[fragment]</li>
-<li>[target/rel]</li>
-<li>[Immagini e multimedia]</li>
-<li>[img]</li>
-<li>[figure]</li>
-<li>[picture]</li>
-<li>[video]</li>
-<li>[audio]</li>
-<li>[iframe]</li>
+<li><a href="#testo">Testo</a></li>
+<li><a href="#h1-h6">h1-h6</a></li>
+<li><a href="#p">p</a></li>
+<li><a href="#strong-em">strong / em</a></li>
+<li><a href="#b-i">b / i</a></li>
+<li><a href="#br">br</a></li>
+<li><a href="#code-pre">code / pre / …</a></li>
+<li><a href="#semantica">Semantica</a></li>
+<li><a href="#header">header</a></li>
+<li><a href="#nav">nav</a></li>
+<li><a href="#main">main</a></li>
+<li><a href="#section">section</a></li>
+<li><a href="#article">article</a></li>
+<li><a href="#aside">aside</a></li>
+<li><a href="#footer">footer</a></li>
+<li><a href="#attributi">Attributi</a></li>
+<li><a href="#id">id</a></li>
+<li><a href="#class">class</a></li>
+<li><a href="#lang">lang</a></li>
+<li><a href="#title">title</a></li>
+<li><a href="#data-">data-*</a></li>
+<li><a href="#collegamenti">Collegamenti</a></li>
+<li><a href="#href">href</a></li>
+<li><a href="#url">URL</a></li>
+<li><a href="#fragment">fragment</a></li>
+<li><a href="#targetrel">target/rel</a></li>
+<li><a href="#immagini-e-multimedia">Immagini e multimedia</a></li>
+<li><a href="#img">img</a></li>
+<li><a href="#figure">figure</a></li>
+<li><a href="#picture">picture</a></li>
+<li><a href="#video">video</a></li>
+<li><a href="#audio">audio</a></li>
+<li><a href="#iframe">iframe</a></li>
 <li><a href="#liste">Liste</a></li>
-<li>[ul / ol / li]</li>
-<li>[dl / dt / dd]</li>
+<li><a href="#ul-ol-li">ul / ol / li</a></li>
+<li><a href="#dl-dt-dd">dl / dt / dd</a></li>
 <li><a href="#tabelle">Tabelle</a></li>
-<li>[table / tr / td / th]</li>
-<li>[caption]</li>
-<li>[thead / tbody / tfoot]</li>
-<li>[Form]</li>
-<li>[form]</li>
-<li>[label]</li>
-<li>[input]</li>
-<li>[select]</li>
-<li>[textarea]</li>
-<li>[button]</li>
-<li>[fieldset]</li>
-<li>[legend]</li>
-<li>[validazione]</li>
-<li>[accessibilità]</li>
-<li>[alt]</li>
-<li>[aria-*]</li>
-<li>[tabindex]</li>
+<li><a href="#table-tr-td-th">table / tr / td / th</a></li>
+<li><a href="#caption">caption</a></li>
+<li><a href="#thead-tbody-tfoot">thead / tbody / tfoot</a></li>
+<li><a href="#form">Form</a></li>
+<li><a href="#form">form</a></li>
+<li><a href="#label">label</a></li>
+<li><a href="#input">input</a></li>
+<li><a href="#select">select</a></li>
+<li><a href="#textarea">textarea</a></li>
+<li><a href="#button">button</a></li>
+<li><a href="#fieldset">fieldset</a></li>
+<li><a href="#legend">legend</a></li>
+<li><a href="#validazione">validazione</a></li>
+<li><a href="#accessibilità">Accessibilità</a></li>
+<li><a href="#alt">alt</a></li>
+<li><a href="#aria-">aria-*</a></li>
+<li><a href="#tabindex">tabindex</a></li>
 <li>[Metadata e ]</li>
-<li>[HTML e DOM]</li>
-<li>[Validazione e debugging]</li>
-<li>[HTML obsoleto]</li>
+<li><a href="#html-e-dom">HTML e DOM</a></li>
+<li><a href="#validazione-e-debugging">Validazione e debugging</a></li>
+<li><a href="#html-obsoleto">HTML obsoleto</a></li>
 </ol>
 </section>
-<section id="introduzione" class="level2">
-<h2 class="anchored" data-anchor-id="introduzione">Introduzione</h2>
+<section id="cosè-html" class="level2">
+<h2 class="anchored" data-anchor-id="cosè-html">Cos’è HTML</h2>
+<p>HTML (HyperText Markup Language) è un linguaggio di markup utilizzato per creare pagine web. Consente di strutturare il contenuto e definire la presentazione dei documenti attraverso l’uso di tag e attributi. HTML è fondamentale per il web, poiché fornisce la base su cui si costruiscono siti e applicazioni web, permettendo l’integrazione di testo, immagini, video, link e altri elementi multimediali.</p>
+</section>
+<section id="html-css-e-javascript" class="level2">
+<h2 class="anchored" data-anchor-id="html-css-e-javascript">HTML, CSS e JavaScript</h2>
+<p>HTML, CSS e JavaScript sono i tre linguaggi fondamentali per lo sviluppo web. HTML fornisce la struttura del contenuto, CSS definisce la presentazione e JavaScript aggiunge interattività.</p>
+</section>
+<section id="struttura-minima-di-una-pagina" class="level2">
+<h2 class="anchored" data-anchor-id="struttura-minima-di-una-pagina">Struttura minima di una pagina</h2>
+<section id="doctype-html" class="level3">
+<h3 class="anchored" data-anchor-id="doctype-html">&lt;!DOCTYPE html&gt;</h3>
+### Tag
+
+<p>Il tag <code>&lt;html&gt;</code> è l’elemento radice di un documento HTML. Tutti gli altri elementi devono essere contenuti all’interno di questo tag. L’attributo <code>lang</code> può essere utilizzato per specificare la lingua del contenuto della pagina.</p>
+### Tag
+
+<p>Il tag <code>&lt;head&gt;</code> contiene informazioni meta del documento, come il titolo, i metadati e i link a risorse esterne.</p>
+### Tag
+
+</section>
+</section>
+<section id="testo" class="level2">
+<h2 class="anchored" data-anchor-id="testo">Testo</h2>
+<section id="h1-h6" class="level3">
+<h3 class="anchored" data-anchor-id="h1-h6">h1-h6</h3>
+</section>
+<section id="p" class="level3">
+<h3 class="anchored" data-anchor-id="p">p</h3>
+</section>
+<section id="strong-em" class="level3">
+<h3 class="anchored" data-anchor-id="strong-em">strong / em</h3>
+</section>
+<section id="b-i" class="level3">
+<h3 class="anchored" data-anchor-id="b-i">b / i</h3>
+</section>
+<section id="br" class="level3">
+<h3 class="anchored" data-anchor-id="br">br</h3>
+</section>
+<section id="code-pre" class="level3">
+<h3 class="anchored" data-anchor-id="code-pre">code / pre / …</h3>
+</section>
+</section>
+<section id="semantica" class="level2">
+<h2 class="anchored" data-anchor-id="semantica">Semantica</h2>
+<section id="header" class="level3">
+<h3 class="anchored" data-anchor-id="header">header</h3>
+</section>
+<section id="nav" class="level3">
+<h3 class="anchored" data-anchor-id="nav">nav</h3>
+</section>
+<section id="main" class="level3">
+<h3 class="anchored" data-anchor-id="main">main</h3>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">section</h3>
+</section>
+<section id="article" class="level3">
+<h3 class="anchored" data-anchor-id="article">article</h3>
+</section>
+<section id="aside" class="level3">
+<h3 class="anchored" data-anchor-id="aside">aside</h3>
+</section>
+<section id="footer" class="level3">
+<h3 class="anchored" data-anchor-id="footer">footer</h3>
+</section>
+</section>
+<section id="attributi" class="level2">
+<h2 class="anchored" data-anchor-id="attributi">Attributi</h2>
+<section id="id" class="level3">
+<h3 class="anchored" data-anchor-id="id">id</h3>
+</section>
+<section id="class" class="level3">
+<h3 class="anchored" data-anchor-id="class">class</h3>
+</section>
+<section id="lang" class="level3">
+<h3 class="anchored" data-anchor-id="lang">lang</h3>
+</section>
+<section id="title" class="level3">
+<h3 class="anchored" data-anchor-id="title">title</h3>
+</section>
+<section id="data-" class="level3">
+<h3 class="anchored" data-anchor-id="data-">data-*</h3>
+</section>
+</section>
+<section id="collegamenti" class="level2">
+<h2 class="anchored" data-anchor-id="collegamenti">Collegamenti</h2>
+<section id="href" class="level3">
+<h3 class="anchored" data-anchor-id="href">href</h3>
+</section>
+<section id="url" class="level3">
+<h3 class="anchored" data-anchor-id="url">URL</h3>
+</section>
+<section id="fragment" class="level3">
+<h3 class="anchored" data-anchor-id="fragment">fragment</h3>
+</section>
+<section id="targetrel" class="level3">
+<h3 class="anchored" data-anchor-id="targetrel">target/rel</h3>
+</section>
+</section>
+<section id="immagini-e-multimedia" class="level2">
+<h2 class="anchored" data-anchor-id="immagini-e-multimedia">Immagini e multimedia</h2>
+<section id="img" class="level3">
+<h3 class="anchored" data-anchor-id="img">img</h3>
+</section>
+<section id="figure" class="level3">
+<h3 class="anchored" data-anchor-id="figure">figure</h3>
+</section>
+<section id="picture" class="level3">
+<h3 class="anchored" data-anchor-id="picture">picture</h3>
+</section>
+<section id="video" class="level3">
+<h3 class="anchored" data-anchor-id="video">video</h3>
+</section>
+<section id="audio" class="level3">
+<h3 class="anchored" data-anchor-id="audio">audio</h3>
+</section>
+<section id="iframe" class="level3">
+<h3 class="anchored" data-anchor-id="iframe">iframe</h3>
+</section>
+</section>
+<section id="liste" class="level2">
+<h2 class="anchored" data-anchor-id="liste">Liste</h2>
+<section id="ul-ol-li" class="level3">
+<h3 class="anchored" data-anchor-id="ul-ol-li">ul / ol / li</h3>
+</section>
+<section id="dl-dt-dd" class="level3">
+<h3 class="anchored" data-anchor-id="dl-dt-dd">dl / dt / dd</h3>
+</section>
+</section>
+<section id="tabelle" class="level2">
+<h2 class="anchored" data-anchor-id="tabelle">Tabelle</h2>
+<section id="table-tr-td-th" class="level3">
+<h3 class="anchored" data-anchor-id="table-tr-td-th">table / tr / td / th</h3>
+</section>
+<section id="caption" class="level3">
+<h3 class="anchored" data-anchor-id="caption">caption</h3>
+</section>
+<section id="thead-tbody-tfoot" class="level3">
+<h3 class="anchored" data-anchor-id="thead-tbody-tfoot">thead / tbody / tfoot</h3>
+</section>
+</section>
+<section id="form" class="level2">
+<h2 class="anchored" data-anchor-id="form">Form</h2>
+<section id="form-1" class="level3">
+<h3 class="anchored" data-anchor-id="form-1">form</h3>
+</section>
+<section id="label" class="level3">
+<h3 class="anchored" data-anchor-id="label">label</h3>
+</section>
+<section id="input" class="level3">
+<h3 class="anchored" data-anchor-id="input">input</h3>
+</section>
+<section id="select" class="level3">
+<h3 class="anchored" data-anchor-id="select">select</h3>
+</section>
+<section id="textarea" class="level3">
+<h3 class="anchored" data-anchor-id="textarea">textarea</h3>
+</section>
+<section id="button" class="level3">
+<h3 class="anchored" data-anchor-id="button">button</h3>
+</section>
+<section id="fieldset" class="level3">
+<h3 class="anchored" data-anchor-id="fieldset">fieldset</h3>
+</section>
+<section id="legend" class="level3">
+<h3 class="anchored" data-anchor-id="legend">legend</h3>
+</section>
+<section id="validazione" class="level3">
+<h3 class="anchored" data-anchor-id="validazione">validazione</h3>
+</section>
+</section>
+<section id="accessibilità" class="level2">
+<h2 class="anchored" data-anchor-id="accessibilità">Accessibilità</h2>
+<section id="alt" class="level3">
+<h3 class="anchored" data-anchor-id="alt">alt</h3>
+</section>
+<section id="aria-" class="level3">
+<h3 class="anchored" data-anchor-id="aria-">aria-*</h3>
+</section>
+<section id="tabindex" class="level3">
+<h3 class="anchored" data-anchor-id="tabindex">tabindex</h3>
+## Metadata e
+
+</section>
+</section>
+<section id="html-e-dom" class="level2">
+<h2 class="anchored" data-anchor-id="html-e-dom">HTML e DOM</h2>
+</section>
+<section id="validazione-e-debugging" class="level2">
+<h2 class="anchored" data-anchor-id="validazione-e-debugging">Validazione e debugging</h2>
+</section>
+<section id="html-obsoleto" class="level2">
+<h2 class="anchored" data-anchor-id="html-obsoleto">HTML obsoleto</h2>
 <p>sistema di markup basato sui <strong>tag</strong>, racchiusi tra <strong>&lt;</strong> e <strong>&gt;</strong></p>
 <p>Esempio: &lt;br&gt; … &lt;/br&gt;</p>
 </section>
@@ -378,8 +650,8 @@ Il percorso relativo è consigliato, così i riferimenti vengono persi in caso d
 L’attributo <strong>id</strong> è importante perché è un identificatore univoco della porzione di testo tra &lt;div&gt; … &lt;/div&gt;</p>
 <p>Il tag <strong>&lt;center&gt;</strong> può essere usato al posto di &lt;div align=”center”&gt; … &lt;/div&gt; ma non è molto usato</p>
 </section>
-<section id="liste" class="level2">
-<h2 class="anchored" data-anchor-id="liste">Liste</h2>
+<section id="liste-1" class="level2">
+<h2 class="anchored" data-anchor-id="liste-1">Liste</h2>
 <p>Per le liste abbiamo:</p>
 <ul>
 <li><strong>puntata</strong>: &lt;ul&gt; … &lt;/ul&gt; con attributo <strong>type</strong> per cambiare simbolo (<strong>disc, circle, square</strong>)</li>
@@ -439,8 +711,8 @@ L’attributo <strong>id</strong> è importante perché è un identificatore uni
 <li><strong>color</strong>, imposta il colore</li>
 </ul>
 </section>
-<section id="tabelle" class="level2">
-<h2 class="anchored" data-anchor-id="tabelle">Tabelle</h2>
+<section id="tabelle-1" class="level2">
+<h2 class="anchored" data-anchor-id="tabelle-1">Tabelle</h2>
 <p>Per le tabelle si usa il tag <strong>&lt;table&gt;</strong> … <strong>&lt;/table&gt;</strong></p>
 <ul>
 <li>la riga è racchiusa nei tag <strong>&lt;tr&gt;</strong> … <strong>&lt;/tr&gt;</strong></li>
