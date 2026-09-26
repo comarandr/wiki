@@ -1,0 +1,658 @@
+---
+title: "XML"
+description: "Appunti di XML"
+categories: [linguaggi]
+---
+
+## Linguaggio di markup
+
+Il markup serve a strutturare un documento in componenti logiche (**elementi**) e di etichettarle opportunamente. Le etichette, ovvero i nomi degli elementi, specificano il tipo di dato che la componente logica rappresenta.
+
+Le etichette vengono inserite tramite speciali sequenze di caratteri, detti **markup tag** o semplicemente **tag**
+
+Esempio di documento senza markup:
+
+```txt
+Jack Smith
+513-555-1234
+jsmith@email.com
+John Doe
+34 Fountain Square Plaa
+Cincinnati, OH 45202
+US
+513-555-8889(preferred)
+513-555-7098
+jdoe@email.com
+```
+
+Esempio di documento con markup:
+
+```xml
+<addressbook>
+  <contact>
+    <name>Jack Smith</name>
+    <phone>513-555-1234</phone>
+    <email>jsmith@email.com</email>
+  </contact>
+  <contact>
+    <name>John Doe</name>
+    <phone>513-555-8889</phone>
+    <email>jdoe@email.com</email>
+  </contact>
+</addressbook>
+```
+
+Tra i vantaggi:
+
+- permette ai programmi di distinguere facilmente le componenti logiche di un documento
+  - per scopi di visualizzazione
+  - per elaborazione e interrogazione dei dati
+- semplice formato per lo scambio di dati
+- comprensibili anche per gli umani
+
+Esempi:
+
+- html
+- xml
+- SVG
+- SMIL
+- X3D
+- definizione di GUI
+
+## XML
+
+linguaggio formale definito tramite grammatica (insieme di regole) che permettono di specificare come comporre un documenti
+
+è un metalinguaggio, ovvero un linguaggio per la costruzione di altri linguaggi di markup più specifici
+
+### Elementi
+
+sono **contenitori** che incapsulano altri elementi o dati testuali (stringhe di caratteri).
+
+Definiti da:
+
+- un **nome**
+- un **contenuto**, delimitato da **tag di inizio** e **tag di fine**
+
+tag di inizio: `<nome>`
+tag di fine: `</nome>`
+
+#### Nomi di elementi
+
+- iniziare con lettera o underscore _
+- caratteri: lettere, cifre, `_`, `.`, e `-`. Spazi ` ` non ammessi
+- non possono iniziare con sequenze `xml` (qualsiasi combinazione di maiuscole e minuscole)
+- sono case-sensitive, quindi `<nome>` e `<Nome>` sono elementi diversi
+
+### Attributi
+
+Informazioni aggiuntive associate a un elemento, dotate di
+
+- **nome**
+- **valore**, racchiuso tra virgolette `"` o apostrofi `'`
+
+Esempio:
+
+```xml
+<tel preferred="true">513-555-8889</tel>
+```
+
+nome: `preferred`
+valore: `true`
+
+#### Esempio
+
+::: {.callout-note}
+## Consegna
+Scrivi un file xml che rappresenti una playlist
+:::
+
+::: {.callout-tip collapse="true"}
+## Svolgimento e Soluzione
+
+Esempio di file xml che rappresenta una playlist:
+
+```xml
+<playlist>
+  <song>
+    <title>Canzone 1</title>
+    <artist>Artista 1</artist>
+    <duration>3:45</duration>
+  </song>
+  <song>
+    <title>Canzone 2</title>
+    <artist>Artista 2</artist>
+    <duration>4:20</duration>
+  </song>
+</playlist>
+```
+
+esempi su teams
+
+:::
+
+### Entità
+
+è un riferimento a una sequenza di caratteri
+
+Possiede:
+
+- un **nome**
+- un **contenuto** (sequenza di caratteri)
+
+per inserire un'entità in un documento: `&nome-entità;` (entity reference)
+
+può essere immessa solo:
+
+- nel contenuto di un elemento
+- nel valore di un attributo
+
+equivalente a inserire nella medesima posizione la sequenza di caratteri contenuta nell'entità
+
+esempio:
+
+se abbiamo definito l'entità `us` con contenuto `United States`, allora:
+
+```xml
+<state> &us; </state>
+```
+
+è equivalente a:
+
+```xml
+<state> United States </state>
+```
+
+#### Entità predefinite
+
+| riferimento all'entità | contenuto |
+|:------------------------:|:---------:|
+| `\&lt;` | `<` |
+| `\&gt;` | `>` |
+| `\&amp;` | `&` |
+| `\&quot;` | `"` |
+| `\&apos;` | `'` |
+
+Ogni carattere può essere sostituito dal suo unicode:
+
+- decimale: `&#x;``
+- esadecimale: `&#;`
+
+esempio:
+
+```xml
+<scuola> Universit&#x00E0;</scuola>
+```
+
+corrisponde a:
+
+```xml
+<scuola> Università</scuola>
+```
+
+### Dichiarazione
+
+- serve a identificare il documento come XML. Non è obbligatoria, ma in caso deve iniziare dal primo carattere del documento
+
+```xml
+<?xml version="1.0"?>
+```
+
+Può contenere attributi opzionali quali:
+
+- encoding: specifica la codifica dei caratteri del documento (default UTF-8)
+- standalone: indica se il documento contiene tutti i suoi valori (`yes`) oppure se possono essere specificati in un DTD esterno (`no`)
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+```
+
+### Commenti
+
+possono essere inseriti in qualsiasi punto del documento, tranne all'interno di un tag
+
+la sintassi è:
+
+```xml
+<!-- commento -->
+```
+
+### Documento ben formato
+
+Le caratteristiche essenziali sono:
+
+- ogni tag di inizio ha un tag di fine corrispondente
+- i valori degli attributi sono racchiusi tra virgolette o apostrofi
+- un elemento non può avere due attributi con lo stesso nome
+- gli elementi sono annidati correttamente (tag figlio all'interno del tag genitore)
+- c'è un solo elemento radice
+
+### Struttura logica
+
+La struttura logica è rappresentata da un **albero di elementi**
+
+- radice: primo elemento del documento
+- se elemento $x$ è contenuto in elemento $y$, allora $x$ è figlio di $y$ e $y$ è genitore di $x$
+- foglie: elementi senza figli
+
+::: {.callout-tip collapse="false"}
+
+## Esempio struttura
+
+```{mermaid}
+
+graph TD
+    A[adress-book] --> B[entry]
+    B --> C[name]
+    B --> D[tel]
+    B --> E[email]
+    A --> F[entry]
+    F --> G[name]
+    F --> H[tel]
+    F --> I[email]
+    F --> J[address]
+    J --> K[street]
+    J --> M[city]
+
+```
+
+:::
+
+### Esempio
+
+::: {.callout-note collapse="true"}
+
+## Codice xml
+
+```xml
+<address-book>
+    <entry>
+        <name>Jack Smith</name>
+        <tel>513-555-3465</tel>
+        <email address='jsmith@email.com'></email>
+    </entry>
+    <entry>
+        <name>John Doe</name>
+        <address>
+            <street>34 Fountain Square Plaza</street>
+            <region>Cincinnati, OH</region>
+            <postal-code>45202</postal-code>
+            <country>US</country>
+        </address>
+        <tel>513-555-8889</tel>
+        <tel>513-555-7098</tel>
+        <email address='jdoe@email.com'></email>
+    </entry>
+</address-book>
+```
+
+:::
+
+## Document Type Definition (DTD)
+
+Il DTD dichiara come un documento XML deve essere scritto
+
+- elementi e attributi ammessi
+- contenuto dei diversi elementi
+
+Se l'XML rispetta le regole del DTD, allora si dice che il documento è **valido**.
+
+### Composizione di un DTD
+
+Documento in formato testuale composto da una lista di dichiarazioni
+
+ogni dichiarazione è relativa a un oggetto che può essere contenuto nel documento XML
+
+ogni oggetto (elemento o attributo) usabile in quel documento va definito
+
+### Sintassi DTD
+
+La sintassi formale è ben definita:
+
+#### Dichiarazione generica elemento
+
+```dtd
+<!ELEMENT nome_elemento contenuto_elemento>
+```
+
+`nome_elemento`: nome dell'elemento da dichiarare
+
+`contenuto_elemento`: specifica il contenuto dell'elemento, ovvero quali altri elementi o dati testuali può contenere (testo, vuoto, altri elementi)
+
+#### Dichiarazione elemento vuoto
+
+```dtd
+<!ELEMENT nome_elemento EMPTY>
+```
+
+::: {.callout-tip collapse="true"}
+
+## Esempio elemento EMPTY
+
+Si usa nei seguenti modi:
+
+```dtd
+<!ELEMENT email EMPTY>
+
+<email/>
+<email></email>
+```
+
+Invece è **errato** scrivere:
+
+```dtd
+<email>john@example.com</email>
+```
+
+:::
+
+#### Dichiarazione elemento foglia (contenuto testuale)
+
+```dtd
+<!ELEMENT nome_elemento (#PCDATA)>
+```
+
+::: {.callout-tip collapse="true"}
+
+## Esempio elemento foglia
+
+```dtd
+<!ELEMENT name (#PCDATA)>
+
+<name>Jack Smith</name>
+```
+
+mentre è **errato** scrivere:
+
+```dtd
+<name><fname>Jack</fname><lname>Smith</lname></name>
+````
+
+in quanto non sono ammessi elementi figli
+
+:::
+
+#### Dichiarazione elemento con qualsiasi contenuto
+
+```dtd
+<!ELEMENT nome_elemento ANY>
+```
+
+::: {.callout-tip collapse="true"}
+
+## Esempio elemento ANY
+
+```dtd
+<!ELEMENT entry ANY>
+```
+
+:::
+
+#### Dichiarazione elemento con figli specifici
+
+```dtd
+<!ELEMENT nome_elemento (espressione)>
+```
+
+::: {.callout-tip collapse="true"}
+
+## Esempio elemento con figli specifici
+
+```dtd
+<!ELEMENT adress-book (entry)>
+```
+In questo caso l'elemento `entry`deve essere inserito dentro ogni elemento `adress-book`.
+
+```dtd
+<adress-book><entry></entry></adress-book>
+```
+
+non è corretto scrivere:
+
+```dtd
+<adress-book><a></a></adress-book>
+```
+
+:::
+
+#### Indicatori di occorrenza
+
+Servono a specificare il numero di volte che un elemento può comparire come figlio di un altro elemento
+
+| indicatore | significato |
+|:-----------:|:------------|
+| vuoto | 1 volta esatta |
+| `*` | 0 o più volte |
+| `+` | 1 o più volte |
+| `?` | 0 o 1 volta |
+
+#### Indicatori di ordine
+
+Servono a specificare l'ordine in cui devono apparire gli elementi figli di un elemento.
+
+| indicatore | significato |
+|:-----------:|:------------|
+| `,` | sequenza (ordine fisso) |
+| `|` | scelta alternativa (uno tra più elementi) |
+
+#### Indicazione mista
+
+è possibile combinare le indicazioni mediante parentesi tonde `()`, oppure usare `|` per indicare un contenuto misto
+
+Esempi:
+
+raggruppare con `()`:
+```dtd
+<!ELEMENT entry (lname, (fname | title))>
+```
+
+dichiarare contenuto misto con `|`:
+
+```dtd
+<!ELEMENT name (#PCDATA | (fname, lastname))>
+```
+
+::: {.callout-tip collapse="true"}
+
+## Scrivere il DTD per XML address-book
+
+```dtd
+<!ELEMENT address-book (entry+)>
+<!ELEMENT entry (name,address?,tel+,email*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (street,region,postal-code,locality?,country)>
+<!ELEMENT tel (#PCDATA)>
+<!ELEMENT email EMPTY>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT postal-code (#PCDATA)>
+<!ELEMENT locality (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST email address CDATA #REQUIRED>
+```
+
+:::
+
+#### Dichiarazione attributi
+
+La sintassi è:
+
+```dtd
+<!ATTLIST nome_el nome_attr tipo_attr uso_attr>
+```
+
+`nome_el`: nome dell'elemento a cui l'attributo appartiene
+
+`nome_attr`: nome dell'attributo
+
+`tipo_attr`: informazioni sul valore dell'attributo
+
+- `CDATA`: il valore dell'attributo è una stringa di caratteri
+- `ID`: identificatore per l'attributo, è un **nome** e deve essere unico 
+- `IDREF`: contiene il riferimento all'attributo ID
+- `IDREFS`: contiene i riferimenti a più attributi ID
+- `NMTOKEN`: name token, il valore è una strinfa senza spazi (ammessi lettere, cifre, `_`, `.`, e `-`)
+- `NMTOKENS`: il valore dell'attributo è una lista di nmtoken separati da spazi
+- `(n1 | n2 | ... )`: il valore dell'attributo deve essere uno dei valori specificati
+- `ENTITY, ENTITIES, NOTATION`: il valore dell'attributo è un riferimento O a un'entità o a un elenco di riferimenti a entità (separati da spazi) e informazioni su formati interpretabili da applicazioni esterne
+
+::: {.callout-tip collapse="true"}
+
+## Esempio di dichiarazione con entità
+
+```dtd
+<!NOTATION gif SYSTEM "image/gif">
+<!NOTATION jpeg SYSTEM "image/jpeg">
+<!NOTATION png SYSTEM "image/png">
+<!ATTLIST image format (gif | jpeg | png) #REQUIRED>
+```
+
+:::
+
+`uso_attr`: informazioni sull'utilizzo dell'attributo
+
+- `#REQUIRED`: l'attributo deve essere presente
+- `#IMPLIED`: l'attributo è facoltativo, non serve un valore di default
+- `#FIXED 'valore'`: l'attributo ha un valore fisso, anche se l'attributo è omesso
+
+
+::: {.callout-tip collapse="true"}
+
+## Esempi
+
+```dtd
+<!ATTLIST tel preferred (true | false) "false">
+```
+
+il valore di preferred può essere `true` o `false`, ma se l'attributo è omesso, il valore di default è `false`
+
+```dtd
+<!ATTLIST email href CDATA #REQUIRED>
+```
+
+il valore di href può essere qualsiasi stringa di caratteri, ma l'attributo deve essere presente
+
+:::
+
+#### Attributi multipli
+
+Posso definire più attributi per lo stesso elemento usando un'unica dichiarazione di tipo `ATTLIST`
+
+```dtd
+<!ATTLIST nome_el nome_attr1 tipo_attr1 uso_attr1
+                 nome_attr2 tipo_attr2 uso_attr2
+                 ...>
+```
+
+Esempio:
+
+```dtd
+<!ATTLIST tel prefix CDATA #REQUIRED
+                 preferred (true | false) "false">
+```
+
+####  Dichiarazione entità
+
+La sintassi è:
+
+```dtd
+<!ENTITY nome_entità "valore_entità">
+```
+
+`nome_entità`: nome dell'entità
+`valore_entità`: valore dell'entità
+
+ogni occorrenza di `&nome_entità;` nel documento XML viene sostituita con il valore dell'entità
+
+Posso usare entità definite esternamente con:
+
+```dtd
+<!ENTITY nome_entità SYSTEM "percorso_file o URL">
+```
+
+## Collegare un XML a un DTD
+
+Inserire nella riga successiva alla dichiarazione XML (se presente) la seguente istruzione:
+
+```xml
+<!DOCTYPE nome_elemento_radice DTD>
+```
+
+`DTD` può essere:
+
+- **interno**, scritto tra parentesi quadre `[]` subito dopo il nome dell'elemento radice
+- **esterno**, specificando il percorso del file DTD o un URL `SYSTEM "percorso_file o URL"`
+- **esterno pubblico**: riferimento `PUBLIC "identificatore_pubblico" "percorso_file o URL"`
+- **misto** ovvero con parte esterna e interna 
+
+Esempio:
+
+```xml
+<!DOCTYPE address-book SYSTEM "URL" [DTD]>
+```
+
+Esempio di DTD esterno pubblico:
+
+```xml
+<!DOCTYPE address-book PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+```
+
+## Xml valido
+
+Un documento XML è valido se rispetta le regole definite dal DTD associato.
+
+Ci sono validatori online che permettono di verificare se un documento XML è valido rispetto a un DTD.
+
+## XML Schema Definition (XSD)
+
+Alternativa più potente e flessibile al DTD per definire la struttura di un documento XML.
+
+## Esempi completi XML e DTD
+
+::: {.callout-tip collapse="true"}
+
+## File XML (Playlist.xml)
+
+```xml
+<?xml version="1.0" ?>
+<!DOCTYPE playlist SYSTEM "Playlist.dtd">
+<playlist name="Preferiti">
+    <track id="t01" genre="rock">
+        <title>Anchor</title>
+        <artist>Skillet</artist>
+        <album>Victorious</album>
+        <file src="anchor.mp3">
+            <encoding>MP3</encoding>
+            <bitrate>160kbps</bitrate>
+        </file>
+        <year>2020</year>
+    </track>
+    <track id="t02">
+        ...
+    </track>
+</playlist>
+```
+
+:::
+
+::: {.callout-tip collapse="true"}
+
+## File DTD (Playlist.dtd)
+
+```dtd
+<!ELEMENT playlist (track+)>
+<!ELEMENT track (title, artist+, album?, file, year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT artist (#PCDATA)>
+<!ELEMENT album (#PCDATA)>
+<!ELEMENT file (encoding, bitrate)>
+<!ELEMENT encoding (#PCDATA)>
+<!ELEMENT bitrate (#PCDATA)>
+<!ATTLIST track id ID #IMPLIED
+    genre ( rock | pop | jazz | blues | other) 'other'>
+<!ATTLIST file src CDATA #REQUIRED>
+<!ATTLIST playlist name CDATA #REQUIRED>
+<!ELEMENT year (#PCDATA)>
+```
+
+:::

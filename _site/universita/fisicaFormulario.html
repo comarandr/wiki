@@ -495,22 +495,22 @@ table td, table th {
 <td style="text-align: left;"><span class="math inline">\(1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">quantità di moto</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}\)</span></td>
-<td style="text-align: left;">-</td>
-<td style="text-align: left;">derivata di quantità di moto rispetto al tempo</td>
-</tr>
-<tr class="even">
 <td style="text-align: center;">peso</td>
 <td style="text-align: center;">Newton</td>
 <td style="text-align: left;"><span class="math inline">\(\text{N}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(1 \; \text{N} = 1 \; \frac{\text{kg} \cdot \text{m}}{\text{s}^2}\)</span></td>
 </tr>
+<tr class="even">
+<td style="text-align: center;">quantità di moto</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}}\)</span></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"></td>
+</tr>
 <tr class="odd">
 <td style="text-align: center;">Lavoro</td>
 <td style="text-align: center;">Joule</td>
 <td style="text-align: left;"><span class="math inline">\(\text{J}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(1 \; \text{J} = 1 \; \frac{\text{N} \cdot \text{m}}{\text{s}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{J} = 1 \; {\text{N} \cdot \text{m}}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Potenza</td>
@@ -608,6 +608,12 @@ table td, table th {
 <td style="text-align: left;"><span class="math inline">\(\text{J}\)</span> o <span class="math inline">\(\text{cal}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(1 \; \text{cal} = 4,184 \; \text{J}\)</span></td>
 </tr>
+<tr class="odd">
+<td style="text-align: center;">elettronVolt</td>
+<td style="text-align: center;"><span class="math inline">\(\text{eV}\)</span></td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{eV} = 1,602 \cdot 10^{-19} \; \text{J}\)</span></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -639,25 +645,31 @@ table td, table th {
 <td style="text-align: center;">elettricità</td>
 <td style="text-align: center;">Coulomb</td>
 <td style="text-align: left;"><span class="math inline">\(\text{C}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(1 \; \text{C} = 1 \; \frac{\text{A}}{\text{s}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1 \; \text{C} = 1 \; \text{A} \cdot \text{s}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">potenziale elettrico</td>
 <td style="text-align: center;">Volt</td>
 <td style="text-align: left;"><span class="math inline">\(\displaystyle \text{V}\)</span></td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle 1 \; \text{V} = 1 \; \frac{\text{J}}{\text{C}}\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: center;">resistenza elettrica</td>
+<td style="text-align: center;">Ohm</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \Omega\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle 1 \; \Omega = 1 \; \frac{\text{V}}{\text{A}}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: center;">Magnetismo</td>
 <td style="text-align: center;">Tesla</td>
 <td style="text-align: left;"><span class="math inline">\(\text{T}\)</span></td>
 <td style="text-align: left;"><span class="math inline">\(1 \; \text{T} = 1 \; \frac{\text{N}}{\text{A m}}\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">flusso campo magnetico</td>
 <td style="text-align: center;">Weber</td>
 <td style="text-align: left;"><span class="math inline">\(\text{Wb}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(1 \; \text{Wb} = 1 \; \text{T m}^2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\({1 \; \text{Wb} = 1 \; \text{T m}^2}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -755,11 +767,11 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Costante di Boltzmann</td>
-<td style="text-align: left;"><span class="math inline">\(K_B = 1,38 \cdot 10^{-23} \frac{J}{K}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(k_B = 1,38 \cdot 10^{-23} \frac{J}{K}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Costante di Avogadro</td>
-<td style="text-align: left;"><span class="math inline">\(N_A = 6,022 \cdot 10^{23} \frac{particelle}{mol}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(N_A = 6,022 \cdot 10^{23} mol\frac{particelle}{mol}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -800,13 +812,17 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">angolo</td>
-<td style="text-align: left;"><span class="math inline">\(\displaystyle \alpha = \frac{\text{arco}}{\text{raggio}} \alpha_{gradi}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \alpha = \frac{\text{arco}}{\text{raggio}}\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">angolo in gradi</td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle \alpha = \frac{180 \cdot \text{arco}}{\pi r} = \alpha_{rad} \cdot \frac{180}{\pi}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">angolo giro</td>
 <td style="text-align: left;"><span class="math inline">\(\displaystyle \alpha = \frac{2 \pi r}{r} = 2 \pi\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">arco</td>
 <td style="text-align: left;"><span class="math inline">\(l = \alpha r\)</span></td>
 </tr>
@@ -841,7 +857,7 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">teorema del coseno</td>
-<td style="text-align: left;"><span class="math inline">\(\displaystyle c^2 = {a^2 + b^2 + 2 a b \cos{\alpha}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\displaystyle c^2 = {a^2 + b^2 - 2 a b \cos{\gamma}}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">somma tra vettori (componenti)</td>
@@ -1000,7 +1016,7 @@ table td, table th {
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}^2}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">velocità istantanea</td>
+<td style="text-align: left;">accelerazione istantanea</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{a} = \frac{\partial \vec{v} (t_1)}{\partial t}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}^2}\)</span></td>
 </tr>
@@ -1074,8 +1090,8 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">velocità finale</td>
-<td style="text-align: center;"><span class="math inline">\(v_f =\sqrt{v_0^2 + 2 a \Delta x}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(v^2_f =v_0^2 + 2 a \Delta x\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1117,8 +1133,8 @@ table td, table th {
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">accelerazione</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle a = v \omega = {\omega}^2 r\)</span></td>
+<td style="text-align: left;">accelerazione centripeta</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle a_c = v \omega = {\omega}^2 r\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}^2}\)</span></td>
 </tr>
 <tr class="even">
@@ -1128,7 +1144,7 @@ table td, table th {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">accelerazione centrifuga</td>
-<td style="text-align: center;">verso esterno</td>
+<td style="text-align: center;">apparente, in un sistema rotante</td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
@@ -1191,7 +1207,7 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">velocità</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle v = A \omega \sin(\omega t + \phi)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle v = - A \omega \sin(\omega t + \phi)\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
 </tr>
 <tr class="odd">
@@ -1212,7 +1228,7 @@ table td, table th {
 <tr class="even">
 <td style="text-align: left;">Frequenza</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle f = \frac{1}{T}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1}{\text{s}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{1}{\text{s}} = \text{Hz}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Periodo</td>
@@ -1222,7 +1238,7 @@ table td, table th {
 <tr class="even">
 <td style="text-align: left;">Fase iniziale</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \phi\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \text{m}, \; \phi \in [0,A]\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \text{m o rad}, \; \phi \in [0,A]\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1253,13 +1269,13 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">1 principio (principio di inerzia)</td>
-<td style="text-align: center;"><span class="math inline">\(\sum \vec{F} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum \vec{F} = 0 \rightarrow \vec{v} = \text{costante}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2 principio</td>
-<td style="text-align: center;"><span class="math inline">\(F = m \cdot a, \quad m&gt;0\)</span></td>
-<td style="text-align: center;">Newton</td>
+<td style="text-align: center;"><span class="math inline">\(\sum \vec{F} = m \cdot \vec{a}, \quad m&gt;0\)</span></td>
+<td style="text-align: center;">N</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">3 principio (principio di azione e reazione)</td>
@@ -1293,10 +1309,10 @@ table td, table th {
 <tr class="even">
 <td style="text-align: left;">principio conservazione quantità di moto</td>
 <td style="text-align: center;"><span class="math inline">\(\vec{p_{1,i}} + \vec{p_{2,i}} = \vec{p_{1,f}} + \vec{p_{2,f}}\)</span></td>
-<td style="text-align: center;">-</td>
+<td style="text-align: center;">sse <span class="math inline">\(\sum \vec{F} = 0\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Forza</td>
+<td style="text-align: left;">Forza media</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle F = \frac{\Delta p}{\Delta t}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{kg} \cdot \text{m}}{\text{s}^2}\)</span></td>
 </tr>
@@ -1321,8 +1337,8 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">forza peso</td>
-<td style="text-align: center;"><span class="math inline">\(F_p = -gm\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{F_p} = m \vec{g} \implies F_p = - m g\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">forza gravitazionale tra 2 masse</td>
@@ -1390,10 +1406,15 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">forza centrifuga</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle F_c = m \frac{v^2}{r}\)</span></td>
+<td style="text-align: center;">$ F_{cf} = m ^2 r = m $</td>
 <td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">forza centripeta</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle F_c = m \frac{v^2}{r}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">forza sistema non inerziale</td>
 <td style="text-align: center;"><span class="math inline">\(\begin{aligned} F + F' &amp;= m \cdot a_{NI} \\ F - m a_c &amp;= m \cdot a_{NI} \end{aligned}\)</span></td>
 <td style="text-align: center;"></td>
@@ -1407,6 +1428,11 @@ table td, table th {
 <section id="moto-in-campi-di-forze" class="level3">
 <h3 class="anchored" data-anchor-id="moto-in-campi-di-forze">Moto in campi di forze</h3>
 <table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -1422,7 +1448,7 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">Moto in un campo di forze nulle</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\begin{cases} x(t) = x_0 + v_{0x} t \\ y(t) = y_0 + v_{0y} t \\ z(t) = z_0 + v_{0z} t \end{cases}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
@@ -1431,8 +1457,13 @@ table td, table th {
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Moto in un campo di forze uniforme</td>
+<td style="text-align: left;">Moto in un campo di forze uniforme (terra)</td>
+<td style="text-align: center;"><span class="math inline">\(\begin{cases} F_x = 0 \\ F_y = 0 \\ F_z = -m g \end{cases}\)</span></td>
 <td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Moto in un campo di forza uniforme</td>
+<td style="text-align: center;"><span class="math inline">\(\begin{cases} x(t) = x_0 + v_{0x} t \\ y = - \frac{1}{2} g t^2  + v_{0y} t + y_0 \end{cases}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>
@@ -1441,6 +1472,11 @@ table td, table th {
 <section id="forze-di-attrito" class="level3">
 <h3 class="anchored" data-anchor-id="forze-di-attrito">Forze di attrito</h3>
 <table class="table-striped table-hover caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 35%">
+<col style="width: 35%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Descrizione</th>
@@ -1451,11 +1487,16 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Forza attrito statico</td>
-<td style="text-align: center;"><span class="math inline">\(F_s = \mu_{s} \cdot F_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(F_s \leq \mu_{s} \cdot F_n\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Forza attrito dinamico</td>
+<td style="text-align: left;">Massima forza attrito statico</td>
+<td style="text-align: center;"><span class="math inline">\(F_s = \mu_{s} \cdot F_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Forza attrito dinamico radente</td>
 <td style="text-align: center;"><span class="math inline">\(F_d = \mu_{d} \cdot F_n\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
@@ -1479,27 +1520,27 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Lavoro</td>
+<td style="text-align: left;">Lavoro forza costante</td>
 <td style="text-align: center;"><span class="math inline">\(L = F \cdot s \cdot \cos(\alpha)\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Energia cinetica</td>
-<td style="text-align: center;"><span class="math inline">\(T = \frac{1}{2} m v^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(K = \frac{1}{2} m v^2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Teorema energia cinetica</td>
-<td style="text-align: center;"><span class="math inline">\(\begin{aligned} L &amp;= T, \\ T &amp;= T_{fin} - T_{in} \end{aligned}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\begin{aligned} L_{tot} &amp;= \Delta K, \\ \Delta K &amp;= K_{fin} - K_{in} \end{aligned}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Energia potenziale</td>
+<td style="text-align: left;">Energia potenziale conservativa</td>
 <td style="text-align: center;"><span class="math inline">\(L_{AB} = U(A) - U(B) = - \Delta U\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Teorema conservazione energia meccanica</td>
+<td style="text-align: left;">Teorema conservazione energia meccanica conservativa</td>
 <td style="text-align: center;"><span class="math inline">\(\begin{aligned} \Delta T &amp;= - \Delta U \\ U_1 + T_1 &amp;= U_2 + T_2 =\text{costante} \end{aligned}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
@@ -1523,12 +1564,17 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">urto elastico</td>
+<td style="text-align: center;"><span class="math inline">\(\begin{cases} m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f} \\ \frac{1}{2} m_1 {v_{1i}}^2 + \frac{1}{2} m_2 {v_{2i}}^2 = \frac{1}{2} m_1 {v_{1f}}^2 + \frac{1}{2} m_2 {v_{2f}}^2 \end{cases}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{kg}\cdot\text{m}/\text{s}\)</span>, <span class="math inline">\(\text{J}\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Urti elastici</td>
 <td style="text-align: center;"><span class="math inline">\(m_1 v_{1i} + m_2 v_{2i} = m_1 v_{1f} + m_2 v_{2f}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{kg}\cdot\text{m}/\text{s}\)</span>, <span class="math inline">\(\text{J}\)</span></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Urti anelastici</td>
+<tr class="odd">
+<td style="text-align: left;">Urti perfettamente anelastici</td>
 <td style="text-align: center;"><span class="math inline">\(m_1 v_{1i} + m_2 v_{2i} = (m_1 + m_2) v_f\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{kg}\cdot\text{m}/\text{s}\)</span>, <span class="math inline">\(\text{J}\)</span></td>
 </tr>
@@ -1553,12 +1599,12 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">potenza</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle W = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle P = \frac{L}{\Delta t} = \vec{F} \cdot \vec{v}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \text{W} = \frac{\text{J}}{\text{s}}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">rendimento</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \eta = \frac{L}{E_t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {\eta = \frac{L}{E_t} = \frac{\text{Lavoro utile}}{\text{Lavoro fornito}} = \frac{\text{Potenza utile}}{\text{Potenza fornita}}}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 </tbody>
@@ -1595,7 +1641,7 @@ table td, table th {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">baricentro (centro di gravità)</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle R_B = \frac{\sum_{i}{m_i g \vec{r}}}{Mg} = \frac{\sum_{i}{m_i g_i \vec{r}_i \vec{r}}}{\sum_{i}{m_i g_i}}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
@@ -1605,7 +1651,7 @@ table td, table th {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">momento di una forza</td>
-<td style="text-align: center;"><span class="math inline">\(\vec{M}= \vec{r} \wedge \vec{F}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{M}= \vec{r} \wedge \vec{F} \implies \vec{\tau} = \vec{r} \times \vec{F}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{N}\cdot\text{m}\)</span></td>
 </tr>
 <tr class="even">
@@ -1625,20 +1671,25 @@ table td, table th {
 </tr>
 <tr class="odd">
 <td style="text-align: left;">momento angolare massa attorno a un asse</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle M = mvr\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vec{L} = \vec{r} \times \vec{p}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{kg}\cdot\text{m}^2/\text{s}\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">momento angolare massa attorno a un asse</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle L = mvr \quad \vec{r} \perp \vec{v}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{kg}\cdot\text{m}^2/\text{s}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">momento angolare corpo esteso</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle L_{tot} = \sum_{i}{m_i r_i^2 \omega} = I \omega\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{kg}\cdot\text{m}^2/\text{s}\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">momento di inerzia del corpo</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle I = \sum_{i}{m_i r_i^2}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{kg}\cdot\text{m}^2\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Equilibrio del corpo esteso</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \begin{aligned} \vec{F}_{tot}^{ext} &amp;= \sum_{i}{\vec{F_{i}^{ext}}} = 0 \\ \vec{M}_{TOT} &amp;= \sum_{i}{\vec{M}_{i}} = 0 \end{aligned}\)</span></td>
 <td style="text-align: center;"></td>
@@ -1670,7 +1721,7 @@ table td, table th {
 <tr class="even">
 <td style="text-align: left;">equilibrio corpo ext. vinc. in un punto (equilibrio rotazionale)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \sum_{i}{\vec{M_i}} = 0\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N} \cdot \text{m}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">eq. corpo ext. ruota attorno a un asse <span class="math inline">\(z\)</span> (somma componenti asse <span class="math inline">\(Z\)</span> momenti)</td>
@@ -1722,7 +1773,7 @@ table td, table th {
 <td style="text-align: center;">M intermedio</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">principio delle leve idrauliche</td>
+<td style="text-align: left;">principio delle leve idrauliche (Pascal)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{F_1}{S_1} = \frac{F_2}{S_2}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
@@ -1761,9 +1812,9 @@ table td, table th {
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Modulo di Young</td>
-<td style="text-align: center;"><span class="math inline">\(E\)</span></td>
-<td style="text-align: center;">dipende dal materiale</td>
+<td style="text-align: left;">Modulo di Young (rigidità dipende dal materiale)</td>
+<td style="text-align: center;"><span class="math inline">\(E = \frac{\sigma}{\varepsilon}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1787,17 +1838,17 @@ table td, table th {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">densità</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle D = \frac{M}{V}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle D = \rho = \frac{M}{V}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{kg}}{\text{m}^3}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">densità relativa</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle d_r = \frac{d}{d_{H_2O}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle d_r = \frac{d}{d_{h2o}}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">pressione</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle p = \frac{\vec{F} \cdot \vec{n}}{\Delta S} = \frac{F_N}{\Delta S} = \frac{F_N}{A}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
 </tr>
 <tr class="even">
@@ -1806,13 +1857,23 @@ table td, table th {
 <td style="text-align: center;"><span class="math inline">\(\rho\)</span>: densità del fluido, <span class="math inline">\(g\)</span>: accelerazione di gravità, <span class="math inline">\(d\)</span>: profondità</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">principio di Archimede (ris. verticale)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \begin{aligned} F_{tot} &amp;= F_P + S_A = \\ {\rho}_c g V - {\rho}_f g V &amp;= ({\rho}_c - {\rho}_f) g V \end{aligned}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Principio di archimede (condizione di galleggiamento)</td>
+<td style="text-align: center;"><span class="math inline">\(F_{ap} = F_{tot} - S_A\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">forza di Archimede</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle F_A = \rho g V\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">principio di Archimede</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \begin{aligned} F_{tot} &amp;= F_P + F_A = \\ {\rho}_c g V - {\rho}_f g V &amp;= ({\rho}_c - {\rho}_f) g V \end{aligned}\)</span></td>
+<td style="text-align: left;">spinta di Archimede (acqua)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle S_A = \rho_{h2o} g V\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
@@ -1996,8 +2057,8 @@ table td, table th {
 </tr>
 <tr class="even">
 <td style="text-align: left;">quantità di calore ceduta</td>
-<td style="text-align: center;"><span class="math inline">\(\Delta Q = c \cdot m \cdot \Delta T\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{K}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Delta Q = Q = c \cdot m \cdot \Delta T\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -2019,7 +2080,7 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">conduzione</td>
+<td style="text-align: left;">conduzione (unidimensionale)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{dQ}{dt} = -k A \frac{dT}{dx}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{W}\)</span></td>
 </tr>
@@ -2031,6 +2092,11 @@ table td, table th {
 <tr class="odd">
 <td style="text-align: left;">irraggiamento (Stefan-Boltzmann)</td>
 <td style="text-align: center;"><span class="math inline">\(P = \epsilon A \sigma T^4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{W}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">irraggiamento (ambiente)</td>
+<td style="text-align: center;"><span class="math inline">\(P = \epsilon A \sigma (T^4 - T_{\text{amb}}^4)\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{W}\)</span></td>
 </tr>
 </tbody>
@@ -2065,6 +2131,16 @@ table td, table th {
 <tr class="odd">
 <td style="text-align: left;">costanti</td>
 <td style="text-align: center;"><span class="math inline">\(\alpha = \beta = \frac{1}{273,15}\)</span></td>
+<td style="text-align: center;">- (<span class="math inline">\(K^{-1}\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Charles/Gay-Lussac pressione costante</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{V_1}{T_1} = \frac{V_2}{T_2} = \text{costante}\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charles/Gay-Lussac volume costante</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{p_1}{T_1} = \frac{p_2}{T_2} = \text{costante}\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
@@ -2102,18 +2178,28 @@ table td, table th {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">energia cinetica media particella</td>
+<td style="text-align: left;">energia cinetica media mole</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle E_c = \frac{3}{2} RT\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">radice velocità quadratica media</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle v_{rms} = \sqrt{\frac{3RT}{M}}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
+<td style="text-align: left;">energia cinetica media particella</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle E_c = \frac{3}{2} k_B T\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">radice velocità quadratica media</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle v_{rms} = \sqrt{\frac{3RT}{M}} \qquad \text{M = massa molare kg/mol}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{m}}{\text{s}}\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">equazione di van der Waals (gas reali)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \left(p + \frac{a}{V^2}\right)(V - b) = RT\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">van der Waals (generale)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \left(p + \frac{a n^2}{V^2}\right)(V - nb) = nRT\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
@@ -2137,6 +2223,11 @@ table td, table th {
 <td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">legge di dalton</td>
+<td style="text-align: center;"><span class="math inline">\(p_i = x_i p_{tot}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Pa}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">umidità relativa</td>
 <td style="text-align: center;"><span class="math inline">\({\text{um.rel} = \frac{p_{acqua}}{\text{tensione di vapore}} \cdot 100}\)</span></td>
 <td style="text-align: center;"></td>
@@ -2209,13 +2300,23 @@ table td, table th {
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">isoterma (gas ideale)</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta W = - nRT \log{\frac{V_2}{V_1}}\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">isocora (volume costante)</td>
 <td style="text-align: center;"><span class="math inline">\(\Delta E = \Delta Q = n \cdot C_v \Delta T\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">isobara (P costante)</td>
 <td style="text-align: center;"><span class="math inline">\(\Delta Q_P = \left(E_2 + P V_2 \right) - \left(E_1 + P V_1 \right) = \Delta H\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">isobara (gas ideale)</td>
+<td style="text-align: center;"><span class="math inline">\(\Delta H = n C_p \Delta T\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="even">
@@ -2224,21 +2325,26 @@ table td, table th {
 <td style="text-align: center;">-</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">adiabatica (no scambio di calore)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta E = - \Delta W\)</span></td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Entalpia</td>
 <td style="text-align: center;"><span class="math inline">\(H = E + PV\)</span></td>
 <td style="text-align: center;">funzione di stato, misura energia interna + lavoro espansione</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Legge di Hess</td>
 <td style="text-align: center;"><span class="math inline">\({\Delta H_{AD} = \Delta H_{AB} + \Delta H_{BC} + \Delta H_{CD}}\)</span></td>
 <td style="text-align: center;">variazione totale uguale alla somma delle singole variazioni</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Equilibrio termico</td>
 <td style="text-align: center;"><span class="math inline">\(c_1 m_1 (T - T_1) = c_2 m_2 (T_2 - T)\)</span></td>
 <td style="text-align: center;">-</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">capacità termica molare</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \bar{C_p} = a + bT +\frac{c}{T^2}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{mol K}}\)</span></td>
@@ -2305,24 +2411,34 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Trasformazioni isoterme</td>
+<td style="text-align: left;">Trasformazioni isoterme (calore reversibile a T costante)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = \frac{\Delta Q}{T}\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">trasformazioni adiabatiche</td>
+<td style="text-align: left;">trasformazione isoterma gas ideale</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = n R \log{\frac{V_2}{V_1}}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trasformazioni adiabatiche reversibile</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = 0\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">trasformazioni adiabatiche irreversibile</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S &gt; 0\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">trasformazioni isobare (<span class="math inline">\(C_p\)</span> costante)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = C_P \log{\frac{T_2}{T_1}}\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">in caso moltiplicato per <span class="math inline">\(n\)</span> moli</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">trasformazioni isocore (<span class="math inline">\(C_V\)</span> costante)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta S = C_V \log{\frac{T_2}{T_1}}\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">in caso moltiplicato per <span class="math inline">\(n\)</span> moli</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">transizioni di fase (p e T costanti)</td>
@@ -2418,7 +2534,7 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <tr class="even">
 <td style="text-align: left;">Potenziale elettrostatico</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle {V(\vec{r}) = \frac{U(\vec{r})}{q} = \frac{1}{4 \pi {\epsilon}_0 \epsilon} (\frac{Q}{r})}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle V = 1 \frac{J}{C}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle V = \frac{J}{C}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Differenza potenziale</td>
@@ -2505,7 +2621,7 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 </tr>
 <tr class="even">
 <td style="text-align: left;">differenza di potenziale</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle {\Delta V = \frac{L}{q} = Q \frac{d}{S} \frac{1}{\epsilon_0 \epsilon_r}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {\Delta V = \frac{L}{q} = Q \frac{d}{S} \frac{1}{\epsilon_0 \epsilon_r} = Ed}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
 <tr class="odd">
@@ -2540,7 +2656,7 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Energia condensatore carico (lavoro per caricarlo)</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle L = \frac{1}{2} C V^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle L = \frac{1}{2} C V^2 = \frac{1}{2}QV\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(J\)</span></td>
 </tr>
 <tr class="even">
@@ -2551,7 +2667,7 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <tr class="odd">
 <td style="text-align: left;">dal teorema di Gauss</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle E = \frac{\sigma}{\epsilon_0 \epsilon_r}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(V \cdot m\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{N}{C} = \frac{V}{m}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -2573,13 +2689,13 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Intensità di corrente</td>
+<td style="text-align: left;">Intensità di corrente media</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle i = \frac{\Delta q}{\Delta t}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{A}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Densità di corrente</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle {J = \frac{\Delta q}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle {J = \frac{\Delta q}{\Delta t \Delta S} = \frac{\Delta i}{\Delta S} = \frac{I}{A}}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{A}/\text{m}^2\)</span></td>
 </tr>
 <tr class="odd">
@@ -2590,7 +2706,7 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <tr class="even">
 <td style="text-align: left;">conducibilità elettrica</td>
 <td style="text-align: center;"><span class="math inline">\(\sigma\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{C^2}{s m}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{C^2}{s m} = \frac{\text{S}}{\text{m}}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">I Legge di Ohm (Intensità di corrente)</td>
@@ -2600,12 +2716,12 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <tr class="even">
 <td style="text-align: left;">II Legge di Ohm (Resistenza elettrica)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R = \rho \frac{l}{S}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\Omega = V A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \Omega = \frac{V}{A}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Resistenza specifica o resistività</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \rho = \frac{1}{\sigma}\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">$ $</td>
 </tr>
 </tbody>
 </table>
@@ -2615,10 +2731,10 @@ misura numero di microstati compatibili con il macrostato. Offre una misura dell
 <p><strong>anioni</strong> (b) → <span class="math inline">\(-z_b e\)</span><br>
 <strong>cationi</strong> (a) → <span class="math inline">\(+z_a e\)</span></p>
 <p>per semplicità possiamo porre <span class="math inline">\(z_a = z_b = z = 1\)</span>, indicando gli ioni con <span class="math inline">\(a^+\)</span> e <span class="math inline">\(b^-\)</span></p>
-<p>Forza sottoposti ioni: <span class="math inline">\(ZeE\)</span><br>
+<p>Forza sottoposti ioni: <span class="math inline">\(\vec{F} = q\vec{E} = Ze\vec{E}\)</span><br>
 Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale alla velocità)</p>
 <p>equilibrio: <span class="math inline">\(F = F + F_A = ZeE - fv = 0\)</span></p>
-<p>velocità trascinamento <span class="math inline">\(v = \frac{ZeE}{f} = \mu E\)</span></p>
+<p>velocità trascinamento (attrito lineare) <span class="math inline">\(v = \frac{ZeE}{f} = \mu E\)</span>, <span class="math inline">\(f\)</span> coefficiente di attrito, <span class="math inline">\(\mu = \frac{Ze}{f}\)</span> mobilità ionica</p>
 <p>concentrazione: grammoione/litro</p>
 <p><strong>grammoione</strong>: massa di di una mole, ovvero un numero di Avogadro di ioni.</p>
 <p><strong>costante di Faraday <span class="math inline">\(\mathcal{F}\)</span></strong>: <span class="math inline">\(96489 \ C mol^-1\)</span></p>
@@ -2649,13 +2765,13 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 </tr>
 <tr class="even">
 <td style="text-align: left;">Lavoro generatore aperto (non eroga corrente)</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle f = V_A - V_B\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle f = V_A - V_B = V\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(V\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Lavoro generatore chiuso (eroga corrente)</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle V_A - V_B = f - r l = R I\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(V\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle V_A - V_B = f - r I = R I\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(V\)</span>, <span class="math inline">\(r\)</span>: resistenza interna, <span class="math inline">\(R\)</span>: resistenza esterna</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Differenza di potenziale</td>
@@ -2687,21 +2803,26 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <td style="text-align: center;"><span class="math inline">\(\text{A}\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">II principio di Kirchhoff (generale)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \sum_{maglia} \Delta V = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">II principio di Kirchhoff (corrente maglia) con generatore</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R_1 I_1 + R_2 I_2 = \Delta V\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">II principio di Kirchhoff (corrente maglia) senza generatore</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle {R_3 I_3 + R_4 I_4 - R_2 I_2 = 0}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{V}¢\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Resistenze in serie</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle R_{tot} = R_1 + R_2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Resistenze in parallelo</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle {\frac{1}{R_{tot}} = \frac{I}{V_A - V_B} = \frac{1}{R_1} + \frac{1}{R_2}}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
@@ -2726,7 +2847,7 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Lavoro (ddp / corrente costanti)</td>
+<td style="text-align: left;">Lavoro (<span class="math inline">\(\Delta V\)</span> / <span class="math inline">\(I\)</span> costanti)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle L = I \cdot \Delta t \cdot \Delta V\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
@@ -2742,7 +2863,7 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 </tr>
 <tr class="even">
 <td style="text-align: left;">calore dissipato</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle Q(J) = W \Delta t = \frac{V^2}{R} \Delta t\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle Q(J) = P \Delta t = \frac{V^2}{R} \Delta t\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span> , <span class="math inline">\(\text{cal}\)</span></td>
 </tr>
 </tbody>
@@ -2785,7 +2906,7 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <td style="text-align: center;"><span class="math inline">\(\text{J}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">tempo di carica</td>
+<td style="text-align: left;">tempo di carica/scarica</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \tau = RC\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{s}\)</span></td>
 </tr>
@@ -2828,23 +2949,33 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 </tr>
 <tr class="even">
 <td style="text-align: left;">Forza agente su tratto di filo <span class="math inline">\(\Delta l\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F} = I \Delta l \wedge \vec{B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F} = I \Delta l \times \vec{B}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Forza di Lorentz su <span class="math inline">\(q\)</span> con velocità <span class="math inline">\(v\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F} = q \vec{v} \wedge \vec{B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{F} = q \vec{v} \times \vec{B}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Forza di Lorentz completa</td>
+<td style="text-align: center;"><span class="math inline">\(\vec{F} = q \left( \vec{E} + \vec{v} \times \vec{B} \right)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{N}\)</span></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">campo magnetico di una spira attraversata da corrente <span class="math inline">\(I\)</span> (al centro)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle B = \frac{\mu I}{2 r}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{N}}{\text{A m}}\)</span></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(n\)</span> spire percorse da corrente <span class="math inline">\(I\)</span> (interno) con lunghezza <span class="math inline">\(L\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle B = \frac{\mu n I}{L}\)</span></td>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(N\)</span> spire percorse da corrente <span class="math inline">\(I\)</span> (interno) con lunghezza <span class="math inline">\(L\)</span> (solenoide)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle B = \frac{\mu N I}{L}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{N}}{\text{A m}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">momento di dipolo magnetico</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{m} = IS\vec{n}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{A m}^2\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">momento magnetico su una spira</td>
@@ -2852,19 +2983,14 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{A m}^2}{\text{N}}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">momento di dipolo magnetico</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{m} = IS\vec{n}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{N m}\)</span></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">permeabilità magnetica relativa</td>
 <td style="text-align: center;"><span class="math inline">\(\mu = \mu_0 \mu_r\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(-\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">campo vettore intensità magnetica</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \vec{H} = \frac{\vec{B}}{\mu}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{C}}{\text{s m}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{C}}{\text{s m}} = \frac{\text{A}}{\text{m}}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -2891,36 +3017,41 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <td style="text-align: center;"><span class="math inline">\(\text{Wb}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">flusso magnetico (superficie piana)</td>
+<td style="text-align: left;">flusso magnetico (superficie piana e campo uniforme)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \Phi_B = B S \cos ( \alpha )\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{Wb}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">corrente indotta (circuito chiuso)</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle i = \frac{\Delta \Phi_B}{R \Delta t}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{A}\)</span></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">ddp indotta (circuito aperto)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \Delta V = \frac{\Delta \Phi_B}{\Delta t}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Legge di Faraday-Neumann-Lenz</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \mathcal{E} = - \frac{d \Phi_B}{dt}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">corrente indotta</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle I = \frac{f}{R}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{A}\)</span></td>
+</tr>
 <tr class="even">
-<td style="text-align: left;">autoinduzione variazione flusso su circuito</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \Phi(\vec{B}) = LI\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
+<td style="text-align: left;">corrente indotta (circuito chiuso)</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle i = \frac{\Delta \Phi_B}{R \Delta t}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{A}\)</span></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">autoinduzione variazione flusso su circuito</td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle (N) \Phi(\vec{B}) = LI\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">coefficiente di autoinduzione (induttanza)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle L = \frac{\Phi(\vec{B})}{I}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{H}\)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">fem indotta da autoinduzione (opposta a fem)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle V_i = - \frac{d\Phi}{dt} = - L \frac{dI}{dt}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
@@ -2957,21 +3088,21 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <tr class="odd">
 <td style="text-align: left;">tensione istantanea resistenza</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle V_R (t) = R I_0 \sin(\omega t)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">tensione istantanea induttore</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle V_L (t) = L \frac{dI}{dt} = L \omega I_0 \cos(\omega t)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">tensione istantanea condensatore</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle V_C (t) = \frac{Q(t)}{C} = \frac{I_0}{\omega C} \sin(\omega t)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\Omega\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle V_C (t) = \frac{Q(t)}{C} = -\frac{I_0}{\omega C} \cos(\omega t)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{V}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">potenza assorbita da resistenza</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle P_R = V_R I = R I^2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle P_R = V_R I \cos(\phi) = R I^2\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\text{W}\)</span></td>
 </tr>
 </tbody>
@@ -3011,13 +3142,13 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 </tr>
 <tr class="even">
 <td style="text-align: left;">numero d’onda</td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle k = \frac{1}{\lambda}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\displaystyle k = \frac{1}{\lambda} = \frac{2\pi}{\lambda}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{rad}{m}\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">frequenza (numero oscillazioni al secondo)</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \nu = \frac{1}{T}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{Hz}}{\text{s}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\text{Hz}\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">riscrittura funzione d’onda</td>
@@ -3055,7 +3186,7 @@ Forza di attrito: <span class="math inline">\(F_A=-fv\)</span> (proporzionale al
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{m}^3}\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">densità energia campo elettromagnetico</td>
+<td style="text-align: left;">onda elettromagnetica nel vuoto</td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle u_{EM} = u_E + u_B ={ \epsilon_0 E^2 = \frac{B^2}{\mu_0}}\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(\displaystyle \frac{\text{J}}{\text{m}^3}\)</span></td>
 </tr>

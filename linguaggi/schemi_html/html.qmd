@@ -65,7 +65,7 @@ image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_
   7. [fieldset]
   8. [legend]
   9. [validazione]
-12. [accessibilità]
+12. [Accessibilità]
   1. [alt]
   2. [aria-*]
   3. [tabindex]
@@ -74,11 +74,260 @@ image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_
 15. [Validazione e debugging]
 16. [HTML obsoleto]
 
+## Cos'è HTML
+
+HTML (HyperText Markup Language) è un linguaggio di markup utilizzato per creare pagine web. Consente di strutturare il contenuto e definire la presentazione dei documenti attraverso l'uso di tag e attributi. HTML è fondamentale per il web, poiché fornisce la base su cui si costruiscono siti e applicazioni web, permettendo l'integrazione di testo, immagini, video, link e altri elementi multimediali.
+
+## HTML, CSS e JavaScript
+
+HTML, CSS e JavaScript sono i tre linguaggi fondamentali per lo sviluppo web. HTML fornisce la struttura del contenuto, CSS definisce la presentazione e JavaScript aggiunge interattività.
+
+## Struttura minima di una pagina
+
+### <!DOCTYPE html>
+
+### Tag <html>
+
+Il tag `<html>` è l'elemento radice di un documento HTML. Tutti gli altri elementi devono essere contenuti all'interno di questo tag. L'attributo `lang` può essere utilizzato per specificare la lingua del contenuto della pagina.
+
+### Tag <head>
+
+Il tag `<head>` contiene informazioni meta del documento, come il titolo, i metadati e i link a risorse esterne.
+
+### Tag <body>
 
 
 
 
-## Introduzione
+## Testo
+
+
+
+### h1-h6
+
+
+
+### p
+
+
+
+### strong / em
+
+
+
+### b / i
+
+
+
+### br
+
+
+
+### code / pre / ...
+
+
+
+## Semantica
+
+
+
+### header
+
+
+
+### nav
+
+
+
+### main
+
+
+
+### section
+
+
+
+### article
+
+
+
+### aside
+
+
+
+### footer
+
+
+
+## Attributi
+
+
+
+### id
+
+
+
+### class
+
+
+
+### lang
+
+
+
+### title
+
+
+
+### data-*
+
+
+
+## Collegamenti
+
+
+
+### href
+
+
+
+### URL
+
+
+
+### fragment
+
+
+
+### target/rel
+
+
+
+## Immagini e multimedia
+
+
+
+### img
+
+
+
+### figure
+
+
+
+### picture
+
+
+
+### video
+
+
+
+### audio
+
+
+
+### iframe
+
+
+
+## Liste
+
+
+
+### ul / ol / li
+
+
+
+### dl / dt / dd
+
+
+
+## Tabelle
+
+
+
+### table / tr / td / th
+
+
+
+### caption
+
+
+
+### thead / tbody / tfoot
+
+
+
+## Form
+
+
+
+### form
+
+
+
+### label
+
+
+
+### input
+
+
+
+### select
+
+
+
+### textarea
+
+
+
+### button
+
+
+
+### fieldset
+
+
+
+### legend
+
+
+
+### validazione
+
+
+
+## Accessibilità
+
+
+
+### alt
+
+
+
+### aria-*
+
+
+
+### tabindex
+
+
+
+## Metadata e <head>
+
+
+
+## HTML e DOM
+
+
+
+## Validazione e debugging
+
+
+
+## HTML obsoleto
 
 sistema di markup basato sui **tag**, racchiusi tra **<** e **>**
 
