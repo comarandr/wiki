@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Appunti di HTML">
+
+<title>HTML – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/linguaggi/indexLing.html"> 
+<span class="menu-text">Linguaggi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/universita/indexUni.html"> 
+<span class="menu-text">Università</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/personali/indexPers.html"> 
+<span class="menu-text">Personali</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/indexMin.html"> 
+<span class="menu-text">Minimali</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cosè-html" id="toc-cosè-html" class="nav-link active" data-scroll-target="#cosè-html">Cos’è HTML</a></li>
+  <li><a href="#html-css-e-javascript" id="toc-html-css-e-javascript" class="nav-link" data-scroll-target="#html-css-e-javascript">HTML, CSS e JavaScript</a></li>
+  <li><a href="#struttura-minima-di-una-pagina" id="toc-struttura-minima-di-una-pagina" class="nav-link" data-scroll-target="#struttura-minima-di-una-pagina">Struttura minima di una pagina</a>
+  <ul>
+  <li><a href="#elementi" id="toc-elementi" class="nav-link" data-scroll-target="#elementi">Elementi</a>
+  <ul class="collapse">
+  <li><a href="#tag-di-apertura-e-chiusura" id="toc-tag-di-apertura-e-chiusura" class="nav-link" data-scroll-target="#tag-di-apertura-e-chiusura">Tag di apertura e chiusura</a></li>
+  </ul></li>
+  <li><a href="#attributi" id="toc-attributi" class="nav-link" data-scroll-target="#attributi">Attributi</a></li>
+  <li><a href="#annidamento-di-elementi" id="toc-annidamento-di-elementi" class="nav-link" data-scroll-target="#annidamento-di-elementi">Annidamento di elementi</a></li>
+  <li><a href="#regole-di-scrittura" id="toc-regole-di-scrittura" class="nav-link" data-scroll-target="#regole-di-scrittura">Regole di scrittura</a>
+  <ul class="collapse">
+  <li><a href="#commentare" id="toc-commentare" class="nav-link" data-scroll-target="#commentare">Commentare</a></li>
+  <li><a href="#regole" id="toc-regole" class="nav-link" data-scroll-target="#regole">Regole</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#struttura-minima-di-una-pagina-html" id="toc-struttura-minima-di-una-pagina-html" class="nav-link" data-scroll-target="#struttura-minima-di-una-pagina-html">Struttura minima di una pagina HTML</a>
+  <ul>
+  <li><a href="#dichiarazione-del-tipo-di-documento-doctype-html" id="toc-dichiarazione-del-tipo-di-documento-doctype-html" class="nav-link" data-scroll-target="#dichiarazione-del-tipo-di-documento-doctype-html">Dichiarazione del tipo di documento &lt;!DOCTYPE html&gt;</a></li>
+  <li><a href="#struttura-generica" id="toc-struttura-generica" class="nav-link" data-scroll-target="#struttura-generica">Struttura generica</a></li>
+  </ul></li>
+  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head">Head</a>
+  <ul>
+  <li><a href="#metadati" id="toc-metadati" class="nav-link" data-scroll-target="#metadati">Metadati</a></li>
+  <li><a href="#titolo-della-pagina-title" id="toc-titolo-della-pagina-title" class="nav-link" data-scroll-target="#titolo-della-pagina-title">Titolo della pagina &lt;title&gt;</a></li>
+  <li><a href="#elemento-style-style" id="toc-elemento-style-style" class="nav-link" data-scroll-target="#elemento-style-style">Elemento style &lt;style&gt;</a></li>
+  </ul></li>
+  <li><a href="#body" id="toc-body" class="nav-link" data-scroll-target="#body">Body</a>
+  <ul>
+  <li><a href="#inserimento-e-formattazione-base-del-testo" id="toc-inserimento-e-formattazione-base-del-testo" class="nav-link" data-scroll-target="#inserimento-e-formattazione-base-del-testo">Inserimento e formattazione base del testo</a></li>
+  <li><a href="#headings-h1-h6" id="toc-headings-h1-h6" class="nav-link" data-scroll-target="#headings-h1-h6">Headings &lt;h1&gt; … &lt;h6&gt;</a></li>
+  <li><a href="#paragrafo-p-p" id="toc-paragrafo-p-p" class="nav-link" data-scroll-target="#paragrafo-p-p">Paragrafo &lt;p&gt; &lt;/p&gt;</a></li>
+  <li><a href="#a-capo-br" id="toc-a-capo-br" class="nav-link" data-scroll-target="#a-capo-br">A capo &lt;br&gt;</a></li>
+  <li><a href="#horizontal-rule-hr" id="toc-horizontal-rule-hr" class="nav-link" data-scroll-target="#horizontal-rule-hr">Horizontal rule &lt;hr&gt;</a></li>
+  <li><a href="#testo-in-grassetto-bb" id="toc-testo-in-grassetto-bb" class="nav-link" data-scroll-target="#testo-in-grassetto-bb">Testo in grassetto &lt;b&gt;&lt;/b&gt;</a></li>
+  <li><a href="#testo-in-italics-ii" id="toc-testo-in-italics-ii" class="nav-link" data-scroll-target="#testo-in-italics-ii">Testo in italics &lt;i&gt;&lt;/i&gt;</a></li>
+  <li><a href="#enfasi-a-un-segmento-di-testo-strong-e-em" id="toc-enfasi-a-un-segmento-di-testo-strong-e-em" class="nav-link" data-scroll-target="#enfasi-a-un-segmento-di-testo-strong-e-em">Enfasi a un segmento di testo &lt;strong&gt; e &lt;em&gt;</a></li>
+  <li><a href="#apici-sup-e-pedici-sub" id="toc-apici-sup-e-pedici-sub" class="nav-link" data-scroll-target="#apici-sup-e-pedici-sub">Apici &lt;sup&gt; e pedici &lt;sub&gt;</a></li>
+  <li><a href="#citazioni-blockquote-e-q-citazioni-bibliografiche-cite" id="toc-citazioni-blockquote-e-q-citazioni-bibliografiche-cite" class="nav-link" data-scroll-target="#citazioni-blockquote-e-q-citazioni-bibliografiche-cite">Citazioni &lt;blockquote&gt; e &lt;q&gt;, citazioni bibliografiche &lt;cite&gt;</a></li>
+  <li><a href="#abbreviazioni-abbr-title" id="toc-abbreviazioni-abbr-title" class="nav-link" data-scroll-target="#abbreviazioni-abbr-title">abbreviazioni &lt;abbr title=“…”&gt;</a></li>
+  <li><a href="#caratteri-speciali" id="toc-caratteri-speciali" class="nav-link" data-scroll-target="#caratteri-speciali">Caratteri speciali</a></li>
+  <li><a href="#attributo-style" id="toc-attributo-style" class="nav-link" data-scroll-target="#attributo-style">Attributo style</a></li>
+  <li><a href="#attributi-semantici-id-class" id="toc-attributi-semantici-id-class" class="nav-link" data-scroll-target="#attributi-semantici-id-class">Attributi semantici id &amp; class</a>
+  <ul class="collapse">
+  <li><a href="#id" id="toc-id" class="nav-link" data-scroll-target="#id">id</a></li>
+  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class">class</a></li>
+  <li><a href="#esempi" id="toc-esempi" class="nav-link" data-scroll-target="#esempi">Esempi</a></li>
+  </ul></li>
+  <li><a href="#elementi-di-tipo-blocco-block" id="toc-elementi-di-tipo-blocco-block" class="nav-link" data-scroll-target="#elementi-di-tipo-blocco-block">Elementi di tipo blocco (block)</a></li>
+  <li><a href="#elementi-di-tipo-in-linea-inline" id="toc-elementi-di-tipo-in-linea-inline" class="nav-link" data-scroll-target="#elementi-di-tipo-in-linea-inline">Elementi di tipo in linea (inline)</a></li>
+  </ul></li>
+  <li><a href="#strutturazione" id="toc-strutturazione" class="nav-link" data-scroll-target="#strutturazione">Strutturazione</a>
+  <ul>
+  <li><a href="#css-box-model" id="toc-css-box-model" class="nav-link" data-scroll-target="#css-box-model">CSS Box Model</a></li>
+  <li><a href="#aggregazione-di-elementi" id="toc-aggregazione-di-elementi" class="nav-link" data-scroll-target="#aggregazione-di-elementi">Aggregazione di elementi</a></li>
+  <li><a href="#elementi-per-la-strutturazione" id="toc-elementi-per-la-strutturazione" class="nav-link" data-scroll-target="#elementi-per-la-strutturazione">Elementi per la strutturazione</a></li>
+  <li><a href="#strutturazione-classica" id="toc-strutturazione-classica" class="nav-link" data-scroll-target="#strutturazione-classica">Strutturazione classica</a></li>
+  <li><a href="#nuovi-elementi-strutturali" id="toc-nuovi-elementi-strutturali" class="nav-link" data-scroll-target="#nuovi-elementi-strutturali">Nuovi elementi strutturali</a></li>
+  <li><a href="#liste" id="toc-liste" class="nav-link" data-scroll-target="#liste">Liste</a>
+  <ul class="collapse">
+  <li><a href="#liste-ordinate-ol-e-li" id="toc-liste-ordinate-ol-e-li" class="nav-link" data-scroll-target="#liste-ordinate-ol-e-li">Liste ordinate &lt;ol&gt; e &lt;li&gt;</a></li>
+  <li><a href="#liste-non-ordinate-ul-e-li" id="toc-liste-non-ordinate-ul-e-li" class="nav-link" data-scroll-target="#liste-non-ordinate-ul-e-li">Liste non ordinate &lt;ul&gt; e &lt;li&gt;</a></li>
+  <li><a href="#liste-di-definizione-dl-dt-e-dd" id="toc-liste-di-definizione-dl-dt-e-dd" class="nav-link" data-scroll-target="#liste-di-definizione-dl-dt-e-dd">Liste di definizione &lt;dl&gt;, &lt;dt&gt; e &lt;dd&gt;</a></li>
+  </ul></li>
+  <li><a href="#tabelle-table" id="toc-tabelle-table" class="nav-link" data-scroll-target="#tabelle-table">Tabelle &lt;table&gt;</a>
+  <ul class="collapse">
+  <li><a href="#tabelle-base" id="toc-tabelle-base" class="nav-link" data-scroll-target="#tabelle-base">Tabelle base</a></li>
+  <li><a href="#intestazioni-di-riga-e-colonna-th" id="toc-intestazioni-di-riga-e-colonna-th" class="nav-link" data-scroll-target="#intestazioni-di-riga-e-colonna-th">Intestazioni di riga e colonna &lt;th&gt;</a></li>
+  <li><a href="#colspan-cella-che-si-estende-su-più-colonne" id="toc-colspan-cella-che-si-estende-su-più-colonne" class="nav-link" data-scroll-target="#colspan-cella-che-si-estende-su-più-colonne">Colspan (cella che si estende su più colonne)</a></li>
+  <li><a href="#rowspan-cella-che-si-estende-su-più-righe" id="toc-rowspan-cella-che-si-estende-su-più-righe" class="nav-link" data-scroll-target="#rowspan-cella-che-si-estende-su-più-righe">Rowspan (cella che si estende su più righe)</a></li>
+  <li><a href="#caption-titolo-della-tabella" id="toc-caption-titolo-della-tabella" class="nav-link" data-scroll-target="#caption-titolo-della-tabella">Caption (titolo della tabella)</a></li>
+  <li><a href="#tabelle-complesse-thead-tbody-tfoot" id="toc-tabelle-complesse-thead-tbody-tfoot" class="nav-link" data-scroll-target="#tabelle-complesse-thead-tbody-tfoot">Tabelle complesse &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</a></li>
+  <li><a href="#attributi-obsoleti" id="toc-attributi-obsoleti" class="nav-link" data-scroll-target="#attributi-obsoleti">Attributi obsoleti</a></li>
+  <li><a href="#tabelle-annidate" id="toc-tabelle-annidate" class="nav-link" data-scroll-target="#tabelle-annidate">Tabelle annidate</a></li>
+  <li><a href="#raggruppamento-di-colonne-colgroup-e-col" id="toc-raggruppamento-di-colonne-colgroup-e-col" class="nav-link" data-scroll-target="#raggruppamento-di-colonne-colgroup-e-col">Raggruppamento di colonne &lt;colgroup&gt; e &lt;col&gt;</a></li>
+  </ul></li>
+  <li><a href="#collegamenti-ipertestuali-a" id="toc-collegamenti-ipertestuali-a" class="nav-link" data-scroll-target="#collegamenti-ipertestuali-a">Collegamenti ipertestuali &lt;a&gt;</a>
+  <ul class="collapse">
+  <li><a href="#riferimenti-assoluti" id="toc-riferimenti-assoluti" class="nav-link" data-scroll-target="#riferimenti-assoluti">Riferimenti assoluti</a></li>
+  <li><a href="#riferimenti-relativi" id="toc-riferimenti-relativi" class="nav-link" data-scroll-target="#riferimenti-relativi">Riferimenti relativi</a></li>
+  <li><a href="#visualizzazione-della-pagina-destinazione" id="toc-visualizzazione-della-pagina-destinazione" class="nav-link" data-scroll-target="#visualizzazione-della-pagina-destinazione">Visualizzazione della pagina destinazione</a></li>
+  <li><a href="#collegamenti-a-parti-specifiche-della-pagina" id="toc-collegamenti-a-parti-specifiche-della-pagina" class="nav-link" data-scroll-target="#collegamenti-a-parti-specifiche-della-pagina">Collegamenti a parti specifiche della pagina</a></li>
+  <li><a href="#collegamenti-a-parti-specifiche-di-pagine-esterne" id="toc-collegamenti-a-parti-specifiche-di-pagine-esterne" class="nav-link" data-scroll-target="#collegamenti-a-parti-specifiche-di-pagine-esterne">Collegamenti a parti specifiche di pagine esterne</a></li>
+  <li><a href="#download" id="toc-download" class="nav-link" data-scroll-target="#download">Download</a></li>
+  <li><a href="#rel" id="toc-rel" class="nav-link" data-scroll-target="#rel">Rel</a></li>
+  <li><a href="#posta-elettronica" id="toc-posta-elettronica" class="nav-link" data-scroll-target="#posta-elettronica">Posta elettronica</a></li>
+  <li><a href="#numero-di-telefono" id="toc-numero-di-telefono" class="nav-link" data-scroll-target="#numero-di-telefono">Numero di telefono</a></li>
+  </ul></li>
+  <li><a href="#immagini-img" id="toc-immagini-img" class="nav-link" data-scroll-target="#immagini-img">Immagini &lt;img&gt;</a>
+  <ul class="collapse">
+  <li><a href="#percorso-file-e-test-alternativo-img-src-alt" id="toc-percorso-file-e-test-alternativo-img-src-alt" class="nav-link" data-scroll-target="#percorso-file-e-test-alternativo-img-src-alt">Percorso file e test alternativo &lt;img src=“…” alt=“…”&gt;</a></li>
+  <li><a href="#dimensioni-img-width-height" id="toc-dimensioni-img-width-height" class="nav-link" data-scroll-target="#dimensioni-img-width-height">Dimensioni &lt;img width=“…” height=“…”&gt;</a></li>
+  <li><a href="#immagine-di-tipo-blocco-figure-e-didascalia-figcaption" id="toc-immagine-di-tipo-blocco-figure-e-didascalia-figcaption" class="nav-link" data-scroll-target="#immagine-di-tipo-blocco-figure-e-didascalia-figcaption">Immagine di tipo blocco &lt;figure&gt; e didascalia &lt;figcaption&gt;</a></li>
+  <li><a href="#immagine-con-collegamento-ipertestuale" id="toc-immagine-con-collegamento-ipertestuale" class="nav-link" data-scroll-target="#immagine-con-collegamento-ipertestuale">Immagine con collegamento ipertestuale</a></li>
+  <li><a href="#aree-attive-map-e-area" id="toc-aree-attive-map-e-area" class="nav-link" data-scroll-target="#aree-attive-map-e-area">Aree attive &lt;map&gt; e &lt;area&gt;</a></li>
+  <li><a href="#presentazione-e-allineamento-immagini" id="toc-presentazione-e-allineamento-immagini" class="nav-link" data-scroll-target="#presentazione-e-allineamento-immagini">Presentazione e allineamento immagini</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#moduli-form" id="toc-moduli-form" class="nav-link" data-scroll-target="#moduli-form">Moduli &lt;form&gt;</a>
+  <ul>
+  <li><a href="#elemento-form" id="toc-elemento-form" class="nav-link" data-scroll-target="#elemento-form">elemento &lt;form&gt;</a></li>
+  <li><a href="#metodo-get" id="toc-metodo-get" class="nav-link" data-scroll-target="#metodo-get">Metodo get</a></li>
+  <li><a href="#metodo-post" id="toc-metodo-post" class="nav-link" data-scroll-target="#metodo-post">Metodo post</a></li>
+  <li><a href="#input-di-tipo-testo-input-type-text" id="toc-input-di-tipo-testo-input-type-text" class="nav-link" data-scroll-target="#input-di-tipo-testo-input-type-text">Input di tipo testo &lt;input type = “text”&gt;</a></li>
+  <li><a href="#input-di-tipo-password-input-type-password" id="toc-input-di-tipo-password-input-type-password" class="nav-link" data-scroll-target="#input-di-tipo-password-input-type-password">Input di tipo password &lt;input type = “password”&gt;</a></li>
+  <li><a href="#input-di-tipo-invia-input-type-submit" id="toc-input-di-tipo-invia-input-type-submit" class="nav-link" data-scroll-target="#input-di-tipo-invia-input-type-submit">Input di tipo invia &lt;input type = “submit”&gt;</a></li>
+  <li><a href="#esempi-di-input-di-tipo-testo-password-e-invia" id="toc-esempi-di-input-di-tipo-testo-password-e-invia" class="nav-link" data-scroll-target="#esempi-di-input-di-tipo-testo-password-e-invia">Esempi di input di tipo testo, password e invia</a></li>
+  <li><a href="#pulsante" id="toc-pulsante" class="nav-link" data-scroll-target="#pulsante">Pulsante</a></li>
+  <li><a href="#textarea" id="toc-textarea" class="nav-link" data-scroll-target="#textarea">Textarea</a></li>
+  <li><a href="#input-di-tipo-radio-input-type-radio" id="toc-input-di-tipo-radio-input-type-radio" class="nav-link" data-scroll-target="#input-di-tipo-radio-input-type-radio">Input di tipo radio &lt;input type = “radio”&gt;</a></li>
+  <li><a href="#input-di-tipo-checkbox-input-type-checkbox" id="toc-input-di-tipo-checkbox-input-type-checkbox" class="nav-link" data-scroll-target="#input-di-tipo-checkbox-input-type-checkbox">Input di tipo checkbox &lt;input type = “checkbox”&gt;</a></li>
+  <li><a href="#selezione-di-unopzione" id="toc-selezione-di-unopzione" class="nav-link" data-scroll-target="#selezione-di-unopzione">Selezione di un’opzione</a></li>
+  <li><a href="#selezione-di-un-file-da-caricare-sul-server" id="toc-selezione-di-un-file-da-caricare-sul-server" class="nav-link" data-scroll-target="#selezione-di-un-file-da-caricare-sul-server">Selezione di un file da caricare sul server</a></li>
+  <li><a href="#input-di-tipo-file-input-type-file" id="toc-input-di-tipo-file-input-type-file" class="nav-link" data-scroll-target="#input-di-tipo-file-input-type-file">Input di tipo file &lt;input type = “file”&gt;</a></li>
+  </ul></li>
+  <li><a href="#audio-audio-e-video-video" id="toc-audio-audio-e-video-video" class="nav-link" data-scroll-target="#audio-audio-e-video-video">Audio &lt;audio&gt; e video &lt;video&gt;</a>
+  <ul>
+  <li><a href="#audio-audio" id="toc-audio-audio" class="nav-link" data-scroll-target="#audio-audio">Audio &lt;audio&gt;</a></li>
+  <li><a href="#video-video" id="toc-video-video" class="nav-link" data-scroll-target="#video-video">Video &lt;video&gt;</a></li>
+  <li><a href="#sottotitoli-track" id="toc-sottotitoli-track" class="nav-link" data-scroll-target="#sottotitoli-track">Sottotitoli &lt;track&gt;</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">HTML</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">linguaggi</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Appunti di HTML
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cosè-html" class="level2">
+<h2 class="anchored" data-anchor-id="cosè-html">Cos’è HTML</h2>
+<p>HTML (HyperText Markup Language) è un linguaggio di marcatura (markup, <em>annotazione</em>) di documenti ipertestuali.</p>
+<ul>
+<li><p>descrive la <strong>struttura</strong> di una pagina web e i collegamenti tra altre pagine</p></li>
+<li><p>definisce un <strong>insieme di elementi</strong> (titoli, paragrafi di testo, liste, tabelle, immagini, …)</p></li>
+</ul>
+</section>
+<section id="html-css-e-javascript" class="level2">
+<h2 class="anchored" data-anchor-id="html-css-e-javascript">HTML, CSS e JavaScript</h2>
+<p>HTML, CSS e JavaScript sono i tre linguaggi fondamentali per lo sviluppo web. HTML fornisce la struttura del contenuto, CSS definisce la presentazione e JavaScript aggiunge interattività.</p>
+</section>
+<section id="struttura-minima-di-una-pagina" class="level2">
+<h2 class="anchored" data-anchor-id="struttura-minima-di-una-pagina">Struttura minima di una pagina</h2>
+<p>Ogni tipo di documento ha una sua <strong>struttura</strong> che ne caratterizza il <strong>genere</strong>.</p>
+<p>La struttura descrive:</p>
+<ul>
+<li><strong>parti</strong> che compongono il documento</li>
+<li><strong>significato</strong> di ogni parte</li>
+<li><strong>relazioni</strong> tra le parti</li>
+</ul>
+<section id="elementi" class="level3">
+<h3 class="anchored" data-anchor-id="elementi">Elementi</h3>
+<p>Ogni elemento è un <strong>contenitore</strong> di informazioni, identificato da un <strong>tag di apertura</strong> e un <strong>tag di chiusura</strong>. Il contenuto dell’elemento è racchiuso tra i due tag.</p>
+<section id="tag-di-apertura-e-chiusura" class="level4">
+<h4 class="anchored" data-anchor-id="tag-di-apertura-e-chiusura">Tag di apertura e chiusura</h4>
+<p>è una stringa di caratteri racchiusa tra parentesi angolari <code>&lt;</code>e <code>&gt;</code>.</p>
+<dl>
+<dt>Tag di apertura</dt>
+<dd>
+Stringa che specifica il nome dell’elemento <code>&lt;nome_elemento&gt;</code>
+</dd>
+<dt>Tag di chiusura</dt>
+<dd>
+Stringa che specifica il nome dell’elemento preceduta da una barra <code>/</code> <code>&lt;/nome_elemento&gt;</code>
+</dd>
+<dt>Tag elementi vuoti</dt>
+<dd>
+sono costituiti da un unico tag <code>&lt;nome_elemento_vuoto&gt;</code>.<br>
+Esempio: <code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;hr&gt;</code>
+</dd>
+<dt>Elemento</dt>
+<dd>
+composto da tag di apertura, contenuto e tag di chiusura <code>&lt;nome_elemento&gt;contenuto&lt;/nome_elemento&gt;</code>
+</dd>
+</dl>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è un paragrafo.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="attributi" class="level3">
+<h3 class="anchored" data-anchor-id="attributi">Attributi</h3>
+<p>Servono a descrivere una <strong>proprietà</strong> dell’elemento.</p>
+<p>Sono composti:</p>
+<ul>
+<li><strong>nome</strong>: il nome dell’attributo</li>
+<li><strong>valore</strong>: il valore dell’attributo, racchiuso tra virgolette <code>" "</code> o apostrofi <code>' '</code> e assegnato al nome tramite il simbolo <code>=</code></li>
+</ul>
+<p>Sono inseriti nel tag di apertura dopo il nome</p>
+<p>Esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en-us"</span><span class="dt">&gt;</span>My cat is very grumpy<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="annidamento-di-elementi" class="level3">
+<h3 class="anchored" data-anchor-id="annidamento-di-elementi">Annidamento di elementi</h3>
+<p>Un elemento può contenere altri elementi</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en-us"</span><span class="dt">&gt;</span>Paragrah <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> in english<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Che risulta in:</p>
+<p lang="en-us">Paragrah <br> in english</p>
+</section>
+<section id="regole-di-scrittura" class="level3">
+<h3 class="anchored" data-anchor-id="regole-di-scrittura">Regole di scrittura</h3>
+<section id="commentare" class="level4">
+<h4 class="anchored" data-anchor-id="commentare">Commentare</h4>
+<p>Si usa il blocco di commento <code>&lt;!-- ... --&gt;</code> per inserire note nel codice che non vengono visualizzate nella pagina web.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Questo è un commento --&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="regole" class="level4">
+<h4 class="anchored" data-anchor-id="regole">Regole</h4>
+<ul>
+<li>tag vuoto può avere uno slash di chiusura <code>&lt;br /&gt;</code> ma non è obbligatorio</li>
+<li>tag e attributi non sono <strong>case sensitive</strong> (ma è buona norma scriverli in minuscolo)</li>
+<li>per gli attributi booleani (true/false) è sufficiente scrivere il nome dell’attributo senza assegnargli un valore</li>
+<li>il valore di un attributo può essere racchiuso tra virgolette doppie <code>" "</code> o singole <code>' '</code> o senza virgolette (ma è buona norma usare le virgolette)</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="struttura-minima-di-una-pagina-html" class="level2">
+<h2 class="anchored" data-anchor-id="struttura-minima-di-una-pagina-html">Struttura minima di una pagina HTML</h2>
+<section id="dichiarazione-del-tipo-di-documento-doctype-html" class="level3">
+<h3 class="anchored" data-anchor-id="dichiarazione-del-tipo-di-documento-doctype-html">Dichiarazione del tipo di documento &lt;!DOCTYPE html&gt;</h3>
+<p>Dichiarazione del DTD (Document Type Definition), in html5 è</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Posso anche riferirmi a un DTD diverso, in particolare a una versione precedente di HTML.</p>
+</section>
+<section id="struttura-generica" class="level3">
+<h3 class="anchored" data-anchor-id="struttura-generica">Struttura generica</h3>
+<p>Un documento HTML5 è composto da:</p>
+<ul>
+<li><strong>dichiarazione del tipo di documento</strong> <code>&lt;!DOCTYPE html&gt;</code></li>
+<li><strong>elemento radice</strong> <code>&lt;html&gt;</code> che racchiude tutto il contenuto della pagina</li>
+</ul>
+<p>L’elemento radice <code>&lt;html&gt;</code> contiene due elementi principali:</p>
+<ul>
+<li><strong>header</strong> <code>&lt;head&gt;</code> contiene informazioni sul documento (metadati) non visualizzati</li>
+<li><strong>body</strong> <code>&lt;body&gt;</code> contiene la specifica della struttura dei contenuti visualizzati della pagina (testi, immagini …)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="head" class="level2">
+<h2 class="anchored" data-anchor-id="head">Head</h2>
+<section id="metadati" class="level3">
+<h3 class="anchored" data-anchor-id="metadati">Metadati</h3>
+<p>Informazioni che descrivono il documento nel complesso</p>
+<p>Introdotti mediante il tag <code>&lt;meta&gt;</code> all’interno del tag <code>&lt;head&gt;</code>. Possono essere utilizzati per:</p>
+<ul>
+<li>specificare la <strong>codifica dei caratteri</strong> del documento</li>
+<li>fornire <strong>informazioni sul documento</strong> (autore, descrizione, parole chiave)</li>
+</ul>
+</section>
+<section id="titolo-della-pagina-title" class="level3">
+<h3 class="anchored" data-anchor-id="titolo-della-pagina-title">Titolo della pagina &lt;title&gt;</h3>
+<p>Il titolo della pagina è specificato mediante il tag <code>&lt;title&gt;</code> all’interno del tag <code>&lt;head&gt;</code>. Il contenuto del tag <code>&lt;title&gt;</code> viene visualizzato nella barra del titolo del browser e nei risultati dei motori di ricerca.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempi di metadati in head
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Titolo<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"UTF-8"</span><span class="dt">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"description"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"Descrizione della pagina"</span><span class="dt">&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"keywords"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"parola1, parola2, parola3"</span><span class="dt">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"author"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"Nome Autore"</span><span class="dt">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"viewport"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"width=device-width, initial-scale=1.0"</span><span class="dt">&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> http-equiv</span><span class="op">=</span><span class="st">"refresh"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"30"</span><span class="dt">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</section>
+<section id="elemento-style-style" class="level3">
+<h3 class="anchored" data-anchor-id="elemento-style-style">Elemento style &lt;style&gt;</h3>
+<p><code>&lt;style&gt;...&lt;/style&gt;</code>utilizzato per definire i fogli di stile (stile in linea) interni al documento</p>
+<p>Va incluso nell’header della pagina</p>
+<p>Generalmente oggi si usa un foglio di stile utilizzando l’elemento &lt;link&gt; nell’intestazione</p>
+</section>
+</section>
+<section id="body" class="level2">
+<h2 class="anchored" data-anchor-id="body">Body</h2>
+<section id="inserimento-e-formattazione-base-del-testo" class="level3">
+<h3 class="anchored" data-anchor-id="inserimento-e-formattazione-base-del-testo">Inserimento e formattazione base del testo</h3>
+</section>
+<section id="headings-h1-h6" class="level3">
+<h3 class="anchored">Headings &lt;h1&gt; … &lt;h6&gt;</h3>
+<p>I titoli si suddividono in base alla gerarchia</p>
+<p>I livelli di intestazione vanno da <code>&lt;h1&gt;</code> (più importante) a <code>&lt;h6&gt;</code> (meno importante).</p>
+<p>Buona norma è usare un singolo <code>&lt;h1&gt;</code> e usare i livelli in maniera consistente</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span> Livello 1<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span> Livello 2<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span> Livello 3<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h4</span><span class="dt">&gt;</span> Livello 4<span class="dt">&lt;/</span><span class="kw">h4</span><span class="dt">&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h5</span><span class="dt">&gt;</span> Livello 5<span class="dt">&lt;/</span><span class="kw">h5</span><span class="dt">&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h6</span><span class="dt">&gt;</span> Livello 6<span class="dt">&lt;/</span><span class="kw">h6</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>che risultano così:</p>
+<h1> Livello 1</h1>
+<h2 class="anchored" data-anchor-id="headings-h1-h6"> Livello 2</h2>
+<h3 class="anchored"> Livello 3</h3>
+<h4 class="anchored"> Livello 4</h4>
+<h5 class="anchored"> Livello 5</h5>
+<h6 class="anchored"> Livello 6</h6>
+</section>
+<section id="paragrafo-p-p" class="level3">
+<h3 class="anchored" data-anchor-id="paragrafo-p-p">Paragrafo &lt;p&gt; &lt;/p&gt;</h3>
+<p><code>&lt;p&gt;...&lt;/p&gt;</code>definisce un paragrafo di testo con l’aggiunta di un margine superiore e uno inferiore</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è un paragrafo di testo.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è il secondo paragrafo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è il terzo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Questo è un paragrafo di testo.</p>
+<p>Questo è il secondo paragrafo</p>
+<p>Questo è il terzo</p>
+</section>
+<section id="a-capo-br" class="level3">
+<h3 class="anchored" data-anchor-id="a-capo-br">A capo &lt;br&gt;</h3>
+<p>Si tratta di un tag vuoto che forza il ritorno a capo</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>"M'illumino<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span>d'immenso"<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span>Giuseppe Ungaretti</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+"M'illumino<br>d'immenso"<br>Giuseppe Ungaretti
+</section>
+<section id="horizontal-rule-hr" class="level3">
+<h3 class="anchored" data-anchor-id="horizontal-rule-hr">Horizontal rule &lt;hr&gt;</h3>
+<p>introduce un filetto orizzontale, è un tag vuoto</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>prima della linea<span class="dt">&lt;</span><span class="kw">hr</span><span class="dt">&gt;</span>sotto la linea</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+prima della linea<hr>sotto la linea
+</section>
+<section id="testo-in-grassetto-bb" class="level3">
+<h3 class="anchored" data-anchor-id="testo-in-grassetto-bb">Testo in grassetto &lt;b&gt;&lt;/b&gt;</h3>
+<p>Definisce il grassetto</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>testo in <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>grassetto<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+testo in <b>grassetto</b>
+</section>
+<section id="testo-in-italics-ii" class="level3">
+<h3 class="anchored" data-anchor-id="testo-in-italics-ii">Testo in italics &lt;i&gt;&lt;/i&gt;</h3>
+<p>definisce il testo in italics</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>testo in <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>italics<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+testo in <i>italics</i>
+</section>
+<section id="enfasi-a-un-segmento-di-testo-strong-e-em" class="level3">
+<h3 class="anchored" data-anchor-id="enfasi-a-un-segmento-di-testo-strong-e-em">Enfasi a un segmento di testo &lt;strong&gt; e &lt;em&gt;</h3>
+<p>tag per l’enfasi semantica di un testo, si preferisce usare i tag</p>
+<ul>
+<li>&lt;strong&gt;&lt;/strong&gt;: per evidenziare contenuti cruciali (avvisi, scadenze)</li>
+<li>&lt;em&gt;&lt;/em&gt; indica invece il vero e proprio stress linguistico</li>
+</ul>
+</section>
+<section id="apici-sup-e-pedici-sub" class="level3">
+<h3 class="anchored" data-anchor-id="apici-sup-e-pedici-sub">Apici &lt;sup&gt; e pedici &lt;sub&gt;</h3>
+<p>Tag per la definizione di apici e pedici</p>
+</section>
+<section id="citazioni-blockquote-e-q-citazioni-bibliografiche-cite" class="level3">
+<h3 class="anchored" data-anchor-id="citazioni-blockquote-e-q-citazioni-bibliografiche-cite">Citazioni &lt;blockquote&gt; e &lt;q&gt;, citazioni bibliografiche &lt;cite&gt;</h3>
+</section>
+<section id="abbreviazioni-abbr-title" class="level3">
+<h3 class="anchored" data-anchor-id="abbreviazioni-abbr-title">abbreviazioni &lt;abbr title=“…”&gt;</h3>
+</section>
+<section id="caratteri-speciali" class="level3">
+<h3 class="anchored" data-anchor-id="caratteri-speciali">Caratteri speciali</h3>
+<p>alcuni caratteri speciali vanno indicati come entità in quanto hanno significati particolari nel codice</p>
+<p>Tabella</p>
+</section>
+<section id="attributo-style" class="level3">
+<h3 class="anchored" data-anchor-id="attributo-style">Attributo style</h3>
+<p>permette di definire lo stile di alcuni elementi, per esempio paragrafi e intestazioni. Tuttavia oggigiorno lo stile del testo viene dichiarato tramite i fogli di stile <a href="../linguaggi/css.html">CSS</a></p>
+<p><code>style="property:value;"</code></p>
+<p><code>property</code>: caratteristica stilistica</p>
+<p><code>value</code>: valore della caratteristica stilistca (es. “red”)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style</span><span class="op">=</span><span class="st">"color:red;font-family:verdana;font-size:30px;"</span><span class="dt">&gt;</span>qui va il testo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p style="color:red;font-family:verdana;font-size:30px;">qui va il testo</p>
+<p>esempi: <code>color</code>, <code>background-color</code>, <code>font-family</code>,<code>font-size</code>,<code>text-align</code></p>
+</section>
+<section id="attributi-semantici-id-class" class="level3">
+<h3 class="anchored" data-anchor-id="attributi-semantici-id-class">Attributi semantici id &amp; class</h3>
+<section id="id" class="level4">
+<h4 class="anchored" data-anchor-id="id">id</h4>
+<p>Ogni elemento html può essere identificato univocamente da un identificatore grazie all’uso di <strong>id</strong> con il relativo <em>valore</em></p>
+<p>Il valore deve iniziare con lettera o underscore _ e deve essere unico</p>
+<p>Gli identificatori sono utili per applicare specifiche regole stilistiche</p>
+</section>
+<section id="class" class="level4">
+<h4 class="anchored" data-anchor-id="class">class</h4>
+<p>Ogni elemento può essere attribuito a una classe di elementi mediante l’attributo <strong>class</strong> con relativo <em>nome</em>, oppure a più classi contemporaneamente separando i vari nomi con degli spazi.</p>
+<p>Serve a dare maggior significato all’elemento e all’applicazione di regole stilistiche</p>
+</section>
+<section id="esempi" class="level4">
+<h4 class="anchored" data-anchor-id="esempi">Esempi</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> id</span><span class="op">=</span><span class="st">"par1"</span><span class="dt">&gt;</span> primo paragrafo ... <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> id</span><span class="op">=</span><span class="st">"par2"</span><span class="dt">&gt;</span> secondo paragrafo ... <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> id</span><span class="op">=</span><span class="st">"par3"</span><span class="dt">&gt;</span> terzo paragrafo ... <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"par"</span><span class="dt">&gt;</span> questo è un paragrafo ... <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"par"</span><span class="dt">&gt;</span> questo è un paragrafo ... <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="elementi-di-tipo-blocco-block" class="level3">
+<h3 class="anchored" data-anchor-id="elementi-di-tipo-blocco-block">Elementi di tipo blocco (block)</h3>
+<p>Sono elementi che vengono visualizzati in una nuova linea, ovvero vanno a capo rispetto all’elemento che lo precedono</p>
+<p>Sono generalmente strutturali (titoli, paragradi, liste…)</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">principali elementi blocco</th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;address&gt; Contact information</td>
+<td style="text-align: left;">&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt; Heading</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;article&gt; Article content</td>
+<td style="text-align: left;">&lt;header&gt; Section or page header</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;aside&gt; Aside content</td>
+<td style="text-align: left;">&lt;hgroup&gt; Groups header information</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;blockquote&gt; Long quotation</td>
+<td style="text-align: left;">&lt;hr&gt; Horizontal rule</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;details&gt; Disclosure widget</td>
+<td style="text-align: left;">&lt;li&gt; List item</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;dialog&gt; Dialog box</td>
+<td style="text-align: left;">&lt;main&gt; Contains the central content</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;dd&gt; Describes a term in a description list</td>
+<td style="text-align: left;">&lt;nav&gt; Contains navigation links</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;div&gt; Document division</td>
+<td style="text-align: left;">&lt;ol&gt; Ordered list</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;dl&gt; Description list</td>
+<td style="text-align: left;">&lt;p&gt; Paragraph</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;dt&gt; Description list term</td>
+<td style="text-align: left;">&lt;pre&gt; Preformatted text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;fieldset&gt; Field set label</td>
+<td style="text-align: left;">&lt;figcaption&gt; Figure caption</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;figure&gt; Groups media content with a caption</td>
+<td style="text-align: left;">&lt;section&gt; Section of a web page</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;footer&gt; Section or page footer</td>
+<td style="text-align: left;">&lt;table&gt; Table</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;form&gt; Input form</td>
+<td style="text-align: left;">&lt;ul&gt; Unordered list</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="elementi-di-tipo-in-linea-inline" class="level3">
+<h3 class="anchored" data-anchor-id="elementi-di-tipo-in-linea-inline">Elementi di tipo in linea (inline)</h3>
+<p>Un elemento di tipo in linea appare all’interno di un elemento blocco e può contenere altri elementi inline.</p>
+<p>Viene visualizzato di seguito al contenuto che lo precede, senza andare a capo</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elementi inline</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt;a&gt;</td>
+<td style="text-align: left;">&lt;em&gt;</td>
+<td style="text-align: left;">&lt;mark&gt;</td>
+<td style="text-align: left;">&lt;cite&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;abbr&gt;</td>
+<td style="text-align: left;">&lt;embed&gt;</td>
+<td style="text-align: left;">&lt;meter&gt;</td>
+<td style="text-align: left;">&lt;code&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;acronym&gt;</td>
+<td style="text-align: left;">&lt;i&gt;</td>
+<td style="text-align: left;">&lt;noscript&gt;</td>
+<td style="text-align: left;">&lt;data&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;audio&gt;</td>
+<td style="text-align: left;">&lt;iframe&gt;</td>
+<td style="text-align: left;">&lt;object&gt;</td>
+<td style="text-align: left;">&lt;datalist&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;b&gt;</td>
+<td style="text-align: left;">&lt;img&gt;</td>
+<td style="text-align: left;">&lt;output&gt;</td>
+<td style="text-align: left;">&lt;del&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;bdi&gt;</td>
+<td style="text-align: left;">&lt;input&gt;</td>
+<td style="text-align: left;">&lt;picture&gt;</td>
+<td style="text-align: left;">&lt;dfn&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;bdo&gt;</td>
+<td style="text-align: left;">&lt;ins&gt;</td>
+<td style="text-align: left;">&lt;progress&gt;</td>
+<td style="text-align: left;">&lt;sup&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;big&gt;</td>
+<td style="text-align: left;">&lt;kbd&gt;</td>
+<td style="text-align: left;">&lt;ruby&gt;</td>
+<td style="text-align: left;">&lt;svg&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;br&gt;</td>
+<td style="text-align: left;">&lt;label&gt;</td>
+<td style="text-align: left;">&lt;s&gt;</td>
+<td style="text-align: left;">&lt;template&gt;</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;button&gt;</td>
+<td style="text-align: left;">&lt;map&gt;</td>
+<td style="text-align: left;">&lt;samp&gt;</td>
+<td style="text-align: left;">&lt;textarea&gt;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&lt;canvas&gt;</td>
+<td style="text-align: left;">&lt;script&gt;</td>
+<td style="text-align: left;">&lt;time&gt;</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="strutturazione" class="level2">
+<h2 class="anchored" data-anchor-id="strutturazione">Strutturazione</h2>
+<section id="css-box-model" class="level3">
+<h3 class="anchored" data-anchor-id="css-box-model">CSS Box Model</h3>
+<p>Un elemento (inline o block che sia) è un’entità costituita da:</p>
+<ul>
+<li><strong>contenuto</strong>: area in cui viene visualizzata il contenuto
+<ul>
+<li>elemento block: larghezza e altezza sono speficabili con CSS</li>
+</ul></li>
+<li><strong>padding</strong>: spazio di contorno che racchiude il contenuto
+<ul>
+<li>spessore, colore speficabili con CSS</li>
+</ul></li>
+<li><strong>border</strong>: bordo che contiene contenuto e padding
+<ul>
+<li>spessore, colore, tipo di bordo specificabili con CSS</li>
+</ul></li>
+<li><strong>margin</strong>: spazio di contorno esterno al bordo
+<ul>
+<li>spessore, colore di sfondo specificabili con CSS</li>
+</ul></li>
+</ul>
+<p><img src="../assets/images/boxmodel.png" class="img-fluid"></p>
+</section>
+<section id="aggregazione-di-elementi" class="level3">
+<h3 class="anchored" data-anchor-id="aggregazione-di-elementi">Aggregazione di elementi</h3>
+<dl>
+<dt>div</dt>
+<dd>
+Elemento <strong>div</strong> serve a raggruppare più elementi HTML in un unico segmento<br>
+è di tipo blocco, ogni segmento inizia da una nuova riga
+</dd>
+<dt>span</dt>
+<dd>
+permette di raggruppare più elementi <strong>inline</strong> in un unico segmento che non va a capo. Utile per raggruppare e annotare frammenti di testo per presentarli stilisticamente in maniera diversa
+</dd>
+</dl>
+<p>Sia <strong>div</strong> che <strong>span</strong> possono possedere attributi <em>id</em> e <em>class</em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"articolo"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"art120"</span><span class="dt">&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"intro"</span><span class="dt">&gt;</span>Lorem ipsum …<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"related_work"</span><span class="dt">&gt;</span>Lorem ipsum …<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"method"</span><span class="dt">&gt;</span>Lorem ipsum …<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"results"</span><span class="dt">&gt;</span>Lorem ipsum …<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"conclusion"</span><span class="dt">&gt;</span>Lorem ipsum …<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"biblio"</span><span class="dt">&gt;</span>Lorem ipsum …<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"profilo_utente"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"u11"</span><span class="dt">&gt;</span>Lorem ipsum …<span class="dt">&lt;</span><span class="kw">span</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="ot">    class</span><span class="op">=</span><span class="st">"demografico"</span><span class="dt">&gt;</span>… dati demografici …<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span>… lorem ipsum …<span class="dt">&lt;</span><span class="kw">span</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="ot">    class</span><span class="op">=</span><span class="st">"psicografico"</span><span class="dt">&gt;</span>… dati psicografici …<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> …<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="elementi-per-la-strutturazione" class="level3">
+<h3 class="anchored" data-anchor-id="elementi-per-la-strutturazione">Elementi per la strutturazione</h3>
+<p>In passato la struttura della pagina veniva realizzata principalmente tramite gli elementi <strong>div</strong>, tuttavia HTML5 ha implementato nuovi elementi specifici che migliorano l’accessibilità</p>
+</section>
+<section id="strutturazione-classica" class="level3">
+<h3 class="anchored" data-anchor-id="strutturazione-classica">Strutturazione classica</h3>
+<p>all’interno del <strong>body</strong> abbiamo diversi elementi <strong>div</strong> identificati mediante attributi <strong>id</strong> o <strong>class</strong>.</p>
+</section>
+<section id="nuovi-elementi-strutturali" class="level3">
+<h3 class="anchored" data-anchor-id="nuovi-elementi-strutturali">Nuovi elementi strutturali</h3>
+<dl>
+<dt>&lt;header&gt; (testata)</dt>
+<dd>
+per rappresentare un’area di intestazione per pagina o sezione. Generalmente per elementi introduttivi (nome azienda, logo) o di ausilio alla navigazione
+</dd>
+<dt>&lt;footer&gt; (piè di pagina)</dt>
+<dd>
+area a più di pagina dove raggruppare elementi come autore, informazioni di copyright, regole per accessibilità, contratti di licenza
+</dd>
+</dl>
+<p>&lt;article&gt; (articolo)<br>
+area del documento autosufficiente e potenzialmente distribuibile e usabile al di fuori del contesto originale (post, scheda prodotto, modulo standard). Può essere composto da sezioni</p>
+<p>&lt;section&gt; (sezione)<br>
+area di un documento tematicamente omogeneo. La coerenza tematica e la presenza di titolo identificativo la distinguono da un generico div.</p>
+<p>&lt;nav&gt; (navigazione)<br>
+per raggruppare elementi di supporto alla navigazione (es. lista non ordinata di elementi). Può far parte della testata o nell’intestazione</p>
+<p>&lt;aside&gt; (a parte)<br>
+area che contiene contenuti correlati a quello principale</p>
+</section>
+<section id="liste" class="level3">
+<h3 class="anchored" data-anchor-id="liste">Liste</h3>
+<p>Possono rappresentare insieme di elenchi ordinati o non ordinati.<br>
+Abbiamo 3 tipologie di liste:</p>
+<ul>
+<li>liste ordinate</li>
+<li>liste non ordinate</li>
+<li>liste di definizione</li>
+</ul>
+<p>Le liste possono essere annidate</p>
+<section id="liste-ordinate-ol-e-li" class="level4">
+<h4 class="anchored" data-anchor-id="liste-ordinate-ol-e-li">Liste ordinate &lt;ol&gt; e &lt;li&gt;</h4>
+<p>assegnate per default con numeri interi crescenti</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ol</span><span class="dt">&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ol</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>posso cambiare il contrassegno usando l’attributo <strong>type</strong>:</p>
+<ul>
+<li><strong>1</strong>: numeri interi (default)</li>
+<li><strong>A</strong>: lettere maiuscole</li>
+<li><strong>a</strong>: lettere minuscole</li>
+<li><strong>I</strong>: numeri romani maiuscoli</li>
+<li><strong>i</strong>: numeri romani minuscoli</li>
+</ul>
+<p>con l’attributo <strong>start</strong> posso cambiare il valore di partenza della numerazione</p>
+<p>esempio: <code>&lt;ol type="A" start="3"&gt;</code> inizierà la numerazione con la lettera C</p>
+<p>posso usare l’attributo <strong>value</strong> per cambiare il valore di un singolo elemento della lista</p>
+<p>posso anche usare l’attributo <strong>reversed</strong> per invertire l’ordine della numerazione</p>
+<p>esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ol</span><span class="ot"> type</span><span class="op">=</span><span class="st">"A"</span><span class="dt">&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>primo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>secondo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>terzo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ol</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>ottengo:</p>
+<ol type="A">
+    <li>primo elemento</li>
+    <li>secondo elemento</li>
+    <li>terzo elemento</li> 
+</ol>
+</section>
+<section id="liste-non-ordinate-ul-e-li" class="level4">
+<h4 class="anchored" data-anchor-id="liste-non-ordinate-ul-e-li">Liste non ordinate &lt;ul&gt; e &lt;li&gt;</h4>
+<p>Si usano gli elementi <code>&lt;ul&gt;</code>(unordered list) e <code>&lt;li&gt;</code>(list item)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>per default il contrassegno è <strong>disc</strong> (pallino pieno)<br>
+posso cambiare il contrassegno usando l’attributo <strong>list-style-type</strong>:</p>
+<ul>
+<li><strong>disc</strong>: pallino pieno (default)</li>
+<li><strong>circle</strong>: pallino vuoto</li>
+<li><strong>square</strong>: quadratino pieno</li>
+<li><strong>none</strong>: nessun contrassegno</li>
+</ul>
+<p>tuttavia è consigliabile definire lo stile della lista tramite CSS</p>
+</section>
+<section id="liste-di-definizione-dl-dt-e-dd" class="level4">
+<h4 class="anchored" data-anchor-id="liste-di-definizione-dl-dt-e-dd">Liste di definizione &lt;dl&gt;, &lt;dt&gt; e &lt;dd&gt;</h4>
+<p>Le liste di definizione sono composte da un termine e una definizione.</p>
+<ul>
+<li>inizializzazione della lista: <strong>&lt;dl&gt; … &lt;/dl&gt;</strong></li>
+<li>tag per termine: <strong>&lt;dt&gt; … &lt;/dt&gt;</strong></li>
+<li>tag per la definizione: <strong>&lt;dd&gt; … &lt;/dd&gt;</strong></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">dl</span><span class="dt">&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dt</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">dt</span><span class="dt">&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dd</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">dd</span><span class="dt">&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dt</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">dt</span><span class="dt">&gt;</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dd</span><span class="dt">&gt;</span>...<span class="dt">&lt;/</span><span class="kw">dd</span><span class="dt">&gt;</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">dl</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>ottime per introdurre voci di un vocabolario o lista di domande con le relative risposte</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio di lista di definizione
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">dl</span><span class="dt">&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dt</span><span class="dt">&gt;</span>Coffee<span class="dt">&lt;/</span><span class="kw">dt</span><span class="dt">&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dd</span><span class="dt">&gt;</span>Black hot drink<span class="dt">&lt;/</span><span class="kw">dd</span><span class="dt">&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dt</span><span class="dt">&gt;</span>Milk<span class="dt">&lt;/</span><span class="kw">dt</span><span class="dt">&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">dd</span><span class="dt">&gt;</span>White cold drink<span class="dt">&lt;/</span><span class="kw">dd</span><span class="dt">&gt;</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">dl</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<dl>
+<dt>Coffee</dt>
+<dd>Black hot drink</dd>
+<dt>Milk</dt>
+<dd>White cold drink</dd>
+</dl>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="tabelle-table" class="level3">
+<h3 class="anchored" data-anchor-id="tabelle-table">Tabelle &lt;table&gt;</h3>
+<section id="tabelle-base" class="level4">
+<h4 class="anchored" data-anchor-id="tabelle-base">Tabelle base</h4>
+<p>permettono l’organizzazione dei dati in righe e colonne.<br>
+Righe e colonne hanno delle intestazioni (ovvero dei nomi associati)<br>
+Ogni elemento della tabella si chiama cella.</p>
+<p>Il contenuto viene specificato <strong>riga per riga</strong></p>
+<ul>
+<li><strong>tr</strong> (table row): definisce una riga della tabella</li>
+<li><strong>td</strong> (table data): specifica il contenuto di una cella di una riga. Può essere un elemento qualsiasi</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Per esempio, per realizzare</p>
+<p>15 15 30<br>
+45 60 45<br>
+60 90 90</p>
+<p>posso scrivere:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="dt">&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>15<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>15<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>30<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>45<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>60<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>45<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>60<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>90<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>90<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>ottenendo:</p>
+<table class="table table-bordered caption-top">
+<tbody>
+<tr class="odd">
+<td>15</td>
+<td>15</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>45</td>
+<td>60</td>
+<td>45</td>
+</tr>
+<tr class="odd">
+<td>60</td>
+<td>90</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<p>nota: l’esigenza di usare la classe <code>table table-bordered</code> per ottenere un aspetto migliore della tabella è dovuto all’uso di Bootstrap in questo sito.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="intestazioni-di-riga-e-colonna-th" class="level4">
+<h4 class="anchored" data-anchor-id="intestazioni-di-riga-e-colonna-th">Intestazioni di riga e colonna &lt;th&gt;</h4>
+<p>L’elemento <strong>th</strong> (table header) inserisce un’intestazione. Posso usare l’attributo <strong>scope</strong> per specificare se l’intestazione si riferisce a una riga (scope=“row”) o a una colonna (scope=“col”). Di default il testo dell’intestazione è centrato e in grassetto</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="dt">&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"col"</span><span class="dt">&gt;</span>Sabato<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"col"</span><span class="dt">&gt;</span>Domenica<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"row"</span><span class="dt">&gt;</span>Biglietti venduti:<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>120<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>135<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"row"</span><span class="dt">&gt;</span>Incasso:<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>1020<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>1148<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="table table-bordered caption-top">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th" scope="col">Sabato</th>
+<th data-quarto-table-cell-role="th" scope="col">Domenica</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" scope="row">Biglietti venduti:</th>
+<td>120</td>
+<td>135</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" scope="row">Incasso:</th>
+<td>1020</td>
+<td>1148</td>
+</tr>
+</tbody>
+</table>
+<p>nota: l’esigenza di usare la classe <code>table table-bordered</code> per ottenere un aspetto migliore della tabella è dovuto all’uso di Bootstrap in questo sito.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="colspan-cella-che-si-estende-su-più-colonne" class="level4">
+<h4 class="anchored" data-anchor-id="colspan-cella-che-si-estende-su-più-colonne">Colspan (cella che si estende su più colonne)</h4>
+<p>L’attributo <strong>colspan</strong> (column span) permette a una cella di estendersi su più colonne. Si utilizza l’attributo <strong>colspan</strong> con un valore numerico per specificare il numero di colonne su cui si estende la cella.</p>
+<p>La cella che dovrà estendersi sarà definita nel seguente modo:</p>
+<p><code>&lt;td colspan="numero_di_colonne"&gt;contenuto&lt;/td&gt;</code></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="ot"> border</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Name<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="ot"> colspan</span><span class="op">=</span><span class="st">"2"</span><span class="dt">&gt;</span>Telephone<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Tim Berners-Lee<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>55577854<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>55577855<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="table table-bordered caption-top">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Name</th>
+<th colspan="2" data-quarto-table-cell-role="th">Telephone</th>
+</tr>
+<tr class="even">
+<td>Tim Berners-Lee</td>
+<td>55577854</td>
+<td>55577855</td>
+</tr>
+</tbody>
+</table>
+<p>nota: l’esigenza di usare la classe <code>table table-bordered</code> per ottenere un aspetto migliore della tabella è dovuto all’uso di Bootstrap in questo sito.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="rowspan-cella-che-si-estende-su-più-righe" class="level4">
+<h4 class="anchored" data-anchor-id="rowspan-cella-che-si-estende-su-più-righe">Rowspan (cella che si estende su più righe)</h4>
+<p>L’attributo <strong>rowspan</strong> (row span) permette a una cella di estendersi su più righe. Si utilizza l’attributo <strong>rowspan</strong> con un valore numerico per specificare il numero di righe su cui si estende la cella.</p>
+<p><code>&lt;td rowspan="numero_di_righe"&gt;contenuto&lt;/td&gt;</code></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="ot"> border </span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Name:<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Tim Berners-Lee<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="ot"> rowspan</span><span class="op">=</span><span class="st">"2"</span><span class="dt">&gt;</span>Telephone<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>55577854<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>55577855<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="table table-bordered caption-top">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Name:</th>
+<td>Tim Berners-Lee</td>
+</tr>
+<tr class="even">
+<th rowspan="2" data-quarto-table-cell-role="th">Telephone</th>
+<td>55577854</td>
+</tr>
+<tr class="odd">
+<td>55577855</td>
+</tr>
+</tbody>
+</table>
+<p>nota: l’esigenza di usare la classe <code>table table-bordered</code> per ottenere un aspetto migliore della tabella è dovuto all’uso di Bootstrap in questo sito.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="caption-titolo-della-tabella" class="level4">
+<h4 class="anchored" data-anchor-id="caption-titolo-della-tabella">Caption (titolo della tabella)</h4>
+<p><code>&lt;caption&gt;&lt;/caption&gt;</code> serve a inserire un titolo alla tabella, si usa dopo il tag <code>&lt;table&gt;</code> e prima del primo <code>&lt;tr&gt;</code></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="ot"> border </span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">caption</span><span class="dt">&gt;</span>Telephone numbers<span class="dt">&lt;/</span><span class="kw">caption</span><span class="dt">&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Name:<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Tim Berners-Lee<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="ot"> rowspan</span><span class="op">=</span><span class="st">"2"</span><span class="dt">&gt;</span>Telephone<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>55577854<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>55577855<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="table table-bordered caption-top">
+<caption>Telephone numbers</caption>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Name:</th>
+<td>Tim Berners-Lee</td>
+</tr>
+<tr class="even">
+<th rowspan="2" data-quarto-table-cell-role="th">Telephone</th>
+<td>55577854</td>
+</tr>
+<tr class="odd">
+<td>55577855</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="tabelle-complesse-thead-tbody-tfoot" class="level4">
+<h4 class="anchored" data-anchor-id="tabelle-complesse-thead-tbody-tfoot">Tabelle complesse &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</h4>
+<p>Nel caso le tabelle abbiano molte righe di dati, è opportuno usare:</p>
+<ul>
+<li><strong>thead</strong>: contiene una riga (tr) con le intestazioni (th) delle colonne della tabella</li>
+<li><strong>tbody</strong>: contiene le righe (tr) con i dati (td)</li>
+<li><strong>tfoot</strong>: contiene una riga con dati (td) riassuntivi</li>
+</ul>
+<p>Servono a migliorare l’accessibilità della tabella e la leggibilità del codice, evidenziando le righe delle differenti sezioni della tabella</p>
+<p><img src="../assets/images/schemaTabella.gif" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="ot"> border</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Date<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Income<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Expenditure<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>1st January<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>250<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>36<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>2nd January<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>285<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>48<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>31st January<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>129<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>64<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tfoot</span><span class="dt">&gt;</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>7824<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>1241<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">tfoot</span><span class="dt">&gt;</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="table table-bordered caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Income</th>
+<th data-quarto-table-cell-role="th">Expenditure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1st January</th>
+<td>250</td>
+<td>36</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">2nd January</th>
+<td>285</td>
+<td>48</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">31st January</th>
+<td>129</td>
+<td>64</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td></td>
+<td>7824</td>
+<td>1241</td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="attributi-obsoleti" class="level4">
+<h4 class="anchored" data-anchor-id="attributi-obsoleti">Attributi obsoleti</h4>
+<p>Lista di attributi grafici e di formattazione ormai relegati a CSS</p>
+<ul>
+<li>width: larghezza della tabella o delle celle</li>
+<li>cellpadding: permette di inserire spazio tra il contenuto della cella e il bordo della cella</li>
+<li>cellspacing: distanza tra le celle della tabella</li>
+<li>border: visualizzare e definire lo spessore del bordo della tabella</li>
+<li>bgcolor: colore di sfondo della tabella o delle celle</li>
+</ul>
+</section>
+<section id="tabelle-annidate" class="level4">
+<h4 class="anchored" data-anchor-id="tabelle-annidate">Tabelle annidate</h4>
+<p>Posso inserire una tabella all’interno di una cella di un’altra tabella, creando così una tabella annidata.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="ot"> border</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Campo<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Tabella<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Campo1<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">table</span><span class="ot"> border</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Campo<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;</span><span class="kw">th</span><span class="dt">&gt;</span>Descrizione<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">thead</span><span class="dt">&gt;</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Campo1<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Descrizione1<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">tbody</span><span class="dt">&gt;</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="table table-bordered caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Campo</th>
+<th data-quarto-table-cell-role="th">Tabella</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Campo1</td>
+<td><table class="table table-bordered caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Campo</th>
+<th data-quarto-table-cell-role="th">Descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Campo1</td>
+<td>Descrizione1</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="raggruppamento-di-colonne-colgroup-e-col" class="level4">
+<h4 class="anchored" data-anchor-id="raggruppamento-di-colonne-colgroup-e-col">Raggruppamento di colonne &lt;colgroup&gt; e &lt;col&gt;</h4>
+<p>posso usare l’elemento <strong>colgroup</strong> per raggruppare le colonne di una tabella e applicare loro uno stile comune.<br>
+All’interno di <strong>colgroup</strong> posso usare l’elemento <strong>col</strong> per definire le singole colonne attraverso l’attributo <strong>span</strong> per specificare il numero di colonne da raggruppare.</p>
+<p>Ottimo per applicare uno stile comune a più colonne della tabella</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">table</span><span class="dt">&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">caption</span><span class="dt">&gt;</span>Superheros and sidekicks<span class="dt">&lt;/</span><span class="kw">caption</span><span class="dt">&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">colgroup</span><span class="dt">&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">col</span><span class="dt">&gt;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">col</span><span class="ot"> span</span><span class="op">=</span><span class="st">"2"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"batman"</span><span class="dt">&gt;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">col</span><span class="ot"> span</span><span class="op">=</span><span class="st">"2"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"flash"</span><span class="dt">&gt;</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">colgroup</span><span class="dt">&gt;</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"col"</span><span class="dt">&gt;</span>Batman<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"col"</span><span class="dt">&gt;</span>Robin<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"col"</span><span class="dt">&gt;</span>The Flash<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"col"</span><span class="dt">&gt;</span>Kid Flash<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">th</span><span class="ot"> scope</span><span class="op">=</span><span class="st">"row"</span><span class="dt">&gt;</span>Skill<span class="dt">&lt;/</span><span class="kw">th</span><span class="dt">&gt;</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Smarts<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Dex, acrobat<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Super speed<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>Super speed<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">tr</span><span class="dt">&gt;</span></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">table</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="table table-bordered caption-top">
+<caption>Superheros and sidekicks</caption>
+<tbody>
+<tr class="odd">
+<td></td>
+<th data-quarto-table-cell-role="th" scope="col">Batman</th>
+<th data-quarto-table-cell-role="th" scope="col">Robin</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" scope="row">Skill</th>
+<td>Smarts</td>
+<td>Dex, acrobat</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="collegamenti-ipertestuali-a" class="level3">
+<h3 class="anchored" data-anchor-id="collegamenti-ipertestuali-a">Collegamenti ipertestuali &lt;a&gt;</h3>
+<p>L’HTML permette collegamenti ipertestuali:</p>
+<ul>
+<li>tra pagine di siti diversi</li>
+<li>tra pagine dello stesso sito</li>
+<li>tra parti diverse della stessa pagina</li>
+</ul>
+<p>Posso specificare se il collegamento deve aprirsi in una nuova finestra o nella stessa finestra del browser</p>
+<p>viene creato mediante l’elemento <code>&lt;a&gt;</code> (anchor)</p>
+<ul>
+<li>attributo <strong>href</strong>: specifica l’URL della pagina di destinazione</li>
+<li>riferimento può essere assoluto o relativo</li>
+<li>il testo contenuto tra <code>&lt;a&gt;...&lt;/a&gt;</code> è l’ancora (o link test) che richiede la trasmissione</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.uniud.it"</span><span class="dt">&gt;</span>Università degli Studi di Udine<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Per migliorare l’accessibilità è meglio</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.uniud.it"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"Vai al sito dell'Università degli Studi di Udine"</span><span class="dt">&gt;</span>Università degli Studi di Udine<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>rispetto a</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.uniud.it"</span><span class="dt">&gt;</span>clicca qui<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> per andare al sito dell'Università degli Studi di Udine<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="riferimenti-assoluti" class="level4">
+<h4 class="anchored" data-anchor-id="riferimenti-assoluti">Riferimenti assoluti</h4>
+<ul>
+<li><strong>riferimento assoluto</strong>: specifica intero URL (protocollo, dominio, percorso ed eventuale identificatore del frammento)</li>
+</ul>
+</section>
+<section id="riferimenti-relativi" class="level4">
+<h4 class="anchored" data-anchor-id="riferimenti-relativi">Riferimenti relativi</h4>
+<ul>
+<li><strong>riferimento relativo</strong>: specifica solo il percorso della pagina di destinazione rispetto alla pagina corrente</li>
+</ul>
+<p>Vengono risolti utilizzando l’elemento <strong>base</strong> che specifica l’URL di base per tutti i collegamenti ipertestuali della pagina</p>
+<p>il tag <code>&lt;base&gt;</code> va inserito all’interno del tag <code>&lt;head&gt;</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">base</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.uniud.it/"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In tal caso tutti i collegamenti ipertestuali della pagina saranno risolti rispetto a questo URL di base</p>
+<p>esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">base</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.uniud.it/"</span><span class="dt">&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"index.html"</span><span class="dt">&gt;</span>Home<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ci farà accedere alla pagina <code>https://www.uniud.it/index.html</code></p>
+</section>
+<section id="visualizzazione-della-pagina-destinazione" class="level4">
+<h4 class="anchored" data-anchor-id="visualizzazione-della-pagina-destinazione">Visualizzazione della pagina destinazione</h4>
+<p>Per visualizzare la pagina di destinazione in una nuova finestra del browser, si usa l’attributo <strong>target</strong> con valore <code>_blank</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.uniud.it"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="dt">&gt;</span>Università degli Studi di Udine<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Permette all’utente di riprendere la navigazione della pagina corrente senza dover tornare indietro</p>
+</section>
+<section id="collegamenti-a-parti-specifiche-della-pagina" class="level4">
+<h4 class="anchored" data-anchor-id="collegamenti-a-parti-specifiche-della-pagina">Collegamenti a parti specifiche della pagina</h4>
+<p>Per collegarsi a parti specifiche di una pagina, si utilizza l’attributo <strong>href</strong> con un riferimento al frammento della pagina preceduto dal carattere <code>#</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#conclusioni"</span><span class="dt">&gt;</span>Conclusioni<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="ot"> id</span><span class="op">=</span><span class="st">"conclusioni"</span><span class="dt">&gt;</span>Conclusioni<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Testo delle conclusioni...<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="collegamenti-a-parti-specifiche-di-pagine-esterne" class="level4">
+<h4 class="anchored" data-anchor-id="collegamenti-a-parti-specifiche-di-pagine-esterne">Collegamenti a parti specifiche di pagine esterne</h4>
+<p>Analogamente al collegamento a parti specifiche della stessa pagina, posso collegarmi a parti specifiche di pagine esterne utilizzando l’attributo <strong>href</strong> con un riferimento al frammento della pagina preceduto dal carattere <code>#</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://www.uniud.it/index.html/#conclusioni"</span><span class="dt">&gt;</span>Conclusioni<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="download" class="level4">
+<h4 class="anchored" data-anchor-id="download">Download</h4>
+<p>nel tag <code>&lt;a&gt;</code> posso usare l’attributo <strong>download</strong> per indicare che il collegamento ipertestuale punta a un file da scaricare</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"documento.pdf"</span><span class="ot"> download</span><span class="dt">&gt;</span>Scarica il documento<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="rel" class="level4">
+<h4 class="anchored" data-anchor-id="rel">Rel</h4>
+<p>L’attributo <strong>rel</strong> specifica la relazione tra il documento corrente e il documento di destinazione del collegamento ipertestuale. Alcuni valori comuni includono:</p>
+<ul>
+<li><code>noopener</code>: impedisce al documento di accedere alla proprietà <code>window.opener</code></li>
+<li><code>noreferrer</code>: impedisce l’invio del referrer al documento di destinazione</li>
+<li><code>nofollow</code>: indica ai motori di ricerca di non seguire il collegamento</li>
+<li><code>external</code>: indica che il collegamento punta a un sito esterno</li>
+<li><code>author</code>: indica che il collegamento punta a una pagina dell’autore del documento corrente</li>
+</ul>
+</section>
+<section id="posta-elettronica" class="level4">
+<h4 class="anchored" data-anchor-id="posta-elettronica">Posta elettronica</h4>
+<p>per creare un collegamento al programma di posta elettronica si usa</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"mailto:info@uniud.it"</span><span class="dt">&gt;</span>Invia un'email<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Posso anche eventualmente compilare alcuni campi con delle opzioni utilizzando il simbolo <code>?</code> dopo l’indirizzo email</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode htm code-with-copy"><code class="sourceCode djangotemplate"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">"mailto:daniele.salvati@uniud.it?subject=Osservazioni e</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="st">commenti"</span><span class="kw">&gt;</span>Send email<span class="kw">&lt;/a&gt;&lt;/p&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="numero-di-telefono" class="level4">
+<h4 class="anchored" data-anchor-id="numero-di-telefono">Numero di telefono</h4>
+<p>Per creare un collegamento ad un numero di telefono si usa il<br>
+seguente formato:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"tel:+4733378901"</span><span class="dt">&gt;</span>+47 333 78 901<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="immagini-img" class="level3">
+<h3 class="anchored" data-anchor-id="immagini-img">Immagini &lt;img&gt;</h3>
+<p>I formati (bitmap) più comuni sono:</p>
+<ul>
+<li>jpeg: per immagini con molti dettagli e colori (fotografie)</li>
+<li>png,gif : immagini semplici</li>
+</ul>
+<p>L’elemento <code>&lt;img&gt;</code> permette di inserire immagini nella pagina web</p>
+<ul>
+<li>è un tag vuoto</li>
+<li>è un elemento inline</li>
+</ul>
+<section id="percorso-file-e-test-alternativo-img-src-alt" class="level4">
+<h4 class="anchored" data-anchor-id="percorso-file-e-test-alternativo-img-src-alt">Percorso file e test alternativo &lt;img src=“…” alt=“…”&gt;</h4>
+<p>L’attributo <strong>src</strong> specifica il percorso dell’immagine da visualizzare</p>
+<p>L’attributo <strong>alt</strong> fornisce un testo alternativo che descrive l’immagine, utile per l’accessibilità e per i motori di ricerca</p>
+</section>
+<section id="dimensioni-img-width-height" class="level4">
+<h4 class="anchored" data-anchor-id="dimensioni-img-width-height">Dimensioni &lt;img width=“…” height=“…”&gt;</h4>
+<p>Le dimensioni dell’immagini vengono specificate mediante</p>
+<ul>
+<li>attributo <strong>width</strong>: larghezza in pixel o percentuale</li>
+<li>attributo <strong>height</strong>: altezza in pixel o percentuale</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/images/A_Frozen_Earth.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"A Frozen Earth"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"190"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"108"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+</section>
+<section id="immagine-di-tipo-blocco-figure-e-didascalia-figcaption" class="level4">
+<h4 class="anchored" data-anchor-id="immagine-di-tipo-blocco-figure-e-didascalia-figcaption">Immagine di tipo blocco &lt;figure&gt; e didascalia &lt;figcaption&gt;</h4>
+<p>Per raggruppare un’immagine con la sua didascalia si usa l’elemento blocco <code>&lt;figure&gt;</code></p>
+<ul>
+<li><code>&lt;img&gt;</code> per l’immagine</li>
+<li><code>&lt;figcaption&gt;</code> per la didascalia</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">figure</span><span class="dt">&gt;</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/images/A_Frozen_Earth.png"</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="ot">alt</span><span class="op">=</span><span class="st">"A Frozen Earth"</span><span class="dt">&gt;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">figcaption</span><span class="dt">&gt;</span>A Frozen Earth<span class="dt">&lt;/</span><span class="kw">figcaption</span><span class="dt">&gt;</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">figure</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<figure class="figure">
+<img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108" class="figure-img">
+<figcaption>A Frozen Earth</figcaption>
+</figure>
+</section>
+<section id="immagine-con-collegamento-ipertestuale" class="level4">
+<h4 class="anchored" data-anchor-id="immagine-con-collegamento-ipertestuale">Immagine con collegamento ipertestuale</h4>
+<p>è sufficiente inserire l’elemento <code>&lt;img&gt;</code> all’interno di un elemento <code>&lt;a&gt;</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://comarandr.github.io/"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"author"</span><span class="dt">&gt;</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/images/A_Frozen_Earth.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"A Frozen Earth"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"190"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"108"</span><span class="dt">&gt;</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<a href="https://comarandr.github.io/" target="_blank" rel="author">
+  <img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+</a>
+</section>
+<section id="aree-attive-map-e-area" class="level4">
+<h4 class="anchored" data-anchor-id="aree-attive-map-e-area">Aree attive &lt;map&gt; e &lt;area&gt;</h4>
+<p><strong>hotspot</strong>: area attiva all’interno di un’immagine</p>
+<ul>
+<li>attributo <strong>usemap</strong> all’interno del tag <code>&lt;img&gt;</code>: specifica l’ID della mappa di riferimento</li>
+</ul>
+<p>L’elemento <strong>&lt;map&gt;</strong> definisce una mappa di immagini con aree attive.<br>
+Possiede:</p>
+<ul>
+<li>attributo <strong>name</strong>: nome della mappa di immagini, preceduto da <code>#</code></li>
+<li>attributo <strong>id</strong>: identificatore univoco della mappa di immagini</li>
+<li>elemento <strong>&lt;area&gt;</strong>: definisce un’area attiva all’interno della mappa di immagini</li>
+</ul>
+<p>L’elemento <strong>&lt;area&gt;</strong> possiede:</p>
+<ul>
+<li>attributo <strong>shape</strong>: forma dell’area attiva (rect, circle, poly)</li>
+<li>attributo <strong>coords</strong>: coordinate dell’area attiva a seconda della forma specificata, partendo da [0,0] in alto a sinistra dell’immagine</li>
+<li>attributo <strong>href</strong>: URL della pagina di destinazione del collegamento ipertestuale</li>
+<li>attributo <strong>target</strong>: destinazione del collegamento ipertestuale</li>
+<li>attributo <strong>alt</strong>: testo alternativo per l’area attiva</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">figure</span><span class="dt">&gt;</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/images/A_Frozen_Earth.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"A Frozen Earth"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"380"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"216"</span><span class="ot"> usemap</span><span class="op">=</span><span class="st">"#earthmap"</span><span class="dt">&gt;</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">figcaption</span><span class="dt">&gt;</span>Clicca sul pianeta<span class="dt">&lt;/</span><span class="kw">figcaption</span><span class="dt">&gt;</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">figure</span><span class="dt">&gt;</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">map</span><span class="ot"> name</span><span class="op">=</span><span class="st">"earthmap"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"earthmap"</span><span class="dt">&gt;</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">area</span><span class="ot"> shape</span><span class="op">=</span><span class="st">"circle"</span><span class="ot"> coords</span><span class="op">=</span><span class="st">"190,108,100"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://en.wikipedia.org/wiki/Earth"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"Earth"</span><span class="dt">&gt;</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">map</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<figure class="figure">
+<img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="380" height="216" usemap="#earthmap" class="figure-img">
+<figcaption>Clicca sul pianeta</figcaption>
+</figure>
+
+<map name="earthmap" id="earthmap">
+  <area shape="circle" coords="190,108,100" href="https://en.wikipedia.org/wiki/Earth" target="_blank" alt="Earth">
+</map>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">formato (shape)</th>
+<th style="text-align: left;">coordinate (coords)</th>
+<th style="text-align: left;">significato dei parametri</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">rect</td>
+<td style="text-align: left;"><span class="math inline">\("X_1,Y_1,X_2,Y_2"\)</span></td>
+<td style="text-align: left;">angolo in alto a sx (<span class="math inline">\(x_1,y_1\)</span>) e in basso a destra (<span class="math inline">\(x_2,y_2\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">circle</td>
+<td style="text-align: left;"><span class="math inline">\("X,Y,R"\)</span></td>
+<td style="text-align: left;">centro (<span class="math inline">\(x,y\)</span>) e raggio (<span class="math inline">\(r\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">poly</td>
+<td style="text-align: left;"><span class="math inline">\("X_1,Y_1,\cdots,X_n,Y_n"\)</span></td>
+<td style="text-align: left;">vertici del poligono</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">default</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">area attiva che copre tutta l’immagine</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentazione-e-allineamento-immagini" class="level4">
+<h4 class="anchored" data-anchor-id="presentazione-e-allineamento-immagini">Presentazione e allineamento immagini</h4>
+<p>Si usano i fogli di stile CSS</p>
+</section>
+</section>
+</section>
+<section id="moduli-form" class="level2">
+<h2 class="anchored" data-anchor-id="moduli-form">Moduli &lt;form&gt;</h2>
+<p>I moduli (<strong>form</strong>) servono a raccogliere dati dall’utente e inviarli al server per l’elaborazione.</p>
+<p>Il modulo può presentare diversi controlli grafici di interfaccia (<strong>widget</strong>) per l’inserimento dei dati</p>
+<p>principali tipi di form:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">form</th>
+<th style="text-align: left;">descrizione</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">text input</td>
+<td style="text-align: left;">campo di testo a riga singola</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">password input</td>
+<td style="text-align: left;">campo di testo a riga singola per password</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">textarea</td>
+<td style="text-align: left;">campo di testo a più righe</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">radio button</td>
+<td style="text-align: left;">pulsante di opzione (scelta singola)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">checkbox</td>
+<td style="text-align: left;">casella di controllo (scelta multipla)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dropdown boxes</td>
+<td style="text-align: left;">menu a discesa</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">submit button &amp; image button</td>
+<td style="text-align: left;">pulsante per inviare i dati del modulo al server</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">file upload</td>
+<td style="text-align: left;">campo per selezionare un file da inviare al server</td>
+</tr>
+</tbody>
+</table>
+<section id="elemento-form" class="level3">
+<h3 class="anchored" data-anchor-id="elemento-form">elemento &lt;form&gt;</h3>
+<p>L’elemento <strong>&lt;form&gt;</strong> è utilizzato per creare un form</p>
+<p>possiede i seguenti attributi principali:</p>
+<ul>
+<li><strong>action</strong>: specifica l’URL del server a cui inviare i dati del form</li>
+<li><strong>method</strong>: specifica come inviare i dati (GET o POST)</li>
+<li><strong>id</strong>: identificatore univoco del form</li>
+<li><strong>name</strong>: nome del form</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"url del programma"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"form1"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"myForm"</span><span class="dt">&gt;</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- campi del form --&gt;</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="metodo-get" class="level3">
+<h3 class="anchored" data-anchor-id="metodo-get">Metodo get</h3>
+<p>Tramite il metodo <strong>get</strong> i dati (es. nome=valore) vengono inviati al server come parte dell’URL, separati da un punto interrogativo <code>?</code> e concatenati con il simbolo <code>&amp;</code></p>
+<p>produce una stringa visibile nella barra degli indirizzi del browser</p>
+<p>adatto a pochi dati (URL: max 2048 caratteri), non sono dati binari, sensibili e non modificano lo stato di database. Ottimo per ricerca-recupero, non per modifica</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"search.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="metodo-post" class="level3">
+<h3 class="anchored" data-anchor-id="metodo-post">Metodo post</h3>
+<ul>
+<li>i dati sono inseriti nel corpo dell’entità del messaggio HTTP di richiesta</li>
+</ul>
+<p>adatto quando i dati sono molti e sensibili. Possono essere binari o che modificano database esistente</p>
+</section>
+<section id="input-di-tipo-testo-input-type-text" class="level3">
+<h3 class="anchored" data-anchor-id="input-di-tipo-testo-input-type-text">Input di tipo testo &lt;input type = “text”&gt;</h3>
+<p>Per l’inserimento di dati testuali a riga singola si usa l’elemento <strong>&lt;input type=“text”&gt;</strong>.<br>
+L’attributo <strong>name</strong> è necessario per assumere il dato digitato dall’utente.</p>
+</section>
+<section id="input-di-tipo-password-input-type-password" class="level3">
+<h3 class="anchored" data-anchor-id="input-di-tipo-password-input-type-password">Input di tipo password &lt;input type = “password”&gt;</h3>
+<p>campo a riga singola, per una password. L’attributo <strong>name</strong> è necessario per assumere il dato digitato dall’utente, che non viene visualizzato in chiaro</p>
+<ul>
+<li><strong>input di tipo password</strong>: <code>&lt;input type="password"&gt;</code></li>
+</ul>
+</section>
+<section id="input-di-tipo-invia-input-type-submit" class="level3">
+<h3 class="anchored" data-anchor-id="input-di-tipo-invia-input-type-submit">Input di tipo invia &lt;input type = “submit”&gt;</h3>
+<p>con <code>&lt;input type="submit"&gt;</code> si crea un pulsante per inviare i dati del form al server. L’attributo <strong>value</strong> permette di specificare il testo visualizzato sul pulsante.</p>
+</section>
+<section id="esempi-di-input-di-tipo-testo-password-e-invia" class="level3">
+<h3 class="anchored" data-anchor-id="esempi-di-input-di-tipo-testo-password-e-invia">Esempi di input di tipo testo, password e invia</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempi
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"invio.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"post"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>Nome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nome"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>Cognome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"cognome"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>Password: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"password"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"password"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Invia"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<form action="invio.php" method="post"><br>
+Nome: <input type="text" name="nome"><br>
+Cognome: <input type="text" name="cognome"><br>
+Password: <input type="password" name="password"><br>
+<input type="submit" value="Invia">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"invio.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="dt">&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>Nome e Cognome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nc"</span><span class="dt">&gt;</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Invia"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+Nome e Cognome: <input type="text" name="nc">
+<input type="submit" value="Invia">
+</form></div>
+</div>
+</div>
+</section>
+<section id="pulsante" class="level3">
+<h3 class="anchored" data-anchor-id="pulsante">Pulsante</h3>
+<p>Serve a creare un pulsante con etichetta personalizzata (tramite attributo <strong>value</strong>) a cui posso associare un’azione tramite Javascript.</p>
+<p>Ha un tag di apertura e uno di chiusura, quindi può contenere testo o immagini.</p>
+</section>
+<section id="textarea" class="level3">
+<h3 class="anchored" data-anchor-id="textarea">Textarea</h3>
+</section>
+<section id="input-di-tipo-radio-input-type-radio" class="level3">
+<h3 class="anchored" data-anchor-id="input-di-tipo-radio-input-type-radio">Input di tipo radio &lt;input type = “radio”&gt;</h3>
+</section>
+<section id="input-di-tipo-checkbox-input-type-checkbox" class="level3">
+<h3 class="anchored" data-anchor-id="input-di-tipo-checkbox-input-type-checkbox">Input di tipo checkbox &lt;input type = “checkbox”&gt;</h3>
+</section>
+<section id="selezione-di-unopzione" class="level3">
+<h3 class="anchored" data-anchor-id="selezione-di-unopzione">Selezione di un’opzione</h3>
+</section>
+<section id="selezione-di-un-file-da-caricare-sul-server" class="level3">
+<h3 class="anchored" data-anchor-id="selezione-di-un-file-da-caricare-sul-server">Selezione di un file da caricare sul server</h3>
+</section>
+<section id="input-di-tipo-file-input-type-file" class="level3">
+<h3 class="anchored" data-anchor-id="input-di-tipo-file-input-type-file">Input di tipo file &lt;input type = “file”&gt;</h3>
+<ul>
+<li><p><strong>input di tipo invia</strong>: <code>&lt;input type="submit"&gt;</code></p></li>
+<li><p><strong>input di tipo radio</strong>: <code>&lt;input type="radio"&gt;</code></p></li>
+</ul>
+</section>
+</section>
+<section id="audio-audio-e-video-video" class="level2">
+<h2 class="anchored" data-anchor-id="audio-audio-e-video-video">Audio &lt;audio&gt; e video &lt;video&gt;</h2>
+<p>HTML5 ha introdotto nuovi elementi per la gestione di contenuti multimediali come audio e video.</p>
+<p>Tra l’altro supporta la <strong>riproduzione progressiva</strong> (inizio della riproduzione prima del completamento del download)</p>
+<section id="audio-audio" class="level3">
+<h3 class="anchored" data-anchor-id="audio-audio">Audio &lt;audio&gt;</h3>
+<p>L’elemento <strong>&lt;audio&gt;</strong> permette di inserire un file audio nella pagina web.</p>
+<p>I suoi attributi principali sono:</p>
+<ul>
+<li><strong>src</strong>: specifica il percorso del file audio</li>
+<li><strong>controls</strong>: visualizza i controlli per la riproduzione (play, pausa, volume)</li>
+<li><strong>loop</strong>: riproduce il file audio in loop</li>
+<li><strong>autoplay</strong>: avvia automaticamente la riproduzione del file audio - <strong>muted</strong>: disattiva l’audio del file audio</li>
+<li><strong>preload</strong>: specifica se e come il file audio deve essere precaricato (auto, metadata, none)</li>
+</ul>
+<p>I formati audio supportati sono:</p>
+<ul>
+<li><strong>MP3</strong>: formato audio compresso, ampiamente supportato</li>
+<li><strong>WAV</strong>: formato audio non compresso, di alta qualità</li>
+<li><strong>OGG</strong>: formato audio open source, supportato da molti browser moderni</li>
+</ul>
+<p>Il tag <code>&lt;audio&gt;</code> può essere contenere più tag <code>&lt;source&gt;</code> con attributo <code>type</code> (per il MIME della risorsa) per specificare più formati audio, in modo che il browser possa scegliere quello supportato.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">audio</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.ogg"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/ogg"</span><span class="dt">&gt;</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.mp3"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/mpeg"</span><span class="dt">&gt;</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.wav"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/wav"</span><span class="dt">&gt;</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>Your browser does not support the audio element.</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">audio</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="video-video" class="level3">
+<h3 class="anchored" data-anchor-id="video-video">Video &lt;video&gt;</h3>
+<p>Ci sono tre formati supportati in HTML5:</p>
+<ul>
+<li><strong>MP4</strong>: formato video compresso, ampiamente supportato</li>
+<li><strong>WebM</strong>: formato video open source, supportato da molti browser moderni</li>
+<li><strong>OGG</strong>: formato video open source, supportato da molti browser moderni</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">video</span><span class="ot"> src</span><span class="op">=</span><span class="st">"film.mp4"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"720"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"480"</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"film.webm"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/webm"</span><span class="dt">&gt;</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    Your browser does not support the video element.</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">video</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sottotitoli-track" class="level3">
+<h3 class="anchored" data-anchor-id="sottotitoli-track">Sottotitoli &lt;track&gt;</h3>
+<p>L’elemento <strong>&lt;track&gt;</strong> serve per impostare etichette, sottotitoli o altri elementi per gli elemeneti <audio> e <video>.</video></audio></p>
+<p>Le tracce sono formattate in file esterni con estensione <strong>.vtt</strong> (WebVTT - Web Video Text Tracks)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">video</span><span class="ot"> width</span><span class="op">=</span><span class="st">"320"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"240"</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"forrest_gump.mp4"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/mp4"</span><span class="dt">&gt;</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"forrest_gump.ogg"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/ogg"</span><span class="dt">&gt;</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">track</span><span class="ot"> src</span><span class="op">=</span><span class="st">"fgsubtitles_en.vtt"</span><span class="ot"> kind</span><span class="op">=</span><span class="st">"subtitles"</span><span class="ot"> srclang</span><span class="op">=</span><span class="st">"en"</span><span class="ot"> label</span><span class="op">=</span><span class="st">"English"</span><span class="dt">&gt;</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">track</span><span class="ot"> src</span><span class="op">=</span><span class="st">"fgsubtitles_no.vtt"</span><span class="ot"> kind</span><span class="op">=</span><span class="st">"subtitles"</span><span class="ot"> srclang</span><span class="op">=</span><span class="st">"no"</span><span class="ot"> label</span><span class="op">=</span><span class="st">"Norwegian"</span><span class="dt">&gt;</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">video</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
