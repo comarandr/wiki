@@ -1293,29 +1293,334 @@ Nome e Cognome: <input type="text" name="nc">
 
 :::
 
-### Pulsante
+### Pulsante &lt;button&gt;...&lt;/button&gt;
 
 Serve a creare un pulsante con etichetta personalizzata (tramite attributo **value**) a cui posso associare un'azione tramite Javascript.
 
 Ha un tag di apertura e uno di chiusura, quindi può contenere testo o immagini.
 
-### Textarea
+```html
+<button type="button">Click Me!</button>
+<button type="submit"><strong>Submit</strong></button>
+<button type="reset">Reset</button>
+```
 
+```{=html}
+<button type="button">Click Me!</button>
+<button type="submit"><strong>Submit</strong></button>
+<button type="reset">Reset</button>
+```
 
+### Textarea &lt;textarea&gt;...&lt;/textarea&gt;
+
+Campo destinato a ricevere più linee di testo.
+
+I suoi attributi principali sono:
+
+- **name**: nome del campo, necessario per assumere il dato digitato dall'utente
+- **rows**: numero di righe visibili del campo
+- **cols**: numero di colonne visibili del campo
+
+```html
+<textarea name="messaggio" rows="4" cols="50">
+</textarea>
+```
+
+```{=html}
+<textarea name="messaggio" rows="4" cols="50">
+</textarea>
+```
 
 ### Input di tipo radio &lt;input type = "radio"&gt;
 
+Controllo che permette all'utente di esprimere una scelta tra più opzioni 
+La scelta è limitata a una sola opzione
+
+```html
+<input type="radio" name="età" value="minorenne">Minorenne<br>
+<input type="radio" name="età" value="maggiorenne">Maggiorenne<br>
+```
+
+```{=html}
+<input type="radio" name="età" value="minorenne">Minorenne<br>
+<input type="radio" name="età" value="maggiorenne">Maggiorenne<br>
+```
+
 ### Input di tipo checkbox &lt;input type = "checkbox"&gt;
 
-### Selezione di un'opzione 
+Controllo che permette all'utente di selezionare zero o più opzioni.
 
-### Selezione di un file da caricare sul server
+- attributo **name**: nome del campo, necessario per assumere il dato digitato dall'utente
+- attributo **value**: valore associato all'opzione selezionata
+
+```html
+<input type="checkbox" name="hobby" value="lettura">Lettura<br>
+<input type="checkbox" name="hobby" value="musica">Musica<br>
+<input type="checkbox" name="hobby" value="sport">Sport<br>
+```
+
+```{=html}
+<input type="checkbox" name="hobby" value="lettura">Lettura<br>
+<input type="checkbox" name="hobby" value="musica">Musica<br>
+<input type="checkbox" name="hobby" value="sport">Sport<br>
+```
+
+### Selezione di un'opzione &lt;select&gt;...&lt;/select&gt;
+
+Controllo che permette all'utente di selezionare un'opzione da un elenco a discesa.
+
+Gli elementi usati sono **select** e **option**.
+
+```html
+<select name="frutta">
+    <option value="mela">Mela</option>
+    <option value="banana">Banana</option>
+    <option value="arancia">Arancia</option>
+</select>
+```
+
+```{=html}
+<select name="frutta">
+    <option value="mela">Mela</option>
+    <option value="banana">Banana</option>
+    <option value="arancia">Arancia</option>
+</select>
+```
+
+Puoi attivare la selezione multipla aggiungendo l'attributo **multiple** all'elemento **select**.
+
+Con CTRL (o CMD su Mac) puoi selezionare più opzioni contemporaneamente, mentre con SHIFT puoi selezionare un intervallo di opzioni.
+
+L'attributo **size** specifica il numero di opzioni visibili senza scorrere l'elenco.
+
+```html
+<select name="frutta" multiple size="3">
+    <option value="mela">Mela</option>
+    <option value="banana">Banana</option>
+    <option value="arancia">Arancia</option>
+</select>
+```
+
+```{=html}
+<select name="frutta" multiple size="3">
+    <option value="mela">Mela</option>
+    <option value="banana">Banana</option>
+    <option value="arancia">Arancia</option>
+</select>
+```
 
 ### Input di tipo file &lt;input type = "file"&gt;
 
-- **input di tipo invia**: `<input type="submit">`
+Serve per permettere all'utente di selezionare un file dal proprio computer da inviare al server.
 
-- **input di tipo radio**: `<input type="radio">`
+L'attributo **name** è necessario per assumere il file selezionato dall'utente.
+
+```html 
+<input type="file" name="file_da_inviare">
+```
+
+```{=html}
+<input type="file" name="file_da_inviare">
+```
+
+### Input di tipo immagine &lt;input type = "image"&gt;
+
+Serve per creare un pulsante immagine che invia i dati del form al server.
+Si possono usare gli attributi soliti per le immagini, come **src**, **alt**, **width** e **height**.
+
+```html
+<input type="image" src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+```
+
+```{=html}
+<input type="image" src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+```
+
+### Input di tipo email &lt;input type = "email"&gt;
+
+Serve per permettere all'utente di inserire un indirizzo email.
+
+l'attributo **name** è necessario per assumere l'indirizzo email digitato dall'utente.
+
+l'attributo **placeholder** permette di visualizzare un testo all'interno del campo di input, che scompare quando l'utente inizia a digitare.
+
+```html
+<input type="email" name="email" placeholder="Inserisci la tua email">
+```
+
+```{=html}
+<input type="email" name="email" placeholder="Inserisci la tua email">
+```
+
+
+### Fieldset &lt;fieldset&gt; e legenda &lt;legend&gt;
+
+L'elemento **fieldset** serve per raggruppare i controlli del form in un blocco logico
+
+L'elemento **legend** serve per fornire una didascalia al blocco. Va immediatamente dopo l'apertura del tag **fieldset**.
+
+### Pulsante di reset &lt;input type = "reset"&gt;
+
+Permette di creare un pulsante che resetta tutti i campi del form ai valori iniziali. 
+L'attributo **value** permette di specificare il testo visualizzato sul pulsante.
+
+```html
+<input type="reset" value="Reset">
+```
+
+```{=html}
+<input type="reset" value="Reset">
+```
+
+### Elemento hidden &lt;input type = "hidden"&gt;
+
+Elemento che non viene visualizzato nella pagina, ma che permette di inviare dati al server senza che l'utente li veda o li modifichi.
+
+```html
+<input type="hidden" name="id_utente" value="12345">
+```
+
+### Attributi per elemento &lt;input&gt; (size, maxlength, pattern, required)
+
+**required**: specifica che il campo è obbligatorio
+
+**size**: specifica la larghezza del campo di input in caratteri (default 20)
+
+***maxlength**: specifica il numero massimo di caratteri che l'utente può inserire nel campo di input
+
+**pattern**: specifica un'espressione regolare che il valore del campo deve rispettare
+
+### Etichette &lt;label&gt;
+
+L'elemento **label** serve per associare un'etichetta a un controllo del form.
+
+L'attributo **for** dell'elemento **label** deve corrispondere all'attributo **id** del controllo del form.
+
+Il testo dell'etichetta è associato direttamente all'input: questo facilita l'accessibilità del sito per la tecnologia assistiva (es. screen reader).
+
+```html
+<label for="nome">Nome:</label>
+<input type="text" id="nome" name="nome">
+```
+
+```{=html}
+<label for="nome">Nome:</label>
+<input type="text" id="nome" name="nome">   
+````
+
+```html
+<h3>The label element</h1>
+<p>Click on one of the text labels to toggle the related radio button:</p>
+<form action="/action_page.php">
+<p>
+<input type="radio" id="html" name="fav_language" value="HTML">
+<label for="html">HTML</label><br>
+<input type="radio" id="css" name="fav_language" value="CSS">
+<label for="css">CSS</label><br>
+<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+<label for="javascript">JavaScript</label>
+</p>
+<input type="submit" value="Submit">
+</form>
+```
+
+```{=html}
+<h3>The label element</h1>
+<p>Click on one of the text labels to toggle the related radio button:</p>
+<form action="/action_page.php">
+<p>
+<input type="radio" id="html" name="fav_language" value="HTML">
+<label for="html">HTML</label><br>
+<input type="radio" id="css" name="fav_language" value="CSS">
+<label for="css">CSS</label><br>
+<input type="radio" id="javascript" name="fav_language" value="JavaScript">
+<label for="javascript">JavaScript</label>
+</p>
+<input type="submit" value="Submit">
+</form>
+```
+
+### Inserimento di data e ora
+
+Per inserire una data nel formato **gg/mm/aaaa** si usa l'elemento **&lt;input type="date"&gt;**.
+
+```html
+<input type="date" name="data">
+```
+
+```{=html}
+<input type="date" name="data">
+```
+
+- per inserire un orario nel formato **hh:mm** si usa l'elemento **&lt;input type="time"&gt;**.
+
+```html
+<input type="time" name="ora">
+```
+
+```{=html}
+<input type="time" name="ora">
+```
+
+### Inserimento di un URL
+
+Per inserire un URL si usa l'elemento **&lt;input type="url"&gt;**.
+
+```html
+<input type="url" name="sito">
+```
+
+```{=html}
+<input type="url" name="sito">
+```
+
+### Inserimento di testo per effettuare ricerche
+
+Per inserire un testo per effettuare ricerche si usa l'elemento **&lt;input type="search"&gt;**.
+
+```html
+<input type="search" name="ric" placeholder="Introduci keyword">
+```
+
+```{=html}
+<input type="search" name="ric" placeholder="Introduci keyword">
+```
+
+### Inserimento di un numero
+
+Per inserire un numero si usa l'elemento **&lt;input type="number"&gt;**.
+
+```html
+<input type="number" name="numero" min="1" max="10" step="1">
+```
+
+```{=html}
+<input type="number" name="numero" min="1" max="10" step="1">
+```
+
+### Inserimento di un colore
+
+Per inserire un colore si usa l'elemento **&lt;input type="color"&gt;**.
+
+```html
+<input type="color" name="colore" value="#ff0000">
+```
+
+```{=html}
+<input type="color" name="colore" value="#ff0000">
+```
+
+### Inserimento di un intervallo di valori
+
+Per inserire in un intervallo di valori si usa l'elemento **&lt;input type="range"&gt;**.
+
+```html
+<input type="range" name="intervallo" min="0" max="100" step="1" value="50">
+```
+
+```{=html}
+<input type="range" name="intervallo" min="0" max="100" step="1" value="50">
+```
 
 ## Audio &lt;audio&gt; e video &lt;video&gt;
 
