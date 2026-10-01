@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-445b8638c3d06994fee0907d791121c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -153,6 +153,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -169,102 +173,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#indice" id="toc-indice" class="nav-link active" data-scroll-target="#indice">Indice</a></li>
-  <li><a href="#cosè-html" id="toc-cosè-html" class="nav-link" data-scroll-target="#cosè-html">Cos’è HTML</a></li>
+  <li><a href="#cosè-html" id="toc-cosè-html" class="nav-link active" data-scroll-target="#cosè-html">Cos’è HTML</a></li>
   <li><a href="#html-css-e-javascript" id="toc-html-css-e-javascript" class="nav-link" data-scroll-target="#html-css-e-javascript">HTML, CSS e JavaScript</a></li>
   <li><a href="#struttura-minima-di-una-pagina" id="toc-struttura-minima-di-una-pagina" class="nav-link" data-scroll-target="#struttura-minima-di-una-pagina">Struttura minima di una pagina</a>
   <ul>
-  <li><a href="#doctype-html" id="toc-doctype-html" class="nav-link" data-scroll-target="#doctype-html">&lt;!DOCTYPE html&gt;</a></li>
+  <li><a href="#elementi" id="toc-elementi" class="nav-link" data-scroll-target="#elementi">Elementi</a>
+  <ul class="collapse">
+  <li><a href="#tag-di-apertura-e-chiusura" id="toc-tag-di-apertura-e-chiusura" class="nav-link" data-scroll-target="#tag-di-apertura-e-chiusura">Tag di apertura e chiusura</a></li>
   </ul></li>
-  <li><a href="#testo" id="toc-testo" class="nav-link" data-scroll-target="#testo">Testo</a>
+  <li><a href="#attributi" id="toc-attributi" class="nav-link" data-scroll-target="#attributi">Attributi</a></li>
+  <li><a href="#annidamento-di-elementi" id="toc-annidamento-di-elementi" class="nav-link" data-scroll-target="#annidamento-di-elementi">Annidamento di elementi</a></li>
+  <li><a href="#regole-di-scrittura" id="toc-regole-di-scrittura" class="nav-link" data-scroll-target="#regole-di-scrittura">Regole di scrittura</a>
+  <ul class="collapse">
+  <li><a href="#commentare" id="toc-commentare" class="nav-link" data-scroll-target="#commentare">Commentare</a></li>
+  <li><a href="#regole" id="toc-regole" class="nav-link" data-scroll-target="#regole">Regole</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#struttura-minima-di-una-pagina-html" id="toc-struttura-minima-di-una-pagina-html" class="nav-link" data-scroll-target="#struttura-minima-di-una-pagina-html">Struttura minima di una pagina HTML</a>
   <ul>
-  <li><a href="#h1-h6" id="toc-h1-h6" class="nav-link" data-scroll-target="#h1-h6">h1-h6</a></li>
-  <li><a href="#p" id="toc-p" class="nav-link" data-scroll-target="#p">p</a></li>
-  <li><a href="#strong-em" id="toc-strong-em" class="nav-link" data-scroll-target="#strong-em">strong / em</a></li>
-  <li><a href="#b-i" id="toc-b-i" class="nav-link" data-scroll-target="#b-i">b / i</a></li>
-  <li><a href="#br" id="toc-br" class="nav-link" data-scroll-target="#br">br</a></li>
-  <li><a href="#code-pre" id="toc-code-pre" class="nav-link" data-scroll-target="#code-pre">code / pre / …</a></li>
+  <li><a href="#dichiarazione-del-tipo-di-documento-doctype-html" id="toc-dichiarazione-del-tipo-di-documento-doctype-html" class="nav-link" data-scroll-target="#dichiarazione-del-tipo-di-documento-doctype-html">Dichiarazione del tipo di documento &lt;!DOCTYPE html&gt;</a></li>
+  <li><a href="#struttura-generica" id="toc-struttura-generica" class="nav-link" data-scroll-target="#struttura-generica">Struttura generica</a></li>
   </ul></li>
-  <li><a href="#semantica" id="toc-semantica" class="nav-link" data-scroll-target="#semantica">Semantica</a>
+  <li><a href="#head" id="toc-head" class="nav-link" data-scroll-target="#head">Head</a>
   <ul>
-  <li><a href="#header" id="toc-header" class="nav-link" data-scroll-target="#header">header</a></li>
-  <li><a href="#nav" id="toc-nav" class="nav-link" data-scroll-target="#nav">nav</a></li>
-  <li><a href="#main" id="toc-main" class="nav-link" data-scroll-target="#main">main</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">section</a></li>
-  <li><a href="#article" id="toc-article" class="nav-link" data-scroll-target="#article">article</a></li>
-  <li><a href="#aside" id="toc-aside" class="nav-link" data-scroll-target="#aside">aside</a></li>
-  <li><a href="#footer" id="toc-footer" class="nav-link" data-scroll-target="#footer">footer</a></li>
+  <li><a href="#metadati" id="toc-metadati" class="nav-link" data-scroll-target="#metadati">Metadati</a></li>
+  <li><a href="#titolo-della-pagina-title" id="toc-titolo-della-pagina-title" class="nav-link" data-scroll-target="#titolo-della-pagina-title">Titolo della pagina &lt;title&gt;</a></li>
   </ul></li>
-  <li><a href="#attributi" id="toc-attributi" class="nav-link" data-scroll-target="#attributi">Attributi</a>
+  <li><a href="#body" id="toc-body" class="nav-link" data-scroll-target="#body">Body</a>
   <ul>
-  <li><a href="#id" id="toc-id" class="nav-link" data-scroll-target="#id">id</a></li>
-  <li><a href="#class" id="toc-class" class="nav-link" data-scroll-target="#class">class</a></li>
-  <li><a href="#lang" id="toc-lang" class="nav-link" data-scroll-target="#lang">lang</a></li>
-  <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title">title</a></li>
-  <li><a href="#data-" id="toc-data-" class="nav-link" data-scroll-target="#data-">data-*</a></li>
+  <li><a href="#inserimento-e-formattazione-base-del-testo" id="toc-inserimento-e-formattazione-base-del-testo" class="nav-link" data-scroll-target="#inserimento-e-formattazione-base-del-testo">Inserimento e formattazione base del testo</a></li>
+  <li><a href="#headings-h1-h6" id="toc-headings-h1-h6" class="nav-link" data-scroll-target="#headings-h1-h6">Headings &lt;h1&gt; … &lt;h6&gt;</a></li>
+  <li><a href="#paragrafo-p-p" id="toc-paragrafo-p-p" class="nav-link" data-scroll-target="#paragrafo-p-p">Paragrafo &lt;p&gt; &lt;/p&gt;</a></li>
+  <li><a href="#a-capo-br" id="toc-a-capo-br" class="nav-link" data-scroll-target="#a-capo-br">A capo &lt;br&gt;</a></li>
+  <li><a href="#horizontal-rule-hr" id="toc-horizontal-rule-hr" class="nav-link" data-scroll-target="#horizontal-rule-hr">Horizontal rule &lt;hr&gt;</a></li>
+  <li><a href="#testo-in-grassetto-bb" id="toc-testo-in-grassetto-bb" class="nav-link" data-scroll-target="#testo-in-grassetto-bb">Testo in grassetto &lt;b&gt;&lt;/b&gt;</a></li>
+  <li><a href="#testo-in-italics-ii" id="toc-testo-in-italics-ii" class="nav-link" data-scroll-target="#testo-in-italics-ii">Testo in italics &lt;i&gt;&lt;/i&gt;</a></li>
+  <li><a href="#enfasi-a-un-segmento-di-testo-strong-e-em" id="toc-enfasi-a-un-segmento-di-testo-strong-e-em" class="nav-link" data-scroll-target="#enfasi-a-un-segmento-di-testo-strong-e-em">Enfasi a un segmento di testo &lt;strong&gt; e &lt;em&gt;</a></li>
+  <li><a href="#apici-sup-e-pedici-sub" id="toc-apici-sup-e-pedici-sub" class="nav-link" data-scroll-target="#apici-sup-e-pedici-sub">Apici &lt;sup&gt; e pedici &lt;sub&gt;</a></li>
+  <li><a href="#citazioni-blockquote-e-q-citazioni-bibliografiche-cite" id="toc-citazioni-blockquote-e-q-citazioni-bibliografiche-cite" class="nav-link" data-scroll-target="#citazioni-blockquote-e-q-citazioni-bibliografiche-cite">Citazioni &lt;blockquote&gt; e &lt;q&gt;, citazioni bibliografiche &lt;cite&gt;</a></li>
+  <li><a href="#abbreviazioni-abbr-title" id="toc-abbreviazioni-abbr-title" class="nav-link" data-scroll-target="#abbreviazioni-abbr-title">abbreviazioni &lt;abbr title=“…”&gt;</a></li>
+  <li><a href="#caratteri-speciali" id="toc-caratteri-speciali" class="nav-link" data-scroll-target="#caratteri-speciali">Caratteri speciali</a></li>
+  <li><a href="#attributo-style" id="toc-attributo-style" class="nav-link" data-scroll-target="#attributo-style">Attributo style</a></li>
   </ul></li>
-  <li><a href="#collegamenti" id="toc-collegamenti" class="nav-link" data-scroll-target="#collegamenti">Collegamenti</a>
-  <ul>
-  <li><a href="#href" id="toc-href" class="nav-link" data-scroll-target="#href">href</a></li>
-  <li><a href="#url" id="toc-url" class="nav-link" data-scroll-target="#url">URL</a></li>
-  <li><a href="#fragment" id="toc-fragment" class="nav-link" data-scroll-target="#fragment">fragment</a></li>
-  <li><a href="#targetrel" id="toc-targetrel" class="nav-link" data-scroll-target="#targetrel">target/rel</a></li>
-  </ul></li>
-  <li><a href="#immagini-e-multimedia" id="toc-immagini-e-multimedia" class="nav-link" data-scroll-target="#immagini-e-multimedia">Immagini e multimedia</a>
-  <ul>
-  <li><a href="#img" id="toc-img" class="nav-link" data-scroll-target="#img">img</a></li>
-  <li><a href="#figure" id="toc-figure" class="nav-link" data-scroll-target="#figure">figure</a></li>
-  <li><a href="#picture" id="toc-picture" class="nav-link" data-scroll-target="#picture">picture</a></li>
-  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">video</a></li>
-  <li><a href="#audio" id="toc-audio" class="nav-link" data-scroll-target="#audio">audio</a></li>
-  <li><a href="#iframe" id="toc-iframe" class="nav-link" data-scroll-target="#iframe">iframe</a></li>
-  </ul></li>
-  <li><a href="#liste" id="toc-liste" class="nav-link" data-scroll-target="#liste">Liste</a>
-  <ul>
-  <li><a href="#ul-ol-li" id="toc-ul-ol-li" class="nav-link" data-scroll-target="#ul-ol-li">ul / ol / li</a></li>
-  <li><a href="#dl-dt-dd" id="toc-dl-dt-dd" class="nav-link" data-scroll-target="#dl-dt-dd">dl / dt / dd</a></li>
-  </ul></li>
-  <li><a href="#tabelle" id="toc-tabelle" class="nav-link" data-scroll-target="#tabelle">Tabelle</a>
-  <ul>
-  <li><a href="#table-tr-td-th" id="toc-table-tr-td-th" class="nav-link" data-scroll-target="#table-tr-td-th">table / tr / td / th</a></li>
-  <li><a href="#caption" id="toc-caption" class="nav-link" data-scroll-target="#caption">caption</a></li>
-  <li><a href="#thead-tbody-tfoot" id="toc-thead-tbody-tfoot" class="nav-link" data-scroll-target="#thead-tbody-tfoot">thead / tbody / tfoot</a></li>
-  </ul></li>
-  <li><a href="#form" id="toc-form" class="nav-link" data-scroll-target="#form">Form</a>
-  <ul>
-  <li><a href="#form-1" id="toc-form-1" class="nav-link" data-scroll-target="#form-1">form</a></li>
-  <li><a href="#label" id="toc-label" class="nav-link" data-scroll-target="#label">label</a></li>
-  <li><a href="#input" id="toc-input" class="nav-link" data-scroll-target="#input">input</a></li>
-  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select">select</a></li>
-  <li><a href="#textarea" id="toc-textarea" class="nav-link" data-scroll-target="#textarea">textarea</a></li>
-  <li><a href="#button" id="toc-button" class="nav-link" data-scroll-target="#button">button</a></li>
-  <li><a href="#fieldset" id="toc-fieldset" class="nav-link" data-scroll-target="#fieldset">fieldset</a></li>
-  <li><a href="#legend" id="toc-legend" class="nav-link" data-scroll-target="#legend">legend</a></li>
-  <li><a href="#validazione" id="toc-validazione" class="nav-link" data-scroll-target="#validazione">validazione</a></li>
-  </ul></li>
-  <li><a href="#accessibilità" id="toc-accessibilità" class="nav-link" data-scroll-target="#accessibilità">Accessibilità</a>
-  <ul>
-  <li><a href="#alt" id="toc-alt" class="nav-link" data-scroll-target="#alt">alt</a></li>
-  <li><a href="#aria-" id="toc-aria-" class="nav-link" data-scroll-target="#aria-">aria-*</a></li>
-  <li><a href="#tabindex" id="toc-tabindex" class="nav-link" data-scroll-target="#tabindex">tabindex</a></li>
-  </ul></li>
-  <li><a href="#html-e-dom" id="toc-html-e-dom" class="nav-link" data-scroll-target="#html-e-dom">HTML e DOM</a></li>
-  <li><a href="#validazione-e-debugging" id="toc-validazione-e-debugging" class="nav-link" data-scroll-target="#validazione-e-debugging">Validazione e debugging</a></li>
-  <li><a href="#html-obsoleto" id="toc-html-obsoleto" class="nav-link" data-scroll-target="#html-obsoleto">HTML obsoleto</a></li>
-  <li><a href="#struttura-di-un-documento-html" id="toc-struttura-di-un-documento-html" class="nav-link" data-scroll-target="#struttura-di-un-documento-html">Struttura di un documento HTML</a></li>
-  <li><a href="#attributi-principali" id="toc-attributi-principali" class="nav-link" data-scroll-target="#attributi-principali">Attributi principali</a></li>
-  <li><a href="#entità" id="toc-entità" class="nav-link" data-scroll-target="#entità">Entità</a></li>
-  <li><a href="#liste-1" id="toc-liste-1" class="nav-link" data-scroll-target="#liste-1">Liste</a></li>
-  <li><a href="#commenti" id="toc-commenti" class="nav-link" data-scroll-target="#commenti">Commenti</a></li>
-  <li><a href="#immagini" id="toc-immagini" class="nav-link" data-scroll-target="#immagini">Immagini</a></li>
-  <li><a href="#righe-orizzontali" id="toc-righe-orizzontali" class="nav-link" data-scroll-target="#righe-orizzontali">Righe orizzontali</a></li>
-  <li><a href="#tabelle-1" id="toc-tabelle-1" class="nav-link" data-scroll-target="#tabelle-1">Tabelle</a></li>
-  <li><a href="#link-e-ipertesti" id="toc-link-e-ipertesti" class="nav-link" data-scroll-target="#link-e-ipertesti">Link e ipertesti</a></li>
-  <li><a href="#ancore-e-link-interni" id="toc-ancore-e-link-interni" class="nav-link" data-scroll-target="#ancore-e-link-interni">Ancore e link interni</a></li>
-  <li><a href="#mappe-dimmagine" id="toc-mappe-dimmagine" class="nav-link" data-scroll-target="#mappe-dimmagine">Mappe d’immagine</a></li>
-  <li><a href="#frame" id="toc-frame" class="nav-link" data-scroll-target="#frame">Frame</a></li>
-  <li><a href="#moduli" id="toc-moduli" class="nav-link" data-scroll-target="#moduli">Moduli</a></li>
-  <li><a href="#input-input" id="toc-input-input" class="nav-link" data-scroll-target="#input-input">Input &lt;input&gt;</a></li>
   </ul>
 </nav>
     </div>
@@ -298,79 +248,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="indice" class="level2">
-<h2 class="anchored" data-anchor-id="indice">Indice</h2>
-<ol type="1">
-<li><a href="#cosè-html">Cos’è HTML</a></li>
-<li><a href="#html-css-e-javascript">HTML, CSS e JavaScript</a></li>
-<li><a href="#struttura-minima-di-una-pagina">Struttura minima di una pagina</a></li>
-<li><a href="#doctype-html">&lt;!DOCTYPE html&gt;</a></li>
-<li>[Tag ]</li>
-<li>[Tag ]</li>
-<li>[Tag ]</li>
-<li><a href="#testo">Testo</a></li>
-<li><a href="#h1-h6">h1-h6</a></li>
-<li><a href="#p">p</a></li>
-<li><a href="#strong-em">strong / em</a></li>
-<li><a href="#b-i">b / i</a></li>
-<li><a href="#br">br</a></li>
-<li><a href="#code-pre">code / pre / …</a></li>
-<li><a href="#semantica">Semantica</a></li>
-<li><a href="#header">header</a></li>
-<li><a href="#nav">nav</a></li>
-<li><a href="#main">main</a></li>
-<li><a href="#section">section</a></li>
-<li><a href="#article">article</a></li>
-<li><a href="#aside">aside</a></li>
-<li><a href="#footer">footer</a></li>
-<li><a href="#attributi">Attributi</a></li>
-<li><a href="#id">id</a></li>
-<li><a href="#class">class</a></li>
-<li><a href="#lang">lang</a></li>
-<li><a href="#title">title</a></li>
-<li><a href="#data-">data-*</a></li>
-<li><a href="#collegamenti">Collegamenti</a></li>
-<li><a href="#href">href</a></li>
-<li><a href="#url">URL</a></li>
-<li><a href="#fragment">fragment</a></li>
-<li><a href="#targetrel">target/rel</a></li>
-<li><a href="#immagini-e-multimedia">Immagini e multimedia</a></li>
-<li><a href="#img">img</a></li>
-<li><a href="#figure">figure</a></li>
-<li><a href="#picture">picture</a></li>
-<li><a href="#video">video</a></li>
-<li><a href="#audio">audio</a></li>
-<li><a href="#iframe">iframe</a></li>
-<li><a href="#liste">Liste</a></li>
-<li><a href="#ul-ol-li">ul / ol / li</a></li>
-<li><a href="#dl-dt-dd">dl / dt / dd</a></li>
-<li><a href="#tabelle">Tabelle</a></li>
-<li><a href="#table-tr-td-th">table / tr / td / th</a></li>
-<li><a href="#caption">caption</a></li>
-<li><a href="#thead-tbody-tfoot">thead / tbody / tfoot</a></li>
-<li><a href="#form">Form</a></li>
-<li><a href="#form">form</a></li>
-<li><a href="#label">label</a></li>
-<li><a href="#input">input</a></li>
-<li><a href="#select">select</a></li>
-<li><a href="#textarea">textarea</a></li>
-<li><a href="#button">button</a></li>
-<li><a href="#fieldset">fieldset</a></li>
-<li><a href="#legend">legend</a></li>
-<li><a href="#validazione">validazione</a></li>
-<li><a href="#accessibilità">Accessibilità</a></li>
-<li><a href="#alt">alt</a></li>
-<li><a href="#aria-">aria-*</a></li>
-<li><a href="#tabindex">tabindex</a></li>
-<li>[Metadata e ]</li>
-<li><a href="#html-e-dom">HTML e DOM</a></li>
-<li><a href="#validazione-e-debugging">Validazione e debugging</a></li>
-<li><a href="#html-obsoleto">HTML obsoleto</a></li>
-</ol>
-</section>
 <section id="cosè-html" class="level2">
 <h2 class="anchored" data-anchor-id="cosè-html">Cos’è HTML</h2>
-<p>HTML (HyperText Markup Language) è un linguaggio di markup utilizzato per creare pagine web. Consente di strutturare il contenuto e definire la presentazione dei documenti attraverso l’uso di tag e attributi. HTML è fondamentale per il web, poiché fornisce la base su cui si costruiscono siti e applicazioni web, permettendo l’integrazione di testo, immagini, video, link e altri elementi multimediali.</p>
+<p>HTML (HyperText Markup Language) è un linguaggio di marcatura (markup, <em>annotazione</em>) di documenti ipertestuali.</p>
+<ul>
+<li><p>descrive la <strong>struttura</strong> di una pagina web e i collegamenti tra altre pagine</p></li>
+<li><p>definisce un <strong>insieme di elementi</strong> (titoli, paragrafi di testo, liste, tabelle, immagini, …)</p></li>
+</ul>
 </section>
 <section id="html-css-e-javascript" class="level2">
 <h2 class="anchored" data-anchor-id="html-css-e-javascript">HTML, CSS e JavaScript</h2>
@@ -378,487 +262,233 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="struttura-minima-di-una-pagina" class="level2">
 <h2 class="anchored" data-anchor-id="struttura-minima-di-una-pagina">Struttura minima di una pagina</h2>
-<section id="doctype-html" class="level3">
-<h3 class="anchored" data-anchor-id="doctype-html">&lt;!DOCTYPE html&gt;</h3>
-### Tag
-
-<p>Il tag <code>&lt;html&gt;</code> è l’elemento radice di un documento HTML. Tutti gli altri elementi devono essere contenuti all’interno di questo tag. L’attributo <code>lang</code> può essere utilizzato per specificare la lingua del contenuto della pagina.</p>
-### Tag
-
-<p>Il tag <code>&lt;head&gt;</code> contiene informazioni meta del documento, come il titolo, i metadati e i link a risorse esterne.</p>
-### Tag
-
+<p>Ogni tipo di documento ha una sua <strong>struttura</strong> che ne caratterizza il <strong>genere</strong>.</p>
+<p>La struttura descrive:</p>
+<ul>
+<li><strong>parti</strong> che compongono il documento</li>
+<li><strong>significato</strong> di ogni parte</li>
+<li><strong>relazioni</strong> tra le parti</li>
+</ul>
+<section id="elementi" class="level3">
+<h3 class="anchored" data-anchor-id="elementi">Elementi</h3>
+<p>Ogni elemento è un <strong>contenitore</strong> di informazioni, identificato da un <strong>tag di apertura</strong> e un <strong>tag di chiusura</strong>. Il contenuto dell’elemento è racchiuso tra i due tag.</p>
+<section id="tag-di-apertura-e-chiusura" class="level4">
+<h4 class="anchored" data-anchor-id="tag-di-apertura-e-chiusura">Tag di apertura e chiusura</h4>
+<p>è una stringa di caratteri racchiusa tra parentesi angolari <code>&lt;</code>e <code>&gt;</code>.</p>
+<dl>
+<dt>Tag di apertura</dt>
+<dd>
+Stringa che specifica il nome dell’elemento <code>&lt;nome_elemento&gt;</code>
+</dd>
+<dt>Tag di chiusura</dt>
+<dd>
+Stringa che specifica il nome dell’elemento preceduta da una barra <code>/</code> <code>&lt;/nome_elemento&gt;</code>
+</dd>
+<dt>Tag elementi vuoti</dt>
+<dd>
+sono costituiti da un unico tag <code>&lt;nome_elemento_vuoto&gt;</code>.<br>
+Esempio: <code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;hr&gt;</code>
+</dd>
+<dt>Elemento</dt>
+<dd>
+composto da tag di apertura, contenuto e tag di chiusura <code>&lt;nome_elemento&gt;contenuto&lt;/nome_elemento&gt;</code>
+</dd>
+</dl>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è un paragrafo.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="testo" class="level2">
-<h2 class="anchored" data-anchor-id="testo">Testo</h2>
-<section id="h1-h6" class="level3">
-<h3 class="anchored" data-anchor-id="h1-h6">h1-h6</h3>
+<section id="attributi" class="level3">
+<h3 class="anchored" data-anchor-id="attributi">Attributi</h3>
+<p>Servono a descrivere una <strong>proprietà</strong> dell’elemento.</p>
+<p>Sono composti:</p>
+<ul>
+<li><strong>nome</strong>: il nome dell’attributo</li>
+<li><strong>valore</strong>: il valore dell’attributo, racchiuso tra virgolette <code>" "</code> o apostrofi <code>' '</code> e assegnato al nome tramite il simbolo <code>=</code></li>
+</ul>
+<p>Sono inseriti nel tag di apertura dopo il nome</p>
+<p>Esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en-us"</span><span class="dt">&gt;</span>My cat is very grumpy<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="p" class="level3">
-<h3 class="anchored" data-anchor-id="p">p</h3>
+<section id="annidamento-di-elementi" class="level3">
+<h3 class="anchored" data-anchor-id="annidamento-di-elementi">Annidamento di elementi</h3>
+<p>Un elemento può contenere altri elementi</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en-us"</span><span class="dt">&gt;</span>Paragrah <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> in english<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Che risulta in:</p>
+<p lang="en-us">Paragrah <br> in english</p>
 </section>
-<section id="strong-em" class="level3">
-<h3 class="anchored" data-anchor-id="strong-em">strong / em</h3>
+<section id="regole-di-scrittura" class="level3">
+<h3 class="anchored" data-anchor-id="regole-di-scrittura">Regole di scrittura</h3>
+<section id="commentare" class="level4">
+<h4 class="anchored" data-anchor-id="commentare">Commentare</h4>
+<p>Si usa il blocco di commento <code>&lt;!-- ... --&gt;</code> per inserire note nel codice che non vengono visualizzate nella pagina web.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Questo è un commento --&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="b-i" class="level3">
-<h3 class="anchored" data-anchor-id="b-i">b / i</h3>
-</section>
-<section id="br" class="level3">
-<h3 class="anchored" data-anchor-id="br">br</h3>
-</section>
-<section id="code-pre" class="level3">
-<h3 class="anchored" data-anchor-id="code-pre">code / pre / …</h3>
-</section>
-</section>
-<section id="semantica" class="level2">
-<h2 class="anchored" data-anchor-id="semantica">Semantica</h2>
-<section id="header" class="level3">
-<h3 class="anchored" data-anchor-id="header">header</h3>
-</section>
-<section id="nav" class="level3">
-<h3 class="anchored" data-anchor-id="nav">nav</h3>
-</section>
-<section id="main" class="level3">
-<h3 class="anchored" data-anchor-id="main">main</h3>
-</section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">section</h3>
-</section>
-<section id="article" class="level3">
-<h3 class="anchored" data-anchor-id="article">article</h3>
-</section>
-<section id="aside" class="level3">
-<h3 class="anchored" data-anchor-id="aside">aside</h3>
-</section>
-<section id="footer" class="level3">
-<h3 class="anchored" data-anchor-id="footer">footer</h3>
+<section id="regole" class="level4">
+<h4 class="anchored" data-anchor-id="regole">Regole</h4>
+<ul>
+<li>tag vuoto può avere uno slash di chiusura <code>&lt;br /&gt;</code> ma non è obbligatorio</li>
+<li>tag e attributi non sono <strong>case sensitive</strong> (ma è buona norma scriverli in minuscolo)</li>
+<li>per gli attributi booleani (true/false) è sufficiente scrivere il nome dell’attributo senza assegnargli un valore</li>
+<li>il valore di un attributo può essere racchiuso tra virgolette doppie <code>" "</code> o singole <code>' '</code> o senza virgolette (ma è buona norma usare le virgolette)</li>
+</ul>
 </section>
 </section>
-<section id="attributi" class="level2">
-<h2 class="anchored" data-anchor-id="attributi">Attributi</h2>
-<section id="id" class="level3">
-<h3 class="anchored" data-anchor-id="id">id</h3>
 </section>
-<section id="class" class="level3">
-<h3 class="anchored" data-anchor-id="class">class</h3>
+<section id="struttura-minima-di-una-pagina-html" class="level2">
+<h2 class="anchored" data-anchor-id="struttura-minima-di-una-pagina-html">Struttura minima di una pagina HTML</h2>
+<section id="dichiarazione-del-tipo-di-documento-doctype-html" class="level3">
+<h3 class="anchored" data-anchor-id="dichiarazione-del-tipo-di-documento-doctype-html">Dichiarazione del tipo di documento &lt;!DOCTYPE html&gt;</h3>
+<p>Dichiarazione del DTD (Document Type Definition), in html5 è</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Posso anche riferirmi a un DTD diverso, in particolare a una versione precedente di HTML.</p>
 </section>
-<section id="lang" class="level3">
-<h3 class="anchored" data-anchor-id="lang">lang</h3>
-</section>
-<section id="title" class="level3">
-<h3 class="anchored" data-anchor-id="title">title</h3>
-</section>
-<section id="data-" class="level3">
-<h3 class="anchored" data-anchor-id="data-">data-*</h3>
-</section>
-</section>
-<section id="collegamenti" class="level2">
-<h2 class="anchored" data-anchor-id="collegamenti">Collegamenti</h2>
-<section id="href" class="level3">
-<h3 class="anchored" data-anchor-id="href">href</h3>
-</section>
-<section id="url" class="level3">
-<h3 class="anchored" data-anchor-id="url">URL</h3>
-</section>
-<section id="fragment" class="level3">
-<h3 class="anchored" data-anchor-id="fragment">fragment</h3>
-</section>
-<section id="targetrel" class="level3">
-<h3 class="anchored" data-anchor-id="targetrel">target/rel</h3>
-</section>
-</section>
-<section id="immagini-e-multimedia" class="level2">
-<h2 class="anchored" data-anchor-id="immagini-e-multimedia">Immagini e multimedia</h2>
-<section id="img" class="level3">
-<h3 class="anchored" data-anchor-id="img">img</h3>
-</section>
-<section id="figure" class="level3">
-<h3 class="anchored" data-anchor-id="figure">figure</h3>
-</section>
-<section id="picture" class="level3">
-<h3 class="anchored" data-anchor-id="picture">picture</h3>
-</section>
-<section id="video" class="level3">
-<h3 class="anchored" data-anchor-id="video">video</h3>
-</section>
-<section id="audio" class="level3">
-<h3 class="anchored" data-anchor-id="audio">audio</h3>
-</section>
-<section id="iframe" class="level3">
-<h3 class="anchored" data-anchor-id="iframe">iframe</h3>
+<section id="struttura-generica" class="level3">
+<h3 class="anchored" data-anchor-id="struttura-generica">Struttura generica</h3>
+<p>Un documento HTML5 è composto da:</p>
+<ul>
+<li><strong>dichiarazione del tipo di documento</strong> <code>&lt;!DOCTYPE html&gt;</code></li>
+<li><strong>elemento radice</strong> <code>&lt;html&gt;</code> che racchiude tutto il contenuto della pagina</li>
+</ul>
+<p>L’elemento radice <code>&lt;html&gt;</code> contiene due elementi principali:</p>
+<ul>
+<li><strong>header</strong> <code>&lt;head&gt;</code> contiene informazioni sul documento (metadati) non visualizzati</li>
+<li><strong>body</strong> <code>&lt;body&gt;</code> contiene la specifica della struttura dei contenuti visualizzati della pagina (testi, immagini …)</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="liste" class="level2">
-<h2 class="anchored" data-anchor-id="liste">Liste</h2>
-<section id="ul-ol-li" class="level3">
-<h3 class="anchored" data-anchor-id="ul-ol-li">ul / ol / li</h3>
+<section id="head" class="level2">
+<h2 class="anchored" data-anchor-id="head">Head</h2>
+<section id="metadati" class="level3">
+<h3 class="anchored" data-anchor-id="metadati">Metadati</h3>
+<p>Informazioni che descrivono il documento nel complesso</p>
+<p>Introdotti mediante il tag <code>&lt;meta&gt;</code> all’interno del tag <code>&lt;head&gt;</code>. Possono essere utilizzati per:</p>
+<ul>
+<li>specificare la <strong>codifica dei caratteri</strong> del documento</li>
+<li>fornire <strong>informazioni sul documento</strong> (autore, descrizione, parole chiave)</li>
+</ul>
 </section>
-<section id="dl-dt-dd" class="level3">
-<h3 class="anchored" data-anchor-id="dl-dt-dd">dl / dt / dd</h3>
-</section>
-</section>
-<section id="tabelle" class="level2">
-<h2 class="anchored" data-anchor-id="tabelle">Tabelle</h2>
-<section id="table-tr-td-th" class="level3">
-<h3 class="anchored" data-anchor-id="table-tr-td-th">table / tr / td / th</h3>
-</section>
-<section id="caption" class="level3">
-<h3 class="anchored" data-anchor-id="caption">caption</h3>
-</section>
-<section id="thead-tbody-tfoot" class="level3">
-<h3 class="anchored" data-anchor-id="thead-tbody-tfoot">thead / tbody / tfoot</h3>
-</section>
-</section>
-<section id="form" class="level2">
-<h2 class="anchored" data-anchor-id="form">Form</h2>
-<section id="form-1" class="level3">
-<h3 class="anchored" data-anchor-id="form-1">form</h3>
-</section>
-<section id="label" class="level3">
-<h3 class="anchored" data-anchor-id="label">label</h3>
-</section>
-<section id="input" class="level3">
-<h3 class="anchored" data-anchor-id="input">input</h3>
-</section>
-<section id="select" class="level3">
-<h3 class="anchored" data-anchor-id="select">select</h3>
-</section>
-<section id="textarea" class="level3">
-<h3 class="anchored" data-anchor-id="textarea">textarea</h3>
-</section>
-<section id="button" class="level3">
-<h3 class="anchored" data-anchor-id="button">button</h3>
-</section>
-<section id="fieldset" class="level3">
-<h3 class="anchored" data-anchor-id="fieldset">fieldset</h3>
-</section>
-<section id="legend" class="level3">
-<h3 class="anchored" data-anchor-id="legend">legend</h3>
-</section>
-<section id="validazione" class="level3">
-<h3 class="anchored" data-anchor-id="validazione">validazione</h3>
-</section>
-</section>
-<section id="accessibilità" class="level2">
-<h2 class="anchored" data-anchor-id="accessibilità">Accessibilità</h2>
-<section id="alt" class="level3">
-<h3 class="anchored" data-anchor-id="alt">alt</h3>
-</section>
-<section id="aria-" class="level3">
-<h3 class="anchored" data-anchor-id="aria-">aria-*</h3>
-</section>
-<section id="tabindex" class="level3">
-<h3 class="anchored" data-anchor-id="tabindex">tabindex</h3>
-## Metadata e
-
-</section>
-</section>
-<section id="html-e-dom" class="level2">
-<h2 class="anchored" data-anchor-id="html-e-dom">HTML e DOM</h2>
-</section>
-<section id="validazione-e-debugging" class="level2">
-<h2 class="anchored" data-anchor-id="validazione-e-debugging">Validazione e debugging</h2>
-</section>
-<section id="html-obsoleto" class="level2">
-<h2 class="anchored" data-anchor-id="html-obsoleto">HTML obsoleto</h2>
-<p>sistema di markup basato sui <strong>tag</strong>, racchiusi tra <strong>&lt;</strong> e <strong>&gt;</strong></p>
-<p>Esempio: &lt;br&gt; … &lt;/br&gt;</p>
-</section>
-<section id="struttura-di-un-documento-html" class="level2">
-<h2 class="anchored" data-anchor-id="struttura-di-un-documento-html">Struttura di un documento HTML</h2>
-<ol type="1">
-<li>Indicazione del <strong>DTD</strong> (Document Type Definition): <code>&lt;!DOCTYPE ...&gt;</code>, generalmente <code>&lt;!DOCTYPE html&gt;</code></li>
-<li>Inizio della <strong>pagina</strong> vera e propria, racchiusa tra <code>&lt;html&gt;</code> e <code>&lt;/html&gt;</code>. è composta da header e body</li>
-<li><strong>Header</strong>, racchiuso tra <code>&lt;head&gt;</code> e <code>&lt;/head&gt;</code>, contiene tag con informazioni supplementari (es. &lt;title&gt;)</li>
-<li><strong>Body</strong>, racchiuso tra <code>&lt;body&gt;</code> e <code>&lt;/body&gt;</code>, contiene ciò che viene visualizzato</li>
-</ol>
-<p>Ci sono 6 livelli di intestazione, da <code>&lt;h1&gt;</code> (più grande) a <code>&lt;h6&gt;</code>(più piccolo). Si differenziano per dimensione carattere e uso del grassetto.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span> Title tag <span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span> Testo con grandezza h1 <span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">h6</span><span class="dt">&gt;</span> Testo con grandezza h6 <span class="dt">&lt;/</span><span class="kw">h6</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="risultato1.png" class="img-fluid figure-img"></p>
-<figcaption>risultato1</figcaption>
-</figure>
+<section id="titolo-della-pagina-title" class="level3">
+<h3 class="anchored" data-anchor-id="titolo-della-pagina-title">Titolo della pagina &lt;title&gt;</h3>
+<p>Il titolo della pagina è specificato mediante il tag <code>&lt;title&gt;</code> all’interno del tag <code>&lt;head&gt;</code>. Il contenuto del tag <code>&lt;title&gt;</code> viene visualizzato nella barra del titolo del browser e nei risultati dei motori di ricerca.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempi di metadati in head
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Titolo<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"UTF-8"</span><span class="dt">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"description"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"Descrizione della pagina"</span><span class="dt">&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"keywords"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"parola1, parola2, parola3"</span><span class="dt">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"author"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"Nome Autore"</span><span class="dt">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"viewport"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"width=device-width, initial-scale=1.0"</span><span class="dt">&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> http-equiv</span><span class="op">=</span><span class="st">"refresh"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"30"</span><span class="dt">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </div>
 </section>
-<section id="attributi-principali" class="level2">
-<h2 class="anchored" data-anchor-id="attributi-principali">Attributi principali</h2>
-<p>Ogni tag può avere più <strong>attributi</strong>, per esempio:</p>
+</section>
+<section id="body" class="level2">
+<h2 class="anchored" data-anchor-id="body">Body</h2>
+<section id="inserimento-e-formattazione-base-del-testo" class="level3">
+<h3 class="anchored" data-anchor-id="inserimento-e-formattazione-base-del-testo">Inserimento e formattazione base del testo</h3>
+</section>
+<section id="headings-h1-h6" class="level3">
+<h3 class="anchored">Headings &lt;h1&gt; … &lt;h6&gt;</h3>
+<p>I titoli si suddividono in base alla gerarchia</p>
+<p>I livelli di intestazione vanno da <code>&lt;h1&gt;</code> (più importante) a <code>&lt;h6&gt;</code> (meno importante).</p>
+<p>Buona norma è usare un singolo <code>&lt;h1&gt;</code> e usare i livelli in maniera consistente</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span> Livello 1<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span> Livello 2<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span> Livello 3<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h4</span><span class="dt">&gt;</span> Livello 4<span class="dt">&lt;/</span><span class="kw">h4</span><span class="dt">&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h5</span><span class="dt">&gt;</span> Livello 5<span class="dt">&lt;/</span><span class="kw">h5</span><span class="dt">&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h6</span><span class="dt">&gt;</span> Livello 6<span class="dt">&lt;/</span><span class="kw">h6</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>che risultano così:</p>
+<h1> Livello 1</h1>
+<h2 class="anchored" data-anchor-id="headings-h1-h6"> Livello 2</h2>
+<h3 class="anchored"> Livello 3</h3>
+<h4 class="anchored"> Livello 4</h4>
+<h5 class="anchored"> Livello 5</h5>
+<h6 class="anchored"> Livello 6</h6>
+</section>
+<section id="paragrafo-p-p" class="level3">
+<h3 class="anchored" data-anchor-id="paragrafo-p-p">Paragrafo &lt;p&gt; &lt;/p&gt;</h3>
+<p><code>&lt;p&gt;...&lt;/p&gt;</code>definisce un paragrafo di testo con l’aggiunta di un margine superiore e uno inferiore</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è un paragrafo di testo.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è il secondo paragrafo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è il terzo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Questo è un paragrafo di testo.</p>
+<p>Questo è il secondo paragrafo</p>
+<p>Questo è il terzo</p>
+</section>
+<section id="a-capo-br" class="level3">
+<h3 class="anchored" data-anchor-id="a-capo-br">A capo &lt;br&gt;</h3>
+<p>Si tratta di un tag vuoto che forza il ritorno a capo</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>"M'illumino<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span>d'immenso"<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span>Giuseppe Ungaretti</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+"M'illumino<br>d'immenso"<br>Giuseppe Ungaretti
+</section>
+<section id="horizontal-rule-hr" class="level3">
+<h3 class="anchored" data-anchor-id="horizontal-rule-hr">Horizontal rule &lt;hr&gt;</h3>
+<p>introduce un filetto orizzontale, è un tag vuoto</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>prima della linea<span class="dt">&lt;</span><span class="kw">hr</span><span class="dt">&gt;</span>sotto la linea</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+prima della linea<hr>sotto la linea
+</section>
+<section id="testo-in-grassetto-bb" class="level3">
+<h3 class="anchored" data-anchor-id="testo-in-grassetto-bb">Testo in grassetto &lt;b&gt;&lt;/b&gt;</h3>
+<p>Definisce il grassetto</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>testo in <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>grassetto<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+testo in <b>grassetto</b>
+</section>
+<section id="testo-in-italics-ii" class="level3">
+<h3 class="anchored" data-anchor-id="testo-in-italics-ii">Testo in italics &lt;i&gt;&lt;/i&gt;</h3>
+<p>definisce il testo in italics</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>testo in <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>italics<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+testo in <i>italics</i>
+</section>
+<section id="enfasi-a-un-segmento-di-testo-strong-e-em" class="level3">
+<h3 class="anchored" data-anchor-id="enfasi-a-un-segmento-di-testo-strong-e-em">Enfasi a un segmento di testo &lt;strong&gt; e &lt;em&gt;</h3>
+<p>tag per l’enfasi semantica di un testo, si preferisce usare i tag</p>
 <ul>
-<li><strong>align</strong>, che serve ad allineare il testo. I valori possono essere <strong>left, center, right</strong>
-<ul>
-<li><strong>&lt;h1 align=”center”&gt; … &lt;&gt;</strong> per allineare il testo al centro</li>
-</ul></li>
-<li><strong>lang</strong>, definisce la lingua del documento &lt;html lang=”it”&gt;</li>
-<li><strong>&lt;meta /&gt;</strong> fornisce meta-informazioni non visibili agli utenti (autore, parole chiave, <strong>charset</strong>)</li>
-</ul>
-<p>I colori possono in html sono indicati con formato RGB oppure con il nome. Es: “#FF0000” oppure “red”</p>
-<p>Gli attributi del body principali sono:</p>
-<ul>
-<li><strong>lang</strong></li>
-<li><strong>bgcolor</strong>, che imposta un colore di sfondo per la pagina &lt;body bgcolor=”red”&gt;</li>
-<li><strong>background</strong>, permette di inserire una texture di sfondo (motivo o immagine GIF, JPEG, PNG)</li>
-<li><strong>text</strong>, imposta il colore del testo nella pagina</li>
-<li><strong>link</strong>, imposta il colore dei link nella pagina</li>
-<li><strong>vlink</strong>, imposta il colore dei link visitati (visited link)</li>
-<li><strong>alink</strong>, imposta il colore dei link attivi nella pagina</li>
-<li><strong>topmargin</strong>, distanza in pixel dal margine superiore</li>
-<li><strong>bottommargin</strong>, distanza in pixel dal margine inferiore</li>
-<li><strong>leftmargin</strong>, distanza in pixel dal margine sinistro</li>
-<li><strong>rightmargin</strong>, distanza in pixel dal margine destro</li>
+<li>&lt;strong&gt;&lt;/strong&gt;: per evidenziare contenuti cruciali (avvisi, scadenze)</li>
+<li>&lt;em&gt;&lt;/em&gt; indica invece il vero e proprio stress linguistico</li>
 </ul>
 </section>
-<section id="entità" class="level2">
-<h2 class="anchored" data-anchor-id="entità">Entità</h2>
-<p>In html esistono le <strong>entità</strong>, ovvero costrutti sintattici per far visualizzare correttamente i caratteri speciali<br>
-Sono delimitati da <strong>&amp;</strong> e <strong>;</strong><br>
-Esempio:</p>
-<ul>
-<li><code>à</code> corrisponde a <code>&amp;#224;</code></li>
-</ul>
-<p><em>nota</em>: anche lo spazio è un carattere speciale, se si vuole aggiungere più spazi consecutivi vanno inseriti più volte</p>
-<p>Per fare riferimento a un’immagine devo utilizzare il suo percorso, che può essere <strong>assoluto</strong> se fa riferimento al disco vero e proprio, altrimenti posso utilizzare il <strong>percorso relativo</strong> con ../ oppure ./ oppure /<br>
-Il percorso relativo è consigliato, così i riferimenti vengono persi in caso di spostamento delle cartelle contenenti la pagina</p>
-<ul>
-<li>&lt;body background=”./Sottocartella/sfondo.png”&gt;</li>
-</ul>
-<p>Il <strong>font</strong> del carattere è modificabile attraverso il tag <strong>&lt;font&gt; … &lt;/font&gt;</strong> e possiede i seguenti attributi:</p>
-<ul>
-<li><strong>face</strong>, specifica il carattere con il quale deve essere visualizzato. Posso indicarne più di uno, separati da una virgola. Se il primo non è disponibile allora passa al successivo &lt;font face=”arial, verdana”&gt;</li>
-<li><strong>size</strong>, imposta la dimensione del font, compreso tra 1 e 7. Il valore di default è 3, quindi posso anche usare i valori -1,-2,-3,+1,+2,+3,+4. &lt;font size=”4”&gt;</li>
-<li><strong>color</strong>, cambia il colore del font</li>
-</ul>
-<p>Il <strong>ritorno a capo (break)</strong> si ottiene con il tag <strong>&lt;br&gt;</strong> senza chiusura.</p>
-<ul>
-<li>Dopo queste parole c’è &lt;br&gt; un a capo</li>
-</ul>
-<p>L’inizio di un <strong>paragrafo</strong> viene indicato tramite il tag <strong>&lt;p&gt;</strong>. Un paragrafo è delimitato da una riga vuota all’inizio e alla fine. La chiusura <strong>&lt;/p&gt; non sarebbe necessaria</strong>, ma è buona norma inserirla <strong>per chiarezza</strong>.</p>
-<ul>
-<li><strong>align</strong>, con opzioni <strong>center, right, left, justify</strong></li>
-</ul>
-<p>Il tag <strong>&lt;div&gt;</strong> è un contenitore generico per racchiudere una parte di testo a cui attribuire caratteristiche comuni. Produce un a capo tra la porzione antecedente e successiva, ma senza lasciare righe vuote come &lt;p&gt;<br>
-L’attributo <strong>id</strong> è importante perché è un identificatore univoco della porzione di testo tra &lt;div&gt; … &lt;/div&gt;</p>
-<p>Il tag <strong>&lt;center&gt;</strong> può essere usato al posto di &lt;div align=”center”&gt; … &lt;/div&gt; ma non è molto usato</p>
+<section id="apici-sup-e-pedici-sub" class="level3">
+<h3 class="anchored" data-anchor-id="apici-sup-e-pedici-sub">Apici &lt;sup&gt; e pedici &lt;sub&gt;</h3>
+<p>Tag per la definizione di apici e pedici</p>
 </section>
-<section id="liste-1" class="level2">
-<h2 class="anchored" data-anchor-id="liste-1">Liste</h2>
-<p>Per le liste abbiamo:</p>
-<ul>
-<li><strong>puntata</strong>: &lt;ul&gt; … &lt;/ul&gt; con attributo <strong>type</strong> per cambiare simbolo (<strong>disc, circle, square</strong>)</li>
-<li><strong>numerata</strong>: &lt;ol&gt; … &lt;/ol&gt; con attributo <strong>type</strong> per cambiare numerazione (1, I, i, a, A) e <strong>start</strong> per cambiare il valore di partenza</li>
-</ul>
-<p>Ogni elemento è inizializzato da <strong>&lt;li&gt;</strong> (list item) senza chiusura obbligatoria</p>
-<p>Inoltre abbiamo le <strong>liste di definizione</strong> in cui ogni elemento è formato da termine e definizione</p>
-<ul>
-<li>inizializzazione della lista: <strong>&lt;dl&gt; … &lt;/dl&gt;</strong></li>
-<li>tag per termine: <strong>&lt;dt&gt; … &lt;/dt&gt;</strong></li>
-<li>tag per la definizione: <strong>&lt;dd&gt; … &lt;/dd&gt;</strong></li>
-</ul>
-<p>è possibile creare <strong>liste nidificate</strong></p>
-<p>Per quanto riguarda il testo ci sono dei <strong>tag stilistici</strong>:</p>
-<ul>
-<li>grassetto &lt;b&gt; … &lt;/b&gt;</li>
-<li>corsivo &lt;i&gt; … &lt;/i&gt;</li>
-<li>sottolineato &lt;u&gt; … &lt;/u&gt;</li>
-<li>apice &lt;sup&gt;</li>
-<li>apice &lt;sup&gt;</li>
-<li>pedice &lt;sub&gt;</li>
-</ul>
-<p>E dei tag di contesto:</p>
-<ul>
-<li>citazione &lt;cite&gt;</li>
-<li>codice &lt;code&gt;</li>
-<li>esempio &lt;samp&gt;</li>
-<li>variabili di un programma &lt;var&gt;</li>
-<li>data &lt;time&gt; con attributo datetime per il formato</li>
-</ul>
+<section id="citazioni-blockquote-e-q-citazioni-bibliografiche-cite" class="level3">
+<h3 class="anchored" data-anchor-id="citazioni-blockquote-e-q-citazioni-bibliografiche-cite">Citazioni &lt;blockquote&gt; e &lt;q&gt;, citazioni bibliografiche &lt;cite&gt;</h3>
 </section>
-<section id="commenti" class="level2">
-<h2 class="anchored" data-anchor-id="commenti">Commenti</h2>
-<p>Per commentare il codice: <strong>&lt;!– … –&gt;</strong></p>
+<section id="abbreviazioni-abbr-title" class="level3">
+<h3 class="anchored" data-anchor-id="abbreviazioni-abbr-title">abbreviazioni &lt;abbr title=“…”&gt;</h3>
 </section>
-<section id="immagini" class="level2">
-<h2 class="anchored" data-anchor-id="immagini">Immagini</h2>
-<p>Per <strong>inserire immagini</strong> si usa il tag <strong>&lt;img&gt;</strong> senza chiusura</p>
-<ul>
-<li>l’attributo <strong>src</strong> specifica il percorso del file da inserire</li>
-<li><strong>align</strong> con i valori <strong>bottom, middle, top, left, right</strong></li>
-<li><strong>width</strong> determina la larghezza dell’immagine, in pixel o percentuale</li>
-<li><strong>height</strong> determina l’altezza, in pixel o percentuale</li>
-<li><strong>alt</strong>, consente l’inserimento di una descrizione dell’immagine nel caso non sia reperibile</li>
-<li><strong>title</strong>, consente di far apparire una tooltip quando il mouse sarà sopra l’immagine</li>
-<li><strong>border</strong>, che consente di circondare con un bordo l’immagine</li>
-<li><strong>hspace</strong> e <strong>vspace</strong>, settano la distanza orizzontale e verticale in pixel dal testo</li>
-</ul>
+<section id="caratteri-speciali" class="level3">
+<h3 class="anchored" data-anchor-id="caratteri-speciali">Caratteri speciali</h3>
+<p>alcuni caratteri speciali vanno indicati come entità in quanto hanno significati particolari nel codice</p>
+<p>Tabella</p>
 </section>
-<section id="righe-orizzontali" class="level2">
-<h2 class="anchored" data-anchor-id="righe-orizzontali">Righe orizzontali</h2>
-<p>Per inserire una <strong>riga orizzontale</strong> si usa il tag <strong>&lt;hr&gt;</strong> con attributi</p>
-<ul>
-<li><strong>size</strong>, spessore della linea in pixel (da 1 a 100)</li>
-<li><strong>width</strong>, lunghezza della linea in pixel o percentuale</li>
-<li><strong>align</strong>, imposta collocazione della linea con valori <strong>left, central, right</strong></li>
-<li><strong>color</strong>, imposta il colore</li>
-</ul>
-</section>
-<section id="tabelle-1" class="level2">
-<h2 class="anchored" data-anchor-id="tabelle-1">Tabelle</h2>
-<p>Per le tabelle si usa il tag <strong>&lt;table&gt;</strong> … <strong>&lt;/table&gt;</strong></p>
-<ul>
-<li>la riga è racchiusa nei tag <strong>&lt;tr&gt;</strong> … <strong>&lt;/tr&gt;</strong></li>
-<li>la singola cella è rappresentata da <strong>&lt;td&gt;</strong> … <strong>&lt;/td&gt;</strong></li>
-<li>se la cella è d’intestazione allora i tag sono <strong>&lt;th&gt;</strong> … <strong>&lt;/th&gt;</strong></li>
-</ul>
-<p>Gli attributi di <strong>&lt;table&gt;</strong> sono:</p>
-<ul>
-<li><strong>align</strong>, può assumere i valori <strong>left, center e right</strong></li>
-<li><strong>border</strong>, spessore dei bordi della tabella (default 0: no bordi)</li>
-<li><strong>cellpadding</strong>, spazio fra bordo tabella e il contenuto della cella (default 1 pixel)</li>
-<li><strong>cellspacing</strong>, distanza fra celle; (default 2 pixel)</li>
-<li><strong>Width</strong>, larghezza della tabella (in valore assoluto o in percentuale);</li>
-<li><strong>height</strong>, altezza della tabella (in valore assoluto o in percentuale);</li>
-<li><strong>bgcolor</strong>, colore dello sfondo della tabella;</li>
-<li><strong>bordercolor</strong>, colore di tutti i bordi della tabella</li>
-<li><strong>background</strong>, definisce un’immagine di sfondo</li>
-</ul>
-<p>Gli attributi di <strong>&lt;tr&gt;</strong> ovvero della cella sono:</p>
-<ul>
-<li><strong>align</strong>, allineamento orizzontale di tutte le celle della riga, con valori <strong>left, center, right</strong></li>
-<li><strong>valign</strong>, allineamento verticale celle riga, <strong>top, middle, bottom</strong></li>
-<li><strong>bordercolor</strong>, colore bordo celle</li>
-<li><strong>height</strong>, altezza riga in val. assoluto o percentuale</li>
-</ul>
-<p>Gli attributi di <strong>&lt;td&gt;</strong> sono:</p>
-<ul>
-<li><strong>align</strong> definisce l’allineamento orizzontale della cella, i valori possibili sono left, center e right</li>
-<li><strong>valign</strong> definisce l’allineamento verticale della cella, i valori possibili sono top, middle e bottom</li>
-<li><strong>width</strong> definisce la larghezza della singola cella</li>
-<li><strong>height</strong> definisce l’altezza della cella (in valore assoluto o in percentuale)</li>
-<li><strong>bgcolor</strong> definisce il colore dello sfondo della singola cella</li>
-<li><strong>bordercolor</strong> definisce il colore del bordo della singola cella</li>
-<li><strong>rowspan</strong> fa sì che una cella risulti alta n celle, dove n è il valore attribuito a rowspan;</li>
-<li><strong>colspan</strong> fa sì che una cella risulti larga n celle, dove n è il valore attribuito a colspan.</li>
-<li><strong>background</strong> definisce un’immagine di sfondo</li>
-</ul>
-<p>Le celle della stessa colonna devono avere la stessa larghezza e quelle della stessa riga devono avere la stessa altezza. In caso contrario il browser adotta quello più elevato.</p>
-<p>Per creare una tabella con un numero di celle non costanti si usano gli attributi <strong>rowspan</strong> e <strong>colspan</strong> per creare celle espanse</p>
-<p>Per aggiungere <strong>titoli alla tabella</strong> si usa il tag <strong>&lt;caption&gt; &lt;/caption&gt;</strong> subito dopo &lt;table&gt;</p>
-<ul>
-<li><strong>align</strong>, per far apparire prima o dopo della tabella il titolo, con <strong>top</strong> o <strong>bottom</strong></li>
-</ul>
-</section>
-<section id="link-e-ipertesti" class="level2">
-<h2 class="anchored" data-anchor-id="link-e-ipertesti">Link e ipertesti</h2>
-<p>Si possono creare ipertesti tramite <strong>link</strong><br>
-Se si crea un link a un’altra pagina si usa <strong>&lt;a&gt;</strong> con attributo <strong>title</strong> per tooltip e <strong>href</strong> per indicare percorso</p>
-<ul>
-<li>&lt;a href=”destinazione.html” title=”testo che compare con il cursore”&gt; testo da cliccare &lt;/a&gt;</li>
-</ul>
-<p>Il comportamento dipende dal tipo di file (htm: apertura pagina, immagini: vengono visualizzate, doc e pdf: vengono aperti se c’è il plugin, zip/com/exe: vengono scaricati). Possibile anche mandare una mail con &lt;a href=”mailto:indirizzo@mail”&gt;</p>
-</section>
-<section id="ancore-e-link-interni" class="level2">
-<h2 class="anchored" data-anchor-id="ancore-e-link-interni">Ancore e link interni</h2>
-<p>Per collegarsi a determinate posizioni all’interno di una stessa pagina</p>
-<ul>
-<li>Creare un riferimento a cui saltare &lt;<strong>a name=”nome”</strong>&gt; … &lt;/a&gt;</li>
-<li>Per raggiungerla &lt;<strong>a href=”#nome”</strong>&gt; testo collegamento &lt;/a&gt;</li>
-</ul>
-<p>NOTA: posso fare riferimento a un’ancora all’interno di un’altra pagina &lt;a href=”nomepagina#posizione”&gt;</p>
-</section>
-<section id="mappe-dimmagine" class="level2">
-<h2 class="anchored" data-anchor-id="mappe-dimmagine">Mappe d’immagine</h2>
-<p>Posso suddividere un’immagine in diverse aree. In base all’area cliccata viene richiamato un link diverso.</p>
-<ul>
-<li>Inizializzare immagine a mappa &lt;<strong>img</strong> src=”…” <strong>usemap</strong>=”#nome”&gt;, in &lt;img&gt; con #</li>
-<li>Creare mappa &lt;<strong>map name</strong>=”nome_mappa”&gt; con tag &lt;map&gt; e attributo name</li>
-<li>Inizializzare le aree tra &lt;map&gt; e &lt;/map&gt; con <strong>&lt;area&gt;</strong> e i suoi attributi
-<ul>
-<li><strong>shape</strong> indica la forma dell’area: rect, circle, poly</li>
-<li><strong>coords</strong> delimita superficie in pixel: per rettangolo (colonna vertice alto sx, riga vertice alto sx, colonna vertice basso dx, riga vertice basso dx), per cerchio (centro, raggio) e poligono (tutti vertici)</li>
-<li><strong>href</strong> richiama il link associato, volendo puoi usare <strong>nohref</strong></li>
-<li><strong>title</strong> per tooltip quando cursore si ferma</li>
-</ul></li>
-</ul>
-</section>
-<section id="frame" class="level2">
-<h2 class="anchored" data-anchor-id="frame">Frame</h2>
-<p>Utili per dividere la pagine in sezioni indipendenti tra loro, usati al posto del tag &lt;body&gt;.</p>
-<p>Si inzializza un frameset con i tag <strong>&lt;frameset&gt; … &lt;/frameset&gt;</strong>. Non possono essere accostati uno di seguito all’altro, perché i frameset occupano tutta la pagina. <strong>Possono essere annidati</strong>, ovvero un frame all’interno di un frameset può essere a sua volta un frameset di frame.<br>
-Possiede i seguenti attributi</p>
-<ul>
-<li><strong>border</strong>, spessore dei bordi per frame figli</li>
-<li><strong>bordercolor</strong>, colore dei bordi dei frame figli</li>
-<li><strong>cols</strong>, numero e dimensione dei frame verticali (pixel o percentuale). Vanno bene anche elenchi per più frame verticali “40%,30%,*” l’asterisco alloca tutta l’area rimanente</li>
-<li><strong>rows</strong>, numero e dimensione delle righe, uso analogo a cols</li>
-<li><strong>frameborder</strong>, specifica se frame visualizzati con bordo (0 no, 1 sì). Definibile a livello di singolo frame</li>
-</ul>
-<p>All’interno dei frameset specifico le sezioni della pagina con l’attributo <strong>&lt;frame&gt;</strong>, i cui attributi sono:</p>
-<ul>
-<li><strong>frameborder</strong>: specifica se il frame è visualizzato con un bordo. Il valore 1 ne indica la presenza, mentre 0 lo disabilita.</li>
-<li><strong>name</strong>: indica il nome con cui far riferimento al frame.</li>
-<li><strong>noresize</strong>: se presente, evita che l’utente possa ridimensionare il frame.</li>
-<li><strong>scrolling</strong>: specifica se deve apparire una barra di scorrimento nel frame. I valori possibili sono yes, no, auto; se impostato su auto, che è l’impostazione di default, è il browser a determinare l’eventuale creazione della barra.</li>
-<li><strong>src</strong>: indica il file da visualizzare all’interno del frame; se non si specifica un attributo src, lo spazio in cui dovrebbe apparire il frame risulterà vuoto.</li>
-<li><strong>marginheight</strong> e <strong>marginwidth</strong>: permettono di impostare la distanza verticale (marginheigth) e orizzontale (marginwidth) tra i bordi del frame e il suo contenuto</li>
-</ul>
-<p>Per caricare una pagina all’interno di un frame è sufficiente assegnare all’attributo target del tag &lt;link&gt; il nome del frame in cui la pagina deve comparire</p>
-</section>
-<section id="moduli" class="level2">
-<h2 class="anchored" data-anchor-id="moduli">Moduli</h2>
-<p>Servono per la raccolta dati. Vengono inizializzati con il tag <strong>&lt;form&gt; … &lt;/form&gt;</strong>. Presenta i seguenti attributi:</p>
-<ul>
-<li><strong>name</strong></li>
-<li><strong>method</strong>, può assumere valore get o post in base a come vanno trasmessi dati</li>
-<li><strong>action</strong>, indirizzo script per elaborazione dei dati trasmessi al server tramite il modulo</li>
-<li><strong>enctype</strong>, con method POST, specifica come browser codifica I dati. Assume due valori
-<ul>
-<li>application/x-www-form-urlencoded (default)</li>
-<li>multipart/form-data (per upload di file sul server, permette inviare dati come sequenza di parti)</li>
-</ul></li>
-</ul>
-<p>All’interno del modulo &lt;form&gt; … &lt;/form&gt; posso inserire gli oggetti per interfacce grafiche</p>
-</section>
-<section id="input-input" class="level2">
-<h2 class="anchored" data-anchor-id="input-input">Input &lt;input&gt;</h2>
-<p><strong>Casella di testo</strong>: <strong>&lt;input type=”text”&gt;</strong>, con attributi name, maxlength, size, value</p>
-<p><strong>Area di testo</strong>: <strong>&lt;textarea&gt;</strong> testo area di testo pre-inserito <strong>&lt;/textarea&gt;</strong> con name, rows/cols (numero righe colonne) e wrap (comportamento in caso di contenuto maggiore larghezza area) con valori off (aggiunge scrollbar orizzontale), virtual o soft (a capo automaticamente, server riceve una riga), physical o hard (a capo automaticamente, server riceve più righe)</p>
-<p><strong>Casella password</strong>: <strong>&lt;input type=”password”&gt;</strong></p>
-<p><strong>Campo nascosto</strong>: <strong>&lt;input type=”hidden” name=”” value=””&gt;</strong></p>
-<p><strong>Pulsante di commando per invio dati</strong>: <strong>&lt;input type=”submit”&gt;</strong> con name e value (testo su pulsante)</p>
-<p><strong>Pulsante per ripristinare valori di default</strong>: <strong>&lt;input type=”reset”&gt;</strong> con name e value (testo su pulsante)</p>
-<p><strong>Pulsante generico che deve essere programmato</strong>: <strong>&lt;input type=”button”&gt;</strong> con name e value (testo su pulsante)</p>
-<p><strong>Casella di controllo</strong>: <strong>&lt;input type=”checkbox”&gt;</strong> con attributi name, value, checked, unchecked</p>
-<p><strong>Pulsante di opzione</strong>: <strong>&lt;input type=”radio”&gt;</strong> con attributi:</p>
-<ul>
-<li><strong>name</strong>, serve per identificarlo. Tutti i pulsanti di opzione che fanno parte dello stesso gruppo devono avere lo stesso nome (per poter essere selezionato soltanto uno)</li>
-<li><strong>value</strong>, valore restituito quando il pulsante è selezionato (se omesso e viene selezionato allora value = on)</li>
-<li><strong>checked</strong>, seleziona il pulsante</li>
-</ul>
-<p><strong>Elenco a discesa</strong>: racchiuso tra i tag <strong>&lt;select&gt; … &lt;/select&gt;</strong><br>
-Ogni opzione è rappresentata dal tag <strong>&lt;option value=” ”&gt;</strong> <em>nome dell’opzione</em> <strong>&lt;/option&gt;</strong><br>
-Gli attributi possibili (facoltativi) sono:</p>
-<ul>
-<li><strong>size</strong>, numero di opzioni visibili nella lista senza scrollare con barra di scorrimento</li>
-<li><strong>multiple</strong>, se posso selezionare più elementi contemporaneamente</li>
-<li><strong>selected</strong>, indica una voce di menù selezionata</li>
-<li><strong>value</strong>, NON facoltativo, indica il valore che verrà inviato</li>
-</ul>
-<p>File upload control: <strong>&lt;input type=”file”&gt;</strong> con attributi <strong>accept</strong> (tipo di file) e <strong>size</strong> (larghezza del campo)<br>
-In accept posso specificare l’<strong>estensione, audio/*, video/*, image/*</strong></p>
-<p><strong>&lt;fieldset&gt; … &lt;/fieldset&gt;</strong> raggruppare vari elementi all’interno di un form tracciando un box<br>
-<strong>&lt;legend&gt;</strong> nome del fieldset <strong>&lt;/legend&gt;</strong> all’interno di un fieldset per indicare il nome</p>
+<section id="attributo-style" class="level3">
+<h3 class="anchored" data-anchor-id="attributo-style">Attributo style</h3>
+<p>permette di definire lo stile di alcuni elementi, per esempio paragrafi e intestazioni. Tuttavia oggigiorno lo stile del testo viene dichiarato tramite i fogli di stile <a href="./css.qmd">CSS</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

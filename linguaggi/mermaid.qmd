@@ -1,0 +1,31 @@
+---
+title: Mermaid
+description: "Appunti di Mermaid"
+categories: [linguaggi]
+draft: true
+---
+
+## Diagrammi classe
+
+### Creare una classe
+
+```mermaid
+---
+title: Titolo
+---
+classDiagram
+    class NomeClasse
+    NomeClasse : +attributo1
+    NomeClasse : +attributo2
+```
+
+```mermaid
+---
+title: Titolo
+---
+classDiagram
+    class NomeClasse
+    NomeClasse : +attributo1
+    NomeClasse : +attributo2
+```
+
