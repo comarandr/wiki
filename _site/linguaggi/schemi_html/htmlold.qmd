@@ -1,20 +1,12 @@
----
-title: HTML
-description: "Appunti di HTML"
-permalink: /wiki/linguaggi/html/
-categories: [linguaggi]
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=thumbnail
----
-
-## Indice
+## HTML obsoleto
 
 1. [Cos'è HTML]
 2. [HTML, CSS e JavaScript]
 3. [Struttura minima di una pagina]
-  1. [<!DOCTYPE html>]
-  2. [Tag <html>]
-  3. [Tag <head>]
-  4. [Tag <body>]
+  1. [\<!DOCTYPE html>]
+  2. [Tag \<html>]
+  3. [Tag \<head>]
+  4. [Tag \<body>]
 4. [Testo]
   1. [h1-h6]
   2. [p]
@@ -74,17 +66,8 @@ image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_
 15. [Validazione e debugging]
 16. [HTML obsoleto]
 
-## Cos'è HTML
 
-HTML (HyperText Markup Language) è un linguaggio di markup utilizzato per creare pagine web. Consente di strutturare il contenuto e definire la presentazione dei documenti attraverso l'uso di tag e attributi. HTML è fondamentale per il web, poiché fornisce la base su cui si costruiscono siti e applicazioni web, permettendo l'integrazione di testo, immagini, video, link e altri elementi multimediali.
-
-## HTML, CSS e JavaScript
-
-HTML, CSS e JavaScript sono i tre linguaggi fondamentali per lo sviluppo web. HTML fornisce la struttura del contenuto, CSS definisce la presentazione e JavaScript aggiunge interattività.
-
-## Struttura minima di una pagina
-
-### <!DOCTYPE html>
+#### <!DOCTYPE html>
 
 ### Tag <html>
 
@@ -97,243 +80,11 @@ Il tag `<head>` contiene informazioni meta del documento, come il titolo, i meta
 ### Tag <body>
 
 
-
-
-## Testo
-
-
-
-### h1-h6
-
-
-
-### p
-
-
-
-### strong / em
-
-
-
-### b / i
-
-
-
-### br
-
-
-
-### code / pre / ...
-
-
-
-## Semantica
-
-
-
-### header
-
-
-
-### nav
-
-
-
-### main
-
-
-
-### section
-
-
-
-### article
-
-
-
-### aside
-
-
-
-### footer
-
-
-
-## Attributi
-
-
-
-### id
-
-
-
-### class
-
-
-
-### lang
-
-
-
-### title
-
-
-
-### data-*
-
-
-
-## Collegamenti
-
-
-
-### href
-
-
-
-### URL
-
-
-
-### fragment
-
-
-
-### target/rel
-
-
-
-## Immagini e multimedia
-
-
-
-### img
-
-
-
-### figure
-
-
-
-### picture
-
-
-
-### video
-
-
-
-### audio
-
-
-
-### iframe
-
-
-
-## Liste
-
-
-
-### ul / ol / li
-
-
-
-### dl / dt / dd
-
-
-
-## Tabelle
-
-
-
-### table / tr / td / th
-
-
-
-### caption
-
-
-
-### thead / tbody / tfoot
-
-
-
-## Form
-
-
-
-### form
-
-
-
-### label
-
-
-
-### input
-
-
-
-### select
-
-
-
-### textarea
-
-
-
-### button
-
-
-
-### fieldset
-
-
-
-### legend
-
-
-
-### validazione
-
-
-
-## Accessibilità
-
-
-
-### alt
-
-
-
-### aria-*
-
-
-
-### tabindex
-
-
-
-## Metadata e <head>
-
-
-
-## HTML e DOM
-
-
-
-## Validazione e debugging
-
-
-
-## HTML obsoleto
-
 sistema di markup basato sui **tag**, racchiusi tra **<** e **>**
 
 Esempio: \<br> ... \</br>
 
-## Struttura di un documento HTML
+## Elementi principali di una pagina HTML
 
 1. Indicazione del **DTD** (Document Type Definition): `<!DOCTYPE ...>`, generalmente `<!DOCTYPE html>`
 2. Inizio della **pagina** vera e propria, racchiusa tra `<html>` e `</html>`. è composta da header e body
@@ -353,7 +104,7 @@ Ci sono 6 livelli di intestazione, da `<h1>` (più grande) a `<h6>`(più piccolo
         <h6> Testo con grandezza h6 </h6>
     </body>
 </html>
-```
+
 
 ![risultato1](risultato1.png)
 
@@ -418,20 +169,7 @@ Il tag **\<center>** può essere usato al posto di \<div align=”center”> …
 
 ## Liste
 
-Per le liste abbiamo:
 
-- **puntata**: \<ul> … \</ul> con attributo **type** per cambiare simbolo (**disc, circle, square**)
-- **numerata**: \<ol> … \</ol> con attributo **type** per cambiare numerazione (1, I, i, a, A) e **start** per cambiare il valore di partenza
-
-Ogni elemento è inizializzato da **\<li>** (list item) senza chiusura obbligatoria
-
-Inoltre abbiamo le **liste di definizione** in cui ogni elemento è formato da termine e definizione
-
-- inizializzazione della lista: **\<dl> … \</dl>**
-- tag per termine: **\<dt> … \</dt>**
-- tag per la definizione: **\<dd> … \</dd>**
-
-è possibile creare **liste nidificate**
 
 Per quanto riguarda il testo ci sono dei **tag stilistici**:
 
@@ -628,3 +366,7 @@ In accept posso specificare l’**estensione, audio/\*, video/\*, image/\***
 
 **\<fieldset> … \</fieldset>** raggruppare vari elementi all’interno di un form tracciando un box
 **\<legend>** nome del fieldset **\</legend>** all’interno di un fieldset per indicare il nome
+
+
+## Indice
+

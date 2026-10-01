@@ -1,0 +1,10 @@
+---
+title: "VBA"
+description: "Appunti di VBA"
+categories: [linguaggi]
+draft: true
+---
+
+## Introduzione a VBA
+
+sequenza di 

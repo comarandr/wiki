@@ -1,0 +1,671 @@
+---
+title: Git
+description: "Appunti di git e relativi comandi"
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg
+mermaid:
+  theme: default
+---
+
+## Creare nuovi branch
+
+`git branch` : Elenca i branch locali
+
+`git branch <nome-branch>` : Crea un nuovo branch con il nome specificato
+
+- `git branch -d <nome-branch>` : Elimina un branch (deve essere già unito o non avere modifiche non salvate)
+- `git branch -D <nome-branch>` : Forza l'eliminazione di un branch anche se non è stato unito
+
+`git switch [options] <nome-branch>` : Passa al branch specificato
+
+- `git switch -c <nome-branch>` : Crea un nuovo branch e passa ad esso
+  - `git switch -c name <base-branch>` : Crea un nuovo branch basato su altro branch e passa ad esso
+- `git switch -` : Passa al branch precedente
+- `git switch --detach <commit>` : Passa a un commit specifico in modalità detached HEAD (non associato a un branch)
+
+`git checkout <nome-branch>` : Passa al branch specificato (spesso sostituito da switch)
+
+- `git checkout -b <nome-branch>` : Crea un nuovo branch e passa ad esso
+- `git checkout -d <nome-branch>` : Elimina un branch
+
+
+
+### spostarsi in un commit specifico
+
+`git checkout <commit>` : Passa a un commit specifico (modalità detached HEAD)
+
+`git switch --detach <commit>` : Passa a un commit specifico in modalità detached HEAD (alternativa a checkout)
+
+`git checkout <nome-branch>^` : Passa al commit genitore del branch specificato
+
+`git checkout <nome-branch>~n` : Passa al commit n livelli sopra il branch specificato
+
+### operatori di riferimento ^ e ~
+
+- `^` : Riferisce al genitore di un commit
+  - `^<numero>` : Riferisce al genitore n-esimo di un commit nel caso di genitori multipli (**spostamento orizzontale**)
+- `~` : Riferisce al commit genitore di un commit, ma permette di specificare un numero di livelli da risalire
+  - `~n` : Riferisce al commit n livelli sopra il commit specificato (**spostamento verticale**)
+
+Gli operatori `^` e `~` possono essere combinati per navigare nella cronologia dei commit
+
+### forzatura di un branch
+
+`git branch -f <nome-branch> <commit>` : Forza il branch a puntare a un commit specifico (può causare perdita di dati se non usato con cautela)
+
+- nota: \<commit> può anche essere un riferimento relativo `nome-branch~n` o `nome-branch^`
+
+## Unire i branch
+
+`git merge <nome-branch>`: Unisce il branch specificato nel branch attivo
+
+in assenza di conflitti non sarà necessario risolvere manualmente le modifiche
+
+`git rebase <nome-branch>`: Applica le modifiche del branch attivo sul il branch specificato (se mi trovo su B e faccio `rebase A` applica le modifiche di B su A)
+
+1. creo il ramo secondario con la feature da sviluppare
+2. mi sposto sul ramo secondario e faccio i commit
+3. mentre sono sul ramo secondario, faccio un rebase del ramo principale per portare le modifiche più recenti
+4. risolvo eventuali conflitti
+
+- pro: mantiene una cronologia più lineare e pulita
+- contro: modifica lo storico dei commit
+
+## Annullare le modifiche
+
+`git reset <commit>` : Resetta il branch attivo a un commit specifico, annullando tutte le modifiche successive (perdita di dati)
+
+`git revert <commit>` : Crea un nuovo commit che annulla le modifiche introdotte da un commit specifico (non altera la cronologia)
+
+**nota**: \<commit> è il commit a cui si vuole tornare
+
+## git cherry-pick
+
+`git cherry-pick <commit>` : Applica le modifiche introdotte da un commit specifico al branch attivo (utile per portare modifiche specifiche da un branch all'altro senza unire tutto il branch)
+
+`git rebase -i <nome-branch/commit>` : apre un editor interattivo che ti permette di selezionare i commit da includere, modificare o eliminare durante un rebase, dal branch o commit specificato fino al branch attivo.
+
+## Git tag
+
+`git tag <nome-tag>` : Crea un tag leggero con il nome specificato, permette di identificare un commit preciso
+
+`git describe <ref>` : Mostra una descrizione del commit più vicina a un tag, con output del tipo `<tag>-<numero-commit>-g<hash>`
+
+## Sincronizzare con un repository remoto
+
+### scaricare da un repository remoto
+
+**nota**: i rami remoti riflettono lo stato del repository remoto dall'ultima volta che abbiamo comunicato con esso (tramite fetch, pull o push)
+
+`git clone` : Clona una repository esistente da un URL, creando una copia locale del repository remoto
+
+`git fetch`: scarica commit presenti in remoto e assenti dal nostro repository locale, aggiornando dove puntano i nostri branche remoti ("origin/branch") ma senza modificare i nostri branch locali. è una sorta di download dei cambiamenti.
+
+`git remote add <nome-remoto> <url>` : Aggiunge un repository remoto con un nome specificato
+
+**nota**: potenzialmente è possibile prima scaricare i commit con fetch e poi unirli e spostarsi attraverso essi come se fossero stati creati localmente (cherry-pick, merge, rebase, checkout ... <origin/master>)
+
+### scaricare e modificare direttamente
+
+`git push <remoto> <place>` : Invia i commit del branch locale al repository remoto
+
+`git push <remoto> <branch-locale>:<branch-remoto>` : Invia i commit del branch locale al repository remoto, specificando il nome del branch remoto (se diverso da quello locale)
+
+`git pull <nome-remoto> <nome-branch>` : Recupera e unisce i cambiamenti dal repository remoto al branch locale, consiste nella combinazione di `git fetch` e `git merge`
+
+**nota**: generalmente il main branch è bloccato. Normalmente bisogna:
+
+1. creare un branch secondario
+2. fare le modifiche e i commit su questo branch
+3. fare un push del branch secondario al repository remoto
+4. creare una pull request per unire le modifiche al main branch
+
+## Tracking
+
+`git branch -u <nome-remoto>/<branch-remoto> <branch-locale>` : Imposta il tracking del branch remoto con il branch locale. Se stiamo lavorando giù sul branch locale possiamo ometterlo
+
+`git checkout -b <branch-locale> <nome-remoto>/<branch-remoto>` : Imposta il tracking del branch remoto con il branch locale
+
+
+## Come funziona Git
+
+Git è uno strumento di **version control**, ovvero un sistema che traccia i diversi cambiamenti di un file o di un insieme di file nel tempo, in modo tale da poter richiamare una determinata versione dei file in futuro. In pratica registra le diverse fasi, in modo da poter passare da una all'altra.
+
+Git ragiona in termini di flusso di snapshots. Se il file non viene modificato, non salva nuovamente il file ma produce un riferimento allo stesso identico file precedentemente salvato.
+
+```{mermaid}
+flowchart LR
+
+    subgraph V1["Version 1"]
+        direction TB
+        V1A["File A"]
+        V1B["File B"]
+        V1C["File C"]
+
+        V1A --- V1B
+        V1B --- V1C
+
+    end
+
+    subgraph V2["Version 2"]
+        direction TB
+        V2A["A1"]
+        V2B["B"]
+        V2C["C1"]
+
+        V2A --- V2B
+        V2B --- V2C
+    end
+
+    style V2B stroke-dasharray: 5 5
+
+    subgraph V3["Version 3"]
+        direction TB
+        V3A["A1"]
+        V3B["B"]
+        V3C["C2"]
+
+        V3A --- V3B
+        V3B --- V3C
+    end
+
+    style V3A stroke-dasharray: 5 5
+    style V3B stroke-dasharray: 5 5
+
+    subgraph V4["Version 4"]
+        direction TB
+        V4A["A2"]
+        V4B["B1"]
+        V4C["C2"]
+
+        V4A --- V4B
+        V4B --- V4C
+
+        style V4C stroke-dasharray: 5 5
+    end
+
+
+
+    subgraph V5["Version 5"]
+        direction TB
+        V5A["A2"]
+        V5B["B2"]
+        V5C["C3"]
+
+        V5A --- V5B
+        V5B --- V5C
+
+        style V5A stroke-dasharray: 5 5
+    end
+
+    %% Ordine orizzontale
+    V1 ~~~ V2
+    V2 ~~~ V3
+    V3 ~~~ V4
+    V4 ~~~ V5
+```
+
+In git ogni file può essere in uno dei 3 stati:
+
+- **modified**: file modificati ma che non hanno ricevuto un commit nel tuo database locale
+- **staged**: il file modificato è stato contrassegnato per essere salvato nel prossimo snapshot con le modifiche attuali
+- **committed**: i dati sono stati salvati nel tuo database locale
+
+In base a questi tre stati possiamo capire le principali sezioni di Git: 
+
+```{mermaid}
+sequenceDiagram
+    participant WD as Working<br/>Directory
+    participant SA as Staging<br/>Area
+    participant GD as .git directory<br/>(Repository)
+
+    GD->>WD: Checkout the project
+    WD->>SA: Stage Fixes
+    SA->>GD: Commit
+```
+
+Il **working tree** è una copia (un singolo `checkout`) di una precisa versione del progetto. I file vengono presi dal database e copiati nel disco pronti per essere usati.
+
+La **staging area** (in gergo tecnico sarebbe l'index) contiene le informazioni su cosa caricherai nel prossimo commit.
+
+La **repository** contiene i metadati e gli oggetti del database del tuo progetto, ed è quello che vai a copiare quando effettui un `git clone`.
+
+In pratica il flusso di lavoro è il seguente:
+
+1. modifichi i file nel tuo working tree
+2. selezioni i file che faranno parte del prossimo commit, e aggiungi unicamente questi nella staging area (`git add`)
+3. Fai un commit, salvando le modifiche in staging area e i metadati in uno snapshot all'interno della tua cartella Git.
+
+File nella working directory possono essere:
+
+- tracked: sono file di cui Git è a conoscenza (possono essere: unmodified, modified, staged)
+- untracked: file della cartella che non sono nell'ultimo snapshot e nemmeno nella staging area.
+
+Dopo aver inizializzato il working tree, tutti i file sono tracciati e non modificati.
+
+Se li modifichi, Git li vede come **modified**, in quanto sono tracciati ma non staged.
+
+```{mermaid}
+sequenceDiagram
+  participant UT as Untracked
+  participant UM as Unmodified
+  participant M as Modified
+  participant S as Staged
+
+  UT ->> S: Add the file
+  UM ->> M: Edit the file
+  M ->> S: Stage the file
+  UM ->> UT: Remove the file
+```
+
+
+## Git Setup
+
+### trovare file con configurazioni
+
+Dopo l'installazione, è ora di vedere quali sono i parametri di setup di git
+
+`$ git config --list --show-origin`: per vedere tutte i setting e da dove provengono
+
+`$ git config --list`: per vedere le opzioni di configurazione
+
+`$ git config <key>`: per vedere la singola opzione (es.user.name)
+
+### Impostare nome e email
+
+`$ git config --global user.name "nome"`
+`$ git config --global user.email johndoe@example.com`
+
+senza l'opzione `--global` puoi configurare i dati per progetti specifici
+
+### cambiare default branch name
+
+`$ git config --global init.defaultBranch main` per configurare il nome
+
+### Help
+
+`git help <verb>`
+
+`git add -h`: esempio dell'uso di `-h``
+
+## Inizializzare una repo
+
+### Da una cartella esistente
+
+Dalla cartella del tuo progetto devi inizializzare con `git init`
+
+```sh
+$ cd [path]/my_project
+$ git init
+```
+
+questo crea la cartella .git che contiene tutti i file necessari
+
+### Clonare una repo già esistente
+
+Sempre dalla cartella del progetto devi utilizzare `git clone <url>`. Questo comando copierà tutti file della repo, ovvero tutta la struttura ad albero.
+
+## Status dei file
+
+`$ git status`: ti mostra uno status generale della situazione
+
+```sh
+$ git status
+On branch master # in quale branch sei
+Your branch is up-to-date with 'origin/master'. #nessuna divergenza con server
+nothing to commit, working tree clean #nessun file untracked
+```
+
+
+## Lavorare e modificare file
+
+### Staging/tracking di un file
+
+`$ git add NEW_FILE`: permette di tracciare il nuovo file
+
+`$ git add MODIFIED_FILE`: permette di inserire il file in staging area, con le modifiche effettuate fino al momento del comando.
+
+### Ignorare un file
+
+Devi creare un file script di nome `.gitignore`. Le regole per la sintassi sono quelle per lo scripting bash
+
+### Rimuovere i file
+
+`$ git rm FILE`: rimuove un file dalla staging area. Puoi passare come argomento anche cartelle o variabili in linguaggio bash
+
+### Muovere un file
+
+`$ git mv FILE_FROM FILE_TO`: serve a segnalare uno spostamento a git, cosa che altrimenti non potrebbe capire
+
+### Osservare la Commit History
+
+La commit history è la cronologia di tutti i commit, conservata nella cartella .git
+
+Per vederla si usa il comando `$ git log`
+
+Esistono numerosi argomenti per `git log`, per visualizzare formato, grafici, scelta metadati, ecc
+
+- default (senza argomenti): elenco commit in ordine cronologico inverso, dal più recente al meno
+- `git log -p`: patch, mostra le differenze introdotte da ogni commit
+- `git log --stat`: mostra le statistiche, cià file cambiati, inserzioni, cancellazioni
+- `git log --graph`: nostra un grafico ascii
+- `git log --oneline`: mostra i commit in un sola linea
+- `git log --all` : mostra la cronologia dei commit di tutti i branch
+- `git log --remote` : mostra la cronologia dei commit dei branch remoti
+
+Ovviamente ci sono numerose altre opzioni
+
+### Modificare ultimo commit
+
+`$ git commit --amend`: permette di modificare l'ultimo commit
+
+### Rimuovere modifiche 
+
+`$ git reset FILE`: rimuove dalla staging area
+
+`$ git checkout -- FILE`: git rimpiazza il file con le ultime modifiche in staging area o in repo. ATTENZIONE
+
+`$ git restore --staged FILE`: rimuove un file dalla staging area
+
+`$ git restore FILE`: rimpiazza il file con ultima versione in repo. ATTENZIONE
+
+## Lavorare con i Remotes
+
+### Conoscere repo remote
+
+`$ git remote`: mostra le repo remote
+`$ git remote -v`: mostra gli url
+
+```bash
+$ git remote
+origin
+
+$ git remote -v
+origin https://github.com/schacon/ticgit (fetch)
+origin https://github.com/schacon/ticgit (push)
+```
+
+### Aggiunge repo remota
+
+`$ git clone`: aggiunge implicitamente una repo remota origin
+
+Se invece vuoi aggiungerla esplicitamente:
+
+`$ git remote add <shortname> <url>``
+
+### Rinominare repo remota
+
+`git remote rename <old_shortname> <new_shortname>: permette di cambiare lo shortname della cartella remota
+
+### Fare fetch e pull
+
+per ottenere dati dalla cartella remota, devi fare un **fetch**
+
+`$ git fetch <remote>`: facendo un fetch, scarichi tutti i lavori di una repo remota sulla tua copia locale. Scarica soltanto, non fa il merge!
+
+per mandare i tuoi dati alla cartella remota, devi fare un **push**
+
+`git push <remote> <branch>`: funziona se hai permessi di scrittura nella cartella remota e nessuno ha fatto un push nel mentre. Questo comando copia il tuo branch (i commit) nella cartella remota.
+
+
+### Ispezionare cartella remota
+
+`$ git remote show origin`: permette di mostrare branch e altri dati del remote
+
+### Rimuovere cartella remota
+
+`$ git remote remove <shortname>: rimuove la cartella remota
+
+## Tagging
+
+Puoi taggare alcuni punti specifici nella storia della repo in modo da contrassegnarli come importanti
+
+### Elencare i tag presenti
+
+`$ git tag`: elenca tutti i tag di una repo, in ordine alfabetico
+
+### creare dei tag
+
+Esistono due tipi di tag
+
+- lightweight: è simile a un puntatore a un commit specifico
+- annotated: è un oggetto completo, con tanto di metadati e informazioni
+
+`$ git tag -a <name> -m "messaggio"`: permette di creare un tag annotato (argomenot `-a`)
+
+`git tag <name>: crea un tag lightweight
+
+per taggare un commit esistente, basta specificare il commit (in particolare parte del checksum) a fine comando
+
+esempio in cui attribuiamo il tag v1.2 a un commit specifico 
+```bash
+$ git log --pretty=oneline
+166ae0c4d3f420721acbb115cc33848dfcc2121a Create write support
+9fceb02d0ae598e95dc970b74767f19372d61af8 Update rakefile
+964f16d36dfccde844893cac5b347e7b3d44abbc Commit the todo
+8a5cbc430f1a9c3d00faaeffd07798508422908a Update readme
+
+$ git tag -a v1.2 9fceb02
+```
+
+### Condividere tag con remote
+
+La condivisione dei tag con la repository remote non avviene in automatico, ma va esplicitato con il comando `git push origin <tagname>``
+
+`$ git push origin --tags`: permette di condividere tutti i tag
+
+### Eliminare i tag
+
+Basta semplicemente usare l'argomento `-d` all'interno del comando `tag``
+
+`$ git tag -d <tag_name>`: elimina il tag specifico, ma NON dal server remoto
+
+Per eliminare un tag dal server remoto ci sono due comandi
+
+`$ git push origin :refs/tags/tag_name`
+
+`$ git push origin --delete <tag_name>`
+
+### Spostarsi tra i commit
+
+Per spostarsi a un commit specifico puoi usare il tag
+
+`$ git checkout <tag_name>`
+
+## Aliasing
+
+Per velocizzare il lavoro e la digitazione, puoi settare degli **alias**
+
+esempio:
+
+```bash
+$ git config --global alias.ci commit
+
+$ git ci 
+```
+
+oppure 
+
+```bash
+$ git config --global alias.unstage 'reset HEAD --'
+
+# ora se digito:
+
+$ git unstage FILE
+
+# equivale a digitare:
+# $ git reset HEAD-- FILE
+```
+
+## Branching
+
+link utile: https://learngitbranching.js.org
+
+### Come funziona il branching
+
+Quando fai un commit, git salva un oggetto commit che contiene:
+
+- un puntatore allo snapshot del contenuto che hai salvato
+- nome e email dell'autore
+- messaggio che hai scritto
+- puntatori ai genitori: nessuno per il commit iniziale, uno per un commit classico, di più se è il risultato di un merge
+
+Per intenderci, questo è l'aspetto di un commit
+
+```{mermaid}
+graph LR
+    %% Nodi
+    C["<b>98ca9</b><br/>-----------------------------------<br/><b>commit</b> size<br/>tree 92ec2<br/>author Scott<br/>committer Scott<br/><br/><small>The initial commit of my project</small>"]
+    
+    T["<b>92ec2</b><br/>-----------------------------------<br/><b>tree</b> size<br/><b>blob</b> 5b1d3 README<br/><b>blob</b> 911e7 LICENSE<br/><b>blob</b> cba0a test.rb"]
+    
+    B1["<b>5b1d3</b><br/>-----------------------------------<br/><b>blob</b> size<br/><br/>== Testing library<br/><br/>This library is used to test<br/>Ruby projects."]
+    
+    B2["<b>911e7</b><br/>-----------------------------------<br/><b>blob</b> size<br/><br/>The MIT License<br/><br/>Copyright (c) 2008 Scott Chacon<br/><br/>Permission is hereby granted,<br/>free of charge, to any person"]
+    
+    B3["<b>cba0a</b><br/>-----------------------------------<br/><b>blob</b> size<br/><br/>require 'logger'<br/>require 'test/unit'<br/><br/>class Test::Unit::TestCase"]
+
+    %% Collegamenti
+    C --> T
+    T --> B1
+    T --> B2
+    T --> B3
+
+    %% Stili personalizzati per i colori
+    style C fill:#F2F0E6,stroke:#D3D1C7,stroke-width:1px,color:#333
+    style T fill:#008080,stroke:#006666,stroke-width:1px,color:#FFF
+    style B1 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B2 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B3 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+```
+
+
+Se ora facessi un nuovo commit, quest'ultimo avrebbe un puntatore anche al padre, e così via
+
+```{mermaid}
+graph RL
+C["<b>98ca9</b><br/>----------------------------------<br/><b>commit</b> size<br/>tree 92ec2<br/>author Scott<br/>committer Scott<br/><br/><small>The initial commit of my project</small>"]
+S["Snapshot A"]
+D["<b>34ac2</b><br/>----------------------------------<br/><b>commit</b> size<br/>tree 184ca<br/>parent 98ca9<br/>author Scott<br/>committer Scott<br/><br/><small>Bug Fix</small>"]
+T["Snapshot B"]
+
+C --> S
+D --> T
+D --> C
+```
+
+Un **branch** in Git è semplicemente un puntatore mobile puntato su uno di questi commit. Il branch di default è **main**. Ogni volta che fai un commit, il main avanza automaticamente all'ultimo commit.
+
+### Creare un nuovo branch
+
+`$ git branch <name_branch>`: crea un nuovo branch nel commit in cui sei in quel momento.
+
+Per esempio:
+
+
+```bash
+$ git branch testing
+```
+
+```{mermaid}
+graph RL
+
+C1[98ca9]
+C2[34ac2]
+C3[f30ab]
+M[main]
+T[testing]
+H[HEAD]
+
+C2 --> C1
+C3 --> C2
+M --> C3
+T --> C3
+H --> M
+
+style C1 fill:white 
+
+style C2 fill:white
+
+style C3 fill:white
+
+style M fill:orange
+
+style T fill:orange
+```
+
+### Spostarsi di branch
+
+Git possiede un puntatore speciale chiamato **HEAD** che indica il branch in quale sei in questo momento. Quando crei un branch nuovo non ti sposti in quest'ultimo.
+
+Lo spostamento va fatto esplicitamente mediante `$ git checkout <branch>. 
+
+Una volta spostato il puntatore HEAD, ogni commit aggiuntivo riguarderà il branch selezionato.
+
+```bash
+$ git branch testing 
+$ git checkout testing
+$ git commit -m "commit C4"
+```
+Il risultato sarà il seguente:
+
+```{dot}
+digraph{
+  rankdir=RL;
+
+  C3 -> C2
+  main -> C3
+  C4 -> C3
+  testing -> C4
+  HEAD -> testing
+}
+```
+
+Se fai un movimento all'indietro con `$ git checkout main` avverranno due cose:
+
+- HEAD punterà al nuovo branch (main nell'esempio)
+- i file della working directory verranno riportati allo stato del commit puntato da main
+
+Se modificassimo i file ulteriormente, la storia del progetto divergerebbe.
+
+### Switch e checkout
+
+Per creare e spostarsi direttamente a un nuovo branch puoi usare `$ git checkout -b <newbranchname>`
+
+Le nuove versioni di git prediligono l'utilizzo del comando `git switch``
+
+`$ git switch <branch>`per spostarsi in un branch esistente
+
+`$ git switch -c branch`per creare un branch e spostarsi direttamente in esso
+
+`$ git switch -`per tornare al branch precedente
+
+### Storia divergente
+
+La storia divergente quando due branch prendono direzioni diverse. Graficamente
+
+
+```{mermaid}
+flowchart BT
+    %% Definizione degli stili per i blocchi
+    classDef commit fill:#f1f0e8,stroke:#f1f0e8,color:#333333,font-family:monospace;
+    classDef branch fill:#ff3b00,stroke:#ff3b00,color:#ffffff,font-family:monospace;
+    classDef head fill:#d49a00,stroke:#d49a00,color:#ffffff,font-family:monospace;
+
+    %% Nodi e relazioni
+    HEAD["HEAD"]:::head --> master["master"]:::branch
+    master --> c2b9e:::commit
+    c2b9e --> f30ab
+    87ab2:::commit --> f30ab
+    testing["testing"]:::branch --> 87ab2
+    
+    f30ab["f30ab"]:::commit --> 34ac2["34ac2"]:::commit
+    34ac2 --> 98ca9["98ca9"]:::commit
+```
+
+Un ottimo metodo per vedere l'intera situazione è tramite `$ git log --oneline --decorate
+--graph --all`
+
+### Merging
+
+Per riunire le modifiche di due branch di solito si usa il comando `git merge`

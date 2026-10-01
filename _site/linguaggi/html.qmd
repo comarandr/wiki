@@ -1,0 +1,769 @@
+---
+title: HTML
+description: "Appunti di HTML"
+permalink: /wiki/linguaggi/html/
+categories: [linguaggi]
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=thumbnail
+---
+
+
+
+## Cos'è HTML
+
+HTML (HyperText Markup Language) è un linguaggio di marcatura (markup, *annotazione*) di documenti ipertestuali. 
+
+- descrive la **struttura** di una pagina web e i collegamenti tra altre pagine
+
+- definisce un **insieme di elementi** (titoli, paragrafi di testo, liste, tabelle, immagini, ...)
+
+## HTML, CSS e JavaScript
+
+HTML, CSS e JavaScript sono i tre linguaggi fondamentali per lo sviluppo web. HTML fornisce la struttura del contenuto, CSS definisce la presentazione e JavaScript aggiunge interattività.
+
+## Struttura minima di una pagina
+
+Ogni tipo di documento ha una sua **struttura** che ne caratterizza il **genere**.
+
+La struttura descrive:
+
+- **parti** che compongono il documento
+- **significato** di ogni parte
+- **relazioni** tra le parti
+
+### Elementi
+
+Ogni elemento è un **contenitore** di informazioni, identificato da un **tag di apertura** e un **tag di chiusura**. Il contenuto dell’elemento è racchiuso tra i due tag.
+
+#### Tag di apertura e chiusura
+
+è una stringa di caratteri racchiusa tra parentesi angolari `<`e `>`.
+
+Tag di apertura
+: Stringa che specifica il nome dell'elemento `<nome_elemento>`
+
+Tag di chiusura
+: Stringa che specifica il nome dell'elemento preceduta da una barra `/` `</nome_elemento>`
+
+Tag elementi vuoti
+: sono costituiti da un unico tag `<nome_elemento_vuoto>`.
+Esempio: `<br>`, `<img>`, `<hr>`
+
+Elemento
+: composto da tag di apertura, contenuto e tag di chiusura `<nome_elemento>contenuto</nome_elemento>`
+
+```html
+<p>Questo è un paragrafo.</p>
+```
+
+### Attributi
+
+Servono a descrivere una **proprietà** dell'elemento.
+
+Sono composti:
+
+- **nome**: il nome dell'attributo
+- **valore**: il valore dell'attributo, racchiuso tra virgolette `" "` o apostrofi `' '` e assegnato al nome tramite il simbolo `=`
+
+Sono inseriti nel tag di apertura dopo il nome
+
+Esempio:
+
+```html
+<p lang="en-us">My cat is very grumpy</p>
+````
+
+### Annidamento di elementi
+
+Un elemento può contenere altri elementi
+
+```html
+<p lang="en-us">Paragrah <br> in english</p>
+```
+
+Che risulta in:
+
+```{=html}
+<p lang="en-us">Paragrah <br> in english</p>
+```
+
+### Regole di scrittura
+
+#### Commentare
+
+Si usa il blocco di commento `<!-- ... -->` per inserire note nel codice che non vengono visualizzate nella pagina web.
+
+```html
+<!-- Questo è un commento -->
+```
+
+#### Regole
+
+- tag vuoto può avere uno slash di chiusura `<br />` ma non è obbligatorio
+- tag e attributi non sono **case sensitive** (ma è buona norma scriverli in minuscolo)
+- per gli attributi booleani (true/false) è sufficiente scrivere il nome dell'attributo senza assegnargli un valore
+- il valore di un attributo può essere racchiuso tra virgolette doppie `" "` o singole `' '` o senza virgolette (ma è buona norma usare le virgolette)
+
+## Struttura minima di una pagina HTML
+
+### Dichiarazione del tipo di documento &lt;!DOCTYPE html&gt;
+
+Dichiarazione del DTD (Document Type Definition), in html5 è
+
+```html
+<!DOCTYPE html>
+```
+
+Posso anche riferirmi a un DTD diverso, in particolare a una versione precedente di HTML. 
+
+### Struttura generica
+
+Un documento HTML5 è composto da:
+
+- **dichiarazione del tipo di documento** `<!DOCTYPE html>`
+- **elemento radice** `<html>` che racchiude tutto il contenuto della pagina
+
+L'elemento radice `<html>` contiene due elementi principali:
+
+- **header** `<head>` contiene informazioni sul documento (metadati) non visualizzati
+- **body** `<body>` contiene la specifica della struttura dei contenuti visualizzati della pagina (testi, immagini ...)
+
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+    ...
+    </head>
+    <body>
+    ...
+    </body>
+</html>
+```
+
+## Head
+
+### Metadati
+
+Informazioni che descrivono il documento nel complesso
+
+Introdotti mediante il tag `<meta>` all'interno del tag `<head>`. Possono essere utilizzati per:
+
+- specificare la **codifica dei caratteri** del documento
+- fornire **informazioni sul documento** (autore, descrizione, parole chiave)
+
+### Titolo della pagina &lt;title&gt;
+
+Il titolo della pagina è specificato mediante il tag `<title>` all'interno del tag `<head>`. Il contenuto del tag `<title>` viene visualizzato nella barra del titolo del browser e nei risultati dei motori di ricerca.
+
+::: {.callout-tip}
+
+### Esempi di metadati in head
+
+```html
+<head>
+    <title>Titolo</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Descrizione della pagina">
+    <meta name="keywords" content="parola1, parola2, parola3">
+    <meta name="author" content="Nome Autore">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="30">
+</head> 
+```
+
+:::
+
+### Elemento style &lt;style&gt;
+
+`<style>...</style>`utilizzato per definire i fogli di stile (stile in linea) interni al documento
+
+Va incluso nell'header della pagina
+
+Generalmente oggi si usa un foglio di stile utilizzando l'elemento &lt;link&gt; nell'intestazione
+
+## Body
+
+### Inserimento e formattazione base del testo
+
+### Headings &lt;h1&gt; ... &lt;h6&gt;
+
+I titoli si suddividono in base alla gerarchia
+
+I livelli di intestazione vanno da `<h1>` (più importante) a `<h6>` (meno importante).
+
+Buona norma è usare un singolo `<h1>` e usare i livelli in maniera consistente
+
+```html
+<h1> Livello 1</h1>
+<h2> Livello 2</h2>
+<h3> Livello 3</h3>
+<h4> Livello 4</h4>
+<h5> Livello 5</h5>
+<h6> Livello 6</h6>
+```
+
+che risultano così:
+
+```{=html}
+<h1> Livello 1</h1>
+<h2> Livello 2</h2>
+<h3> Livello 3</h3>
+<h4> Livello 4</h4>
+<h5> Livello 5</h5>
+<h6> Livello 6</h6>
+```
+
+### Paragrafo &lt;p&gt; &lt;/p&gt;
+
+`<p>...</p>`definisce un paragrafo di testo con l'aggiunta di un margine superiore e uno inferiore
+
+```html
+<p>Questo è un paragrafo di testo.</p>
+<p>Questo è il secondo paragrafo</p>
+<p>Questo è il terzo</p>
+```
+
+```{=html}
+<p>Questo è un paragrafo di testo.</p>
+<p>Questo è il secondo paragrafo</p>
+<p>Questo è il terzo</p>
+```
+
+### A capo &lt;br&gt;
+
+Si tratta di un tag vuoto che forza il ritorno a capo
+
+```html
+"M'illumino<br>d'immenso"<br>Giuseppe Ungaretti
+```
+
+```{=html}
+"M'illumino<br>d'immenso"<br>Giuseppe Ungaretti
+```
+
+### Horizontal rule &lt;hr&gt;
+
+introduce un filetto orizzontale, è un tag vuoto
+
+```html
+prima della linea<hr>sotto la linea
+```
+
+```{=html}
+prima della linea<hr>sotto la linea
+```
+
+### Testo in grassetto &lt;b&gt;&lt;/b&gt;
+
+Definisce il grassetto
+
+```html
+testo in <b>grassetto</b>
+```
+
+```{=html}
+testo in <b>grassetto</b>
+```
+
+### Testo in italics &lt;i&gt;&lt;/i&gt;
+
+definisce il testo in italics
+
+```html
+testo in <i>italics</i>
+```
+
+```{=html}
+testo in <i>italics</i>
+```
+
+### Enfasi a un segmento di testo &lt;strong&gt; e &lt;em&gt;
+
+tag per l'enfasi semantica di un testo, si preferisce usare i tag
+
+- &lt;strong&gt;&lt;/strong&gt;: per evidenziare contenuti cruciali (avvisi, scadenze)
+- &lt;em&gt;&lt;/em&gt; indica invece il vero e proprio stress linguistico
+
+### Apici &lt;sup&gt; e pedici &lt;sub&gt;
+
+Tag per la definizione di apici e pedici
+
+### Citazioni &lt;blockquote&gt; e &lt;q&gt;, citazioni bibliografiche &lt;cite&gt;
+
+### abbreviazioni &lt;abbr title="..."&gt;
+
+### Caratteri speciali
+
+alcuni caratteri speciali vanno indicati come entità in quanto hanno significati particolari nel codice
+
+Tabella
+
+### Attributo style
+
+permette di definire lo stile di alcuni elementi, per esempio paragrafi e intestazioni. Tuttavia oggigiorno lo stile del testo viene dichiarato tramite i fogli di stile [CSS](css.qmd)
+
+`style="property:value;"`
+
+`property`: caratteristica stilistica
+
+`value`: valore della caratteristica stilistca (es. "red")
+
+```html
+<p style="color:red;font-family:verdana;font-size:30px;">qui va il testo</p>
+```
+
+```{=html}
+<p style="color:red;font-family:verdana;font-size:30px;">qui va il testo</p>
+```
+
+esempi: `color`, `background-color`, `font-family`,`font-size`,`text-align`
+
+### Attributi semantici id & class
+
+#### id
+
+Ogni elemento html può essere identificato univocamente da un identificatore grazie all'uso di **id** con il relativo *valore*
+
+Il valore deve iniziare con lettera o underscore _ e deve essere unico
+
+Gli identificatori sono utili per applicare specifiche regole stilistiche
+
+#### class
+
+Ogni elemento può essere attribuito a una classe di elementi mediante l'attributo **class** con relativo *nome*, oppure a più classi contemporaneamente separando i vari nomi con degli spazi.
+
+Serve a dare maggior significato all'elemento e all'applicazione di regole stilistiche
+
+#### Esempi
+
+```html
+<p id="par1"> primo paragrafo ... </p>
+<p id="par2"> secondo paragrafo ... </p>
+<p id="par3"> terzo paragrafo ... </p>
+<p class="par"> questo è un paragrafo ... </p>
+<p class="par"> questo è un paragrafo ... </p>
+```
+
+### Elementi di tipo blocco (block)
+
+Sono elementi che vengono visualizzati in una nuova linea, ovvero vanno a capo rispetto all'elemento che lo precedono
+
+Sono generalmente strutturali (titoli, paragradi, liste...)
+
+
+| principali elementi blocco | |
+|:---|:---|
+| &lt;address&gt; Contact information | &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt; Heading |
+| &lt;article&gt; Article content | &lt;header&gt; Section or page header |
+| &lt;aside&gt; Aside content |&lt;hgroup&gt; Groups header information |
+| &lt;blockquote&gt; Long quotation | &lt;hr&gt; Horizontal rule |
+| &lt;details&gt; Disclosure widget | &lt;li&gt; List item |
+| &lt;dialog&gt; Dialog box | &lt;main&gt; Contains the central content |
+| &lt;dd&gt; Describes a term in a description list | &lt;nav&gt; Contains navigation links |
+| &lt;div&gt; Document division | &lt;ol&gt; Ordered list |
+| &lt;dl&gt; Description list | &lt;p&gt; Paragraph |
+| &lt;dt&gt; Description list term | &lt;pre&gt; Preformatted text |
+| &lt;fieldset&gt; Field set label | &lt;figcaption&gt; Figure caption |
+| &lt;figure&gt; Groups media content with a caption |&lt;section&gt; Section of a web page |
+| &lt;footer&gt; Section or page footer |&lt;table&gt; Table |
+| &lt;form&gt; Input form |&lt;ul&gt; Unordered list |
+
+### Elementi di tipo in linea (inline)
+
+Un elemento di tipo in linea appare all'interno di un elemento blocco e può contenere altri elementi inline.
+
+Viene visualizzato di seguito al contenuto che lo precede, senza andare a capo
+
+| Elementi inline | | | |
+|:---|:---|:---|:--- |
+| &lt;a&gt; | &lt;em&gt; | &lt;mark&gt; | &lt;cite&gt; | &lt;select&gt; | &lt;u&gt; |
+| &lt;abbr&gt; | &lt;embed&gt; | &lt;meter&gt; | &lt;code&gt; | &lt;slot&gt; | &lt;tt&gt; |
+| &lt;acronym&gt; | &lt;i&gt; | &lt;noscript&gt; | &lt;data&gt; | &lt;small&gt; | &lt;var&gt; |
+| &lt;audio&gt; | &lt;iframe&gt; | &lt;object&gt; | &lt;datalist&gt; | &lt;span&gt; | &lt;video&gt; |
+| &lt;b&gt; | &lt;img&gt; | &lt;output&gt; | &lt;del&gt; | &lt;strong&gt; | &lt;wbr&gt; |
+| &lt;bdi&gt; | &lt;input&gt; | &lt;picture&gt; | &lt;dfn&gt; | &lt;sub&gt; |
+| &lt;bdo&gt; | &lt;ins&gt; | &lt;progress&gt; | &lt;sup&gt; |
+| &lt;big&gt; | &lt;kbd&gt; | &lt;ruby&gt; | &lt;svg&gt; |
+| &lt;br&gt; | &lt;label&gt; | &lt;s&gt; | &lt;template&gt; |
+| &lt;button&gt; | &lt;map&gt; | &lt;samp&gt; | &lt;textarea&gt; |
+| &lt;canvas&gt; | &lt;script&gt; | &lt;time&gt; |
+
+## Strutturazione
+
+### CSS Box Model
+
+Un elemento (inline o block che sia) è un'entità costituita da:
+
+- **contenuto**: area in cui viene visualizzata il contenuto
+  - elemento block: larghezza e altezza sono speficabili con CSS
+- **padding**: spazio di contorno che racchiude il contenuto
+  - spessore, colore speficabili con CSS
+- **border**: bordo che contiene contenuto e padding
+  - spessore, colore, tipo di bordo specificabili con CSS
+- **margin**: spazio di contorno esterno al bordo
+  - spessore, colore di sfondo specificabili con CSS 
+
+![](../assets/images/boxmodel.png)
+
+### Aggregazione di elementi
+
+div
+: Elemento **div** serve a raggruppare più elementi HTML in un unico segmento 
+è di tipo blocco, ogni segmento inizia da una nuova riga
+
+span 
+: permette di raggruppare più elementi **inline** in un unico segmento che non va a capo. Utile per raggruppare e annotare frammenti di testo per presentarli stilisticamente in maniera diversa
+
+Sia **div** che **span** possono possedere attributi *id* e *class*
+
+```html
+<div class="articolo" id="art120">
+    <p class="intro">Lorem ipsum …</p>
+    <p class="related_work">Lorem ipsum …</p>
+    <p class="method">Lorem ipsum …</p>
+    <p class="results">Lorem ipsum …</p>
+    <p class="conclusion">Lorem ipsum …</p>
+    <p class="biblio">Lorem ipsum …</p>
+</div>
+<div>
+    <p class="profilo_utente" id="u11">Lorem ipsum …<span
+    class="demografico">… dati demografici …</span>… lorem ipsum …<span
+    class="psicografico">… dati psicografici …</span> …</p>
+</div>
+```
+
+
+### Elementi per la strutturazione
+
+In passato la struttura della pagina veniva realizzata principalmente tramite gli elementi **div**, tuttavia HTML5 ha implementato nuovi elementi specifici che migliorano l'accessibilità
+
+### Strutturazione classica
+
+all'interno del **body** abbiamo diversi elementi **div** identificati mediante attributi **id** o **class**.
+
+### Nuovi elementi strutturali
+
+&lt;header&gt; (testata)
+: per rappresentare un'area di intestazione per pagina o sezione. Generalmente per elementi introduttivi (nome azienda, logo) o di ausilio alla navigazione
+
+&lt;footer&gt; (piè di pagina)
+: area a più di pagina dove raggruppare elementi come autore, informazioni di copyright, regole per accessibilità, contratti di licenza
+
+&lt;article&gt; (articolo)
+area del documento autosufficiente e potenzialmente distribuibile e usabile al di fuori del contesto originale (post, scheda prodotto, modulo standard). Può essere composto da sezioni
+
+&lt;section&gt; (sezione)
+area di un documento tematicamente omogeneo. La coerenza tematica e la presenza di titolo identificativo la distinguono da un generico div.
+
+&lt;nav&gt; (navigazione)
+per raggruppare elementi di supporto alla navigazione (es. lista non ordinata di elementi). Può far parte della testata o nell'intestazione
+
+&lt;aside&gt; (a parte)
+area che contiene contenuti correlati a quello principale
+
+### Liste
+
+Possono rappresentare insieme di elenchi ordinati o non ordinati. 
+Abbiamo 3 tipologie di liste:
+
+- liste ordinate
+- liste non ordinate
+- liste di definizione
+
+Le liste possono essere annidate
+
+#### Liste ordinate &lt;ol&gt; e &lt;li&gt;
+
+assegnate per default con numeri interi crescenti
+
+```html
+<ol>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+</ol>
+```
+
+posso cambiare il contrassegno usando l'attributo **type**:
+
+- **1**: numeri interi (default)
+- **A**: lettere maiuscole
+- **a**: lettere minuscole
+- **I**: numeri romani maiuscoli
+- **i**: numeri romani minuscoli
+
+con l'attributo **start** posso cambiare il valore di partenza della numerazione 
+
+esempio: `<ol type="A" start="3">` inizierà la numerazione con la lettera C
+
+posso usare l'attributo **value** per cambiare il valore di un singolo elemento della lista
+
+posso anche usare l'attributo **reversed** per invertire l'ordine della numerazione
+
+
+esempio:
+
+```html
+<ol type="A">
+    <li>primo elemento</li>
+    <li>secondo elemento</li>
+    <li>terzo elemento</li>
+</ol>
+```
+
+ottengo:
+
+```{=html}
+<ol type="A">
+    <li>primo elemento</li>
+    <li>secondo elemento</li>
+    <li>terzo elemento</li> 
+</ol>
+``` 
+
+#### Liste non ordinate &lt;ul&gt; e &lt;li&gt;
+
+Si usano gli elementi `<ul>`(unordered list) e `<li>`(list item)
+
+```html
+<ul>
+    <li>...</li>
+    <li>...</li>
+    <li>...</li>
+</ul>
+```
+
+per default il contrassegno è **disc** (pallino pieno)
+posso cambiare il contrassegno usando l'attributo **list-style-type**:
+
+- **disc**: pallino pieno (default)
+- **circle**: pallino vuoto
+- **square**: quadratino pieno
+- **none**: nessun contrassegno
+
+tuttavia è consigliabile definire lo stile della lista tramite CSS 
+
+#### Liste di definizione &lt;dl&gt;, &lt;dt&gt; e &lt;dd&gt;
+
+Le liste di definizione sono composte da un termine e una definizione.
+
+- inizializzazione della lista: **\<dl> … \</dl>**
+- tag per termine: **\<dt> … \</dt>**
+- tag per la definizione: **\<dd> … \</dd>**
+
+```html
+<dl>
+    <dt>...</dt>
+    <dd>...</dd>
+    ...
+    <dt>...</dt>
+    <dd>...</dd>
+</dl>
+```
+
+ottime per introdurre voci di un vocabolario o lista di domande con le relative risposte
+
+::: {.callout-tip collapse="true"}
+
+## Esempio di lista di definizione
+
+```html
+<dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+</dl>
+```
+
+```{=html}
+<dl>
+<dt>Coffee</dt>
+<dd>Black hot drink</dd>
+<dt>Milk</dt>
+<dd>White cold drink</dd>
+</dl>
+```
+
+:::
+
+### Tabelle &lt;table&gt;
+
+#### Tabelle base
+
+permettono l'organizzazione dei dati in righe e colonne. 
+Righe e colonne hanno delle intestazioni (ovvero dei nomi associati)
+Ogni elemento della tabella si chiama cella.
+
+Il contenuto viene specificato **riga per riga**
+
+- **tr** (table row): definisce una riga della tabella
+- **td** (table data): specifica il contenuto di una cella di una riga. Può essere un elemento qualsiasi
+
+::: {.callout-tip collapse="true"}
+
+## Esempio
+
+Per esempio, per realizzare 
+
+15 15 30
+45 60 45
+60 90 90
+
+posso scrivere:
+
+```html
+<table>
+<tr><td>15</td><td>15</td><td>30</td></tr>
+<tr><td>45</td><td>60</td><td>45</td></tr>
+<tr><td>60</td><td>90</td><td>90</td></tr>
+</table>
+```
+
+ottenendo:
+
+```{=html}
+<table class="table table-bordered">
+<tr><td>15</td><td>15</td><td>30</td></tr>
+<tr><td>45</td><td>60</td><td>45</td></tr>
+<tr><td>60</td><td>90</td><td>90</td></tr>
+</table>
+```
+
+nota: l'esigenza di usare la classe `table table-bordered` per ottenere un aspetto migliore della tabella è dovuto all'uso di Bootstrap in questo sito.
+
+:::
+
+#### Intestazioni di riga e colonna &lt;th&gt;
+
+L'elemento **th** (table header) inserisce un'intestazione. Posso usare l'attributo **scope** per specificare se l'intestazione si riferisce a una riga (scope="row") o a una colonna (scope="col"). Di default il testo dell'intestazione è centrato e in grassetto
+
+::: {.callout-tip collapse="true"}
+
+## Esempio
+
+```html
+<table>
+<tr><th></th><th scope="col">Sabato</th><th scope="col">Domenica</th></tr>
+<tr><th scope="row">Biglietti venduti:</th><td>120</td><td>135</td></tr>
+<tr><th scope="row">Incasso:</th><td>1020</td><td>1148</td></tr>
+</table>
+```
+
+```{=html}
+<table class="table table-bordered">
+<tr><th></th><th scope="col">Sabato</th><th scope="col">Domenica</th></tr>
+<tr><th scope="row">Biglietti venduti:</th><td>120</td><td>135</td></tr>
+<tr><th scope="row">Incasso:</th><td>1020</td><td>1148</td></tr>
+</table>
+```
+
+nota: l'esigenza di usare la classe `table table-bordered` per ottenere un aspetto migliore della tabella è dovuto all'uso di Bootstrap in questo sito.
+
+:::
+
+#### Colspan (cella che si estende su più colonne)
+
+L'attributo **colspan** (column span) permette a una cella di estendersi su più colonne. Si utilizza l'attributo **colspan** con un valore numerico per specificare il numero di colonne su cui si estende la cella.
+
+La cella che dovrà estendersi sarà definita nel seguente modo:
+
+`<td colspan="numero_di_colonne">contenuto</td>`
+
+::: {.callout-tip collapse="true"}
+
+## Esempio
+
+```html
+<table border="1">
+<tr><th>Name</th><th colspan="2">Telephone</th></tr>
+<tr><td>Tim Berners-Lee</td><td>55577854</td><td>55577855</td></tr>
+</table>
+```
+
+```{=html}
+<table class="table table-bordered">
+<tr><th>Name</th><th colspan="2">Telephone</th></tr>
+<tr><td>Tim Berners-Lee</td><td>55577854</td><td>55577855</td></tr>
+</table>
+```
+
+nota: l'esigenza di usare la classe `table table-bordered` per ottenere un aspetto migliore della tabella è dovuto all'uso di Bootstrap in questo sito.
+
+:::
+
+#### Rowspan (cella che si estende su più righe)
+
+L'attributo **rowspan** (row span) permette a una cella di estendersi su più righe. Si utilizza l'attributo **rowspan** con un valore numerico per specificare il numero di righe su cui si estende la cella.
+
+`<td rowspan="numero_di_righe">contenuto</td>`
+
+::: {.callout-tip collapse="true"}
+
+## Esempio
+
+```html
+<table border ="1">
+<tr><th>Name:</th><td>Tim Berners-Lee</td></tr>
+<tr><th rowspan="2">Telephone</th><td>55577854</td></tr>
+<tr><td>55577855</td></tr>
+</table>
+```
+
+```{=html}
+<table class="table table-bordered">
+<tr><th>Name:</th><td>Tim Berners-Lee</td></tr>
+<tr><th rowspan="2">Telephone</th><td>55577854</td></tr>
+<tr><td>55577855</td></tr>
+</table>
+```
+
+nota: l'esigenza di usare la classe `table table-bordered` per ottenere un aspetto migliore della tabella è dovuto all'uso di Bootstrap in questo sito.
+
+:::
+
+#### Caption (titolo della tabella)
+
+`<caption></caption>` serve a inserire un titolo alla tabella, si usa dopo il tag `<table>` e prima del primo `<tr>`
+
+::: {.callout-tip collapse="true"}
+
+## Esempio
+
+```html
+<table border ="1">
+<caption>Telephone numbers</caption>
+<tr><th>Name:</th><td>Tim Berners-Lee</td></tr>
+<tr><th rowspan="2">Telephone</th><td>55577854</td></tr>
+<tr><td>55577855</td></tr>
+</table>
+```
+
+```{=html}
+<table class="table table-bordered">
+<caption>Telephone numbers</caption>
+<tr><th>Name:</th><td>Tim Berners-Lee</td></tr>
+<tr><th rowspan="2">Telephone</th><td>55577854</td></tr>
+<tr><td>55577855</td></tr>
+</table>
+```
+
+:::
+
+#### Tabelle complesse &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;
+
+Nel caso le tabelle abbiano molte righe di dati, è opportuno usare:
+
+- **thead**: contiene una riga (tr) con le intestazioni (th) delle colonne della tabella
+- **tbody**: contiene le righe (tr) con i dati (td)
+- **tfoot**: contiene una riga con dati (td) riassuntivi
+
+Servono a migliorare l'accessibilità della tabella e la leggibilità del codice, evidenziando le righe delle differenti sezioni della tabella
+
+![](../a)
+
+#### Attributi obsoleti
+
+### Tabelle annidate
+
+### Collegamenti ipertestuali &lt;a&gt;

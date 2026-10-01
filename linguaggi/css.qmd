@@ -4,25 +4,449 @@ description: "Appunti di CSS"
 categories: [linguaggi]
 ---
 
-## Fogli di stile
+## Come funziona
 
-I cascading Style Sheets (CSS), o fogli di stile servono a formulare e gestire il layout di un sito web. Posso essere inseriti più volte in uno stesso documento seguendo regole gerarchiche precise. Servono essenzialmente a ridefinire e/o potenziare i tag HTML.
+### Box
 
-### Regole
+Se XML/HTML organizzano i contenuti, CSS specifica come devono apparire.
+
+Bisogna quindi:
+
+- identificare i contenuti da modificare (tramite selettori)
+- specificarne le proprietà (tramite dichiarazioni)
+
+Immaginiamo dei box invisibili attorno ad ogni elemento HTML, che possiamo controllare tramite CSS.
+
+### Selettore e dichiarazione
+
+Un comando CSS è composto nel seguente modo:
 
 ```css
-selector { property: value;}
-
-h1 { color: white; background: red; }
+p {
+    font-family: Arial;
+}
 ```
 
-Le regole sono composte da due parti:
+- `p`: **selettore** che identifica gli elementi
+- `font-family: Arial;`: **dichiarazione** che specifica la proprietà da modificare e il valore da assegnare.
 
-- **selettore**: definisce parte del documento a cui applicare le regole
-- **blocco delle dichiarazioni**: racchiuso tra parentesi graffe, contiene una o più dichiarazioni separate da punto e virgola. Ogni dichiarazione è composta da una **proprietà** e un **valore**
+Possiamo applicare la stessa dichiarazione a più selettori separandoli con una virgola:
 
-### Commento
+```css
+h1, h2, h3 {
+    font-family: Arial;
+}
+```
 
-per commentare il codice CSS si utilizza la sintassi `/* commento */`
+Oppure possiamo specificare più dichiarazioni per lo stesso selettore separandole con un punto e virgola:
 
-### Applicazioni delle regole
+```css
+p {
+    font-family: Arial;
+    color: red;
+}
+```
+
+Ogni dichiarazione è composta da una **proprietà** e un **valore** separati dai due punti
+
+```
+selettore {
+    proprietà: valore;
+}
+```
+
+### &lt;style&gt; o &lt;link&gt;
+
+- tag `<style>` per inserire regole CSS direttamente all'interno del documento HTML
+- tag `<link>` per collegare un file esterno contenente le regole CSS
+
+La seconda opzione è preferibile per pulizia del codice e riutilizzo delle regole CSS in più pagine.
+
+### CSS Box Model
+
+Un elemento (inline o block che sia) è un'entità costituita da:
+
+- **contenuto**: area in cui viene visualizzata il contenuto
+  - elemento block: larghezza e altezza sono speficabili con CSS
+- **padding**: spazio di contorno che racchiude il contenuto
+  - spessore, colore speficabili con CSS
+- **border**: bordo che contiene contenuto e padding
+  - spessore, colore, tipo di bordo specificabili con CSS
+- **margin**: spazio di contorno esterno al bordo
+  - spessore, colore di sfondo specificabili con CSS 
+
+![](../assets/images/boxmodel.png)
+
+### Esempi 
+
+(...)
+
+### Selettori
+
+- permettono di identificare gli elementi HTML a cui applicare le regole CSS
+- sono **case sensitive**: `p` e `P` non sono la stessa cosa
+- posso usare più selettori separati da virgola per applicare le stesse regole a più elementi
+
+#### Selettore universale `*`
+
+Selettore che seleziona tutti gli elementi di un documento HTML
+
+```css
+* {
+    margin: 0;
+    padding: 0;
+}
+```
+
+#### Type selector
+
+Selettore che seleziona gli elementi in base al loro nome (tag name)
+
+```css
+h1 {
+    font-family: Arial;
+}
+````
+
+#### Class selector
+
+Selettore che seleziona gli elementi in base al loro attributo **class**.
+
+Il valore dell'attributo class deve essere preceduto da un punto `.`
+
+```css
+.title {
+    font-family: Arial;
+}
+```
+
+Posso filtrare ulteriormente gli elementi selezionati combinando il selettore di tipo con il selettore di classe:
+
+```css
+p.note {
+    font-family: Arial;
+}
+```
+
+#### ID selector
+
+Selettore che seleziona gli elementi in base al loro attributo **id**.
+
+Il valore dell'attributo id deve essere preceduto da un cancelletto `#`.
+
+```css
+#title {
+    font-family: Arial;
+}
+```
+
+#### Child selector
+
+Selettore che seleziona gli elementi direttamente figli di un determinato elemento.
+
+```css
+li>a {
+    font-family: Arial;
+}
+```
+
+In questo caso seleziono tutti gli elementi `<a>` che sono direttamente figli di un elemento `<li>`
+
+#### Discendente selector
+
+Selettore che seleziona gli elementi discendenti di un determinato elemento, anche se non sono figli diretti.
+
+```css
+p a {
+    font-family: Arial;
+}
+```
+
+In questo caso seleziono tutti gli elementi `<a>` che sono discendenti di un elemento `<p>`, anche se ci sono elementi annidati tra di loro.
+
+#### Adjacent sibling selector
+
+Selettore che seleziona gli elementi che sono **fratelli adiacenti** di un determinato elemento.
+
+```css
+h1 + p {
+    font-family: Arial;
+}
+```
+
+Prende in considerazione solo il primo elemento `<p>` che segue immediatamente un elemento `<h1>`.
+
+#### General sibling selector
+
+Selettore che seleziona gli elementi che sono **fratelli** di un determinato elemento.
+
+```css
+h1 ~ p {
+    font-family: Arial;
+}
+```
+
+Prende in considerazione tutti gli elementi `<p>` che seguono un elemento `<h1>`, anche se non sono immediatamente adiacenti.
+
+### Selettori di attributo
+
+| Selettore | formula | descrizione |
+|-----------|---------|-------------|
+| Existence | `[attr]` | elementi che hanno un determinato attributo|
+| Equality | `[attr=value]` |elementi che hanno un determinato attributo con un determinato valore. |
+| Space | `[attr~=value]` | elementi che hanno un determinato attributo con un determinato valore tra i più valori separati da spazi. |
+| Prefix | `[attr^=value]` | elementi che hanno un determinato attributo il cui valore inizia con una determinata stringa. |
+| Substring | `[attr*=value]` | elementi che hanno un determinato attributo il cui valore contiene una determinata stringa. |
+| Suffix | `[attr$=value]` | elementi che hanno un determinato attributo il cui valore termina con una determinata stringa. |
+
+#### Selettore Existence `[attr]`
+
+Prende in considerazione tutti gli elementi che hanno un determinato attributo, indipendentemente dal suo valore.
+
+```css
+p[class] {
+    font-family: Arial;
+}
+```
+
+Applica le regole CSS a tutti gli elementi `<p>` che hanno l'attributo **class**.
+
+#### Selettore Equality `[attr=value]`
+
+Prende in considerazione tutti gli elementi che hanno un determinato attributo con un determinato valore.
+
+```css
+p[class=note] {
+    font-family: Arial;
+}
+```
+
+Applica le regole CSS a tutti gli elementi `<p>` che hanno l'attributo **class** con valore **note**.
+
+#### Selettore Space `[attr~=value]`
+
+Prende in considerazioni tutti gli elementi che hanno un determinato attributo con un determinato valore tra i più valori separati da spazi.
+
+```css
+p[class~=note] {
+    font-family: Arial;
+}
+```
+
+Applica le regole CSS a tutti gli elementi `<p>` che hanno l'attributo **class** con valore **note** tra i più valori separati da spazi.
+
+#### Selettore Prefix `[attr^=value]`
+
+Prende in considerazioni tutti gli elementi che hanno un determinato attributo il cui valore inizia con una determinata stringa.
+
+```css
+p[class^=d] {
+    font-family: Arial;
+}
+````
+
+Applica le regole CSS a tutti gli elementi `<p>` che hanno l'attributo **class** il cui valore inizia con la stringa **d**.
+
+#### Selettore Substring `[attr*=value]`
+
+Prende in considerazioni tutti gli elementi che hanno un determinato attributo il cui valore contiene una determinata stringa.
+
+```css
+p[class*=o] {
+    font-family: Arial;
+}
+```
+
+Applica le regole CSS a tutti gli elementi `<p>` che hanno l'attributo **class** il cui valore contiene la stringa **o**.
+
+#### Selettore Suffix `[attr$=value]`
+
+Prende in considerazioni tutti gli elementi che hanno un determinato attributo il cui valore termina con una determinata stringa.
+
+```css
+p[class$=e] {
+    font-family: Arial;
+}
+```
+
+Applica le regole CSS a tutti gli elementi `<p>` che hanno l'attributo **class** il cui valore termina con la stringa **e**.
+
+### Pseudo-classi
+
+#### Pseudo-classi relative a stati (:link, :visited, :hover, :focus, :active)
+
+Le pseudo-classi aggiungono un attributo fittizio a cui applicare le regole CSS. Sono precedute da due punti `:`
+
+- `:link` stile dei link non visitati
+- `:visited` stile dei link visitati
+- `:hover` stile degli elementi quando il mouse ci passa sopra
+- `:focus` stile degli elementi quando vengono selezionati
+- `:active` stile degli elementi quando vengono attivati (cliccati)
+
+#### Pseudo-classi relative a strutture (:first-child, :last-child, :nth-child(n), :nth-last-child(n))
+
+Consentono di selezionare elementi difficili da raggiungere con selettori semplici
+
+**E:root**
+**E:first-child**
+**E:last-child**
+**E:nth-child(n)**, anche con delle formule come `2n` o `2n+1`, `odd`
+**E:nth-last-child(n)**
+**E:only-child**
+**E:nth-of-type(n)**
+**E:nth-last-of-type(n)**
+**E:first-of-type**
+**E:only-of-type**
+**E:empty**
+
+::: {.callout-warning}
+
+## Numerazione figli
+
+i figli di un elemento vengono numerati a partire da 1, non da 0.
+
+```html
+<ul>
+    <li>Primo elemento</li>  <!-- figlio 1 -->
+    <li>Secondo elemento</li> <!-- figlio 2 -->
+    <li>Terzo elemento</li> <!-- figlio 3 -->
+</ul>
+```
+:::
+
+Esempio 
+
+```css
+tr td{
+    color: red;
+}
+
+/* selezionare righe alternanti */
+tr:nth-child(odd) td{
+    color: blue;
+}
+```
+
+**E:target** seleziona gli elementi che sono il target dell'URL (es. `#id`)
+
+**E:not(s)** seleziona gli elementi che non corrispondono al selettore s
+
+### Pseudo-elementi
+
+Creano elementi fittizi a cui applicare le regole CSS. Sono preceduti da due punti `::`
+
+**::first-letter** seleziona la prima lettera di un elemento
+**::first-line** seleziona la prima riga di un elemento
+**::before** crea un elemento fittizio prima del contenuto di un elemento
+**::after** crea un elemento fittizio dopo il contenuto di un elemento
+
+## Cascading
+
+Se due regole CSS si applicano allo stesso elemento
+
+- vince la regola che appare per ultima nel codice
+- vince il selettore più specifico
+- vince proprietà `!important` (da usare con cautela)
+
+Possibilità di creare prima regole generali e poi regole più specifiche per particolari elementi.
+
+È possibile anche usare più file CSS
+
+### Ereditarietà
+
+Alcune proprietà CSS vengono automaticamente ereditate dai figli, altre no.
+Queste ultime possono essere ereditate forzatamente con la proprietà `inherit`.
+
+## Colore
+
+### Colore in primo piano (color)
+
+Il colore in primo piano (foreground color) è il colore del testo e di altri elementi che non hanno un colore di sfondo.
+
+Si può impostare con:
+
+- nome del colore
+- valore RGB (0-255)
+- codice esadecimale (hex)
+
+### Colore di sfondo (background-color)
+
+Il colore di sfondo (background color) è il colore dello sfondo di un elemento.
+Riempie il box dell'elemento, ma non il padding e il bordo.
+
+Si può impostare con:
+
+- nome del colore
+- valore RGB (0-255)
+- codice esadecimale (hex)
+
+### Colore HSL
+
+Con HSL (Hue, Saturation, Lightness) si può specificare un colore in base alla tonalità, alla saturazione e alla luminosità.
+
+Hue: tonalità del colore, espressa in gradi (0-360)
+Saturation: saturazione del colore, espressa in percentuale (0-100%)
+  - con 0% il colore è grigio, 100% il colore è pieno
+Lightness: luminosità del colore, espressa in percentuale (0-100%)
+  - con 0% il colore è nero, 100% il colore è bianco
+
+### Transparenza e opacità (opacity)
+
+La transparenza di un elemento può essere controllata con la proprietà `opacity`, che va da 0 (completamente trasparente) a 1 (completamente opaco).
+
+### Consigli per l'uso dei colori
+
+- contrasto basso: difficile da leggere, da evitare
+- contrasto alto: facile da leggere, da preferire, non sui testi lunghi
+- contrasto medio: ottimale sui testi lunghi
+
+In caso di scritte chiare su sfondo scuro, aumentare lo spazio tra le righe
+
+## Immagini
+
+CSS offre molti usi per le immagini.
+
+### Immagini di sfondo (background-image)
+
+Si può impostare un'immagine di sfondo per qualsiasi elemento HTML, anche se è sempre consigliabile applicare un colore di background per i casi in cui l'immagine non viene caricata.
+
+Si utilizza la proprietà `background-image=url("path/to/image.jpg")`
+
+**background-repeat**: specifica se l'immagine di sfondo deve essere ripetuta o meno
+  - `repeat`: l'immagine viene ripetuta sia in orizzontale che in verticale (default)
+  - `repeat-x`: l'immagine viene ripetuta solo in orizzontale
+  - `repeat-y`: l'immagine viene ripetuta solo in verticale
+  - `no-repeat`: l'immagine non viene ripetuta
+
+**background-position**: specifica la posizione dell'immagine di sfondo
+  - `top left`: in alto a sinistra (default)
+  - `top center`: in alto al centro
+  - `top right`: in alto a destra
+  - `center left`: al centro a sinistra
+  - `center center`: al centro (default)
+  - `center right`: al centro a destra
+  - `bottom left`: in basso a sinistra
+  - `bottom center`: in basso al centro
+  - `bottom right`: in basso a destra
+  Posso specificare la posizione anche in pixel o percentuale, ad esempio `background-position: 50% 50%` per centrare l'immagine.(0% 0% è in alto a sinistra, 100% 100% è in basso a destra.)
+
+Posso usare anche background multipli
+
+**background-attachment**: specifica se l'immagine di sfondo deve scorrere con la pagina o rimanere fissa
+  - `scroll`: l'immagine scorre con la pagina (default)
+  - `fixed`: l'immagine rimane fissa
+
+**background-size**: specifica la dimensione dell'immagine di sfondo
+  - `auto`: l'immagine mantiene le sue dimensioni originali (default)
+  - `cover`: l'immagine copre l'intero elemento, ritagliando se necessario
+  - `contain`: l'immagine viene ridimensionata per essere contenuta all'interno dell'elemento, senza ritagliarla
+  - `un valore in pixel o percentuale`: l'immagine viene ridimensionata a quella dimensione
+  - `due valori in pixel o percentuale`: l'immagine viene ridimensionata a quella dimensione, il primo valore è la larghezza, il secondo è l'altezza
+
+## Gradienti
+
+I gradienti in CSS permettono di creare transizioni di colore tra due o più colori. Si possono creare gradienti lineari e radiali.
+
+## Font
+
+## Box model
