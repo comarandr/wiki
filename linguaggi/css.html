@@ -174,8 +174,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#box" id="toc-box" class="nav-link" data-scroll-target="#box">Box</a></li>
   <li><a href="#selettore-e-dichiarazione" id="toc-selettore-e-dichiarazione" class="nav-link" data-scroll-target="#selettore-e-dichiarazione">Selettore e dichiarazione</a></li>
   <li><a href="#style-o-link" id="toc-style-o-link" class="nav-link" data-scroll-target="#style-o-link">&lt;style&gt; o &lt;link&gt;</a></li>
-  <li><a href="#css-box-model" id="toc-css-box-model" class="nav-link" data-scroll-target="#css-box-model">CSS Box Model</a></li>
-  <li><a href="#esempi" id="toc-esempi" class="nav-link" data-scroll-target="#esempi">Esempi</a></li>
   <li><a href="#selettori" id="toc-selettori" class="nav-link" data-scroll-target="#selettori">Selettori</a>
   <ul class="collapse">
   <li><a href="#selettore-universale" id="toc-selettore-universale" class="nav-link" data-scroll-target="#selettore-universale">Selettore universale <code>*</code></a></li>
@@ -219,9 +217,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#immagini-di-sfondo-background-image" id="toc-immagini-di-sfondo-background-image" class="nav-link" data-scroll-target="#immagini-di-sfondo-background-image">Immagini di sfondo (background-image)</a></li>
   </ul></li>
-  <li><a href="#gradienti" id="toc-gradienti" class="nav-link" data-scroll-target="#gradienti">Gradienti</a></li>
-  <li><a href="#font" id="toc-font" class="nav-link" data-scroll-target="#font">Font</a></li>
-  <li><a href="#box-model" id="toc-box-model" class="nav-link" data-scroll-target="#box-model">Box model</a></li>
+  <li><a href="#gradienti" id="toc-gradienti" class="nav-link" data-scroll-target="#gradienti">Gradienti</a>
+  <ul>
+  <li><a href="#gradienti-lineari" id="toc-gradienti-lineari" class="nav-link" data-scroll-target="#gradienti-lineari">Gradienti lineari</a></li>
+  <li><a href="#gradienti-radiali" id="toc-gradienti-radiali" class="nav-link" data-scroll-target="#gradienti-radiali">Gradienti radiali</a></li>
+  </ul></li>
+  <li><a href="#font" id="toc-font" class="nav-link" data-scroll-target="#font">Font</a>
+  <ul>
+  <li><a href="#font-family" id="toc-font-family" class="nav-link" data-scroll-target="#font-family">Font-family</a></li>
+  <li><a href="#proprietà-font-family" id="toc-proprietà-font-family" class="nav-link" data-scroll-target="#proprietà-font-family">Proprietà font-family</a></li>
+  <li><a href="#font-alternativi" id="toc-font-alternativi" class="nav-link" data-scroll-target="#font-alternativi">Font alternativi</a></li>
+  <li><a href="#proprietà-del-font" id="toc-proprietà-del-font" class="nav-link" data-scroll-target="#proprietà-del-font">Proprietà del font</a></li>
+  <li><a href="#dimensione-del-font-e-della-linea" id="toc-dimensione-del-font-e-della-linea" class="nav-link" data-scroll-target="#dimensione-del-font-e-della-linea">Dimensione del font e della linea</a></li>
+  <li><a href="#text-transform" id="toc-text-transform" class="nav-link" data-scroll-target="#text-transform">Text-transform</a></li>
+  <li><a href="#font-variant" id="toc-font-variant" class="nav-link" data-scroll-target="#font-variant">Font-variant</a></li>
+  <li><a href="#letter-spacing-e-word-spacing" id="toc-letter-spacing-e-word-spacing" class="nav-link" data-scroll-target="#letter-spacing-e-word-spacing">Letter-spacing e word-spacing</a></li>
+  <li><a href="#text-decoration" id="toc-text-decoration" class="nav-link" data-scroll-target="#text-decoration">Text-decoration</a></li>
+  <li><a href="#text-shadow" id="toc-text-shadow" class="nav-link" data-scroll-target="#text-shadow">Text-shadow</a></li>
+  <li><a href="#word-wrap" id="toc-word-wrap" class="nav-link" data-scroll-target="#word-wrap">Word-wrap</a></li>
+  </ul></li>
+  <li><a href="#allineamento-del-testo" id="toc-allineamento-del-testo" class="nav-link" data-scroll-target="#allineamento-del-testo">Allineamento del testo</a></li>
+  <li><a href="#gestione-delle-liste" id="toc-gestione-delle-liste" class="nav-link" data-scroll-target="#gestione-delle-liste">Gestione delle liste</a></li>
+  <li><a href="#css-box-model" id="toc-css-box-model" class="nav-link" data-scroll-target="#css-box-model">CSS Box Model</a>
+  <ul>
+  <li><a href="#padding-tra-contenuto-e-bordo-box" id="toc-padding-tra-contenuto-e-bordo-box" class="nav-link" data-scroll-target="#padding-tra-contenuto-e-bordo-box">Padding (tra contenuto e bordo box)</a></li>
+  <li><a href="#bordi-tra-padding-e-margine" id="toc-bordi-tra-padding-e-margine" class="nav-link" data-scroll-target="#bordi-tra-padding-e-margine">Bordi (tra padding e margine)</a>
+  <ul class="collapse">
+  <li><a href="#bordo-con-immagini" id="toc-bordo-con-immagini" class="nav-link" data-scroll-target="#bordo-con-immagini">Bordo con immagini</a></li>
+  </ul></li>
+  <li><a href="#margini-tra-bordo-box-e-altri-elementi" id="toc-margini-tra-bordo-box-e-altri-elementi" class="nav-link" data-scroll-target="#margini-tra-bordo-box-e-altri-elementi">Margini (tra bordo box e altri elementi)</a></li>
+  <li><a href="#dimensione-dei-box" id="toc-dimensione-dei-box" class="nav-link" data-scroll-target="#dimensione-dei-box">Dimensione dei box</a></li>
+  <li><a href="#limiti-per-design-fluidi-min-width-max-width-min-height-max-height" id="toc-limiti-per-design-fluidi-min-width-max-width-min-height-max-height" class="nav-link" data-scroll-target="#limiti-per-design-fluidi-min-width-max-width-min-height-max-height">Limiti per design fluidi (min-width, max-width, min-height, max-height)</a></li>
+  <li><a href="#ombreggiatura-dei-box-box-shadow" id="toc-ombreggiatura-dei-box-box-shadow" class="nav-link" data-scroll-target="#ombreggiatura-dei-box-box-shadow">Ombreggiatura dei box (box-shadow)</a></li>
+  <li><a href="#visualizzazione" id="toc-visualizzazione" class="nav-link" data-scroll-target="#visualizzazione">Visualizzazione</a></li>
+  <li><a href="#stile-delle-tabelle" id="toc-stile-delle-tabelle" class="nav-link" data-scroll-target="#stile-delle-tabelle">Stile delle tabelle</a></li>
+  </ul></li>
+  <li><a href="#posizionamento" id="toc-posizionamento" class="nav-link" data-scroll-target="#posizionamento">Posizionamento</a>
+  <ul>
+  <li><a href="#floating" id="toc-floating" class="nav-link" data-scroll-target="#floating">Floating</a></li>
+  <li><a href="#floating-di-inline" id="toc-floating-di-inline" class="nav-link" data-scroll-target="#floating-di-inline">Floating di inline</a></li>
+  <li><a href="#floating-di-block" id="toc-floating-di-block" class="nav-link" data-scroll-target="#floating-di-block">Floating di block</a></li>
+  <li><a href="#annullare-il-floating" id="toc-annullare-il-floating" class="nav-link" data-scroll-target="#annullare-il-floating">Annullare il floating</a></li>
+  <li><a href="#floating-multipli" id="toc-floating-multipli" class="nav-link" data-scroll-target="#floating-multipli">Floating multipli</a></li>
+  <li><a href="#floating-per-layout-a-colonne" id="toc-floating-per-layout-a-colonne" class="nav-link" data-scroll-target="#floating-per-layout-a-colonne">Floating per layout a colonne</a></li>
+  <li><a href="#positioting" id="toc-positioting" class="nav-link" data-scroll-target="#positioting">Positioting</a></li>
+  <li><a href="#posizionamento-relativo" id="toc-posizionamento-relativo" class="nav-link" data-scroll-target="#posizionamento-relativo">Posizionamento relativo</a></li>
+  <li><a href="#posizionamento-assoluto" id="toc-posizionamento-assoluto" class="nav-link" data-scroll-target="#posizionamento-assoluto">Posizionamento assoluto</a></li>
+  <li><a href="#sovrapposizioni" id="toc-sovrapposizioni" class="nav-link" data-scroll-target="#sovrapposizioni">Sovrapposizioni</a></li>
+  <li><a href="#posizionamento-fisso-fixed" id="toc-posizionamento-fisso-fixed" class="nav-link" data-scroll-target="#posizionamento-fisso-fixed">Posizionamento fisso (fixed)</a></li>
+  <li><a href="#strategie-di-layout" id="toc-strategie-di-layout" class="nav-link" data-scroll-target="#strategie-di-layout">Strategie di layout</a></li>
+  <li><a href="#layout-fissi" id="toc-layout-fissi" class="nav-link" data-scroll-target="#layout-fissi">Layout fissi</a></li>
+  <li><a href="#layout-fluidi" id="toc-layout-fluidi" class="nav-link" data-scroll-target="#layout-fluidi">Layout fluidi</a></li>
+  <li><a href="#layout-elastici" id="toc-layout-elastici" class="nav-link" data-scroll-target="#layout-elastici">Layout elastici</a></li>
+  <li><a href="#layout-multicolonna" id="toc-layout-multicolonna" class="nav-link" data-scroll-target="#layout-multicolonna">Layout multicolonna</a></li>
+  </ul></li>
+  <li><a href="#css-reset" id="toc-css-reset" class="nav-link" data-scroll-target="#css-reset">CSS Reset</a></li>
+  <li><a href="#responsive-design" id="toc-responsive-design" class="nav-link" data-scroll-target="#responsive-design">Responsive Design</a>
+  <ul>
+  <li><a href="#dimensione-del-viewport" id="toc-dimensione-del-viewport" class="nav-link" data-scroll-target="#dimensione-del-viewport">Dimensione del viewport</a></li>
+  <li><a href="#layout-fluido" id="toc-layout-fluido" class="nav-link" data-scroll-target="#layout-fluido">layout fluido</a></li>
+  <li><a href="#media-queries" id="toc-media-queries" class="nav-link" data-scroll-target="#media-queries">Media Queries</a></li>
+  <li><a href="#mobile-first" id="toc-mobile-first" class="nav-link" data-scroll-target="#mobile-first">Mobile First</a></li>
+  <li><a href="#desktop-down" id="toc-desktop-down" class="nav-link" data-scroll-target="#desktop-down">Desktop down</a></li>
+  <li><a href="#flexbox" id="toc-flexbox" class="nav-link" data-scroll-target="#flexbox">FlexBox</a></li>
+  <li><a href="#flex-e-media-query" id="toc-flex-e-media-query" class="nav-link" data-scroll-target="#flex-e-media-query">Flex e media query</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -299,33 +359,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>La seconda opzione è preferibile per pulizia del codice e riutilizzo delle regole CSS in più pagine.</p>
 </section>
-<section id="css-box-model" class="level3">
-<h3 class="anchored" data-anchor-id="css-box-model">CSS Box Model</h3>
-<p>Un elemento (inline o block che sia) è un’entità costituita da:</p>
-<ul>
-<li><strong>contenuto</strong>: area in cui viene visualizzata il contenuto
-<ul>
-<li>elemento block: larghezza e altezza sono speficabili con CSS</li>
-</ul></li>
-<li><strong>padding</strong>: spazio di contorno che racchiude il contenuto
-<ul>
-<li>spessore, colore speficabili con CSS</li>
-</ul></li>
-<li><strong>border</strong>: bordo che contiene contenuto e padding
-<ul>
-<li>spessore, colore, tipo di bordo specificabili con CSS</li>
-</ul></li>
-<li><strong>margin</strong>: spazio di contorno esterno al bordo
-<ul>
-<li>spessore, colore di sfondo specificabili con CSS</li>
-</ul></li>
-</ul>
-<p><img src="../assets/images/boxmodel.png" class="img-fluid"></p>
-</section>
-<section id="esempi" class="level3">
-<h3 class="anchored" data-anchor-id="esempi">Esempi</h3>
-<p>(…)</p>
-</section>
 <section id="selettori" class="level3">
 <h3 class="anchored" data-anchor-id="selettori">Selettori</h3>
 <ul>
@@ -347,57 +380,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>h1 {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Esempio selettore
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Codice CSS:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Comic Sans MS</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Codice HTML:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>Selettore di tipo<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è un paragrafo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è un altro paragrafo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Risultato:</p>
+<iframe srcdoc="
+    <style>
+        p {
+            font-family: Comic Sans MS;
+        }
+    </style>
+    <h2>Selettore di tipo</h2>
+    <p>Questo è un paragrafo</p>
+    <p>Questo è un altro paragrafo</p>
+    " width="100%" height="150px" style="border:1px solid black;">
+</iframe>
+</div>
+</div>
+</div>
 </section>
 <section id="class-selector" class="level4">
 <h4 class="anchored" data-anchor-id="class-selector">Class selector</h4>
 <p>Selettore che seleziona gli elementi in base al loro attributo <strong>class</strong>.</p>
 <p>Il valore dell’attributo class deve essere preceduto da un punto <code>.</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.title</span> {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.title</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Posso filtrare ulteriormente gli elementi selezionati combinando il selettore di tipo con il selettore di classe:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>p<span class="fu">.note</span> {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p<span class="fu">.note</span> {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Esempio selettore di classe
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Codice CSS:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p<span class="fu">.description</span> {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Comic Sans MS</span><span class="op">;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Codice HTML:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>Sgabello<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h4</span><span class="ot"> class</span><span class="op">=</span><span class="st">"description"</span><span class="dt">&gt;</span>Descrizione<span class="dt">&lt;/</span><span class="kw">h4</span><span class="dt">&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"description"</span><span class="dt">&gt;</span>sedia circolare senza schienale<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h4</span><span class="ot"> class</span><span class="op">=</span><span class="st">"function"</span><span class="dt">&gt;</span>Funzione<span class="dt">&lt;/</span><span class="kw">h4</span><span class="dt">&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"function"</span><span class="dt">&gt;</span>funzione: seduta<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Risultato:</p>
+<iframe srcdoc="
+    <style>
+        p.description {
+            font-family: Comic Sans MS;
+        }
+    </style>
+    <h3>Sgabello</h3>
+    <h4 class='description'>Descrizione</h4>
+    <p class='description'>sedia circolare senza schienale</p>
+    <h4 class='function'>Funzione</h4>
+    <p class='function'>funzione: seduta</p>
+    " width="100%" height="230px" style="border:1px solid black;">
+</iframe>
+</div>
+</div>
+</div>
 </section>
 <section id="id-selector" class="level4">
 <h4 class="anchored" data-anchor-id="id-selector">ID selector</h4>
 <p>Selettore che seleziona gli elementi in base al loro attributo <strong>id</strong>.</p>
 <p>Il valore dell’attributo id deve essere preceduto da un cancelletto <code>#</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#title</span> {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#title</span> {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="child-selector" class="level4">
 <h4 class="anchored" data-anchor-id="child-selector">Child selector</h4>
 <p>Selettore che seleziona gli elementi direttamente figli di un determinato elemento.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>li<span class="op">&gt;</span>a {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>li<span class="op">&gt;</span>a {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In questo caso seleziono tutti gli elementi <code>&lt;a&gt;</code> che sono direttamente figli di un elemento <code>&lt;li&gt;</code></p>
 </section>
 <section id="discendente-selector" class="level4">
 <h4 class="anchored" data-anchor-id="discendente-selector">Discendente selector</h4>
 <p>Selettore che seleziona gli elementi discendenti di un determinato elemento, anche se non sono figli diretti.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p a {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>p a {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In questo caso seleziono tutti gli elementi <code>&lt;a&gt;</code> che sono discendenti di un elemento <code>&lt;p&gt;</code>, anche se ci sono elementi annidati tra di loro.</p>
 </section>
 <section id="adjacent-sibling-selector" class="level4">
 <h4 class="anchored" data-anchor-id="adjacent-sibling-selector">Adjacent sibling selector</h4>
 <p>Selettore che seleziona gli elementi che sono <strong>fratelli adiacenti</strong> di un determinato elemento.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>h1 <span class="op">+</span> p {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>h1 <span class="op">+</span> p {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Prende in considerazione solo il primo elemento <code>&lt;p&gt;</code> che segue immediatamente un elemento <code>&lt;h1&gt;</code>.</p>
 </section>
 <section id="general-sibling-selector" class="level4">
 <h4 class="anchored" data-anchor-id="general-sibling-selector">General sibling selector</h4>
 <p>Selettore che seleziona gli elementi che sono <strong>fratelli</strong> di un determinato elemento.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>h1 <span class="op">~</span> p {</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>h1 <span class="op">~</span> p {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Prende in considerazione tutti gli elementi <code>&lt;p&gt;</code> che seguono un elemento <code>&lt;h1&gt;</code>, anche se non sono immediatamente adiacenti.</p>
 </section>
 </section>
@@ -452,49 +559,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="selettore-existence-attr" class="level4">
 <h4 class="anchored" data-anchor-id="selettore-existence-attr">Selettore Existence <code>[attr]</code></h4>
 <p>Prende in considerazione tutti gli elementi che hanno un determinato attributo, indipendentemente dal suo valore.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="ex">]</span> {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="ex">]</span> {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Applica le regole CSS a tutti gli elementi <code>&lt;p&gt;</code> che hanno l’attributo <strong>class</strong>.</p>
 </section>
 <section id="selettore-equality-attrvalue" class="level4">
 <h4 class="anchored" data-anchor-id="selettore-equality-attrvalue">Selettore Equality <code>[attr=value]</code></h4>
 <p>Prende in considerazione tutti gli elementi che hanno un determinato attributo con un determinato valore.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">=</span><span class="st">note</span><span class="ex">]</span> {</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">=</span><span class="st">note</span><span class="ex">]</span> {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Applica le regole CSS a tutti gli elementi <code>&lt;p&gt;</code> che hanno l’attributo <strong>class</strong> con valore <strong>note</strong>.</p>
 </section>
 <section id="selettore-space-attrvalue" class="level4">
 <h4 class="anchored" data-anchor-id="selettore-space-attrvalue">Selettore Space <code>[attr~=value]</code></h4>
 <p>Prende in considerazioni tutti gli elementi che hanno un determinato attributo con un determinato valore tra i più valori separati da spazi.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">~=</span><span class="st">note</span><span class="ex">]</span> {</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">~=</span><span class="st">note</span><span class="ex">]</span> {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Applica le regole CSS a tutti gli elementi <code>&lt;p&gt;</code> che hanno l’attributo <strong>class</strong> con valore <strong>note</strong> tra i più valori separati da spazi.</p>
 </section>
 <section id="selettore-prefix-attrvalue" class="level4">
 <h4 class="anchored" data-anchor-id="selettore-prefix-attrvalue">Selettore Prefix <code>[attr^=value]</code></h4>
 <p>Prende in considerazioni tutti gli elementi che hanno un determinato attributo il cui valore inizia con una determinata stringa.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">^=</span><span class="st">d</span><span class="ex">]</span> {</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">^=</span><span class="st">d</span><span class="ex">]</span> {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Applica le regole CSS a tutti gli elementi <code>&lt;p&gt;</code> che hanno l’attributo <strong>class</strong> il cui valore inizia con la stringa <strong>d</strong>.</p>
 </section>
 <section id="selettore-substring-attrvalue" class="level4">
 <h4 class="anchored" data-anchor-id="selettore-substring-attrvalue">Selettore Substring <code>[attr*=value]</code></h4>
 <p>Prende in considerazioni tutti gli elementi che hanno un determinato attributo il cui valore contiene una determinata stringa.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">*=</span><span class="st">o</span><span class="ex">]</span> {</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">*=</span><span class="st">o</span><span class="ex">]</span> {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Applica le regole CSS a tutti gli elementi <code>&lt;p&gt;</code> che hanno l’attributo <strong>class</strong> il cui valore contiene la stringa <strong>o</strong>.</p>
 </section>
 <section id="selettore-suffix-attrvalue" class="level4">
 <h4 class="anchored" data-anchor-id="selettore-suffix-attrvalue">Selettore Suffix <code>[attr$=value]</code></h4>
 <p>Prende in considerazioni tutti gli elementi che hanno un determinato attributo il cui valore termina con una determinata stringa.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">$=</span><span class="st">e</span><span class="ex">]</span> {</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p<span class="ex">[</span><span class="ss">class</span><span class="op">$=</span><span class="st">e</span><span class="ex">]</span> {</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Arial</span><span class="op">;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Applica le regole CSS a tutti gli elementi <code>&lt;p&gt;</code> che hanno l’attributo <strong>class</strong> il cui valore termina con la stringa <strong>e</strong>.</p>
 </section>
 </section>
@@ -536,22 +643,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="callout-body-container callout-body">
 <p>i figli di un elemento vengono numerati a partire da 1, non da 0.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Primo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span>  <span class="co">&lt;!-- figlio 1 --&gt;</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Secondo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span> <span class="co">&lt;!-- figlio 2 --&gt;</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Terzo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span> <span class="co">&lt;!-- figlio 3 --&gt;</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Primo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span>  <span class="co">&lt;!-- figlio 1 --&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Secondo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span> <span class="co">&lt;!-- figlio 2 --&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;</span>Terzo elemento<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span> <span class="co">&lt;!-- figlio 3 --&gt;</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p>Esempio</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tr td{</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* selezionare righe alternanti */</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>tr<span class="in">:nth-child(</span><span class="dv">odd</span><span class="in">)</span> td{</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>tr td{</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">/* selezionare righe alternanti */</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>tr<span class="in">:nth-child(</span><span class="dv">odd</span><span class="in">)</span> td{</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>E:target</strong> seleziona gli elementi che sono il target dell’URL (es. <code>#id</code>)</p>
 <p><strong>E:not(s)</strong> seleziona gli elementi che non corrispondono al selettore s</p>
 </section>
@@ -665,14 +772,493 @@ Posso specificare la posizione anche in pixel o percentuale, ad esempio <code>ba
 <section id="gradienti" class="level2">
 <h2 class="anchored" data-anchor-id="gradienti">Gradienti</h2>
 <p>I gradienti in CSS permettono di creare transizioni di colore tra due o più colori. Si possono creare gradienti lineari e radiali.</p>
+<section id="gradienti-lineari" class="level3">
+<h3 class="anchored" data-anchor-id="gradienti-lineari">Gradienti lineari</h3>
+<p>I gradienti lineari vengono creati utilizzando la funzione <code>linear-gradient()</code>.</p>
+<p>Argomenti:</p>
+<ul>
+<li>direzione: tramite valore angolare (0deg = dal basso verso l’altro; 90deg = sx to dx) o parole chiave (to top, to bottom, to left, to right)</li>
+<li>numero di colori: minimo 2, massimo 16</li>
+<li>posizione dei colori: opzionale, specifica la posizione di ciascun colore lungo il gradiente (0% = inizio, 100% = fine)</li>
+</ul>
+</section>
+<section id="gradienti-radiali" class="level3">
+<h3 class="anchored" data-anchor-id="gradienti-radiali">Gradienti radiali</h3>
+<p>I gradienti radiali vengono creati utilizzando la funzione <code>radial-gradient()</code>.</p>
+<p>Si espandono da un punto centrale verso l’esterno, creando un effetto di cerchi concentrici.</p>
+<p>I Componenti della Funzione<br>
+- Forma (Shape):<br>
+- ellipse (default): Il gradiente si adatta alle proporzioni del contenitore.<br>
+- circle: Il gradiente mantiene una forma circolare perfetta, indipendentemente dal contenitore.<br>
+- Dimensione (Size): Determina fin dove si estende il gradiente prima di raggiungere la fine (100%).<br>
+- farthest-corner (default): Si estende fino all’angolo più lontano dal centro.<br>
+- farthest-side: Si estende fino al lato più lontano.<br>
+- closest-corner: Si ferma all’angolo più vicino al centro.<br>
+- closest-side: Si ferma al lato più vicino.<br>
+- Posizione del Centro (Position): Preceduta dalla parola chiave at, definisce le coordinate del punto di origine (es. at center, at 20% 50%, at top left). Se omessa, il valore di default è center.<br>
+- Colori e Posizionamento:<br>
+- È necessario inserire da un minimo di 2 a un massimo di 16 colori.<br>
+- La posizione di ogni colore (es. 0% per l’inizio, 100% per la fine, o valori intermedi come 50%) è opzionale. Se non specificata, i colori vengono distribuiti in modo equo.</p>
+</section>
 </section>
 <section id="font" class="level2">
 <h2 class="anchored" data-anchor-id="font">Font</h2>
+<section id="font-family" class="level3">
+<h3 class="anchored" data-anchor-id="font-family">Font-family</h3>
+<p>Le principali famiglie di font sono:</p>
+<ul>
+<li>serif: caratteri con grazie, meglio per la stampa (es. Times New Roman)</li>
+<li>Sans-serif: caratteri senza grazie, meglio per lo schermo (es. Arial)</li>
+<li>Monospace: caratteri a spaziatura fissa, meglio per il codice (es. Courier New)</li>
+<li>Font particolari: corsivo o fantasiosi/decorativi</li>
+</ul>
 </section>
-<section id="box-model" class="level2">
-<h2 class="anchored" data-anchor-id="box-model">Box model</h2>
+<section id="proprietà-font-family" class="level3">
+<h3 class="anchored" data-anchor-id="proprietà-font-family">Proprietà font-family</h3>
+<p><strong>font-family</strong> permette di specificare il font da utilizzare per un elemento<br>
+<strong>font-family</strong> può contenere più font separati da virgola, in modo che se il primo non è disponibile, si utilizza il secondo e così via.<br>
+Buona norma chiudere lo stack con un fallback della famiglia (famiglia generica)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>body {</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="font-alternativi" class="level3">
+<h3 class="anchored" data-anchor-id="font-alternativi">Font alternativi</h3>
+<p>Con <code>@font-face</code> si possono far scaricare all’utente altri font</p>
+<p><strong>pro</strong>: più font<br>
+<strong>contro</strong>: tempo di scaricamento, problemi di licenze, compatibilità tra browser</p>
+</section>
+<section id="proprietà-del-font" class="level3">
+<h3 class="anchored" data-anchor-id="proprietà-del-font">Proprietà del font</h3>
+<p>In ogni font possiamo cambiare:</p>
+<ul>
+<li><strong>font-weight</strong>: spessore del font</li>
+<li><strong>font-style</strong>: stile del font (normale, corsivo, obliquo)</li>
+<li><strong>font-stretch</strong>: larghezza del font (condensato, normale, espanso)</li>
+</ul>
+</section>
+<section id="dimensione-del-font-e-della-linea" class="level3">
+<h3 class="anchored" data-anchor-id="dimensione-del-font-e-della-linea">Dimensione del font e della linea</h3>
+<p>La dimensione del font si imposta con la proprietà <code>font-size</code> e può essere specificata in:</p>
+<ul>
+<li>unità relative: em, rem, %, vw, vh</li>
+<li>unità assolute: px, pt, cm, in</li>
+</ul>
+<p>L’altezza della linea si imposta con la proprietà <code>line-height</code></p>
+</section>
+<section id="text-transform" class="level3">
+<h3 class="anchored" data-anchor-id="text-transform">Text-transform</h3>
+<p>Permette di trasformare il testo in</p>
+<ul>
+<li>maiuscolo: <code>uppercase</code></li>
+<li>minuscolo: <code>lowercase</code></li>
+<li>capitalizzare: <code>capitalize</code></li>
+</ul>
+</section>
+<section id="font-variant" class="level3">
+<h3 class="anchored" data-anchor-id="font-variant">Font-variant</h3>
+<p>Permette di utilizzare varianti specifiche di un font, come i caratteri maiuscoli, i caratteri minuscoli o i caratteri con grazie.</p>
+</section>
+<section id="letter-spacing-e-word-spacing" class="level3">
+<h3 class="anchored" data-anchor-id="letter-spacing-e-word-spacing">Letter-spacing e word-spacing</h3>
+<p>Permettono di modificare lo spazio tra le lettere e tra le parole, in em aggiuntivi</p>
+</section>
+<section id="text-decoration" class="level3">
+<h3 class="anchored" data-anchor-id="text-decoration">Text-decoration</h3>
+<p>Permette di</p>
+<ul>
+<li>sottolineare il testo: <code>underline</code></li>
+<li>barrare il testo: <code>line-through</code></li>
+<li>aggiungere una linea sopra il testo: <code>overline</code></li>
+<li>far lampeggiare il testo: <code>blink</code> (non più supportato dai browser moderni)</li>
+<li>rimuovere la decorazione del testo: <code>none</code></li>
+</ul>
+</section>
+<section id="text-shadow" class="level3">
+<h3 class="anchored" data-anchor-id="text-shadow">Text-shadow</h3>
+<p>Applica l’ombra alla distanza , specificando blur e colore dell’ombra</p>
+</section>
+<section id="word-wrap" class="level3">
+<h3 class="anchored" data-anchor-id="word-wrap">Word-wrap</h3>
+<p>Permette di specificare come gestire le parole che superano i limiti del contenitore.</p>
+<ul>
+<li><strong>normal</strong>: le parole non vengono spezzate, ma vanno a capo solo se c’è uno spazio</li>
+<li><strong>break-word</strong>: le parole vengono spezzate se superano i limiti del contenitore, anche se non c’è uno spazio</li>
+</ul>
+</section>
+</section>
+<section id="allineamento-del-testo" class="level2">
+<h2 class="anchored" data-anchor-id="allineamento-del-testo">Allineamento del testo</h2>
+<p><code>text-align</code> imposta l’allineamento orizzontale</p>
+<ul>
+<li><code>left</code>: allinea il testo a sinistra (default)</li>
+<li><code>right</code>: allinea il testo a destra</li>
+<li><code>center</code>: centra il testo</li>
+<li><code>justify</code>: giustifica il testo, allineandolo sia a sinistra che a destra</li>
+</ul>
+<p><code>vertical-align</code>imposta l’allineamento verticale</p>
+<ul>
+<li><code>baseline</code>: allinea il testo alla linea di base (default)</li>
+<li><code>top</code>: allinea il testo in alto</li>
+<li><code>middle</code>: allinea il testo al centro</li>
+<li><code>bottom</code>: allinea il testo in basso</li>
+</ul>
+<p><code>text-indent</code> imposta l’indentazione della prima riga del paragrafo</p>
+</section>
+<section id="gestione-delle-liste" class="level2">
+<h2 class="anchored" data-anchor-id="gestione-delle-liste">Gestione delle liste</h2>
+</section>
+<section id="css-box-model" class="level2">
+<h2 class="anchored" data-anchor-id="css-box-model">CSS Box Model</h2>
+<p>Un elemento (inline o block che sia) è un’entità costituita da:</p>
+<ul>
+<li><strong>contenuto</strong>: area in cui viene visualizzata il contenuto
+<ul>
+<li>elemento block: larghezza e altezza sono speficabili con CSS</li>
+</ul></li>
+<li><strong>padding</strong>: spazio di contorno che racchiude il contenuto
+<ul>
+<li>spessore, colore speficabili con CSS</li>
+</ul></li>
+<li><strong>border</strong>: bordo che contiene contenuto e padding
+<ul>
+<li>spessore, colore, tipo di bordo specificabili con CSS</li>
+</ul></li>
+<li><strong>margin</strong>: spazio di contorno esterno al bordo
+<ul>
+<li>spessore, colore di sfondo specificabili con CSS</li>
+</ul></li>
+</ul>
+<p><img src="../assets/images/boxmodel.png" class="img-fluid"></p>
+<section id="padding-tra-contenuto-e-bordo-box" class="level3">
+<h3 class="anchored" data-anchor-id="padding-tra-contenuto-e-bordo-box">Padding (tra contenuto e bordo box)</h3>
+<p>Per aggiungere spazio di padding tra il contenuto e il bordo del box, si utilizza:</p>
+<ul>
+<li><strong>padding</strong>: imposta lo stesso padding per tutti i lati</li>
+<li><strong>padding-top</strong>: imposta il padding solo in alto</li>
+<li><strong>padding-right</strong>: imposta il padding solo a destra</li>
+<li><strong>padding-bottom</strong>: imposta il padding solo in basso</li>
+<li><strong>padding-left</strong>: imposta il padding solo a sinistra</li>
+</ul>
+<p>I valori possono essere specificati in unità relative (em, rem, %, vw, vh) o assolute (px, pt, cm, in).</p>
+</section>
+<section id="bordi-tra-padding-e-margine" class="level3">
+<h3 class="anchored" data-anchor-id="bordi-tra-padding-e-margine">Bordi (tra padding e margine)</h3>
+<p>Il bordo è l’area opzionale che circonda il padding e il margine</p>
+<p>Viene visualizzato solo se definito.</p>
+<ul>
+<li><p><strong>border-style</strong>: imposta lo stile del bordo (solid, dashed, dotted, double, groove, ridge, inset, outset, none)</p></li>
+<li><p><strong>border-top-style</strong>: imposta lo stile del bordo solo in alto</p></li>
+<li><p><strong>border-right-style</strong>: imposta lo stile del bordo solo a destra</p></li>
+<li><p><strong>border-bottom-style</strong>: imposta lo stile del bordo solo in basso</p></li>
+<li><p><strong>border-left-style</strong>: imposta lo stile del bordo solo a sinistra</p></li>
+<li><p><strong>border-width</strong>: imposta lo spessore del bordo</p></li>
+<li><p><strong>border-color</strong>: imposta il colore del bordo</p></li>
+<li><p><strong>border-radius</strong>: imposta l’arrotondamento degli angoli del bordo</p></li>
+</ul>
+<section id="bordo-con-immagini" class="level4">
+<h4 class="anchored" data-anchor-id="bordo-con-immagini">Bordo con immagini</h4>
+<p><strong>border-image</strong>: permette di utilizzare un’immagine come bordo,</p>
+<ul>
+<li><strong>border-image-source</strong>: specifica l’immagine da utilizzare come bordo</li>
+<li><strong>border-image-slice</strong>: specifica come suddividere l’immagine in nove sezioni (quattro angoli, quattro lati e il centro)</li>
+<li><strong>border-image-width</strong>: specifica lo spessore del bordo</li>
+<li><strong>border-image-outset</strong>: specifica quanto il bordo deve sporgere rispetto al box</li>
+<li><strong>border-image-repeat</strong>: specifica come ripetere l’immagine del bordo
+<ul>
+<li><code>stretch</code>: l’immagine viene allungata per coprire il bordo (default)</li>
+<li><code>repeat</code>: l’immagine viene ripetuta per coprire il bordo</li>
+<li><code>round</code>: l’immagine viene ripetuta per coprire il bordo, ma viene ridimensionata per adattarsi al bordo</li>
+<li><code>space</code>: l’immagine viene ripetuta per coprire il bordo, ma viene ridimensionata per adattarsi al bordo e viene aggiunto spazio tra le immagini</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="margini-tra-bordo-box-e-altri-elementi" class="level3">
+<h3 class="anchored" data-anchor-id="margini-tra-bordo-box-e-altri-elementi">Margini (tra bordo box e altri elementi)</h3>
+<p>Evitano che gli elementi si sovrappongano tra loro</p>
+<ul>
+<li><strong>margin</strong>: imposta lo stesso margine per tutti i lati</li>
+<li><strong>margin-top</strong>: imposta il margine solo in alto</li>
+<li><strong>margin-right</strong>: imposta il margine solo a destra</li>
+<li><strong>margin-bottom</strong>: imposta il margine solo in basso</li>
+<li><strong>margin-left</strong>: imposta il margine solo a sinistra</li>
+</ul>
+</section>
+<section id="dimensione-dei-box" class="level3">
+<h3 class="anchored" data-anchor-id="dimensione-dei-box">Dimensione dei box</h3>
+<p>Di default le dimensioni di un box sono</p>
+<ul>
+<li>elementi inline: larghezza e altezza del contenuto</li>
+<li>elementi block: larghi quanto la pagina e alti quanto il contenuto</li>
+</ul>
+<p>Per modificare le dimensioni usiamo:</p>
+<ul>
+<li><p><strong>width</strong>: imposta la larghezza del box</p></li>
+<li><p><strong>height</strong>: imposta l’altezza del box</p></li>
+<li><p><strong>box-sizing</strong>: imposta il modello di box da utilizzare per calcolare le dimensioni del box</p>
+<ul>
+<li><code>content-box</code>: le dimensioni del box includono solo il contenuto (default)</li>
+<li><code>border-box</code>: le dimensioni del box includono anche il padding e il bordo</li>
+</ul></li>
+</ul>
+</section>
+<section id="limiti-per-design-fluidi-min-width-max-width-min-height-max-height" class="level3">
+<h3 class="anchored" data-anchor-id="limiti-per-design-fluidi-min-width-max-width-min-height-max-height">Limiti per design fluidi (min-width, max-width, min-height, max-height)</h3>
+<p>Nel caso di design fluidi, ovvero che si espandono in base alla finestra, è possibile impostare dei limiti con le proprietà:</p>
+<ul>
+<li><strong>min-width</strong>: imposta la larghezza minima del box</li>
+<li><strong>max-width</strong>: imposta la larghezza massima del box</li>
+<li><strong>min-height</strong>: imposta l’altezza minima del box</li>
+<li><strong>max-height</strong>: imposta l’altezza massima del box</li>
+</ul>
+<p>Ottimo per le tabelle</p>
+<ul>
+<li><strong>overflow</strong>: imposta come gestire il contenuto che supera le dimensioni del box
+<ul>
+<li><code>visible</code>: il contenuto che supera le dimensioni del box viene visualizzato (default)</li>
+<li><code>hidden</code>: il contenuto che supera le dimensioni del box viene nascosto</li>
+<li><code>scroll</code>: il contenuto che supera le dimensioni del box viene nascosto, ma viene aggiunta una barra di scorrimento</li>
+<li><code>auto</code>: il contenuto che supera le dimensioni del box viene nascosto, ma viene aggiunta una barra di scorrimento solo se necessario</li>
+</ul></li>
+</ul>
+</section>
+<section id="ombreggiatura-dei-box-box-shadow" class="level3">
+<h3 class="anchored" data-anchor-id="ombreggiatura-dei-box-box-shadow">Ombreggiatura dei box (box-shadow)</h3>
+<p>Permette di aggiungere un’ombra al box, specificando la distanza orizzontale e verticale, il raggio di sfocatura e il colore dell’ombra.</p>
+</section>
+<section id="visualizzazione" class="level3">
+<h3 class="anchored" data-anchor-id="visualizzazione">Visualizzazione</h3>
+<p>L’attributo <code>display</code> permette di specificare come un elemento deve essere visualizzato.</p>
+<p>NOTA: <code>display: none</code> rimuove l’elemento dal flusso del documento, mentre <code>visibility: hidden</code> lo nasconde ma mantiene lo spazio occupato.</p>
+</section>
+<section id="stile-delle-tabelle" class="level3">
+<h3 class="anchored" data-anchor-id="stile-delle-tabelle">Stile delle tabelle</h3>
+<p>Oltre alle proprietà precedenti per il normale contenuto, le tabelle hanno delle proprietà specifiche</p>
+<ul>
+<li><strong>border-collapse</strong>: specifica se i bordi delle celle devono essere uniti o separati
+<ul>
+<li><code>collapse</code>: i bordi delle celle vengono uniti (default)</li>
+<li><code>separate</code>: i bordi delle celle vengono separati, posso distanziarli con la proprietà <code>border-spacing</code> (2 valori: distanza orizzontale e verticale, oppure 1 per entrambe)</li>
+</ul></li>
+</ul>
+<p>Nel caso di bordi separati, posso usare <code>empty-cells</code> per specificare se le celle vuote devono essere visualizzate o meno (<strong>show</strong> o <strong>hide</strong>)</p>
+</section>
+</section>
+<section id="posizionamento" class="level2">
+<h2 class="anchored" data-anchor-id="posizionamento">Posizionamento</h2>
+<p>FLusso normale:</p>
+<ul>
+<li>elementi block: uno sotto l’altro</li>
+<li>elementi inline: all’interno del flusso di testo</li>
+</ul>
+<p>Possiamo controllare il posizionamento tramite i metodi:</p>
+<ul>
+<li><strong>floating</strong></li>
+<li><strong>positioning</strong></li>
+</ul>
+<section id="floating" class="level3">
+<h3 class="anchored" data-anchor-id="floating">Floating</h3>
+<p>Utilizza la proprietà <strong>float</strong> che:</p>
+<ul>
+<li><p>si applica all’intero box dell’elemento</p></li>
+<li><p>l’elemento viene inserito dentro il padding del padre (può uscire)</p></li>
+<li><p>non ereditata dai figli</p></li>
+<li><p>il contenuto successivo fluisce intorno all’elemento flottante</p></li>
+<li><p><code>float: left</code>: l’elemento viene spostato a sinistra del padre e gli elementi successivi fluiscono intorno ad esso</p></li>
+<li><p><code>float: right</code>: l’elemento viene spostato a destra del padre e gli elementi successivi fluiscono intorno ad esso</p></li>
+</ul>
+</section>
+<section id="floating-di-inline" class="level3">
+<h3 class="anchored" data-anchor-id="floating-di-inline">Floating di inline</h3>
+<p>preferibile specificare <strong>width</strong> in quanto potrebbe variare da browser a browser</p>
+<p>gli elementi inline flottanti vengono trattati come elementi block, quindi anche con margini superiori e inferiori</p>
+<p>i magini superiori e inferiori degli elementi flottanti inline non vengono uniti</p>
+</section>
+<section id="floating-di-block" class="level3">
+<h3 class="anchored" data-anchor-id="floating-di-block">Floating di block</h3>
+<ul>
+<li>occuperà tutto la larghezza disponibile, salvo impostare <strong>width</strong></li>
+<li>elemento blocco flottante starà al di sotto di elementi blocco che lo precedono</li>
+<li>per impostarlo in alto a sinistra, o primo elemento del codice o posizionamento assoluto</li>
+<li>per allineare margini superiori del flottante e del seguente, il margine superiore del flottante deve essere 0</li>
+</ul>
+</section>
+<section id="annullare-il-floating" class="level3">
+<h3 class="anchored" data-anchor-id="annullare-il-floating">Annullare il floating</h3>
+<p>dopo un elemento flottante, per ripristinare il flusso normale, si può usare la proprietà <strong>clear</strong></p>
+<ul>
+<li>clear si applica agli elementi di tipo blocco</li>
+<li>serve a posizionare un elemento al di sotto di un flottante</li>
+</ul>
+<p><strong>clear: left</strong>: l’elemento viene posizionato al di sotto di tutti gli elementi flottanti a sinistra</p>
+<p><strong>clear: right</strong>: l’elemento viene posizionato al di sotto di tutti gli elementi flottanti a destra</p>
+<p><strong>clear: both</strong>: l’elemento viene posizionato al di sotto di tutti gli elementi flottanti a sinistra e a destra</p>
+</section>
+<section id="floating-multipli" class="level3">
+<h3 class="anchored" data-anchor-id="floating-multipli">Floating multipli</h3>
+<p>è possibile aggiungere più elementi flottanti</p>
+<p>bisogna fare attenzione a eventuali sovrapposizioni</p>
+<p>se tutti gli elementi di un contenitore sono flottanti, il contenitore non avrà altezza e quindi non sarà visibile (soluzione: rendere il contenitore flottante e impostare dimensioni al 100% oppure usare <strong>overflow: hidden</strong> oppure <strong>overflow: auto</strong>)</p>
+</section>
+<section id="floating-per-layout-a-colonne" class="level3">
+<h3 class="anchored" data-anchor-id="floating-per-layout-a-colonne">Floating per layout a colonne</h3>
+<p>tramite il floating è possibile creare un layout a colonne</p>
+<p>Esempi:</p>
+<ul>
+<li>flottante a sinistra un primo &lt;div&gt;, con margine sinistro sufficiente a un secondo &lt;div&gt;</li>
+<li>rendere flottanti a destra o a sinistra due &lt;div&gt;</li>
+</ul>
+<p>Bisogna stare attenti alle dimensioni in larghezza, altrimenti se la dimensione totale è superiore allo spazio disponibile, gli elementi flottanti in eccesso verranno riposizionati più in basso</p>
+</section>
+<section id="positioting" class="level3">
+<h3 class="anchored" data-anchor-id="positioting">Positioting</h3>
+<p>Consente di posizionare precisamente gli elementi sulla pagina</p>
+<p><strong>position</strong>: specifica il tipo di posizionamento dell’elemento</p>
+<ul>
+<li><code>static</code>: l’elemento viene posizionato secondo il flusso normale del documento (default)</li>
+<li><code>relative</code>: l’elemento viene posizionato in base alla sua posizione originale, ma può essere spostato tramite le proprietà <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> e <strong>left</strong></li>
+<li><code>absolute</code>: l’elemento viene posizionato in base al suo contenitore più vicino con <strong>position</strong> diversa da <strong>static</strong>, ma può essere spostato tramite le proprietà <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> e <strong>left</strong></li>
+<li><code>fixed</code>: l’elemento viene posizionato in base alla finestra del browser</li>
+</ul>
+</section>
+<section id="posizionamento-relativo" class="level3">
+<h3 class="anchored" data-anchor-id="posizionamento-relativo">Posizionamento relativo</h3>
+<p>posizione dell’elemento viene calcolata in base alla sua posizione originale nel flusso del documento</p>
+</section>
+<section id="posizionamento-assoluto" class="level3">
+<h3 class="anchored" data-anchor-id="posizionamento-assoluto">Posizionamento assoluto</h3>
+<p>lo spazio nel flusso non viene mantenuto e non influisce sul posizionamento degli altri elementi</p>
+<p>il più vicino contenitore con <strong>position</strong> diversa da <strong>static</strong> diventa il riferimento per il posizionamento dell’elemento (o &lt;html&gt; in extremis)</p>
+</section>
+<section id="sovrapposizioni" class="level3">
+<h3 class="anchored" data-anchor-id="sovrapposizioni">Sovrapposizioni</h3>
+<p>Gli elementi posizionati possono sovrapporsi</p>
+<ul>
+<li><p>default: l’elemento posizionato più in basso nel codice HTML viene visualizzato sopra gli altri</p></li>
+<li><p><strong>z-index</strong>: specifica l’ordine di sovrapposizione degli elementi posizionati, più alto è il valore, più in alto sarà l’elemento</p></li>
+</ul>
+</section>
+<section id="posizionamento-fisso-fixed" class="level3">
+<h3 class="anchored" data-anchor-id="posizionamento-fisso-fixed">Posizionamento fisso (fixed)</h3>
+<p>Il posizionamento fisso simile al posizionamento assoluto, ma rispetto alla finestra del browser</p>
+<p>l’elemento rimane fisso anche quando l’utente scorre la pagina</p>
+<p>Ottimo per menù sempre visibili</p>
+</section>
+<section id="strategie-di-layout" class="level3">
+<h3 class="anchored" data-anchor-id="strategie-di-layout">Strategie di layout</h3>
+<p><strong>layout fisso</strong>: mantiene le proprie dimensioni indipendentemente dalla dimensione della finestra del browser</p>
+<p><strong>layout fluido</strong> o <strong>liquido</strong>: le dimensioni del layout cambiano in modo proporzionale alla dimensione della finestra del browser</p>
+<p><strong>layout elastico</strong>: le dimensioni del layout cambiano in modo proporzionale alla dimensione del testo</p>
+<p><strong>layout ibrido</strong>: combina aree fisse e aree fluide</p>
+</section>
+<section id="layout-fissi" class="level3">
+<h3 class="anchored" data-anchor-id="layout-fissi">Layout fissi</h3>
+</section>
+<section id="layout-fluidi" class="level3">
+<h3 class="anchored" data-anchor-id="layout-fluidi">Layout fluidi</h3>
+</section>
+<section id="layout-elastici" class="level3">
+<h3 class="anchored" data-anchor-id="layout-elastici">Layout elastici</h3>
+</section>
+<section id="layout-multicolonna" class="level3">
+<h3 class="anchored" data-anchor-id="layout-multicolonna">Layout multicolonna</h3>
+</section>
+</section>
+<section id="css-reset" class="level2">
+<h2 class="anchored" data-anchor-id="css-reset">CSS Reset</h2>
+<p>insieme di regole CSS che servono a rimuovere le differenze di default tra i vari browser</p>
+<p>Sovrascrivono le regole di default dei browser per avere un punto di partenza uniforme</p>
+</section>
+<section id="responsive-design" class="level2">
+<h2 class="anchored" data-anchor-id="responsive-design">Responsive Design</h2>
+<p>Tecnica che adatta il layout in base alla dimensione dello schermo</p>
+<section id="dimensione-del-viewport" class="level3">
+<h3 class="anchored" data-anchor-id="dimensione-del-viewport">Dimensione del viewport</h3>
+<p>il <strong>viewport</strong> è l’area visibile dall’utente</p>
+<ul>
+<li><strong>&lt;meta&gt; </strong> controlla la dimensione iniziale del viewport
+<ul>
+<li>es. <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> imposta la larghezza del viewport uguale alla larghezza del dispositivo e lo zoom iniziale a 1</li>
+</ul></li>
+<li><strong>initial-scale</strong> controlla lo zoom iniziale della pagina</li>
+<li>nuove unità di misura relative al viewport: <code>vw</code> (viewport width) e <code>vh</code> (viewport height) e <code>vmin</code> (min viewport dimension) e <code>vmax</code> (max viewport dimension)</li>
+</ul>
+</section>
+<section id="layout-fluido" class="level3">
+<h3 class="anchored" data-anchor-id="layout-fluido">layout fluido</h3>
+<p>Si creano due o tre layout diversi per le classi di dispositivi principali (desktop, tablet, smartphone) e si applicano le regole CSS in base alla dimensione del viewport</p>
+<p>Si sfruttano le proprietà dei layout fluidi per le dimensioni intermedie</p>
+<p><strong>max-width</strong> dell’elemento &lt;img&gt; al 100% affinché venga scalata per occupare solo lo spazio disponibile nel contenitore<br>
+quando diventa più piccolo dell’immagine (non impostare width ed height)</p>
+</section>
+<section id="media-queries" class="level3">
+<h3 class="anchored" data-anchor-id="media-queries">Media Queries</h3>
+<p>direttive per specificare regole da applicare solo in particolari condizioni relative ai media</p>
+<p><code>@media tipo_media and (condizione_non_validità) { regole }</code></p>
+<p>Specificate nel CSS o con il tag <code>&lt;link ... media="tipo_media" ...&gt;</code>;</p>
+<p>Tipi di media:</p>
+<ul>
+<li><code>all</code>: tutti i dispositivi (default)</li>
+<li><code>print</code>: stampanti</li>
+<li><code>screen</code>: schermi di computer, tablet, smartphone</li>
+<li><code>speech</code>: lettori di schermo</li>
+<li>…</li>
+</ul>
+<p>Alcune caratteristiche dei media:</p>
+<ul>
+<li><code>min-width</code>: larghezza minima del viewport</li>
+<li><code>max-width</code>: larghezza massima del viewport</li>
+<li><code>min-height</code>: altezza minima del viewport</li>
+<li><code>max-height</code>: altezza massima del viewport</li>
+<li><code>orientation</code>: orientamento del dispositivo (portrait o landscape)</li>
+<li><code>aspect-ratio</code>: rapporto tra larghezza e altezza del viewport</li>
+</ul>
+</section>
+<section id="mobile-first" class="level3">
+<h3 class="anchored" data-anchor-id="mobile-first">Mobile First</h3>
+<p>Approccio di progettazione:</p>
+<ul>
+<li>prima per dispositivi mobili, poi per tablet e desktop</li>
+<li>si usa <strong>min-width</strong> per specificare le regole CSS da applicare a dispositivi con larghezza maggiore di quella specificata</li>
+</ul>
+</section>
+<section id="desktop-down" class="level3">
+<h3 class="anchored" data-anchor-id="desktop-down">Desktop down</h3>
+<p>Prima per desktop, poi per tablet e dispositivi mobili (sfrutti <strong>max-width</strong> invece di <strong>min-width</strong>)</p>
+</section>
+<section id="flexbox" class="level3">
+<h3 class="anchored" data-anchor-id="flexbox">FlexBox</h3>
+<p><strong>display: flex</strong> serve a definire un <strong>contenitore flessibile</strong> (flex container) che contiene <strong>elementi flessibili</strong> (flex items)</p>
+<p>tutti i figli diretti del contenitore flessibile diventano automaticamente elementi flessibili</p>
+<ul>
+<li><p><strong>flex-direction</strong>: specifica la direzione principale degli elementi flessibili (row, row-reverse, column, column-reverse)</p></li>
+<li><p><strong>flex-wrap</strong>: specifica se gli elementi flessibili devono andare a capo o meno (nowrap, wrap, wrap-reverse)</p></li>
+<li><p><strong>flex-flow</strong>: shorthand per flex-direction e flex-wrap</p></li>
+<li><p><strong>justify-content</strong>: specifica come distribuire lo spazio tra gli elementi flessibili lungo la direzione principale (flex-start, flex-end, center, space-between, space-around, space-evenly)</p></li>
+<li><p><strong>align-items</strong>: specifica come allineare gli elementi flessibili lungo la direzione trasversale (flex-start, flex-end, center, baseline, stretch)</p></li>
+<li><p><strong>align-content</strong>: specifica come distribuire lo spazio tra le righe di elementi flessibili lungo la direzione trasversale (flex-start, flex-end, center, space-between, space-around, stretch)</p></li>
+<li><p><strong>order</strong>: specifica l’ordine degli elementi flessibili (numero intero, default 0)</p></li>
+<li><p><strong>flex-grow</strong>: specifica quanto un elemento flessibile può crescere rispetto agli altri elementi flessibili (numero intero, default 0)</p></li>
+<li><p><strong>flex-shrink</strong>: specifica quanto un elemento flessibile può ridursi rispetto agli altri elementi flessibili (numero intero, default 1)</p></li>
+<li><p><strong>flex-basis</strong>: specifica la dimensione iniziale di un elemento flessibile prima che lo spazio disponibile venga distribuito (lunghezza, auto, default auto)</p></li>
+<li><p><strong>align-self</strong>: specifica come allineare un singolo elemento flessibile lungo la direzione trasversale (auto, flex-start, flex-end, center, baseline, stretch)</p></li>
+</ul>
+</section>
+<section id="flex-e-media-query" class="level3">
+<h3 class="anchored" data-anchor-id="flex-e-media-query">Flex e media query</h3>
+<ul>
+<li>Utilizzando la proprietà flex è possibile specificare assieme flex-grow, flex-<br>
+shrink e flex-basis</li>
+<li>È possibile usare flex anche per specificare una percentuale di spazio del<br>
+contenitore da occupare, ad esempio flex: 50%</li>
+<li>Combinando flex e media query si può cambiare direzione da riga a colonna (o<br>
+viceversa) e cambiare le percentuali dei flex su dispositivi a diverse<br>
+risoluzioni</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
