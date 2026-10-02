@@ -62,25 +62,6 @@ selettore {
 
 La seconda opzione è preferibile per pulizia del codice e riutilizzo delle regole CSS in più pagine.
 
-### CSS Box Model
-
-Un elemento (inline o block che sia) è un'entità costituita da:
-
-- **contenuto**: area in cui viene visualizzata il contenuto
-  - elemento block: larghezza e altezza sono speficabili con CSS
-- **padding**: spazio di contorno che racchiude il contenuto
-  - spessore, colore speficabili con CSS
-- **border**: bordo che contiene contenuto e padding
-  - spessore, colore, tipo di bordo specificabili con CSS
-- **margin**: spazio di contorno esterno al bordo
-  - spessore, colore di sfondo specificabili con CSS 
-
-![](../assets/images/boxmodel.png)
-
-### Esempi 
-
-(...)
-
 ### Selettori
 
 - permettono di identificare gli elementi HTML a cui applicare le regole CSS
@@ -106,7 +87,45 @@ Selettore che seleziona gli elementi in base al loro nome (tag name)
 h1 {
     font-family: Arial;
 }
+```
+
+::: {.callout-note collapse="true"}
+## Esempio selettore
+
+Codice CSS:
+
+```css
+p {
+    font-family: Comic Sans MS;
+}
+```
+Codice HTML:
+```html
+<h2>Selettore di tipo</h2>
+<p>Questo è un paragrafo</p>
+<p>Questo è un altro paragrafo</p>
 ````
+
+Risultato: 
+
+```{=html}
+<iframe 
+    srcdoc= "
+    <style>
+        p {
+            font-family: Comic Sans MS;
+        }
+    </style>
+    <h2>Selettore di tipo</h2>
+    <p>Questo è un paragrafo</p>
+    <p>Questo è un altro paragrafo</p>
+    "
+    width="100%" height="150px" style="border:1px solid black;">
+</iframe>
+````
+
+:::
+
 
 #### Class selector
 
@@ -120,6 +139,7 @@ Il valore dell'attributo class deve essere preceduto da un punto `.`
 }
 ```
 
+
 Posso filtrare ulteriormente gli elementi selezionati combinando il selettore di tipo con il selettore di classe:
 
 ```css
@@ -127,6 +147,49 @@ p.note {
     font-family: Arial;
 }
 ```
+
+::: {.callout-note collapse="true"}
+## Esempio selettore di classe
+
+Codice CSS:
+
+```css
+p.description {
+    font-family: Comic Sans MS;
+}
+```
+
+Codice HTML:
+
+```html
+<h3>Sgabello</h3>
+<h4 class="description">Descrizione</h4>
+<p class="description">sedia circolare senza schienale</p>
+<h4 class="function">Funzione</h4>
+<p class="function">funzione: seduta</p>
+```
+
+Risultato:
+
+```{=html}
+<iframe 
+    srcdoc= "
+    <style>
+        p.description {
+            font-family: Comic Sans MS;
+        }
+    </style>
+    <h3>Sgabello</h3>
+    <h4 class='description'>Descrizione</h4>
+    <p class='description'>sedia circolare senza schienale</p>
+    <h4 class='function'>Funzione</h4>
+    <p class='function'>funzione: seduta</p>
+    "
+    width="100%" height="230px" style="border:1px solid black;">
+</iframe>
+```
+
+:::
 
 #### ID selector
 
@@ -447,6 +510,487 @@ Posso usare anche background multipli
 
 I gradienti in CSS permettono di creare transizioni di colore tra due o più colori. Si possono creare gradienti lineari e radiali.
 
+### Gradienti lineari
+
+I gradienti lineari vengono creati utilizzando la funzione `linear-gradient()`.
+
+Argomenti:
+
+- direzione: tramite valore angolare (0deg = dal basso verso l'altro; 90deg = sx to dx) o parole chiave (to top, to bottom, to left, to right)
+- numero di colori: minimo 2, massimo 16
+- posizione dei colori: opzionale, specifica la posizione di ciascun colore lungo il gradiente (0% = inizio, 100% = fine)
+
+### Gradienti radiali
+
+I gradienti radiali vengono creati utilizzando la funzione `radial-gradient()`.
+
+Si espandono da un punto centrale verso l'esterno, creando un effetto di cerchi concentrici.
+
+I Componenti della Funzione
+- Forma (Shape):
+	- ellipse (default): Il gradiente si adatta alle proporzioni del contenitore.
+	- circle: Il gradiente mantiene una forma circolare perfetta, indipendentemente dal contenitore.
+- Dimensione (Size): Determina fin dove si estende il gradiente prima di raggiungere la fine (100%).
+	- farthest-corner (default): Si estende fino all'angolo più lontano dal centro.
+	- farthest-side: Si estende fino al lato più lontano.
+	- closest-corner: Si ferma all'angolo più vicino al centro.
+	- closest-side: Si ferma al lato più vicino.
+- Posizione del Centro (Position): Preceduta dalla parola chiave at, definisce le coordinate del punto di origine (es. at center, at 20% 50%, at top left). Se omessa, il valore di default è center.
+- Colori e Posizionamento:
+	- È necessario inserire da un minimo di 2 a un massimo di 16 colori.
+	- La posizione di ogni colore (es. 0% per l'inizio, 100% per la fine, o valori intermedi come 50%) è opzionale. Se non specificata, i colori vengono distribuiti in modo equo.
+
 ## Font
 
-## Box model
+### Font-family
+
+Le principali famiglie di font sono:
+
+- serif: caratteri con grazie, meglio per la stampa (es. Times New Roman)
+- Sans-serif: caratteri senza grazie, meglio per lo schermo (es. Arial)
+- Monospace: caratteri a spaziatura fissa, meglio per il codice (es. Courier New)
+- Font particolari: corsivo o fantasiosi/decorativi
+
+### Proprietà font-family
+
+**font-family** permette di specificare il font da utilizzare per un elemento
+**font-family** può contenere più font separati da virgola, in modo che se il primo non è disponibile, si utilizza il secondo e così via.
+Buona norma chiudere lo stack con un fallback della famiglia (famiglia generica)
+
+```html
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+```
+
+### Font alternativi
+
+Con `@font-face` si possono far scaricare all'utente altri font
+
+**pro**: più font
+**contro**: tempo di scaricamento, problemi di licenze, compatibilità tra browser
+
+### Proprietà del font
+
+In ogni font possiamo cambiare:
+
+- **font-weight**: spessore del font
+- **font-style**: stile del font (normale, corsivo, obliquo)
+- **font-stretch**: larghezza del font (condensato, normale, espanso)
+
+### Dimensione del font e della linea
+
+La dimensione del font si imposta con la proprietà `font-size` e può essere specificata in:
+
+- unità relative: em, rem, %, vw, vh
+- unità assolute: px, pt, cm, in
+
+L'altezza della linea si imposta con la proprietà `line-height`
+
+### Text-transform
+
+Permette di trasformare il testo in
+
+- maiuscolo: `uppercase`
+- minuscolo: `lowercase`
+- capitalizzare: `capitalize`
+
+### Font-variant
+
+Permette di utilizzare varianti specifiche di un font, come i caratteri maiuscoli, i caratteri minuscoli o i caratteri con grazie.
+
+### Letter-spacing e word-spacing
+
+Permettono di modificare lo spazio tra le lettere e tra le parole, in em aggiuntivi
+
+### Text-decoration
+
+Permette di 
+
+- sottolineare il testo: `underline`
+- barrare il testo: `line-through`
+- aggiungere una linea sopra il testo: `overline`
+- far lampeggiare il testo: `blink` (non più supportato dai browser moderni)
+- rimuovere la decorazione del testo: `none`
+
+### Text-shadow
+
+Applica l'ombra alla distanza , specificando blur e colore dell'ombra
+
+### Word-wrap
+
+Permette di specificare come gestire le parole che superano i limiti del contenitore.
+
+- **normal**: le parole non vengono spezzate, ma vanno a capo solo se c'è uno spazio
+- **break-word**: le parole vengono spezzate se superano i limiti del contenitore, anche se non c'è uno spazio
+
+## Allineamento del testo
+
+`text-align` imposta l'allineamento orizzontale
+
+- `left`: allinea il testo a sinistra (default)
+- `right`: allinea il testo a destra
+- `center`: centra il testo
+- `justify`: giustifica il testo, allineandolo sia a sinistra che a destra
+
+`vertical-align`imposta l'allineamento verticale
+
+- `baseline`: allinea il testo alla linea di base (default)
+- `top`: allinea il testo in alto
+- `middle`: allinea il testo al centro
+- `bottom`: allinea il testo in basso
+
+`text-indent` imposta l'indentazione della prima riga del paragrafo
+
+## Gestione delle liste
+
+## CSS Box Model
+
+Un elemento (inline o block che sia) è un'entità costituita da:
+
+- **contenuto**: area in cui viene visualizzata il contenuto
+  - elemento block: larghezza e altezza sono speficabili con CSS
+- **padding**: spazio di contorno che racchiude il contenuto
+  - spessore, colore speficabili con CSS
+- **border**: bordo che contiene contenuto e padding
+  - spessore, colore, tipo di bordo specificabili con CSS
+- **margin**: spazio di contorno esterno al bordo
+  - spessore, colore di sfondo specificabili con CSS 
+
+![](../assets/images/boxmodel.png)
+
+### Padding (tra contenuto e bordo box)
+
+Per aggiungere spazio di padding tra il contenuto e il bordo del box, si utilizza:
+
+- **padding**: imposta lo stesso padding per tutti i lati
+- **padding-top**: imposta il padding solo in alto
+- **padding-right**: imposta il padding solo a destra
+- **padding-bottom**: imposta il padding solo in basso
+- **padding-left**: imposta il padding solo a sinistra
+
+I valori possono essere specificati in unità relative (em, rem, %, vw, vh) o assolute (px, pt, cm, in).
+
+### Bordi (tra padding e margine)
+
+Il bordo è l'area opzionale che circonda il padding e il margine
+
+Viene visualizzato solo se definito.
+
+- **border-style**: imposta lo stile del bordo (solid, dashed, dotted, double, groove, ridge, inset, outset, none)
+- **border-top-style**: imposta lo stile del bordo solo in alto
+- **border-right-style**: imposta lo stile del bordo solo a destra
+- **border-bottom-style**: imposta lo stile del bordo solo in basso
+- **border-left-style**: imposta lo stile del bordo solo a sinistra
+
+- **border-width**: imposta lo spessore del bordo
+- **border-color**: imposta il colore del bordo
+- **border-radius**: imposta l'arrotondamento degli angoli del bordo
+
+#### Bordo con immagini
+
+**border-image**: permette di utilizzare un'immagine come bordo, 
+
+- **border-image-source**: specifica l'immagine da utilizzare come bordo
+- **border-image-slice**: specifica come suddividere l'immagine in nove sezioni (quattro angoli, quattro lati e il centro)
+- **border-image-width**: specifica lo spessore del bordo
+- **border-image-outset**: specifica quanto il bordo deve sporgere rispetto al box
+- **border-image-repeat**: specifica come ripetere l'immagine del bordo
+  - `stretch`: l'immagine viene allungata per coprire il bordo (default)
+  - `repeat`: l'immagine viene ripetuta per coprire il bordo
+  - `round`: l'immagine viene ripetuta per coprire il bordo, ma viene ridimensionata per adattarsi al bordo
+  - `space`: l'immagine viene ripetuta per coprire il bordo, ma viene ridimensionata per adattarsi al bordo e viene aggiunto spazio tra le immagini
+
+### Margini (tra bordo box e altri elementi)
+
+Evitano che gli elementi si sovrappongano tra loro
+
+- **margin**: imposta lo stesso margine per tutti i lati
+- **margin-top**: imposta il margine solo in alto
+- **margin-right**: imposta il margine solo a destra
+- **margin-bottom**: imposta il margine solo in basso
+- **margin-left**: imposta il margine solo a sinistra
+
+### Dimensione dei box
+
+Di default le dimensioni di un box sono
+
+- elementi inline: larghezza e altezza del contenuto
+- elementi block: larghi quanto la pagina e alti quanto il contenuto
+
+Per modificare le dimensioni usiamo:
+
+- **width**: imposta la larghezza del box
+- **height**: imposta l'altezza del box
+
+- **box-sizing**: imposta il modello di box da utilizzare per calcolare le dimensioni del box
+  - `content-box`: le dimensioni del box includono solo il contenuto (default)
+  - `border-box`: le dimensioni del box includono anche il padding e il bordo
+
+### Limiti per design fluidi (min-width, max-width, min-height, max-height)
+
+Nel caso di design fluidi, ovvero che si espandono in base alla finestra, è possibile impostare dei limiti con le proprietà:
+
+- **min-width**: imposta la larghezza minima del box
+- **max-width**: imposta la larghezza massima del box
+- **min-height**: imposta l'altezza minima del box
+- **max-height**: imposta l'altezza massima del box
+
+Ottimo per le tabelle
+
+- **overflow**: imposta come gestire il contenuto che supera le dimensioni del box
+  - `visible`: il contenuto che supera le dimensioni del box viene visualizzato (default)
+  - `hidden`: il contenuto che supera le dimensioni del box viene nascosto
+  - `scroll`: il contenuto che supera le dimensioni del box viene nascosto, ma viene aggiunta una barra di scorrimento
+  - `auto`: il contenuto che supera le dimensioni del box viene nascosto, ma viene aggiunta una barra di scorrimento solo se necessario
+
+### Ombreggiatura dei box (box-shadow)
+
+Permette di aggiungere un'ombra al box, specificando la distanza orizzontale e verticale, il raggio di sfocatura e il colore dell'ombra.
+
+### Visualizzazione
+
+L'attributo `display` permette di specificare come un elemento deve essere visualizzato.
+
+NOTA: `display: none` rimuove l'elemento dal flusso del documento, mentre `visibility: hidden` lo nasconde ma mantiene lo spazio occupato.
+
+### Stile delle tabelle
+
+Oltre alle proprietà precedenti per il normale contenuto, le tabelle hanno delle proprietà specifiche
+
+- **border-collapse**: specifica se i bordi delle celle devono essere uniti o separati
+  - `collapse`: i bordi delle celle vengono uniti (default)
+  - `separate`: i bordi delle celle vengono separati, posso distanziarli con la proprietà `border-spacing` (2 valori: distanza orizzontale e verticale, oppure 1 per entrambe)
+
+Nel caso di bordi separati, posso usare `empty-cells` per specificare se le celle vuote devono essere visualizzate o meno (**show** o **hide**)
+
+## Posizionamento
+
+FLusso normale:
+
+- elementi block: uno sotto l'altro
+- elementi inline: all'interno del flusso di testo
+
+Possiamo controllare il posizionamento tramite i metodi:
+
+- **floating**
+- **positioning**
+
+### Floating
+
+Utilizza la proprietà **float** che:
+
+- si applica all'intero box dell'elemento
+- l'elemento viene inserito dentro il padding del padre (può uscire)
+- non ereditata dai figli
+- il contenuto successivo fluisce intorno all'elemento flottante
+
+
+- `float: left`: l'elemento viene spostato a sinistra del padre e gli elementi successivi fluiscono intorno ad esso
+- `float: right`: l'elemento viene spostato a destra del padre e gli elementi successivi fluiscono intorno ad esso
+
+### Floating di inline
+
+preferibile specificare **width** in quanto potrebbe variare da browser a browser
+
+gli elementi inline flottanti vengono trattati come elementi block, quindi anche con margini superiori e inferiori
+
+i magini superiori e inferiori degli elementi flottanti inline non vengono uniti
+
+### Floating di block
+
+- occuperà tutto la larghezza disponibile, salvo impostare **width**
+- elemento blocco flottante starà al di sotto di elementi blocco che lo precedono
+- per impostarlo in alto a sinistra, o primo elemento del codice o posizionamento assoluto
+- per allineare margini superiori del flottante e del seguente, il margine superiore del flottante deve essere 0
+
+### Annullare il floating
+
+dopo un elemento flottante, per ripristinare il flusso normale, si può usare la proprietà **clear**
+
+- clear si applica agli elementi di tipo blocco
+- serve a posizionare un elemento al di sotto di un flottante
+
+**clear: left**: l'elemento viene posizionato al di sotto di tutti gli elementi flottanti a sinistra
+
+**clear: right**: l'elemento viene posizionato al di sotto di tutti gli elementi flottanti a destra
+
+**clear: both**: l'elemento viene posizionato al di sotto di tutti gli elementi flottanti a sinistra e a destra
+
+### Floating multipli
+
+è possibile aggiungere più elementi flottanti
+
+bisogna fare attenzione a eventuali sovrapposizioni
+
+se tutti gli elementi di un contenitore sono flottanti, il contenitore non avrà altezza e quindi non sarà visibile (soluzione: rendere il contenitore flottante e impostare dimensioni al 100% oppure usare **overflow: hidden** oppure **overflow: auto**)
+
+### Floating per layout a colonne
+
+tramite il floating è possibile creare un layout a colonne
+
+Esempi:
+
+- flottante a sinistra un primo &lt;div&gt;, con margine sinistro sufficiente a un secondo &lt;div&gt;
+- rendere flottanti a destra o a sinistra due &lt;div&gt;
+
+Bisogna stare attenti alle dimensioni in larghezza, altrimenti se la dimensione totale è superiore allo spazio disponibile, gli elementi flottanti in eccesso verranno riposizionati più in basso
+
+### Positioting
+
+Consente di posizionare precisamente gli elementi sulla pagina 
+
+**position**: specifica il tipo di posizionamento dell'elemento
+
+- `static`: l'elemento viene posizionato secondo il flusso normale del documento (default)
+- `relative`: l'elemento viene posizionato in base alla sua posizione originale, ma può essere spostato tramite le proprietà **top**, **right**, **bottom** e **left**
+- `absolute`: l'elemento viene posizionato in base al suo contenitore più vicino con **position** diversa da **static**, ma può essere spostato tramite le proprietà **top**, **right**, **bottom** e **left**
+- `fixed`: l'elemento viene posizionato in base alla finestra del browser
+
+### Posizionamento relativo
+
+posizione dell'elemento viene calcolata in base alla sua posizione originale nel flusso del documento
+
+### Posizionamento assoluto
+
+lo spazio nel flusso non viene mantenuto e non influisce sul posizionamento degli altri elementi
+
+il più vicino contenitore con **position** diversa da **static** diventa il riferimento per il posizionamento dell'elemento (o &lt;html&gt; in extremis)
+
+### Sovrapposizioni
+
+Gli elementi posizionati possono sovrapporsi
+
+- default: l'elemento posizionato più in basso nel codice HTML viene visualizzato sopra gli altri
+
+- **z-index**: specifica l'ordine di sovrapposizione degli elementi posizionati, più alto è il valore, più in alto sarà l'elemento
+
+### Posizionamento fisso (fixed)
+
+Il posizionamento fisso simile al posizionamento assoluto, ma rispetto alla finestra del browser
+
+l'elemento rimane fisso anche quando l'utente scorre la pagina
+
+Ottimo per menù sempre visibili
+
+### Strategie di layout
+
+**layout fisso**: mantiene le proprie dimensioni indipendentemente dalla dimensione della finestra del browser
+
+**layout fluido** o **liquido**: le dimensioni del layout cambiano in modo proporzionale alla dimensione della finestra del browser
+
+**layout elastico**: le dimensioni del layout cambiano in modo proporzionale alla dimensione del testo
+
+**layout ibrido**: combina aree fisse e aree fluide
+
+### Layout fissi
+
+
+
+### Layout fluidi
+
+### Layout elastici
+
+### Layout multicolonna
+
+## CSS Reset
+
+insieme di regole CSS che servono a rimuovere le differenze di default tra i vari browser
+
+Sovrascrivono le regole di default dei browser per avere un punto di partenza uniforme
+
+## Responsive Design
+
+Tecnica che adatta il layout in base alla dimensione dello schermo
+
+### Dimensione del viewport
+
+il **viewport** è l'area visibile dall'utente
+
+- **&lt;meta&gt; ** controlla la dimensione iniziale del viewport
+  - es. `<meta name="viewport" content="width=device-width, initial-scale=1.0">` imposta la larghezza del viewport uguale alla larghezza del dispositivo e lo zoom iniziale a 1
+- **initial-scale** controlla lo zoom iniziale della pagina
+- nuove unità di misura relative al viewport: `vw` (viewport width) e `vh` (viewport height) e `vmin` (min viewport dimension) e `vmax` (max viewport dimension)
+
+### layout fluido 
+
+Si creano due o tre layout diversi per le classi di dispositivi principali (desktop, tablet, smartphone) e si applicano le regole CSS in base alla dimensione del viewport
+
+Si sfruttano le proprietà dei layout fluidi per le dimensioni intermedie
+
+**max-width** dell'elemento &lt;img&gt; al 100% affinché venga scalata per occupare solo lo spazio disponibile nel contenitore
+quando diventa più piccolo dell'immagine (non impostare width ed height)
+
+### Media Queries
+
+direttive per specificare regole da applicare solo in particolari condizioni relative ai media
+
+`@media tipo_media and (condizione_non_validità) { regole }`
+
+Specificate nel CSS o con il tag `<link ... media="tipo_media" ...>`;
+
+Tipi di media:
+
+- `all`: tutti i dispositivi (default)
+- `print`: stampanti
+- `screen`: schermi di computer, tablet, smartphone
+- `speech`: lettori di schermo
+- ...
+
+Alcune caratteristiche dei media:
+
+- `min-width`: larghezza minima del viewport
+- `max-width`: larghezza massima del viewport
+- `min-height`: altezza minima del viewport
+- `max-height`: altezza massima del viewport
+- `orientation`: orientamento del dispositivo (portrait o landscape)
+- `aspect-ratio`: rapporto tra larghezza e altezza del viewport
+
+### Mobile First
+
+Approccio di progettazione:
+
+- prima per dispositivi mobili, poi per tablet e desktop
+- si usa **min-width** per specificare le regole CSS da applicare a dispositivi con larghezza maggiore di quella specificata
+
+### Desktop down
+
+Prima per desktop, poi per tablet e dispositivi mobili (sfrutti **max-width** invece di **min-width**)
+
+### FlexBox
+
+**display: flex** serve a definire un **contenitore flessibile** (flex container) che contiene **elementi flessibili** (flex items)
+
+tutti i figli diretti del contenitore flessibile diventano automaticamente elementi flessibili
+
+- **flex-direction**: specifica la direzione principale degli elementi flessibili (row, row-reverse, column, column-reverse)
+
+- **flex-wrap**: specifica se gli elementi flessibili devono andare a capo o meno (nowrap, wrap, wrap-reverse)
+
+- **flex-flow**: shorthand per flex-direction e flex-wrap
+
+- **justify-content**: specifica come distribuire lo spazio tra gli elementi flessibili lungo la direzione principale (flex-start, flex-end, center, space-between, space-around, space-evenly)
+
+- **align-items**: specifica come allineare gli elementi flessibili lungo la direzione trasversale (flex-start, flex-end, center, baseline, stretch)
+
+- **align-content**: specifica come distribuire lo spazio tra le righe di elementi flessibili lungo la direzione trasversale (flex-start, flex-end, center, space-between, space-around, stretch)
+
+- **order**: specifica l'ordine degli elementi flessibili (numero intero, default 0)
+
+- **flex-grow**: specifica quanto un elemento flessibile può crescere rispetto agli altri elementi flessibili (numero intero, default 0)
+
+- **flex-shrink**: specifica quanto un elemento flessibile può ridursi rispetto agli altri elementi flessibili (numero intero, default 1)
+
+- **flex-basis**: specifica la dimensione iniziale di un elemento flessibile prima che lo spazio disponibile venga distribuito (lunghezza, auto, default auto)
+
+- **align-self**: specifica come allineare un singolo elemento flessibile lungo la direzione trasversale (auto, flex-start, flex-end, center, baseline, stretch)
+
+### Flex e media query
+
+- Utilizzando la proprietà flex è possibile specificare assieme flex-grow, flex-
+shrink e flex-basis
+- È possibile usare flex anche per specificare una percentuale di spazio del
+contenitore da occupare, ad esempio flex: 50%
+- Combinando flex e media query si può cambiare direzione da riga a colonna (o
+viceversa) e cambiare le percentuali dei flex su dispositivi a diverse
+risoluzioni

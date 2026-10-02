@@ -113,6 +113,8 @@ Dichiarazione del DTD (Document Type Definition), in html5 è
 <!DOCTYPE html>
 ```
 
+Oggigiorno serve a mettere il browser in **no-quirks mode**, ovvero a farlo comportare come un browser moderno, evitando di interpretare il codice come se fosse scritto in una versione precedente di HTML.
+
 Posso anche riferirmi a un DTD diverso, in particolare a una versione precedente di HTML. 
 
 ### Struttura generica
@@ -124,7 +126,7 @@ Un documento HTML5 è composto da:
 
 L'elemento radice `<html>` contiene due elementi principali:
 
-- **header** `<head>` contiene informazioni sul documento (metadati) non visualizzati
+- **head** `<head>` contiene informazioni sul documento (metadati) non visualizzati
 - **body** `<body>` contiene la specifica della struttura dei contenuti visualizzati della pagina (testi, immagini ...)
 
 
@@ -175,9 +177,9 @@ Il titolo della pagina è specificato mediante il tag `<title>` all'interno del 
 
 ### Elemento style &lt;style&gt;
 
-`<style>...</style>`utilizzato per definire i fogli di stile (stile in linea) interni al documento
+`<style>...</style>`utilizzato per definire i fogli di stile interni al documento
 
-Va incluso nell'header della pagina
+Va incluso nell'head della pagina
 
 Generalmente oggi si usa un foglio di stile utilizzando l'elemento &lt;link&gt; nell'intestazione
 
@@ -215,7 +217,7 @@ che risultano così:
 
 ### Paragrafo &lt;p&gt; &lt;/p&gt;
 
-`<p>...</p>`definisce un paragrafo di testo con l'aggiunta di un margine superiore e uno inferiore
+`<p>...</p>`definisce un paragrafo di testo , normalmente i browser lo visualizzano con l'aggiunta di un margine superiore e uno inferiore
 
 ```html
 <p>Questo è un paragrafo di testo.</p>
@@ -255,7 +257,7 @@ prima della linea<hr>sotto la linea
 
 ### Testo in grassetto &lt;b&gt;&lt;/b&gt;
 
-Definisce il grassetto
+Richiama l'attenzione sul contenuto senza attribuirgli particolare importanza. (grassetto visivo)
 
 ```html
 testo in <b>grassetto</b>
@@ -267,7 +269,7 @@ testo in <b>grassetto</b>
 
 ### Testo in italics &lt;i&gt;&lt;/i&gt;
 
-definisce il testo in italics
+Rappresenta una porzione di testo distinta dal testo circostante per una ragione semantica, come terminologia, espressioni idiomatiche, nomi scientifici, ecc. (corsivo visivo)
 
 ```html
 testo in <i>italics</i>
@@ -324,7 +326,7 @@ esempi: `color`, `background-color`, `font-family`,`font-size`,`text-align`
 
 Ogni elemento html può essere identificato univocamente da un identificatore grazie all'uso di **id** con il relativo *valore*
 
-Il valore deve iniziare con lettera o underscore _ e deve essere unico
+Il valore deve essere unico, non vuoto e non può contenere spazi.
 
 Gli identificatori sono utili per applicare specifiche regole stilistiche
 
@@ -350,6 +352,8 @@ Sono elementi che vengono visualizzati in una nuova linea, ovvero vanno a capo r
 
 Sono generalmente strutturali (titoli, paragradi, liste...)
 
+CSS può modificare il comportamento di un elemento di tipo blocco, rendendolo inline o viceversa
+
 
 | principali elementi blocco | |
 |:---|:---|
@@ -373,6 +377,8 @@ Sono generalmente strutturali (titoli, paragradi, liste...)
 Un elemento di tipo in linea appare all'interno di un elemento blocco e può contenere altri elementi inline.
 
 Viene visualizzato di seguito al contenuto che lo precede, senza andare a capo
+
+CSS può modificare il comportamento di un elemento di tipo blocco, rendendolo inline o viceversa
 
 | Elementi inline | | | |
 |:---|:---|:---|:--- |
@@ -1036,6 +1042,14 @@ L'attributo **rel** specifica la relazione tra il documento corrente e il docume
 - `external`: indica che il collegamento punta a un sito esterno
 - `author`: indica che il collegamento punta a una pagina dell'autore del documento corrente
 
+| Valore | Scopo |
+|:---|:---|
+| noopener | impedisce accesso tramite `window.opener` |
+| noreferrer | non inviare il referrer |
+| nofollow | indica ai motori di ricerca di non seguire il collegamento |
+| external | indica un collegamento esterno |
+| author | collegamento alla pagina dell'autore |
+
 #### Posta elettronica
 
 per creare un collegamento al programma di posta elettronica si usa
@@ -1183,7 +1197,39 @@ L'elemento **&lt;area&gt;** possiede:
 | poly | $"X_1,Y_1,\cdots,X_n,Y_n"$ | vertici del poligono |
 | default | - | area attiva che copre tutta l'immagine |
 
-#### Presentazione e allineamento immagini
+#### srcset
+
+Attributo dell'elemento `<img>` che permette di dare al browser una lista di immagini alternative tra cui scegliere, specificando la larghezza reale di ogni file in pixel seguita da `w`.
+
+```html
+<!-- file diversi della stessa immagine -->
+
+<img src="foto-media.jpg" 
+     srcset="foto-piccola.jpg 500w, <!-- 500 pixel di larghezza -->
+             foto-media.jpg 1000w,  
+             foto-grande.jpg 2000w" 
+     alt="Un bellissimo paesaggio">
+```
+
+#### sizes
+
+Attributo dell'elemento `<img>` che permette di specificare le dimensioni dell'immagine in base alla larghezza del viewport (area visibile dello schermo). Permette di indicare al browser quale immagine scegliere in base alle dimensioni della finestra del browser, tramite le **media query**.
+
+```html
+<img src="foto-media.jpg" 
+     srcset="foto-piccola.jpg 500w, 
+             foto-media.jpg 1000w, 
+             foto-grande.jpg 2000w" 
+     sizes="(max-width: 500px) 100vw, (max-width: 1000px) 50vw, 33vw" 
+     alt="Un bellissimo paesaggio">
+```
+
+#### <picture>
+
+Il tag <picture> ti dà il controllo totale e serve per due casi specifici:
+
+1. Direzione Artistica (Art Direction): Ritagliare o cambiare proprio l'immagine su schermi diversi (es. una foto orizzontale su desktop e una verticale/zoommata sul volto su mobile).
+2. Formati di nuova generazione: Servire formati moderni e leggeri come AVIF o WebP, mantenendo un file JPG di riserva per i browser vecchi.
 
 Si usano i fogli di stile CSS
 
@@ -1223,9 +1269,9 @@ possiede i seguenti attributi principali:
 </form>
 ```
 
-### Metodo get
+### Metodo GET
 
-Tramite il metodo **get** i dati (es. nome=valore) vengono inviati al server come parte dell'URL, separati da un punto interrogativo `?` e concatenati con il simbolo `&`
+Tramite il metodo **GET** i dati (es. nome=valore) vengono inviati al server come parte dell'URL, separati da un punto interrogativo `?` e concatenati con il simbolo `&`
 
 produce una stringa visibile nella barra degli indirizzi del browser
 
@@ -1235,7 +1281,7 @@ adatto a pochi dati (URL: max 2048 caratteri), non sono dati binari, sensibili e
 <form action="search.php" method="get">
 ```
 
-### Metodo post
+### Metodo POST
 
 - i dati sono inseriti nel corpo dell'entità del messaggio HTTP di richiesta
 
@@ -1474,7 +1520,7 @@ L'attributo **value** permette di specificare il testo visualizzato sul pulsante
 
 ### Elemento hidden &lt;input type = "hidden"&gt;
 
-Elemento che non viene visualizzato nella pagina, ma che permette di inviare dati al server senza che l'utente li veda o li modifichi.
+non viene visualizzato normalmente nell'interfaccia, ma il suo valore è comunque visibile e modificabile dall'utente tramite gli strumenti del browser o modificando la richiesta
 
 ```html
 <input type="hidden" name="id_utente" value="12345">
@@ -1542,7 +1588,8 @@ Il testo dell'etichetta è associato direttamente all'input: questo facilita l'a
 
 ### Inserimento di data e ora
 
-Per inserire una data nel formato **gg/mm/aaaa** si usa l'elemento **&lt;input type="date"&gt;**.
+Permette all'utente di selezionare una data. Il valore inviato dal controllo segue il formato HTML standard YYYY-MM-DD.
+**&lt;input type="date"&gt;**.
 
 ```html
 <input type="date" name="data">
@@ -1685,4 +1732,47 @@ Le tracce sono formattate in file esterni con estensione **.vtt** (WebVTT - Web 
     <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="English">
     <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
 </video>
+```
+
+## iFrame &lt;iframe&gt;
+
+Un iframe è un elemento che ti permette di inserire un documento o una pagina web esterna dentro la pagina corrente
+
+- quadro in linea che mostra i contenuti di un'altra pagina web
+- per mostrare video, mappe, pubblicità o feed social
+
+Attributi principali:
+
+- **src**: specifica l'URL della pagina da visualizzare
+- **title**: fornisce un titolo per l'iframe, utile per l'accessibilità
+- **width**: specifica la larghezza dell'iframe
+- **height**: specifica l'altezza dell'iframe
+- **loading**: specifica se l'iframe deve essere caricato in modo asincrono (lazy) o immediato (eager)
+
+Posso inserire un contenuto alternativo tra i tag di apertura e chiusura dell'iframe, che verrà visualizzato se il browser non supporta l'elemento iframe.
+
+Ulteriori attributi:
+
+- **srcdoc**: permette di inserire direttamente l'HTML del contenuto
+
+### Sandboxing
+
+#### button, details, summary, dialog
+
+#### Details &lt;details&gt;
+
+Blocco che può essere espanso o compresso dall'utente. Può contenere qualsiasi tipo di contenuto HTML.
+
+```html
+<details>
+    <summary>Dettagli</summary>
+    <p>Contenuto dei dettagli...</p>
+</details>
+```
+
+```{=html}
+<details>
+    <summary>Dettagli</summary>
+    <p>Contenuto dei dettagli...</p>
+</details>
 ```
