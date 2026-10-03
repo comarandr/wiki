@@ -1,0 +1,8 @@
+---
+title: Algoritmi
+description: "Appunti di algoritmi del 2 anno di informatica"
+permalink: /universita/algoritmi
+categories: [universita, algoritmi]
+---
+
+## Algoritmi di ordinamento

@@ -2,5 +2,729 @@
 title: "JavaScript"
 description: "Appunti di JavaScript"
 categories: [linguaggi]
-draft: true
 ---
+
+## Web dinamico
+
+HTML e CSS sono linguaggi di markup, pertanto permettono la creazione di pagine web statiche.
+
+Il Web 2.0 ha portato alla creazione di pagine web dinamiche, ovvero pagine che possono cambiare il loro contenuto in base all'interazione dell'utente.
+
+**programmazione lato client**: il codice viene eseguito sul computer dell'utente, quindi non è necessario inviare richieste al server per aggiornare la pagina.
+
+**programmazione lato server**: il codice viene eseguito sul server, quindi è necessario inviare richieste al server per aggiornare la pagina.
+
+Esistono tre principali categorie di tecnologie per lo sviluppo di pagine web dinamiche:
+
+- linguaggi di programmazione e scripting
+- API, Web Application Programming Interface
+- Web Application Framework
+
+### Web API
+
+Una web API è un'interfaccia per la programmazione di applicazioni per il web
+
+- API del browser può estendere le funzionalità del browser
+- API del server può estendere le funzionalità del server
+- browser dispongono di Web API per operazioni complesse e facilitare accesso ai dati
+- API fornisocno una modalità di interazioni tra componenti software per inserire funzioni avanzate
+
+In genere usate con JavaScript
+
+### Framework
+
+**framework**: architettura logica sulla quale un software può essere progettato e realizzato
+
+Applicazione o insieme di moduli per consentire lo sviluppo agile di applicazioni mediante utilizzo di una **library** e/o funzionalità già rilasciate
+
+**framework web**: insieme di strumenti e librerie per lo sviluppo di applicazioni web dinamiche
+
+Permette allo sviluppatore di utilizzare serie di funzionalità senza andare a riscrivere ogni volta tutto da capo
+
+Il programmatore ha a disposizione una serie di classi relative a funzionalità:
+
+- autenticazione utenti
+- gestione dei form e validazione dei dati
+- gestione località e multilingua
+- struttura delle directory e dei file
+- interfacce utenti
+
+Esempi:
+
+React, Angular, Vue.js, Django, Ruby on Rails, Laravel, ASP.NET, Spring,...
+
+## JavaScript
+
+Linguaggio di scripting, progettato per essere ospitato ed eseguito all'interno di altri programmi (generalmente il browser).
+
+Uno **script** è costituito da una serie di istruzioni che il computer può eseguire per realizzare un compito specifico.
+
+Uno script è realizzato secondo le seguenti fasi:
+
+- definire obiettivo
+- progettare lo script
+- programmare ciascun passo
+
+è un linguaggio **orientato agli oggetti** e agli eventi.
+
+### Oggetti
+
+**oggetto**: elemento che rappresenta un elemento fisico
+
+è dotato di
+- **proprietà**: nome, valore
+- **metodi**: funzioni associate all'oggetto
+- **eventi**: interazioni che cambiano i valori delle proprietà
+
+### HTML dinamico
+
+Con il modello a oggetti, Javascript può interagire con gli elementi HTML della pagina web, modificandone le proprietà e i contenuti.
+
+- modificare tutti gli elementi HTML
+- modificare tutti gli attributi HTML
+- cambiare tutti gli stili CSS
+- rimuovere elementi e attributi HTML esistenti
+- aggiungere nuovi elementi e attributi HTML
+- reagire a tutti gli eventi HTML esistenti
+- creare nuovi eventi HTML
+
+::: {.callout-tip collapse="true"}
+
+## Esempio 
+
+codice HTML che contiene un pulsante che, quando cliccato, cambia il contenuto di un paragrafo:
+
+```html
+<iframe srcdoc="
+<html>
+<body>
+    <h2>What Can JavaScript Do?</h2>
+    <p id=&quot;demo&quot;>JavaScript can change HTML content.</p>
+    <button type=&quot;button&quot; onclick='document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;'>Click Me!</button>
+</body>
+</html>
+" 
+width="100%" height="200px">
+</iframe>
+```
+
+```{=html}
+<iframe srcdoc="
+<html>
+<body>
+    <h2>What Can JavaScript Do?</h2>
+    <p id=&quot;demo&quot;>JavaScript can change HTML content.</p>
+    <button type=&quot;button&quot; 
+        onclick='document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;'>Click Me!</button>
+</body>
+</html>
+" 
+width="100%" height="200px">
+</iframe>
+```
+
+:::
+
+Il codice Javascript può essere
+
+- incluso direttamente all'interno di un documento HTML, racchiuso tra i tag `<script>` e `</script>`
+- scritto in un file separato con estensione `.js` e richiamato nel documento HTML tramite il tag `<script src="file.js"></script>`
+
+### Istruzioni
+
+Ogni **istruzione** termina con un punto e virgola `;`
+
+```html
+<script>
+var x;
+x = 5;
+</script>
+```
+
+Javascript è un linguaggio **case-sensitive**, quindi distingue tra maiuscole e minuscole.
+
+### Commenti
+
+Si inseriscono con
+
+- `//` per commenti su una sola riga
+- `/* */` per commenti su più righe
+
+### Variabili
+
+sono usate per memorizzare valori o oggetti durante l'esecuzione di uno script.
+
+Variabili possono essere dichiarate con
+
+- `const` per dichiarare una costante, ovvero un valore che non può essere modificato
+- `let` per dichiarare una variabile che può essere modificata
+- `var` per dichiarare una variabile che può essere modificata, ma è deprecato e non consigliato
+
+Regole per i nomi delle variabili:
+
+- devono iniziare con una lettera, un underscore `_` o un simbolo di dollaro `$`
+- non ammessi i caratteri `-` o `.``
+- non ammesse le parole chiave
+- case-sensitive
+- nomi complessi: nomeArticolo o nome_articolo
+- consigliabile nome che descrive il contenuto
+
+### Tipi primitivi
+
+JavaScript NON è un linguaggio tipizzato, quindi non è necessario dichiarare il tipo. Esso viene determinato automaticamente in base al valore assegnato alla variabile.
+
+
+- **numeri**
+- **stringhe**
+- **booleani**
+- **null**
+- **undefined**
+
+### Array
+
+Variabile che può contenere più valori, racchiusi tra parentesi quadre `[]` e separati da virgole `,`
+
+```javascript
+var fruits = ["apple", "banana", "cherry"];
+```
+
+### Espressioni
+
+Una **espressione** è un'istruzione che produce un valore.
+
+- **assegnazione**: `x = 5`
+- due o più variabili che restituiscono un valore: `x + y`
+
+Le espressioni usano gli **operatori** per trasformare le variabili
+
+### Operatori aritmetici
+
+| Operatore | Descrizione | Esempio |
+|-----------|-------------|---------|
+| `+`       | addizione   | `5 + 3` |
+| `-`       | sottrazione | `5 - 3` |
+| `*`       | moltiplicazione | `5 * 3` |
+| `/`       | divisione | `5 / 3` |
+| `%`       | modulo (resto della divisione) | `5 % 3` |
+| `++`      | incremento di 1 | `x++` |
+| `--`      | decremento di 1 | `x--` |
+| `**`      | esponenziazione | `5 ** 3` |
+
+|Operatore|Esempio|Same as|
+|---------|-------|-------|
+| `=` | `x = y` | `x = y` |
+| `+=` | `x += y` | `x = x + y` |
+| `-=` | `x -= y` | `x = x - y` |
+| `*=` | `x *= y` | `x = x * y` |
+| `/=` | `x /= y` | `x = x / y` |
+| `%=` | `x %= y` | `x = x % y` |
+| `**=` | `x **= y` | `x = x ** y` |
+| `??=` | `x ??= y` | `x = x ?? y` |
+
+### Operatore per le stringhe &plus;
+
+`+` unico operatore per concatenare due o più stringhe
+
+```javascript
+var firstName = "John";
+var lastName = "Doe";
+var fullName = firstName + " " + lastName; // John Doe
+```
+
+### Funzioni
+
+Blocco di codice progettato per eseguire un'attività
+
+sintassi:
+
+`function nomeFunzione(parametri) { // codice da eseguire }`
+
+con `return` se si vuole restituire un valore
+
+```javascript
+function somma(a, b) {
+    return a + b;
+}
+```
+
+::: {.callout-tip collapse="true"}
+
+## Esempio
+
+```html
+<iframe srcdoc="
+<html>
+<body>
+<p id=&quot;demo&quot;></p>
+<script>
+var x = somma(5, 3);
+document.getElementById(&quot;demo&quot;).innerHTML = x;
+function somma(a, b) {
+    return a + b;
+}
+</script>
+</body>
+</html>
+"
+width="100%" height="200px" border="1">
+</iframe>
+```
+
+```{=html}
+<iframe srcdoc="
+<html>
+<body>
+<p id=&quot;demo&quot;></p>
+<script>
+var x = somma(5, 3);
+document.getElementById(&quot;demo&quot;).innerHTML = x;
+function somma(a, b) {
+    return a + b;
+}
+</script>
+</body>
+</html>
+"
+width="100%" height="200px" border="1">
+</iframe>
+```
+
+:::
+
+### Variabili locali e globali
+
+**variabile locale**: dichiarata all'interno di una funzione, quindi accessibile solo all'interno di essa
+
+**variabile globale**: dichiarata all'esterno di una funzione, quindi accessibile da qualsiasi parte del codice
+
+Esempio:
+
+```javascript
+var globale1, globale2;
+function esempio() {
+    var locale1;
+    var locale2;
+    ...
+    locale1 = globale1 + locale2;
+}
+
+globale2 = locale1*2; // errore: locale1 non accessibile
+```
+
+## Oggetti
+
+È un insieme di 
+
+- **proprietà**: valori
+- **metodi**: funzioni associate all'oggetto
+
+con lo scopo di rappresentare un elemento fisico o concettuale
+
+### Struttura di un oggetto
+
+Un oggetto è rappresentato da parentesi graffe `{}` e dal suo contenuto
+
+- `proprietà: valore, valore` 
+- `metodo: funzione(){...}`
+
+```javascript
+var persona = {
+    nome: "John",
+    cognome: "Doe",
+    eta: 30,
+    nomeCompleto: function() {
+        return this.nome + " " + this.cognome;
+    }
+};
+```
+
+La parola chiave `this` al posto del nome dell'oggetto indica che proprietà o metodo appartiene all'oggetto creato da **questa** funzione.
+
+### Accesso alle proprietà e ai metodi di un oggetto
+
+per accedere alle proprietà:
+
+- `nomeOggetto.proprietà` oppure `oggetto["proprietà"]`
+
+per accedere ai metodi:
+
+- `nomeOggetto.metodo()` oppure `oggetto["metodo"]()`
+
+```javascript
+var persona = {
+    nome: "John",
+    cognome: "Doe",
+    nomeCompleto: function() {
+        return this.nome + " " + this.cognome;
+    }
+};
+
+var nomeCompleto = persona.nomeCompleto();
+var nome = persona.nome;
+```
+
+### Costruttori
+
+Per creare un oggetto vuoto si possono usare i costruttori
+
+- `const nomeOggetto = new Object();` oppure `const nomeOggetto = {};`
+
+Esistono anche i costruttori con i tipi primitivi:
+
+- `new String()`
+- `new Number()`
+- `new Boolean()`
+- `new Array()`
+- `new RegExp()`
+- `new Function()`
+- `new Date()`
+
+### Funzioni costruttrici
+
+Posso creare un costruttore per creare più oggetti dello stesso tipo
+
+```javascript
+
+function Persona(nome, cognome, eta) {
+    this.nome = nome;
+    this.cognome = cognome;
+    this.eta = eta;
+    this.nomeCompleto = function() {
+        return this.nome + " " + this.cognome;
+    };
+}
+var persona1 = new Persona("John", "Doe", 30);
+var persona2 = new Persona("Jane", "Doe", 25);
+```
+
+### Aggiungere ed eliminare proprietà (delete)
+
+Dopo aver creato un oggetto, posso aggiungere o eliminare proprietà e metodi
+
+```javascript
+var persona = {
+    nome: "John",
+    cognome: "Doe"
+};
+persona.eta = 30; // aggiunge la proprietà eta
+delete persona.cognome; // elimina la proprietà cognome
+```
+
+### Oggetti con array e array di oggetti
+
+Posso creare strutture complesse integrando oggetti e array tra di loro
+
+```javascript
+var persona = {
+    nome: "John",
+    cognome: "Doe",
+    eta: 30,
+    indirizzi: [
+        {citta: "New York", via: "5th Avenue"},
+        {citta: "Los Angeles", via: "Sunset Boulevard"}
+    ]
+};
+var persone = [
+    {nome: "John", cognome: "Doe", eta: 30},
+    {nome: "Jane", cognome: "Doe", eta: 25}
+];
+```
+
+## Classi
+
+classe: modello per creare oggetti con proprietà e metodi
+sono uno strumento migliore per gestire la programmazione orientata agli oggetti
+
+Sintassi:
+
+```javascript
+class ClassName{
+    constructor(parametri){...}
+    method1(){...}
+    method2(){...}
+}
+```
+
+## Controllo di flusso
+
+### If
+
+```javascript
+if (condizione) {
+    // codice da eseguire se la condizione è vera
+}
+
+### If...else
+
+```javascript
+if (condizione) {
+    // codice da eseguire se la condizione è vera
+} else {
+    // codice da eseguire se la condizione è falsa
+}
+```
+
+### Operatori di comparazione
+
+| Operatore | Descrizione | Esempio |
+|-----------|-------------|---------|
+| `==` | uguale a | `x == 5` |
+| `===` | uguale a e dello stesso tipo | `x === 5`
+| `!=` | diverso da | `x != 5` |
+| `!==` | diverso da o di tipo diverso | `x !== 5` |
+| `>` | maggiore di | `x > 5` |
+| `<` | minore di | `x < 5` |
+| `>=` | maggiore o uguale a | `x >= 5` |
+| `<=` | minore o uguale a | `x <= 5` |
+
+### Operatori logici
+
+| Operatore | Descrizione | Esempio |
+|-----------|-------------|---------|
+| `&&` | AND | `x < 10 && y > 1` |
+| `||` | OR | `x < 10 || y > 1` |
+| `!` | NOT | `!(x < 10 && y > 1)` |
+
+### Switch
+
+```javascript
+switch (espressione) {
+    case valore1:
+        // codice da eseguire se espressione == valore1
+        break;
+    case valore2:
+        // codice da eseguire se espressione == valore2
+        break;
+    default:
+        // codice da eseguire se espressione non corrisponde a nessun valore
+}
+```
+
+### While
+
+```javascript
+while (condizione) {
+    // codice da eseguire finché la condizione è vera
+}
+````
+
+### Do...while
+
+```javascript
+do {
+    // codice da eseguire almeno una volta e poi finché la condizione è vera
+} while (condizione);
+```
+
+### For
+
+```javascript
+for (inizializzazione; condizione; incremento) {
+    // codice da eseguire finché la condizione è vera
+}
+```
+
+### Break e continue
+
+- **break**: interrompe l'esecuzione del ciclo e passa all'istruzione successiva al ciclo
+- **continue**: interrompe l'esecuzione del ciclo e passa all'iterazione successiva del ciclo
+
+### Oggetti Built-in
+
+Sono una serie di oggetti interni ai browser che rappresentano elementi del browser e della pagina web.
+
+Vengono manipolati tramite javascript per creare pagine web dinamiche.
+
+### Browser Object Model (BOM)
+
+Il BOM è il modello gerarchico che rappresenta l'oggetto broswer e i suoi componenti.
+
+**window**: oggetto principale del BOM, padre di tutti gli oggetti. Rappresenta una finestra aperta
+
+Alcuni metodi:
+
+- `[window].alert("messaggio")`: mostra un messaggio di avviso
+- `[window].close()`: chiude la finestra corrente
+- `[window].open("url", "nome", "lista_opzioni")`: apre una nuova finestra
+
+Il BOM crea un modello della scheda o della finestra del browser, che contiene:
+
+- **document**: rappresenta il documento HTML caricato nella finestra del browser
+- **navigator**: rappresenta il browser e le sue proprietà
+
+```{mermaid}
+flowchart LR
+    A(WINDOW) --> B(DOCUMENT)
+    B --- C(current web page)
+    A --> D(HISTORY)
+    D --- E(back and forward buttons)
+    A --> F(LOCATION)
+    F --- G(current URL)
+    A --> H(NAVIGATOR)
+    H --- I(browser information)
+    A --> J(SCREEN)
+    J --- K(device display information)
+
+    %% 2. DEFINIZIONE DELLE CLASSI DI STILE
+    %% Classe per i nodi principali (Sfondo bianco, bordo grigio, testo nero in grassetto)
+    classDef nodoPrincipale fill:#FFFFFF,stroke:#BDC3C7,stroke-width:1px,color:#1A1A1A,font-weight:bold;
+    
+
+    %% 3. APPLICAZIONE DELLE CLASSI AI NODI
+    class A,B,D,F,H,J nodoPrincipale;
+    class C,E,G,I,K descrizione;
+```
+
+### DOM (Document Object Model)
+
+Il DOM è un modello gerarchico che rappresenta il documento HTML caricato nella finestra del browser.
+
+```{mermaid}
+flowchart TD
+    D(Document) --> R("Root element:<br>&lt;html&gt;")
+    R --> H(&lt;head&gt;)
+    R --> B(&lt;body&gt;)
+    H --> T(&lt;title&gt;)
+    T --> T1("Text:<br>&quot;My Title&quot;")
+    B --> A(&lt;a&gt;)
+    A --- A1(attribute:<br>href)
+    B --> P(&lt;p&gt;)
+    P --> P1("Text:<br>&quot;My paragraph&quot;")
+    B --> H1(&lt;h1&gt;)
+    H1 --> H11("Text:<br>&quot;My Website&quot;")
+```
+
+I siti web possono utilizzare JavaScript lato client per manipolare il DOM e creare pagine web dinamiche.
+
+- completare azioni come controllare dati inseriti in un form
+- nascondere o mostrare elementi della pagina web
+- aggiornare parti della pagina web
+
+### Oggetti globali JavaScript
+
+Sono:
+
+- oggetti singoli che fanno riferimento alle varie parti del linguaggio
+- oggetti che rappresentano i tipi primitivi del linguaggio
+- oggetti che rappresentano concetti del mondo reale (es. Date, Math, RegExp)
+
+### Oggetto String
+
+proprietà: 
+- `length`: lunghezza della stringa
+
+metodi:
+
+slice(), substring(), substr(), replace(), toUpperCase(), toLowerCase(), concat(), trim(), charAt(), charCodeAt(), split()
+
+### Oggetto Number
+
+metodi che possono essere usati sui numeri (oggetti e variabili):
+
+metodi: toString(), toExponential(), toFixed(), toPrecision(), valueOf()
+
+metodi che possono essere usati solo con Number:
+
+isInteger(), isSafeInteger(), parseInt(), parseFloat()
+
+### Metodi globali
+
+metodi globali per il tipo di dato Number:
+
+Number(), isNaN(), parseInt(), parseFloat()
+
+### Oggetto Math
+
+L'oggetto **Math** fornisce proprietà e metodi per costanti matematiche e funzioni matematiche.
+
+esempi: 
+abs(), ceil(), floor(), round(), max(), min(), random(), pow(), sqrt()
+
+### Oggetto Date
+
+Oggetto **Date** fornisce metodi per la gestione di date e orari.
+
+- creazione: `new Date()`, `new Date(anno, mese, giorno, ore, minuti, secondi, millisecondi)`, `new Date(dataStringa)`, `new Date(milliseconds)`
+
+- metodi: getDate(), getDay(), getFullYear(), getHours(), getMilliseconds(), getMinutes(), getMonth(), getSeconds(), getTime(), setDate(), setFullYear(), setHours(), setMilliseconds(), setMinutes(), setMonth(), setSeconds()
+
+## Modello DOM
+
+Un broser quando carica una pagina crea un modello DOM costituito da quattro parti principali:
+
+- nodo radice: rappresenta l'elemento `<html>` della pagina
+- nodi degli elementi: rappresentano gli elementi HTML della pagina
+- nodi degli attributi: rappresentano gli attributi degli elementi HTML della pagina
+- nodi di testo: rappresentano il contenuto testuale degli elementi HTML della pagina
+
+### Operare sul DOM
+
+metodi per accedere a un elemento HTML:
+
+- `document.getElementById("id")`: restituisce l'elemento con l'id specificato
+- `document.getElementsByTagName("tag")`: restituisce un array di elementi con il tag specificato
+- `document.getElementsByClassName("class")`: restituisce un array di elementi con la classe specificata
+- `document.querySelector("selector")`: restituisce il primo elemento che corrisponde al selettore specificato
+
+proprietà e metodi più comuni per modificare un elemento HTML:
+
+- `element.innerHTML`: modifica il contenuto HTML dell'elemento
+- `element.innerText`: modifica il contenuto testuale dell'elemento
+- `element.attributes`: modifica gli attributi dell'elemento
+- `element.style.property`: modifica lo stile CSS dell'elemento
+- `element.setAttribute("attribute", "value")`: modifica un attributo dell'elemento
+
+metodi per aggiungere e rimuovere elementi HTML:
+- `document.createElement("tag")`: crea un nuovo elemento HTML
+- `element.appendChild(child)`: aggiunge un figlio a un elemento
+- `element.removeChild(child)`: rimuove un figlio da un elemento
+- `element.remove()`: rimuove l'elemento dal DOM
+
+### Accedere ad un form
+
+I campi dei form possono essere analizzati tramite JavaScript
+
+- accesso tramite valori dei campi: `document.forms["nomeForm"]["nomeCampo"].value`
+- accesso tramite **name** degli input: `document.forms["nomeForm"].nomeCampo.value`
+
+**value**: usato per accedere al contenuto dell'input
+**valueAsNumber**: per accedere al contenuto come numero
+**valueAsDate**: per accedere al contenuto come data
+
+**element.attributes**: restituisce un array di tutti gli attributi dell'elemento
+
+**setAttribute("nomeAttributo", "valore")**: modifica il valore di un attributo dell'elemento, se non esiste lo crea
+
+### Eventi
+
+HTML DOM consente a JavaScript di reagire agli eventi
+
+- interazioni creano eventi
+- un evento consiste nella notifica di un avvenimento specifico
+- eventi lanciano codice per rispondere all'avvenimento
+- codice risponde agli utenti modificando il DOM
+
+### Tipo di eventi
+
+- eventi del mouse: click, dblclick, mousedown, mouseup, mouseover, mouseout, mousemove
+
+- eventi focus: onfocus, onblur
+
+- eventi tastiera: onkeydown, onkeyup, onkeypress
+
+- eventi form: onsubmit, onreset, onchange, oninput
+
+### metodo addEventListener()
+
+Il metodo `addEventListener()` consente di ascoltare un evento specifico su un elemento HTML e di eseguire una funzione quando l'evento si verifica.
+
+`element.addEventListener("evento", funzione, useCapture)`
+
+Il parametro `useCapture` è un booleano opzionale (default `false`) 
+
+- `false`: l'evento viene catturato in fase di bubbling, ovvero quando l'evento si propaga dal nodo più interno al nodo più esterno
+
+- `true`: l'evento viene catturato in fase di cattura, ovvero quando l'evento si propaga dal nodo più esterno al nodo più interno
+
+
+## Differenze con Java

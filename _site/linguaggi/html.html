@@ -297,14 +297,16 @@ window.Quarto = {
   <li><a href="#immagine-di-tipo-blocco-figure-e-didascalia-figcaption" id="toc-immagine-di-tipo-blocco-figure-e-didascalia-figcaption" class="nav-link" data-scroll-target="#immagine-di-tipo-blocco-figure-e-didascalia-figcaption">Immagine di tipo blocco &lt;figure&gt; e didascalia &lt;figcaption&gt;</a></li>
   <li><a href="#immagine-con-collegamento-ipertestuale" id="toc-immagine-con-collegamento-ipertestuale" class="nav-link" data-scroll-target="#immagine-con-collegamento-ipertestuale">Immagine con collegamento ipertestuale</a></li>
   <li><a href="#aree-attive-map-e-area" id="toc-aree-attive-map-e-area" class="nav-link" data-scroll-target="#aree-attive-map-e-area">Aree attive &lt;map&gt; e &lt;area&gt;</a></li>
-  <li><a href="#presentazione-e-allineamento-immagini" id="toc-presentazione-e-allineamento-immagini" class="nav-link" data-scroll-target="#presentazione-e-allineamento-immagini">Presentazione e allineamento immagini</a></li>
+  <li><a href="#srcset" id="toc-srcset" class="nav-link" data-scroll-target="#srcset">srcset</a></li>
+  <li><a href="#sizes" id="toc-sizes" class="nav-link" data-scroll-target="#sizes">sizes</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><picture></picture></a></li>
   </ul></li>
   </ul></li>
   <li><a href="#moduli-form" id="toc-moduli-form" class="nav-link" data-scroll-target="#moduli-form">Moduli &lt;form&gt;</a>
   <ul>
   <li><a href="#elemento-form" id="toc-elemento-form" class="nav-link" data-scroll-target="#elemento-form">elemento &lt;form&gt;</a></li>
-  <li><a href="#metodo-get" id="toc-metodo-get" class="nav-link" data-scroll-target="#metodo-get">Metodo get</a></li>
-  <li><a href="#metodo-post" id="toc-metodo-post" class="nav-link" data-scroll-target="#metodo-post">Metodo post</a></li>
+  <li><a href="#metodo-get" id="toc-metodo-get" class="nav-link" data-scroll-target="#metodo-get">Metodo GET</a></li>
+  <li><a href="#metodo-post" id="toc-metodo-post" class="nav-link" data-scroll-target="#metodo-post">Metodo POST</a></li>
   <li><a href="#input-di-tipo-testo-input-type-text" id="toc-input-di-tipo-testo-input-type-text" class="nav-link" data-scroll-target="#input-di-tipo-testo-input-type-text">Input di tipo testo &lt;input type = “text”&gt;</a></li>
   <li><a href="#input-di-tipo-password-input-type-password" id="toc-input-di-tipo-password-input-type-password" class="nav-link" data-scroll-target="#input-di-tipo-password-input-type-password">Input di tipo password &lt;input type = “password”&gt;</a></li>
   <li><a href="#input-di-tipo-invia-input-type-submit" id="toc-input-di-tipo-invia-input-type-submit" class="nav-link" data-scroll-target="#input-di-tipo-invia-input-type-submit">Input di tipo invia &lt;input type = “submit”&gt;</a></li>
@@ -334,6 +336,14 @@ window.Quarto = {
   <li><a href="#audio-audio" id="toc-audio-audio" class="nav-link" data-scroll-target="#audio-audio">Audio &lt;audio&gt;</a></li>
   <li><a href="#video-video" id="toc-video-video" class="nav-link" data-scroll-target="#video-video">Video &lt;video&gt;</a></li>
   <li><a href="#sottotitoli-track" id="toc-sottotitoli-track" class="nav-link" data-scroll-target="#sottotitoli-track">Sottotitoli &lt;track&gt;</a></li>
+  </ul></li>
+  <li><a href="#iframe-iframe" id="toc-iframe-iframe" class="nav-link" data-scroll-target="#iframe-iframe">iFrame &lt;iframe&gt;</a>
+  <ul>
+  <li><a href="#sandboxing" id="toc-sandboxing" class="nav-link" data-scroll-target="#sandboxing">Sandboxing</a>
+  <ul class="collapse">
+  <li><a href="#button-details-summary-dialog" id="toc-button-details-summary-dialog" class="nav-link" data-scroll-target="#button-details-summary-dialog">button, details, summary, dialog</a></li>
+  <li><a href="#details-details" id="toc-details-details" class="nav-link" data-scroll-target="#details-details">Details &lt;details&gt;</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -460,6 +470,7 @@ composto da tag di apertura, contenuto e tag di chiusura <code>&lt;nome_elemento
 <h3 class="anchored" data-anchor-id="dichiarazione-del-tipo-di-documento-doctype-html">Dichiarazione del tipo di documento &lt;!DOCTYPE html&gt;</h3>
 <p>Dichiarazione del DTD (Document Type Definition), in html5 è</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Oggigiorno serve a mettere il browser in <strong>no-quirks mode</strong>, ovvero a farlo comportare come un browser moderno, evitando di interpretare il codice come se fosse scritto in una versione precedente di HTML.</p>
 <p>Posso anche riferirmi a un DTD diverso, in particolare a una versione precedente di HTML.</p>
 </section>
 <section id="struttura-generica" class="level3">
@@ -471,7 +482,7 @@ composto da tag di apertura, contenuto e tag di chiusura <code>&lt;nome_elemento
 </ul>
 <p>L’elemento radice <code>&lt;html&gt;</code> contiene due elementi principali:</p>
 <ul>
-<li><strong>header</strong> <code>&lt;head&gt;</code> contiene informazioni sul documento (metadati) non visualizzati</li>
+<li><strong>head</strong> <code>&lt;head&gt;</code> contiene informazioni sul documento (metadati) non visualizzati</li>
 <li><strong>body</strong> <code>&lt;body&gt;</code> contiene la specifica della struttura dei contenuti visualizzati della pagina (testi, immagini …)</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
@@ -523,8 +534,8 @@ composto da tag di apertura, contenuto e tag di chiusura <code>&lt;nome_elemento
 </section>
 <section id="elemento-style-style" class="level3">
 <h3 class="anchored" data-anchor-id="elemento-style-style">Elemento style &lt;style&gt;</h3>
-<p><code>&lt;style&gt;...&lt;/style&gt;</code>utilizzato per definire i fogli di stile (stile in linea) interni al documento</p>
-<p>Va incluso nell’header della pagina</p>
+<p><code>&lt;style&gt;...&lt;/style&gt;</code>utilizzato per definire i fogli di stile interni al documento</p>
+<p>Va incluso nell’head della pagina</p>
 <p>Generalmente oggi si usa un foglio di stile utilizzando l’elemento &lt;link&gt; nell’intestazione</p>
 </section>
 </section>
@@ -554,7 +565,7 @@ composto da tag di apertura, contenuto e tag di chiusura <code>&lt;nome_elemento
 </section>
 <section id="paragrafo-p-p" class="level3">
 <h3 class="anchored" data-anchor-id="paragrafo-p-p">Paragrafo &lt;p&gt; &lt;/p&gt;</h3>
-<p><code>&lt;p&gt;...&lt;/p&gt;</code>definisce un paragrafo di testo con l’aggiunta di un margine superiore e uno inferiore</p>
+<p><code>&lt;p&gt;...&lt;/p&gt;</code>definisce un paragrafo di testo , normalmente i browser lo visualizzano con l’aggiunta di un margine superiore e uno inferiore</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è un paragrafo di testo.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è il secondo paragrafo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Questo è il terzo<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -576,13 +587,13 @@ prima della linea<hr>sotto la linea
 </section>
 <section id="testo-in-grassetto-bb" class="level3">
 <h3 class="anchored" data-anchor-id="testo-in-grassetto-bb">Testo in grassetto &lt;b&gt;&lt;/b&gt;</h3>
-<p>Definisce il grassetto</p>
+<p>Richiama l’attenzione sul contenuto senza attribuirgli particolare importanza. (grassetto visivo)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>testo in <span class="dt">&lt;</span><span class="kw">b</span><span class="dt">&gt;</span>grassetto<span class="dt">&lt;/</span><span class="kw">b</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 testo in <b>grassetto</b>
 </section>
 <section id="testo-in-italics-ii" class="level3">
 <h3 class="anchored" data-anchor-id="testo-in-italics-ii">Testo in italics &lt;i&gt;&lt;/i&gt;</h3>
-<p>definisce il testo in italics</p>
+<p>Rappresenta una porzione di testo distinta dal testo circostante per una ragione semantica, come terminologia, espressioni idiomatiche, nomi scientifici, ecc. (corsivo visivo)</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>testo in <span class="dt">&lt;</span><span class="kw">i</span><span class="dt">&gt;</span>italics<span class="dt">&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 testo in <i>italics</i>
 </section>
@@ -624,7 +635,7 @@ testo in <i>italics</i>
 <section id="id" class="level4">
 <h4 class="anchored" data-anchor-id="id">id</h4>
 <p>Ogni elemento html può essere identificato univocamente da un identificatore grazie all’uso di <strong>id</strong> con il relativo <em>valore</em></p>
-<p>Il valore deve iniziare con lettera o underscore _ e deve essere unico</p>
+<p>Il valore deve essere unico, non vuoto e non può contenere spazi.</p>
 <p>Gli identificatori sono utili per applicare specifiche regole stilistiche</p>
 </section>
 <section id="class" class="level4">
@@ -645,6 +656,7 @@ testo in <i>italics</i>
 <h3 class="anchored" data-anchor-id="elementi-di-tipo-blocco-block">Elementi di tipo blocco (block)</h3>
 <p>Sono elementi che vengono visualizzati in una nuova linea, ovvero vanno a capo rispetto all’elemento che lo precedono</p>
 <p>Sono generalmente strutturali (titoli, paragradi, liste…)</p>
+<p>CSS può modificare il comportamento di un elemento di tipo blocco, rendendolo inline o viceversa</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -720,6 +732,7 @@ testo in <i>italics</i>
 <h3 class="anchored" data-anchor-id="elementi-di-tipo-in-linea-inline">Elementi di tipo in linea (inline)</h3>
 <p>Un elemento di tipo in linea appare all’interno di un elemento blocco e può contenere altri elementi inline.</p>
 <p>Viene visualizzato di seguito al contenuto che lo precede, senza andare a capo</p>
+<p>CSS può modificare il comportamento di un elemento di tipo blocco, rendendolo inline o viceversa</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1498,6 +1511,40 @@ All’interno di <strong>colgroup</strong> posso usare l’elemento <strong>col<
 <li><code>external</code>: indica che il collegamento punta a un sito esterno</li>
 <li><code>author</code>: indica che il collegamento punta a una pagina dell’autore del documento corrente</li>
 </ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Valore</th>
+<th style="text-align: left;">Scopo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">noopener</td>
+<td style="text-align: left;">impedisce accesso tramite <code>window.opener</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">noreferrer</td>
+<td style="text-align: left;">non inviare il referrer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">nofollow</td>
+<td style="text-align: left;">indica ai motori di ricerca di non seguire il collegamento</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">external</td>
+<td style="text-align: left;">indica un collegamento esterno</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">author</td>
+<td style="text-align: left;">collegamento alla pagina dell’autore</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="posta-elettronica" class="level4">
 <h4 class="anchored" data-anchor-id="posta-elettronica">Posta elettronica</h4>
@@ -1642,8 +1689,34 @@ Possiede:</p>
 </tbody>
 </table>
 </section>
-<section id="presentazione-e-allineamento-immagini" class="level4">
-<h4 class="anchored" data-anchor-id="presentazione-e-allineamento-immagini">Presentazione e allineamento immagini</h4>
+<section id="srcset" class="level4">
+<h4 class="anchored" data-anchor-id="srcset">srcset</h4>
+<p>Attributo dell’elemento <code>&lt;img&gt;</code> che permette di dare al browser una lista di immagini alternative tra cui scegliere, specificando la larghezza reale di ogni file in pixel seguita da <code>w</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- file diversi della stessa immagine --&gt;</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"foto-media.jpg"</span><span class="ot"> </span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="ot">     srcset</span><span class="op">=</span><span class="st">"foto-piccola.jpg 500w, </span><span class="er">&lt;</span><span class="st">!-- 500 pixel di larghezza --&gt;</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="st">             foto-media.jpg 1000w,  </span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a><span class="st">             foto-grande.jpg 2000w"</span><span class="ot"> </span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="ot">     alt</span><span class="op">=</span><span class="st">"Un bellissimo paesaggio"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sizes" class="level4">
+<h4 class="anchored" data-anchor-id="sizes">sizes</h4>
+<p>Attributo dell’elemento <code>&lt;img&gt;</code> che permette di specificare le dimensioni dell’immagine in base alla larghezza del viewport (area visibile dello schermo). Permette di indicare al browser quale immagine scegliere in base alle dimensioni della finestra del browser, tramite le <strong>media query</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"foto-media.jpg"</span><span class="ot"> </span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ot">     srcset</span><span class="op">=</span><span class="st">"foto-piccola.jpg 500w, </span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="st">             foto-media.jpg 1000w, </span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="st">             foto-grande.jpg 2000w"</span><span class="ot"> </span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="ot">     sizes</span><span class="op">=</span><span class="st">"(max-width: 500px) 100vw, (max-width: 1000px) 50vw, 33vw"</span><span class="ot"> </span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="ot">     alt</span><span class="op">=</span><span class="st">"Un bellissimo paesaggio"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section"><picture></picture></h4>
+<p>Il tag <picture> ti dà il controllo totale e serve per due casi specifici:</picture></p>
+<ol type="1">
+<li>Direzione Artistica (Art Direction): Ritagliare o cambiare proprio l’immagine su schermi diversi (es. una foto orizzontale su desktop e una verticale/zoommata sul volto su mobile).</li>
+<li>Formati di nuova generazione: Servire formati moderni e leggeri come AVIF o WebP, mantenendo un file JPG di riserva per i browser vecchi.</li>
+</ol>
 <p>Si usano i fogli di stile CSS</p>
 </section>
 </section>
@@ -1709,19 +1782,19 @@ Possiede:</p>
 <li><strong>id</strong>: identificatore univoco del form</li>
 <li><strong>name</strong>: nome del form</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"url del programma"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"form1"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"myForm"</span><span class="dt">&gt;</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- campi del form --&gt;</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"url del programma"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"form1"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"myForm"</span><span class="dt">&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- campi del form --&gt;</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="metodo-get" class="level3">
-<h3 class="anchored" data-anchor-id="metodo-get">Metodo get</h3>
-<p>Tramite il metodo <strong>get</strong> i dati (es. nome=valore) vengono inviati al server come parte dell’URL, separati da un punto interrogativo <code>?</code> e concatenati con il simbolo <code>&amp;</code></p>
+<h3 class="anchored" data-anchor-id="metodo-get">Metodo GET</h3>
+<p>Tramite il metodo <strong>GET</strong> i dati (es. nome=valore) vengono inviati al server come parte dell’URL, separati da un punto interrogativo <code>?</code> e concatenati con il simbolo <code>&amp;</code></p>
 <p>produce una stringa visibile nella barra degli indirizzi del browser</p>
 <p>adatto a pochi dati (URL: max 2048 caratteri), non sono dati binari, sensibili e non modificano lo stato di database. Ottimo per ricerca-recupero, non per modifica</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"search.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"search.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="metodo-post" class="level3">
-<h3 class="anchored" data-anchor-id="metodo-post">Metodo post</h3>
+<h3 class="anchored" data-anchor-id="metodo-post">Metodo POST</h3>
 <ul>
 <li>i dati sono inseriti nel corpo dell’entità del messaggio HTTP di richiesta</li>
 </ul>
@@ -1757,20 +1830,20 @@ L’attributo <strong>name</strong> è necessario per assumere il dato digitato 
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"invio.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"post"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>Nome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nome"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>Cognome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"cognome"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>Password: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"password"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"password"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Invia"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"invio.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"post"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>Nome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nome"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>Cognome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"cognome"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>Password: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"password"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"password"</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Invia"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 <form action="invio.php" method="post"><br>
 Nome: <input type="text" name="nome"><br>
 Cognome: <input type="text" name="cognome"><br>
 Password: <input type="password" name="password"><br>
 <input type="submit" value="Invia">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"invio.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="dt">&gt;</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>Nome e Cognome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nc"</span><span class="dt">&gt;</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Invia"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"invio.php"</span><span class="ot"> method</span><span class="op">=</span><span class="st">"get"</span><span class="dt">&gt;</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>Nome e Cognome: <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nc"</span><span class="dt">&gt;</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Invia"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 Nome e Cognome: <input type="text" name="nc">
 <input type="submit" value="Invia">
@@ -1782,9 +1855,9 @@ Nome e Cognome: <input type="text" name="nc">
 <h3 class="anchored" data-anchor-id="pulsante-buttonbutton">Pulsante &lt;button&gt;…&lt;/button&gt;</h3>
 <p>Serve a creare un pulsante con etichetta personalizzata (tramite attributo <strong>value</strong>) a cui posso associare un’azione tramite Javascript.</p>
 <p>Ha un tag di apertura e uno di chiusura, quindi può contenere testo o immagini.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"button"</span><span class="dt">&gt;</span>Click Me!<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Submit<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"reset"</span><span class="dt">&gt;</span>Reset<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"button"</span><span class="dt">&gt;</span>Click Me!<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Submit<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> type</span><span class="op">=</span><span class="st">"reset"</span><span class="dt">&gt;</span>Reset<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <button type="button">Click Me!</button>
 <button type="submit"><strong>Submit</strong></button>
 <button type="reset">Reset</button>
@@ -1798,16 +1871,16 @@ Nome e Cognome: <input type="text" name="nc">
 <li><strong>rows</strong>: numero di righe visibili del campo</li>
 <li><strong>cols</strong>: numero di colonne visibili del campo</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">textarea</span><span class="ot"> name</span><span class="op">=</span><span class="st">"messaggio"</span><span class="ot"> rows</span><span class="op">=</span><span class="st">"4"</span><span class="ot"> cols</span><span class="op">=</span><span class="st">"50"</span><span class="dt">&gt;</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">textarea</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">textarea</span><span class="ot"> name</span><span class="op">=</span><span class="st">"messaggio"</span><span class="ot"> rows</span><span class="op">=</span><span class="st">"4"</span><span class="ot"> cols</span><span class="op">=</span><span class="st">"50"</span><span class="dt">&gt;</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">textarea</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <textarea name="messaggio" rows="4" cols="50"></textarea>
 </section>
 <section id="input-di-tipo-radio-input-type-radio" class="level3">
 <h3 class="anchored" data-anchor-id="input-di-tipo-radio-input-type-radio">Input di tipo radio &lt;input type = “radio”&gt;</h3>
 <p>Controllo che permette all’utente di esprimere una scelta tra più opzioni<br>
 La scelta è limitata a una sola opzione</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"età"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"minorenne"</span><span class="dt">&gt;</span>Minorenne<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"età"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"maggiorenne"</span><span class="dt">&gt;</span>Maggiorenne<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"età"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"minorenne"</span><span class="dt">&gt;</span>Minorenne<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"età"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"maggiorenne"</span><span class="dt">&gt;</span>Maggiorenne<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="radio" name="età" value="minorenne">Minorenne<br>
 <input type="radio" name="età" value="maggiorenne">Maggiorenne<br>
 </section>
@@ -1818,9 +1891,9 @@ La scelta è limitata a una sola opzione</p>
 <li>attributo <strong>name</strong>: nome del campo, necessario per assumere il dato digitato dall’utente</li>
 <li>attributo <strong>value</strong>: valore associato all’opzione selezionata</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"hobby"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"lettura"</span><span class="dt">&gt;</span>Lettura<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"hobby"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"musica"</span><span class="dt">&gt;</span>Musica<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"hobby"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"sport"</span><span class="dt">&gt;</span>Sport<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"hobby"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"lettura"</span><span class="dt">&gt;</span>Lettura<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"hobby"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"musica"</span><span class="dt">&gt;</span>Musica<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"hobby"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"sport"</span><span class="dt">&gt;</span>Sport<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="checkbox" name="hobby" value="lettura">Lettura<br>
 <input type="checkbox" name="hobby" value="musica">Musica<br>
 <input type="checkbox" name="hobby" value="sport">Sport<br>
@@ -1829,11 +1902,11 @@ La scelta è limitata a una sola opzione</p>
 <h3 class="anchored" data-anchor-id="selezione-di-unopzione-selectselect">Selezione di un’opzione &lt;select&gt;…&lt;/select&gt;</h3>
 <p>Controllo che permette all’utente di selezionare un’opzione da un elenco a discesa.</p>
 <p>Gli elementi usati sono <strong>select</strong> e <strong>option</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">select</span><span class="ot"> name</span><span class="op">=</span><span class="st">"frutta"</span><span class="dt">&gt;</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"mela"</span><span class="dt">&gt;</span>Mela<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"banana"</span><span class="dt">&gt;</span>Banana<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"arancia"</span><span class="dt">&gt;</span>Arancia<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">select</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">select</span><span class="ot"> name</span><span class="op">=</span><span class="st">"frutta"</span><span class="dt">&gt;</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"mela"</span><span class="dt">&gt;</span>Mela<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"banana"</span><span class="dt">&gt;</span>Banana<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"arancia"</span><span class="dt">&gt;</span>Arancia<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">select</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <select name="frutta">
     <option value="mela">Mela</option>
     <option value="banana">Banana</option>
@@ -1842,11 +1915,11 @@ La scelta è limitata a una sola opzione</p>
 <p>Puoi attivare la selezione multipla aggiungendo l’attributo <strong>multiple</strong> all’elemento <strong>select</strong>.</p>
 <p>Con CTRL (o CMD su Mac) puoi selezionare più opzioni contemporaneamente, mentre con SHIFT puoi selezionare un intervallo di opzioni.</p>
 <p>L’attributo <strong>size</strong> specifica il numero di opzioni visibili senza scorrere l’elenco.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">select</span><span class="ot"> name</span><span class="op">=</span><span class="st">"frutta"</span><span class="ot"> multiple size</span><span class="op">=</span><span class="st">"3"</span><span class="dt">&gt;</span></span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"mela"</span><span class="dt">&gt;</span>Mela<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"banana"</span><span class="dt">&gt;</span>Banana<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"arancia"</span><span class="dt">&gt;</span>Arancia<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">select</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">select</span><span class="ot"> name</span><span class="op">=</span><span class="st">"frutta"</span><span class="ot"> multiple size</span><span class="op">=</span><span class="st">"3"</span><span class="dt">&gt;</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"mela"</span><span class="dt">&gt;</span>Mela<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"banana"</span><span class="dt">&gt;</span>Banana<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">"arancia"</span><span class="dt">&gt;</span>Arancia<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">select</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <select name="frutta" multiple="" size="3">
     <option value="mela">Mela</option>
     <option value="banana">Banana</option>
@@ -1857,14 +1930,14 @@ La scelta è limitata a una sola opzione</p>
 <h3 class="anchored" data-anchor-id="input-di-tipo-file-input-type-file">Input di tipo file &lt;input type = “file”&gt;</h3>
 <p>Serve per permettere all’utente di selezionare un file dal proprio computer da inviare al server.</p>
 <p>L’attributo <strong>name</strong> è necessario per assumere il file selezionato dall’utente.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"file"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"file_da_inviare"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"file"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"file_da_inviare"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="file" name="file_da_inviare">
 </section>
 <section id="input-di-tipo-immagine-input-type-image" class="level3">
 <h3 class="anchored" data-anchor-id="input-di-tipo-immagine-input-type-image">Input di tipo immagine &lt;input type = “image”&gt;</h3>
 <p>Serve per creare un pulsante immagine che invia i dati del form al server.<br>
 Si possono usare gli attributi soliti per le immagini, come <strong>src</strong>, <strong>alt</strong>, <strong>width</strong> e <strong>height</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"image"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/images/A_Frozen_Earth.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"A Frozen Earth"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"190"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"108"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"image"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../assets/images/A_Frozen_Earth.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"A Frozen Earth"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"190"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"108"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="image" src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
 </section>
 <section id="input-di-tipo-email-input-type-email" class="level3">
@@ -1872,7 +1945,7 @@ Si possono usare gli attributi soliti per le immagini, come <strong>src</strong>
 <p>Serve per permettere all’utente di inserire un indirizzo email.</p>
 <p>l’attributo <strong>name</strong> è necessario per assumere l’indirizzo email digitato dall’utente.</p>
 <p>l’attributo <strong>placeholder</strong> permette di visualizzare un testo all’interno del campo di input, che scompare quando l’utente inizia a digitare.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"email"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"email"</span><span class="ot"> placeholder</span><span class="op">=</span><span class="st">"Inserisci la tua email"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"email"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"email"</span><span class="ot"> placeholder</span><span class="op">=</span><span class="st">"Inserisci la tua email"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="email" name="email" placeholder="Inserisci la tua email">
 </section>
 <section id="fieldset-fieldset-e-legenda-legend" class="level3">
@@ -1884,13 +1957,13 @@ Si possono usare gli attributi soliti per le immagini, come <strong>src</strong>
 <h3 class="anchored" data-anchor-id="pulsante-di-reset-input-type-reset">Pulsante di reset &lt;input type = “reset”&gt;</h3>
 <p>Permette di creare un pulsante che resetta tutti i campi del form ai valori iniziali.<br>
 L’attributo <strong>value</strong> permette di specificare il testo visualizzato sul pulsante.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"reset"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Reset"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"reset"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Reset"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="reset" value="Reset">
 </section>
 <section id="elemento-hidden-input-type-hidden" class="level3">
 <h3 class="anchored" data-anchor-id="elemento-hidden-input-type-hidden">Elemento hidden &lt;input type = “hidden”&gt;</h3>
-<p>Elemento che non viene visualizzato nella pagina, ma che permette di inviare dati al server senza che l’utente li veda o li modifichi.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"hidden"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"id_utente"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"12345"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>non viene visualizzato normalmente nell’interfaccia, ma il suo valore è comunque visibile e modificabile dall’utente tramite gli strumenti del browser o modificando la richiesta</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"hidden"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"id_utente"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"12345"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="attributi-per-elemento-input-size-maxlength-pattern-required" class="level3">
 <h3 class="anchored" data-anchor-id="attributi-per-elemento-input-size-maxlength-pattern-required">Attributi per elemento &lt;input&gt; (size, maxlength, pattern, required)</h3>
@@ -1904,23 +1977,23 @@ L’attributo <strong>value</strong> permette di specificare il testo visualizza
 <p>L’elemento <strong>label</strong> serve per associare un’etichetta a un controllo del form.</p>
 <p>L’attributo <strong>for</strong> dell’elemento <strong>label</strong> deve corrispondere all’attributo <strong>id</strong> del controllo del form.</p>
 <p>Il testo dell’etichetta è associato direttamente all’input: questo facilita l’accessibilità del sito per la tecnologia assistiva (es. screen reader).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"nome"</span><span class="dt">&gt;</span>Nome:<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"nome"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nome"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"nome"</span><span class="dt">&gt;</span>Nome:<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"nome"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"nome"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <label for="nome">Nome:</label>
 <input type="text" id="nome" name="nome">   
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>The label element<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Click on one of the text labels to toggle the related radio button:<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"/action_page.php"</span><span class="dt">&gt;</span></span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"html"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"fav_language"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"HTML"</span><span class="dt">&gt;</span></span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"html"</span><span class="dt">&gt;</span>HTML<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"css"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"fav_language"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"CSS"</span><span class="dt">&gt;</span></span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"css"</span><span class="dt">&gt;</span>CSS<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"javascript"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"fav_language"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"JavaScript"</span><span class="dt">&gt;</span></span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"javascript"</span><span class="dt">&gt;</span>JavaScript<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Submit"</span><span class="dt">&gt;</span></span>
-<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>The label element<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Click on one of the text labels to toggle the related radio button:<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">form</span><span class="ot"> action</span><span class="op">=</span><span class="st">"/action_page.php"</span><span class="dt">&gt;</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"html"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"fav_language"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"HTML"</span><span class="dt">&gt;</span></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"html"</span><span class="dt">&gt;</span>HTML<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"css"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"fav_language"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"CSS"</span><span class="dt">&gt;</span></span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"css"</span><span class="dt">&gt;</span>CSS<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"javascript"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"fav_language"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"JavaScript"</span><span class="dt">&gt;</span></span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"javascript"</span><span class="dt">&gt;</span>JavaScript<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"submit"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"Submit"</span><span class="dt">&gt;</span></span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">form</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 class="anchored">The label element</h3>
 <p>Click on one of the text labels to toggle the related radio button:</p>
 
@@ -1937,43 +2010,44 @@ L’attributo <strong>value</strong> permette di specificare il testo visualizza
 </section>
 <section id="inserimento-di-data-e-ora" class="level3">
 <h3 class="anchored" data-anchor-id="inserimento-di-data-e-ora">Inserimento di data e ora</h3>
-<p>Per inserire una data nel formato <strong>gg/mm/aaaa</strong> si usa l’elemento <strong>&lt;input type=“date”&gt;</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"date"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"data"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Permette all’utente di selezionare una data. Il valore inviato dal controllo segue il formato HTML standard YYYY-MM-DD.<br>
+<strong>&lt;input type=“date”&gt;</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"date"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"data"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="date" name="data">
 <ul>
 <li>per inserire un orario nel formato <strong>hh:mm</strong> si usa l’elemento <strong>&lt;input type=“time”&gt;</strong>.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"time"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"ora"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"time"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"ora"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="time" name="ora">
 </section>
 <section id="inserimento-di-un-url" class="level3">
 <h3 class="anchored" data-anchor-id="inserimento-di-un-url">Inserimento di un URL</h3>
 <p>Per inserire un URL si usa l’elemento <strong>&lt;input type=“url”&gt;</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"url"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"sito"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb67"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"url"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"sito"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="url" name="sito">
 </section>
 <section id="inserimento-di-testo-per-effettuare-ricerche" class="level3">
 <h3 class="anchored" data-anchor-id="inserimento-di-testo-per-effettuare-ricerche">Inserimento di testo per effettuare ricerche</h3>
 <p>Per inserire un testo per effettuare ricerche si usa l’elemento <strong>&lt;input type=“search”&gt;</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"search"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"ric"</span><span class="ot"> placeholder</span><span class="op">=</span><span class="st">"Introduci keyword"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb68"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"search"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"ric"</span><span class="ot"> placeholder</span><span class="op">=</span><span class="st">"Introduci keyword"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="search" name="ric" placeholder="Introduci keyword">
 </section>
 <section id="inserimento-di-un-numero" class="level3">
 <h3 class="anchored" data-anchor-id="inserimento-di-un-numero">Inserimento di un numero</h3>
 <p>Per inserire un numero si usa l’elemento <strong>&lt;input type=“number”&gt;</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb67"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"number"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"numero"</span><span class="ot"> min</span><span class="op">=</span><span class="st">"1"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"10"</span><span class="ot"> step</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb69"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"number"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"numero"</span><span class="ot"> min</span><span class="op">=</span><span class="st">"1"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"10"</span><span class="ot"> step</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="number" name="numero" min="1" max="10" step="1">
 </section>
 <section id="inserimento-di-un-colore" class="level3">
 <h3 class="anchored" data-anchor-id="inserimento-di-un-colore">Inserimento di un colore</h3>
 <p>Per inserire un colore si usa l’elemento <strong>&lt;input type=“color”&gt;</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb68"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"color"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"colore"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"#ff0000"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb70"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"color"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"colore"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"#ff0000"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="color" name="colore" value="#ff0000">
 </section>
 <section id="inserimento-di-un-intervallo-di-valori" class="level3">
 <h3 class="anchored" data-anchor-id="inserimento-di-un-intervallo-di-valori">Inserimento di un intervallo di valori</h3>
 <p>Per inserire in un intervallo di valori si usa l’elemento <strong>&lt;input type=“range”&gt;</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb69"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"range"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"intervallo"</span><span class="ot"> min</span><span class="op">=</span><span class="st">"0"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"100"</span><span class="ot"> step</span><span class="op">=</span><span class="st">"1"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"50"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb71"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"range"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"intervallo"</span><span class="ot"> min</span><span class="op">=</span><span class="st">"0"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"100"</span><span class="ot"> step</span><span class="op">=</span><span class="st">"1"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"50"</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <input type="range" name="intervallo" min="0" max="100" step="1" value="50">
 </section>
 </section>
@@ -1999,12 +2073,12 @@ L’attributo <strong>value</strong> permette di specificare il testo visualizza
 <li><strong>OGG</strong>: formato audio open source, supportato da molti browser moderni</li>
 </ul>
 <p>Il tag <code>&lt;audio&gt;</code> può essere contenere più tag <code>&lt;source&gt;</code> con attributo <code>type</code> (per il MIME della risorsa) per specificare più formati audio, in modo che il browser possa scegliere quello supportato.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb70"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">audio</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.ogg"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/ogg"</span><span class="dt">&gt;</span></span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.mp3"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/mpeg"</span><span class="dt">&gt;</span></span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.wav"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/wav"</span><span class="dt">&gt;</span></span>
-<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>Your browser does not support the audio element.</span>
-<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">audio</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">audio</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.ogg"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/ogg"</span><span class="dt">&gt;</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.mp3"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/mpeg"</span><span class="dt">&gt;</span></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"horse.wav"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"audio/wav"</span><span class="dt">&gt;</span></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>Your browser does not support the audio element.</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">audio</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="video-video" class="level3">
 <h3 class="anchored" data-anchor-id="video-video">Video &lt;video&gt;</h3>
@@ -2014,23 +2088,62 @@ L’attributo <strong>value</strong> permette di specificare il testo visualizza
 <li><strong>WebM</strong>: formato video open source, supportato da molti browser moderni</li>
 <li><strong>OGG</strong>: formato video open source, supportato da molti browser moderni</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb71"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">video</span><span class="ot"> src</span><span class="op">=</span><span class="st">"film.mp4"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"720"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"480"</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"film.webm"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/webm"</span><span class="dt">&gt;</span></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>    Your browser does not support the video element.</span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">video</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb73"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">video</span><span class="ot"> src</span><span class="op">=</span><span class="st">"film.mp4"</span><span class="ot"> width</span><span class="op">=</span><span class="st">"720"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"480"</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"film.webm"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/webm"</span><span class="dt">&gt;</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>    Your browser does not support the video element.</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">video</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="sottotitoli-track" class="level3">
 <h3 class="anchored" data-anchor-id="sottotitoli-track">Sottotitoli &lt;track&gt;</h3>
 <p>L’elemento <strong>&lt;track&gt;</strong> serve per impostare etichette, sottotitoli o altri elementi per gli elemeneti <audio> e <video>.</video></audio></p>
 <p>Le tracce sono formattate in file esterni con estensione <strong>.vtt</strong> (WebVTT - Web Video Text Tracks)</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">video</span><span class="ot"> width</span><span class="op">=</span><span class="st">"320"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"240"</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"forrest_gump.mp4"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/mp4"</span><span class="dt">&gt;</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"forrest_gump.ogg"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/ogg"</span><span class="dt">&gt;</span></span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">track</span><span class="ot"> src</span><span class="op">=</span><span class="st">"fgsubtitles_en.vtt"</span><span class="ot"> kind</span><span class="op">=</span><span class="st">"subtitles"</span><span class="ot"> srclang</span><span class="op">=</span><span class="st">"en"</span><span class="ot"> label</span><span class="op">=</span><span class="st">"English"</span><span class="dt">&gt;</span></span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">track</span><span class="ot"> src</span><span class="op">=</span><span class="st">"fgsubtitles_no.vtt"</span><span class="ot"> kind</span><span class="op">=</span><span class="st">"subtitles"</span><span class="ot"> srclang</span><span class="op">=</span><span class="st">"no"</span><span class="ot"> label</span><span class="op">=</span><span class="st">"Norwegian"</span><span class="dt">&gt;</span></span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">video</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb74"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">video</span><span class="ot"> width</span><span class="op">=</span><span class="st">"320"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"240"</span><span class="ot"> controls</span><span class="dt">&gt;</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"forrest_gump.mp4"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/mp4"</span><span class="dt">&gt;</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">source</span><span class="ot"> src</span><span class="op">=</span><span class="st">"forrest_gump.ogg"</span><span class="ot"> type</span><span class="op">=</span><span class="st">"video/ogg"</span><span class="dt">&gt;</span></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">track</span><span class="ot"> src</span><span class="op">=</span><span class="st">"fgsubtitles_en.vtt"</span><span class="ot"> kind</span><span class="op">=</span><span class="st">"subtitles"</span><span class="ot"> srclang</span><span class="op">=</span><span class="st">"en"</span><span class="ot"> label</span><span class="op">=</span><span class="st">"English"</span><span class="dt">&gt;</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">track</span><span class="ot"> src</span><span class="op">=</span><span class="st">"fgsubtitles_no.vtt"</span><span class="ot"> kind</span><span class="op">=</span><span class="st">"subtitles"</span><span class="ot"> srclang</span><span class="op">=</span><span class="st">"no"</span><span class="ot"> label</span><span class="op">=</span><span class="st">"Norwegian"</span><span class="dt">&gt;</span></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">video</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="iframe-iframe" class="level2">
+<h2 class="anchored" data-anchor-id="iframe-iframe">iFrame &lt;iframe&gt;</h2>
+<p>Un iframe è un elemento che ti permette di inserire un documento o una pagina web esterna dentro la pagina corrente</p>
+<ul>
+<li>quadro in linea che mostra i contenuti di un’altra pagina web</li>
+<li>per mostrare video, mappe, pubblicità o feed social</li>
+</ul>
+<p>Attributi principali:</p>
+<ul>
+<li><strong>src</strong>: specifica l’URL della pagina da visualizzare</li>
+<li><strong>title</strong>: fornisce un titolo per l’iframe, utile per l’accessibilità</li>
+<li><strong>width</strong>: specifica la larghezza dell’iframe</li>
+<li><strong>height</strong>: specifica l’altezza dell’iframe</li>
+<li><strong>loading</strong>: specifica se l’iframe deve essere caricato in modo asincrono (lazy) o immediato (eager)</li>
+</ul>
+<p>Posso inserire un contenuto alternativo tra i tag di apertura e chiusura dell’iframe, che verrà visualizzato se il browser non supporta l’elemento iframe.</p>
+<p>Ulteriori attributi:</p>
+<ul>
+<li><strong>srcdoc</strong>: permette di inserire direttamente l’HTML del contenuto</li>
+</ul>
+<section id="sandboxing" class="level3">
+<h3 class="anchored" data-anchor-id="sandboxing">Sandboxing</h3>
+<section id="button-details-summary-dialog" class="level4">
+<h4 class="anchored" data-anchor-id="button-details-summary-dialog">button, details, summary, dialog</h4>
+</section>
+<section id="details-details" class="level4">
+<h4 class="anchored" data-anchor-id="details-details">Details &lt;details&gt;</h4>
+<p>Blocco che può essere espanso o compresso dall’utente. Può contenere qualsiasi tipo di contenuto HTML.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb75"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Dettagli<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Contenuto dei dettagli...<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details>
+    <summary>Dettagli</summary>
+    <p>Contenuto dei dettagli...</p>
+</details>
 
 
+</section>
 </section>
 </section>
 
