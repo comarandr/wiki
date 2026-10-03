@@ -1,2 +1,1498 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"></html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Appunti di JavaScript">
+
+<title>JavaScript – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/linguaggi/indexLing.html"> 
+<span class="menu-text">Linguaggi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/universita/indexUni.html"> 
+<span class="menu-text">Università</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/personali/indexPers.html"> 
+<span class="menu-text">Personali</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="http://comarandr.github.io/wiki/indexMin.html"> 
+<span class="menu-text">Minimali</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#web-dinamico" id="toc-web-dinamico" class="nav-link active" data-scroll-target="#web-dinamico">Web dinamico</a>
+  <ul>
+  <li><a href="#web-api" id="toc-web-api" class="nav-link" data-scroll-target="#web-api">Web API</a></li>
+  <li><a href="#framework" id="toc-framework" class="nav-link" data-scroll-target="#framework">Framework</a></li>
+  </ul></li>
+  <li><a href="#javascript" id="toc-javascript" class="nav-link" data-scroll-target="#javascript">JavaScript</a>
+  <ul>
+  <li><a href="#oggetti" id="toc-oggetti" class="nav-link" data-scroll-target="#oggetti">Oggetti</a></li>
+  <li><a href="#html-dinamico" id="toc-html-dinamico" class="nav-link" data-scroll-target="#html-dinamico">HTML dinamico</a></li>
+  <li><a href="#istruzioni" id="toc-istruzioni" class="nav-link" data-scroll-target="#istruzioni">Istruzioni</a></li>
+  <li><a href="#commenti" id="toc-commenti" class="nav-link" data-scroll-target="#commenti">Commenti</a></li>
+  <li><a href="#variabili" id="toc-variabili" class="nav-link" data-scroll-target="#variabili">Variabili</a></li>
+  <li><a href="#tipi-primitivi" id="toc-tipi-primitivi" class="nav-link" data-scroll-target="#tipi-primitivi">Tipi primitivi</a></li>
+  <li><a href="#array" id="toc-array" class="nav-link" data-scroll-target="#array">Array</a></li>
+  <li><a href="#espressioni" id="toc-espressioni" class="nav-link" data-scroll-target="#espressioni">Espressioni</a></li>
+  <li><a href="#operatori-aritmetici" id="toc-operatori-aritmetici" class="nav-link" data-scroll-target="#operatori-aritmetici">Operatori aritmetici</a></li>
+  <li><a href="#operatore-per-le-stringhe" id="toc-operatore-per-le-stringhe" class="nav-link" data-scroll-target="#operatore-per-le-stringhe">Operatore per le stringhe +</a></li>
+  <li><a href="#funzioni" id="toc-funzioni" class="nav-link" data-scroll-target="#funzioni">Funzioni</a></li>
+  <li><a href="#variabili-locali-e-globali" id="toc-variabili-locali-e-globali" class="nav-link" data-scroll-target="#variabili-locali-e-globali">Variabili locali e globali</a></li>
+  </ul></li>
+  <li><a href="#oggetti-1" id="toc-oggetti-1" class="nav-link" data-scroll-target="#oggetti-1">Oggetti</a>
+  <ul>
+  <li><a href="#struttura-di-un-oggetto" id="toc-struttura-di-un-oggetto" class="nav-link" data-scroll-target="#struttura-di-un-oggetto">Struttura di un oggetto</a></li>
+  <li><a href="#accesso-alle-proprietà-e-ai-metodi-di-un-oggetto" id="toc-accesso-alle-proprietà-e-ai-metodi-di-un-oggetto" class="nav-link" data-scroll-target="#accesso-alle-proprietà-e-ai-metodi-di-un-oggetto">Accesso alle proprietà e ai metodi di un oggetto</a></li>
+  <li><a href="#costruttori" id="toc-costruttori" class="nav-link" data-scroll-target="#costruttori">Costruttori</a></li>
+  <li><a href="#funzioni-costruttrici" id="toc-funzioni-costruttrici" class="nav-link" data-scroll-target="#funzioni-costruttrici">Funzioni costruttrici</a></li>
+  <li><a href="#aggiungere-ed-eliminare-proprietà-delete" id="toc-aggiungere-ed-eliminare-proprietà-delete" class="nav-link" data-scroll-target="#aggiungere-ed-eliminare-proprietà-delete">Aggiungere ed eliminare proprietà (delete)</a></li>
+  <li><a href="#oggetti-con-array-e-array-di-oggetti" id="toc-oggetti-con-array-e-array-di-oggetti" class="nav-link" data-scroll-target="#oggetti-con-array-e-array-di-oggetti">Oggetti con array e array di oggetti</a></li>
+  </ul></li>
+  <li><a href="#classi" id="toc-classi" class="nav-link" data-scroll-target="#classi">Classi</a></li>
+  <li><a href="#controllo-di-flusso" id="toc-controllo-di-flusso" class="nav-link" data-scroll-target="#controllo-di-flusso">Controllo di flusso</a>
+  <ul>
+  <li><a href="#if" id="toc-if" class="nav-link" data-scroll-target="#if">If</a></li>
+  <li><a href="#operatori-di-comparazione" id="toc-operatori-di-comparazione" class="nav-link" data-scroll-target="#operatori-di-comparazione">Operatori di comparazione</a></li>
+  <li><a href="#operatori-logici" id="toc-operatori-logici" class="nav-link" data-scroll-target="#operatori-logici">Operatori logici</a></li>
+  <li><a href="#switch" id="toc-switch" class="nav-link" data-scroll-target="#switch">Switch</a></li>
+  <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while">While</a></li>
+  <li><a href="#dowhile" id="toc-dowhile" class="nav-link" data-scroll-target="#dowhile">Do…while</a></li>
+  <li><a href="#for" id="toc-for" class="nav-link" data-scroll-target="#for">For</a></li>
+  <li><a href="#break-e-continue" id="toc-break-e-continue" class="nav-link" data-scroll-target="#break-e-continue">Break e continue</a></li>
+  <li><a href="#oggetti-built-in" id="toc-oggetti-built-in" class="nav-link" data-scroll-target="#oggetti-built-in">Oggetti Built-in</a></li>
+  <li><a href="#browser-object-model-bom" id="toc-browser-object-model-bom" class="nav-link" data-scroll-target="#browser-object-model-bom">Browser Object Model (BOM)</a></li>
+  <li><a href="#dom-document-object-model" id="toc-dom-document-object-model" class="nav-link" data-scroll-target="#dom-document-object-model">DOM (Document Object Model)</a></li>
+  <li><a href="#oggetti-globali-javascript" id="toc-oggetti-globali-javascript" class="nav-link" data-scroll-target="#oggetti-globali-javascript">Oggetti globali JavaScript</a></li>
+  <li><a href="#oggetto-string" id="toc-oggetto-string" class="nav-link" data-scroll-target="#oggetto-string">Oggetto String</a></li>
+  <li><a href="#oggetto-number" id="toc-oggetto-number" class="nav-link" data-scroll-target="#oggetto-number">Oggetto Number</a></li>
+  <li><a href="#metodi-globali" id="toc-metodi-globali" class="nav-link" data-scroll-target="#metodi-globali">Metodi globali</a></li>
+  <li><a href="#oggetto-math" id="toc-oggetto-math" class="nav-link" data-scroll-target="#oggetto-math">Oggetto Math</a></li>
+  <li><a href="#oggetto-date" id="toc-oggetto-date" class="nav-link" data-scroll-target="#oggetto-date">Oggetto Date</a></li>
+  </ul></li>
+  <li><a href="#modello-dom" id="toc-modello-dom" class="nav-link" data-scroll-target="#modello-dom">Modello DOM</a>
+  <ul>
+  <li><a href="#operare-sul-dom" id="toc-operare-sul-dom" class="nav-link" data-scroll-target="#operare-sul-dom">Operare sul DOM</a></li>
+  <li><a href="#accedere-ad-un-form" id="toc-accedere-ad-un-form" class="nav-link" data-scroll-target="#accedere-ad-un-form">Accedere ad un form</a></li>
+  <li><a href="#eventi" id="toc-eventi" class="nav-link" data-scroll-target="#eventi">Eventi</a></li>
+  <li><a href="#tipo-di-eventi" id="toc-tipo-di-eventi" class="nav-link" data-scroll-target="#tipo-di-eventi">Tipo di eventi</a></li>
+  <li><a href="#metodo-addeventlistener" id="toc-metodo-addeventlistener" class="nav-link" data-scroll-target="#metodo-addeventlistener">metodo addEventListener()</a></li>
+  </ul></li>
+  <li><a href="#differenze-con-java" id="toc-differenze-con-java" class="nav-link" data-scroll-target="#differenze-con-java">Differenze con Java</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">JavaScript</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">linguaggi</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Appunti di JavaScript
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="web-dinamico" class="level2">
+<h2 class="anchored" data-anchor-id="web-dinamico">Web dinamico</h2>
+<p>HTML e CSS sono linguaggi di markup, pertanto permettono la creazione di pagine web statiche.</p>
+<p>Il Web 2.0 ha portato alla creazione di pagine web dinamiche, ovvero pagine che possono cambiare il loro contenuto in base all’interazione dell’utente.</p>
+<p><strong>programmazione lato client</strong>: il codice viene eseguito sul computer dell’utente, quindi non è necessario inviare richieste al server per aggiornare la pagina.</p>
+<p><strong>programmazione lato server</strong>: il codice viene eseguito sul server, quindi è necessario inviare richieste al server per aggiornare la pagina.</p>
+<p>Esistono tre principali categorie di tecnologie per lo sviluppo di pagine web dinamiche:</p>
+<ul>
+<li>linguaggi di programmazione e scripting</li>
+<li>API, Web Application Programming Interface</li>
+<li>Web Application Framework</li>
+</ul>
+<section id="web-api" class="level3">
+<h3 class="anchored" data-anchor-id="web-api">Web API</h3>
+<p>Una web API è un’interfaccia per la programmazione di applicazioni per il web</p>
+<ul>
+<li>API del browser può estendere le funzionalità del browser</li>
+<li>API del server può estendere le funzionalità del server</li>
+<li>browser dispongono di Web API per operazioni complesse e facilitare accesso ai dati</li>
+<li>API fornisocno una modalità di interazioni tra componenti software per inserire funzioni avanzate</li>
+</ul>
+<p>In genere usate con JavaScript</p>
+</section>
+<section id="framework" class="level3">
+<h3 class="anchored" data-anchor-id="framework">Framework</h3>
+<p><strong>framework</strong>: architettura logica sulla quale un software può essere progettato e realizzato</p>
+<p>Applicazione o insieme di moduli per consentire lo sviluppo agile di applicazioni mediante utilizzo di una <strong>library</strong> e/o funzionalità già rilasciate</p>
+<p><strong>framework web</strong>: insieme di strumenti e librerie per lo sviluppo di applicazioni web dinamiche</p>
+<p>Permette allo sviluppatore di utilizzare serie di funzionalità senza andare a riscrivere ogni volta tutto da capo</p>
+<p>Il programmatore ha a disposizione una serie di classi relative a funzionalità:</p>
+<ul>
+<li>autenticazione utenti</li>
+<li>gestione dei form e validazione dei dati</li>
+<li>gestione località e multilingua</li>
+<li>struttura delle directory e dei file</li>
+<li>interfacce utenti</li>
+</ul>
+<p>Esempi:</p>
+<p>React, Angular, Vue.js, Django, Ruby on Rails, Laravel, ASP.NET, Spring,…</p>
+</section>
+</section>
+<section id="javascript" class="level2">
+<h2 class="anchored" data-anchor-id="javascript">JavaScript</h2>
+<p>Linguaggio di scripting, progettato per essere ospitato ed eseguito all’interno di altri programmi (generalmente il browser).</p>
+<p>Uno <strong>script</strong> è costituito da una serie di istruzioni che il computer può eseguire per realizzare un compito specifico.</p>
+<p>Uno script è realizzato secondo le seguenti fasi:</p>
+<ul>
+<li>definire obiettivo</li>
+<li>progettare lo script</li>
+<li>programmare ciascun passo</li>
+</ul>
+<p>è un linguaggio <strong>orientato agli oggetti</strong> e agli eventi.</p>
+<section id="oggetti" class="level3">
+<h3 class="anchored" data-anchor-id="oggetti">Oggetti</h3>
+<p><strong>oggetto</strong>: elemento che rappresenta un elemento fisico</p>
+<p>è dotato di<br>
+- <strong>proprietà</strong>: nome, valore<br>
+- <strong>metodi</strong>: funzioni associate all’oggetto<br>
+- <strong>eventi</strong>: interazioni che cambiano i valori delle proprietà</p>
+</section>
+<section id="html-dinamico" class="level3">
+<h3 class="anchored" data-anchor-id="html-dinamico">HTML dinamico</h3>
+<p>Con il modello a oggetti, Javascript può interagire con gli elementi HTML della pagina web, modificandone le proprietà e i contenuti.</p>
+<ul>
+<li>modificare tutti gli elementi HTML</li>
+<li>modificare tutti gli attributi HTML</li>
+<li>cambiare tutti gli stili CSS</li>
+<li>rimuovere elementi e attributi HTML esistenti</li>
+<li>aggiungere nuovi elementi e attributi HTML</li>
+<li>reagire a tutti gli eventi HTML esistenti</li>
+<li>creare nuovi eventi HTML</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>codice HTML che contiene un pulsante che, quando cliccato, cambia il contenuto di un paragrafo:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> srcdoc</span><span class="op">=</span><span class="st">"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">html&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">body&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="er">&lt;</span><span class="st">h2&gt;What Can JavaScript Do?</span><span class="er">&lt;</span><span class="st">/h2&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="er">&lt;</span><span class="st">p id=</span><span class="dv">&amp;quot;</span><span class="st">demo</span><span class="dv">&amp;quot;</span><span class="st">&gt;JavaScript can change HTML content.</span><span class="er">&lt;</span><span class="st">/p&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="st">    </span><span class="er">&lt;</span><span class="st">button type=</span><span class="dv">&amp;quot;</span><span class="st">button</span><span class="dv">&amp;quot;</span><span class="st"> onclick='document.getElementById(</span><span class="dv">&amp;quot;</span><span class="st">demo</span><span class="dv">&amp;quot;</span><span class="st">).innerHTML = </span><span class="dv">&amp;quot;</span><span class="st">Hello JavaScript!</span><span class="dv">&amp;quot;</span><span class="st">'&gt;Click Me!</span><span class="er">&lt;</span><span class="st">/button&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">/body&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">/html&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st">"</span><span class="ot"> </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ot">width</span><span class="op">=</span><span class="st">"100%"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"200px"</span><span class="dt">&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<iframe srcdoc="
+<html>
+<body>
+    <h2>What Can JavaScript Do?</h2>
+    <p id=&quot;demo&quot;>JavaScript can change HTML content.</p>
+    <button type=&quot;button&quot; 
+        onclick='document.getElementById(&quot;demo&quot;).innerHTML = &quot;Hello JavaScript!&quot;'>Click Me!</button>
+</body>
+</html>
+" width="100%" height="200px">
+</iframe>
+</div>
+</div>
+</div>
+<p>Il codice Javascript può essere</p>
+<ul>
+<li>incluso direttamente all’interno di un documento HTML, racchiuso tra i tag <code>&lt;script&gt;</code> e <code>&lt;/script&gt;</code></li>
+<li>scritto in un file separato con estensione <code>.js</code> e richiamato nel documento HTML tramite il tag <code>&lt;script src="file.js"&gt;&lt;/script&gt;</code></li>
+</ul>
+</section>
+<section id="istruzioni" class="level3">
+<h3 class="anchored" data-anchor-id="istruzioni">Istruzioni</h3>
+<p>Ogni <strong>istruzione</strong> termina con un punto e virgola <code>;</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> x<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Javascript è un linguaggio <strong>case-sensitive</strong>, quindi distingue tra maiuscole e minuscole.</p>
+</section>
+<section id="commenti" class="level3">
+<h3 class="anchored" data-anchor-id="commenti">Commenti</h3>
+<p>Si inseriscono con</p>
+<ul>
+<li><code>//</code> per commenti su una sola riga</li>
+<li><code>/* */</code> per commenti su più righe</li>
+</ul>
+</section>
+<section id="variabili" class="level3">
+<h3 class="anchored" data-anchor-id="variabili">Variabili</h3>
+<p>sono usate per memorizzare valori o oggetti durante l’esecuzione di uno script.</p>
+<p>Variabili possono essere dichiarate con</p>
+<ul>
+<li><code>const</code> per dichiarare una costante, ovvero un valore che non può essere modificato</li>
+<li><code>let</code> per dichiarare una variabile che può essere modificata</li>
+<li><code>var</code> per dichiarare una variabile che può essere modificata, ma è deprecato e non consigliato</li>
+</ul>
+<p>Regole per i nomi delle variabili:</p>
+<ul>
+<li>devono iniziare con una lettera, un underscore <code>_</code> o un simbolo di dollaro <code>$</code></li>
+<li>non ammessi i caratteri <code>-</code> o `.``</li>
+<li>non ammesse le parole chiave</li>
+<li>case-sensitive</li>
+<li>nomi complessi: nomeArticolo o nome_articolo</li>
+<li>consigliabile nome che descrive il contenuto</li>
+</ul>
+</section>
+<section id="tipi-primitivi" class="level3">
+<h3 class="anchored" data-anchor-id="tipi-primitivi">Tipi primitivi</h3>
+<p>JavaScript NON è un linguaggio tipizzato, quindi non è necessario dichiarare il tipo. Esso viene determinato automaticamente in base al valore assegnato alla variabile.</p>
+<ul>
+<li><strong>numeri</strong></li>
+<li><strong>stringhe</strong></li>
+<li><strong>booleani</strong></li>
+<li><strong>null</strong></li>
+<li><strong>undefined</strong></li>
+</ul>
+</section>
+<section id="array" class="level3">
+<h3 class="anchored" data-anchor-id="array">Array</h3>
+<p>Variabile che può contenere più valori, racchiusi tra parentesi quadre <code>[]</code> e separati da virgole <code>,</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> fruits <span class="op">=</span> [<span class="st">"apple"</span><span class="op">,</span> <span class="st">"banana"</span><span class="op">,</span> <span class="st">"cherry"</span>]<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="espressioni" class="level3">
+<h3 class="anchored" data-anchor-id="espressioni">Espressioni</h3>
+<p>Una <strong>espressione</strong> è un’istruzione che produce un valore.</p>
+<ul>
+<li><strong>assegnazione</strong>: <code>x = 5</code></li>
+<li>due o più variabili che restituiscono un valore: <code>x + y</code></li>
+</ul>
+<p>Le espressioni usano gli <strong>operatori</strong> per trasformare le variabili</p>
+</section>
+<section id="operatori-aritmetici" class="level3">
+<h3 class="anchored" data-anchor-id="operatori-aritmetici">Operatori aritmetici</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operatore</th>
+<th>Descrizione</th>
+<th>Esempio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>addizione</td>
+<td><code>5 + 3</code></td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>sottrazione</td>
+<td><code>5 - 3</code></td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>moltiplicazione</td>
+<td><code>5 * 3</code></td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>divisione</td>
+<td><code>5 / 3</code></td>
+</tr>
+<tr class="odd">
+<td><code>%</code></td>
+<td>modulo (resto della divisione)</td>
+<td><code>5 % 3</code></td>
+</tr>
+<tr class="even">
+<td><code>++</code></td>
+<td>incremento di 1</td>
+<td><code>x++</code></td>
+</tr>
+<tr class="odd">
+<td><code>--</code></td>
+<td>decremento di 1</td>
+<td><code>x--</code></td>
+</tr>
+<tr class="even">
+<td><code>**</code></td>
+<td>esponenziazione</td>
+<td><code>5 ** 3</code></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operatore</th>
+<th>Esempio</th>
+<th>Same as</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>=</code></td>
+<td><code>x = y</code></td>
+<td><code>x = y</code></td>
+</tr>
+<tr class="even">
+<td><code>+=</code></td>
+<td><code>x += y</code></td>
+<td><code>x = x + y</code></td>
+</tr>
+<tr class="odd">
+<td><code>-=</code></td>
+<td><code>x -= y</code></td>
+<td><code>x = x - y</code></td>
+</tr>
+<tr class="even">
+<td><code>*=</code></td>
+<td><code>x *= y</code></td>
+<td><code>x = x * y</code></td>
+</tr>
+<tr class="odd">
+<td><code>/=</code></td>
+<td><code>x /= y</code></td>
+<td><code>x = x / y</code></td>
+</tr>
+<tr class="even">
+<td><code>%=</code></td>
+<td><code>x %= y</code></td>
+<td><code>x = x % y</code></td>
+</tr>
+<tr class="odd">
+<td><code>**=</code></td>
+<td><code>x **= y</code></td>
+<td><code>x = x ** y</code></td>
+</tr>
+<tr class="even">
+<td><code>??=</code></td>
+<td><code>x ??= y</code></td>
+<td><code>x = x ?? y</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="operatore-per-le-stringhe" class="level3">
+<h3 class="anchored" data-anchor-id="operatore-per-le-stringhe">Operatore per le stringhe +</h3>
+<p><code>+</code> unico operatore per concatenare due o più stringhe</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> firstName <span class="op">=</span> <span class="st">"John"</span><span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> lastName <span class="op">=</span> <span class="st">"Doe"</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> fullName <span class="op">=</span> firstName <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> lastName<span class="op">;</span> <span class="co">// John Doe</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="funzioni" class="level3">
+<h3 class="anchored" data-anchor-id="funzioni">Funzioni</h3>
+<p>Blocco di codice progettato per eseguire un’attività</p>
+<p>sintassi:</p>
+<p><code>function nomeFunzione(parametri) { // codice da eseguire }</code></p>
+<p>con <code>return</code> se si vuole restituire un valore</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">somma</span>(a<span class="op">,</span> b) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Esempio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">iframe</span><span class="ot"> srcdoc</span><span class="op">=</span><span class="st">"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">html&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">body&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">p id=</span><span class="dv">&amp;quot;</span><span class="st">demo</span><span class="dv">&amp;quot;</span><span class="st">&gt;</span><span class="er">&lt;</span><span class="st">/p&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">script&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">var x = somma(5, 3);</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="st">document.getElementById(</span><span class="dv">&amp;quot;</span><span class="st">demo</span><span class="dv">&amp;quot;</span><span class="st">).innerHTML = x;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="st">function somma(a, b) {</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="st">    return a + b;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">/script&gt;</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">/body&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="er">&lt;</span><span class="st">/html&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="ot">width</span><span class="op">=</span><span class="st">"100%"</span><span class="ot"> height</span><span class="op">=</span><span class="st">"200px"</span><span class="ot"> border</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">iframe</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<iframe srcdoc="
+<html>
+<body>
+<p id=&quot;demo&quot;></p>
+<script>
+var x = somma(5, 3);
+document.getElementById(&quot;demo&quot;).innerHTML = x;
+function somma(a, b) {
+    return a + b;
+}
+</script>
+</body>
+</html>
+" width="100%" height="200px" border="1">
+</iframe>
+</div>
+</div>
+</div>
+</section>
+<section id="variabili-locali-e-globali" class="level3">
+<h3 class="anchored" data-anchor-id="variabili-locali-e-globali">Variabili locali e globali</h3>
+<p><strong>variabile locale</strong>: dichiarata all’interno di una funzione, quindi accessibile solo all’interno di essa</p>
+<p><strong>variabile globale</strong>: dichiarata all’esterno di una funzione, quindi accessibile da qualsiasi parte del codice</p>
+<p>Esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> globale1<span class="op">,</span> globale2<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">esempio</span>() {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> locale1<span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> locale2<span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    locale1 <span class="op">=</span> globale1 <span class="op">+</span> locale2<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>globale2 <span class="op">=</span> locale1<span class="op">*</span><span class="dv">2</span><span class="op">;</span> <span class="co">// errore: locale1 non accessibile</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="oggetti-1" class="level2">
+<h2 class="anchored" data-anchor-id="oggetti-1">Oggetti</h2>
+<p>È un insieme di</p>
+<ul>
+<li><strong>proprietà</strong>: valori</li>
+<li><strong>metodi</strong>: funzioni associate all’oggetto</li>
+</ul>
+<p>con lo scopo di rappresentare un elemento fisico o concettuale</p>
+<section id="struttura-di-un-oggetto" class="level3">
+<h3 class="anchored" data-anchor-id="struttura-di-un-oggetto">Struttura di un oggetto</h3>
+<p>Un oggetto è rappresentato da parentesi graffe <code>{}</code> e dal suo contenuto</p>
+<ul>
+<li><code>proprietà: valore, valore</code></li>
+<li><code>metodo: funzione(){...}</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persona <span class="op">=</span> {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">nome</span><span class="op">:</span> <span class="st">"John"</span><span class="op">,</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">cognome</span><span class="op">:</span> <span class="st">"Doe"</span><span class="op">,</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">eta</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">nomeCompleto</span><span class="op">:</span> <span class="kw">function</span>() {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">nome</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">cognome</span><span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La parola chiave <code>this</code> al posto del nome dell’oggetto indica che proprietà o metodo appartiene all’oggetto creato da <strong>questa</strong> funzione.</p>
+</section>
+<section id="accesso-alle-proprietà-e-ai-metodi-di-un-oggetto" class="level3">
+<h3 class="anchored" data-anchor-id="accesso-alle-proprietà-e-ai-metodi-di-un-oggetto">Accesso alle proprietà e ai metodi di un oggetto</h3>
+<p>per accedere alle proprietà:</p>
+<ul>
+<li><code>nomeOggetto.proprietà</code> oppure <code>oggetto["proprietà"]</code></li>
+</ul>
+<p>per accedere ai metodi:</p>
+<ul>
+<li><code>nomeOggetto.metodo()</code> oppure <code>oggetto["metodo"]()</code></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persona <span class="op">=</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">nome</span><span class="op">:</span> <span class="st">"John"</span><span class="op">,</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">cognome</span><span class="op">:</span> <span class="st">"Doe"</span><span class="op">,</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">nomeCompleto</span><span class="op">:</span> <span class="kw">function</span>() {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">nome</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">cognome</span><span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> nomeCompleto <span class="op">=</span> persona<span class="op">.</span><span class="fu">nomeCompleto</span>()<span class="op">;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> nome <span class="op">=</span> persona<span class="op">.</span><span class="at">nome</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="costruttori" class="level3">
+<h3 class="anchored" data-anchor-id="costruttori">Costruttori</h3>
+<p>Per creare un oggetto vuoto si possono usare i costruttori</p>
+<ul>
+<li><code>const nomeOggetto = new Object();</code> oppure <code>const nomeOggetto = {};</code></li>
+</ul>
+<p>Esistono anche i costruttori con i tipi primitivi:</p>
+<ul>
+<li><code>new String()</code></li>
+<li><code>new Number()</code></li>
+<li><code>new Boolean()</code></li>
+<li><code>new Array()</code></li>
+<li><code>new RegExp()</code></li>
+<li><code>new Function()</code></li>
+<li><code>new Date()</code></li>
+</ul>
+</section>
+<section id="funzioni-costruttrici" class="level3">
+<h3 class="anchored" data-anchor-id="funzioni-costruttrici">Funzioni costruttrici</h3>
+<p>Posso creare un costruttore per creare più oggetti dello stesso tipo</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Persona</span>(nome<span class="op">,</span> cognome<span class="op">,</span> eta) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">nome</span> <span class="op">=</span> nome<span class="op">;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">cognome</span> <span class="op">=</span> cognome<span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">eta</span> <span class="op">=</span> eta<span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">nomeCompleto</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">nome</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">cognome</span><span class="op">;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    }<span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persona1 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span>(<span class="st">"John"</span><span class="op">,</span> <span class="st">"Doe"</span><span class="op">,</span> <span class="dv">30</span>)<span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persona2 <span class="op">=</span> <span class="kw">new</span> <span class="fu">Persona</span>(<span class="st">"Jane"</span><span class="op">,</span> <span class="st">"Doe"</span><span class="op">,</span> <span class="dv">25</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="aggiungere-ed-eliminare-proprietà-delete" class="level3">
+<h3 class="anchored" data-anchor-id="aggiungere-ed-eliminare-proprietà-delete">Aggiungere ed eliminare proprietà (delete)</h3>
+<p>Dopo aver creato un oggetto, posso aggiungere o eliminare proprietà e metodi</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persona <span class="op">=</span> {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">nome</span><span class="op">:</span> <span class="st">"John"</span><span class="op">,</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">cognome</span><span class="op">:</span> <span class="st">"Doe"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>persona<span class="op">.</span><span class="at">eta</span> <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> <span class="co">// aggiunge la proprietà eta</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">delete</span> persona<span class="op">.</span><span class="at">cognome</span><span class="op">;</span> <span class="co">// elimina la proprietà cognome</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="oggetti-con-array-e-array-di-oggetti" class="level3">
+<h3 class="anchored" data-anchor-id="oggetti-con-array-e-array-di-oggetti">Oggetti con array e array di oggetti</h3>
+<p>Posso creare strutture complesse integrando oggetti e array tra di loro</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persona <span class="op">=</span> {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">nome</span><span class="op">:</span> <span class="st">"John"</span><span class="op">,</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">cognome</span><span class="op">:</span> <span class="st">"Doe"</span><span class="op">,</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">eta</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">indirizzi</span><span class="op">:</span> [</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        {<span class="dt">citta</span><span class="op">:</span> <span class="st">"New York"</span><span class="op">,</span> <span class="dt">via</span><span class="op">:</span> <span class="st">"5th Avenue"</span>}<span class="op">,</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        {<span class="dt">citta</span><span class="op">:</span> <span class="st">"Los Angeles"</span><span class="op">,</span> <span class="dt">via</span><span class="op">:</span> <span class="st">"Sunset Boulevard"</span>}</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> persone <span class="op">=</span> [</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">nome</span><span class="op">:</span> <span class="st">"John"</span><span class="op">,</span> <span class="dt">cognome</span><span class="op">:</span> <span class="st">"Doe"</span><span class="op">,</span> <span class="dt">eta</span><span class="op">:</span> <span class="dv">30</span>}<span class="op">,</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    {<span class="dt">nome</span><span class="op">:</span> <span class="st">"Jane"</span><span class="op">,</span> <span class="dt">cognome</span><span class="op">:</span> <span class="st">"Doe"</span><span class="op">,</span> <span class="dt">eta</span><span class="op">:</span> <span class="dv">25</span>}</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>]<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="classi" class="level2">
+<h2 class="anchored" data-anchor-id="classi">Classi</h2>
+<p>classe: modello per creare oggetti con proprietà e metodi<br>
+sono uno strumento migliore per gestire la programmazione orientata agli oggetti</p>
+<p>Sintassi:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ClassName{</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">constructor</span>(parametri){<span class="op">...</span>}</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">method1</span>(){<span class="op">...</span>}</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">method2</span>(){<span class="op">...</span>}</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="controllo-di-flusso" class="level2">
+<h2 class="anchored" data-anchor-id="controllo-di-flusso">Controllo di flusso</h2>
+<section id="if" class="level3">
+<h3 class="anchored" data-anchor-id="if">If</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condizione) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// codice da eseguire se la condizione è vera</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>### If<span class="op">...</span><span class="cf">else</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="vs">```javascript</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="vs">if (condizione) {</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="vs">    // codice da eseguire se la condizione è vera</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="vs">} else {</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="vs">    // codice da eseguire se la condizione è falsa</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="vs">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="operatori-di-comparazione" class="level3">
+<h3 class="anchored" data-anchor-id="operatori-di-comparazione">Operatori di comparazione</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operatore</th>
+<th>Descrizione</th>
+<th>Esempio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>uguale a</td>
+<td><code>x == 5</code></td>
+</tr>
+<tr class="even">
+<td><code>===</code></td>
+<td>uguale a e dello stesso tipo</td>
+<td><code>x === 5</code></td>
+</tr>
+<tr class="odd">
+<td><code>!=</code></td>
+<td>diverso da</td>
+<td><code>x != 5</code></td>
+</tr>
+<tr class="even">
+<td><code>!==</code></td>
+<td>diverso da o di tipo diverso</td>
+<td><code>x !== 5</code></td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>maggiore di</td>
+<td><code>x &gt; 5</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;</code></td>
+<td>minore di</td>
+<td><code>x &lt; 5</code></td>
+</tr>
+<tr class="odd">
+<td><code>&gt;=</code></td>
+<td>maggiore o uguale a</td>
+<td><code>x &gt;= 5</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>minore o uguale a</td>
+<td><code>x &lt;= 5</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="operatori-logici" class="level3">
+<h3 class="anchored" data-anchor-id="operatori-logici">Operatori logici</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operatore</th>
+<th>Descrizione</th>
+<th>Esempio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&amp;&amp;</code></td>
+<td>AND</td>
+<td><code>x &lt; 10 &amp;&amp; y &gt; 1</code></td>
+</tr>
+<tr class="even">
+<td><code>||</code></td>
+<td>OR</td>
+<td><code>x &lt; 10 || y &gt; 1</code></td>
+</tr>
+<tr class="odd">
+<td><code>!</code></td>
+<td>NOT</td>
+<td><code>!(x &lt; 10 &amp;&amp; y &gt; 1)</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="switch" class="level3">
+<h3 class="anchored" data-anchor-id="switch">Switch</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span> (espressione) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="dt">valore1</span><span class="op">:</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">// codice da eseguire se espressione == valore1</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">case</span> <span class="dt">valore2</span><span class="op">:</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">// codice da eseguire se espressione == valore2</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">// codice da eseguire se espressione non corrisponde a nessun valore</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="while" class="level3">
+<h3 class="anchored" data-anchor-id="while">While</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condizione) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// codice da eseguire finché la condizione è vera</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="dowhile" class="level3">
+<h3 class="anchored" data-anchor-id="dowhile">Do…while</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span> {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// codice da eseguire almeno una volta e poi finché la condizione è vera</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">while</span> (condizione)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="for" class="level3">
+<h3 class="anchored" data-anchor-id="for">For</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (inizializzazione<span class="op">;</span> condizione<span class="op">;</span> incremento) {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// codice da eseguire finché la condizione è vera</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="break-e-continue" class="level3">
+<h3 class="anchored" data-anchor-id="break-e-continue">Break e continue</h3>
+<ul>
+<li><strong>break</strong>: interrompe l’esecuzione del ciclo e passa all’istruzione successiva al ciclo</li>
+<li><strong>continue</strong>: interrompe l’esecuzione del ciclo e passa all’iterazione successiva del ciclo</li>
+</ul>
+</section>
+<section id="oggetti-built-in" class="level3">
+<h3 class="anchored" data-anchor-id="oggetti-built-in">Oggetti Built-in</h3>
+<p>Sono una serie di oggetti interni ai browser che rappresentano elementi del browser e della pagina web.</p>
+<p>Vengono manipolati tramite javascript per creare pagine web dinamiche.</p>
+</section>
+<section id="browser-object-model-bom" class="level3">
+<h3 class="anchored" data-anchor-id="browser-object-model-bom">Browser Object Model (BOM)</h3>
+<p>Il BOM è il modello gerarchico che rappresenta l’oggetto broswer e i suoi componenti.</p>
+<p><strong>window</strong>: oggetto principale del BOM, padre di tutti gli oggetti. Rappresenta una finestra aperta</p>
+<p>Alcuni metodi:</p>
+<ul>
+<li><code>[window].alert("messaggio")</code>: mostra un messaggio di avviso</li>
+<li><code>[window].close()</code>: chiude la finestra corrente</li>
+<li><code>[window].open("url", "nome", "lista_opzioni")</code>: apre una nuova finestra</li>
+</ul>
+<p>Il BOM crea un modello della scheda o della finestra del browser, che contiene:</p>
+<ul>
+<li><strong>document</strong>: rappresenta il documento HTML caricato nella finestra del browser</li>
+<li><strong>navigator</strong>: rappresenta il browser e le sue proprietà</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A(WINDOW) --&gt; B(DOCUMENT)
+    B --- C(current web page)
+    A --&gt; D(HISTORY)
+    D --- E(back and forward buttons)
+    A --&gt; F(LOCATION)
+    F --- G(current URL)
+    A --&gt; H(NAVIGATOR)
+    H --- I(browser information)
+    A --&gt; J(SCREEN)
+    J --- K(device display information)
+
+    %% 2. DEFINIZIONE DELLE CLASSI DI STILE
+    %% Classe per i nodi principali (Sfondo bianco, bordo grigio, testo nero in grassetto)
+    classDef nodoPrincipale fill:#FFFFFF,stroke:#BDC3C7,stroke-width:1px,color:#1A1A1A,font-weight:bold;
+    
+
+    %% 3. APPLICAZIONE DELLE CLASSI AI NODI
+    class A,B,D,F,H,J nodoPrincipale;
+    class C,E,G,I,K descrizione;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="dom-document-object-model" class="level3">
+<h3 class="anchored" data-anchor-id="dom-document-object-model">DOM (Document Object Model)</h3>
+<p>Il DOM è un modello gerarchico che rappresenta il documento HTML caricato nella finestra del browser.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    D(Document) --&gt; R("Root element:&lt;br&gt;&amp;lt;html&amp;gt;")
+    R --&gt; H(&amp;lt;head&amp;gt;)
+    R --&gt; B(&amp;lt;body&amp;gt;)
+    H --&gt; T(&amp;lt;title&amp;gt;)
+    T --&gt; T1("Text:&lt;br&gt;&amp;quot;My Title&amp;quot;")
+    B --&gt; A(&amp;lt;a&amp;gt;)
+    A --- A1(attribute:&lt;br&gt;href)
+    B --&gt; P(&amp;lt;p&amp;gt;)
+    P --&gt; P1("Text:&lt;br&gt;&amp;quot;My paragraph&amp;quot;")
+    B --&gt; H1(&amp;lt;h1&amp;gt;)
+    H1 --&gt; H11("Text:&lt;br&gt;&amp;quot;My Website&amp;quot;")
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>I siti web possono utilizzare JavaScript lato client per manipolare il DOM e creare pagine web dinamiche.</p>
+<ul>
+<li>completare azioni come controllare dati inseriti in un form</li>
+<li>nascondere o mostrare elementi della pagina web</li>
+<li>aggiornare parti della pagina web</li>
+</ul>
+</section>
+<section id="oggetti-globali-javascript" class="level3">
+<h3 class="anchored" data-anchor-id="oggetti-globali-javascript">Oggetti globali JavaScript</h3>
+<p>Sono:</p>
+<ul>
+<li>oggetti singoli che fanno riferimento alle varie parti del linguaggio</li>
+<li>oggetti che rappresentano i tipi primitivi del linguaggio</li>
+<li>oggetti che rappresentano concetti del mondo reale (es. Date, Math, RegExp)</li>
+</ul>
+</section>
+<section id="oggetto-string" class="level3">
+<h3 class="anchored" data-anchor-id="oggetto-string">Oggetto String</h3>
+<p>proprietà:<br>
+- <code>length</code>: lunghezza della stringa</p>
+<p>metodi:</p>
+<p>slice(), substring(), substr(), replace(), toUpperCase(), toLowerCase(), concat(), trim(), charAt(), charCodeAt(), split()</p>
+</section>
+<section id="oggetto-number" class="level3">
+<h3 class="anchored" data-anchor-id="oggetto-number">Oggetto Number</h3>
+<p>metodi che possono essere usati sui numeri (oggetti e variabili):</p>
+<p>metodi: toString(), toExponential(), toFixed(), toPrecision(), valueOf()</p>
+<p>metodi che possono essere usati solo con Number:</p>
+<p>isInteger(), isSafeInteger(), parseInt(), parseFloat()</p>
+</section>
+<section id="metodi-globali" class="level3">
+<h3 class="anchored" data-anchor-id="metodi-globali">Metodi globali</h3>
+<p>metodi globali per il tipo di dato Number:</p>
+<p>Number(), isNaN(), parseInt(), parseFloat()</p>
+</section>
+<section id="oggetto-math" class="level3">
+<h3 class="anchored" data-anchor-id="oggetto-math">Oggetto Math</h3>
+<p>L’oggetto <strong>Math</strong> fornisce proprietà e metodi per costanti matematiche e funzioni matematiche.</p>
+<p>esempi:<br>
+abs(), ceil(), floor(), round(), max(), min(), random(), pow(), sqrt()</p>
+</section>
+<section id="oggetto-date" class="level3">
+<h3 class="anchored" data-anchor-id="oggetto-date">Oggetto Date</h3>
+<p>Oggetto <strong>Date</strong> fornisce metodi per la gestione di date e orari.</p>
+<ul>
+<li><p>creazione: <code>new Date()</code>, <code>new Date(anno, mese, giorno, ore, minuti, secondi, millisecondi)</code>, <code>new Date(dataStringa)</code>, <code>new Date(milliseconds)</code></p></li>
+<li><p>metodi: getDate(), getDay(), getFullYear(), getHours(), getMilliseconds(), getMinutes(), getMonth(), getSeconds(), getTime(), setDate(), setFullYear(), setHours(), setMilliseconds(), setMinutes(), setMonth(), setSeconds()</p></li>
+</ul>
+</section>
+</section>
+<section id="modello-dom" class="level2">
+<h2 class="anchored" data-anchor-id="modello-dom">Modello DOM</h2>
+<p>Un broser quando carica una pagina crea un modello DOM costituito da quattro parti principali:</p>
+<ul>
+<li>nodo radice: rappresenta l’elemento <code>&lt;html&gt;</code> della pagina</li>
+<li>nodi degli elementi: rappresentano gli elementi HTML della pagina</li>
+<li>nodi degli attributi: rappresentano gli attributi degli elementi HTML della pagina</li>
+<li>nodi di testo: rappresentano il contenuto testuale degli elementi HTML della pagina</li>
+</ul>
+<section id="operare-sul-dom" class="level3">
+<h3 class="anchored" data-anchor-id="operare-sul-dom">Operare sul DOM</h3>
+<p>metodi per accedere a un elemento HTML:</p>
+<ul>
+<li><code>document.getElementById("id")</code>: restituisce l’elemento con l’id specificato</li>
+<li><code>document.getElementsByTagName("tag")</code>: restituisce un array di elementi con il tag specificato</li>
+<li><code>document.getElementsByClassName("class")</code>: restituisce un array di elementi con la classe specificata</li>
+<li><code>document.querySelector("selector")</code>: restituisce il primo elemento che corrisponde al selettore specificato</li>
+</ul>
+<p>proprietà e metodi più comuni per modificare un elemento HTML:</p>
+<ul>
+<li><code>element.innerHTML</code>: modifica il contenuto HTML dell’elemento</li>
+<li><code>element.innerText</code>: modifica il contenuto testuale dell’elemento</li>
+<li><code>element.attributes</code>: modifica gli attributi dell’elemento</li>
+<li><code>element.style.property</code>: modifica lo stile CSS dell’elemento</li>
+<li><code>element.setAttribute("attribute", "value")</code>: modifica un attributo dell’elemento</li>
+</ul>
+<p>metodi per aggiungere e rimuovere elementi HTML:<br>
+- <code>document.createElement("tag")</code>: crea un nuovo elemento HTML<br>
+- <code>element.appendChild(child)</code>: aggiunge un figlio a un elemento<br>
+- <code>element.removeChild(child)</code>: rimuove un figlio da un elemento<br>
+- <code>element.remove()</code>: rimuove l’elemento dal DOM</p>
+</section>
+<section id="accedere-ad-un-form" class="level3">
+<h3 class="anchored" data-anchor-id="accedere-ad-un-form">Accedere ad un form</h3>
+<p>I campi dei form possono essere analizzati tramite JavaScript</p>
+<ul>
+<li>accesso tramite valori dei campi: <code>document.forms["nomeForm"]["nomeCampo"].value</code></li>
+<li>accesso tramite <strong>name</strong> degli input: <code>document.forms["nomeForm"].nomeCampo.value</code></li>
+</ul>
+<p><strong>value</strong>: usato per accedere al contenuto dell’input<br>
+<strong>valueAsNumber</strong>: per accedere al contenuto come numero<br>
+<strong>valueAsDate</strong>: per accedere al contenuto come data</p>
+<p><strong>element.attributes</strong>: restituisce un array di tutti gli attributi dell’elemento</p>
+<p><strong>setAttribute(“nomeAttributo”, “valore”)</strong>: modifica il valore di un attributo dell’elemento, se non esiste lo crea</p>
+</section>
+<section id="eventi" class="level3">
+<h3 class="anchored" data-anchor-id="eventi">Eventi</h3>
+<p>HTML DOM consente a JavaScript di reagire agli eventi</p>
+<ul>
+<li>interazioni creano eventi</li>
+<li>un evento consiste nella notifica di un avvenimento specifico</li>
+<li>eventi lanciano codice per rispondere all’avvenimento</li>
+<li>codice risponde agli utenti modificando il DOM</li>
+</ul>
+</section>
+<section id="tipo-di-eventi" class="level3">
+<h3 class="anchored" data-anchor-id="tipo-di-eventi">Tipo di eventi</h3>
+<ul>
+<li><p>eventi del mouse: click, dblclick, mousedown, mouseup, mouseover, mouseout, mousemove</p></li>
+<li><p>eventi focus: onfocus, onblur</p></li>
+<li><p>eventi tastiera: onkeydown, onkeyup, onkeypress</p></li>
+<li><p>eventi form: onsubmit, onreset, onchange, oninput</p></li>
+</ul>
+</section>
+<section id="metodo-addeventlistener" class="level3">
+<h3 class="anchored" data-anchor-id="metodo-addeventlistener">metodo addEventListener()</h3>
+<p>Il metodo <code>addEventListener()</code> consente di ascoltare un evento specifico su un elemento HTML e di eseguire una funzione quando l’evento si verifica.</p>
+<p><code>element.addEventListener("evento", funzione, useCapture)</code></p>
+<p>Il parametro <code>useCapture</code> è un booleano opzionale (default <code>false</code>)</p>
+<ul>
+<li><p><code>false</code>: l’evento viene catturato in fase di bubbling, ovvero quando l’evento si propaga dal nodo più interno al nodo più esterno</p></li>
+<li><p><code>true</code>: l’evento viene catturato in fase di cattura, ovvero quando l’evento si propaga dal nodo più esterno al nodo più interno</p></li>
+</ul>
+</section>
+</section>
+<section id="differenze-con-java" class="level2">
+<h2 class="anchored" data-anchor-id="differenze-con-java">Differenze con Java</h2>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
