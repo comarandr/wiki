@@ -1,0 +1,13 @@
+---
+title: Programmazione e laboratorio
+description: "Appunti di programmazione e laboratorio del 1 anno di informatica"
+categories: [università, informatica]
+---
+
+## Programmazione funzionale
+
+Linguaggio: [scheme](/linguaggi/scheme.qmd)
+
+## Programmazione imperativa
+
+Linguaggio: [java](/linguaggi/java.qmd)
