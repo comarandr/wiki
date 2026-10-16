@@ -10,14 +10,10 @@ website:
     left:
       - href: "https://comarandr.github.io/"
         text: "Home"
-      - href: "http://comarandr.github.io/wiki/linguaggi/indexLing.html"
+      - href: "https://comarandr.github.io/wiki/linguaggi"
         text: "Linguaggi"
-      - href: "http://comarandr.github.io/wiki/universita/indexUni.html"
-        text: "Università"
-      - href: "http://comarandr.github.io/wiki/personali/indexPers.html"
-        text: "Personali"
-      - href: "http://comarandr.github.io/wiki/indexMin.html"
-        text: "Minimali"
+      - href: "https://comarandr.github.io/wiki/informatica"
+        text: "Informatica"
     right:
       - href: about.qmd
         text: About

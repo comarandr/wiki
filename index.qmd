@@ -5,6 +5,8 @@ listing:
     contents: "*.qmd"
     categories: true
     type: grid
+    sort: "filename"
+    image-placeholder: assets/icons/liskared.jpg
 ---
 
 Questa wiki contiene tutti gli schemi prodotti nel corso di letture universitarie e saggistica. La sezione universitaria contiene principalmente gli appunti di informatica e di economia, mentre la sezione linguaggi contiene brei schemi dei linguaggi che conosco. La sezione personale contiene appunti che non rientrano nelle altre categorie.

@@ -1,0 +1,12 @@
+---
+title: "Materie di Economia"
+listing:
+  contents:
+  - "*.qmd"
+  - "!index.qmd"
+  type: grid
+  sort: "filename"
+  image-placeholder: ../assets/icons/liskared.jpg
+---
+
+Elenco del materiale della facoltà triennale di economia e commercio

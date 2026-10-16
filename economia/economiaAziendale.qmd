@@ -2,6 +2,7 @@
 title: Economia Aziendale
 description: "Appunti di economia aziendale del 1 anno di economia e commercio"
 categories: [economia]
+image: ../assets/icons/mastrini.jpg
 ---
 
 ## Rilevazioni e determinazioni quantitative d'azienda

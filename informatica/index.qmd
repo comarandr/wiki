@@ -1,1 +1,12 @@
-In questa pagina indice delle materie di informatica
+---
+title: "Materie di Informatica"
+listing:
+  contents:
+  - "*.qmd"
+  - "!index.qmd"
+  type: grid
+  sort: "filename"
+  image-placeholder: ../assets/icons/liskared.jpg
+---
+
+Elenco delle materie di informatica 

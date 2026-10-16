@@ -1,0 +1,12 @@
+---
+title: "Linguaggi di informatica"
+listing:
+  contents:
+  - "*.qmd"
+  - "!index.qmd"
+  type: grid
+  sort: "filename"
+  image-placeholder: ../assets/icons/liskared.jpg
+---
+
+Elenco dei linguaggi di informatica che conosco, con brevi schemi e appunti.

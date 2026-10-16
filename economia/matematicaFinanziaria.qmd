@@ -2,6 +2,7 @@
 title: Matematica Finanziaria
 description: "Appunti di matematica finanziaria del 2 anno di economia e commercio"
 categories: [economia]
+image: ../assets/icons/formule.jpg
 ---
 
 ## Fondamenti
