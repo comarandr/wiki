@@ -1,0 +1,297 @@
+---
+title: Basi di dati
+description: "Appunti di basi di dati del 3 anno di informatica"
+categories: [informatica]
+---
+
+## Introduzione
+
+Caratteristiche distintive di un database:
+
+- **persistenza**
+- **mole**
+- **globalità**
+
+Caratteristiche generali di un sistema informatico:
+
+- indipendenza dei dati (facilità uso)
+- strutture di indicizzazione e ottimizzazione (efficienza operazioni di accesso)
+- convenienza (efficacia)
+
+persistenza del database: salvataggio in memoria secondaria e esistenza indipendente dai programmi che lo usano
+
+mole: gestione di grandi quantità di dati, ovvero superiore alla porzione di ram dedicata, particolare attenzione all'efficienza delle operazioni di trasferimento dati
+
+globalità dei dati: necessità di disciplinare l'uso dei dati, gestendo diritti di accesso e garantendo privatezza e integrità da eventuali conflitti
+
+### definizione
+
+Base di dati: collezione di dati usata per rappresentare informazioni di interesse per un dato sistema informativo
+
+collezione di dati gestita da un DataBase Management System (DBMS)
+
+Le basi di dati supportano astrazioni sui dati:
+
+- livello fisico
+- livello logico
+- livello delle viste
+
+Modello dei dati: collezione di strumenti concettuali per descrivere i dati, le loro relazioni e i vincoli di consistenza
+
+possono essere distinti in:
+
+- modelli basati sull'identità degli oggetti
+- modelli basati sui valori degli oggetti
+
+Oppure in:
+
+- modelli basati sugli oggetti
+- modelli basati sui record
+
+Parlando di basi di dati, è importante distinguere tra:
+
+- schema
+- istanza
+
+---
+
+## Introduzione
+
+L'informazione è rappresentata attraverso una forma minimale: il **dato**
+
+dato
+: collezione di materiali grezzi e disorganizzati riguardo un fenomeno
+
+informazione
+: si ottiene processando e interpretando i dati, organizzandoli in strutture e stabilendo collegamenti tra loro
+
+conoscenza
+: combinazione di informazione, intuizione e esperienza
+
+I sistemi informativi sono fondamentali per supportare le decisioni aziendali e le organizzazioni. I dati sono spesso risorse strategiche perché sono molto stabili nel tempo rispetto a altre componenti (processi, tecnologie, umani)
+
+Database
+
+- collezione organizzata di dati per supportare attività di un'entità
+- collezione di dati gestita da un **DBMS**
+
+### DBMSs: Database Management Systems 
+
+I DBMS sono un sistema sosftware che comprende:
+
+- **database**: collezione di dati interrelati
+- una serie di programmi per la gestione dei dati:
+  - strutture definite per la conservazione
+  - meccanismi per recuperare e modificare i dati
+  - gestione dei conflitti e della sicurezza
+
+
+#### File System to stare data
+
+Volendo possiamo usare il file system per salvare i dati, ad esempio in un file csv
+
+```csv
+Name,Birthdate,Birthplace,Sex
+Chris Pratt,6/21/79,Virginia,M
+Chris Hemsworth,8/11/83,Melbourne,M
+Ellen Barkin,2/16/64,Ohio,F
+Emily Blunt,2/23/87,London,F
+```
+
+Tuttavia ci sono diversi svantaggi:
+
+- **ridondanza**: i dati sono duplicati in più file per ogni dipartimento. Spreco di memoria e rischio inconsistenze
+- **accesso inefficiente**: ogni nuova richiesta richiede un programma specifico (estrarre un tipo di dato nuovo rispetto altri)
+- **isolamento dei dati**: file diversi e formati rendono difficile l'integrazione
+- **sicurezza**: difficile permettere accesso parziale ai dati
+- **gestione vincoli**: spesso i vincoli e i filtri sono nascosti nel codice dei programmi, difficile crearne di altri, difficile assicurarsi l'integrità
+- **aggiornamenti atomici**: failure possono rendere i file inconsistenti
+- **accesso concorrente** rischio di accesso concorrente di più utenti e conseguente inconsistenza
+
+```{mermaid}
+graph LR
+    A("programma 1: esami studenti") --- B["archivio 1: dati studenti e esami"]
+    C("programma 2: tasse studenti") --- D["archivio 2: dati studenti e tasse"]
+```
+
+#### DBMS per salvare i dati
+
+Una soluzione a questi problemi è l'uso di un DBMS
+
+Ottimo nei casi in cui:
+
+- **grandi quantità di dati**: non possono essere caricati in memoria principale
+- **dati globali e condivisi**: database utilizzato per molteplici scopi da molteplici utenti
+- **dati persistenti**: il database esiste indipendentemente da utente e programmi
+
+```{mermaid}
+graph LR
+    A("programma 1: esami studenti") --- C["Database studenti"]
+    B("programma 2: tasse studenti") --- C["Database studenti"]
+```
+
+I principali vantaggi
+
+- **no ridondanza**
+- **assenza inconsistenza**
+- **privacy**
+- **efficienza**
+
+La gestione della complessità DBMS sfrutta l'**astrazione**: significa organizzare i DBMS in livelli
+
+#### Layer nei DBMS
+
+**livello fisico**: come vengono salvati i dati su disco
+**livello logico**: quali dati sono salvati e come sono rappresentati e relazionati
+**livello esterno/di vista**: gestisce presentazione delle informazioni e dei programmi, può nascondere parte delle informazioni
+
+**physical data independence**: posso modificare il livello fisico senza modificare il livello logico
+
+**logical data independence**: tramite *views* posso modificare il livello logico senza modificare il livello esterno e viceversa
+
+```{mermaid}
+graph TD
+    A[Livello esterno] --- B[Livello logico]
+    B --- C[Livello fisico]
+
+    A --- D
+    B --- E
+    C --- F
+```
+
+### Data models
+
+Lo schema logico è descritto da un piccolo numero di strutture provviste da modelli di dati
+
+Un **data model** descrive:
+
+- i dati e la loro struttura
+- relazione tra i dati
+- vincoli
+
+Ne esistono diversi modelli: relazionale, grafo, object-based, semistructured (XML), gerarchico
+
+- modello gerarchico: organizzato ad albero
+- modello a grafo: con nodi e archi
+- modello relazionale: organizzato in tabelle
+
+#### Relational model
+
+I dati sono logicamente organizzati in **relazioni**, visualizzabili come **tabelle**.
+
+Le tabelle rappresentano:
+- schema
+- istanza
+
+è un modello **record-based**:
+
+- le righe hanno un formato e lunghezza fissati
+- ogni riga rappresenta un **record**
+- ogni colonna un **attributo**
+
+Ogni tabella ha una **chiave primaria** che serve a identificare unicamente ogni riga
+
+è una rappresentazione logica, non determina come i dati sono fisicamente salvati
+
+::: {.table-bordered}
+
+| ID | name | dept_name | salary |
+| ---| --- | --- | --- |
+| 2222 | Einstein | Physics | 97000 |
+| 1231 | Wu | Finance | 8999 |
+| 1305 | Mozart | Music | 34000 |
+
+:::
+
+Le relazione tra record può essere rappresentata con valori corrispondenti in tabelle diverse (**JOIN**)
+
+Un vincolo a una **chiave esterna (o riferita)** può garantire che il valore esista effettivamente
+
+le relazioni sono espresse a livello logico, fisicamente non sono necessari dei puntatori
+
+#### Differenti rappresentazioni
+
+Si possono usare differenti modelli per rappresentare i dati (es. grafo vs relazionale) &rarr; vedi slide
+
+logical data models
+: sono astratti, non impongono vincoli fisici ma impongono vincoli sull'organizzazione dei dati
+
+conceptual data models
+: ancora più astratti, descrivono i dati indipendentemente dal modello logico, utili nella fase di progettazione del database
+
+#### SQL - Structured Query Language
+
+Uno dei vantaggi principali dei database relazionali è il loro supporto a SQL (Structured Query Language)
+
+SQL è un linguaggio dichiarativo diviso in due parti:
+
+- **DDL** (Data Definition Language): specifica lo schema del database
+- **DML** (Data Manipulation Language): recupera e aggiorna il contenuto tramite *query*
+
+Possiede una sintassi standardizzata
+
+```sql
+SELECT name
+FROM instructor
+WHERE salary > 97000
+```
+
+### Persone e DBMS
+
+database administrator (DBA)
+:gestisce il database, ne garantisce la sicurezza e l'integrità, gestisce backup e recovery
+
+naive user
+: usa il database tramite API semplificate
+
+external developer
+: comunica mediante linguaggio di programmazione e librerie
+
+advanced user
+: accede al database e al DBMS direttamente con DML
+
+### Database system internals
+
+Un database contiene:
+
+- i **dati** stessi
+- **indici**: strutture per velocizzare e migliorare l'accesso ai dati
+- **data dictionary**: metadati che definiscono le strutture dei database
+- **statistical data**: informazioni sulla quantità di dati, la loro distribuzione
+
+Un DBMS implementa una serie di **sottomoduli** che gestiscono un aspetto specifico
+- **storage manager**
+- **query processor**
+
+Lo **storage manager** è il modulo software che provvede all'interfaccia tra il basso livello del database e le applicazioni/query
+
+- interagisce con file system, si occupa del salvataggio e del recupero dei dati, traduce comandi DML in comandi di basso livello file-system 
+
+è composto da:
+- **Authorization and integrity manager** (e.g., user privileges and physical integrity)
+- **Transaction manager** (ensures that the ACID properties are satisfied), assicurando che il databse rimanga consistente
+- **Buffer manager** (manages the main-memory area reserved for the DBMS)
+- **File manager** (allocates space in primary and secondary memory and manages the data structures used to represent information)
+
+Il **query processor** si occupa del **query processing** i cui step principali sono:
+1. Parsing and translation
+2. Optimization
+3. Evaluation
+
+Una query può essere eseguita in modi diversi (scan delle tabella, uso di un indice)
+
+### Database design
+
+L'architettura di un database dipende molto dal computer system sottostante: centralizzato, client-server, parallelo, distribuito
+
+Il processo di design viene distinto in due fasi, cosa viene rappresentato e successivamente come
+
+1. conceptual design
+2. logical design
+3. physical design
+
+**conceptual design**: identificare e descrivere il dominio che il database modella, con tutti i requisiti. 
+
+**databse design**: schema concettuale trasformato in uno schema logico basato su un modello logico, applicando regole, strutture, usando tecniche formali (es. normalization) per assicurarsi della buon bontà dello schema, scegliendo la specifica tecnologia DBMS
+
+**physical design**: creazione dello schema fisico e dettagli basso livello (definizione indice, altre cose)
