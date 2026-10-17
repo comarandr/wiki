@@ -227,6 +227,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#s.o.l.i.d.-principles" id="toc-s.o.l.i.d.-principles" class="nav-link" data-scroll-target="#s.o.l.i.d.-principles">S.O.L.I.D. PRINCIPLES</a></li>
   </ul></li>
   </ul></li>
+  <li><a href="#esempi-ed-esami" id="toc-esempi-ed-esami" class="nav-link" data-scroll-target="#esempi-ed-esami">Esempi ed esami</a>
+  <ul>
+  <li><a href="#sapori-di-terra" id="toc-sapori-di-terra" class="nav-link" data-scroll-target="#sapori-di-terra">Sapori di terra</a></li>
+  <li><a href="#noleggio-barche" id="toc-noleggio-barche" class="nav-link" data-scroll-target="#noleggio-barche">Noleggio barche</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2033,10 +2038,240 @@ classDiagram
 <span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="co">// Uso:</span></span>
 <span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>ServizioOrdini servizio <span class="op">=</span> <span class="kw">new</span> <span class="fu">ServizioOrdini</span><span class="op">(</span><span class="kw">new</span> <span class="fu">EmailNotifica</span><span class="op">());</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-
-
 </section>
 </section>
+</section>
+</section>
+<section id="esempi-ed-esami" class="level2">
+<h2 class="anchored" data-anchor-id="esempi-ed-esami">Esempi ed esami</h2>
+<section id="sapori-di-terra" class="level3">
+<h3 class="anchored" data-anchor-id="sapori-di-terra">Sapori di terra</h3>
+<p>soluzione parziale implementata durante il corso con il professore, non ottimale</p>
+<pre class="mermaid"><code>classDiagram
+
+class AnalisiProduzioni{
++ calcolaResaPerColtura() : Map&lt;String,Double&gt;
++ calcolaProduzioniPeriodo() : Map&lt;String,Double&gt;
++ calcolaResaMediaColtura() : Map&lt;String,Double&gt;
++ calcolaProduzioneColturaPeriodo() : Map&lt;String,Double&gt;
+
+}
+class Appezzamento{
+int numero
+Map&lt;Integer,Filare&gt; filari
++ aggiungiFilare(int numeroFilare, Filare filare) : void
++ ottieniFilare(int numero) : Filare
++ aggiungiColtura() : void
++ getNumero() : int
+}
+
+class AziendaAgricola{
+Map&lt;Integer, Appezzamento&gt; appezzamenti
+AnalisiProduzioni analisiProduzioni 
+RegistroProduzioni registroProduzioni
++ AziendaAgricola()
++ getDashBoard() : Dashboard
++ ottieniAppezzamento() : Appezzamento
++ ottieniAppezzamento2() : Appezzamento
++ ottieniStatisticheColture() : Map&lt;String, Double&gt;
++ ottieniProduzioniUltimoPeriodo() : Map&lt;String, Double&gt;
++ registraTerminazioneColtura() : void
+}
+
+class Filare{
+Map&lt;Coltura,Double&gt; allocazioniColture
+List&lt;Produzione&gt; produzioni
+allocaColtura() : void
+terminaColtura() : void
+registraProduzione() : void
+getPercentualeAllocata() : double
+getProduzioniIterator() : Iterator
+getProduzioni() : 
+}
+
+class Coltura{
+String nomeColtura
+LocalDate dataSemina
+LocalDate dataRaccolta
++ Coltura()
++cregistraProduzione() : void
+}
+
+class Dashboard{
+RegistroProduzioni registroProduzioni
++ Dashboard(registrProduzioni)
++ calcolaResaAppezzamenti() : Double
+calcolaResaAppezzamenti(appezzamento, coltura, periodo) : ResaDTO
+calcolaResaColture(): ResaDTO
+calcolaResaColture(): ResaDTO
+calcolaResaColture(): ResaDTO
+}
+
+class GrandeFilare{
+allocaColtura()
+}
+
+class Periodo{
+enum SETTIMANA, MESE, TRIMESTRE
+}
+
+class RegistroProduzioni{
++ registraProduzione() : void
++ Iterator&lt;Coltura&gt; iterator()
+}
+
+class ResaDTO{
+double quantitaProdottoInAssoluto
+double quantitaProdottaInRelativo
++ ResaDTO()
+}
+
+
+class Main{
+
+}
+
+class Produzione{
+double chilogrammiProdotti
+double metriCoperti
+LocalDate dataProduzione
+Produzione()
+getChilogrammiProdotti()
+getMetriCoperti()
+getDataProduzione()
+}
+
+class SaporiDiTerraException{}
+
+class ValoreIllegale{}
+
+Main --&gt; AziendaAgricola
+
+AziendaAgricola --&gt; Appezzamento
+AziendaAgricola --&gt; RegistroProduzioni
+AziendaAgricola --&gt; AnalisiProduzioni
+AziendaAgricola --&gt; Dashboard
+
+Appezzamento --&gt; Filare
+
+Dashboard --&gt; RegistroProduzioni
+
+GrandeFilare -- Filare
+
+Filare --&gt; Coltura
+Filare --&gt; Produzione</code></pre>
+</section>
+<section id="noleggio-barche" class="level3">
+<h3 class="anchored" data-anchor-id="noleggio-barche">Noleggio barche</h3>
+<p>Soluzione dal gruppo whatsapp dell’università, non ottimale</p>
+<pre class="mermaid"><code>---
+config:
+    class:
+        hideEmptyMembersBox: true
+---
+classDiagram
+    class Api{
+        GestoreBarche gestoreBarche
+        GestorePrenotazioni gestorePrenotazioni
+        Factory factory
+        QueryFactory queryFactory
+
+        + Api()
+        + creaFactory() Factory
+        + aggiungiBarca(BuilderBarca builderBarca) void
+        + aggiungiPrenotazione(BuilderPrenotazione builderPrenotazione) void
+        + cercaBarche(Query~Barca~ query) List~Barca~
+        + ritiraBarche(int idPrenotazione) void
+        + consegnaBarca (int idPrenotazione, Danni danni) void
+    }
+
+    class MainClient{
+        + static void main(String[] args)
+    }
+
+    class BarcaNonValidaException{
+        + BarcaNonValidaException(String message)
+    }
+
+    class DataIncongruenteException{
+        + DataIncongruenteException(String message)
+    }
+
+    class EnumLuogo{
+        &lt;&lt;enum&gt;&gt;
+        AVELLINO, OSPEDALETTO, 
+        NAPOLI, SALERNO
+    }
+
+    class BuilderBarca{
+    }
+
+    class GestoreBarche{
+        &lt;&lt;Observer&gt;&gt;
+        - ArrayList~Barca~ barche
+        + GestoreBarche()
+        + aggiungiBarca(BuilderBarca builderBarca) void
+        + barcaInUso(int idBarca) void
+        + filtraLista(Query~Barca~ query) List~Barca~
+        + updateConsegna(int idBarca) void
+        + updateRitiro(int idBarca) void
+        }
+    
+    class GestorePrenotazioni{
+        &lt;&lt;Observable&gt;&gt;
+        - GestorePrezzi gestorePrezzi
+        - List~Prenotazione~ prenotazioniAttuali
+        - GestoreClienti gestoreClienti
+        - List~Prenotazione~ prenotazioniConcluse
+        + GestorePrenotazioni()
+        + addPrenotazione(BuilderPrenotazione builderPrenotazione) int
+        - costruisciPrenotazione(BuilderPrenotazione builderPrenotazione) Prenotazione
+        - calcoloId() int
+        + attivaNoleggio(int idPrenotazione) float
+        + calcolaPenalita(int idPrenotazione, Danni danni) float
+        + eliminaPrenotazione(int idPrenotazione) void
+
+        addObserver(Object gestorebarche) void
+        notifyRitiro(int idBarca) void
+        notifyConsegna(int idBarca) void
+    }
+
+    class GestorePrezzi{
+        + calcoloPrezzoNoleggio(Prenotazione prenotazione) float
+        + calcoloPenalita(Prenotazione prenotazione, Danni danni) float
+    }
+
+    class GestorePagamento{}
+
+    class Observer{
+        &lt;&lt;interface&gt;&gt;
+        + updateRitiro(int idBarca) void
+        + updateConsegna(int idBarca) void
+    }
+
+    class Observable{
+        &lt;&lt;interface&gt;&gt;
+        + addObserver(Observer observer) void
+        + notifyRitiro(int idBarca) void
+        + notifyConsegna(int idBarca) void
+    }
+
+    Main Client --&gt; Api : usa
+
+    Api --&gt; GestoreBarche : usa
+    Api --&gt; GestorePrenotazioni : usa
+    Api --&gt; Factory : crea
+    Api --&gt; QueryFactory : crea
+    APi --&gt; BuilderPrenotazione : usa
+
+    GestoreBarche --&gt; BuilderBarca : usa
+    GestorePrenotazioni --&gt; BuilderPrenotazione : usa
+    GestorePrenotazioni --&gt; GestorePrezzi : usa
+    GestorePrenotazioni --&gt; GestoreClienti : usa
+    GestorePrenotazioni --&gt; Observer : implementa
+    GestorePrenotazioni --&gt; Observable : implementa</code></pre>
+
+
 </section>
 </section>
 
