@@ -1,7 +1,6 @@
 ---
 title: Figure retoriche italiane
 description: "Appunti di figure retoriche italiane"
-permalink: /wiki/personali/figureRetoriche/
 ---
 
 Ci sono quattro categorie principali di figure retoriche:
@@ -9,3 +8,84 @@ Ci sono quattro categorie principali di figure retoriche:
 2. **Figure di struttura**: riguardano la struttura della frase o del testo, come anacoluto, iperbole, e litote.
 3. **Figure di senso**: alterano il significato delle parole o delle frasi, come ironia, sarcasmo, e ambiguità.
 4. **Figure di effetto**: sono utilizzate per ottenere un certo effetto emotivo o persuasivo, come l'epiteto, l'isonomia, e l'antitesi.
+
+## Figure di parola
+
+Le figure di parola riguardano il **significante** e si dividono in due sottogruppi:
+
+1. figure di ritmo
+2. figure di suono
+
+### Figure di ritmo
+
+Le figure di ritmo riguardano gli aspetti prosodici e metrici della frase
+
+- PARISOSI
+- CLAUSOLA
+
+### Figure di suono
+
+Le figure di suono riguardano aspetti di tipo fonetico e fonologico.
+
+- ALLITERAZIONE
+- PARONOMASIA
+- CALEMBOUR
+- DERIVATIO
+- ETIMOLOGIA
+
+## Figure di senso
+
+Le figure di senso riguardano il significato, dunque sono di natura semantica.
+La figura di senso consiste nell’usare un termine con un senso che non è quello
+abituale. E’ definita anche tropo (un significante preso nel senso di un altro)
+
+- METONIMIA
+- SINEDDOCHE
+- METAFORA
+- SIMILITUDINE
+- ANTONOMASIA
+- CATACRESI
+- IPERBOLE
+- LITOTE
+- IPALLAGE
+- ENALLAGE
+- OSSIMORO
+
+
+## Figure di costruzione
+
+Le figure di costruzione riguardano la costruzione della frase, cioè la sintassi.
+
+### Figure di sottrazione
+
+- ELLISSI
+- ASINDETO
+- APOSIOPESI (o reticenza)
+- ZEUGMA
+
+### Figure di ripetizione
+
+- EPANALESSI
+- ANTITESI
+
+### Figure di permutazione e varie
+
+- CHIASMO
+- IPERBATO
+- ANACOLUTO
+- GRADATIO
+
+## Figure di pensiero
+
+Le figure di pensiero riguardano il discorso nel suo insieme, i rapporti tra il
+discorso stesso e il suo oggetto nonché i rapporti tra discorso, oratore e
+destinatario.
+
+- ALLEGORIA
+- IRONIA
+- SPIRITO
+- UMORISMO
+- APOSTROFE
+- PROSOPOPEA
+- PRETERIZIONE
+- DOMANDA RETORICA

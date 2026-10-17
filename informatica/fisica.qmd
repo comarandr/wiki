@@ -98,7 +98,7 @@ $P = x = \vec{OP}$
 
 $ \vert \vec{OP'} \vert = \vert \vec{OP} \vert $
 
-<img src="AsseCoordinato.jpeg" alt="Asse Coordinato" width="400"/>
+<img src="../assets/images/AsseCoordinato.jpeg" alt="Asse Coordinato" width="400"/>
 
 $ x \text{ posizione} \begin{cases} \vert \vec{OP} \vert \text{ se } \vec{OP}  \text{ concorde nel verso positivo} \\\\ - \vert \vec{OP} \vert \text{ se } \vec{OP} \text{ discorde nel verso positivo} \end{cases} $
 
@@ -108,7 +108,7 @@ $ x \text{ posizione} \begin{cases} \vert \vec{OP} \vert \text{ se } \vec{OP}  \
 
 descrive la posizione in un dato istante
 
-<img src="leggeOraria.jpeg" alt="Legge Oraria" width="400"/>
+<img src="../assets/images/leggeOraria.jpeg" alt="Legge Oraria" width="400"/>
 
 #### Moto rettilineo uniforme
 
@@ -130,7 +130,7 @@ VELOCITÀ MEDIA: $$v_m = \frac{\Delta x}{\Delta t}$$
 
 VELOCITÀ ISTANTANEA: $$v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}$$
 
-<img src="rettilineoUniforme.jpeg" alt="Rettilineo Uniforme" width="500"/>
+<img src="../assets/images/rettilineoUniforme.jpeg" alt="Rettilineo Uniforme" width="500"/>
 
 #### Moto rettilineo uniformemente accelerato
 
@@ -148,7 +148,7 @@ $v(t) = a_m t + v_0$
 
 <br>
 
-<img src="uniformementeAccelerato.jpeg" alt="Uniformemente Accelerato" width="800"/>
+<img src="../assets/images/uniformementeAccelerato.jpeg" alt="Uniformemente Accelerato" width="800"/>
 
 #### IN BREVE
 
@@ -382,7 +382,7 @@ Un corpo tende a conservare proprio moto (velocità si conserva, accelerazione n
 - due corpi $A$ e $B$ si scontrano, la loro velocità varia: $\vec{v_A} \rightarrow \vec{v_A '}$ e $\vec{v_B} \rightarrow \vec{v_B '}$
 - in particolare consideriamo $\vec{v_A} = - \vec{v_B}$ e lo scontro frontale di due oggetti identici su una traiettoria retta
 
-<img src="./scontro1.jpeg" alt="Testo alternativo" width="300" />
+<img src="../assets/images/scontro1.jpeg" alt="Testo alternativo" width="300" />
 
 - ne segue che la variazione della velocità risulta: $\Delta \vec{v_A} = -\Delta \vec{v_B}$ indipendentemente dall'osservatore e anche indipendentemente da un termine di trascinamento.
 -  aggiungendo un oggetto $X$ al corpo $B$ (ad esempio una massa) e ripetendo l'esperimento, osserviamo che $\Delta \vec{v_A} < -\Delta \vec{v_B}$, ovvero la variazione di velocità di $A$ è minore in modulo rispetto a quella di $B$. In questo caso la relazione è $\Delta \vec{v_A} = - K(A,B+X) \cdot \Delta \vec{v_B}$.
@@ -424,12 +424,12 @@ $$
 
 Prendiamo due esempi:
 
-<img src="./FuneInestens1.jpeg"  style="height: 200px;">
+<img src="../assets/images/FuneInestens1.jpeg"  style="height: 200px;">
 
 Consideriamo di una massa $m$ sospesa al soffitto tramite cavo in condizioni statiche.
 La situazione di equilibrio è data dalla relazione $T + mg = 0$
 
-  <img src="./FuneInest2.jpeg"  style="height: 200px;">
+  <img src="../assets/images/FuneInest2.jpeg"  style="height: 200px;">
 
 Consideriamo una massa che ruota su un piano, in cui la massa è collaga al cavo di lunghezza $L$ il quale è fissato a un punto del piano.
 Se in un dato istante la massa $m$ ha velocità $v$, la sua $a_{\text{centr}} = \frac{v^2}{L}$, per cui $T = m \cdot a_{\text{centr}} = m \frac{v^2}{L}$
@@ -463,7 +463,7 @@ Ne consgue anche che $ \mu_{din} < \mu_{stat} $, entrambi non negativi (e nei no
 
 Il pendolo è un sistema è costituito da una massa $M$ di dimensioni trascurabili, sospesa a un filo inestensibile di lunghezza $L$ privo di massa.
 
-<img src="./pendolo1.jpeg" height="250px">
+<img src="../assets/images/pendolo1.jpeg" height="250px">
 
 - la posizione del corpo è descritta da $\theta$: è sufficiente in quanto la distanza da $O$ è sempre $L$
 
@@ -528,7 +528,7 @@ esempi con **macchine virtuali**.
 
 Consideriamo il moto di un grave che cade da un'altezza $h$, partendo da una situazione di quiete.
 
-<img src="./cinetica01.jpeg" height="250px" >
+<img src="../assets/images/cinetica01.jpeg" height="250px" >
 
 La sua variazione di energia potenziale è la seguente:
 

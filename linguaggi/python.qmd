@@ -2,7 +2,7 @@
 title: Python
 description: "Appunti di python e relativi pacchetti"
 categories: [linguaggi]
-image: https://upload.wikimedia.org/wikipedia/commons/3/31/Python-logo.png
+image: ../../assets/icons/python.png
 ---
 
 ## Introduzione a Python
@@ -226,7 +226,7 @@ Operazioni vettorializzate:
 
 **forma normale**:
 
-![forma normale](./formaNormale.png)
+![forma normale](../assets/images/formaNormale.png)
 
 - `serie.values(numpy_array)`
 - `serie.index`

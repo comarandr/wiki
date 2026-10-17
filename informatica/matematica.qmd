@@ -234,7 +234,7 @@ $$
 
 Consideriamo una curva in 2 dimensioni
 
-<img src="./IntegraliLinea.jpeg" height="250px">
+<img src="../assets/images/IntegraliLinea.jpeg" height="250px">
 
 Definiamo integrale di linea:
 

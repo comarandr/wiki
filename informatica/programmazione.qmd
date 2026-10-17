@@ -1,13 +1,22 @@
 ---
 title: Programmazione e laboratorio
 description: "Appunti di programmazione e laboratorio del 1 anno di informatica"
-categories: [università, informatica]
+categories: [informatica]
 ---
+
+Raccolta di tutti gli appunti e gli esercizi svolti durante il corso di programmazione e laboratorio del primo anno di informatica.
+Per quanto riguarda la parte di sintassi e semantica dei linguaggi usati, si rimanda ai rispettivi appunti di linguaggi di programmazione.
+Durante il corso gli IDE usati sono stati DrRacket e BlueJ.
 
 ## Programmazione funzionale
 
-Linguaggio: [scheme](/linguaggi/scheme.qmd)
+Linguaggio: [scheme](../linguaggi/scheme.qmd)
+Prima parte del corso di programmazione funzionale, con il linguaggio Scheme.
 
 ## Programmazione imperativa
 
-Linguaggio: [java](/linguaggi/java.qmd)
+Linguaggio: [java](../linguaggi/java.qmd)
+Seconda parte del corso di programmazione imperativa, con il linguaggio Java.
+
+## Esercizi di laboratorio
+

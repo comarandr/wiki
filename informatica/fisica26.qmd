@@ -48,7 +48,7 @@ $$
 [V] = \frac{[L]}{[T]}
 $$
 
-<img src="./vettoreVelocita.jpeg" height="230px">
+<img src="../assets/images/vettoreVelocita.jpeg" height="230px">
 
 $$
 \vert \vec{v} \vert = \sqrt{v_x^2 + v_y^2}
