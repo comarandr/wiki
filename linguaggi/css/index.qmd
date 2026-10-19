@@ -657,7 +657,7 @@ Un elemento (inline o block che sia) è un'entità costituita da:
 - **margin**: spazio di contorno esterno al bordo
   - spessore, colore di sfondo specificabili con CSS 
 
-![](../assets/images/boxmodel.png)
+![](../../assets/images/boxmodel.png)
 
 ### Padding (tra contenuto e bordo box)
 

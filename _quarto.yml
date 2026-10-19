@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+  - assets/
 
 from: markdown+hard_line_breaks
 

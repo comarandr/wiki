@@ -408,7 +408,7 @@ Un elemento (inline o block che sia) è un'entità costituita da:
 - **margin**: spazio di contorno esterno al bordo
   - spessore, colore di sfondo specificabili con CSS 
 
-![](../assets/images/boxmodel.png)
+![](/assets/images/boxmodel.png)
 
 ### Aggregazione di elementi
 
@@ -1099,11 +1099,11 @@ Le dimensioni dell'immagini vengono specificate mediante
 - attributo **height**: altezza in pixel o percentuale
 
 ```html
-<img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+<img src="/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
 ```
 
 ```{=html}
-<img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+<img src="/image/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
 ```
 
 #### Immagine di tipo blocco &lt;figure&gt; e didascalia &lt;figcaption&gt;
@@ -1115,7 +1115,7 @@ Per raggruppare un'immagine con la sua didascalia si usa l'elemento blocco `<fig
 
 ```html
 <figure>
-<img src="../assets/images/A_Frozen_Earth.png"
+<img src="/image/A_Frozen_Earth.png"
 alt="A Frozen Earth">
 <figcaption>A Frozen Earth</figcaption>
 </figure>
@@ -1123,7 +1123,7 @@ alt="A Frozen Earth">
 
 ```{=html}
 <figure>
-<img src="../assets/images/A_Frozen_Earth.png"
+<img src="/image/A_Frozen_Earth.png"
 alt="A Frozen Earth" width="190" height="108" height="150">
 <figcaption>A Frozen Earth</figcaption>
 </figure>
@@ -1135,13 +1135,13 @@ alt="A Frozen Earth" width="190" height="108" height="150">
 
 ```html
 <a href="https://comarandr.github.io/" target="_blank" rel="author">
-  <img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+  <img src="/image/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
 </a>
 ```
 
 ```{=html}
 <a href="https://comarandr.github.io/" target="_blank" rel="author">
-  <img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+  <img src="/image/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
 </a>
 ```
 
@@ -1169,7 +1169,7 @@ L'elemento **&lt;area&gt;** possiede:
 
 ```html
 <figure>
-<img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="380" height="216" usemap="#earthmap">
+<img src="/image/A_Frozen_Earth.png" alt="A Frozen Earth" width="380" height="216" usemap="#earthmap">
 <figcaption>Clicca sul pianeta</figcaption>
 </figure>
 
@@ -1180,7 +1180,7 @@ L'elemento **&lt;area&gt;** possiede:
 
 ```{=html}
 <figure>
-<img src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="380" height="216" usemap="#earthmap">
+<img src="/image/A_Frozen_Earth.png" alt="A Frozen Earth" width="380" height="216" usemap="#earthmap">
 <figcaption>Clicca sul pianeta</figcaption>
 </figure>
 
@@ -1474,11 +1474,11 @@ Serve per creare un pulsante immagine che invia i dati del form al server.
 Si possono usare gli attributi soliti per le immagini, come **src**, **alt**, **width** e **height**.
 
 ```html
-<input type="image" src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+<input type="image" src="./image/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
 ```
 
 ```{=html}
-<input type="image" src="../assets/images/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
+<input type="image" src="./image/A_Frozen_Earth.png" alt="A Frozen Earth" width="190" height="108">
 ```
 
 ### Input di tipo email &lt;input type = "email"&gt;
