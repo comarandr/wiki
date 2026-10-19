@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Appunti di git e relativi comandi">
+
+<title>Git – Wiki</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="mermaid-theme" content="default">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Wiki</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/linguaggi"> 
+<span class="menu-text">Linguaggi</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://comarandr.github.io/wiki/informatica"> 
+<span class="menu-text">Informatica</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#creare-nuovi-branch" id="toc-creare-nuovi-branch" class="nav-link active" data-scroll-target="#creare-nuovi-branch">Creare nuovi branch</a>
+  <ul>
+  <li><a href="#spostarsi-in-un-commit-specifico" id="toc-spostarsi-in-un-commit-specifico" class="nav-link" data-scroll-target="#spostarsi-in-un-commit-specifico">spostarsi in un commit specifico</a></li>
+  <li><a href="#operatori-di-riferimento-e" id="toc-operatori-di-riferimento-e" class="nav-link" data-scroll-target="#operatori-di-riferimento-e">operatori di riferimento ^ e ~</a></li>
+  <li><a href="#forzatura-di-un-branch" id="toc-forzatura-di-un-branch" class="nav-link" data-scroll-target="#forzatura-di-un-branch">forzatura di un branch</a></li>
+  </ul></li>
+  <li><a href="#unire-i-branch" id="toc-unire-i-branch" class="nav-link" data-scroll-target="#unire-i-branch">Unire i branch</a></li>
+  <li><a href="#annullare-le-modifiche" id="toc-annullare-le-modifiche" class="nav-link" data-scroll-target="#annullare-le-modifiche">Annullare le modifiche</a></li>
+  <li><a href="#git-cherry-pick" id="toc-git-cherry-pick" class="nav-link" data-scroll-target="#git-cherry-pick">git cherry-pick</a></li>
+  <li><a href="#git-tag" id="toc-git-tag" class="nav-link" data-scroll-target="#git-tag">Git tag</a></li>
+  <li><a href="#sincronizzare-con-un-repository-remoto" id="toc-sincronizzare-con-un-repository-remoto" class="nav-link" data-scroll-target="#sincronizzare-con-un-repository-remoto">Sincronizzare con un repository remoto</a>
+  <ul>
+  <li><a href="#scaricare-da-un-repository-remoto" id="toc-scaricare-da-un-repository-remoto" class="nav-link" data-scroll-target="#scaricare-da-un-repository-remoto">scaricare da un repository remoto</a></li>
+  <li><a href="#scaricare-e-modificare-direttamente" id="toc-scaricare-e-modificare-direttamente" class="nav-link" data-scroll-target="#scaricare-e-modificare-direttamente">scaricare e modificare direttamente</a></li>
+  </ul></li>
+  <li><a href="#tracking" id="toc-tracking" class="nav-link" data-scroll-target="#tracking">Tracking</a></li>
+  <li><a href="#come-funziona-git" id="toc-come-funziona-git" class="nav-link" data-scroll-target="#come-funziona-git">Come funziona Git</a></li>
+  <li><a href="#git-setup" id="toc-git-setup" class="nav-link" data-scroll-target="#git-setup">Git Setup</a>
+  <ul>
+  <li><a href="#trovare-file-con-configurazioni" id="toc-trovare-file-con-configurazioni" class="nav-link" data-scroll-target="#trovare-file-con-configurazioni">trovare file con configurazioni</a></li>
+  <li><a href="#impostare-nome-e-email" id="toc-impostare-nome-e-email" class="nav-link" data-scroll-target="#impostare-nome-e-email">Impostare nome e email</a></li>
+  <li><a href="#cambiare-default-branch-name" id="toc-cambiare-default-branch-name" class="nav-link" data-scroll-target="#cambiare-default-branch-name">cambiare default branch name</a></li>
+  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help">Help</a></li>
+  </ul></li>
+  <li><a href="#inizializzare-una-repo" id="toc-inizializzare-una-repo" class="nav-link" data-scroll-target="#inizializzare-una-repo">Inizializzare una repo</a>
+  <ul>
+  <li><a href="#da-una-cartella-esistente" id="toc-da-una-cartella-esistente" class="nav-link" data-scroll-target="#da-una-cartella-esistente">Da una cartella esistente</a></li>
+  <li><a href="#clonare-una-repo-già-esistente" id="toc-clonare-una-repo-già-esistente" class="nav-link" data-scroll-target="#clonare-una-repo-già-esistente">Clonare una repo già esistente</a></li>
+  </ul></li>
+  <li><a href="#status-dei-file" id="toc-status-dei-file" class="nav-link" data-scroll-target="#status-dei-file">Status dei file</a></li>
+  <li><a href="#lavorare-e-modificare-file" id="toc-lavorare-e-modificare-file" class="nav-link" data-scroll-target="#lavorare-e-modificare-file">Lavorare e modificare file</a>
+  <ul>
+  <li><a href="#stagingtracking-di-un-file" id="toc-stagingtracking-di-un-file" class="nav-link" data-scroll-target="#stagingtracking-di-un-file">Staging/tracking di un file</a></li>
+  <li><a href="#ignorare-un-file" id="toc-ignorare-un-file" class="nav-link" data-scroll-target="#ignorare-un-file">Ignorare un file</a></li>
+  <li><a href="#rimuovere-i-file" id="toc-rimuovere-i-file" class="nav-link" data-scroll-target="#rimuovere-i-file">Rimuovere i file</a></li>
+  <li><a href="#muovere-un-file" id="toc-muovere-un-file" class="nav-link" data-scroll-target="#muovere-un-file">Muovere un file</a></li>
+  <li><a href="#osservare-la-commit-history" id="toc-osservare-la-commit-history" class="nav-link" data-scroll-target="#osservare-la-commit-history">Osservare la Commit History</a></li>
+  <li><a href="#modificare-ultimo-commit" id="toc-modificare-ultimo-commit" class="nav-link" data-scroll-target="#modificare-ultimo-commit">Modificare ultimo commit</a></li>
+  <li><a href="#rimuovere-modifiche" id="toc-rimuovere-modifiche" class="nav-link" data-scroll-target="#rimuovere-modifiche">Rimuovere modifiche</a></li>
+  </ul></li>
+  <li><a href="#lavorare-con-i-remotes" id="toc-lavorare-con-i-remotes" class="nav-link" data-scroll-target="#lavorare-con-i-remotes">Lavorare con i Remotes</a>
+  <ul>
+  <li><a href="#conoscere-repo-remote" id="toc-conoscere-repo-remote" class="nav-link" data-scroll-target="#conoscere-repo-remote">Conoscere repo remote</a></li>
+  <li><a href="#aggiunge-repo-remota" id="toc-aggiunge-repo-remota" class="nav-link" data-scroll-target="#aggiunge-repo-remota">Aggiunge repo remota</a></li>
+  <li><a href="#rinominare-repo-remota" id="toc-rinominare-repo-remota" class="nav-link" data-scroll-target="#rinominare-repo-remota">Rinominare repo remota</a></li>
+  <li><a href="#fare-fetch-e-pull" id="toc-fare-fetch-e-pull" class="nav-link" data-scroll-target="#fare-fetch-e-pull">Fare fetch e pull</a></li>
+  <li><a href="#ispezionare-cartella-remota" id="toc-ispezionare-cartella-remota" class="nav-link" data-scroll-target="#ispezionare-cartella-remota">Ispezionare cartella remota</a></li>
+  <li><a href="#rimuovere-cartella-remota" id="toc-rimuovere-cartella-remota" class="nav-link" data-scroll-target="#rimuovere-cartella-remota">Rimuovere cartella remota</a></li>
+  </ul></li>
+  <li><a href="#tagging" id="toc-tagging" class="nav-link" data-scroll-target="#tagging">Tagging</a>
+  <ul>
+  <li><a href="#elencare-i-tag-presenti" id="toc-elencare-i-tag-presenti" class="nav-link" data-scroll-target="#elencare-i-tag-presenti">Elencare i tag presenti</a></li>
+  <li><a href="#creare-dei-tag" id="toc-creare-dei-tag" class="nav-link" data-scroll-target="#creare-dei-tag">creare dei tag</a></li>
+  <li><a href="#condividere-tag-con-remote" id="toc-condividere-tag-con-remote" class="nav-link" data-scroll-target="#condividere-tag-con-remote">Condividere tag con remote</a></li>
+  <li><a href="#eliminare-i-tag" id="toc-eliminare-i-tag" class="nav-link" data-scroll-target="#eliminare-i-tag">Eliminare i tag</a></li>
+  <li><a href="#spostarsi-tra-i-commit" id="toc-spostarsi-tra-i-commit" class="nav-link" data-scroll-target="#spostarsi-tra-i-commit">Spostarsi tra i commit</a></li>
+  </ul></li>
+  <li><a href="#aliasing" id="toc-aliasing" class="nav-link" data-scroll-target="#aliasing">Aliasing</a></li>
+  <li><a href="#branching" id="toc-branching" class="nav-link" data-scroll-target="#branching">Branching</a>
+  <ul>
+  <li><a href="#come-funziona-il-branching" id="toc-come-funziona-il-branching" class="nav-link" data-scroll-target="#come-funziona-il-branching">Come funziona il branching</a></li>
+  <li><a href="#creare-un-nuovo-branch" id="toc-creare-un-nuovo-branch" class="nav-link" data-scroll-target="#creare-un-nuovo-branch">Creare un nuovo branch</a></li>
+  <li><a href="#spostarsi-di-branch" id="toc-spostarsi-di-branch" class="nav-link" data-scroll-target="#spostarsi-di-branch">Spostarsi di branch</a></li>
+  <li><a href="#switch-e-checkout" id="toc-switch-e-checkout" class="nav-link" data-scroll-target="#switch-e-checkout">Switch e checkout</a></li>
+  <li><a href="#storia-divergente" id="toc-storia-divergente" class="nav-link" data-scroll-target="#storia-divergente">Storia divergente</a></li>
+  <li><a href="#merging" id="toc-merging" class="nav-link" data-scroll-target="#merging">Merging</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Git</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">linguaggi</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Appunti di git e relativi comandi
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="creare-nuovi-branch" class="level2">
+<h2 class="anchored" data-anchor-id="creare-nuovi-branch">Creare nuovi branch</h2>
+<p><code>git branch</code> : Elenca i branch locali</p>
+<p><code>git branch &lt;nome-branch&gt;</code> : Crea un nuovo branch con il nome specificato</p>
+<ul>
+<li><code>git branch -d &lt;nome-branch&gt;</code> : Elimina un branch (deve essere già unito o non avere modifiche non salvate)</li>
+<li><code>git branch -D &lt;nome-branch&gt;</code> : Forza l’eliminazione di un branch anche se non è stato unito</li>
+</ul>
+<p><code>git switch [options] &lt;nome-branch&gt;</code> : Passa al branch specificato</p>
+<ul>
+<li><code>git switch -c &lt;nome-branch&gt;</code> : Crea un nuovo branch e passa ad esso
+<ul>
+<li><code>git switch -c name &lt;base-branch&gt;</code> : Crea un nuovo branch basato su altro branch e passa ad esso</li>
+</ul></li>
+<li><code>git switch -</code> : Passa al branch precedente</li>
+<li><code>git switch --detach &lt;commit&gt;</code> : Passa a un commit specifico in modalità detached HEAD (non associato a un branch)</li>
+</ul>
+<p><code>git checkout &lt;nome-branch&gt;</code> : Passa al branch specificato (spesso sostituito da switch)</p>
+<ul>
+<li><code>git checkout -b &lt;nome-branch&gt;</code> : Crea un nuovo branch e passa ad esso</li>
+<li><code>git checkout -d &lt;nome-branch&gt;</code> : Elimina un branch</li>
+</ul>
+<section id="spostarsi-in-un-commit-specifico" class="level3">
+<h3 class="anchored" data-anchor-id="spostarsi-in-un-commit-specifico">spostarsi in un commit specifico</h3>
+<p><code>git checkout &lt;commit&gt;</code> : Passa a un commit specifico (modalità detached HEAD)</p>
+<p><code>git switch --detach &lt;commit&gt;</code> : Passa a un commit specifico in modalità detached HEAD (alternativa a checkout)</p>
+<p><code>git checkout &lt;nome-branch&gt;^</code> : Passa al commit genitore del branch specificato</p>
+<p><code>git checkout &lt;nome-branch&gt;~n</code> : Passa al commit n livelli sopra il branch specificato</p>
+</section>
+<section id="operatori-di-riferimento-e" class="level3">
+<h3 class="anchored" data-anchor-id="operatori-di-riferimento-e">operatori di riferimento ^ e ~</h3>
+<ul>
+<li><code>^</code> : Riferisce al genitore di un commit
+<ul>
+<li><code>^&lt;numero&gt;</code> : Riferisce al genitore n-esimo di un commit nel caso di genitori multipli (<strong>spostamento orizzontale</strong>)</li>
+</ul></li>
+<li><code>~</code> : Riferisce al commit genitore di un commit, ma permette di specificare un numero di livelli da risalire
+<ul>
+<li><code>~n</code> : Riferisce al commit n livelli sopra il commit specificato (<strong>spostamento verticale</strong>)</li>
+</ul></li>
+</ul>
+<p>Gli operatori <code>^</code> e <code>~</code> possono essere combinati per navigare nella cronologia dei commit</p>
+</section>
+<section id="forzatura-di-un-branch" class="level3">
+<h3 class="anchored" data-anchor-id="forzatura-di-un-branch">forzatura di un branch</h3>
+<p><code>git branch -f &lt;nome-branch&gt; &lt;commit&gt;</code> : Forza il branch a puntare a un commit specifico (può causare perdita di dati se non usato con cautela)</p>
+<ul>
+<li>nota: &lt;commit&gt; può anche essere un riferimento relativo <code>nome-branch~n</code> o <code>nome-branch^</code></li>
+</ul>
+</section>
+</section>
+<section id="unire-i-branch" class="level2">
+<h2 class="anchored" data-anchor-id="unire-i-branch">Unire i branch</h2>
+<p><code>git merge &lt;nome-branch&gt;</code>: Unisce il branch specificato nel branch attivo</p>
+<p>in assenza di conflitti non sarà necessario risolvere manualmente le modifiche</p>
+<p><code>git rebase &lt;nome-branch&gt;</code>: Applica le modifiche del branch attivo sul il branch specificato (se mi trovo su B e faccio <code>rebase A</code> applica le modifiche di B su A)</p>
+<ol type="1">
+<li>creo il ramo secondario con la feature da sviluppare</li>
+<li>mi sposto sul ramo secondario e faccio i commit</li>
+<li>mentre sono sul ramo secondario, faccio un rebase del ramo principale per portare le modifiche più recenti</li>
+<li>risolvo eventuali conflitti</li>
+</ol>
+<ul>
+<li>pro: mantiene una cronologia più lineare e pulita</li>
+<li>contro: modifica lo storico dei commit</li>
+</ul>
+</section>
+<section id="annullare-le-modifiche" class="level2">
+<h2 class="anchored" data-anchor-id="annullare-le-modifiche">Annullare le modifiche</h2>
+<p><code>git reset &lt;commit&gt;</code> : Resetta il branch attivo a un commit specifico, annullando tutte le modifiche successive (perdita di dati)</p>
+<p><code>git revert &lt;commit&gt;</code> : Crea un nuovo commit che annulla le modifiche introdotte da un commit specifico (non altera la cronologia)</p>
+<p><strong>nota</strong>: &lt;commit&gt; è il commit a cui si vuole tornare</p>
+</section>
+<section id="git-cherry-pick" class="level2">
+<h2 class="anchored" data-anchor-id="git-cherry-pick">git cherry-pick</h2>
+<p><code>git cherry-pick &lt;commit&gt;</code> : Applica le modifiche introdotte da un commit specifico al branch attivo (utile per portare modifiche specifiche da un branch all’altro senza unire tutto il branch)</p>
+<p><code>git rebase -i &lt;nome-branch/commit&gt;</code> : apre un editor interattivo che ti permette di selezionare i commit da includere, modificare o eliminare durante un rebase, dal branch o commit specificato fino al branch attivo.</p>
+</section>
+<section id="git-tag" class="level2">
+<h2 class="anchored" data-anchor-id="git-tag">Git tag</h2>
+<p><code>git tag &lt;nome-tag&gt;</code> : Crea un tag leggero con il nome specificato, permette di identificare un commit preciso</p>
+<p><code>git describe &lt;ref&gt;</code> : Mostra una descrizione del commit più vicina a un tag, con output del tipo <code>&lt;tag&gt;-&lt;numero-commit&gt;-g&lt;hash&gt;</code></p>
+</section>
+<section id="sincronizzare-con-un-repository-remoto" class="level2">
+<h2 class="anchored" data-anchor-id="sincronizzare-con-un-repository-remoto">Sincronizzare con un repository remoto</h2>
+<section id="scaricare-da-un-repository-remoto" class="level3">
+<h3 class="anchored" data-anchor-id="scaricare-da-un-repository-remoto">scaricare da un repository remoto</h3>
+<p><strong>nota</strong>: i rami remoti riflettono lo stato del repository remoto dall’ultima volta che abbiamo comunicato con esso (tramite fetch, pull o push)</p>
+<p><code>git clone</code> : Clona una repository esistente da un URL, creando una copia locale del repository remoto</p>
+<p><code>git fetch</code>: scarica commit presenti in remoto e assenti dal nostro repository locale, aggiornando dove puntano i nostri branche remoti (“origin/branch”) ma senza modificare i nostri branch locali. è una sorta di download dei cambiamenti.</p>
+<p><code>git remote add &lt;nome-remoto&gt; &lt;url&gt;</code> : Aggiunge un repository remoto con un nome specificato</p>
+<p><strong>nota</strong>: potenzialmente è possibile prima scaricare i commit con fetch e poi unirli e spostarsi attraverso essi come se fossero stati creati localmente (cherry-pick, merge, rebase, checkout … <origin master="">)</origin></p>
+</section>
+<section id="scaricare-e-modificare-direttamente" class="level3">
+<h3 class="anchored" data-anchor-id="scaricare-e-modificare-direttamente">scaricare e modificare direttamente</h3>
+<p><code>git push &lt;remoto&gt; &lt;place&gt;</code> : Invia i commit del branch locale al repository remoto</p>
+<p><code>git push &lt;remoto&gt; &lt;branch-locale&gt;:&lt;branch-remoto&gt;</code> : Invia i commit del branch locale al repository remoto, specificando il nome del branch remoto (se diverso da quello locale)</p>
+<p><code>git pull &lt;nome-remoto&gt; &lt;nome-branch&gt;</code> : Recupera e unisce i cambiamenti dal repository remoto al branch locale, consiste nella combinazione di <code>git fetch</code> e <code>git merge</code></p>
+<p><strong>nota</strong>: generalmente il main branch è bloccato. Normalmente bisogna:</p>
+<ol type="1">
+<li>creare un branch secondario</li>
+<li>fare le modifiche e i commit su questo branch</li>
+<li>fare un push del branch secondario al repository remoto</li>
+<li>creare una pull request per unire le modifiche al main branch</li>
+</ol>
+</section>
+</section>
+<section id="tracking" class="level2">
+<h2 class="anchored" data-anchor-id="tracking">Tracking</h2>
+<p><code>git branch -u &lt;nome-remoto&gt;/&lt;branch-remoto&gt; &lt;branch-locale&gt;</code> : Imposta il tracking del branch remoto con il branch locale. Se stiamo lavorando giù sul branch locale possiamo ometterlo</p>
+<p><code>git checkout -b &lt;branch-locale&gt; &lt;nome-remoto&gt;/&lt;branch-remoto&gt;</code> : Imposta il tracking del branch remoto con il branch locale</p>
+</section>
+<section id="come-funziona-git" class="level2">
+<h2 class="anchored" data-anchor-id="come-funziona-git">Come funziona Git</h2>
+<p>Git è uno strumento di <strong>version control</strong>, ovvero un sistema che traccia i diversi cambiamenti di un file o di un insieme di file nel tempo, in modo tale da poter richiamare una determinata versione dei file in futuro. In pratica registra le diverse fasi, in modo da poter passare da una all’altra.</p>
+<p>Git ragiona in termini di flusso di snapshots. Se il file non viene modificato, non salva nuovamente il file ma produce un riferimento allo stesso identico file precedentemente salvato.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+
+    subgraph V1["Version 1"]
+        direction TB
+        V1A["File A"]
+        V1B["File B"]
+        V1C["File C"]
+
+        V1A --- V1B
+        V1B --- V1C
+
+    end
+
+    subgraph V2["Version 2"]
+        direction TB
+        V2A["A1"]
+        V2B["B"]
+        V2C["C1"]
+
+        V2A --- V2B
+        V2B --- V2C
+    end
+
+    style V2B stroke-dasharray: 5 5
+
+    subgraph V3["Version 3"]
+        direction TB
+        V3A["A1"]
+        V3B["B"]
+        V3C["C2"]
+
+        V3A --- V3B
+        V3B --- V3C
+    end
+
+    style V3A stroke-dasharray: 5 5
+    style V3B stroke-dasharray: 5 5
+
+    subgraph V4["Version 4"]
+        direction TB
+        V4A["A2"]
+        V4B["B1"]
+        V4C["C2"]
+
+        V4A --- V4B
+        V4B --- V4C
+
+        style V4C stroke-dasharray: 5 5
+    end
+
+
+
+    subgraph V5["Version 5"]
+        direction TB
+        V5A["A2"]
+        V5B["B2"]
+        V5C["C3"]
+
+        V5A --- V5B
+        V5B --- V5C
+
+        style V5A stroke-dasharray: 5 5
+    end
+
+    %% Ordine orizzontale
+    V1 ~~~ V2
+    V2 ~~~ V3
+    V3 ~~~ V4
+    V4 ~~~ V5
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>In git ogni file può essere in uno dei 3 stati:</p>
+<ul>
+<li><strong>modified</strong>: file modificati ma che non hanno ricevuto un commit nel tuo database locale</li>
+<li><strong>staged</strong>: il file modificato è stato contrassegnato per essere salvato nel prossimo snapshot con le modifiche attuali</li>
+<li><strong>committed</strong>: i dati sono stati salvati nel tuo database locale</li>
+</ul>
+<p>In base a questi tre stati possiamo capire le principali sezioni di Git:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    participant WD as Working&lt;br/&gt;Directory
+    participant SA as Staging&lt;br/&gt;Area
+    participant GD as .git directory&lt;br/&gt;(Repository)
+
+    GD-&gt;&gt;WD: Checkout the project
+    WD-&gt;&gt;SA: Stage Fixes
+    SA-&gt;&gt;GD: Commit
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Il <strong>working tree</strong> è una copia (un singolo <code>checkout</code>) di una precisa versione del progetto. I file vengono presi dal database e copiati nel disco pronti per essere usati.</p>
+<p>La <strong>staging area</strong> (in gergo tecnico sarebbe l’index) contiene le informazioni su cosa caricherai nel prossimo commit.</p>
+<p>La <strong>repository</strong> contiene i metadati e gli oggetti del database del tuo progetto, ed è quello che vai a copiare quando effettui un <code>git clone</code>.</p>
+<p>In pratica il flusso di lavoro è il seguente:</p>
+<ol type="1">
+<li>modifichi i file nel tuo working tree</li>
+<li>selezioni i file che faranno parte del prossimo commit, e aggiungi unicamente questi nella staging area (<code>git add</code>)</li>
+<li>Fai un commit, salvando le modifiche in staging area e i metadati in uno snapshot all’interno della tua cartella Git.</li>
+</ol>
+<p>File nella working directory possono essere:</p>
+<ul>
+<li>tracked: sono file di cui Git è a conoscenza (possono essere: unmodified, modified, staged)</li>
+<li>untracked: file della cartella che non sono nell’ultimo snapshot e nemmeno nella staging area.</li>
+</ul>
+<p>Dopo aver inizializzato il working tree, tutti i file sono tracciati e non modificati.</p>
+<p>Se li modifichi, Git li vede come <strong>modified</strong>, in quanto sono tracciati ma non staged.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+  participant UT as Untracked
+  participant UM as Unmodified
+  participant M as Modified
+  participant S as Staged
+
+  UT -&gt;&gt; S: Add the file
+  UM -&gt;&gt; M: Edit the file
+  M -&gt;&gt; S: Stage the file
+  UM -&gt;&gt; UT: Remove the file
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="git-setup" class="level2">
+<h2 class="anchored" data-anchor-id="git-setup">Git Setup</h2>
+<section id="trovare-file-con-configurazioni" class="level3">
+<h3 class="anchored" data-anchor-id="trovare-file-con-configurazioni">trovare file con configurazioni</h3>
+<p>Dopo l’installazione, è ora di vedere quali sono i parametri di setup di git</p>
+<p><code>$ git config --list --show-origin</code>: per vedere tutte i setting e da dove provengono</p>
+<p><code>$ git config --list</code>: per vedere le opzioni di configurazione</p>
+<p><code>$ git config &lt;key&gt;</code>: per vedere la singola opzione (es.user.name)</p>
+</section>
+<section id="impostare-nome-e-email" class="level3">
+<h3 class="anchored" data-anchor-id="impostare-nome-e-email">Impostare nome e email</h3>
+<p><code>$ git config --global user.name "nome"</code><br>
+<code>$ git config --global user.email johndoe@example.com</code></p>
+<p>senza l’opzione <code>--global</code> puoi configurare i dati per progetti specifici</p>
+</section>
+<section id="cambiare-default-branch-name" class="level3">
+<h3 class="anchored" data-anchor-id="cambiare-default-branch-name">cambiare default branch name</h3>
+<p><code>$ git config --global init.defaultBranch main</code> per configurare il nome</p>
+</section>
+<section id="help" class="level3">
+<h3 class="anchored" data-anchor-id="help">Help</h3>
+<p><code>git help &lt;verb&gt;</code></p>
+<p><code>git add -h</code>: esempio dell’uso di `-h``</p>
+</section>
+</section>
+<section id="inizializzare-una-repo" class="level2">
+<h2 class="anchored" data-anchor-id="inizializzare-una-repo">Inizializzare una repo</h2>
+<section id="da-una-cartella-esistente" class="level3">
+<h3 class="anchored" data-anchor-id="da-una-cartella-esistente">Da una cartella esistente</h3>
+<p>Dalla cartella del tuo progetto devi inizializzare con <code>git init</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd <span class="pp">[</span><span class="ss">path</span><span class="pp">]</span>/my_project</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git init</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>questo crea la cartella .git che contiene tutti i file necessari</p>
+</section>
+<section id="clonare-una-repo-già-esistente" class="level3">
+<h3 class="anchored" data-anchor-id="clonare-una-repo-già-esistente">Clonare una repo già esistente</h3>
+<p>Sempre dalla cartella del progetto devi utilizzare <code>git clone &lt;url&gt;</code>. Questo comando copierà tutti file della repo, ovvero tutta la struttura ad albero.</p>
+</section>
+</section>
+<section id="status-dei-file" class="level2">
+<h2 class="anchored" data-anchor-id="status-dei-file">Status dei file</h2>
+<p><code>$ git status</code>: ti mostra uno status generale della situazione</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git status</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">On</span> branch master <span class="co"># in quale branch sei</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Your</span> branch is up-to-date with <span class="st">'origin/master'</span>. <span class="co">#nessuna divergenza con server</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nothing</span> to commit, working tree clean <span class="co">#nessun file untracked</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="lavorare-e-modificare-file" class="level2">
+<h2 class="anchored" data-anchor-id="lavorare-e-modificare-file">Lavorare e modificare file</h2>
+<section id="stagingtracking-di-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="stagingtracking-di-un-file">Staging/tracking di un file</h3>
+<p><code>$ git add NEW_FILE</code>: permette di tracciare il nuovo file</p>
+<p><code>$ git add MODIFIED_FILE</code>: permette di inserire il file in staging area, con le modifiche effettuate fino al momento del comando.</p>
+</section>
+<section id="ignorare-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="ignorare-un-file">Ignorare un file</h3>
+<p>Devi creare un file script di nome <code>.gitignore</code>. Le regole per la sintassi sono quelle per lo scripting bash</p>
+</section>
+<section id="rimuovere-i-file" class="level3">
+<h3 class="anchored" data-anchor-id="rimuovere-i-file">Rimuovere i file</h3>
+<p><code>$ git rm FILE</code>: rimuove un file dalla staging area. Puoi passare come argomento anche cartelle o variabili in linguaggio bash</p>
+</section>
+<section id="muovere-un-file" class="level3">
+<h3 class="anchored" data-anchor-id="muovere-un-file">Muovere un file</h3>
+<p><code>$ git mv FILE_FROM FILE_TO</code>: serve a segnalare uno spostamento a git, cosa che altrimenti non potrebbe capire</p>
+</section>
+<section id="osservare-la-commit-history" class="level3">
+<h3 class="anchored" data-anchor-id="osservare-la-commit-history">Osservare la Commit History</h3>
+<p>La commit history è la cronologia di tutti i commit, conservata nella cartella .git</p>
+<p>Per vederla si usa il comando <code>$ git log</code></p>
+<p>Esistono numerosi argomenti per <code>git log</code>, per visualizzare formato, grafici, scelta metadati, ecc</p>
+<ul>
+<li>default (senza argomenti): elenco commit in ordine cronologico inverso, dal più recente al meno</li>
+<li><code>git log -p</code>: patch, mostra le differenze introdotte da ogni commit</li>
+<li><code>git log --stat</code>: mostra le statistiche, cià file cambiati, inserzioni, cancellazioni</li>
+<li><code>git log --graph</code>: nostra un grafico ascii</li>
+<li><code>git log --oneline</code>: mostra i commit in un sola linea</li>
+<li><code>git log --all</code> : mostra la cronologia dei commit di tutti i branch</li>
+<li><code>git log --remote</code> : mostra la cronologia dei commit dei branch remoti</li>
+</ul>
+<p>Ovviamente ci sono numerose altre opzioni</p>
+</section>
+<section id="modificare-ultimo-commit" class="level3">
+<h3 class="anchored" data-anchor-id="modificare-ultimo-commit">Modificare ultimo commit</h3>
+<p><code>$ git commit --amend</code>: permette di modificare l’ultimo commit</p>
+</section>
+<section id="rimuovere-modifiche" class="level3">
+<h3 class="anchored" data-anchor-id="rimuovere-modifiche">Rimuovere modifiche</h3>
+<p><code>$ git reset FILE</code>: rimuove dalla staging area</p>
+<p><code>$ git checkout -- FILE</code>: git rimpiazza il file con le ultime modifiche in staging area o in repo. ATTENZIONE</p>
+<p><code>$ git restore --staged FILE</code>: rimuove un file dalla staging area</p>
+<p><code>$ git restore FILE</code>: rimpiazza il file con ultima versione in repo. ATTENZIONE</p>
+</section>
+</section>
+<section id="lavorare-con-i-remotes" class="level2">
+<h2 class="anchored" data-anchor-id="lavorare-con-i-remotes">Lavorare con i Remotes</h2>
+<section id="conoscere-repo-remote" class="level3">
+<h3 class="anchored" data-anchor-id="conoscere-repo-remote">Conoscere repo remote</h3>
+<p><code>$ git remote</code>: mostra le repo remote<br>
+<code>$ git remote -v</code>: mostra gli url</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git remote <span class="at">-v</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span> https://github.com/schacon/ticgit <span class="er">(</span><span class="ex">fetch</span><span class="kw">)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">origin</span> https://github.com/schacon/ticgit <span class="er">(</span><span class="ex">push</span><span class="kw">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="aggiunge-repo-remota" class="level3">
+<h3 class="anchored" data-anchor-id="aggiunge-repo-remota">Aggiunge repo remota</h3>
+<p><code>$ git clone</code>: aggiunge implicitamente una repo remota origin</p>
+<p>Se invece vuoi aggiungerla esplicitamente:</p>
+<p>`$ git remote add <shortname> <url>``</url></shortname></p>
+</section>
+<section id="rinominare-repo-remota" class="level3">
+<h3 class="anchored" data-anchor-id="rinominare-repo-remota">Rinominare repo remota</h3>
+<p>`git remote rename <old_shortname> <new_shortname>: permette di cambiare lo shortname della cartella remota</new_shortname></old_shortname></p>
+</section>
+<section id="fare-fetch-e-pull" class="level3">
+<h3 class="anchored" data-anchor-id="fare-fetch-e-pull">Fare fetch e pull</h3>
+<p>per ottenere dati dalla cartella remota, devi fare un <strong>fetch</strong></p>
+<p><code>$ git fetch &lt;remote&gt;</code>: facendo un fetch, scarichi tutti i lavori di una repo remota sulla tua copia locale. Scarica soltanto, non fa il merge!</p>
+<p>per mandare i tuoi dati alla cartella remota, devi fare un <strong>push</strong></p>
+<p><code>git push &lt;remote&gt; &lt;branch&gt;</code>: funziona se hai permessi di scrittura nella cartella remota e nessuno ha fatto un push nel mentre. Questo comando copia il tuo branch (i commit) nella cartella remota.</p>
+</section>
+<section id="ispezionare-cartella-remota" class="level3">
+<h3 class="anchored" data-anchor-id="ispezionare-cartella-remota">Ispezionare cartella remota</h3>
+<p><code>$ git remote show origin</code>: permette di mostrare branch e altri dati del remote</p>
+</section>
+<section id="rimuovere-cartella-remota" class="level3">
+<h3 class="anchored" data-anchor-id="rimuovere-cartella-remota">Rimuovere cartella remota</h3>
+<p>`$ git remote remove <shortname>: rimuove la cartella remota</shortname></p>
+</section>
+</section>
+<section id="tagging" class="level2">
+<h2 class="anchored" data-anchor-id="tagging">Tagging</h2>
+<p>Puoi taggare alcuni punti specifici nella storia della repo in modo da contrassegnarli come importanti</p>
+<section id="elencare-i-tag-presenti" class="level3">
+<h3 class="anchored" data-anchor-id="elencare-i-tag-presenti">Elencare i tag presenti</h3>
+<p><code>$ git tag</code>: elenca tutti i tag di una repo, in ordine alfabetico</p>
+</section>
+<section id="creare-dei-tag" class="level3">
+<h3 class="anchored" data-anchor-id="creare-dei-tag">creare dei tag</h3>
+<p>Esistono due tipi di tag</p>
+<ul>
+<li>lightweight: è simile a un puntatore a un commit specifico</li>
+<li>annotated: è un oggetto completo, con tanto di metadati e informazioni</li>
+</ul>
+<p><code>$ git tag -a &lt;name&gt; -m "messaggio"</code>: permette di creare un tag annotato (argomenot <code>-a</code>)</p>
+<p>`git tag <name>: crea un tag lightweight</name></p>
+<p>per taggare un commit esistente, basta specificare il commit (in particolare parte del checksum) a fine comando</p>
+<p>esempio in cui attribuiamo il tag v1.2 a un commit specifico</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--pretty</span><span class="op">=</span>oneline</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">166ae0c4d3f420721acbb115cc33848dfcc2121a</span> Create write support</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">9fceb02d0ae598e95dc970b74767f19372d61af8</span> Update rakefile</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">964f16d36dfccde844893cac5b347e7b3d44abbc</span> Commit the todo</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">8a5cbc430f1a9c3d00faaeffd07798508422908a</span> Update readme</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git tag <span class="at">-a</span> v1.2 9fceb02</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="condividere-tag-con-remote" class="level3">
+<h3 class="anchored" data-anchor-id="condividere-tag-con-remote">Condividere tag con remote</h3>
+<p>La condivisione dei tag con la repository remote non avviene in automatico, ma va esplicitato con il comando `git push origin <tagname>``</tagname></p>
+<p><code>$ git push origin --tags</code>: permette di condividere tutti i tag</p>
+</section>
+<section id="eliminare-i-tag" class="level3">
+<h3 class="anchored" data-anchor-id="eliminare-i-tag">Eliminare i tag</h3>
+<p>Basta semplicemente usare l’argomento <code>-d</code> all’interno del comando `tag``</p>
+<p><code>$ git tag -d &lt;tag_name&gt;</code>: elimina il tag specifico, ma NON dal server remoto</p>
+<p>Per eliminare un tag dal server remoto ci sono due comandi</p>
+<p><code>$ git push origin :refs/tags/tag_name</code></p>
+<p><code>$ git push origin --delete &lt;tag_name&gt;</code></p>
+</section>
+<section id="spostarsi-tra-i-commit" class="level3">
+<h3 class="anchored" data-anchor-id="spostarsi-tra-i-commit">Spostarsi tra i commit</h3>
+<p>Per spostarsi a un commit specifico puoi usare il tag</p>
+<p><code>$ git checkout &lt;tag_name&gt;</code></p>
+</section>
+</section>
+<section id="aliasing" class="level2">
+<h2 class="anchored" data-anchor-id="aliasing">Aliasing</h2>
+<p>Per velocizzare il lavoro e la digitazione, puoi settare degli <strong>alias</strong></p>
+<p>esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.ci commit</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git ci </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>oppure</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git config <span class="at">--global</span> alias.unstage <span class="st">'reset HEAD --'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ora se digito:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git unstage FILE</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># equivale a digitare:</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># $ git reset HEAD-- FILE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="branching" class="level2">
+<h2 class="anchored" data-anchor-id="branching">Branching</h2>
+<p>link utile: https://learngitbranching.js.org</p>
+<section id="come-funziona-il-branching" class="level3">
+<h3 class="anchored" data-anchor-id="come-funziona-il-branching">Come funziona il branching</h3>
+<p>Quando fai un commit, git salva un oggetto commit che contiene:</p>
+<ul>
+<li>un puntatore allo snapshot del contenuto che hai salvato</li>
+<li>nome e email dell’autore</li>
+<li>messaggio che hai scritto</li>
+<li>puntatori ai genitori: nessuno per il commit iniziale, uno per un commit classico, di più se è il risultato di un merge</li>
+</ul>
+<p>Per intenderci, questo è l’aspetto di un commit</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    %% Nodi
+    C["&lt;b&gt;98ca9&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 92ec2&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;The initial commit of my project&lt;/small&gt;"]
+    
+    T["&lt;b&gt;92ec2&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;tree&lt;/b&gt; size&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; 5b1d3 README&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; 911e7 LICENSE&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; cba0a test.rb"]
+    
+    B1["&lt;b&gt;5b1d3&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; size&lt;br/&gt;&lt;br/&gt;== Testing library&lt;br/&gt;&lt;br/&gt;This library is used to test&lt;br/&gt;Ruby projects."]
+    
+    B2["&lt;b&gt;911e7&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; size&lt;br/&gt;&lt;br/&gt;The MIT License&lt;br/&gt;&lt;br/&gt;Copyright (c) 2008 Scott Chacon&lt;br/&gt;&lt;br/&gt;Permission is hereby granted,&lt;br/&gt;free of charge, to any person"]
+    
+    B3["&lt;b&gt;cba0a&lt;/b&gt;&lt;br/&gt;-----------------------------------&lt;br/&gt;&lt;b&gt;blob&lt;/b&gt; size&lt;br/&gt;&lt;br/&gt;require 'logger'&lt;br/&gt;require 'test/unit'&lt;br/&gt;&lt;br/&gt;class Test::Unit::TestCase"]
+
+    %% Collegamenti
+    C --&gt; T
+    T --&gt; B1
+    T --&gt; B2
+    T --&gt; B3
+
+    %% Stili personalizzati per i colori
+    style C fill:#F2F0E6,stroke:#D3D1C7,stroke-width:1px,color:#333
+    style T fill:#008080,stroke:#006666,stroke-width:1px,color:#FFF
+    style B1 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B2 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+    style B3 fill:#D49B00,stroke:#B38300,stroke-width:1px,color:#FFF
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Se ora facessi un nuovo commit, quest’ultimo avrebbe un puntatore anche al padre, e così via</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph RL
+C["&lt;b&gt;98ca9&lt;/b&gt;&lt;br/&gt;----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 92ec2&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;The initial commit of my project&lt;/small&gt;"]
+S["Snapshot A"]
+D["&lt;b&gt;34ac2&lt;/b&gt;&lt;br/&gt;----------------------------------&lt;br/&gt;&lt;b&gt;commit&lt;/b&gt; size&lt;br/&gt;tree 184ca&lt;br/&gt;parent 98ca9&lt;br/&gt;author Scott&lt;br/&gt;committer Scott&lt;br/&gt;&lt;br/&gt;&lt;small&gt;Bug Fix&lt;/small&gt;"]
+T["Snapshot B"]
+
+C --&gt; S
+D --&gt; T
+D --&gt; C
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Un <strong>branch</strong> in Git è semplicemente un puntatore mobile puntato su uno di questi commit. Il branch di default è <strong>main</strong>. Ogni volta che fai un commit, il main avanza automaticamente all’ultimo commit.</p>
+</section>
+<section id="creare-un-nuovo-branch" class="level3">
+<h3 class="anchored" data-anchor-id="creare-un-nuovo-branch">Creare un nuovo branch</h3>
+<p><code>$ git branch &lt;name_branch&gt;</code>: crea un nuovo branch nel commit in cui sei in quel momento.</p>
+<p>Per esempio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git branch testing</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph RL
+
+C1[98ca9]
+C2[34ac2]
+C3[f30ab]
+M[main]
+T[testing]
+H[HEAD]
+
+C2 --&gt; C1
+C3 --&gt; C2
+M --&gt; C3
+T --&gt; C3
+H --&gt; M
+
+style C1 fill:white 
+
+style C2 fill:white
+
+style C3 fill:white
+
+style M fill:orange
+
+style T fill:orange
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="spostarsi-di-branch" class="level3">
+<h3 class="anchored" data-anchor-id="spostarsi-di-branch">Spostarsi di branch</h3>
+<p>Git possiede un puntatore speciale chiamato <strong>HEAD</strong> che indica il branch in quale sei in questo momento. Quando crei un branch nuovo non ti sposti in quest’ultimo.</p>
+<p>Lo spostamento va fatto esplicitamente mediante `$ git checkout <branch>.</branch></p>
+<p>Una volta spostato il puntatore HEAD, ogni commit aggiuntivo riguarderà il branch selezionato.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git branch testing </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout testing</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"commit C4"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Il risultato sarà il seguente:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 469.98 98.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-94 465.98,-94 465.98,4 -4,4"></polygon>
+<!-- C3 -->
+<g id="node1" class="node">
+<title>C3</title>
+<ellipse fill="none" stroke="black" cx="117" cy="-45" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="117" y="-40.8" font-family="Times,serif" font-size="14.00">C3</text>
+</g>
+<!-- C2 -->
+<g id="node2" class="node">
+<title>C2</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-45" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="27" y="-40.8" font-family="Times,serif" font-size="14.00">C2</text>
+</g>
+<!-- C3&#45;&gt;C2 -->
+<g id="edge1" class="edge">
+<title>C3-&gt;C2</title>
+<path fill="none" stroke="black" d="M89.6,-45C81.61,-45 72.69,-45 64.18,-45"></path>
+<polygon fill="black" stroke="black" points="64.08,-41.5 54.08,-45 64.08,-48.5 64.08,-41.5"></polygon>
+</g>
+<!-- main -->
+<g id="node3" class="node">
+<title>main</title>
+<ellipse fill="none" stroke="black" cx="210.35" cy="-72" rx="30.19" ry="18"></ellipse>
+<text text-anchor="middle" x="210.35" y="-67.8" font-family="Times,serif" font-size="14.00">main</text>
+</g>
+<!-- main&#45;&gt;C3 -->
+<g id="edge2" class="edge">
+<title>main-&gt;C3</title>
+<path fill="none" stroke="black" d="M182.92,-64.19C173.2,-61.32 162.06,-58.02 151.78,-54.98"></path>
+<polygon fill="black" stroke="black" points="152.45,-51.53 141.87,-52.05 150.47,-58.25 152.45,-51.53"></polygon>
+</g>
+<!-- C4 -->
+<g id="node4" class="node">
+<title>C4</title>
+<ellipse fill="none" stroke="black" cx="210.35" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="210.35" y="-13.8" font-family="Times,serif" font-size="14.00">C4</text>
+</g>
+<!-- C4&#45;&gt;C3 -->
+<g id="edge3" class="edge">
+<title>C4-&gt;C3</title>
+<path fill="none" stroke="black" d="M185.35,-25.09C175.15,-28.11 163.07,-31.68 151.98,-34.96"></path>
+<polygon fill="black" stroke="black" points="150.75,-31.67 142.16,-37.86 152.74,-38.38 150.75,-31.67"></polygon>
+</g>
+<!-- testing -->
+<g id="node5" class="node">
+<title>testing</title>
+<ellipse fill="none" stroke="black" cx="313.48" cy="-18" rx="36.57" ry="18"></ellipse>
+<text text-anchor="middle" x="313.48" y="-13.8" font-family="Times,serif" font-size="14.00">testing</text>
+</g>
+<!-- testing&#45;&gt;C4 -->
+<g id="edge4" class="edge">
+<title>testing-&gt;C4</title>
+<path fill="none" stroke="black" d="M276.54,-18C267.22,-18 257.17,-18 247.82,-18"></path>
+<polygon fill="black" stroke="black" points="247.63,-14.5 237.63,-18 247.63,-21.5 247.63,-14.5"></polygon>
+</g>
+<!-- HEAD -->
+<g id="node6" class="node">
+<title>HEAD</title>
+<ellipse fill="none" stroke="black" cx="424.12" cy="-18" rx="37.71" ry="18"></ellipse>
+<text text-anchor="middle" x="424.12" y="-13.8" font-family="Times,serif" font-size="14.00">HEAD</text>
+</g>
+<!-- HEAD&#45;&gt;testing -->
+<g id="edge5" class="edge">
+<title>HEAD-&gt;testing</title>
+<path fill="none" stroke="black" d="M386.04,-18C377.82,-18 369.02,-18 360.49,-18"></path>
+<polygon fill="black" stroke="black" points="360.29,-14.5 350.29,-18 360.29,-21.5 360.29,-14.5"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Se fai un movimento all’indietro con <code>$ git checkout main</code> avverranno due cose:</p>
+<ul>
+<li>HEAD punterà al nuovo branch (main nell’esempio)</li>
+<li>i file della working directory verranno riportati allo stato del commit puntato da main</li>
+</ul>
+<p>Se modificassimo i file ulteriormente, la storia del progetto divergerebbe.</p>
+</section>
+<section id="switch-e-checkout" class="level3">
+<h3 class="anchored" data-anchor-id="switch-e-checkout">Switch e checkout</h3>
+<p>Per creare e spostarsi direttamente a un nuovo branch puoi usare <code>$ git checkout -b &lt;newbranchname&gt;</code></p>
+<p>Le nuove versioni di git prediligono l’utilizzo del comando `git switch``</p>
+<p><code>$ git switch &lt;branch&gt;</code>per spostarsi in un branch esistente</p>
+<p><code>$ git switch -c branch</code>per creare un branch e spostarsi direttamente in esso</p>
+<p><code>$ git switch -</code>per tornare al branch precedente</p>
+</section>
+<section id="storia-divergente" class="level3">
+<h3 class="anchored" data-anchor-id="storia-divergente">Storia divergente</h3>
+<p>La storia divergente quando due branch prendono direzioni diverse. Graficamente</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart BT
+    %% Definizione degli stili per i blocchi
+    classDef commit fill:#f1f0e8,stroke:#f1f0e8,color:#333333,font-family:monospace;
+    classDef branch fill:#ff3b00,stroke:#ff3b00,color:#ffffff,font-family:monospace;
+    classDef head fill:#d49a00,stroke:#d49a00,color:#ffffff,font-family:monospace;
+
+    %% Nodi e relazioni
+    HEAD["HEAD"]:::head --&gt; master["master"]:::branch
+    master --&gt; c2b9e:::commit
+    c2b9e --&gt; f30ab
+    87ab2:::commit --&gt; f30ab
+    testing["testing"]:::branch --&gt; 87ab2
+    
+    f30ab["f30ab"]:::commit --&gt; 34ac2["34ac2"]:::commit
+    34ac2 --&gt; 98ca9["98ca9"]:::commit
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Un ottimo metodo per vedere l’intera situazione è tramite <code>$ git log --oneline --decorate --graph --all</code></p>
+</section>
+<section id="merging" class="level3">
+<h3 class="anchored" data-anchor-id="merging">Merging</h3>
+<p>Per riunire le modifiche di due branch di solito si usa il comando <code>git merge</code></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/comarandr\.github\.io\/wiki\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
