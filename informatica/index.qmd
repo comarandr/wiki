@@ -1,9 +1,7 @@
 ---
 title: "Materie di Informatica"
 listing:
-  contents:
-  - "*.qmd"
-  - "!index.qmd"
+  contents: .
   type: grid
   sort: "filename"
   image-placeholder: ../assets/icons/liskared.jpg

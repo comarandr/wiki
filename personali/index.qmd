@@ -1,0 +1,10 @@
+---
+title: "Appunti personali"
+listing:
+  contents: .
+  type: grid
+  sort: "filename"
+  image-placeholder: ../assets/icons/liskared.jpg
+---
+
+Varie materie

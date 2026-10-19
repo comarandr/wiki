@@ -1,83 +1,10 @@
 [
   {
-    "listing": "/universita/indexUni.html",
-    "items": []
-  },
-  {
-    "listing": "/indexUni.html",
+    "listing": "/economia/index.html",
     "items": [
-      "/universita/algebraSchemi.html",
-      "/universita/indexUni.html",
-      "/universita/architettura.html",
-      "/universita/BasiDati.html",
-      "/universita/economiaAziendale.html",
-      "/universita/Terra.html",
-      "/universita/voli.html",
-      "/universita/fisica/fisica.html",
-      "/universita/fisica_2026/fisica26.html",
-      "/universita/IngegneriaDelSoftware.html",
-      "/universita/matematica/matematica.html",
-      "/universita/MatematicaDiscreta.html",
-      "/universita/matematicaFinanziaria.html",
-      "/universita/microeconomia.html",
-      "/universita/oop.html",
-      "/universita/programmazione.html",
-      "/universita/sistemiOperativi.html",
-      "/universita/barcheoop.html",
-      "/universita/analisiMatematica1.html"
-    ]
-  },
-  {
-    "listing": "/personali/indexPers.html",
-    "items": []
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/personali/Insetti.html",
-      "/personali/StrumentiPoesia.html",
-      "/linguaggi/c/csheet.html",
-      "/economia/economiaAziendale.html",
-      "/linguaggi/bash/exbash.html",
-      "/personali/figureRetoriche.html",
-      "/informatica/fisica/fisica.html",
-      "/informatica/fisica/fisica26.html",
-      "/informatica/fisica/fisicaFormulario.html",
-      "/economia/index.html",
-      "/informatica/algebra-lineare/index.html",
-      "/informatica/algoritmi-e-strutture-dati/index.html",
-      "/informatica/architettura-degli-elaboratori/index.html",
-      "/informatica/basi-di-dati/index.html",
-      "/informatica/index.html",
-      "/informatica/ingegneria-del-software/index.html",
-      "/informatica/logica-matematica/index.html",
-      "/informatica/matematica-discreta/index.html",
-      "/informatica/matematica/index.html",
-      "/informatica/programmazione-a-oggetti/index.html",
-      "/informatica/programmazione-e-laboratorio/index.html",
-      "/informatica/reti-di-calcolatori/index.html",
-      "/informatica/sistemi-operativi/index.html",
-      "/linguaggi/arm/index.html",
-      "/linguaggi/bash/index.html",
-      "/linguaggi/c/index.html",
-      "/linguaggi/css/index.html",
-      "/linguaggi/git/index.html",
-      "/linguaggi/html/index.html",
-      "/linguaggi/index.html",
-      "/linguaggi/java/index.html",
-      "/linguaggi/javascript/index.html",
-      "/linguaggi/json/index.html",
-      "/linguaggi/latex/index.html",
-      "/linguaggi/markdown/index.html",
-      "/linguaggi/mermaid/index.html",
-      "/linguaggi/python/index.html",
-      "/linguaggi/scheme/index.html",
-      "/linguaggi/xml/index.html",
-      "/linguaggi/yaml/index.html",
-      "/personali/index.html",
-      "/matematicaDiscreta.html",
-      "/economia/matematicaFinanziaria.html",
-      "/economia/microeconomia.html"
+      "/economia/matematica-finanziaria/index.html",
+      "/economia/economia-aziendale/index.html",
+      "/economia/microeconomia/index.html"
     ]
   },
   {
@@ -85,15 +12,70 @@
     "items": [
       "/informatica/fisica/fisica.html",
       "/informatica/fisica/fisica26.html",
-      "/informatica/fisica/fisicaFormulario.html"
+      "/informatica/fisica/fisicaFormulario.html",
+      "/informatica/matematica-discreta/index.html",
+      "/informatica/ingegneria-del-software/index.html",
+      "/informatica/programmazione-1/index.html",
+      "/informatica/logica-matematica/index.html",
+      "/informatica/algebra-lineare/index.html",
+      "/informatica/sistemi-operativi/index.html",
+      "/informatica/reti-di-calcolatori/index.html",
+      "/informatica/architettura-degli-elaboratori/index.html",
+      "/informatica/algoritmi-e-strutture-dati/index.html",
+      "/informatica/matematica/index.html",
+      "/informatica/basi-di-dati/index.html",
+      "/informatica/programmazione-oggetti/index.html"
     ]
   },
   {
-    "listing": "/economia/index.html",
+    "listing": "/index.html",
     "items": [
-      "/economia/economiaAziendale.html",
-      "/economia/matematicaFinanziaria.html",
-      "/economia/microeconomia.html"
+      "/da riordinare/schemi_algoritmi/algoritmi.html",
+      "/linguaggi/c/csheet.html",
+      "/da riordinare/esercizi.html",
+      "/da riordinare/eserciziSisC.html",
+      "/linguaggi/bash/exbash.html",
+      "/informatica/fisica/fisica.html",
+      "/informatica/fisica/fisica26.html",
+      "/informatica/fisica/fisicaFormulario.html",
+      "/linguaggi/scheme/index.html",
+      "/linguaggi/python/index.html",
+      "/linguaggi/css/index.html",
+      "/linguaggi/markdown/index.html",
+      "/linguaggi/latex/index.html",
+      "/linguaggi/java/index.html",
+      "/linguaggi/html/index.html",
+      "/linguaggi/index.html",
+      "/linguaggi/xml/index.html",
+      "/linguaggi/bash/index.html",
+      "/linguaggi/json/index.html",
+      "/linguaggi/yaml/index.html",
+      "/linguaggi/mermaid/index.html",
+      "/linguaggi/javascript/index.html",
+      "/linguaggi/arm/index.html",
+      "/linguaggi/c/index.html",
+      "/linguaggi/git/index.html",
+      "/informatica/matematica-discreta/index.html",
+      "/informatica/ingegneria-del-software/index.html",
+      "/informatica/programmazione-1/index.html",
+      "/informatica/logica-matematica/index.html",
+      "/informatica/index.html",
+      "/informatica/algebra-lineare/index.html",
+      "/informatica/sistemi-operativi/index.html",
+      "/informatica/reti-di-calcolatori/index.html",
+      "/informatica/architettura-degli-elaboratori/index.html",
+      "/informatica/algoritmi-e-strutture-dati/index.html",
+      "/informatica/matematica/index.html",
+      "/informatica/basi-di-dati/index.html",
+      "/informatica/programmazione-oggetti/index.html",
+      "/personali/figure-retoriche/index.html",
+      "/personali/insetti/index.html",
+      "/personali/index.html",
+      "/personali/strumenti-della-poesia/index.html",
+      "/economia/matematica-finanziaria/index.html",
+      "/economia/economia-aziendale/index.html",
+      "/economia/microeconomia/index.html",
+      "/economia/index.html"
     ]
   },
   {
@@ -101,6 +83,14 @@
     "items": [
       "/linguaggi/c/csheet.html",
       "/linguaggi/bash/exbash.html"
+    ]
+  },
+  {
+    "listing": "/personali/index.html",
+    "items": [
+      "/personali/figure-retoriche/index.html",
+      "/personali/insetti/index.html",
+      "/personali/strumenti-della-poesia/index.html"
     ]
   }
 ]

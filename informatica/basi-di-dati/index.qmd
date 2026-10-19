@@ -366,6 +366,8 @@ erDiagram
 
 Notazione:
 
+![immagine](images/entity.jpeg)
+
 - cerchio nero: chiave
 - cerchio bianco: attributo
 - rettangolo: entità

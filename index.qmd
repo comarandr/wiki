@@ -2,7 +2,7 @@
 title: "Wiki"
 description: "Wiki contenente tutti gli schemi"
 listing:
-    contents: "*.qmd"
+    contents: .
     categories: true
     type: grid
     sort: "filename"

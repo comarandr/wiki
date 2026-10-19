@@ -5,7 +5,7 @@ categories: [linguaggi]
 image: https://upload.wikimedia.org/wikipedia/it/thumb/2/2e/Java_Logo.svg/960px-Java_Logo.svg.png?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=thumbnail&_=20060810175939
 ---
 
-Linguaggio a oggetti, pertanto è utile il collegamento alla pagina di [oop](../universita/oop.qmd)
+Linguaggio a oggetti, pertanto è utile il collegamento alla pagina di [oop](/informatica/programmazione-oggetti)
 
 ## Basi di java
 

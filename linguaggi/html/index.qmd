@@ -301,7 +301,7 @@ Tabella
 
 ### Attributo style
 
-permette di definire lo stile di alcuni elementi, per esempio paragrafi e intestazioni. Tuttavia oggigiorno lo stile del testo viene dichiarato tramite i fogli di stile [CSS](css.qmd)
+permette di definire lo stile di alcuni elementi, per esempio paragrafi e intestazioni. Tuttavia oggigiorno lo stile del testo viene dichiarato tramite i fogli di stile [CSS](/linguaggi/css)
 
 `style="property:value;"`
 
