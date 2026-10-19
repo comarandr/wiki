@@ -139,23 +139,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/linguaggi/indexLing.html"> 
+    <a class="nav-link" href="https://comarandr.github.io/wiki/linguaggi"> 
 <span class="menu-text">Linguaggi</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/universita/indexUni.html"> 
-<span class="menu-text">Università</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/personali/indexPers.html"> 
-<span class="menu-text">Personali</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/indexMin.html"> 
-<span class="menu-text">Minimali</span></a>
+    <a class="nav-link" href="https://comarandr.github.io/wiki/informatica"> 
+<span class="menu-text">Informatica</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -193,6 +189,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#persone-e-dbms" id="toc-persone-e-dbms" class="nav-link" data-scroll-target="#persone-e-dbms">Persone e DBMS</a></li>
   <li><a href="#database-system-internals" id="toc-database-system-internals" class="nav-link" data-scroll-target="#database-system-internals">Database system internals</a></li>
   <li><a href="#database-design" id="toc-database-design" class="nav-link" data-scroll-target="#database-design">Database design</a></li>
+  </ul></li>
+  <li><a href="#entry-relationship-model" id="toc-entry-relationship-model" class="nav-link" data-scroll-target="#entry-relationship-model">Entry-relationship model</a>
+  <ul>
+  <li><a href="#concetti-preliminari" id="toc-concetti-preliminari" class="nav-link" data-scroll-target="#concetti-preliminari">Concetti preliminari</a></li>
+  <li><a href="#insiemi-di-entità-entity-sets" id="toc-insiemi-di-entità-entity-sets" class="nav-link" data-scroll-target="#insiemi-di-entità-entity-sets">Insiemi di entità (Entity sets)</a></li>
+  <li><a href="#insiemi-di-entità" id="toc-insiemi-di-entità" class="nav-link" data-scroll-target="#insiemi-di-entità">Insiemi di entità</a></li>
+  <li><a href="#insiemi-di-relazioni" id="toc-insiemi-di-relazioni" class="nav-link" data-scroll-target="#insiemi-di-relazioni">Insiemi di relazioni</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -551,6 +554,103 @@ accede al database e al DBMS direttamente con DML
 <p><strong>conceptual design</strong>: identificare e descrivere il dominio che il database modella, con tutti i requisiti.</p>
 <p><strong>databse design</strong>: schema concettuale trasformato in uno schema logico basato su un modello logico, applicando regole, strutture, usando tecniche formali (es. normalization) per assicurarsi della buon bontà dello schema, scegliendo la specifica tecnologia DBMS</p>
 <p><strong>physical design</strong>: creazione dello schema fisico e dettagli basso livello (definizione indice, altre cose)</p>
+</section>
+</section>
+<section id="entry-relationship-model" class="level2">
+<h2 class="anchored" data-anchor-id="entry-relationship-model">Entry-relationship model</h2>
+<section id="concetti-preliminari" class="level3">
+<h3 class="anchored" data-anchor-id="concetti-preliminari">Concetti preliminari</h3>
+<ul>
+<li>insiemi (set) senza ripetizioni e ordine</li>
+<li>multinsiemi (multiset) con ripetizioni e senza ordine</li>
+<li>insieme delle parti (power set): insieme che include tutti i sottoinsiemi</li>
+<li>prodotto cartesiano</li>
+</ul>
+<p>Nella prima fase di progettazione concettuale, il modello più usato è l’<strong>Entity-Relationship model (E-R)</strong></p>
+<p>Il modello entità-relazione descrive un dominio tramite:</p>
+<ul>
+<li>insiemi di entità</li>
+<li>insiemi di relazioni tra entità</li>
+<li>attributi</li>
+</ul>
+<p>Ci sono diversi modi per rappresentarli, seguiremo la notazione di:<br>
+<em>Database Systems - Concepts, Languages and Architectures</em> by P. Atzeni, S. Ceri, S. Paraboschi, and R. Torlone</p>
+</section>
+<section id="insiemi-di-entità-entity-sets" class="level3">
+<h3 class="anchored" data-anchor-id="insiemi-di-entità-entity-sets">Insiemi di entità (Entity sets)</h3>
+<dl>
+<dt>entità</dt>
+<dd>
+oggetto che esiste nel dominio considerato ed è distinguibile da altri oggetti. Esiste indipendentemente dalle proprietà che gli associamo
+</dd>
+<dt>entity set</dt>
+<dd>
+insieme di entità dello stesso tipo con le stesse proprietà
+</dd>
+<dt>attributi</dt>
+<dd>
+proprietà condivise da tutti i membri di un entity set
+</dd>
+</dl>
+<p>Ogni attributo assume i valori dal dominio</p>
+<p>Un sottoinsieme di attributi formano una <strong>chiave</strong> di un insieme di entità se i valori degli attributi identificano univocamente ogni entità</p>
+<ul>
+<li>conoscere questi valori identifica un’identità</li>
+<li>due entità diverse non possono avere gli stessi valori per tutti gli attributi della chiave</li>
+</ul>
+</section>
+<section id="insiemi-di-entità" class="level3">
+<h3 class="anchored" data-anchor-id="insiemi-di-entità">Insiemi di entità</h3>
+<p>Esempio entità <em>Professore</em> con i seguenti attributi</p>
+<ul>
+<li><em>nome</em> e <em>cognome</em>, che insieme formano la chiave</li>
+<li><em>email</em> opzionale</li>
+<li><em>cellulare</em>, molti valori</li>
+<li><em>indirizzo</em>, attributo composto formato da
+<ul>
+<li><em>città</em></li>
+<li><em>via</em></li>
+<li><em>civico</em></li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">erDiagram
+    Professore {
+        string nome PK
+        string cognome PK
+        string email
+        string cellulare
+    }
+
+    Address {
+        string città
+        string via
+        string civico
+    }
+    
+    Professore ||--o{ Address : "ha"
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Notazione:</p>
+<ul>
+<li>cerchio nero: chiave</li>
+<li>cerchio bianco: attributo</li>
+<li>rettangolo: entità</li>
+</ul>
+<p>Possibilità di più chiavi</p>
+<p>Per un’entità posso avere due chiavi che permettono l’identitificazione univoca, es: nome + cognome oppure numero matricola. In ogni caso posso scegliere una chiave primaria, che sarà quella usata per identificare l’entità</p>
+<p>attributi possono essere <em>composti</em></p>
+</section>
+<section id="insiemi-di-relazioni" class="level3">
+<h3 class="anchored" data-anchor-id="insiemi-di-relazioni">Insiemi di relazioni</h3>
 
 
 </section>

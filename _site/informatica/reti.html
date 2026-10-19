@@ -74,6 +74,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -101,20 +104,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/linguaggi/indexLing.html"> 
+    <a class="nav-link" href="https://comarandr.github.io/wiki/linguaggi"> 
 <span class="menu-text">Linguaggi</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/universita/indexUni.html"> 
-<span class="menu-text">Università</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/personali/indexPers.html"> 
-<span class="menu-text">Personali</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="http://comarandr.github.io/wiki/indexMin.html"> 
-<span class="menu-text">Minimali</span></a>
+    <a class="nav-link" href="https://comarandr.github.io/wiki/informatica"> 
+<span class="menu-text">Informatica</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -134,7 +129,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#foundations" id="toc-foundations" class="nav-link active" data-scroll-target="#foundations">Foundations</a></li>
+  <li><a href="#foundations" id="toc-foundations" class="nav-link active" data-scroll-target="#foundations">Foundations</a>
+  <ul>
+  <li><a href="#cost-effective-resource-sharing" id="toc-cost-effective-resource-sharing" class="nav-link" data-scroll-target="#cost-effective-resource-sharing">Cost-effective resource sharing</a></li>
+  <li><a href="#network-architecture-and-protocols" id="toc-network-architecture-and-protocols" class="nav-link" data-scroll-target="#network-architecture-and-protocols">Network Architecture and Protocols</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -168,6 +167,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>link del libro online: <a href="https://7e.systemsapproach.org">Computer Networks: A System Approach</a></p>
 <section id="foundations" class="level2">
 <h2 class="anchored" data-anchor-id="foundations">Foundations</h2>
 <p>Un <strong>network</strong> è composto da:</p>
@@ -182,8 +182,67 @@ ul.task-list li input[type="checkbox"] {
 <li>scopo generale (non ottimizzato per una specifica applicazione)</li>
 <li>flessibilità e apertura (possibilità di aggiungere nuove caratteristiche e nuove applicazioni)</li>
 </ul>
+<dl>
+<dt>network</dt>
+<dd>
+un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tramite un nodo
+</dd>
+</dl>
+<p>un network è una gerarchia di network → problema di indirizzare i nodi nelle diverse reti</p>
+<section id="cost-effective-resource-sharing" class="level3">
+<h3 class="anchored" data-anchor-id="cost-effective-resource-sharing">Cost-effective resource sharing</h3>
+<p>…</p>
+</section>
+<section id="network-architecture-and-protocols" class="level3">
+<h3 class="anchored" data-anchor-id="network-architecture-and-protocols">Network Architecture and Protocols</h3>
+<p>Architettura a livelli: ogni livelli aggiunge nuove funzionalità</p>
+<div class="table-bordered">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Application programs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Process-to-process channels</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Host-to-host connectivity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Hardware</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Interfacce</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    subgraph 1 [Host 1]
+        A[High-level obj] --&gt; B[Protocol]
+    end
+    subgraph 2 [Host 2]
+        C[High-level obj] --&gt; D[Protocol]
+    end
+
+    1 ~~~ 2
+    B --- D
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Protocolli</p>
+<p>Un protocollo definisce un’interfaccia tra i livelli dello stesso sistema e tra i</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
