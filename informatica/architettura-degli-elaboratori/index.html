@@ -75,8 +75,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -174,7 +188,7 @@ window.Quarto = {
   <ul>
   <li><a href="#conversione-da-base-b-a-base-10" id="toc-conversione-da-base-b-a-base-10" class="nav-link" data-scroll-target="#conversione-da-base-b-a-base-10">Conversione da base B a base 10</a></li>
   <li><a href="#conversione-da-base-10-a-base-b" id="toc-conversione-da-base-10-a-base-b" class="nav-link" data-scroll-target="#conversione-da-base-10-a-base-b">Conversione da base 10 a base B</a></li>
-  <li><a href="#codifiche-mathbbz" id="toc-codifiche-mathbbz" class="nav-link" data-scroll-target="#codifiche-mathbbz">Codifiche <span class="math inline">\(\mathbb{Z}\)</span></a></li>
+  <li><a href="#codifiche-mathbbz" id="toc-codifiche-mathbbz" class="nav-link" data-scroll-target="#codifiche-mathbbz">Codifiche <span class="math inline">\mathbb{Z}</span></a></li>
   <li><a href="#operazioni" id="toc-operazioni" class="nav-link" data-scroll-target="#operazioni">Operazioni</a></li>
   </ul></li>
   <li><a href="#circuiti-combinatori-e-memorie" id="toc-circuiti-combinatori-e-memorie" class="nav-link" data-scroll-target="#circuiti-combinatori-e-memorie">Circuiti combinatori e memorie</a></li>
@@ -237,21 +251,21 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><strong>KB</strong> (Kilobyte) = <span class="math inline">\(2^{10}\)</span> Byte ~ <span class="math inline">\(10^3\)</span> Byte</td>
+<td style="text-align: center;"><strong>KB</strong> (Kilobyte) = <span class="math inline">2^{10}</span> Byte ~ <span class="math inline">10^3</span> Byte</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><strong>MB</strong> (Megabyte) = <span class="math inline">\(2^{20}\)</span> Byte ~ <span class="math inline">\(10^6\)</span> Byte</td>
+<td style="text-align: center;"><strong>MB</strong> (Megabyte) = <span class="math inline">2^{20}</span> Byte ~ <span class="math inline">10^6</span> Byte</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><strong>GB</strong> (Gigabyte) = <span class="math inline">\(2^{30}\)</span> Byte ~ <span class="math inline">\(10^9\)</span> Byte</td>
+<td style="text-align: center;"><strong>GB</strong> (Gigabyte) = <span class="math inline">2^{30}</span> Byte ~ <span class="math inline">10^9</span> Byte</td>
 </tr>
 </tbody>
 </table>
 <p>La memoria si ottiene giustapponendo più byte (e quindi bit)</p>
 <p>Per accedere ai dati nella memoria bisogna individuarli, ovvero trovare la loro posizione. Perciò è necessario che siano indirizzati.</p>
-<p>L’<strong>indirizzamento</strong> più efficiente è quello che adopera <span class="math inline">\(n\)</span> bit per indirizzare <span class="math inline">\(2^n\)</span> byte.</p>
+<p>L’<strong>indirizzamento</strong> più efficiente è quello che adopera <span class="math inline">n</span> bit per indirizzare <span class="math inline">2^n</span> byte.</p>
 <ul>
-<li>es: se hai 2 byte (= <span class="math inline">\(2^1\)</span>), basta 1 bit di indirizzamento:
+<li>es: se hai 2 byte (= <span class="math inline">2^1</span>), basta 1 bit di indirizzamento:
 <ul>
 <li>un byte va in posizione con bit = 0</li>
 <li>l’altro byte va in posizione con bit = 1</li>
@@ -267,9 +281,9 @@ window.Quarto = {
 </ul>
 <p>Operazioni fondamentali:</p>
 <ul>
-<li>+ OR <span class="math inline">\(\vee\)</span></li>
-<li>* AND <span class="math inline">\(\wedge\)</span></li>
-<li>! NOT <span class="math inline">\(\neg\)</span></li>
+<li>+ OR <span class="math inline">\vee</span></li>
+<li>* AND <span class="math inline">\wedge</span></li>
+<li>! NOT <span class="math inline">\neg</span></li>
 </ul>
 <section id="tabelle-di-verità" class="level3">
 <h3 class="anchored" data-anchor-id="tabelle-di-verità">Tabelle di verità</h3>
@@ -339,7 +353,7 @@ window.Quarto = {
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
-<th style="text-align: center;"><span class="math inline">\(\bar{A}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\bar{A}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -355,8 +369,8 @@ window.Quarto = {
 </table>
 <p>Nota bene: una tabella di verita</p>
 <ul>
-<li><span class="math inline">\(k\)</span> input = <span class="math inline">\(k\)</span> colonne</li>
-<li><span class="math inline">\(2^k\)</span> righe</li>
+<li><span class="math inline">k</span> input = <span class="math inline">k</span> colonne</li>
+<li><span class="math inline">2^k</span> righe</li>
 </ul>
 <p>Data una tabella di verità, posso procedere in 2 modi:</p>
 <ul>
@@ -366,7 +380,7 @@ window.Quarto = {
 </section>
 <section id="metodo-algoritmico" class="level3">
 <h3 class="anchored" data-anchor-id="metodo-algoritmico">Metodo algoritmico</h3>
-<p>tabella di <span class="math inline">\(k\)</span> colonne e <span class="math inline">\(2^k\)</span> righe</p>
+<p>tabella di <span class="math inline">k</span> colonne e <span class="math inline">2^k</span> righe</p>
 <ul>
 <li>considero le righe con output = 1</li>
 <li>ogni riga è una porta AND (prodotto input) in cui neghi gli input che valgono 0</li>
@@ -375,7 +389,7 @@ window.Quarto = {
 </section>
 <section id="metodo-duale" class="level3">
 <h3 class="anchored" data-anchor-id="metodo-duale">Metodo duale</h3>
-<p>tabella di <span class="math inline">\(k\)</span> colonne e <span class="math inline">\(2^k\)</span> righe</p>
+<p>tabella di <span class="math inline">k</span> colonne e <span class="math inline">2^k</span> righe</p>
 <ul>
 <li>considero le righe con output = 0</li>
 <li>ogni riga è una porta OR (somma input) in cui neghi gli input che valgono 1</li>
@@ -401,56 +415,56 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Elemento nullo</td>
-<td style="text-align: center;"><span class="math inline">\(A + 0 = A\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot 0 = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">A + 0 = A</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot 0 = 0</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Identità</td>
-<td style="text-align: center;"><span class="math inline">\(A + 1 = 1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot 1 = A\)</span></td>
+<td style="text-align: center;"><span class="math inline">A + 1 = 1</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot 1 = A</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Idempotenza</td>
-<td style="text-align: center;"><span class="math inline">\(A + A = A\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot A = A\)</span></td>
+<td style="text-align: center;"><span class="math inline">A + A = A</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot A = A</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Inverso</td>
-<td style="text-align: center;"><span class="math inline">\(A + \bar{A} = 1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot \bar{A} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">A + \bar{A} = 1</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot \bar{A} = 0</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Commutativa</td>
-<td style="text-align: center;"><span class="math inline">\(A + B = B + A\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot B = B \cdot A\)</span></td>
+<td style="text-align: center;"><span class="math inline">A + B = B + A</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot B = B \cdot A</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Associativa</td>
-<td style="text-align: center;"><span class="math inline">\(A + (B + C) = (A + B) + C\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot (B \cdot C) = (A \cdot B) \cdot C\)</span></td>
+<td style="text-align: center;"><span class="math inline">A + (B + C) = (A + B) + C</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot (B \cdot C) = (A \cdot B) \cdot C</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Distributiva</td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot (B + C) = A \cdot B + A \cdot C\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A + (B \cdot C) = (A + B) \cdot (A + C)\)</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot (B + C) = A \cdot B + A \cdot C</span></td>
+<td style="text-align: center;"><span class="math inline">A + (B \cdot C) = (A + B) \cdot (A + C)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Assorbimento</td>
-<td style="text-align: center;"><span class="math inline">\(A + (A \cdot B) = A\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(A \cdot (A + B) = A\)</span></td>
+<td style="text-align: center;"><span class="math inline">A + (A \cdot B) = A</span></td>
+<td style="text-align: center;"><span class="math inline">A \cdot (A + B) = A</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">De Morgan</td>
-<td style="text-align: center;"><span class="math inline">\(\overline{A + B} = \bar{A} \cdot \bar{B}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\overline{A \cdot B} = \bar{A} + \bar{B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\overline{A + B} = \bar{A} \cdot \bar{B}</span></td>
+<td style="text-align: center;"><span class="math inline">\overline{A \cdot B} = \bar{A} + \bar{B}</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Negazione doppia</td>
-<td style="text-align: center;"><span class="math inline">\(\overline{\bar{A}} = A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\overline{\bar{A}} = A</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">$ $ <span class="math inline">\(\bar{A}\bar{B}\bar{C}\)</span></td>
+<td style="text-align: center;">$ $ <span class="math inline">\bar{A}\bar{B}\bar{C}</span></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -459,13 +473,13 @@ window.Quarto = {
 </section>
 <section id="porte-nand-e-nor" class="level3">
 <h3 class="anchored" data-anchor-id="porte-nand-e-nor">Porte NAND e NOR</h3>
-<p><strong>NAND</strong>: <span class="math inline">\(\overline{A \cdot B}\)</span></p>
+<p><strong>NAND</strong>: <span class="math inline">\overline{A \cdot B}</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
 <th style="text-align: center;">B</th>
-<th style="text-align: center;"><span class="math inline">\(\overline{A \cdot B}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\overline{A \cdot B}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -491,13 +505,13 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><strong>NOR</strong>: <span class="math inline">\(\overline{A + B} = \bar{A} \cdot \bar{B}\)</span></p>
+<p><strong>NOR</strong>: <span class="math inline">\overline{A + B} = \bar{A} \cdot \bar{B}</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
 <th style="text-align: center;">B</th>
-<th style="text-align: center;"><span class="math inline">\(\overline{A + B}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\overline{A + B}</span></th>
 </tr>
 </thead>
 <tbody>
@@ -524,12 +538,12 @@ window.Quarto = {
 </tbody>
 </table>
 <p>Nota bene:<br>
-<span class="math inline">\(\overline{AB}\)</span> = NAND<br>
-<span class="math inline">\(\overline{A} \cdot \overline{B}\)</span> = NOR</p>
+<span class="math inline">\overline{AB}</span> = NAND<br>
+<span class="math inline">\overline{A} \cdot \overline{B}</span> = NOR</p>
 </section>
 <section id="porte-or-esclusivo-xor-e-nxor" class="level3">
 <h3 class="anchored" data-anchor-id="porte-or-esclusivo-xor-e-nxor">Porte OR esclusivo (XOR e NXOR)</h3>
-<p><span class="math inline">\(A \overline{B} + \overline{A}B = (A+B)(\overline{A}+\overline{B})\)</span></p>
+<p><span class="math inline">A \overline{B} + \overline{A}B = (A+B)(\overline{A}+\overline{B})</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -561,7 +575,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(AB + \overline{A}\overline{B} = \overline{(A+B)(\overline{A}+\overline{B})}\)</span></p>
+<p><span class="math inline">AB + \overline{A}\overline{B} = \overline{(A+B)(\overline{A}+\overline{B})}</span></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -608,9 +622,9 @@ window.Quarto = {
 <section id="numeri-binari" class="level2">
 <h2 class="anchored" data-anchor-id="numeri-binari">Numeri binari</h2>
 <p><strong>Notazione posizionale</strong>: ogni cifra ha un peso che dipende dalla sua posizione</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \sum_{i=0}^{n-1} d_i \cdot B^i \qquad 0 \leq d_i &lt; B
-\]</span></p>
+</span></p>
 <p>binario:</p>
 <table class="caption-top table">
 <thead>
@@ -639,57 +653,57 @@ window.Quarto = {
 </tbody>
 </table>
 <p><strong>Alfabeto esadecimale</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
-\]</span></p>
+</span></p>
 <section id="conversione-da-base-b-a-base-10" class="level3">
 <h3 class="anchored" data-anchor-id="conversione-da-base-b-a-base-10">Conversione da base B a base 10</h3>
 <p><strong>Notazione posizionale</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \sum_{k=-m}^{q} d_k \cdot B^k = d_q \cdot B^q + ... + d_{-m} \cdot B^{-m}
-\]</span></p>
+</span></p>
 <p>es:<br>
-<span class="math display">\[
+<span class="math display">
 1011_2 = 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 = 8 + 0 + 2 + 1 = 11
-\]</span></p>
+</span></p>
 <p><strong>Accumulazione parte intera</strong>: accumulo progressivamente il peso delle cifre nella sequenza</p>
 <p>[immagine]</p>
 <p><strong>Accumulazione parte frazionaria</strong>: accumulo progressivamente il peso delle cifre nella sequenza</p>
 <p>[immagine]</p>
-<p><span class="math inline">\(B \rarr 10\)</span> = Accumulazione parte intera + Accumulazione parte frazionaria</p>
+<p><span class="math inline">B \rarr 10</span> = Accumulazione parte intera + Accumulazione parte frazionaria</p>
 </section>
 <section id="conversione-da-base-10-a-base-b" class="level3">
 <h3 class="anchored" data-anchor-id="conversione-da-base-10-a-base-b">Conversione da base 10 a base B</h3>
 <p>(…)</p>
 </section>
 <section id="codifiche-mathbbz" class="level3">
-<h3 class="anchored" data-anchor-id="codifiche-mathbbz">Codifiche <span class="math inline">\(\mathbb{Z}\)</span></h3>
+<h3 class="anchored" data-anchor-id="codifiche-mathbbz">Codifiche <span class="math inline">\mathbb{Z}</span></h3>
 <ul>
 <li><p><strong>Segno e valore assoluto</strong>: 1 bit per segno + valore binario</p>
-<p><span class="math inline">\(+9 = 00001001_2\)</span><br>
-<span class="math inline">\(-9 = 10001001_2\)</span></p></li>
+<p><span class="math inline">+9 = 00001001_2</span><br>
+<span class="math inline">-9 = 10001001_2</span></p></li>
 <li><p><strong>Complemento a 1</strong>: cambio di segno negando (complementando) i bit</p>
-<p><span class="math inline">\(+9 = 00001001_2\)</span><br>
-<span class="math inline">\(-9 = 11110110_2\)</span></p></li>
+<p><span class="math inline">+9 = 00001001_2</span><br>
+<span class="math inline">-9 = 11110110_2</span></p></li>
 <li><p><strong>Complemento a 2</strong>: cambio di segno complementando i bit e sommando 1</p>
-<p><span class="math inline">\(+9 = 00001001_2\)</span><br>
-<span class="math inline">\(-9 = 11110111_2 \quad (11110110 + 00000001)\)</span></p></li>
+<p><span class="math inline">+9 = 00001001_2</span><br>
+<span class="math inline">-9 = 11110111_2 \quad (11110110 + 00000001)</span></p></li>
 <li><p><strong>Eccesso N</strong>: zero puntato su N</p>
-<p>es: N = 128 → <span class="math inline">\(10000000_2\)</span><br>
-+1 = <span class="math inline">\(10000001_2\)</span><br>
-+0 = <span class="math inline">\(10000000_2\)</span><br>
--1 = <span class="math inline">\(01111111_2\)</span></p></li>
+<p>es: N = 128 → <span class="math inline">10000000_2</span><br>
++1 = <span class="math inline">10000001_2</span><br>
++0 = <span class="math inline">10000000_2</span><br>
+-1 = <span class="math inline">01111111_2</span></p></li>
 <li><p><strong>Complemento a 2 a N bit</strong>:</p>
 <ul>
-<li><span class="math inline">\([0, 2^N - 1]\)</span> notazione binaria</li>
-<li><span class="math inline">\([-1, 2^N - 2]\)</span> nego bit valore assoluto e aggiungo 1</li>
-<li><span class="math inline">\(-i = 2^N - i \;\)</span> -(i-esimo) in notazione binaria</li>
+<li><span class="math inline">[0, 2^N - 1]</span> notazione binaria</li>
+<li><span class="math inline">[-1, 2^N - 2]</span> nego bit valore assoluto e aggiungo 1</li>
+<li><span class="math inline">-i = 2^N - i \;</span> -(i-esimo) in notazione binaria</li>
 </ul>
 <p>es N = 8<br>
-<span class="math inline">\(-1 = 11111111_2\)</span> (11111110 + 00000001, complemento 1 + 1)<br>
-<span class="math inline">\(-2 = 11111110_2\)</span> (11111101 + 00000001)<br>
-<span class="math inline">\(-2^{N-1} = -2^7 = 10000000_2\)</span> (01111111 + 00000001)</p>
-<p>passo da <span class="math inline">\(N\)</span> a <span class="math inline">\(M\)</span> bit aggiungendo <span class="math inline">\(M-N\)</span> bit</p></li>
+<span class="math inline">-1 = 11111111_2</span> (11111110 + 00000001, complemento 1 + 1)<br>
+<span class="math inline">-2 = 11111110_2</span> (11111101 + 00000001)<br>
+<span class="math inline">-2^{N-1} = -2^7 = 10000000_2</span> (01111111 + 00000001)</p>
+<p>passo da <span class="math inline">N</span> a <span class="math inline">M</span> bit aggiungendo <span class="math inline">M-N</span> bit</p></li>
 </ul>
 </section>
 <section id="operazioni" class="level3">

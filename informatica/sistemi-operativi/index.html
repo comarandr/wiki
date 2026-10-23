@@ -78,8 +78,22 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -517,13 +531,13 @@ window.Quarto = {
 <p><strong>SRTF: shortest remaining time first</strong></p>
 <p>É come SJF con prelazione, si associa a ogni processo lunghezza del suo prossimo burst cpu, se durante esecuzione di un processo arriva in ready un processo con cpu-burst minore al tempo rimanente del processo corrente allora viene prelazionato.</p>
 <p>Formula di stima:</p>
-<p><span class="math display">\[\tau_{n+1} := \alpha t_n + (1-\alpha) \tau_n\]</span></p>
+<p><span class="math display">\tau_{n+1} := \alpha t_n + (1-\alpha) \tau_n</span></p>
 <p>Generica:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \tau_{n+1} = \alpha t_n + (1-\alpha) \tau_{n-1} + (1-\alpha)^2 \tau_{n-2} + \cdots + (1-\alpha)^{n+1} \cdot \tau_0
-\]</span></p>
-<p><span class="math inline">\(\alpha = 1\)</span> conta storia recente<br>
-<span class="math inline">\(\alpha = 0\)</span> non conta storia recente</p>
+</span></p>
+<p><span class="math inline">\alpha = 1</span> conta storia recente<br>
+<span class="math inline">\alpha = 0</span> non conta storia recente</p>
 <p>SCHEDULING CON PRIORITA’</p>
 <p>Numero intero di priorità associato a ogni processo, allocando la cpu al processo con priorità maggiore.</p>
 <ul>
@@ -569,9 +583,9 @@ window.Quarto = {
 <p>Dati m eventi periodici, sono schedulabili se la sommatoria del tempo di cpu per gestire evento i / periodo dell’evento i, con i = 1, … , m è minore o uguale a 1</p>
 <p><strong>SCHEDULING RMS Rate Monotonic Scheduling</strong></p>
 <p>A priorità statiche proporzionali alla frequenza, con prelazione. Adatto solo a processi periodici, costo costante. Semplice da implementare</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \sum_{i=1}^{m} \frac{C_i}{P_i} \leq m(2^{1/m}-1)
-\]</span></p>
+</span></p>
 <p><strong>SCHEDULING EDF - Earliest Deadline First</strong></p>
 <p>Priorità dinamiche, in base a chi scade prima, adatto a processi non periodici, permette anche 100% cpu</p>
 <p><strong>CORSA CRITICA</strong>: si verifica una <strong>race condition</strong> quando più processi accedono <strong>concorrentemente agli stessi dati</strong> e il risultato dipende dall’ordine di interleaving dei processi. Sono frequenti nei sistemi operativi multitasking, sia per quanto riguarda i dati in user space che in kernel space. Portano al malfunzionamento dei processi cooperanti, o anche dell’intero sistema.</p>
@@ -697,10 +711,10 @@ window.Quarto = {
 <p>IGNORO IL PROBLEMA: in caso in cui rapporto costi/benefici non sia conveniente, bassa probabilità deadlock (fork(), ethernet)</p>
 <p>IDENTIFICAZIONE DEADLOCK: utilizzo di un algoritmo per la ricerca del deadlock ~ O(m x n^2)</p>
 <ul>
-<li>finish<span class="math inline">\([i]\)</span> = false</li>
+<li>finish<span class="math inline">[i]</span> = false</li>
 <li>cerco i | Ri &lt;= A (risorse disponibili possono soddisfare processo)</li>
-<li>se esiste tale i: finish<span class="math inline">\([i]\)</span> = true, A=A+Ci (risorse di Pi diventano disponibili) e ricerco altro processo soddisfacibile</li>
-<li>se non esiste Pi soddisfacibile (finish<span class="math inline">\([i]\)</span> = false), allora Pi è in stallo</li>
+<li>se esiste tale i: finish<span class="math inline">[i]</span> = true, A=A+Ci (risorse di Pi diventano disponibili) e ricerco altro processo soddisfacibile</li>
+<li>se non esiste Pi soddisfacibile (finish<span class="math inline">[i]</span> = false), allora Pi è in stallo</li>
 </ul>
 <p>RISOLUZIONE DEADLOCK:</p>
 <ul>
@@ -783,11 +797,11 @@ window.Quarto = {
 <li>Multiprogrammazione: più programmi contemporaneamente in memoria.</li>
 </ul>
 <p>Multiprogrammazione:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \text{utilizzo CPU} = 1 - p^n
-\]</span></p>
-<p><span class="math inline">\(p\)</span>: percentuale del tempo in attesa di I/O di un processo</p>
-<p><span class="math inline">\(n\)</span>: numero di processi</p>
+</span></p>
+<p><span class="math inline">p</span>: percentuale del tempo in attesa di I/O di un processo</p>
+<p><span class="math inline">n</span>: numero di processi</p>
 <p>[immagine]</p>
 <p>Con un maggior grado di multiprogrammazione aumenta l’uso della cpu</p>
 <div class="cell" data-layout-align="default">
@@ -886,14 +900,14 @@ window.Quarto = {
 <p>La gestione mediante software è abbastanza efficiente con TLB sufficientemente grandi, semplificando la componentistica hw</p>
 <p><strong>TEMPO EFFETTIVO DI ACCESSO CON TLB (calcolo EAT)</strong></p>
 <p>L’effective access time è il tempo effettivo di accesso ai dati ed è dato dalla formula</p>
-<p><span class="math display">\[
+<p><span class="math display">
 EAT = (2 - \alpha)t + \epsilon = (t + \epsilon)\alpha + (2t + \epsilon)(1 - \alpha)
-\]</span></p>
-<p><span class="math inline">\(\epsilon\)</span>= tempo lookup associativo</p>
-<p><span class="math inline">\(t\)</span>= tempo accesso in memoria</p>
-<p><span class="math inline">\(\alpha\)</span>= hit ratio</p>
-<p>In casi ho TLB hit accedo soltanto a TLB e ai dati in memoria, ovvero <span class="math inline">\((t + \epsilon)\)</span>, da cui <span class="math inline">\((t + \epsilon)\alpha\)</span></p>
-<p>In <span class="math inline">\(1 - \alpha\)</span> casi invece ho TLB miss, quindi accedo sia a TLB che alla page table in memoria che poi al frame fisico in memoria, ovvero <span class="math inline">\((2t + \epsilon)\)</span>, da cui il fattore <span class="math inline">\((2t + \epsilon)(1 - \alpha)\)</span>.</p>
+</span></p>
+<p><span class="math inline">\epsilon</span>= tempo lookup associativo</p>
+<p><span class="math inline">t</span>= tempo accesso in memoria</p>
+<p><span class="math inline">\alpha</span>= hit ratio</p>
+<p>In casi ho TLB hit accedo soltanto a TLB e ai dati in memoria, ovvero <span class="math inline">(t + \epsilon)</span>, da cui <span class="math inline">(t + \epsilon)\alpha</span></p>
+<p>In <span class="math inline">1 - \alpha</span> casi invece ho TLB miss, quindi accedo sia a TLB che alla page table in memoria che poi al frame fisico in memoria, ovvero <span class="math inline">(2t + \epsilon)</span>, da cui il fattore <span class="math inline">(2t + \epsilon)(1 - \alpha)</span>.</p>
 <p><strong>TABELLA INVERTITA</strong></p>
 <p>Uso di una tabella unica che mappa ogni frame della memoria principale, in cui ogni entry corrisponde al numero di page virtuale e informazioni riguardo al processo che possiede la pagina. Per ridurre i tempi di accesso si usa una funzione di hash per limitare l’accesso a poche entry.</p>
 <p><strong>COMBINAZIONI DEI METODI</strong></p>
@@ -926,22 +940,22 @@ EAT = (2 - \alpha)t + \epsilon = (t + \epsilon)\alpha + (2t + \epsilon)(1 - \alp
 <p>Altrimenti il SO procede allo <strong>swap out</strong> di una pagina in memoria, liberando spazio per uno <strong>swap in</strong> della pagina riferita caricandola in memoria e aggiornando le page table.</p>
 <p>Ovviamente l’istruzione che ha causato il page fault deve essere rieseguita in modo consistente.</p>
 <p>Effective Access Time</p>
-<p><span class="math display">\[
+<p><span class="math display">
 EAT = (1 - p) \cdot \text{memory access time} + p \cdot \text{(page fault overhead + ...}
 \\
 \text{... + swap out time + swap in time + restart overhead)}
-\]</span></p>
+</span></p>
 <p>Dove</p>
-<p><span class="math inline">\(p\)</span> = page fault rate (0 no page fault, 1 ogni riferimento è page fault), casi in cui devo eseguire la routine</p>
-<p><span class="math display">\[
+<p><span class="math inline">p</span> = page fault rate (0 no page fault, 1 ogni riferimento è page fault), casi in cui devo eseguire la routine</p>
+<p><span class="math display">
 p \cdot \text{page fault overhead + swape page out + swap page in + restart overhead}
-\]</span></p>
+</span></p>
 <p>Ovvero a ogni page fault ho</p>
-<p><span class="math inline">\(\text{page fault overhead}\)</span> = il tempo di gestione da parte del SO</p>
-<p><span class="math inline">\(\text{swap out time}\)</span> = tempo di swap out, effettuato soltanto se la pagina è stata modificata rispetto all’immagine su disco, altrimenti si sovrascrive risparmiando tempo</p>
-<p><span class="math inline">\(\text{swap in time}\)</span> = tempo di caricamento della pagina riferita dal disco alla memoria principale</p>
-<p><span class="math inline">\(\text{restart overhead}\)</span> = tempo per ripristinare il tutto e far riprendere i processi</p>
-<p><span class="math inline">\((1 - p)\)</span> = page hit, sono i casi in cui devo accedere alla memoria (da cui<span class="math inline">\((1-p) \cdot \text{memory access time}\)</span> )</p>
+<p><span class="math inline">\text{page fault overhead}</span> = il tempo di gestione da parte del SO</p>
+<p><span class="math inline">\text{swap out time}</span> = tempo di swap out, effettuato soltanto se la pagina è stata modificata rispetto all’immagine su disco, altrimenti si sovrascrive risparmiando tempo</p>
+<p><span class="math inline">\text{swap in time}</span> = tempo di caricamento della pagina riferita dal disco alla memoria principale</p>
+<p><span class="math inline">\text{restart overhead}</span> = tempo per ripristinare il tutto e far riprendere i processi</p>
+<p><span class="math inline">(1 - p)</span> = page hit, sono i casi in cui devo accedere alla memoria (da cui<span class="math inline">(1-p) \cdot \text{memory access time}</span> )</p>
 <p>Il page fault è una procedura molto costosa in termini di tempo pertanto è necessario:</p>
 <ul>
 <li>minimizzare il numero di page fault con un algoritmo di rimpiazzamento adatto</li>
@@ -966,8 +980,8 @@ p \cdot \text{page fault overhead + swape page out + swap page in + restart over
 <li><strong>OPT / MIN (Ottimale):</strong> si rimpiazza la pagina che non verrà riusata per il periodo più lungo (ovviamente teorico), non soffre dell’anomalia di Belady</li>
 <li><strong>LRU (Last Recently Used):</strong> si rimpiazza la pagina che non viene utilizzata da più tempo. Non soffre di anomalia di Belady in quanto <em>algoritmo di stack</em>. Richiede notevole assistenza hw</li>
 </ul>
-<p><strong>Matrice di memoria <span class="math inline">\(M(m,r)\)</span>:</strong> matrice che rappresenta insieme delle pagine all’istante <em>r</em> con <em>m</em> frame a disposizione</p>
-<p><strong>Algoritmo di stack:</strong> data una reference string <span class="math inline">\(r\)</span> e memoria <span class="math inline">\(m\)</span>: <span class="math inline">\(M(m,r) \subseteq M(m +1,r)\)</span> Non soffrono dell’anomalia di Belady</p>
+<p><strong>Matrice di memoria <span class="math inline">M(m,r)</span>:</strong> matrice che rappresenta insieme delle pagine all’istante <em>r</em> con <em>m</em> frame a disposizione</p>
+<p><strong>Algoritmo di stack:</strong> data una reference string <span class="math inline">r</span> e memoria <span class="math inline">m</span>: <span class="math inline">M(m,r) \subseteq M(m +1,r)</span> Non soffrono dell’anomalia di Belady</p>
 <p><strong>IMPLEMENTAZIONI DI LRU</strong></p>
 <ul>
 <li><strong>Implementazioni a contatori:</strong> MMU ha un contatore che viene incrementato dopo ogni accesso in memoria, ogni entry in page table ha un registro (<strong>reference time</strong>). A ogni riferimento si copia il contatore nella entry corrispondente. Si libera il frame con la pagina con il contatore più basso. Dispendioso</li>
@@ -986,7 +1000,7 @@ p \cdot \text{page fault overhead + swape page out + swap page in + restart over
 <p>NOTA: con tutti i bit = 1 degenera in un FIFO</p>
 <p>Rappresenta una buona approssimazione</p>
 <p><strong>LRU mediante CLOCK MIGLIORATO</strong></p>
-<p>Ordine a orologio e uso di due bit, reference bit <span class="math inline">\(r\)</span> e dirty bit <span class="math inline">\(d\)</span>.</p>
+<p>Ordine a orologio e uso di due bit, reference bit <span class="math inline">r</span> e dirty bit <span class="math inline">d</span>.</p>
 <p>Inizia cercando una pagina con (r = 0, d = 0) da sacrificare. Se non la trova cerca una pagina con (r = 0, d = 1), mentre controlla azzera tutti i reference bit. Se non la trova ricomincia cercando (r = 0, d = 0).</p>
 <p><strong>TRASHING</strong></p>
 <p>In caso di eccessivo grado di multiprogrammazione, c’è il rischio che i processi impieghino la maggior parte del loro tempo a swappare pagine a seguito di numerosi page fault. Avviene quando la memoria fisica è inferiore alla somma delle località dei processi in esecuzione.</p>

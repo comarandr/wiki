@@ -110,8 +110,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -257,7 +271,7 @@ window.Quarto = {
 <section id="caratteristiche-generali" class="level2">
 <h2 class="anchored" data-anchor-id="caratteristiche-generali">Caratteristiche generali</h2>
 <p>Assembly non distingue maiuscolo/minuscolo</p>
-<p>Nella nostra versione consideriamo una memoria principale di 4 GB ~ <span class="math inline">\(2^{32}\)</span> byte (indirizzo di 32 bit)</p>
+<p>Nella nostra versione consideriamo una memoria principale di 4 GB ~ <span class="math inline">2^{32}</span> byte (indirizzo di 32 bit)</p>
 <p>16 registri:</p>
 <ul>
 <li><code>r0</code>, …, <code>r12</code>: generali</li>

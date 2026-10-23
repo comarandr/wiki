@@ -75,8 +75,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -208,57 +222,57 @@ window.Quarto = {
 <li><p>n-pla: $ (a_1, , a_n) $</p></li>
 <li><p>somma:</p></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 (a_1 a_2 a_3) + (b_1 b_2 b_3) = (a_1 + b_1, a_2 + b_2, a_3 + b_3)
-\]</span></p>
+</span></p>
 <ul>
 <li>prodotto con scalare:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \lambda \cdot (a_1 a_2 a_3) = (\lambda \cdot a_1, \lambda \cdot a_2, \lambda \cdot a_3)
-\]</span></p>
+</span></p>
 <ul>
 <li>prodotto scalare:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 &lt;v \cdot w&gt; = v_1 \cdot w_1 + v_2 \cdot w_2 + v_3 \cdot w_3
-\]</span></p>
+</span></p>
 <ul>
 <li>norma (radice del prodotto scalare di sè stesso):</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 ||v|| = \sqrt{v_1^2 + v_2^2 + v_3^2} = \sqrt{&lt;v \cdot v&gt;}
-\]</span></p>
+</span></p>
 <ul>
 <li>distanza (radice della norma della differenza):</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 d(v, w) = \sqrt{(v_1 - w_1)^2 + (v_2 - w_2)^2 + (v_3 - w_3)^2} = \sqrt{||v - w||}
-\]</span></p>
+</span></p>
 <ul>
 <li>disuguaglianza triangolare:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 ||a + b|| \leq ||a|| + ||b||
-\]</span></p>
+</span></p>
 <ul>
 <li>disuguaglianza di Cauchy-Schwarz:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 |\sum_{i=1}^n a_i \cdot b_i| \leq ||a|| \cdot ||b||
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 |&lt;a \cdot b&gt;| \leq ||a|| \cdot ||b||
-\]</span></p>
+</span></p>
 </section>
 <section id="formulette-geometriche" class="level2">
 <h2 class="anchored" data-anchor-id="formulette-geometriche">formulette geometriche</h2>
-<p><strong>rette passanti per <span class="math inline">\(O\)</span></strong>: $ (v) = {v : } $ $ $ parametro</p>
-<p><strong>ortogonalità</strong>: <span class="math inline">\(&lt;a \cdot b&gt; = 0\)</span> prodotto scalare nullo</p>
+<p><strong>rette passanti per <span class="math inline">O</span></strong>: $ (v) = {v : } $ $ $ parametro</p>
+<p><strong>ortogonalità</strong>: <span class="math inline">&lt;a \cdot b&gt; = 0</span> prodotto scalare nullo</p>
 <p><strong>angolo tra due n-ple</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \alpha = arcos( \frac{&lt;a \cdot b&gt;}{||a|| \cdot ||b||})
-\]</span></p>
+</span></p>
 <p><strong>rete affini</strong>: $ (v) + w = v + w $</p>
 <p><strong>retta per 2 punti</strong>: $ (1 -)P = Q : ((P-Q) + P) $</p>
 <p><strong>combinazione affine</strong>: $ P + Q + = 1 $</p>
@@ -267,12 +281,12 @@ d(v, w) = \sqrt{(v_1 - w_1)^2 + (v_2 - w_2)^2 + (v_3 - w_3)^2} = \sqrt{||v - w||
 <section id="risoluzioni-geometria-dello-spazio" class="level2">
 <h2 class="anchored" data-anchor-id="risoluzioni-geometria-dello-spazio">Risoluzioni geometria dello spazio</h2>
 <strong>equazione retta</strong>: $
-<span class="math display">\[\begin{cases} x = v_1 \cdot t + p_1 \\ y = v_2 \cdot t + p_2 \\ z = v_3 \cdot t + p_3 \end{cases}\]</span>
+<span class="math display">\begin{cases} x = v_1 \cdot t + p_1 \\ y = v_2 \cdot t + p_2 \\ z = v_3 \cdot t + p_3 \end{cases}</span>
 <p>$</p>
 <p>$ t(v_1 v_2 v_3) + (p_1 p_2 p_3) $</p>
-<p><strong>retta per <span class="math inline">\(2\)</span> punti</strong>: $ t(B-A) + A $</p>
+<p><strong>retta per <span class="math inline">2</span> punti</strong>: $ t(B-A) + A $</p>
 $
-<span class="math display">\[\begin{cases} x = (b_1 - a_1) \cdot t + a_1 \\ y = (b_2 - a_2) \cdot t + a_2 \\ z = (b_3 - a_3) \cdot t + a_3 \end{cases}\]</span>
+<span class="math display">\begin{cases} x = (b_1 - a_1) \cdot t + a_1 \\ y = (b_2 - a_2) \cdot t + a_2 \\ z = (b_3 - a_3) \cdot t + a_3 \end{cases}</span>
 <p>$</p>
 <p><strong>spazio perpendicolare a $ v (v_1 v_2 v_3) $</strong>: $ &lt;v, x&gt; = 0 $<br>
 NB: in $ ^2 $ è una retta</p>
@@ -282,77 +296,77 @@ NB: in $ ^2 $ è una retta</p>
 NB componenti vettori uguali a coefficienti piano</p>
 <p><strong>retta passante per un punto $ P(p_x, p_y, p_z) $ ovvero traslazione</strong>: $ d = a p_x + b p_y + c p_z $<br>
 $ ax + by + cz = a p_x + b p_y + c p_z $</p>
-<p><strong>piano contenente $ 2 $ rette</strong>: <span class="math inline">\(\begin{cases} x = v_1 \cdot t + w_1 \cdot s \\ y = v_2 \cdot t + w_2 \cdot s \\ z = v_3 \cdot t + w_3 \cdot s \end{cases}\)</span><br>
+<p><strong>piano contenente $ 2 $ rette</strong>: <span class="math inline">\begin{cases} x = v_1 \cdot t + w_1 \cdot s \\ y = v_2 \cdot t + w_2 \cdot s \\ z = v_3 \cdot t + w_3 \cdot s \end{cases}</span><br>
 forma parametrica da risolvere per ottenere forma cartesiana</p>
-<p><strong>retta in <span class="math inline">\(\mathbb{R}^2\)</span> dati <span class="math inline">\(2\)</span> piani</strong>: <span class="math inline">\(r: \begin{cases} a_1 x + b_1 y + c_1 z = d_1 \\ a_2 x + b_2 y + c_2 z = d_2 \end{cases}\)</span><br>
+<p><strong>retta in <span class="math inline">\mathbb{R}^2</span> dati <span class="math inline">2</span> piani</strong>: <span class="math inline">r: \begin{cases} a_1 x + b_1 y + c_1 z = d_1 \\ a_2 x + b_2 y + c_2 z = d_2 \end{cases}</span><br>
 parametrica (porre una variabile pari a t)</p>
 <p><strong>rette parallele</strong> $t(v_1 v_2 v_3) + Q; s(v_1 v_2 v_3) + P $<br>
 stesso vettore direttore</p>
 <p><strong>piano date due rette parallele</strong>: serve un’altra direzione</p>
-<p><strong>piano data una retta <span class="math inline">\(r\)</span> e un punto <span class="math inline">\(A\)</span></strong>:</p>
+<p><strong>piano data una retta <span class="math inline">r</span> e un punto <span class="math inline">A</span></strong>:</p>
 <ol type="1">
-<li>calcolo 2 punti della retta <span class="math inline">\(r\)</span></li>
-<li>dati <span class="math inline">\(P', P'' \in r\)</span> e punto <span class="math inline">\(A\)</span> calcolo piano da rette <span class="math inline">\(\vec{A P'}\)</span> e <span class="math inline">\(\vec{AP''}\)</span></li>
+<li>calcolo 2 punti della retta <span class="math inline">r</span></li>
+<li>dati <span class="math inline">P', P'' \in r</span> e punto <span class="math inline">A</span> calcolo piano da rette <span class="math inline">\vec{A P'}</span> e <span class="math inline">\vec{AP''}</span></li>
 </ol>
 </section>
 <section id="matrici" class="level2">
 <h2 class="anchored" data-anchor-id="matrici">Matrici</h2>
 <p><strong>matrice m x n</strong>: $ m $ righe, $ n $ colonne<br>
-<span class="math display">\[
+<span class="math display">
 A = \begin{bmatrix} a_{11} &amp; a_{12} &amp; \ldots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \ldots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \ldots &amp; a_{mn} \end{bmatrix}
-\]</span></p>
-<p><strong>matrice quadrata</strong>: matrice con stesso numero di righe e colonne, appartenente a <span class="math inline">\(\mathbb{R}^n\)</span></p>
+</span></p>
+<p><strong>matrice quadrata</strong>: matrice con stesso numero di righe e colonne, appartenente a <span class="math inline">\mathbb{R}^n</span></p>
 <p><strong>traccia</strong>: considero solo gli elementi sulla diagonale principale e li sommo<br>
-<span class="math display">\[
+<span class="math display">
 tr(A) = \begin{bmatrix} a_{11} &amp; \ldots &amp; \ldots &amp; \ldots \\ \ldots &amp; a_{22} &amp; \ldots &amp; \ldots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \ldots &amp; \ldots &amp; \ldots &amp; a_{nn} \end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 tr(A) = \sum_{i=1}^n a_{ii}
-\]</span></p>
+</span></p>
 <p><strong>matrice diagonale</strong>: matrice quadrata con tutti gli elementi nulli tranne quelli sulla diagonale principale</p>
-<p><span class="math display">\[
+<p><span class="math display">
 D = \begin{bmatrix} \lambda_1 &amp; 0 &amp; \ldots &amp; 0 \\ 0 &amp; \lambda_2 &amp; \ldots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; \lambda_n \end{bmatrix}
-\]</span></p>
+</span></p>
 <p><strong>matrice triangolare superiore</strong>: matrice quadrata con tutti gli elementi nulli al di sotto della diagonale principale</p>
-<p><span class="math display">\[
+<p><span class="math display">
 U = \begin{bmatrix} \lambda_{11} &amp; x &amp; \ldots &amp; y \\ 0 &amp; \lambda_{22} &amp; \ldots &amp; z \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; \lambda_{nn} \end{bmatrix}
-\]</span></p>
+</span></p>
 <p><strong>matrice triangolare inferiore</strong>: matrice quadrata con tutti gli elementi nulli al di sopra della diagonale principale</p>
-<p><span class="math display">\[
+<p><span class="math display">
 L = \begin{bmatrix} \lambda_{11} &amp; 0 &amp; \ldots &amp; 0 \\ x &amp; \lambda_{22} &amp; \ldots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ y &amp; z &amp; \ldots &amp; \lambda_{nn} \end{bmatrix}
-\]</span></p>
+</span></p>
 <p><strong>matrice trasposta</strong>: le righe diventano colonne o viceversa</p>
-<p><span class="math display">\[
+<p><span class="math display">
 A = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \\ \vdots &amp; \vdots\\ a_{n1} &amp; a_{n2} \end{bmatrix} \rightarrow A^T = \begin{bmatrix} a_{11} &amp; a_{21} &amp; \ldots &amp; a_{n1} \\ a_{12} &amp; a_{22} &amp; \ldots &amp; a_{n2} \end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 a_{ij} = (A^T)_{ji}
-\]</span></p>
-<p><strong>matrice simmetrica</strong>: matrice quadrata che è uguale alla sua trasposta, <span class="math inline">\(A = A^T \implies a_{ij} = a_{ji}\)</span></p>
-<p><strong>matrice antisimmetrica</strong>: matrice quadrata che è uguale alla trasposta con segno opposto, <span class="math inline">\(A = -A^T \implies a_{ij} = -a_{ji}\)</span></p>
+</span></p>
+<p><strong>matrice simmetrica</strong>: matrice quadrata che è uguale alla sua trasposta, <span class="math inline">A = A^T \implies a_{ij} = a_{ji}</span></p>
+<p><strong>matrice antisimmetrica</strong>: matrice quadrata che è uguale alla trasposta con segno opposto, <span class="math inline">A = -A^T \implies a_{ij} = -a_{ji}</span></p>
 </section>
 <section id="operazioni-tra-matrici" class="level2">
 <h2 class="anchored" data-anchor-id="operazioni-tra-matrici">operazioni tra matrici</h2>
 <ul>
-<li>somma/differenza: <span class="math display">\[(A + B)_{ij} = A_{ij} + B_{ij}\]</span></li>
+<li>somma/differenza: <span class="math display">(A + B)_{ij} = A_{ij} + B_{ij}</span></li>
 </ul>
 <p><strong>prodotto matriciale $ A ^{m n}, B ^{n p} $</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{matrix} A_1 \\ A_2 \end{matrix} \begin{bmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \end{bmatrix} \cdot \begin{bmatrix} b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} \\ b_{31} &amp; b_{32} \end{bmatrix} = \begin{bmatrix} &lt;A_1, B^1&gt; &amp; &lt;A_1 , B^2&gt; \\ &lt;A_2, B^1&gt; &amp; &lt;A_2, B^2&gt; \end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{bmatrix}  a_{11} \cdot b_{11} + a_{12} \cdot b_{21} + a_{13} \cdot b_{31} &amp; a_{11} \cdot b_{12} + a_{12} \cdot b_{22} + a_{13} \cdot b_{32} \\ \; &amp; \; \\ a_{21} \cdot b_{11} + a_{22} \cdot b_{21} + a_{23} \cdot b_{31} &amp; a_{21} \cdot b_{12} + a_{22} \cdot b_{22} + a_{23} \cdot b_{32} \end{bmatrix}
-\]</span></p>
-<p>Nota bene: <span class="math inline">\(AB \neq BA\)</span></p>
+</span></p>
+<p>Nota bene: <span class="math inline">AB \neq BA</span></p>
 <ul>
-<li><span class="math inline">\(\exists AB \implies A \cdot (B+C) = AB + AC\)</span></li>
-<li><span class="math inline">\(\exists BA \implies (B+C) \cdot A = BA + CA\)</span></li>
+<li><span class="math inline">\exists AB \implies A \cdot (B+C) = AB + AC</span></li>
+<li><span class="math inline">\exists BA \implies (B+C) \cdot A = BA + CA</span></li>
 </ul>
 <p><strong>matrice inversa</strong>:</p>
 <ul>
-<li><strong>sinistra</strong>: <span class="math inline">\(A^{-1} A = I_n\)</span></li>
-<li><strong>destra</strong>: <span class="math inline">\(A A^{-1} = I_n\)</span></li>
-<li><strong>inversa matrice quadrata</strong>: <span class="math inline">\(A^{-1} A = A A^{-1} = I_n\)</span></li>
+<li><strong>sinistra</strong>: <span class="math inline">A^{-1} A = I_n</span></li>
+<li><strong>destra</strong>: <span class="math inline">A A^{-1} = I_n</span></li>
+<li><strong>inversa matrice quadrata</strong>: <span class="math inline">A^{-1} A = A A^{-1} = I_n</span></li>
 </ul>
 <p><strong>calcolo matrice inversa</strong>:</p>
 <ol type="1">
@@ -360,200 +374,200 @@ a_{ij} = (A^T)_{ji}
 <li>trasposta della matrice dei complementi algebrici</li>
 <li>divido per il determinante della matrice originale</li>
 </ol>
-<p><strong>matrice ortogonale (quadrata)</strong>: matrice <span class="math inline">\(A\)</span> tale che <span class="math inline">\(A^T A = I_n\)</span></p>
-<p><strong>matrice simile (quadrata)</strong>: matrice <span class="math inline">\(C\)</span> simile a matrice <span class="math inline">\(A\)</span> se esiste matrice invertibile <span class="math inline">\(B\)</span> tale che <span class="math inline">\(C = B^{-1} A B\)</span></p>
+<p><strong>matrice ortogonale (quadrata)</strong>: matrice <span class="math inline">A</span> tale che <span class="math inline">A^T A = I_n</span></p>
+<p><strong>matrice simile (quadrata)</strong>: matrice <span class="math inline">C</span> simile a matrice <span class="math inline">A</span> se esiste matrice invertibile <span class="math inline">B</span> tale che <span class="math inline">C = B^{-1} A B</span></p>
 <p>stesso <strong>endomorfismo</strong> rappresentato in basi diverse</p>
 </section>
 <section id="spazi-vettoriali" class="level2">
 <h2 class="anchored" data-anchor-id="spazi-vettoriali">Spazi vettoriali</h2>
-<p><strong>spazio vettoriale <span class="math inline">\(V\)</span></strong>: insieme <span class="math inline">\(V \neq \emptyset\)</span> dove sono definite:</p>
+<p><strong>spazio vettoriale <span class="math inline">V</span></strong>: insieme <span class="math inline">V \neq \emptyset</span> dove sono definite:</p>
 <ul>
-<li><strong>somma</strong>: <span class="math inline">\(V \times V \rightarrow V \quad v + w\)</span></li>
-<li><strong>prodotto</strong>: <span class="math inline">\(\mathbb{R} \times V \rightarrow V \quad \lambda v\)</span></li>
+<li><strong>somma</strong>: <span class="math inline">V \times V \rightarrow V \quad v + w</span></li>
+<li><strong>prodotto</strong>: <span class="math inline">\mathbb{R} \times V \rightarrow V \quad \lambda v</span></li>
 </ul>
 <p><strong>condizioni per essere spazio vettoriale</strong>:</p>
 <ol type="1">
-<li>commutativa: <span class="math inline">\((u + v) + w = u + (v + w)\)</span></li>
-<li>elemento neutro somma: <span class="math inline">\(v + 0 = v\)</span></li>
-<li>elemento opposto: <span class="math inline">\(v + (-v) = 0\)</span></li>
-<li><span class="math inline">\((\lambda + \delta) \cdot v = \lambda \cdot v + \delta \cdot v\)</span></li>
-<li>elemento neutro prodotto: <span class="math inline">\(1 \cdot v = v\)</span></li>
-<li><span class="math inline">\((\lambda \cdot \delta) \cdot v = \lambda \cdot (\delta \cdot v)\)</span></li>
+<li>commutativa: <span class="math inline">(u + v) + w = u + (v + w)</span></li>
+<li>elemento neutro somma: <span class="math inline">v + 0 = v</span></li>
+<li>elemento opposto: <span class="math inline">v + (-v) = 0</span></li>
+<li><span class="math inline">(\lambda + \delta) \cdot v = \lambda \cdot v + \delta \cdot v</span></li>
+<li>elemento neutro prodotto: <span class="math inline">1 \cdot v = v</span></li>
+<li><span class="math inline">(\lambda \cdot \delta) \cdot v = \lambda \cdot (\delta \cdot v)</span></li>
 </ol>
 <p><strong>vettori</strong>: elementi di uno spazio vettoriale</p>
 <p><strong>proprietà spazio vettoriale</strong>:</p>
 <ol type="1">
 <li>$ V : v + = v v V$ ed è <em>unico</em></li>
-<li><span class="math inline">\(\mathbf{0} \cdot v = \mathbf{0} \quad \forall v \in V\)</span></li>
+<li><span class="math inline">\mathbf{0} \cdot v = \mathbf{0} \quad \forall v \in V</span></li>
 <li>$v = 0 v = $</li>
 <li>$ v + u = v + w u = w$</li>
 <li>$(-1) v = &lt; -v &gt; $</li>
 </ol>
-<p><strong>sottospazio vettoriale <span class="math inline">\(W\)</span></strong>: sottoinsieme di <span class="math inline">\(V\)</span> che è esso stesso uno spazio vettoriale con le stesse operazioni di <span class="math inline">\(V\)</span></p>
+<p><strong>sottospazio vettoriale <span class="math inline">W</span></strong>: sottoinsieme di <span class="math inline">V</span> che è esso stesso uno spazio vettoriale con le stesse operazioni di <span class="math inline">V</span></p>
 <p><strong>condizione sottospazio vettoriale</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \lambda v + \mu w \in W \quad \forall v,w \in W \; \land \; \forall \lambda, \mu \in \mathbb{R}
-\]</span></p>
-<p>NOTA: se <span class="math inline">\(0 \not\in W\)</span> allora <span class="math inline">\(W\)</span> non è sottospazio vettoriale</p>
-<p>se <span class="math inline">\(W,U\)</span> sottospazi vettoriali allora intersezione <span class="math inline">\(W \cap U\)</span> è sottospazio vettoriale</p>
-<p><strong>combinazione lineare</strong>: $ _1 v_1 + _2 v_2 + + _n v_n $ con <span class="math inline">\(v_i\)</span> vettori e <span class="math inline">\(\lambda_i\)</span> valori in <span class="math inline">\(\mathbb{R}\)</span></p>
-<p><span class="math display">\[
+</span></p>
+<p>NOTA: se <span class="math inline">0 \not\in W</span> allora <span class="math inline">W</span> non è sottospazio vettoriale</p>
+<p>se <span class="math inline">W,U</span> sottospazi vettoriali allora intersezione <span class="math inline">W \cap U</span> è sottospazio vettoriale</p>
+<p><strong>combinazione lineare</strong>: $ _1 v_1 + _2 v_2 + + _n v_n $ con <span class="math inline">v_i</span> vettori e <span class="math inline">\lambda_i</span> valori in <span class="math inline">\mathbb{R}</span></p>
+<p><span class="math display">
 w = \sum_{i=1}^n \lambda_i v_i
-\]</span></p>
-<p><span class="math inline">\(w\)</span> generato da <span class="math inline">\(v_1, v_2, \ldots, v_n\)</span></p>
-<p><strong>inviluppo lineare</strong>: insieme di tutte le combinazioni lineari di un insieme di vettori <span class="math inline">\(S = \{v_1, v_2, \ldots, v_n\}\)</span>. È un sottospazio vettoriale</p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math inline">w</span> generato da <span class="math inline">v_1, v_2, \ldots, v_n</span></p>
+<p><strong>inviluppo lineare</strong>: insieme di tutte le combinazioni lineari di un insieme di vettori <span class="math inline">S = \{v_1, v_2, \ldots, v_n\}</span>. È un sottospazio vettoriale</p>
+<p><span class="math display">
 \mathcal{L} &lt;W\&gt; = \mathcal{L}&lt; v_1, v_2, \ldots, v_n &gt; \ = \ \{ \lambda_1 v_1, \ldots, \lambda_n v_n \} : \lambda_i \in \mathbb{R}
-\]</span></p>
-<p><strong>dipendenza lineare</strong>: $ v_1 + _2 v_2 + + _n v_n = 0 $ con almeno un <span class="math inline">\(\lambda_i \neq 0\)</span></p>
+</span></p>
+<p><strong>dipendenza lineare</strong>: $ v_1 + _2 v_2 + + _n v_n = 0 $ con almeno un <span class="math inline">\lambda_i \neq 0</span></p>
 <p><strong>indipendenza lineare</strong>: $ v_1 + _2 v_2 + + _n v_n = 0 _1 = _2 = = _n = 0$</p>
 <p>NOTA:<br>
-<span class="math inline">\(v_0, v_1, \ldots, v_n\)</span> <strong>indipendenti</strong>:</p>
+<span class="math inline">v_0, v_1, \ldots, v_n</span> <strong>indipendenti</strong>:</p>
 <ul>
-<li>se <strong>tolgo</strong> un vettore <span class="math inline">\(v_i \implies\)</span> rimangono <strong>indipendenti</strong></li>
-<li>se <strong>aggiungo</strong> un vettore <span class="math inline">\(v_{n+1}\)</span> devo <strong>verificare nuovamente</strong> indipendenza</li>
+<li>se <strong>tolgo</strong> un vettore <span class="math inline">v_i \implies</span> rimangono <strong>indipendenti</strong></li>
+<li>se <strong>aggiungo</strong> un vettore <span class="math inline">v_{n+1}</span> devo <strong>verificare nuovamente</strong> indipendenza</li>
 </ul>
-<p><span class="math inline">\(v_0, v_1, \ldots, v_n\)</span> <strong>dipendenti</strong>:</p>
+<p><span class="math inline">v_0, v_1, \ldots, v_n</span> <strong>dipendenti</strong>:</p>
 <ul>
-<li>se <strong>tolgo</strong> un vettore <span class="math inline">\(v_i\)</span> devo <strong>verificare nuovamente</strong> dipendenza</li>
-<li>se <strong>aggiungo</strong> un vettore <span class="math inline">\(v_{n+1} \implies\)</span> rimangono <strong>dipendenti</strong></li>
+<li>se <strong>tolgo</strong> un vettore <span class="math inline">v_i</span> devo <strong>verificare nuovamente</strong> dipendenza</li>
+<li>se <strong>aggiungo</strong> un vettore <span class="math inline">v_{n+1} \implies</span> rimangono <strong>dipendenti</strong></li>
 </ul>
 </section>
 <section id="basi-e-dimensione" class="level2">
 <h2 class="anchored" data-anchor-id="basi-e-dimensione">Basi e dimensione</h2>
-<p><strong>dimensione <span class="math inline">\(dim(V)\)</span></strong>: cardinalità massima dell’insieme di vettori indipendenti in <span class="math inline">\(V\)</span></p>
-<p><strong>base</strong>: <span class="math inline">\(\{v_1, v_2, \ldots, v_n\}\)</span> insieme di vettori linearmente indipendenti tali che $&lt;v_1, v_2, , v_n&gt; = V $</p>
-<p>dati 2 sottospazi <span class="math inline">\(U, W\)</span> di <span class="math inline">\(V\)</span></p>
+<p><strong>dimensione <span class="math inline">dim(V)</span></strong>: cardinalità massima dell’insieme di vettori indipendenti in <span class="math inline">V</span></p>
+<p><strong>base</strong>: <span class="math inline">\{v_1, v_2, \ldots, v_n\}</span> insieme di vettori linearmente indipendenti tali che $&lt;v_1, v_2, , v_n&gt; = V $</p>
+<p>dati 2 sottospazi <span class="math inline">U, W</span> di <span class="math inline">V</span></p>
 <ul>
-<li><span class="math inline">\(\max\{dim(U), dim(W)\} \leq dim(U + W) \leq dim(U) + dim(W)\)</span></li>
-<li><span class="math inline">\(dim(U + W) = dim(U) + dim(W) - dim(U \cap W)\)</span></li>
+<li><span class="math inline">\max\{dim(U), dim(W)\} \leq dim(U + W) \leq dim(U) + dim(W)</span></li>
+<li><span class="math inline">dim(U + W) = dim(U) + dim(W) - dim(U \cap W)</span></li>
 </ul>
 </section>
 <section id="applicazioni-lineari" class="level2">
 <h2 class="anchored" data-anchor-id="applicazioni-lineari">Applicazioni lineari</h2>
-<p><strong>applicazione lineare <span class="math inline">\(F: V \rightarrow W\)</span></strong></p>
+<p><strong>applicazione lineare <span class="math inline">F: V \rightarrow W</span></strong></p>
 <p><strong>condizioni di linearità</strong>:</p>
 <ol type="1">
-<li><span class="math inline">\(F(v + w) = F(v) + F(w)\)</span></li>
-<li><span class="math inline">\(F(\lambda v) = \lambda F(v)\)</span></li>
+<li><span class="math inline">F(v + w) = F(v) + F(w)</span></li>
+<li><span class="math inline">F(\lambda v) = \lambda F(v)</span></li>
 </ol>
-<p><strong>nucleo o kernel</strong>: <span class="math inline">\(Ker(F) = \{v \in V : F(v) = 0_W\}\)</span></p>
-<p><strong>immagine o range</strong>: <span class="math inline">\(Im(F) = \{w \in W : \exists v \in V \text{ con } w = F(v)\}\)</span></p>
-<p><strong>nullità</strong>: <span class="math inline">\(dim(Ker(F))\)</span></p>
-<p><strong>rango</strong>: <span class="math inline">\(dim(Im(F))\)</span></p>
-<p><strong>iniettività</strong>: <span class="math inline">\(dim(Ker(F)) = \{0\} \iff F\)</span> iniettiva</p>
-<p><strong>suriettività</strong>: <span class="math inline">\(dim(Im(F)) = dim(W) \iff F\)</span> suriettiva, oppure <span class="math inline">\(Im(F) = W\)</span></p>
+<p><strong>nucleo o kernel</strong>: <span class="math inline">Ker(F) = \{v \in V : F(v) = 0_W\}</span></p>
+<p><strong>immagine o range</strong>: <span class="math inline">Im(F) = \{w \in W : \exists v \in V \text{ con } w = F(v)\}</span></p>
+<p><strong>nullità</strong>: <span class="math inline">dim(Ker(F))</span></p>
+<p><strong>rango</strong>: <span class="math inline">dim(Im(F))</span></p>
+<p><strong>iniettività</strong>: <span class="math inline">dim(Ker(F)) = \{0\} \iff F</span> iniettiva</p>
+<p><strong>suriettività</strong>: <span class="math inline">dim(Im(F)) = dim(W) \iff F</span> suriettiva, oppure <span class="math inline">Im(F) = W</span></p>
 <p><strong>isomorfismo</strong>: iniettività e suriettività</p>
-<p><strong>teorema nullità + rango</strong>: <span class="math inline">\(dim(V) = dim(Ker(F)) + dim(Im(F))\)</span></p>
-<p><span class="math inline">\(F(v_1), F(v_2), \ldots, F(v_p)\)</span> L.I. <span class="math inline">\(\iff v_1, v_2, \ldots, v_p\)</span> L.I.</p>
+<p><strong>teorema nullità + rango</strong>: <span class="math inline">dim(V) = dim(Ker(F)) + dim(Im(F))</span></p>
+<p><span class="math inline">F(v_1), F(v_2), \ldots, F(v_p)</span> L.I. <span class="math inline">\iff v_1, v_2, \ldots, v_p</span> L.I.</p>
 <p><strong>matrice associata a una applicazione lineare</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 A = [A^1 \; A^2 \; \ldots \; A^n] = \begin{bmatrix} \begin{bmatrix} \; \\ F(v_1) \\ \; \end{bmatrix}_{B'} &amp; \begin{bmatrix} \; \\ F(v_2) \\ \; \end{bmatrix}_{B'} &amp; \ldots &amp; \begin{bmatrix} \; \\ F(v_n) \\ \; \end{bmatrix}_{B'} \\ \end{bmatrix}
-\]</span></p>
-<p><strong>matrice di cambiamento di base</strong>: matrice associata all’identità <span class="math inline">\(I_V\)</span> tra due basi <span class="math inline">\(B\)</span> e <span class="math inline">\(B'\)</span></p>
-<p><span class="math inline">\(B = (b_1, b_2, b_3)\)</span>, <span class="math inline">\(B' = (b'_1, b'_2, b'_3)\)</span></p>
-<p><span class="math inline">\(B \rightarrow B'\)</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><strong>matrice di cambiamento di base</strong>: matrice associata all’identità <span class="math inline">I_V</span> tra due basi <span class="math inline">B</span> e <span class="math inline">B'</span></p>
+<p><span class="math inline">B = (b_1, b_2, b_3)</span>, <span class="math inline">B' = (b'_1, b'_2, b'_3)</span></p>
+<p><span class="math inline">B \rightarrow B'</span></p>
+<p><span class="math display">
 M[id, B, B'] = \begin{bmatrix} \begin{bmatrix} \; \\ b_1 \\ \; \end{bmatrix}_{B'} \begin{bmatrix} \; \\ b_2 \\ \; \end{bmatrix}_{B'} \begin{bmatrix} \; \\ b_3 \\ \; \end{bmatrix}_{B'} \end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{array}{c} [b_1]_{B'} = (x_1, x_2, x_3) \ | \ x_1 b_1' + x_2 b_2' + x_3 b_3' = b_1 \\ [b_2]_{B'} = (x_1, x_2, x_3) \ | \ x_1 b_1' + x_2 b_2' + x_3 b_3' = b_2 \\ [b_3]_{B'} = (x_1, x_2, x_3) \ | \ x_1 b_1' + x_2 b_2' + x_3 b_3' = b_3 \end{array}
-\]</span></p>
-<p><span class="math inline">\(B' \rightarrow B\)</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math inline">B' \rightarrow B</span></p>
+<p><span class="math display">
 M[id, B', B] = \begin{bmatrix} \begin{bmatrix} \; \\ b'_1 \\ \; \end{bmatrix}_{B} \begin{bmatrix} \; \\ b'_2 \\ \; \end{bmatrix}_{B} \begin{bmatrix} \; \\ b'_3 \\ \; \end{bmatrix}_{B} \end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{array}{c} [b'_1]_{B} = (x_1, x_2, x_3) \ | \ x_1 b_1 + x_2 b_2 + x_3 b_3 = b'_1 \\ [b'_2]_{B} = (x_1, x_2, x_3) \ | \ x_1 b_1 + x_2 b_2 + x_3 b_3 = b'_2 \\ [b'_3]_{B} = (x_1, x_2, x_3) \ | \ x_1 b_1 + x_2 b_2 + x_3 b_3 = b'_3 \end{array}
-\]</span></p>
+</span></p>
 <p><strong>caso di applicazioni lineari</strong>:</p>
-<p><span class="math inline">\(B' \rightarrow B \rightarrow \hat{B} \rightarrow \hat{B}'\)</span></p>
-<p><span class="math display">\[
+<p><span class="math inline">B' \rightarrow B \rightarrow \hat{B} \rightarrow \hat{B}'</span></p>
+<p><span class="math display">
 M[id, B', \hat{B}'] = M[id, \hat{B}, \hat{B}'] \cdot M[id, B, \hat{B}] \cdot M[id, B', B]
-\]</span></p>
+</span></p>
 </section>
 <section id="sistemi-lineari" class="level2">
 <h2 class="anchored" data-anchor-id="sistemi-lineari">Sistemi lineari</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 AX = B
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{bmatrix} \begin{bmatrix} \; \\ A^1 \\ \; \end{bmatrix} &amp; \ldots &amp; \begin{bmatrix} \; \\ A^n \\ \; \end{bmatrix} \end{bmatrix} \cdot \begin{bmatrix} x_1 \\ \ldots \\ x_n \end{bmatrix} = \begin{bmatrix} b_1 \\ \ldots \\ b_m \end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 x_1 \cdot A^1 + \ldots + x_n \cdot A^n = \begin{bmatrix} b_1 \\ \ldots \\ b_m \end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{cases} x_1 \cdot a_{11} + \ldots + x_n \cdot a_{n1} = b_1 \\ \vdots \\ x_1 \cdot a_{1m} + \ldots + x_n \cdot a_{nm} = b_m \end{cases}
-\]</span></p>
+</span></p>
 <p>Il sistema può avere 3 tipi di soluzioni:</p>
 <ol type="1">
-<li>nessuna soluzione: <span class="math inline">\(Ax = B\)</span> è impossibile</li>
-<li>una soluzione unica: <span class="math inline">\(Ax = B\)</span> è possibile e <span class="math inline">\(Ker(A) = \{0\}\)</span></li>
-<li>infinite soluzioni: <span class="math inline">\(Ax = B\)</span> è possibile e <span class="math inline">\(Ker(A) \neq \{0\}\)</span></li>
+<li>nessuna soluzione: <span class="math inline">Ax = B</span> è impossibile</li>
+<li>una soluzione unica: <span class="math inline">Ax = B</span> è possibile e <span class="math inline">Ker(A) = \{0\}</span></li>
+<li>infinite soluzioni: <span class="math inline">Ax = B</span> è possibile e <span class="math inline">Ker(A) \neq \{0\}</span></li>
 </ol>
 <section id="metodo-di-gauss" class="level3">
 <h3 class="anchored" data-anchor-id="metodo-di-gauss">Metodo di Gauss</h3>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{array}{c} \; \\ Ri \\ \; \\ Rj \\ \; \end{array} \begin{bmatrix} \ldots &amp;\ldots &amp; \ldots &amp; \ldots \\ a_{i1} &amp; a_{i2} &amp; \ldots &amp; a_{in} \\ \ldots &amp;\ldots &amp; \ldots &amp; \ldots \\ a_{j1} &amp; a_{j2} &amp; \ldots &amp; a_{jm} \\ \ldots &amp;\ldots &amp; \ldots &amp; \ldots \end{bmatrix}
-\]</span></p>
+</span></p>
 <p>VI sono 3 regole per operare sulle matrici, che siano righe o colonne:</p>
 <ul>
-<li>G1: <span class="math inline">\(R_i \leftrightarrow R_j\)</span></li>
-<li>G2: <span class="math inline">\(R_i \leftrightarrow \lambda R_i\)</span></li>
-<li>G3: <span class="math inline">\(R_i \leftrightarrow R_i + R_j\)</span></li>
+<li>G1: <span class="math inline">R_i \leftrightarrow R_j</span></li>
+<li>G2: <span class="math inline">R_i \leftrightarrow \lambda R_i</span></li>
+<li>G3: <span class="math inline">R_i \leftrightarrow R_i + R_j</span></li>
 </ul>
 <p>Ovviamente queste regole possono essere combinate</p>
 <p><strong>procedimento</strong>:</p>
 <ul>
 <li><p>opero sulla <strong>matrice estesa</strong> $</p>
-<span class="math display">\[\begin{bmatrix} A &amp; | &amp; b \end{bmatrix}\]</span>
+<span class="math display">\begin{bmatrix} A &amp; | &amp; b \end{bmatrix}</span>
 <p>$</p></li>
 <li><p>trasformo la matrice in <strong>matrice in forma echelon</strong> con le regole di Gauss</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{bmatrix} 0 &amp; p_1 &amp; * &amp; * &amp; * &amp; * \\ 0 &amp; 0 &amp; 0 &amp; p_2 &amp; * &amp; * \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; p_3 &amp; * \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} \begin{array}{c} \; \\ \text{numero di pivot = rango} \\ \text{pivot in ultima colonna : sol. impossibile} \\ \; \end{array}
-\]</span></p></li>
+</span></p></li>
 <li><p>riscrivo il sistema con la matrice a gradini</p></li>
 <li><p>risolvo il sistema con sostituzione all’indietro</p></li>
 </ul>
 <p><strong>matrice inversa con metodo di Gauss</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{bmatrix} A &amp; | &amp; I_n \end{bmatrix} \rightarrow \begin{bmatrix} I_n &amp; | &amp; A^{-1} \end{bmatrix}
-\]</span></p>
+</span></p>
 <p><strong>Teorema di Rouché-Capelli</strong>:</p>
-<p><span class="math inline">\(rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix})\)</span> sistema ammissibile</p>
+<p><span class="math inline">rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix})</span> sistema ammissibile</p>
 <ul>
-<li><span class="math inline">\(rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix}) = n (x_n)\)</span> unica soluzione</li>
-<li><span class="math inline">\(rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix}) &lt; n (x_n)\)</span> infinite soluzioni</li>
+<li><span class="math inline">rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix}) = n (x_n)</span> unica soluzione</li>
+<li><span class="math inline">rg(A) = rg (\begin{bmatrix} A \vert b \end{bmatrix}) &lt; n (x_n)</span> infinite soluzioni</li>
 </ul>
-<p><span class="math inline">\(rg(A) \neq rg (\begin{bmatrix} A \vert b \end{bmatrix})\)</span> sistema impossibile</p>
+<p><span class="math inline">rg(A) \neq rg (\begin{bmatrix} A \vert b \end{bmatrix})</span> sistema impossibile</p>
 </section>
 <section id="calcolo-del-determinante" class="level3">
 <h3 class="anchored" data-anchor-id="calcolo-del-determinante">Calcolo del determinante</h3>
-<p>Dati <span class="math inline">\(v_1, v_2, \ldots, v_n \mathbb{R}^n \; LD \implies det(v_1, v_2, \ldots, v_n) = 0\)</span><br>
-Dati <span class="math inline">\(v_1, v_2, \ldots, v_n \mathbb{R}^n \; LI \implies det(v_1, v_2, \ldots, v_n) \neq 0\)</span></p>
+<p>Dati <span class="math inline">v_1, v_2, \ldots, v_n \mathbb{R}^n \; LD \implies det(v_1, v_2, \ldots, v_n) = 0</span><br>
+Dati <span class="math inline">v_1, v_2, \ldots, v_n \mathbb{R}^n \; LI \implies det(v_1, v_2, \ldots, v_n) \neq 0</span></p>
 <p><strong>determinante matrice 2x2</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 det \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} = a_{11} a_{22} - a_{12} a_{21}
-\]</span></p>
+</span></p>
 <p><strong>Regola di Sarrus</strong>:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix} \begin{array}{cc} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32} \end{array} = \begin{array}{c} a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} \\ - (a_{13} a_{22} a_{31} + a_{11} a_{23} a_{32} + a_{12} a_{21} a_{33})\end{array}
-\]</span></p>
-<p><strong>complemento algebrico</strong>: <span class="math inline">\(\bar a_{ij} = (-1)^{i+j} det(A_{ij}) = (-1)^{i+j} \cdot det M_{ij}\)</span><br>
-<span class="math inline">\(M_{ij}\)</span> matrice ottenuta da <span class="math inline">\(A\)</span> eliminando riga <span class="math inline">\(i\)</span> e colonna <span class="math inline">\(j\)</span></p>
+</span></p>
+<p><strong>complemento algebrico</strong>: <span class="math inline">\bar a_{ij} = (-1)^{i+j} det(A_{ij}) = (-1)^{i+j} \cdot det M_{ij}</span><br>
+<span class="math inline">M_{ij}</span> matrice ottenuta da <span class="math inline">A</span> eliminando riga <span class="math inline">i</span> e colonna <span class="math inline">j</span></p>
 <p><strong>Sviluppo di Laplace</strong>:<br>
 scelgo una riga o colonna e sviluppo il determinante rispetto a quella riga o colonna</p>
-<p><span class="math display">\[
+<p><span class="math display">
 det(A) = \sum_{j=1}^n [(-1)^{i+j} \cdot a_{ij} \cdot det(M_{ij})]
-\]</span></p>
-<p>con <span class="math inline">\(M_{ij}\)</span> matrice ottenuta da <span class="math inline">\(A\)</span> eliminando riga <span class="math inline">\(i\)</span> e colonna <span class="math inline">\(j\)</span></p>
+</span></p>
+<p>con <span class="math inline">M_{ij}</span> matrice ottenuta da <span class="math inline">A</span> eliminando riga <span class="math inline">i</span> e colonna <span class="math inline">j</span></p>
 <ul>
 <li>esempio con matrice 3x3 scegliendo la prima riga:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix} = a_{11} \begin{vmatrix} a_{22} &amp; a_{23} \\ a_{32} &amp; a_{33} \end{vmatrix} - a_{12} \begin{vmatrix} a_{21} &amp; a_{23} \\ a_{31} &amp; a_{33} \end{vmatrix} + a_{13} \begin{vmatrix} a_{21} &amp; a_{22} \\ a_{31} &amp; a_{32} \end{vmatrix}
-\]</span></p>
+</span></p>
 <p><strong>calcolo dell’inversa mediante determinante</strong>:</p>
 <ol type="1">
 <li>calcolo la matrice dei complementi algebrici</li>
@@ -561,28 +575,28 @@ det(A) = \sum_{j=1}^n [(-1)^{i+j} \cdot a_{ij} \cdot det(M_{ij})]
 <li>divido per il determinante della matrice originale</li>
 </ol>
 <p>in generale:</p>
-<p><span class="math display">\[
+<p><span class="math display">
 b_{ij} = \frac{\bar{a}_{ji}}{\det(A)}
-\]</span></p>
-<p><strong>regola di Cramer</strong>: <span class="math inline">\(Ax = b\)</span> con <span class="math inline">\(A\)</span> matrice quadrata invertibile, <span class="math inline">\(x\)</span> vettore incognito, <span class="math inline">\(b\)</span> vettore noto</p>
-<p><span class="math display">\[
+</span></p>
+<p><strong>regola di Cramer</strong>: <span class="math inline">Ax = b</span> con <span class="math inline">A</span> matrice quadrata invertibile, <span class="math inline">x</span> vettore incognito, <span class="math inline">b</span> vettore noto</p>
+<p><span class="math display">
 x_i = \frac{det(A_i)}{det(A)}
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \bar{x_i} = \frac{det \begin{bmatrix} A^1 &amp; &amp; \ldots &amp; A^{i-1} &amp; \begin{bmatrix} \; \\ b \\ \; \end{bmatrix} &amp; A^{i+1} &amp; \ldots &amp; A^n \end{bmatrix}}{det(A)}
-\]</span></p>
-<p>sostituisco la colonna <span class="math inline">\(i\)</span> di <span class="math inline">\(A\)</span> con il vettore <span class="math inline">\(b\)</span> e calcolo il determinante, poi divido per il determinante di <span class="math inline">\(A\)</span></p>
+</span></p>
+<p>sostituisco la colonna <span class="math inline">i</span> di <span class="math inline">A</span> con il vettore <span class="math inline">b</span> e calcolo il determinante, poi divido per il determinante di <span class="math inline">A</span></p>
 </section>
 </section>
 <section id="autovettori-e-autovalori" class="level2">
 <h2 class="anchored" data-anchor-id="autovettori-e-autovalori">Autovettori e autovalori</h2>
-<p><span class="math inline">\(A - \lambda I\)</span> matrice ottenuta sottraendo <span class="math inline">\(\lambda\)</span> alla diagonale principale di <span class="math inline">\(A\)</span></p>
-<p><span class="math display">\[
+<p><span class="math inline">A - \lambda I</span> matrice ottenuta sottraendo <span class="math inline">\lambda</span> alla diagonale principale di <span class="math inline">A</span></p>
+<p><span class="math display">
 \begin{vmatrix} a_{11} - \lambda &amp; \ldots &amp; \ldots &amp; \ldots \\ \ldots &amp; a_{22} - \lambda &amp; \ldots &amp; \ldots \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \ldots &amp; \ldots &amp; \ldots &amp; a_{nn} - \lambda \end{vmatrix}
-\]</span></p>
+</span></p>
 <ol type="1">
-<li><strong>polinomio caratteristico <span class="math inline">\(\mathcal{P}(A)\)</span></strong>: <span class="math inline">\(det (A - \lambda I) = 0\)</span></li>
-<li><strong>autovalori</strong>: <span class="math inline">\(\bar{\lambda}\)</span> che rendono <span class="math inline">\(\mathcal{P}(A) = 0\)</span></li>
+<li><strong>polinomio caratteristico <span class="math inline">\mathcal{P}(A)</span></strong>: <span class="math inline">det (A - \lambda I) = 0</span></li>
+<li><strong>autovalori</strong>: <span class="math inline">\bar{\lambda}</span> che rendono <span class="math inline">\mathcal{P}(A) = 0</span></li>
 <li>calcolo autospazio originato dagli autovettori</li>
 </ol>
 
