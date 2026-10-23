@@ -186,8 +186,7 @@ Thread: pc, registri, stato di esecuzione, stack
 
 **STATI DI UN PROCESSO**: passaggio attraverso interruzioni, richieste risorse, scheduler
 
-```mermaid
-
+```{mermaid}
 flowchart 
     A[New] -- admitted --> B[Ready]
     B -- scheduler dispatch --> C[Running]
@@ -776,7 +775,7 @@ $n$: numero di processi
 
 Con un maggior grado di multiprogrammazione aumenta l'uso della cpu
 
-```mermaid
+```{mermaid}
 flowchart 
     A((Source Program)) --> B[compiler or assembler]
     B --> C((object module))
@@ -1410,7 +1409,7 @@ Es UNIX: dispostivi sono dei file in /dev e coppie di numeri (**major,minor**)
 - **Major:** tipo di dispositivo
 - **Minor:** dispositivo
 
-```mermaid
+```{mermaid}
 
 flowchart 
     %% User process

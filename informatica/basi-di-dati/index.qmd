@@ -6,57 +6,6 @@ categories: [informatica]
 
 ## Introduzione
 
-Caratteristiche distintive di un database:
-
-- **persistenza**
-- **mole**
-- **globalità**
-
-Caratteristiche generali di un sistema informatico:
-
-- indipendenza dei dati (facilità uso)
-- strutture di indicizzazione e ottimizzazione (efficienza operazioni di accesso)
-- convenienza (efficacia)
-
-persistenza del database: salvataggio in memoria secondaria e esistenza indipendente dai programmi che lo usano
-
-mole: gestione di grandi quantità di dati, ovvero superiore alla porzione di ram dedicata, particolare attenzione all'efficienza delle operazioni di trasferimento dati
-
-globalità dei dati: necessità di disciplinare l'uso dei dati, gestendo diritti di accesso e garantendo privatezza e integrità da eventuali conflitti
-
-### definizione
-
-Base di dati: collezione di dati usata per rappresentare informazioni di interesse per un dato sistema informativo
-
-collezione di dati gestita da un DataBase Management System (DBMS)
-
-Le basi di dati supportano astrazioni sui dati:
-
-- livello fisico
-- livello logico
-- livello delle viste
-
-Modello dei dati: collezione di strumenti concettuali per descrivere i dati, le loro relazioni e i vincoli di consistenza
-
-possono essere distinti in:
-
-- modelli basati sull'identità degli oggetti
-- modelli basati sui valori degli oggetti
-
-Oppure in:
-
-- modelli basati sugli oggetti
-- modelli basati sui record
-
-Parlando di basi di dati, è importante distinguere tra:
-
-- schema
-- istanza
-
----
-
-## Introduzione
-
 L'informazione è rappresentata attraverso una forma minimale: il **dato**
 
 dato
@@ -346,36 +295,165 @@ Esempio entità *Professore* con i seguenti attributi
   - *via*
   - *civico*
 
-```{mermaid}
-erDiagram
-    Professore {
-        string nome PK
-        string cognome PK
-        string email
-        string cellulare
-    }
-
-    Address {
-        string città
-        string via
-        string civico
-    }
-    
-    Professore ||--o{ Address : "ha"
-```
-
-Notazione:
-
-![immagine](images/entity.jpeg)
+![esempio di notazione](images/entity.jpeg)
 
 - cerchio nero: chiave
 - cerchio bianco: attributo
 - rettangolo: entità
+- parentesi nei lati: cardinalità relazione
 
 Possibilità di più chiavi 
+
+![](images/mul-key.jpeg)
 
 Per un'entità posso avere due chiavi che permettono l'identitificazione univoca, es: nome + cognome oppure numero matricola. In ogni caso posso scegliere una chiave primaria, che sarà quella usata per identificare l'entità
 
 attributi possono essere *composti*
 
+**proprietà insiemi di entità**:
+
+- un insieme **non** può contenere due entità con gli stessi attributi chiave
+- ogni set ha una chiave *banale* che consiste in tutti gli attributi
+- un set può avere più chiavi
+
+Esempi
+
+![entità](images/ins-entita.jpeg)
+
+![rispettivi insiemi](images/ins-ent-2.jpeg)
+
 ### Insiemi di relazioni
+
+relazione
+: associazione tra più entità
+
+insieme di relazioni (relationship set)
+: $R \subseteq E_1 \times E_2 \times ... \times E_n$ è un insieme di relazioni tra $n \geq 2$ entità ($e_i$), ognuna disegnata dal corrispondente insieme entità $E_i$
+
+![Esempio relationship set](images/rel-set.jpeg)
+
+In questo caso abbiamo 3 relazioni (linee tratteggiate) che assumiamo appartenere all'insieme relazioni *Teaches*
+
+- *Professor*: insieme entità
+- *Course*: insieme entità
+- *Teaches*: insieme relazioni
+
+In cui in abbiamo le relazioni:
+
+1. (John Doe, BIGDATA)
+2. (Mary Jane, LOGMAT/01)
+3. (Mary Jane, DATABASES)
+
+La relazione pertanto è una dupla (elemento insieme entità 1, elemento insieme entità 2)
+
+#### Relazioni e attributi
+
+Le relazioni possono avere attributi propri (per esempio per tracciare quando un professore inizia un corso)
+
+- (John Doe, BIGDATA, 2023-01-01)
+
+La relazione in ogni caso rimane definita dall'associazione tra entità, gli attributi sono solo informazioni aggiuntive
+
+(immagine slide 19 - 2)
+
+#### Cardinalità delle relazioni
+
+In generale per una relazione binaria tra due insiemi, possiamo identificare le seguenti **cardinalità**:
+
+- **1:1**: un'entità di un insieme è associata al massimo a un'entità dell'altro insieme e viceversa
+- **1:N**: un'entità di un insieme può essere associata a più entità dell'altro insieme, ma ogni entità dell'altro insieme è associata al massimo a un'entità del primo insieme
+- **N:1**: un'entità di un insieme può essere associata al massimo a un'entità dell'altro insieme, ma ogni entità dell'altro insieme può essere associata a più entità del primo insieme
+- **N:M**: un'entità di un insieme può essere associata a più entità dell'altro insieme e viceversa
+
+Un insieme di entità può avere partecipazione *totale* o *parziale* in un insieme di relazioni.
+
+##### 1:1
+
+(immagine slide 21 - 2)
+
+##### 1:N
+
+##### N:1
+
+##### N:M
+
+#### Notazione grafica degli insiemi di relazioni
+
+![](images/not-rel.jpeg)
+
+Nelle parentesi abbiamo i vincoli di cardinalità
+
+`(min, max)` indica il numero minimo e massimo di entità che possono partecipare alla relazione
+
+le relazioni (indicate con un rombo) possono anche avere attributi propri, con la classica notazione a cerchio
+
+#### relazioni tra più insiemi di entità (&gt;2)
+
+![](images/tern-rel-not.jpeg)
+
+notazione verde: elimina ambiguità 
+
+- data una coppia (professor, course): **1** libro
+- data una coppia (professor, book): **N** corsi
+- data una coppia (course, book): **N** professori
+
+(altro esempio slide)
+
+#### Relazioni ricorsive e ruoli
+
+**Relazione ricorsiva**: relazione tra entità dello stesso insieme $R \subseteq E_1 \times E_1$
+
+esempio: relazione *è genitore di* tra entità *Persona*
+
+![](images/rec-rel.jpeg)
+
+se la relazione non è simmetrica, ogni ricorrenza può essere distinta da un **ruolo**
+
+### Attributi derivati
+
+un **attributo derivato** è un attributo il cui valore può essere calcolato a partire da altri attributi
+
+(es: numero di corsi insegnati da un professore, calcolabile contando le relazioni *Teaches* in cui il professore partecipa)
+
+Non vanno inseriti manualmente, ma una routine di update si occupa di mantenere i valori consistenti
+
+**Notazione grafica**: cerchio tratteggiato
+
+buona norma inserire nel diagramma ER delle note in cui si specifica come calcolare l'attributo derivato
+
+### Insiemi di entità deboli
+
+L'esistenza di un'entità debole dipende dall'esistenza di un'entità forte, che la identifica univocamente
+
+L'entità debole non ha una chiave propria, ma la identifichiamo mediante l'entità forte a cui è associata e una chiave parziale
+
+Ogni *weak identity set* ha un *corresponding identifying entity set*
+
+L'identifying set possiede l'insieme di entità deboli che identifica, e la relazione tra i due insiemi è detta *identifying relationship*
+
+**entità debole**: entità forte associata + chiave parziale
+
+- il weak identity set ha partecipazione totale nella identifying relationship, con una cardinalità di 1
+- l'identifying entity set può avere partecipazione parziale, la sua cardinalità può tipica è N
+- eventuali attributi coinvolti nelle chiavi parziale devono avere cardinalità (1,1)
+- catene di insiemi di entità deboli sono ammessi, dipendenza da più insiemi di entità forti è ammessa e più insiemi di chiavi parziali (vanno evitati cicli)
+
+Notazione grafica: pallino nero che da chiave parziale tocca l'arco della relazione identificante
+
+<img src="images/weak-ent.png" alt="entità debole" width="400"/>
+
+Esempio:
+
+$$
+\begin{array}{lc}
+x = 1 & \text{condizione A} \\
+y = 2 & \text{condizione B} 
+\end{array} \right \} \text{risultato}
+$$
+
+$$
+\begin{rcases}
+x = 1 \\
+y = 2
+\end{rcases} \Rightarrow z = 3
+$$

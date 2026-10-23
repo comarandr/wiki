@@ -46,19 +46,8 @@ Architettura a livelli: ogni livelli aggiunge nuove funzionalità
 
 Interfacce
 
-```{mermaid}
-graph LR
-    subgraph 1 [Host 1]
-        A[High-level obj] --> B[Protocol]
-    end
-    subgraph 2 [Host 2]
-        C[High-level obj] --> D[Protocol]
-    end
-
-    1 ~~~ 2
-    B --- D
-```
+<img src="images/interfaces.png" alt="Descrizione" width="300">
 
 Protocolli
 
-Un protocollo definisce un'interfaccia tra i livelli dello stesso sistema e tra i 
+Un protocollo definisce un'interfaccia tra i livelli dello stesso sistema e con i livelli di un *peer* system.
