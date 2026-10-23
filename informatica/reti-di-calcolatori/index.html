@@ -74,9 +74,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -217,29 +214,9 @@ un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tr
 </table>
 </div>
 <p>Interfacce</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-    subgraph 1 [Host 1]
-        A[High-level obj] --&gt; B[Protocol]
-    end
-    subgraph 2 [Host 2]
-        C[High-level obj] --&gt; D[Protocol]
-    end
-
-    1 ~~~ 2
-    B --- D
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<p><img src="images/interfaces.png" alt="Descrizione" width="300"></p>
 <p>Protocolli</p>
-<p>Un protocollo definisce un’interfaccia tra i livelli dello stesso sistema e tra i</p>
+<p>Un protocollo definisce un’interfaccia tra i livelli dello stesso sistema e con i livelli di un <em>peer</em> system.</p>
 
 
 </section>

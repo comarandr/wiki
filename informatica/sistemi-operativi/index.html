@@ -74,6 +74,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -347,14 +350,24 @@ window.Quarto = {
 <p><strong>GERARCHIA</strong>: possibilità di <strong>gruppi</strong> in cui figli sono collegati al processo padre. (esempio UNIX tutti figli di init) oppure come in windows il task creatore ha un <strong>handler</strong> che può essere passato.</p>
 <p><strong>CONTEXT SWITCH</strong>: arriva interrupt o system call, salvo il pcb del processo che stavo eseguendo, carico il pcb del nuovo processo, lo eseguo, ricarico il pcb del precedente. Porta <strong>overhead</strong>.</p>
 <p><strong>STATI DI UN PROCESSO</strong>: passaggio attraverso interruzioni, richieste risorse, scheduler</p>
-<pre class="mermaid"><code>
-flowchart 
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart 
     A[New] -- admitted --&gt; B[Ready]
     B -- scheduler dispatch --&gt; C[Running]
     C -- interrupt --&gt; B
     C -- I/O or event wait --&gt; D[Waiting]
     D -- I/O or event completion --&gt; B
-    C -- exit --&gt; E[Terminated]</code></pre>
+    C -- exit --&gt; E[Terminated]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>PROCESS CONTROL BLOCK (PCB):</strong> contiene le informazioni associate a un processo</p>
 <ul>
 <li>Stato e dati identificativi del processo/utente</li>
@@ -777,7 +790,12 @@ flowchart
 <p><span class="math inline">\(n\)</span>: numero di processi</p>
 <p>[immagine]</p>
 <p>Con un maggior grado di multiprogrammazione aumenta l’uso della cpu</p>
-<pre class="mermaid"><code>flowchart 
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart 
     A((Source Program)) --&gt; B[compiler or assembler]
     B --&gt; C((object module))
     C --&gt; D[linkage editor]
@@ -786,7 +804,13 @@ flowchart
     F --&gt; G[loader]
     H((system library)) --&gt; G
     G --&gt; I[in-memory &lt;br&gt; binary &lt;br&gt; memory &lt;br&gt; image]
-    L((dinamically &lt;br&gt; loaded &lt;br&gt; system library)) --&gt; I</code></pre>
+    L((dinamically &lt;br&gt; loaded &lt;br&gt; system library)) --&gt; I
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>Caricamento dinamico:</strong> segmento di codice caricato solo se necessario, realizzabile complementamente a livello di linguaggio/programma, SO non deve fornire supporto specifico ma può favorire con librerie apposite</p>
 <p><strong>Collegamento dinamico:</strong> librerie di sistema vengono collegate al momento dell’esecuzione. Nell’eseguibile si inseriscono delle <strong>stub</strong> ovvero delle porzioni di codice utili a localizzare la routine. Alla prima esecuzione si carica il segmento e si sostituisce alla stub l’indirizzo della routine. Permette di condividere il segmento di una libreria tra più processi, utile negli aggiornamenti di libreria ma richiede un supporto da parte del SO per far condividere più processi</p>
 <p><strong>SPAZIO DEGLI INDIRIZZI</strong></p>
@@ -1229,8 +1253,12 @@ p \cdot \text{page fault overhead + swape page out + swap page in + restart over
 <li><strong>Major:</strong> tipo di dispositivo</li>
 <li><strong>Minor:</strong> dispositivo</li>
 </ul>
-<pre class="mermaid"><code>
-flowchart 
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart 
     %% User process
     U1["request I/O"]
 
@@ -1267,7 +1295,13 @@ flowchart
     I1 --&gt;|interrupt| I2
     I2 --&gt; D2
     D2 --&gt; K3
-    K3 --&gt;|return from system call| U2</code></pre>
+    K3 --&gt;|return from system call| U2
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p><strong>PERFORMANCE I/O</strong></p>
 <p>Le performance sono molto importanti in quanto sono estremamente incisive sulle performance del SO</p>
 <ul>
