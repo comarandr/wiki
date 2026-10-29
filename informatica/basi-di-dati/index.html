@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a14d652b86e00f03abd5043129e363d4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -240,6 +240,34 @@ window.Quarto = {
   </ul></li>
   <li><a href="#attributi-derivati" id="toc-attributi-derivati" class="nav-link" data-scroll-target="#attributi-derivati">Attributi derivati</a></li>
   <li><a href="#insiemi-di-entità-deboli" id="toc-insiemi-di-entità-deboli" class="nav-link" data-scroll-target="#insiemi-di-entità-deboli">Insiemi di entità deboli</a></li>
+  <li><a href="#reificazione" id="toc-reificazione" class="nav-link" data-scroll-target="#reificazione">Reificazione</a></li>
+  <li><a href="#specializzazione" id="toc-specializzazione" class="nav-link" data-scroll-target="#specializzazione">Specializzazione</a></li>
+  <li><a href="#ereditarietà-multipla" id="toc-ereditarietà-multipla" class="nav-link" data-scroll-target="#ereditarietà-multipla">Ereditarietà multipla</a></li>
+  <li><a href="#union-type-o-categoria" id="toc-union-type-o-categoria" class="nav-link" data-scroll-target="#union-type-o-categoria">Union type (o categoria)</a></li>
+  <li><a href="#sottoclassi-condivise-vs-categorie" id="toc-sottoclassi-condivise-vs-categorie" class="nav-link" data-scroll-target="#sottoclassi-condivise-vs-categorie">Sottoclassi condivise vs categorie</a></li>
+  <li><a href="#insieme-di-entità-genitore-vs-categoria" id="toc-insieme-di-entità-genitore-vs-categoria" class="nav-link" data-scroll-target="#insieme-di-entità-genitore-vs-categoria">Insieme di entità genitore vs categoria</a></li>
+  <li><a href="#categorie-totali-e-parziali" id="toc-categorie-totali-e-parziali" class="nav-link" data-scroll-target="#categorie-totali-e-parziali">Categorie totali e parziali</a></li>
+  <li><a href="#design-pattern" id="toc-design-pattern" class="nav-link" data-scroll-target="#design-pattern">Design pattern</a>
+  <ul class="collapse">
+  <li><a href="#istanza-di-un-costrutto-libro---copia" id="toc-istanza-di-un-costrutto-libro---copia" class="nav-link" data-scroll-target="#istanza-di-un-costrutto-libro---copia">Istanza di un costrutto (libro - copia)</a></li>
+  <li><a href="#relazioni-multiple-tra-entità-studente---appelli" id="toc-relazioni-multiple-tra-entità-studente---appelli" class="nav-link" data-scroll-target="#relazioni-multiple-tra-entità-studente---appelli">Relazioni multiple tra entità (studente - appelli)</a></li>
+  <li><a href="#gestire-storiacronologia" id="toc-gestire-storiacronologia" class="nav-link" data-scroll-target="#gestire-storiacronologia">Gestire storia/cronologia</a></li>
+  </ul></li>
+  <li><a href="#documentazione" id="toc-documentazione" class="nav-link" data-scroll-target="#documentazione">Documentazione</a>
+  <ul class="collapse">
+  <li><a href="#business-rules" id="toc-business-rules" class="nav-link" data-scroll-target="#business-rules">Business rules</a></li>
+  <li><a href="#analisi-dei-requisiti" id="toc-analisi-dei-requisiti" class="nav-link" data-scroll-target="#analisi-dei-requisiti">Analisi dei requisiti</a></li>
+  <li><a href="#glossario-dei-termini" id="toc-glossario-dei-termini" class="nav-link" data-scroll-target="#glossario-dei-termini">Glossario dei termini</a></li>
+  <li><a href="#riscrittura-e-strutturazione-dei-requisiti" id="toc-riscrittura-e-strutturazione-dei-requisiti" class="nav-link" data-scroll-target="#riscrittura-e-strutturazione-dei-requisiti">Riscrittura e strutturazione dei requisiti</a></li>
+  <li><a href="#requisiti-operazionali" id="toc-requisiti-operazionali" class="nav-link" data-scroll-target="#requisiti-operazionali">Requisiti operazionali</a></li>
+  <li><a href="#criteri-generali-per-la-rappresentazione-dei-dati" id="toc-criteri-generali-per-la-rappresentazione-dei-dati" class="nav-link" data-scroll-target="#criteri-generali-per-la-rappresentazione-dei-dati">Criteri generali per la rappresentazione dei dati</a></li>
+  <li><a href="#top-down-design" id="toc-top-down-design" class="nav-link" data-scroll-target="#top-down-design">Top-down design</a></li>
+  <li><a href="#bottom-up-design" id="toc-bottom-up-design" class="nav-link" data-scroll-target="#bottom-up-design">Bottom-up design</a></li>
+  <li><a href="#inside-out-design" id="toc-inside-out-design" class="nav-link" data-scroll-target="#inside-out-design">Inside-out design</a></li>
+  <li><a href="#mixed-design" id="toc-mixed-design" class="nav-link" data-scroll-target="#mixed-design">Mixed design</a></li>
+  <li><a href="#qualità-di-uno-schema-concettuale" id="toc-qualità-di-uno-schema-concettuale" class="nav-link" data-scroll-target="#qualità-di-uno-schema-concettuale">Qualità di uno schema concettuale</a></li>
+  <li><a href="#metodo-per-la-progettazione-concettuale" id="toc-metodo-per-la-progettazione-concettuale" class="nav-link" data-scroll-target="#metodo-per-la-progettazione-concettuale">Metodo per la progettazione concettuale</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -762,19 +790,358 @@ associazione tra più entità
 <p><img src="images/weak-ent.png" alt="entità debole" width="400"></p>
 <p>Esempio:</p>
 <p><span class="math display">
-\begin{array}{lc}
-x = 1 &amp; \text{condizione A} \\
-y = 2 &amp; \text{condizione B}
-\end{array} \right \} \text{risultato}
-</span></p>
-<p><span class="math display">
 \begin{rcases}
-x = 1 \\
-y = 2
-\end{rcases} \Rightarrow z = 3
+\text{ogni hotel è caratterizzato da un nome} \\
+\text{hotel in città diverse possono avere lo stesso nome}
+\end{rcases} \Rightarrow \text{hotel: città + nome}
 </span></p>
+<p>Esempio catena:</p>
+<p><img src="images/ent-weak-chain.png" alt="catena entità deboli" width="500"></p>
+<p>dipendenza da più identifying entity set:</p>
+<p><img src="images/more-id-set.png" alt="più identifying entity set" width="500"></p>
+</section>
+<section id="reificazione" class="level3">
+<h3 class="anchored" data-anchor-id="reificazione">Reificazione</h3>
+<p><strong>reificazione</strong>: processo con cui un’associazione/relazione o un attributo complesso viene trasformato in una nuova entità autonoma</p>
+<p>esempio:</p>
+<p><img src="images/tern-rel-not.jpeg" width="400"></p>
+<p>diventa:</p>
+<p><img src="images/reification.png" width="500"></p>
+</section>
+<section id="specializzazione" class="level3">
+<h3 class="anchored" data-anchor-id="specializzazione">Specializzazione</h3>
+<p>Insiemi di entità diversi possono condividere attributi o partecipare in relazioni simili</p>
+<p>gestita tramite <strong>specializzazione</strong>, creando un insieme genitore e degli insiemi figlio, che ereditano attributi e partecipazioni dell’insieme padre</p>
+<p>la specializzazione può essere:</p>
+<ul>
+<li>Totale/parziale
+<ul>
+<li><strong>totale</strong>: ogni entità dell’insieme padre appartiene a uno degli insiemi figlio</li>
+<li><strong>parziale</strong>: entità padre non corrisponde a nessuna entità figlio</li>
+</ul></li>
+<li>Disgiunta/sovrapposta
+<ul>
+<li><strong>disgiunta</strong>: entità padre può appartenere soltanto a una entità figlio</li>
+<li><strong>sovrapposta</strong>: entità padre può appartenere a più entità figlio</li>
+</ul></li>
+</ul>
+<p>Bisogna sempre specificare il tipo di specializzazione</p>
+<p>La specializzazione può avere anche un figlio unico</p>
+<p>Un insieme di entità può essere sia genitore che figlio all’interno di una gerarchia di specializzazione</p>
+</section>
+<section id="ereditarietà-multipla" class="level3">
+<h3 class="anchored" data-anchor-id="ereditarietà-multipla">Ereditarietà multipla</h3>
+<p>Un insieme di entità può appartenere a diverse gerarchie di specializzazione, creando un reticolo di ereditarietà multipla</p>
+<p>le istanze di sottoclassi condivise formando un sottoinsieme di istanze di ogni insieme genitore, ovvero formano un sottoinsieme dell’intersezione degli insiemi genitori.</p>
+<p>Una sottoclasse condivida eredita attributi e partecipazioni di tutti i genitori, e può avere attributi e partecipazioni proprie</p>
+</section>
+<section id="union-type-o-categoria" class="level3">
+<h3 class="anchored" data-anchor-id="union-type-o-categoria">Union type (o categoria)</h3>
+<p><strong>categoria</strong>: relazione di specializzazione di un figlio con molteplici genitori, che rappresentano diversi tipi di entità</p>
+<p>Un insieme di entità può essere l’unione di più insiemi di entità, creando un <strong>union type</strong> (o categoria)</p>
+<p>La categoria è un sottoinsieme dell’unione degli insiemi genitori</p>
+<p>esempio:</p>
+<p><img src="images/categorie.png" alt="union type" width="500"></p>
+<p>Abbiamo due categorie:</p>
+<ul>
+<li><strong>owner</strong></li>
+<li><strong>registered vehicle</strong></li>
+</ul>
+</section>
+<section id="sottoclassi-condivise-vs-categorie" class="level3">
+<h3 class="anchored" data-anchor-id="sottoclassi-condivise-vs-categorie">Sottoclassi condivise vs categorie</h3>
+<p><strong>sottoclassi</strong>:</p>
+<ul>
+<li><strong>sottoinsieme delle intersezioni</strong> degli insiemi genitori</li>
+<li><strong>ereditarietà multipla</strong> da tutti i genitori</li>
+</ul>
+<p><strong>categorie</strong>:</p>
+<ul>
+<li><strong>sottoinsieme dell’unione</strong> degli insiemi genitori</li>
+<li>con genitori disgiunti, ogni istanza appartiene a uno degli insiemi genitori</li>
+<li><strong>ereditarietà selettiva</strong>, attributi dai genitori a cui appartengono</li>
+</ul>
+<p>I genitori di una categoria possono avere chiavi primarie diverse o uguali</p>
+</section>
+<section id="insieme-di-entità-genitore-vs-categoria" class="level3">
+<h3 class="anchored" data-anchor-id="insieme-di-entità-genitore-vs-categoria">Insieme di entità genitore vs categoria</h3>
+<p><strong>insieme genitore</strong>:</p>
+<ul>
+<li>include tutti i figli</li>
+<li>se specializzazione parziale, può includere anche altri tipi</li>
+</ul>
+<p><strong>categoria</strong>:</p>
+<ul>
+<li>non include tutti le istanze delle entità genitori</li>
+<li>se genitori disgiunti, ogni istanza appartiene a un genitore</li>
+<li>eredità selettiva</li>
+</ul>
+</section>
+<section id="categorie-totali-e-parziali" class="level3">
+<h3 class="anchored" data-anchor-id="categorie-totali-e-parziali">Categorie totali e parziali</h3>
+<ul>
+<li><strong>categoria totale</strong>: contiene l’intera unione dei genitori (tutti gli elementi dei genitori)</li>
+<li><strong>categoria parziale</strong>: contiene solo un sottoinsieme dell’unione dei genitori</li>
+</ul>
+<p>nota: ogni categoria totale può essere rappresentata come un insieme genitore di una specializzazione, a condizione che una chiave comune esista</p>
+</section>
+<section id="design-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="design-pattern">Design pattern</h3>
+<p>I design pattern sono modi convenzionali per rappresentare situazioni ricorrenti</p>
+<section id="istanza-di-un-costrutto-libro---copia" class="level4">
+<h4 class="anchored" data-anchor-id="istanza-di-un-costrutto-libro---copia">Istanza di un costrutto (libro - copia)</h4>
+<p>Generalmente per relazioni 1:N</p>
+<p>Importante non usare entità deboli che hanno esistono indipendentemente dall’entità forte (<em>è parte di</em>)</p>
+<p>esempio:</p>
+<ul>
+<li>libro (opera): ISBN, titolo, genere, anno</li>
+<li>copia (copia fisica): prezzo, scaffale, ripiano</li>
+</ul>
+</section>
+<section id="relazioni-multiple-tra-entità-studente---appelli" class="level4">
+<h4 class="anchored" data-anchor-id="relazioni-multiple-tra-entità-studente---appelli">Relazioni multiple tra entità (studente - appelli)</h4>
+<p>esempio:</p>
+<ul>
+<li>studente: nome, cognome</li>
+<li>appello: esito, data</li>
+<li>corso: codice</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="gestire-storiacronologia" class="level4">
+<h4 class="anchored" data-anchor-id="gestire-storiacronologia">Gestire storia/cronologia</h4>
+<p>dominio:</p>
+<ul>
+<li>un cliente può comparire una volta cone cliente corrente</li>
+<li>un cliente può comparire più volte come cliente storico</li>
+</ul>
+<p>(…)</p>
+</section>
+</section>
+<section id="documentazione" class="level3">
+<h3 class="anchored" data-anchor-id="documentazione">Documentazione</h3>
+<p>serve a completare il diagramma E-R mediante</p>
+<section id="business-rules" class="level4">
+<h4 class="anchored" data-anchor-id="business-rules">Business rules</h4>
+<p>servono a descrivere proprietà come:</p>
+<ul>
+<li>descrizione di concetti</li>
+<li>vincoli per l’integrità/consistenza/validità</li>
+<li>concetti derivati (tramite inferenza, aritmetica)</li>
+</ul>
+<p><em>asserzioni</em>: dichiarazioni atomiche</p>
+<blockquote class="blockquote">
+<p><em>concept</em> must/must not <em>expression involving the concept</em></p>
+</blockquote>
+<p><em>regole di derivazione</em>:</p>
+<blockquote class="blockquote">
+<p><em>concept</em> is obtained by <em>operation on the concepts</em></p>
+</blockquote>
+<p>vanno implementati nel database</p>
+</section>
+<section id="analisi-dei-requisiti" class="level4">
+<h4 class="anchored" data-anchor-id="analisi-dei-requisiti">Analisi dei requisiti</h4>
+<ul>
+<li>livello adeguato di astrazione</li>
+<li>standardizzazione della struttura delle frasi</li>
+<li>evitare frasi complesse</li>
+<li>identificare sinonimi e omonimi, standardizzare i termini</li>
+<li>esplicitare i riferimenti incrociati</li>
+<li>costruire un glossario dei termini</li>
+</ul>
+</section>
+<section id="glossario-dei-termini" class="level4">
+<h4 class="anchored" data-anchor-id="glossario-dei-termini">Glossario dei termini</h4>
+<div class="bordered">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Description</th>
+<th>Synonym</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trainee</td>
+<td>Partecipant in a course</td>
+<td>partecipant</td>
+<td>Course, Employer</td>
+</tr>
+<tr class="even">
+<td>Instructor</td>
+<td>Course tutor</td>
+<td>Tutor</td>
+<td>Course</td>
+</tr>
+<tr class="odd">
+<td>Course</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Employer</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="riscrittura-e-strutturazione-dei-requisiti" class="level4">
+<h4 class="anchored" data-anchor-id="riscrittura-e-strutturazione-dei-requisiti">Riscrittura e strutturazione dei requisiti</h4>
+</section>
+<section id="requisiti-operazionali" class="level4">
+<h4 class="anchored" data-anchor-id="requisiti-operazionali">Requisiti operazionali</h4>
+</section>
+<section id="criteri-generali-per-la-rappresentazione-dei-dati" class="level4">
+<h4 class="anchored" data-anchor-id="criteri-generali-per-la-rappresentazione-dei-dati">Criteri generali per la rappresentazione dei dati</h4>
+<p>concetto con molte proprietà oppure che descrive classi di oggetti autonomi → entità</p>
+<p>concetto con struttura semplice e senza proprietà rilevanti → attributo per un altro concetto a cui si riferisce</p>
+<p>concetto fornisce un collegamento tra più entità → relazione</p>
+<p>concetti che sono casi particolari di altri → generalizzazione</p>
+</section>
+<section id="top-down-design" class="level4">
+<h4 class="anchored" data-anchor-id="top-down-design">Top-down design</h4>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Specification] --&gt; B[Schema iniziale]
+    B --&gt; C[Schema raffinato]
+    C --&gt; D[Schema finale]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>schema concettuale realizzato per mezzo di una serie di perfezionamenti detti <em>trasformazioni primitive di tipo top-down</em></p>
+<ol type="1">
+<li>entità singola → due entità correlate</li>
+<li>entità singola → generalizzazione</li>
+<li>singola relazione → relazioni multiple</li>
+<li>singola relazione → entità con relazioni</li>
+<li>singola relazione → aggiunta attributi</li>
+</ol>
+</section>
+<section id="bottom-up-design" class="level4">
+<h4 class="anchored" data-anchor-id="bottom-up-design">Bottom-up design</h4>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Specifiche] --&gt; B[Componente]
+    A --&gt; C[Componente]
+    B --&gt; D[Componente]
+    B --&gt; E[Componente]
+    C --&gt; F[Componente]
+    C --&gt; G[Componente]
+    D --&gt; H[Schema]
+    E --&gt; I[Schema]
+    F --&gt; L[Schema]
+    G --&gt; M[Schema]
+    H --&gt; N[Integrazione degli schemi]
+    I --&gt; N[Integrazione degli schemi]
+    L --&gt; N[Integrazione degli schemi]
+    M --&gt; N[Integrazione degli schemi]
+    N --&gt; O[Schema concettuale finale]
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Le specifiche iniziali vengono scomposte in componenti sempre più piccole, finché ogni componente descrive un elemento atomico del dominio</p>
+<p>ogni componente descritto da uno schema concettuale, che viene poi combinato con gli altri per formare lo schema concettuale finale</p>
+<p>Le operazioni elementari sono le <em>trasformazioni primitive di tipo bottom-up</em>:</p>
+<ol type="1">
+<li>concetto → generazione di un’entità</li>
+<li>due entità → generazione di una relazione</li>
+<li>entità → generalizzazione</li>
+<li>aggregazione di attributi in un’entità</li>
+<li>aggregazione di attributi in una relazione</li>
+</ol>
+</section>
+<section id="inside-out-design" class="level4">
+<h4 class="anchored" data-anchor-id="inside-out-design">Inside-out design</h4>
+<p>Simile alla bottom-up</p>
+<p>Si scelgono alcuni concetti fondamentali e poi li si estende man mano passando per concetti correlati, estendoli radialmente</p>
+</section>
+<section id="mixed-design" class="level4">
+<h4 class="anchored" data-anchor-id="mixed-design">Mixed design</h4>
+<p>Si decompongono i requisiti in componenti ma non al punto di separarli completamente</p>
+<p>Si definisce così uno scheletro di uno schema concettuale che offre una visione d’insieme del dominio.</p>
+<p>Ogni parte dello scheletro viene poi raffinata con le trasformazioni primitive di tipo top-down, bottom-up o inside-out</p>
+</section>
+<section id="qualità-di-uno-schema-concettuale" class="level4">
+<h4 class="anchored" data-anchor-id="qualità-di-uno-schema-concettuale">Qualità di uno schema concettuale</h4>
+<ul>
+<li><strong>correttezza</strong>: lo schema usa in maniera appropriata i costrutti del modello concettuale
+<ul>
+<li><strong>errori sintattici</strong>: uso di costrutti non permessi dal modello concettuale (specializzazione su insiemi di relazioni e non entità)</li>
+<li><strong>errori semantici</strong>: uso di costrutti che non rispettano la definizione</li>
+</ul></li>
+<li><strong>completezza</strong>: lo schema rappresenta tutti i dati di interesse (ogni requisito dei dati è rappresentato da un concetto)<br>
+-<strong>leggibilità</strong></li>
+<li>essenzialità: assenza di concetti ridondanti non voluti</li>
+</ul>
+</section>
+<section id="metodo-per-la-progettazione-concettuale" class="level4">
+<h4 class="anchored" data-anchor-id="metodo-per-la-progettazione-concettuale">Metodo per la progettazione concettuale</h4>
+<ol type="1">
+<li>Analisi dei requisiti
+<ul>
+<li>costruzione di un glossario dei termini</li>
+<li>analisi dei requisiti ed eliminazioni ambiguità</li>
+<li>organizzare i requisiti in gruppi</li>
+</ul></li>
+<li>Step base
+<ul>
+<li>identificazioni concetti più rilevanti (scheletro dello schema concettuale)</li>
+</ul></li>
+<li>Scomposizione (se necessario)
+<ul>
+<li>scomporre i i requisiti riferendosi ai concetti principali</li>
+</ul></li>
+<li>Iterazione
+<ul>
+<li>rifinire i concetti dello schema in base ai requisiti</li>
+<li>aggiungere eventuali concetti mancanti</li>
+</ul></li>
+<li>Integrazione (solo con scomposizione)
+<ul>
+<li>integrare i vari sottoschemi</li>
+</ul></li>
+<li>Analisi qualitativa
+<ul>
+<li>verificare correttezza, completezza, leggibilità e essenzialità dello schema concettuale</li>
+</ul></li>
+</ol>
+<p>Esistono dei CASE tools per supportare la progettazione.</p>
 
 
+</section>
 </section>
 </section>
 
