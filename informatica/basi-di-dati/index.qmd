@@ -445,15 +445,301 @@ Notazione grafica: pallino nero che da chiave parziale tocca l'arco della relazi
 Esempio:
 
 $$
-\begin{array}{lc}
-x = 1 & \text{condizione A} \\
-y = 2 & \text{condizione B} 
-\end{array} \right \} \text{risultato}
+\begin{rcases}
+\text{ogni hotel è caratterizzato da un nome} \\
+\text{hotel in città diverse possono avere lo stesso nome}
+\end{rcases} \Rightarrow \text{hotel: città + nome}
 $$
 
-$$
-\begin{rcases}
-x = 1 \\
-y = 2
-\end{rcases} \Rightarrow z = 3
-$$
+Esempio catena:
+
+<img src="images/ent-weak-chain.png" alt="catena entità deboli" width="500"/>
+
+dipendenza da più identifying entity set:
+
+<img src="images/more-id-set.png" alt="più identifying entity set" width="500"/>
+
+### Reificazione
+
+**reificazione**: processo con cui un'associazione/relazione o un attributo complesso viene trasformato in una nuova entità autonoma
+
+esempio:
+
+<img src="images/tern-rel-not.jpeg" width="400"/>
+
+diventa:
+
+<img src="images/reification.png" width="500"/>
+
+### Specializzazione
+
+Insiemi di entità diversi possono condividere attributi o partecipare in relazioni simili
+
+gestita tramite **specializzazione**, creando un insieme genitore e degli insiemi figlio, che ereditano attributi e partecipazioni dell'insieme padre
+
+la specializzazione può essere:
+
+- Totale/parziale
+  - **totale**: ogni entità dell'insieme padre appartiene a uno degli insiemi figlio
+  - **parziale**: entità padre non corrisponde a nessuna entità figlio
+- Disgiunta/sovrapposta
+  - **disgiunta**: entità padre può appartenere soltanto a una entità figlio
+  - **sovrapposta**: entità padre può appartenere a più entità figlio
+
+Bisogna sempre specificare il tipo di specializzazione
+
+La specializzazione può avere anche un figlio unico
+
+Un insieme di entità può essere sia genitore che figlio all'interno di una gerarchia di specializzazione
+
+### Ereditarietà multipla
+
+Un insieme di entità può appartenere a diverse gerarchie di specializzazione, creando un reticolo di ereditarietà multipla
+
+le istanze di sottoclassi condivise formando un sottoinsieme di istanze di ogni insieme genitore, ovvero formano un sottoinsieme dell'intersezione degli insiemi genitori.
+
+Una sottoclasse condivida eredita attributi e partecipazioni di tutti i genitori, e può avere attributi e partecipazioni proprie
+
+### Union type (o categoria)
+
+**categoria**: relazione di specializzazione di un figlio con molteplici genitori, che rappresentano diversi tipi di entità
+
+Un insieme di entità può essere l'unione di più insiemi di entità, creando un **union type** (o categoria)
+
+La categoria è un sottoinsieme dell'unione degli insiemi genitori
+
+esempio:
+
+<img src="images/categorie.png" alt="union type" width="500"/>
+
+Abbiamo due categorie:
+
+- **owner**
+- **registered vehicle**
+
+### Sottoclassi condivise vs categorie
+
+**sottoclassi**: 
+
+- **sottoinsieme delle intersezioni** degli insiemi genitori
+- **ereditarietà multipla** da tutti i genitori
+
+**categorie**:
+
+- **sottoinsieme dell'unione** degli insiemi genitori
+- con genitori disgiunti, ogni istanza appartiene a uno degli insiemi genitori
+- **ereditarietà selettiva**, attributi dai genitori a cui appartengono
+
+I genitori di una categoria possono avere chiavi primarie diverse o uguali
+
+### Insieme di entità genitore vs categoria
+
+**insieme genitore**:
+
+- include tutti i figli
+- se specializzazione parziale, può includere anche altri tipi
+
+**categoria**:
+
+- non include tutti le istanze delle entità genitori
+- se genitori disgiunti, ogni istanza appartiene a un genitore
+- eredità selettiva
+
+### Categorie totali e parziali
+
+- **categoria totale**: contiene l'intera unione dei genitori (tutti gli elementi dei genitori)
+- **categoria parziale**: contiene solo un sottoinsieme dell'unione dei genitori
+
+nota: ogni categoria totale può essere rappresentata come un insieme genitore di una specializzazione, a condizione che una chiave comune esista
+
+### Design pattern
+
+I design pattern sono modi convenzionali per rappresentare situazioni ricorrenti 
+
+#### Istanza di un costrutto (libro - copia)
+
+Generalmente per relazioni 1:N
+
+Importante non usare entità deboli che hanno esistono indipendentemente dall'entità forte (_è parte di_)
+
+esempio:
+
+- libro (opera): ISBN, titolo, genere, anno
+- copia (copia fisica): prezzo, scaffale, ripiano
+
+#### Relazioni multiple tra entità (studente - appelli)
+
+esempio:
+
+- studente: nome, cognome
+- appello: esito, data
+- corso: codice
+
+```{mermaid}
+flowchart
+
+```
+
+#### Gestire storia/cronologia
+
+dominio: 
+
+- un cliente può comparire una volta cone cliente corrente
+- un cliente può comparire più volte come cliente storico
+
+(...)
+
+### Documentazione
+
+serve a completare il diagramma E-R mediante
+
+#### Business rules
+
+servono a descrivere proprietà come:
+
+- descrizione di concetti
+- vincoli per l'integrità/consistenza/validità
+- concetti derivati (tramite inferenza, aritmetica)
+
+*asserzioni*: dichiarazioni atomiche 
+
+> *concept* must/must not *expression involving the concept*
+
+*regole di derivazione*:
+
+> *concept* is obtained by *operation on the concepts*
+
+vanno implementati nel database
+
+#### Analisi dei requisiti
+
+- livello adeguato di astrazione
+- standardizzazione della struttura delle frasi
+- evitare frasi complesse
+- identificare sinonimi e omonimi, standardizzare i termini
+- esplicitare i riferimenti incrociati
+- costruire un glossario dei termini
+
+
+
+#### Glossario dei termini
+
+::::: {.bordered}
+
+| Term | Description | Synonym | Links |
+| --- | --- | --- | --- |
+| Trainee | Partecipant in a course | partecipant | Course, Employer |
+| Instructor | Course tutor | Tutor | Course
+| Course |
+| Employer |
+
+:::::
+
+#### Riscrittura e strutturazione dei requisiti
+
+#### Requisiti operazionali
+
+#### Criteri generali per la rappresentazione dei dati
+
+concetto con molte proprietà oppure che descrive classi di oggetti autonomi &rarr; entità
+
+concetto con struttura semplice e senza proprietà rilevanti &rarr; attributo per un altro concetto a cui si riferisce
+
+concetto fornisce un collegamento tra più entità &rarr; relazione
+
+concetti che sono casi particolari di altri &rarr; generalizzazione
+
+#### Top-down design
+
+```{mermaid}
+flowchart TD
+    A[Specification] --> B[Schema iniziale]
+    B --> C[Schema raffinato]
+    C --> D[Schema finale]
+```
+
+schema concettuale realizzato per mezzo di una serie di perfezionamenti detti *trasformazioni primitive di tipo top-down*
+
+1. entità singola &rarr; due entità correlate
+2. entità singola &rarr; generalizzazione
+3. singola relazione &rarr; relazioni multiple
+4. singola relazione &rarr; entità con relazioni
+5. singola relazione &rarr; aggiunta attributi 
+
+#### Bottom-up design
+
+```{mermaid}
+flowchart TD
+    A[Specifiche] --> B[Componente]
+    A --> C[Componente]
+    B --> D[Componente]
+    B --> E[Componente]
+    C --> F[Componente]
+    C --> G[Componente]
+    D --> H[Schema]
+    E --> I[Schema]
+    F --> L[Schema]
+    G --> M[Schema]
+    H --> N[Integrazione degli schemi]
+    I --> N[Integrazione degli schemi]
+    L --> N[Integrazione degli schemi]
+    M --> N[Integrazione degli schemi]
+    N --> O[Schema concettuale finale]
+
+```
+
+Le specifiche iniziali vengono scomposte in componenti sempre più piccole, finché ogni componente descrive un elemento atomico del dominio
+
+ogni componente descritto da uno schema concettuale, che viene poi combinato con gli altri per formare lo schema concettuale finale
+
+Le operazioni elementari sono le *trasformazioni primitive di tipo bottom-up*:
+
+1. concetto &rarr; generazione di un'entità
+2. due entità &rarr; generazione di una relazione
+3. entità &rarr; generalizzazione
+4. aggregazione di attributi in un'entità
+5. aggregazione di attributi in una relazione
+
+#### Inside-out design
+
+Simile alla bottom-up
+
+Si scelgono alcuni concetti fondamentali e poi li si estende man mano passando per concetti correlati, estendoli radialmente
+
+#### Mixed design
+
+Si decompongono i requisiti in componenti ma non al punto di separarli completamente
+
+Si definisce così uno scheletro di uno schema concettuale che offre una visione d'insieme del dominio.
+
+Ogni parte dello scheletro viene poi raffinata con le trasformazioni primitive di tipo top-down, bottom-up o inside-out
+
+#### Qualità di uno schema concettuale 
+
+- **correttezza**: lo schema usa in maniera appropriata i costrutti del modello concettuale
+  - **errori sintattici**: uso di costrutti non permessi dal modello concettuale (specializzazione su insiemi di relazioni e non entità)
+  - **errori semantici**: uso di costrutti che non rispettano la definizione
+- **completezza**: lo schema rappresenta tutti i dati di interesse (ogni requisito dei dati è rappresentato da un concetto)
+-**leggibilità**
+- essenzialità: assenza di concetti ridondanti non voluti
+
+#### Metodo per la progettazione concettuale
+
+1. Analisi dei requisiti
+    - costruzione di un glossario dei termini
+    - analisi dei requisiti ed eliminazioni ambiguità
+    - organizzare i requisiti in gruppi
+2. Step base
+    - identificazioni concetti più rilevanti (scheletro dello schema concettuale)
+3. Scomposizione (se necessario)
+    - scomporre i i requisiti riferendosi ai concetti principali
+4. Iterazione
+    - rifinire i concetti dello schema in base ai requisiti
+    - aggiungere eventuali concetti mancanti
+5. Integrazione (solo con scomposizione)
+    - integrare i vari sottoschemi
+6. Analisi qualitativa
+    - verificare correttezza, completezza, leggibilità e essenzialità dello schema concettuale
+  
+
+Esistono dei CASE tools per supportare la progettazione.
