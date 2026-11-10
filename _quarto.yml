@@ -22,6 +22,10 @@ website:
 
 format:
   html:
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
     theme:
       - cosmo
       - brand
@@ -29,6 +33,9 @@ format:
     toc: true
     toc-depth: 4
     html-math-method: katex
+
+filters:
+  - pseudocode
 
 execute: 
   cache: true

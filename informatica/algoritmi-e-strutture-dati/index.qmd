@@ -4,7 +4,7 @@ description: "Appunti di algoritmi del 2 anno di informatica"
 categories: [informatica]
 ---
 
-## Algoritmi di ordinamento
+## Algoritmi
 
 ### Insertion Sort
 
@@ -12,25 +12,576 @@ Inserisco il nuovo elemento nella posizione corretta
 - a sinistra gli elementi sono già ordinati
 - finché trovo elementi maggiori, continuo a spostare l'elemento a sinistra
 
-```pascal
-InsertionSort(A):
-    for i <- 2 to A.length:
-        key = A[i]
-        j = i - 1
-        while j > 0 and A[j] > key:
-            A[j + 1] = A[j]
-            j = j - 1
-        A[j + 1] = key
-```
+::: {#alg-inserionsort}
 
+## Insertion Sort
+
+<details>
+<summary>Pseudocodice</summary>
+
+```pseudocode
+#| label: algo-insertionsort
+#| html-line-number: false
+#| html-indent-lines: true
+
+\begin{algorithm}
+\caption{InsertionSort}
+\begin{algorithmic}[1]
+\Procedure{InsertionSort}{$A$}
+    \For{$i \gets 2$ \To $A.\text{length}$}
+        \State $key \gets A[i]$
+        \State $j \gets i - 1$
+        \While{$j > 0$ \And $A[j] > key$}
+            \State $A[j + 1] \gets A[j]$
+            \State $j \gets j - 1$
+        \EndWhile
+        \State $A[j + 1] \gets key$
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+</details>
+:::
+
+---
 
 ### Merge Sort
 
+::: {#alg-mergesort}
+## Merge Sort
+<details>
+<summary>Pseudocodice</summary>
 ```pseudocode
+#| label: algo-mergesort
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{MergeSort}
+\begin{algorithmic}[1]
+\Procedure{MergeSort}{$A,p,q$}
+    \If{$p < q$}
+        \State $r \gets \frac{p+q}{2}$
+        \Call{MergeSort}{A,p,r}
+        \Call{MergeSort}{A,r+1,q}
+        \Call{Merge}{A,p,r,q}
+    \EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+</details>
+:::
+
+#### Merge (stabile, non inplace) - $\Theta (n)$
+
+::: {#alg-merge}
+
+<details>
+<summary>Pseudocodice</summary>
+
+```pseudocode
+#| label: algo-merge
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{Merge}
+\begin{algorithmic}[1]
+\Procedure{Merge}{$A,p,r,q$}
+\State $B \gets$ new array of size $(q-p+1)$
+\State $i \gets p$
+\State $j \gets r+1$
+\For{$k \gets 0$ \To $B.length-1$}
+    \If{$j > q$}
+        \State $B[k] \gets A[i]$
+        \State $i \gets i+1$
+    \ElsIf{$i > r$}
+        \State $B[k] \gets A[j]$
+        \State $j \gets j+1$
+    \ElsIf{$A[i] < A[j]$}
+        \State $B[k] \gets A[i]$
+        \State $i \gets i+1$
+    \Else
+        \State $B[k] \gets A[j]$
+        \State $j \gets j+1$
+    \EndIf
+\EndFor
+\For{$k \gets 0$ \To $B.length-1$}
+    \State $A[p+k] \gets B[k]$
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+</details>
+:::
+
+---
+
+### Binary Search
+
+:::{#alg-binarysearch}
+
+## Binary Search
+
+<details>
+<summary>Pseudocodice</summary>
+
+```pseudocode
+#| label: algo-binarysearch
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{BinarySearch}
+\begin{algorithmic}[1]
+\Procedure{BinarySearch}{$A,p,q,k$}
+    \If{$p = q$}
+        \State \Return $A[p] = k$
+    \Else
+        \State $r \gets \frac{p+q}{2}$
+    \EndIf
+    \If{$(A[r] = k)$}
+        \State \Return 1
+    \ElsIf{$A[r] > k$}
+        \State \Return \Call{BinarySearch}{A, p, r-1, k}
+    \Else
+        \State \Return \Call{BinarySearch}{A, r+1, q, k}
+    \EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+</details>
+:::
+
+---
+
+### HeapSort (non stabile, in-place)
+
+Algoritmo con costo temporale $O(n \log n)$ 
+
+::: {#alg-heapsort}
+## HeapSort
+<details>
+<summary>Pseudocodice</summary>
+```pseudocode
+#| label: algo-heapsort
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{HeapSort}
+\begin{algorithmic}[1]
+\Procedure{HeapSort}{$A$}
+    \State \Call{BuildHeap}{A}
+    \For{$i \gets A.\text{length}$ \textbf{down to} $2$}
+        \State \Call{Scambia}{A, 1, i}
+        \State $A.\text{heapsize} \gets A.\text{heapsize} - 1$
+        \State \Call{Heapify}{A, 1}
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+</details>
+:::
+
+#### Heapify
+
+costo temporale: $O (\log n)$
+
+$$ T(n) = \begin{cases} \Theta (1), \quad n \leq \ \\ T(\frac{2}{3} n) + \Theta (1), \quad n \gt 1 \end{cases} $$
+
+```pseudocode
+#| label: algo-heapify
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{Heapify}
+\begin{algorithmic}[1]
+\Procedure{Heapify}{$H, i$}
+    \State $l \gets$ \Call{Left}{i}
+    \State $r \gets$ \Call{Right}{i}
+    \If{$(l \leq H.\text{heapsize} \And H[l] > H[i])$}
+        \State $m \gets l$
+    \Else
+        \State $m \gets i$
+    \EndIf
+    \If{$(r \leq H.\text{heapsize} \And H[r] > H[m])$}
+        \State $m \gets r$
+    \EndIf
+    \If{$(m \neq i)$}
+        \State \Call{Scambia}{H, m, i}
+        \State \Call{Heapify}{H, m}
+    \EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 ```
 
-### Bubble Sort
 
-### Heap Sort
+::: {#tbl-panel layout-ncol=3}
 
-### Selection Sort
+```pseudocode
+#| label: algo-left
+#| html-line-number: false
+\begin{algorithm}
+\caption{Left}
+\begin{algorithmic}[1]
+\Procedure{Left}{$i$}
+    \State \Return $2i$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+
+```pseudocode
+#| label: algo-right
+#| html-line-number: false
+\begin{algorithm}
+\caption{Right}
+\begin{algorithmic}[1]
+\Procedure{Right}{$i$}
+    \State \Return $2i + 1$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm} 
+```
+
+```pseudocode
+#| label: algo-parent
+#| html-line-number: false
+\begin{algorithm}
+\caption{Parent}
+\begin{algorithmic}[1]
+\Procedure{Parent}{$i$}
+    \State \Return $\lfloor i/2 \rfloor$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+
+Procedure
+:::
+
+---
+
+### QuickSort
+
+costo temporale
+
+$$ T(n) = \begin{cases} \Theta (1), \quad n \leq 1 \\ T(m) + T(m-n-1) + \Theta (n), \quad n \gt 1 \end{cases} $$
+
+
+```pseudocode
+#| label: algo-quicksort
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{QuickSort}
+\begin{algorithmic}[1]
+\Procedure{QuickSort}{$A, p, q$}
+    \If{$p < q$}
+        \State $r \gets$ \Call{Partition}{A, p, q}
+        \State \Call{QuickSort}{A, p, r-1}
+        \State \Call{QuickSort}{A, r+1, q}
+    \EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+
+
+#### Partition (Lomuto)
+
+prende come perno l'ultimo elemento e ritorna la sua posizione corretta
+
+```pseudocode
+#| label: algo-partition
+#| html-line-number: false
+#| html-indent-lines: true
+
+\begin{algorithm}
+\caption{Lomuto Partition}
+\begin{algorithmic}
+\Procedure{Partition}{$A, p, q$}
+  \State $x \gets A[q]$
+  \State $i \gets p - 1$
+  \For{$j \gets p$ \To $q-1$}
+    \If{$A[j] \leq x$}
+      \State $i \gets i + 1$
+      \State \Call{Scambia}{A, i, j}
+    \EndIf
+  \EndFor
+  \State \Call{Scambia}{A, i+1, q}
+  \State \Return $i+1$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+
+### QuickSort + Select
+
+da correggere
+
+```pseudocode
+#| label: algo-quicksort-select
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{QuickSort}
+\begin{algorithmic}[1]
+\Procedure{QuickSort}{$A, p, q$}
+    \If{$p < q$}
+        \State $M \gets$ \Call{SelectNaive}{A, p, q}
+        \State \Call{QuickSort}{A, p, r-1}
+        \State \Call{QuickSort}{A, r+1, q}
+    \EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+
+### Counting Sort
+
+$A$ veettore di interi nell'intervallo $[0, k]$ con $k \in O(n)$ (n = lunghezza di A)
+
+nota: $k$ non è necessariamente una costante. 
+
+```pseudocode
+#| label: algo-countingsort
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{CountingSort}
+\begin{algorithmic}[1]
+\Procedure{CountingSort}{$A, B, k$}
+    \State $C \gets$ new array of size $(k+1)$
+    \For{$j \gets 0$ \To $k$}
+        \State $C[j] \gets 0$
+    \EndFor
+    \For{$i \gets 1$ \To $A.\text{length}$}
+        \State $C[A[i]] \gets C[A[i]] + 1$
+    \EndFor
+    \For{$j \gets 1$ \To $k$}
+        \State $C[j] \gets C[j] + C[j-1]$
+    \EndFor
+    \For{$i \gets A.\text{length}$ \Downto $1$}
+        \State $B[C[A[i]]] \gets A[i]$
+        \State $C[A[i]] \gets C[A[i]] - 1$
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
+
+### Radix Sort
+
+Algoritmo per ordinare n numeri di d digit, con d costante rispetto n. Ordino a ogni iterazione a partire dalla cifra meno significativa. (es. Counting su una singola cifra a ogni iterazione)
+
+### Bucket Sort
+
+A vettore di numeri reali/razionali compresi tra [0,1) uniformemente distribuiti nell’intervallo [0,1).
+
+### Select / Medians of medians
+
+---
+
+## Strutture Dati
+
+### Vettori
+
+### Liste
+
+### Heap
+
+Si tratta di:
+
+- un albero **quasi completo** di $n$ nodi
+- con circa $\frac{n}{2}$ nodi foglia
+- con costo di inserimento/rimozione $\log n$
+
+#### Max-Heap
+
+Si tratta di un albero binario quasi completo in cui ogni elemento ha una chiave minore o uguale a quella del proprio genitore
+
+```{mermaid}
+graph TD
+    A((10)) --> B((7))
+    A --> C((8))
+    B --> D((3))
+    B --> E((4))
+    C --> F((5))
+    C --> G((6))
+```
+
+### Tabelle di Hash
+
+#### Hash con chaining
+
+#### Hash con open addressing
+
+### Binary Search Tree
+
+Il BST è un albero binario in cui ogni nodo ha una chiave intera tale che 
+
+$$\forall x \in T, ( \forall y \in T(x.left): y.key \lt x.key ) \land ( \forall y \in T(x.right): y.key \gt x.key )$$
+
+:::{#tbl-panel layout-ncol=2}
+
+```{mermaid}
+graph TD
+    A((4)) --> B((2))
+    A --> C((6))
+    B --> D((1))
+    B --> E((3))
+    C --> F((5))
+    C --> G((7))
+```
+
+| Visita | Ordine |
+| --- | --- |
+| Pre-order (x, sx, dx) | $4, 2, 1, 3, 6, 5, 7$ |
+| Post-order (sx, dx, x) | $1, 3, 2, 5, 7, 6, 4$ |
+| In-order (sx, x, dx) | $1, 2, 3, 4, 5, 6, 7$ |
+
+Visita BST
+
+:::
+
+:::{#thm-BST .theorem}
+## Teorema BST
+
+Se la visita in-order($T$) di un albero stampa le chiavi in **ordine crescente**, allora $T$ è un BST.
+:::
+
+```{mermaid}
+graph TD
+    A((RADICE)) --> B((2))
+    A --> C((6))
+    B --> D((MINIMO))
+    B --> E((3))
+    C --> F((5))
+    C --> G((MASSIMO))
+```
+
+
+### Red Black Tree
+
+Si tratta di un BST (Binary Search Tree) in cui ogni nodo ha un colore (rosso o nero) e rispetta le seguenti proprietà:
+
+- è BST con nodi **red** e **black**
+- le foglie sono **black nil**
+- ogni nodo red ha 2 figli black
+- ogni cammino nodo-foglia ha lo stesso numero di nodi black (black height $bh(x)$)
+- l'altezza nera della radice corrisponde all'altezza nera dell'albero
+- la radice è black
+
+```{dot}
+digraph RBT {
+    graph [nodesep=0.4, ranksep=0.4];
+    node [fontname="Helvetica", fontsize=12, shape=circle, width=0.5, fixedsize=true, fontcolor=white, style=filled];
+    edge [arrowsize=0.7];
+
+    // Definizione dei nodi Neri (Black)
+    node [fillcolor="#222222", color="#222222"];
+    13; 8; 17; 11; 25;
+    
+    // Nodi foglia NIL (Neri e rettangolari/piccoli)
+    node [shape=point, width=0.1, fillcolor="#222222", color="#222222"];
+    nil1; nil2; nil3; nil4; nil5; nil6; nil7;
+
+    // Definizione dei nodi Rossi (Red)
+    node [shape=circle, width=0.5, fixedsize=true, fillcolor="#d9534f", color="#d9534f"];
+    1; 6; 15; 22; 27;
+
+    // Connessioni dell'albero
+    13 -> 8;
+    13 -> 17;
+
+    8 -> 1;
+    8 -> 11;
+
+    1 -> nil1;
+    1 -> 6;
+    
+    6 -> nil2;
+    6 -> nil3;
+
+    11 -> nil4;
+    11 -> nil5;
+
+    17 -> 15;
+    17 -> 25;
+
+    15 -> nil6;
+    15 -> nil7;
+
+    25 -> 22;
+    25 -> 27;
+}
+```
+
+### B-Tree di grado $t$
+
+Il B-Tree è un albero bilanciato in cui ogni nodo $x$ ha $x.n$ chiavi in ordine crescente
+
+campi di un nodo $x$:
+
+- $x.n \in \mathbb{N}$: numero di chiavi nel nodo $x$
+- $x.leaf$: booleano che indica se $x$ è una foglia
+- $x.key[1,..,x.n]$: array di chiavi in ordine crescente
+- $x.c[1,..,x.n+1]$: array di puntatori ai figli del nodo $x$
+
+### Insiemi disgiunti
+
+
+
+#### Liste concatenate
+
+#### Alberi
+
+### Grafi
+
+---
+
+## Concetti di matematica
+
+### Notazione asintotica
+
+Strumento per confrontare le funzioni in termini di crescita asintotica, ovvero la rapidità con cui divergono all'infinito. La notazione asintotica è utile per analizzare la complessità degli algoritmi e confrontarne le funzioni di costo.
+
+Caratteristiche delle funzioni:
+
+- $f: \mathbb{N} \rightarrow \mathbb{R}$
+- **monotone** e **crescenti**
+- **divergenti**: $\lim_{n \to \infty} f(n) = \infty$
+
+#### Notazione O-grande 
+
+$$ O(g(n)) = \{ f(n) \mid \exists c > 0, \, \exists \bar{n}, \, \forall n \geq \bar{n} : f(n) \leq c \cdot g(n) \} $$
+
+$O(g(n))$ è un insieme di funzioni che crescono al massimo come $g(n)$, ovvero $f(n)$ è limitata superiormente da $g(n)$ a meno di una costante moltiplicativa.
+
+### Stime di somme
+
+| Tipo di somma | Formula |
+| --- | --- |
+| Somma di Gauss | $\sum_{i=1}^{h} i= \frac{h(h+1)}{2}$ |
+| Somma di potenze con $k \geq 1$ | $\sum_{i=1}^{h} i^k \in O(h^{k+1})$ |
+| Somma di potenze con $k \geq 1$ | $\sum_{i=1}^{h} i^k \in \Omega (h^{k+1})$ |
+| Serie geometrica con $\rho \geq 1$ | $\sum_{i=0}^{+ \infty} \rho^i = + \infty$ |
+| Serie geometrica con $\rho \lt 1$ | $\sum_{i=0}^{+ \infty} \rho^i = \frac{1}{1-\rho}$ |
+| Somma parziale della serie geometrica | $\sum_{i=0}^{+ \infty} \rho^i = \frac{1-\rho^{h+1}}{1-\rho} = \frac{\rho^{h+1} - 1}{\rho-1}$ |
+
+### Proprietà dei logaritmi
+
+| Proprietà | Formula |
+| --- | --- |
+| definizione | $a^{\log_a x} = x$ |
+| logaritmo di un prodotto | $\log_a (xy) = \log_a x + \log_a y$ |
+| logaritmo di un quoziente | $\log_a (\frac{x}{y}) = \log_a x - \log_a y$ |
+| logaritmo di una potenza | $\log_a (x^k) = k \log_a x$ |
+| cambio di base | $\log_a x = \frac{\log_b x}{\log_b a}$ |
+| inversione base esponente | $\log_a x = \frac{1}{\log_x a}$ |
+| complessità | $n^{\log_b m} = m^{\log_b n}$ |
+| complessità | $\Theta (\log (n!)) = \Theta (n \log n)$ |

@@ -13,11 +13,15 @@ Durante il corso gli IDE usati sono stati DrRacket e BlueJ.
 Linguaggio: [scheme](/linguaggi/scheme/)
 Prima parte del corso di programmazione funzionale, con il linguaggio Scheme.
 
+### Dimostrazioni di correttezza
+
 ## Programmazione imperativa
 
 
 Linguaggio: [java](/linguaggi/java/)
 Seconda parte del corso di programmazione imperativa, con il linguaggio Java.
+
+### Dimostrazioni di correttezza
 
 ## Esercizi di laboratorio
 
