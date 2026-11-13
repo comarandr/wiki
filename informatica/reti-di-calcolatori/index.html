@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,14 +39,17 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a14d652b86e00f03abd5043129e363d4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8d3ad9c781c51ccd60b292c95058b2c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.js"></script>
+<link href="../../site_libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,24 +77,95 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <style type="text/css">
+    .ps-root .ps-algorithm {
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+    }
+    .pseudocode-container {
+      text-align: left;
+    }
+    .callout .pseudocode-container .ps-root {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    .callout .pseudocode-container .ps-root .ps-algorithm p {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    </style>
+  
+      <style type="text/css">
+      .ps-algorithm > .ps-line {
+        text-align: left;
+      }
+      </style>
+    
 
+  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Wiki</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -114,6 +188,7 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -122,20 +197,42 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#foundations" id="toc-foundations" class="nav-link active" data-scroll-target="#foundations">Foundations</a>
   <ul>
   <li><a href="#cost-effective-resource-sharing" id="toc-cost-effective-resource-sharing" class="nav-link" data-scroll-target="#cost-effective-resource-sharing">Cost-effective resource sharing</a></li>
-  <li><a href="#network-architecture-and-protocols" id="toc-network-architecture-and-protocols" class="nav-link" data-scroll-target="#network-architecture-and-protocols">Network Architecture and Protocols</a></li>
+  <li><a href="#network-architecture-and-protocols" id="toc-network-architecture-and-protocols" class="nav-link" data-scroll-target="#network-architecture-and-protocols">Network Architecture and Protocols</a>
+  <ul class="collapse">
+  <li><a href="#protocolli" id="toc-protocolli" class="nav-link" data-scroll-target="#protocolli">Protocolli</a></li>
+  <li><a href="#grafo-dei-protocolli" id="toc-grafo-dei-protocolli" class="nav-link" data-scroll-target="#grafo-dei-protocolli">Grafo dei protocolli</a></li>
+  <li><a href="#incapsulamento" id="toc-incapsulamento" class="nav-link" data-scroll-target="#incapsulamento">Incapsulamento</a></li>
+  </ul></li>
+  <li><a href="#iso-osi-architecture" id="toc-iso-osi-architecture" class="nav-link" data-scroll-target="#iso-osi-architecture">ISO OSI Architecture</a>
+  <ul class="collapse">
+  <li><a href="#repeater-livello-fisico" id="toc-repeater-livello-fisico" class="nav-link" data-scroll-target="#repeater-livello-fisico">Repeater (livello fisico)</a></li>
+  <li><a href="#bridge-livello-di-collegamento-dati" id="toc-bridge-livello-di-collegamento-dati" class="nav-link" data-scroll-target="#bridge-livello-di-collegamento-dati">Bridge (livello di collegamento dati)</a></li>
+  <li><a href="#router-livello-di-rete" id="toc-router-livello-di-rete" class="nav-link" data-scroll-target="#router-livello-di-rete">Router (livello di rete)</a></li>
+  <li><a href="#proxy-livello-di-trasporto" id="toc-proxy-livello-di-trasporto" class="nav-link" data-scroll-target="#proxy-livello-di-trasporto">Proxy (livello di trasporto)</a></li>
+  </ul></li>
+  <li><a href="#tcpip-architecture-internet-architecture" id="toc-tcpip-architecture-internet-architecture" class="nav-link" data-scroll-target="#tcpip-architecture-internet-architecture">TCP/IP Architecture (Internet Architecture)</a></li>
+  <li><a href="#network-api" id="toc-network-api" class="nav-link" data-scroll-target="#network-api">Network API</a></li>
+  <li><a href="#socket-api" id="toc-socket-api" class="nav-link" data-scroll-target="#socket-api">Socket API</a></li>
+  <li><a href="#client-server-model-con-tcp" id="toc-client-server-model-con-tcp" class="nav-link" data-scroll-target="#client-server-model-con-tcp">Client-Server Model con TCP</a></li>
+  <li><a href="#performance" id="toc-performance" class="nav-link" data-scroll-target="#performance">Performance</a>
+  <ul class="collapse">
+  <li><a href="#latenza" id="toc-latenza" class="nav-link" data-scroll-target="#latenza">Latenza</a></li>
+  <li><a href="#jitter" id="toc-jitter" class="nav-link" data-scroll-target="#jitter">Jitter</a></li>
+  <li><a href="#capienza-canale" id="toc-capienza-canale" class="nav-link" data-scroll-target="#capienza-canale">Capienza canale</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -215,10 +312,185 @@ un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tr
 </div>
 <p>Interfacce</p>
 <p><img src="images/interfaces.png" alt="Descrizione" width="300"></p>
-<p>Protocolli</p>
-<p>Un protocollo definisce un’interfaccia tra i livelli dello stesso sistema e con i livelli di un <em>peer</em> system.</p>
+<section id="protocolli" class="level4">
+<h4 class="anchored" data-anchor-id="protocolli">Protocolli</h4>
+<p>Un protocollo definisce un’interfaccia tra i livelli dello stesso sistema e con i livelli di un sistema paritetico.</p>
+<p>Ogni oggetto protocollo ha due interfacce</p>
+<ul>
+<li><strong>interfaccia di servizio</strong>: operazioni su questo protocollo</li>
+<li><strong>interfaccia peer-to-peer</strong>: messaggio scambiati tra pari</li>
+</ul>
+<p>A volte ci si riferisce sia alle specifiche dell’interfaccia peer-to-peer che ai moduli che la implementano</p>
+<p>specifiche del protocollo: prosa, pseudocodice, modello a stati finiti<br>
+inter<br>
+interadoperabilità: quando due protocolli implementano le specifiche accuratamente<br>
+IETF (Internet Engineering Task Force): definisce i protocolli</p>
+</section>
+<section id="grafo-dei-protocolli" class="level4">
+<h4 class="anchored" data-anchor-id="grafo-dei-protocolli">Grafo dei protocolli</h4>
+<p>Un grafo dei nodi</p>
+<ul>
+<li>nodi: protocolli</li>
+<li>archi: relazioni di dipendenza tra protocolli</li>
+</ul>
+</section>
+<section id="incapsulamento" class="level4">
+<h4 class="anchored" data-anchor-id="incapsulamento">Incapsulamento</h4>
+<p>Ogni livello necessita di alcune informazioni per implementare funzioni verso i livelli superiori</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Data] --&gt; B[Protocollo]
+    B --&gt; C[P Header &amp;vert; Data]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Un messaggio intero <strong>PDU</strong> (Protocol Data Unit) è composto da:</p>
+<ul>
+<li><strong>header</strong>: informazioni di controllo</li>
+<li><strong>payload</strong> o <strong>SDU Service Data Unit</strong>: informazioni da trasmettere</li>
+</ul>
+<p>Il PDU diventa un SDU per il livello inferiore, che aggiunge un proprio header e lo invia al livello inferiore successivo.</p>
+<p>Generalmente per i protocolli è sufficiente leggere l’header, i livelli superiori leggono il payload e ignorano l’header.</p>
+<p>(immagine slide 1 - 48)</p>
+</section>
+</section>
+<section id="iso-osi-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="iso-osi-architecture">ISO OSI Architecture</h3>
+<p>ISO (International Organization for Standardization) è un’organizzazione internazionale che sviluppa e pubblica standard internazionali.</p>
+<p>OSI (Open Systems Interconnection) è un modello di riferimento per la progettazione di protocolli di rete.</p>
+<p>(immagine dei livelli)</p>
+<p>Si tratta di una struttura standard per progettazioni di protocolli</p>
+<ul>
+<li><strong>livelli superiori</strong></li>
+<li><strong>livelli inferiori</strong></li>
+</ul>
+<ol type="1">
+<li><strong>Livello fisico</strong>: trasmissione di bit su un canale di comunicazione</li>
+<li><strong>livello di collegamento dati</strong>: aggrega i bit in <em>frame</em> e gestisce gli errori di trasmissione</li>
+<li><strong>Livello di rete</strong>: indirizzamento e routing dei pacchetti</li>
+<li><strong>Livello di trasporto</strong>: fornisce un servizio di trasferimento dati tra applicazioni degli host</li>
+<li><strong>Livello di sessione</strong>: gestisce le connessioni tra applicazioni</li>
+<li><strong>Livello di presentazione</strong>: traduce i dati in un formato comprensibile per l’applicazione</li>
+<li><strong>Livello applicazione</strong>: fornisce servizi specifici per le applicazioni</li>
+</ol>
+<p>Implementazione</p>
+<ul>
+<li>primi 3 livelli: su tutti i nodi, anche intermedi</li>
+<li>ultimi 4 livelli: solo sugli host</li>
+</ul>
+<section id="repeater-livello-fisico" class="level4">
+<h4 class="anchored" data-anchor-id="repeater-livello-fisico">Repeater (livello fisico)</h4>
+<p>connette due media fisici dello stesso tipo, condividendo singoli bit.</p>
+<p>I bit sono decodificati da un lato e ricodificati dall’altro lato.</p>
+</section>
+<section id="bridge-livello-di-collegamento-dati" class="level4">
+<h4 class="anchored" data-anchor-id="bridge-livello-di-collegamento-dati">Bridge (livello di collegamento dati)</h4>
+<p>Connette due collegamenti(?)</p>
+<p>Un <em>bridge</em> scambia <em>frame</em>, i quali vengono controllati e inoltrati. I frame header non vengono alterati, ma la codifica fisica può differire.</p>
+<p>Uno <em>switch</em> è un bridge con più porte</p>
+</section>
+<section id="router-livello-di-rete" class="level4">
+<h4 class="anchored" data-anchor-id="router-livello-di-rete">Router (livello di rete)</h4>
+<p>connette due segmenti di rete</p>
+<p>trasmette <strong>pacchetti</strong> con un network header non cambiato, ma rimpiazza il frame header</p>
+</section>
+<section id="proxy-livello-di-trasporto" class="level4">
+<h4 class="anchored" data-anchor-id="proxy-livello-di-trasporto">Proxy (livello di trasporto)</h4>
+<p>Traduce <em>messaggi</em> da host differenti</p>
+</section>
+</section>
+<section id="tcpip-architecture-internet-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="tcpip-architecture-internet-architecture">TCP/IP Architecture (Internet Architecture)</h3>
+<p>Due livelli principali:</p>
+<ul>
+<li><strong>livello applicativo</strong>: Application, Presentation, Session</li>
+<li><strong>livello di interfaccia di rete</strong>: Data Link, Physical</li>
+</ul>
+<p>Definito da IEFT</p>
+<ul>
+<li><strong>non implica una stratificazione rigida</strong></li>
+<li><strong>forma a collo di bottiglia</strong></li>
+<li>nuovo protocollo richiede specifiche e minimo un’implementazione rappresentativa (meglio 2)</li>
+</ul>
+<p>Limiti della stratificazione:</p>
+<ul>
+<li>non tutti i servizi</li>
+<li>alcuni servizi sono intrisecamente legati a più livelli (es. sicurezza)</li>
+</ul>
+</section>
+<section id="network-api" class="level3">
+<h3 class="anchored" data-anchor-id="network-api">Network API</h3>
+<p>Interfaccia messa a disposizione dalla rete, ovvero interfaccia che il sistema operativo fornisce al suo sottosistema di rete (componente del kernerl che gestisce le comunicazioni di rete)</p>
+</section>
+<section id="socket-api" class="level3">
+<h3 class="anchored" data-anchor-id="socket-api">Socket API</h3>
+<p>Ogni protocollo fornisce un certo insieme di servizi, mentre l’API fornisce una sintassi con la quali questi servizi possono essere invocati.</p>
+<p>Il <em>socket</em> è il punto di incontro tra processo locale si collega alla rete, nonché interfaccia tra applicazione e rete.</p>
+<p>L’interfaccia definisce le operazioni per</p>
+<ul>
+<li>creare, collegare il socket alla rete, usare il socket per inviare e ricevere messaggi, chiudere il socket</li>
+</ul>
+<p>può essere</p>
+<p>(…)</p>
+</section>
+<section id="client-server-model-con-tcp" class="level3">
+<h3 class="anchored" data-anchor-id="client-server-model-con-tcp">Client-Server Model con TCP</h3>
+<p>(…)</p>
+</section>
+<section id="performance" class="level3">
+<h3 class="anchored" data-anchor-id="performance">Performance</h3>
+<p>La performance di una rete può essere misurata in termini di:</p>
+<ul>
+<li><strong>throughput</strong>: numero di bit trasmessi per unità di tempo</li>
+<li><strong>ritardo</strong>: tempo impiegato da un bit per viaggiare da un host all’altro</li>
+</ul>
+<p>Delle volte si usa <strong>bandwidth</strong> come sinonimo di throughput, ma in realtà indica l’ampiezza della banda di frequenza</p>
+<p><strong>round-trip time (RTT)</strong>: tempo impiegato da un bit per viaggiare da un host all’altro e tornare indietro (erroneamente chiamato <em>ping time</em>). Proprietà specifica di due host, non di rete!</p>
+<p><span class="math display"> \text{RTT}_{A \to B} = L_{A \to B} + L_{B \to A} </span></p>
+<p>con connessione simmetrica: <span class="math inline">L_{A \to B}</span> = <span class="math inline">L_{B \to A} \implies 2 \cdot L_{A \to B}</span></p>
+<section id="latenza" class="level4">
+<h4 class="anchored" data-anchor-id="latenza">Latenza</h4>
+<p><span class="math display">
+\text{latenza} = \text{tempo di propagazione} + \text{tempo di trasmissione} + \text{tempo di coda}
+</span></p>
+<p>dove:</p>
+<ul>
+<li><strong>tempo di propagazione</strong>: <span class="math inline">\frac{\text{distanza}}{\text{velocità di propagazione}}</span> del segnale</li>
+<li><strong>tempo di trasmissione</strong>: tempo per trasmettere il messaggio</li>
+<li><strong>tempo di coda</strong>: tempo speso all’interno di un nodo (computer, switch, router) per attendere che il messaggio venga processato e trasmesso</li>
+</ul>
+<p>In una rete, la latenza è la somma di tutte le latenze</p>
+<p><span class="math display"> L = \sum_{i=1}^{n} L_i </span></p>
+<ul>
+<li>messaggio grande → tempo di trasmissione domina</li>
+<li>messaggio piccolo → tempo di propagazione domina</li>
+<li>percorso fissato → propagazione/trasmissioni costante, cambia il tempo di coda</li>
+<li>cambia percorso → cambia la latenza</li>
+</ul>
+</section>
+<section id="jitter" class="level4">
+<h4 class="anchored" data-anchor-id="jitter">Jitter</h4>
+<p>Il jitter è la varianza della latenza</p>
+<p>Generalmente generato dalle code degli switch</p>
+<p>problema per streaming audio video</p>
+</section>
+<section id="capienza-canale" class="level4">
+<h4 class="anchored" data-anchor-id="capienza-canale">Capienza canale</h4>
+<p>(immagine 1.96)</p>
+<p>capienza dei dati contemporaneamente presenti nel canale è pari a</p>
+<p><span class="math display"> Delay \cdot throughput </span></p>
+<p>ovvero numero di bit trasmessi prima che arrivi il primo bit al destinatario</p>
 
 
+</section>
 </section>
 </section>
 
@@ -301,7 +573,8 @@ un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tr
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -310,8 +583,69 @@ un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tr
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -325,6 +659,7 @@ un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tr
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -487,44 +822,54 @@ un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tr
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -623,7 +968,43 @@ un netword è un’entità composta da 2 o più nodi o 2 o più reti connesse tr
     }
   });
   </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
 </div> <!-- /content -->
+    <script type="text/javascript">
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let pseudocodeOptions = {
+          indentSize: el.dataset.indentSize,
+          commentDelimiter: " " + el.dataset.commentDelimiter + " ",
+          lineNumber: el.dataset.lineNumber.toLowerCase() === "true",
+          lineNumberPunc: el.dataset.lineNumberPunc,
+          noEnd: el.dataset.noEnd.toLowerCase() === "true",
+          scopeLines: el.dataset.indentLines.toLowerCase() === "true",
+          titlePrefix: el.dataset.captionPrefix,
+        };
+        pseudocode.renderElement(el.querySelector(".pseudocode"), pseudocodeOptions);
+      });
+    })(document);
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let captionSpan = el.querySelector(".ps-root > .ps-algorithm > .ps-line > .ps-keyword")
+        if (captionSpan !== null) {
+          let captionPrefix = el.dataset.captionPrefix + " ";
+          let captionNumber = "";
+          if (el.dataset.pseudocodeNumber) {
+            captionNumber = el.dataset.pseudocodeNumber + " ";
+            if (el.dataset.chapterLevel) {
+              captionNumber = el.dataset.chapterLevel + "." + captionNumber;
+            }
+          }
+          captionSpan.innerHTML = captionPrefix + captionNumber;
+        }
+      });
+    })(document);
+    </script>
+  
 
 
 

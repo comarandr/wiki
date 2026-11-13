@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -27,41 +27,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -74,14 +39,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a14d652b86e00f03abd5043129e363d4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8d3ad9c781c51ccd60b292c95058b2c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.js"></script>
+<link href="../../site_libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,24 +77,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <style type="text/css">
+    .ps-root .ps-algorithm {
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+    }
+    .pseudocode-container {
+      text-align: left;
+    }
+    .callout .pseudocode-container .ps-root {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    .callout .pseudocode-container .ps-root .ps-algorithm p {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+    </style>
+  
+      <style type="text/css">
+      .ps-algorithm > .ps-line {
+        text-align: left;
+      }
+      </style>
+    
 
+  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Wiki</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -149,6 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -157,23 +197,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#algoritmi-di-ordinamento" id="toc-algoritmi-di-ordinamento" class="nav-link active" data-scroll-target="#algoritmi-di-ordinamento">Algoritmi di ordinamento</a>
+  <li><a href="#algoritmi" id="toc-algoritmi" class="nav-link active" data-scroll-target="#algoritmi">Algoritmi</a>
   <ul>
   <li><a href="#insertion-sort" id="toc-insertion-sort" class="nav-link" data-scroll-target="#insertion-sort">Insertion Sort</a></li>
-  <li><a href="#merge-sort" id="toc-merge-sort" class="nav-link" data-scroll-target="#merge-sort">Merge Sort</a></li>
-  <li><a href="#bubble-sort" id="toc-bubble-sort" class="nav-link" data-scroll-target="#bubble-sort">Bubble Sort</a></li>
-  <li><a href="#heap-sort" id="toc-heap-sort" class="nav-link" data-scroll-target="#heap-sort">Heap Sort</a></li>
-  <li><a href="#selection-sort" id="toc-selection-sort" class="nav-link" data-scroll-target="#selection-sort">Selection Sort</a></li>
+  <li><a href="#merge-sort" id="toc-merge-sort" class="nav-link" data-scroll-target="#merge-sort">Merge Sort</a>
+  <ul class="collapse">
+  <li><a href="#merge-stabile-non-inplace---theta-n" id="toc-merge-stabile-non-inplace---theta-n" class="nav-link" data-scroll-target="#merge-stabile-non-inplace---theta-n">Merge (stabile, non inplace) - <span class="math inline">\Theta (n)</span></a></li>
+  </ul></li>
+  <li><a href="#binary-search" id="toc-binary-search" class="nav-link" data-scroll-target="#binary-search">Binary Search</a></li>
+  <li><a href="#heapsort-non-stabile-in-place" id="toc-heapsort-non-stabile-in-place" class="nav-link" data-scroll-target="#heapsort-non-stabile-in-place">HeapSort (non stabile, in-place)</a>
+  <ul class="collapse">
+  <li><a href="#heapify" id="toc-heapify" class="nav-link" data-scroll-target="#heapify">Heapify</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#heapify-1" id="toc-heapify-1" class="nav-link" data-scroll-target="#heapify-1">Heapify</a></li>
+  <li><a href="#quicksort" id="toc-quicksort" class="nav-link" data-scroll-target="#quicksort">QuickSort</a>
+  <ul>
+  <li><a href="#partition-lomuto" id="toc-partition-lomuto" class="nav-link" data-scroll-target="#partition-lomuto">Partition (Lomuto)</a></li>
+  </ul></li>
+  <li><a href="#quicksort-select" id="toc-quicksort-select" class="nav-link" data-scroll-target="#quicksort-select">QuickSort + Select</a></li>
+  <li><a href="#counting-sort" id="toc-counting-sort" class="nav-link" data-scroll-target="#counting-sort">Counting Sort</a></li>
+  <li><a href="#radix-sort" id="toc-radix-sort" class="nav-link" data-scroll-target="#radix-sort">Radix Sort</a></li>
+  <li><a href="#bucket-sort" id="toc-bucket-sort" class="nav-link" data-scroll-target="#bucket-sort">Bucket Sort</a></li>
+  <li><a href="#select-medians-of-medians" id="toc-select-medians-of-medians" class="nav-link" data-scroll-target="#select-medians-of-medians">Select / Medians of medians</a></li>
+  <li><a href="#strutture-dati" id="toc-strutture-dati" class="nav-link" data-scroll-target="#strutture-dati">Strutture Dati</a>
+  <ul>
+  <li><a href="#vettori" id="toc-vettori" class="nav-link" data-scroll-target="#vettori">Vettori</a></li>
+  <li><a href="#liste" id="toc-liste" class="nav-link" data-scroll-target="#liste">Liste</a></li>
+  <li><a href="#heap" id="toc-heap" class="nav-link" data-scroll-target="#heap">Heap</a>
+  <ul class="collapse">
+  <li><a href="#max-heap" id="toc-max-heap" class="nav-link" data-scroll-target="#max-heap">Max-Heap</a></li>
+  </ul></li>
+  <li><a href="#tabelle-di-hash" id="toc-tabelle-di-hash" class="nav-link" data-scroll-target="#tabelle-di-hash">Tabelle di Hash</a>
+  <ul class="collapse">
+  <li><a href="#hash-con-chaining" id="toc-hash-con-chaining" class="nav-link" data-scroll-target="#hash-con-chaining">Hash con chaining</a></li>
+  <li><a href="#hash-con-open-addressing" id="toc-hash-con-open-addressing" class="nav-link" data-scroll-target="#hash-con-open-addressing">Hash con open addressing</a></li>
+  </ul></li>
+  <li><a href="#binary-search-tree" id="toc-binary-search-tree" class="nav-link" data-scroll-target="#binary-search-tree">Binary Search Tree</a></li>
+  <li><a href="#red-black-tree" id="toc-red-black-tree" class="nav-link" data-scroll-target="#red-black-tree">Red Black Tree</a></li>
+  <li><a href="#b-tree-di-grado-t" id="toc-b-tree-di-grado-t" class="nav-link" data-scroll-target="#b-tree-di-grado-t">B-Tree di grado <span class="math inline">t</span></a></li>
+  <li><a href="#insiemi-disgiunti" id="toc-insiemi-disgiunti" class="nav-link" data-scroll-target="#insiemi-disgiunti">Insiemi disgiunti</a>
+  <ul class="collapse">
+  <li><a href="#liste-concatenate" id="toc-liste-concatenate" class="nav-link" data-scroll-target="#liste-concatenate">Liste concatenate</a></li>
+  <li><a href="#alberi" id="toc-alberi" class="nav-link" data-scroll-target="#alberi">Alberi</a></li>
+  </ul></li>
+  <li><a href="#grafi" id="toc-grafi" class="nav-link" data-scroll-target="#grafi">Grafi</a></li>
+  </ul></li>
+  <li><a href="#concetti-di-matematica" id="toc-concetti-di-matematica" class="nav-link" data-scroll-target="#concetti-di-matematica">Concetti di matematica</a>
+  <ul>
+  <li><a href="#notazione-asintotica" id="toc-notazione-asintotica" class="nav-link" data-scroll-target="#notazione-asintotica">Notazione asintotica</a>
+  <ul class="collapse">
+  <li><a href="#notazione-o-grande" id="toc-notazione-o-grande" class="nav-link" data-scroll-target="#notazione-o-grande">Notazione O-grande</a></li>
+  </ul></li>
+  <li><a href="#stime-di-somme" id="toc-stime-di-somme" class="nav-link" data-scroll-target="#stime-di-somme">Stime di somme</a></li>
+  <li><a href="#proprietà-dei-logaritmi" id="toc-proprietà-dei-logaritmi" class="nav-link" data-scroll-target="#proprietà-dei-logaritmi">Proprietà dei logaritmi</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -202,34 +289,656 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="algoritmi-di-ordinamento" class="level2">
-<h2 class="anchored" data-anchor-id="algoritmi-di-ordinamento">Algoritmi di ordinamento</h2>
+<section id="algoritmi" class="level2">
+<h2 class="anchored" data-anchor-id="algoritmi">Algoritmi</h2>
 <section id="insertion-sort" class="level3">
 <h3 class="anchored" data-anchor-id="insertion-sort">Insertion Sort</h3>
 <p>Inserisco il nuovo elemento nella posizione corretta<br>
 - a sinistra gli elementi sono già ordinati<br>
 - finché trovo elementi maggiori, continuo a spostare l’elemento a sinistra</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode pascal code-with-copy"><code class="sourceCode pascal"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>InsertionSort(A):</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">for</span> i &lt;- <span class="dv">2</span> <span class="kw">to</span> A.length:</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        key = A[i]</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        j = i - <span class="dv">1</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">while</span> j &gt; <span class="dv">0</span> <span class="kw">and</span> A[j] &gt; key:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            A[j + <span class="dv">1</span>] = A[j]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            j = j - <span class="dv">1</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        A[j + <span class="dv">1</span>] = key</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<details>
+<summary>
+Pseudocodice
+</summary>
+<div id="algo-insertionsort" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="1" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{InsertionSort}\begin{algorithmic} \Procedure{InsertionSort}{$A$} \For{$i \gets 2$ \To $A.\text{length}$} \State $key \gets A[i]$ \State $j \gets i - 1$ \While{$j &gt; 0$ \And $A[j] &gt; key$} \State $A[j + 1] \gets A[j]$ \State $j \gets j - 1$ \EndWhile \State $A[j + 1] \gets key$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</details>
+<hr>
 </section>
 <section id="merge-sort" class="level3">
 <h3 class="anchored" data-anchor-id="merge-sort">Merge Sort</h3>
-<pre class="pseudocode"><code></code></pre>
+<details>
+<summary>
+Pseudocodice
+</summary>
+<div id="algo-mergesort" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="2" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{MergeSort}\begin{algorithmic} \Procedure{MergeSort}{$A,p,q$} \If{$p &lt; q$} \State $r \gets \frac{p+q}{2}$ \Call{MergeSort}{A,p,r} \Call{MergeSort}{A,r+1,q} \Call{Merge}{A,p,r,q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</details>
+<section id="merge-stabile-non-inplace---theta-n" class="level4">
+<h4 class="anchored" data-anchor-id="merge-stabile-non-inplace---theta-n">Merge (stabile, non inplace) - <span class="math inline">\Theta (n)</span></h4>
+<details>
+<summary>
+Pseudocodice
+</summary>
+<div id="algo-merge" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="3" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{Merge}\begin{algorithmic} \Procedure{Merge}{$A,p,r,q$} \State $B \gets$ new array of size $(q-p+1)$ \State $i \gets p$ \State $j \gets r+1$ \For{$k \gets 0$ \To $B.length-1$} \If{$j &gt; q$} \State $B[k] \gets A[i]$ \State $i \gets i+1$ \ElsIf{$i &gt; r$} \State $B[k] \gets A[j]$ \State $j \gets j+1$ \ElsIf{$A[i] &lt; A[j]$} \State $B[k] \gets A[i]$ \State $i \gets i+1$ \Else \State $B[k] \gets A[j]$ \State $j \gets j+1$ \EndIf \EndFor \For{$k \gets 0$ \To $B.length-1$} \State $A[p+k] \gets B[k]$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</details>
+<hr>
 </section>
-<section id="bubble-sort" class="level3">
-<h3 class="anchored" data-anchor-id="bubble-sort">Bubble Sort</h3>
 </section>
-<section id="heap-sort" class="level3">
-<h3 class="anchored" data-anchor-id="heap-sort">Heap Sort</h3>
+<section id="binary-search" class="level3">
+<h3 class="anchored" data-anchor-id="binary-search">Binary Search</h3>
+<details>
+<summary>
+Pseudocodice
+</summary>
+<div id="algo-binarysearch" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="4" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{BinarySearch}\begin{algorithmic} \Procedure{BinarySearch}{$A,p,q,k$} \If{$p = q$} \State \Return $A[p] = k$ \Else \State $r \gets \frac{p+q}{2}$ \EndIf \If{$(A[r] = k)$} \State \Return 1 \ElsIf{$A[r] &gt; k$} \State \Return \Call{BinarySearch}{A, p, r-1, k} \Else \State \Return \Call{BinarySearch}{A, r+1, q, k} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</details>
+<hr>
 </section>
-<section id="selection-sort" class="level3">
-<h3 class="anchored" data-anchor-id="selection-sort">Selection Sort</h3>
+<section id="heapsort-non-stabile-in-place" class="level3">
+<h3 class="anchored" data-anchor-id="heapsort-non-stabile-in-place">HeapSort (non stabile, in-place)</h3>
+<p>Algoritmo con costo temporale <span class="math inline">O(n \log n)</span></p>
+<details>
+<summary>
+Pseudocodice
+</summary>
+<div id="algo-heapsort" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="5" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{HeapSort}\begin{algorithmic} \Procedure{HeapSort}{$A$} \State \Call{BuildHeap}{A} \For{$i \gets A.\text{length}$ \textbf{down to} $2$} \State \Call{Scambia}{A, 1, i} \State $A.\text{heapsize} \gets A.\text{heapsize} - 1$ \State \Call{Heapify}{A, 1} \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</details>
+<section id="heapify" class="level4">
+<h4 class="anchored" data-anchor-id="heapify">Heapify</h4>
+<p>costo temporale: <span class="math inline">O (\log n)</span></p>
+<p><span class="math display"> T(n) = \begin{cases} \Theta (1), \quad n \leq \ \\ T(\frac{2}{3} n) + \Theta (1), \quad n \gt 1 \end{cases} </span></p>
+</section>
+</section>
+</section>
+<section id="heapify-1" class="level2 {alg-heapify}">
+<h2 class="anchored" data-anchor-id="heapify-1">Heapify</h2>
+<details>
+<summary>
+Pseudocodice
+</summary>
+<div id="algo-heapify" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="6" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{Heapify}\begin{algorithmic} \Procedure{Heapify}{$H, i$} \State $l \gets$ \Call{Left}{i} \State $r \gets$ \Call{Right}{i} \If{$(l \leq H.\text{heapsize} \And H[l] &gt; H[i])$} \State $m \gets l$ \Else \State $m \gets i$ \EndIf \If{$(r \leq H.\text{heapsize} \And H[r] &gt; H[m])$} \State $m \gets r$ \EndIf \If{$(m \neq i)$} \State \Call{Scambia}{H, m, i} \State \Call{Heapify}{H, m} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</details>
+</section>
+<div id="tbl-panel" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Procedure
+</figcaption>
+<div aria-describedby="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div id="algo-left" class="pseudocode-container quarto-float quarto-layout-cell" data-no-end="false" data-caption-prefix="Algorithm" data-indent-lines="false" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="7" data-line-number-punc=":" data-indent-size="1.2em" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="pseudocode">
+\begin{algorithm} \caption{Left}\begin{algorithmic} \Procedure{Left}{$i$} \State \Return $2i$ \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+<div id="algo-right" class="pseudocode-container quarto-float quarto-layout-cell" data-no-end="false" data-caption-prefix="Algorithm" data-indent-lines="false" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="8" data-line-number-punc=":" data-indent-size="1.2em" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="pseudocode">
+\begin{algorithm} \caption{Right}\begin{algorithmic} \Procedure{Right}{$i$} \State \Return $2i + 1$ \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+<div id="algo-parent" class="pseudocode-container quarto-float quarto-layout-cell" data-no-end="false" data-caption-prefix="Algorithm" data-indent-lines="false" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="9" data-line-number-punc=":" data-indent-size="1.2em" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="pseudocode">
+\begin{algorithm} \caption{Parent}\begin{algorithmic} \Procedure{Parent}{$i$} \State \Return $\lfloor i/2 \rfloor$ \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<hr>
+<section id="quicksort" class="level3">
+<h3 class="anchored" data-anchor-id="quicksort">QuickSort</h3>
+<p>costo temporale</p>
+<p><span class="math display"> T(n) = \begin{cases} \Theta (1), \quad n \leq 1 \\ T(m) + T(m-n-1) + \Theta (n), \quad n \gt 1 \end{cases} </span></p>
+<div id="algo-quicksort" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="10" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{QuickSort}\begin{algorithmic} \Procedure{QuickSort}{$A, p, q$} \If{$p &lt; q$} \State $r \gets$ \Call{Partition}{A, p, q} \State \Call{QuickSort}{A, p, r-1} \State \Call{QuickSort}{A, r+1, q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+<section id="partition-lomuto" class="level4">
+<h4 class="anchored" data-anchor-id="partition-lomuto">Partition (Lomuto)</h4>
+<p>prende come perno l’ultimo elemento e ritorna la sua posizione corretta</p>
+<div id="algo-partition" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="11" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{Lomuto Partition} \begin{algorithmic} \Procedure{Partition}{$A, p, q$} \State $x \gets A[q]$ \State $i \gets p - 1$ \For{$j \gets p$ \To $q-1$} \If{$A[j] \leq x$} \State $i \gets i + 1$ \State \Call{Scambia}{A, i, j} \EndIf \EndFor \State \Call{Scambia}{A, i+1, q} \State \Return $i+1$ \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</section>
+</section>
+<section id="quicksort-select" class="level3">
+<h3 class="anchored" data-anchor-id="quicksort-select">QuickSort + Select</h3>
+<p>da correggere</p>
+<div id="algo-quicksort-select" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="12" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{QuickSort}\begin{algorithmic} \Procedure{QuickSort}{$A, p, q$} \If{$p &lt; q$} \State $M \gets$ \Call{SelectNaive}{A, p, q} \State \Call{QuickSort}{A, p, r-1} \State \Call{QuickSort}{A, r+1, q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</section>
+<section id="counting-sort" class="level3">
+<h3 class="anchored" data-anchor-id="counting-sort">Counting Sort</h3>
+<p><span class="math inline">A</span> veettore di interi nell’intervallo <span class="math inline">[0, k]</span> con <span class="math inline">k \in O(n)</span> (n = lunghezza di A)</p>
+<p>nota: <span class="math inline">k</span> non è necessariamente una costante.</p>
+<div id="algo-countingsort" class="pseudocode-container quarto-float" data-no-end="false" data-indent-size="1.2em" data-indent-lines="true" data-line-number="false" data-comment-delimiter="//" data-pseudocode-number="13" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div class="pseudocode">
+\begin{algorithm} \caption{CountingSort}\begin{algorithmic} \Procedure{CountingSort}{$A, B, k$} \State $C \gets$ new array of size $(k+1)$ \For{$j \gets 0$ \To $k$} \State $C[j] \gets 0$ \EndFor \For{$i \gets 1$ \To $A.\text{length}$} \State $C[A[i]] \gets C[A[i]] + 1$ \EndFor \For{$j \gets 1$ \To $k$} \State $C[j] \gets C[j] + C[j-1]$ \EndFor \For{$i \gets A.\text{length}$ \Downto $1$} \State $B[C[A[i]]] \gets A[i]$ \State $C[A[i]] \gets C[A[i]] - 1$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
+</div>
+</div>
+</section>
+<section id="radix-sort" class="level3">
+<h3 class="anchored" data-anchor-id="radix-sort">Radix Sort</h3>
+<p>Algoritmo per ordinare n numeri di d digit, con d costante rispetto n.&nbsp;Ordino a ogni iterazione a partire dalla cifra meno significativa. (es. Counting su una singola cifra a ogni iterazione)</p>
+</section>
+<section id="bucket-sort" class="level3">
+<h3 class="anchored" data-anchor-id="bucket-sort">Bucket Sort</h3>
+<p>A vettore di numeri reali/razionali compresi tra [0,1) uniformemente distribuiti nell’intervallo [0,1).</p>
+</section>
+<section id="select-medians-of-medians" class="level3">
+<h3 class="anchored" data-anchor-id="select-medians-of-medians">Select / Medians of medians</h3>
+<hr>
+</section>
+<section id="strutture-dati" class="level2">
+<h2 class="anchored" data-anchor-id="strutture-dati">Strutture Dati</h2>
+<section id="vettori" class="level3">
+<h3 class="anchored" data-anchor-id="vettori">Vettori</h3>
+</section>
+<section id="liste" class="level3">
+<h3 class="anchored" data-anchor-id="liste">Liste</h3>
+</section>
+<section id="heap" class="level3">
+<h3 class="anchored" data-anchor-id="heap">Heap</h3>
+<p>Si tratta di:</p>
+<ul>
+<li>un albero <strong>quasi completo</strong> di <span class="math inline">n</span> nodi</li>
+<li>con circa <span class="math inline">\frac{n}{2}</span> nodi foglia</li>
+<li>con costo di inserimento/rimozione <span class="math inline">\log n</span></li>
+</ul>
+<section id="max-heap" class="level4">
+<h4 class="anchored" data-anchor-id="max-heap">Max-Heap</h4>
+<p>Si tratta di un albero binario quasi completo in cui ogni elemento ha una chiave minore o uguale a quella del proprio genitore</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">graph TD
+    A((10)) --&gt; B((7))
+    A --&gt; C((8))
+    B --&gt; D((3))
+    B --&gt; E((4))
+    C --&gt; F((5))
+    C --&gt; G((6))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="tabelle-di-hash" class="level3">
+<h3 class="anchored" data-anchor-id="tabelle-di-hash">Tabelle di Hash</h3>
+<section id="hash-con-chaining" class="level4">
+<h4 class="anchored" data-anchor-id="hash-con-chaining">Hash con chaining</h4>
+</section>
+<section id="hash-con-open-addressing" class="level4">
+<h4 class="anchored" data-anchor-id="hash-con-open-addressing">Hash con open addressing</h4>
+</section>
+</section>
+<section id="binary-search-tree" class="level3">
+<h3 class="anchored" data-anchor-id="binary-search-tree">Binary Search Tree</h3>
+<p>Il BST è un albero binario in cui ogni nodo ha una chiave intera tale che</p>
+<p><span class="math display">\forall x \in T, ( \forall y \in T(x.left): y.key \lt x.key ) \land ( \forall y \in T(x.right): y.key \gt x.key )</span></p>
+<div id="tbl-panel" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Visita BST
+</figcaption>
+<div aria-describedby="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">graph TD
+    A((4)) --&gt; B((2))
+    A --&gt; C((6))
+    B --&gt; D((1))
+    B --&gt; E((3))
+    C --&gt; F((5))
+    C --&gt; G((7))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Visita</th>
+<th style="text-align: left;">Ordine</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pre-order (x, sx, dx)</td>
+<td style="text-align: left;"><span class="math inline">4, 2, 1, 3, 6, 5, 7</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Post-order (sx, dx, x)</td>
+<td style="text-align: left;"><span class="math inline">1, 3, 2, 5, 7, 6, 4</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">In-order (sx, x, dx)</td>
+<td style="text-align: left;"><span class="math inline">1, 2, 3, 4, 5, 6, 7</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div id="thm-BST" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Teorema BST)</strong></span> Se la visita in-order(<span class="math inline">T</span>) di un albero stampa le chiavi in <strong>ordine crescente</strong>, allora <span class="math inline">T</span> è un BST.</p>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">graph TD
+    A((RADICE)) --&gt; B((2))
+    A --&gt; C((6))
+    B --&gt; D((MINIMO))
+    B --&gt; E((3))
+    C --&gt; F((5))
+    C --&gt; G((MASSIMO))
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="red-black-tree" class="level3">
+<h3 class="anchored" data-anchor-id="red-black-tree">Red Black Tree</h3>
+<p>Si tratta di un BST (Binary Search Tree) in cui ogni nodo ha un colore (rosso o nero) e rispetta le seguenti proprietà:</p>
+<ul>
+<li>è BST con nodi <strong>red</strong> e <strong>black</strong></li>
+<li>le foglie sono <strong>black nil</strong></li>
+<li>ogni nodo red ha 2 figli black</li>
+<li>ogni cammino nodo-foglia ha lo stesso numero di nodi black (black height <span class="math inline">bh(x)</span>)</li>
+<li>l’altezza nera della radice corrisponde all’altezza nera dell’albero</li>
+<li>la radice è black</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 355.20 275.20" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 271.2)">
+<title>RBT</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-271.2 351.2,-271.2 351.2,4 -4,4"></polygon>
+<!-- 13 -->
+<g id="node1" class="node">
+<title>13</title>
+<ellipse fill="#222222" stroke="#222222" cx="158.6" cy="-249.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="158.6" y="-245.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">13</text>
+</g>
+<!-- 8 -->
+<g id="node2" class="node">
+<title>8</title>
+<ellipse fill="#222222" stroke="#222222" cx="115.6" cy="-184.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="115.6" y="-180.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">8</text>
+</g>
+<!-- 13&#45;&gt;8 -->
+<g id="edge1" class="edge">
+<title>13-&gt;8</title>
+<path fill="none" stroke="black" d="M148.84,-233.9C143.07,-225.45 135.67,-214.6 129.31,-205.29"></path>
+<polygon fill="black" stroke="black" points="131.29,-203.84 125.32,-199.44 127.24,-206.6 131.29,-203.84"></polygon>
+</g>
+<!-- 17 -->
+<g id="node3" class="node">
+<title>17</title>
+<ellipse fill="#222222" stroke="#222222" cx="216.6" cy="-184.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="216.6" y="-180.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">17</text>
+</g>
+<!-- 13&#45;&gt;17 -->
+<g id="edge2" class="edge">
+<title>13-&gt;17</title>
+<path fill="none" stroke="black" d="M170.34,-235.45C178.83,-226.23 190.42,-213.63 199.88,-203.36"></path>
+<polygon fill="black" stroke="black" points="201.94,-204.74 204.88,-197.93 198.34,-201.42 201.94,-204.74"></polygon>
+</g>
+<!-- 11 -->
+<g id="node4" class="node">
+<title>11</title>
+<ellipse fill="#222222" stroke="#222222" cx="39.6" cy="-119.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="39.6" y="-115.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">11</text>
+</g>
+<!-- 8&#45;&gt;11 -->
+<g id="edge4" class="edge">
+<title>8-&gt;11</title>
+<path fill="none" stroke="black" d="M102.01,-171.94C89.91,-161.9 72.07,-147.12 58.56,-135.92"></path>
+<polygon fill="black" stroke="black" points="60.02,-133.95 53.07,-131.37 56.9,-137.72 60.02,-133.95"></polygon>
+</g>
+<!-- 1 -->
+<g id="node13" class="node">
+<title>1</title>
+<ellipse fill="#d9534f" stroke="#d9534f" cx="115.6" cy="-119.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="115.6" y="-115.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">1</text>
+</g>
+<!-- 8&#45;&gt;1 -->
+<g id="edge3" class="edge">
+<title>8-&gt;1</title>
+<path fill="none" stroke="black" d="M115.6,-165.98C115.6,-159.46 115.6,-151.89 115.6,-144.81"></path>
+<polygon fill="black" stroke="black" points="118.05,-144.39 115.6,-137.39 113.15,-144.39 118.05,-144.39"></polygon>
+</g>
+<!-- 25 -->
+<g id="node5" class="node">
+<title>25</title>
+<ellipse fill="#222222" stroke="#222222" cx="216.6" cy="-119.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="216.6" y="-115.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">25</text>
+</g>
+<!-- 17&#45;&gt;25 -->
+<g id="edge12" class="edge">
+<title>17-&gt;25</title>
+<path fill="none" stroke="black" d="M216.6,-165.98C216.6,-159.46 216.6,-151.89 216.6,-144.81"></path>
+<polygon fill="black" stroke="black" points="219.05,-144.39 216.6,-137.39 214.15,-144.39 219.05,-144.39"></polygon>
+</g>
+<!-- 15 -->
+<g id="node15" class="node">
+<title>15</title>
+<ellipse fill="#d9534f" stroke="#d9534f" cx="307.6" cy="-119.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="307.6" y="-115.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">15</text>
+</g>
+<!-- 17&#45;&gt;15 -->
+<g id="edge11" class="edge">
+<title>17-&gt;15</title>
+<path fill="none" stroke="black" d="M231.22,-173.08C246.34,-162.61 270.09,-146.17 287.09,-134.4"></path>
+<polygon fill="black" stroke="black" points="288.65,-136.3 293.02,-130.3 285.87,-132.27 288.65,-136.3"></polygon>
+</g>
+<!-- nil4 -->
+<g id="node9" class="node">
+<title>nil4</title>
+<ellipse fill="#222222" stroke="#222222" cx="3.6" cy="-54.2" rx="3.6" ry="3.6"></ellipse>
+</g>
+<!-- 11&#45;&gt;nil4 -->
+<g id="edge9" class="edge">
+<title>11-&gt;nil4</title>
+<path fill="none" stroke="black" d="M31.07,-103.27C24.04,-90.98 14.33,-73.97 8.53,-63.83"></path>
+<polygon fill="black" stroke="black" points="10.57,-62.47 4.97,-57.6 6.32,-64.9 10.57,-62.47"></polygon>
+</g>
+<!-- nil5 -->
+<g id="node10" class="node">
+<title>nil5</title>
+<ellipse fill="#222222" stroke="#222222" cx="39.6" cy="-54.2" rx="3.6" ry="3.6"></ellipse>
+</g>
+<!-- 11&#45;&gt;nil5 -->
+<g id="edge10" class="edge">
+<title>11-&gt;nil5</title>
+<path fill="none" stroke="black" d="M39.6,-100.98C39.6,-89.38 39.6,-74.5 39.6,-64.9"></path>
+<polygon fill="black" stroke="black" points="42.05,-64.83 39.6,-57.83 37.15,-64.83 42.05,-64.83"></polygon>
+</g>
+<!-- 22 -->
+<g id="node16" class="node">
+<title>22</title>
+<ellipse fill="#d9534f" stroke="#d9534f" cx="191.6" cy="-54.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="191.6" y="-50.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">22</text>
+</g>
+<!-- 25&#45;&gt;22 -->
+<g id="edge15" class="edge">
+<title>25-&gt;22</title>
+<path fill="none" stroke="black" d="M210.29,-102.3C207.35,-94.9 203.8,-85.96 200.59,-77.86"></path>
+<polygon fill="black" stroke="black" points="202.85,-76.91 197.99,-71.31 198.3,-78.72 202.85,-76.91"></polygon>
+</g>
+<!-- 27 -->
+<g id="node17" class="node">
+<title>27</title>
+<ellipse fill="#d9534f" stroke="#d9534f" cx="256.6" cy="-54.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="256.6" y="-50.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">27</text>
+</g>
+<!-- 25&#45;&gt;27 -->
+<g id="edge16" class="edge">
+<title>25-&gt;27</title>
+<path fill="none" stroke="black" d="M225.88,-103.59C231.13,-95.32 237.78,-84.84 243.55,-75.76"></path>
+<polygon fill="black" stroke="black" points="245.69,-76.96 247.37,-69.73 241.55,-74.33 245.69,-76.96"></polygon>
+</g>
+<!-- nil1 -->
+<g id="node6" class="node">
+<title>nil1</title>
+<ellipse fill="#222222" stroke="#222222" cx="75.6" cy="-54.2" rx="3.6" ry="3.6"></ellipse>
+</g>
+<!-- nil2 -->
+<g id="node7" class="node">
+<title>nil2</title>
+<ellipse fill="#222222" stroke="#222222" cx="108.6" cy="-3.6" rx="3.6" ry="3.6"></ellipse>
+</g>
+<!-- nil3 -->
+<g id="node8" class="node">
+<title>nil3</title>
+<ellipse fill="#222222" stroke="#222222" cx="144.6" cy="-3.6" rx="3.6" ry="3.6"></ellipse>
+</g>
+<!-- nil6 -->
+<g id="node11" class="node">
+<title>nil6</title>
+<ellipse fill="#222222" stroke="#222222" cx="307.6" cy="-54.2" rx="3.6" ry="3.6"></ellipse>
+</g>
+<!-- nil7 -->
+<g id="node12" class="node">
+<title>nil7</title>
+<ellipse fill="#222222" stroke="#222222" cx="343.6" cy="-54.2" rx="3.6" ry="3.6"></ellipse>
+</g>
+<!-- 1&#45;&gt;nil1 -->
+<g id="edge5" class="edge">
+<title>1-&gt;nil1</title>
+<path fill="none" stroke="black" d="M106.32,-103.59C98.45,-91.19 87.43,-73.83 80.95,-63.62"></path>
+<polygon fill="black" stroke="black" points="82.96,-62.23 77.14,-57.63 78.83,-64.85 82.96,-62.23"></polygon>
+</g>
+<!-- 6 -->
+<g id="node14" class="node">
+<title>6</title>
+<ellipse fill="#d9534f" stroke="#d9534f" cx="126.6" cy="-54.2" rx="18" ry="18"></ellipse>
+<text text-anchor="middle" x="126.6" y="-50.6" font-family="Helvetica,sans-Serif" font-size="12.00" fill="white">6</text>
+</g>
+<!-- 1&#45;&gt;6 -->
+<g id="edge6" class="edge">
+<title>1-&gt;6</title>
+<path fill="none" stroke="black" d="M118.55,-101.32C119.73,-94.54 121.12,-86.6 122.4,-79.24"></path>
+<polygon fill="black" stroke="black" points="124.85,-79.45 123.64,-72.13 120.03,-78.6 124.85,-79.45"></polygon>
+</g>
+<!-- 6&#45;&gt;nil2 -->
+<g id="edge7" class="edge">
+<title>6-&gt;nil2</title>
+<path fill="none" stroke="black" d="M120.61,-37.02C117.79,-29.41 114.52,-20.6 112.11,-14.08"></path>
+<polygon fill="black" stroke="black" points="114.34,-13.04 109.61,-7.32 109.74,-14.74 114.34,-13.04"></polygon>
+</g>
+<!-- 6&#45;&gt;nil3 -->
+<g id="edge8" class="edge">
+<title>6-&gt;nil3</title>
+<path fill="none" stroke="black" d="M132.59,-37.02C135.41,-29.41 138.68,-20.6 141.09,-14.08"></path>
+<polygon fill="black" stroke="black" points="143.46,-14.74 143.59,-7.32 138.86,-13.04 143.46,-14.74"></polygon>
+</g>
+<!-- 15&#45;&gt;nil6 -->
+<g id="edge13" class="edge">
+<title>15-&gt;nil6</title>
+<path fill="none" stroke="black" d="M307.6,-100.98C307.6,-89.38 307.6,-74.5 307.6,-64.9"></path>
+<polygon fill="black" stroke="black" points="310.05,-64.83 307.6,-57.83 305.15,-64.83 310.05,-64.83"></polygon>
+</g>
+<!-- 15&#45;&gt;nil7 -->
+<g id="edge14" class="edge">
+<title>15-&gt;nil7</title>
+<path fill="none" stroke="black" d="M316.13,-103.27C323.16,-90.98 332.87,-73.97 338.67,-63.83"></path>
+<polygon fill="black" stroke="black" points="340.88,-64.9 342.23,-57.6 336.63,-62.47 340.88,-64.9"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="b-tree-di-grado-t" class="level3">
+<h3 class="anchored" data-anchor-id="b-tree-di-grado-t">B-Tree di grado <span class="math inline">t</span></h3>
+<p>Il B-Tree è un albero bilanciato in cui ogni nodo <span class="math inline">x</span> ha <span class="math inline">x.n</span> chiavi in ordine crescente</p>
+<p>campi di un nodo <span class="math inline">x</span>:</p>
+<ul>
+<li><span class="math inline">x.n \in \mathbb{N}</span>: numero di chiavi nel nodo <span class="math inline">x</span></li>
+<li><span class="math inline">x.leaf</span>: booleano che indica se <span class="math inline">x</span> è una foglia</li>
+<li><span class="math inline">x.key[1,..,x.n]</span>: array di chiavi in ordine crescente</li>
+<li><span class="math inline">x.c[1,..,x.n+1]</span>: array di puntatori ai figli del nodo <span class="math inline">x</span></li>
+</ul>
+</section>
+<section id="insiemi-disgiunti" class="level3">
+<h3 class="anchored" data-anchor-id="insiemi-disgiunti">Insiemi disgiunti</h3>
+<section id="liste-concatenate" class="level4">
+<h4 class="anchored" data-anchor-id="liste-concatenate">Liste concatenate</h4>
+</section>
+<section id="alberi" class="level4">
+<h4 class="anchored" data-anchor-id="alberi">Alberi</h4>
+</section>
+</section>
+<section id="grafi" class="level3">
+<h3 class="anchored" data-anchor-id="grafi">Grafi</h3>
+<hr>
+</section>
+</section>
+<section id="concetti-di-matematica" class="level2">
+<h2 class="anchored" data-anchor-id="concetti-di-matematica">Concetti di matematica</h2>
+<section id="notazione-asintotica" class="level3">
+<h3 class="anchored" data-anchor-id="notazione-asintotica">Notazione asintotica</h3>
+<p>Strumento per confrontare le funzioni in termini di crescita asintotica, ovvero la rapidità con cui divergono all’infinito. La notazione asintotica è utile per analizzare la complessità degli algoritmi e confrontarne le funzioni di costo.</p>
+<p>Caratteristiche delle funzioni:</p>
+<ul>
+<li><span class="math inline">f: \mathbb{N} \rightarrow \mathbb{R}</span></li>
+<li><strong>monotone</strong> e <strong>crescenti</strong></li>
+<li><strong>divergenti</strong>: <span class="math inline">\lim_{n \to \infty} f(n) = \infty</span></li>
+</ul>
+<section id="notazione-o-grande" class="level4">
+<h4 class="anchored" data-anchor-id="notazione-o-grande">Notazione O-grande</h4>
+<p><span class="math display"> O(g(n)) = \{ f(n) \mid \exists c &gt; 0, \, \exists \bar{n}, \, \forall n \geq \bar{n} : f(n) \leq c \cdot g(n) \} </span></p>
+<p><span class="math inline">O(g(n))</span> è un insieme di funzioni che crescono al massimo come <span class="math inline">g(n)</span>, ovvero <span class="math inline">f(n)</span> è limitata superiormente da <span class="math inline">g(n)</span> a meno di una costante moltiplicativa.</p>
+</section>
+</section>
+<section id="stime-di-somme" class="level3">
+<h3 class="anchored" data-anchor-id="stime-di-somme">Stime di somme</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo di somma</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Somma di Gauss</td>
+<td><span class="math inline">\sum_{i=1}^{h} i= \frac{h(h+1)}{2}</span></td>
+</tr>
+<tr class="even">
+<td>Somma di potenze con <span class="math inline">k \geq 1</span></td>
+<td><span class="math inline">\sum_{i=1}^{h} i^k \in O(h^{k+1})</span></td>
+</tr>
+<tr class="odd">
+<td>Somma di potenze con <span class="math inline">k \geq 1</span></td>
+<td><span class="math inline">\sum_{i=1}^{h} i^k \in \Omega (h^{k+1})</span></td>
+</tr>
+<tr class="even">
+<td>Serie geometrica con <span class="math inline">\rho \geq 1</span></td>
+<td><span class="math inline">\sum_{i=0}^{+ \infty} \rho^i = + \infty</span></td>
+</tr>
+<tr class="odd">
+<td>Serie geometrica con <span class="math inline">\rho \lt 1</span></td>
+<td><span class="math inline">\sum_{i=0}^{+ \infty} \rho^i = \frac{1}{1-\rho}</span></td>
+</tr>
+<tr class="even">
+<td>Somma parziale della serie geometrica</td>
+<td><span class="math inline">\sum_{i=0}^{+ \infty} \rho^i = \frac{1-\rho^{h+1}}{1-\rho} = \frac{\rho^{h+1} - 1}{\rho-1}</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="proprietà-dei-logaritmi" class="level3">
+<h3 class="anchored" data-anchor-id="proprietà-dei-logaritmi">Proprietà dei logaritmi</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Proprietà</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>definizione</td>
+<td><span class="math inline">a^{\log_a x} = x</span></td>
+</tr>
+<tr class="even">
+<td>logaritmo di un prodotto</td>
+<td><span class="math inline">\log_a (xy) = \log_a x + \log_a y</span></td>
+</tr>
+<tr class="odd">
+<td>logaritmo di un quoziente</td>
+<td><span class="math inline">\log_a (\frac{x}{y}) = \log_a x - \log_a y</span></td>
+</tr>
+<tr class="even">
+<td>logaritmo di una potenza</td>
+<td><span class="math inline">\log_a (x^k) = k \log_a x</span></td>
+</tr>
+<tr class="odd">
+<td>cambio di base</td>
+<td><span class="math inline">\log_a x = \frac{\log_b x}{\log_b a}</span></td>
+</tr>
+<tr class="even">
+<td>inversione base esponente</td>
+<td><span class="math inline">\log_a x = \frac{1}{\log_x a}</span></td>
+</tr>
+<tr class="odd">
+<td>complessità</td>
+<td><span class="math inline">n^{\log_b m} = m^{\log_b n}</span></td>
+</tr>
+<tr class="even">
+<td>complessità</td>
+<td><span class="math inline">\Theta (\log (n!)) = \Theta (n \log n)</span></td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -314,7 +1023,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -323,8 +1033,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -338,6 +1109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -500,44 +1272,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -636,7 +1418,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
 </div> <!-- /content -->
+    <script type="text/javascript">
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let pseudocodeOptions = {
+          indentSize: el.dataset.indentSize,
+          commentDelimiter: " " + el.dataset.commentDelimiter + " ",
+          lineNumber: el.dataset.lineNumber.toLowerCase() === "true",
+          lineNumberPunc: el.dataset.lineNumberPunc,
+          noEnd: el.dataset.noEnd.toLowerCase() === "true",
+          scopeLines: el.dataset.indentLines.toLowerCase() === "true",
+          titlePrefix: el.dataset.captionPrefix,
+        };
+        pseudocode.renderElement(el.querySelector(".pseudocode"), pseudocodeOptions);
+      });
+    })(document);
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let captionSpan = el.querySelector(".ps-root > .ps-algorithm > .ps-line > .ps-keyword")
+        if (captionSpan !== null) {
+          let captionPrefix = el.dataset.captionPrefix + " ";
+          let captionNumber = "";
+          if (el.dataset.pseudocodeNumber) {
+            captionNumber = el.dataset.pseudocodeNumber + " ";
+            if (el.dataset.chapterLevel) {
+              captionNumber = el.dataset.chapterLevel + "." + captionNumber;
+            }
+          }
+          captionSpan.innerHTML = captionPrefix + captionNumber;
+        }
+      });
+    })(document);
+    </script>
+  
 
 
 
