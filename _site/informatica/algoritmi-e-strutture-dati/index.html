@@ -216,8 +216,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#heapify" id="toc-heapify" class="nav-link" data-scroll-target="#heapify">Heapify</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#heapify-1" id="toc-heapify-1" class="nav-link" data-scroll-target="#heapify-1">Heapify</a></li>
   <li><a href="#quicksort" id="toc-quicksort" class="nav-link" data-scroll-target="#quicksort">QuickSort</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#partition-lomuto" id="toc-partition-lomuto" class="nav-link" data-scroll-target="#partition-lomuto">Partition (Lomuto)</a></li>
   </ul></li>
   <li><a href="#quicksort-select" id="toc-quicksort-select" class="nav-link" data-scroll-target="#quicksort-select">QuickSort + Select</a></li>
@@ -225,7 +227,6 @@ window.Quarto = {
   <li><a href="#radix-sort" id="toc-radix-sort" class="nav-link" data-scroll-target="#radix-sort">Radix Sort</a></li>
   <li><a href="#bucket-sort" id="toc-bucket-sort" class="nav-link" data-scroll-target="#bucket-sort">Bucket Sort</a></li>
   <li><a href="#select-medians-of-medians" id="toc-select-medians-of-medians" class="nav-link" data-scroll-target="#select-medians-of-medians">Select / Medians of medians</a></li>
-  </ul></li>
   <li><a href="#strutture-dati" id="toc-strutture-dati" class="nav-link" data-scroll-target="#strutture-dati">Strutture Dati</a>
   <ul>
   <li><a href="#vettori" id="toc-vettori" class="nav-link" data-scroll-target="#vettori">Vettori</a></li>
@@ -298,96 +299,92 @@ window.Quarto = {
 <p>Inserisco il nuovo elemento nella posizione corretta<br>
 - a sinistra gli elementi sono già ordinati<br>
 - finché trovo elementi maggiori, continuo a spostare l’elemento a sinistra</p>
-<div id="alg-inserionsort" class="theorem algorithm">
-<p><span class="theorem-title"><strong>Algorithm 1 (Insertion Sort)</strong></span> &nbsp;</p>
 <details>
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-insertionsort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="1" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-insertionsort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="1" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{InsertionSort}\begin{algorithmic} \Procedure{InsertionSort}{$A$} \For{$i \gets 2$ \To $A.\text{length}$} \State $key \gets A[i]$ \State $j \gets i - 1$ \While{$j &gt; 0$ \And $A[j] &gt; key$} \State $A[j + 1] \gets A[j]$ \State $j \gets j - 1$ \EndWhile \State $A[j + 1] \gets key$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
 </details>
-</div>
 <hr>
 </section>
 <section id="merge-sort" class="level3">
 <h3 class="anchored" data-anchor-id="merge-sort">Merge Sort</h3>
-<div id="alg-mergesort" class="theorem algorithm">
-<p><span class="theorem-title"><strong>Algorithm 2 (Merge Sort)</strong></span> &nbsp;</p>
 <details>
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-mergesort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="2" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-mergesort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="2" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{MergeSort}\begin{algorithmic} \Procedure{MergeSort}{$A,p,q$} \If{$p &lt; q$} \State $r \gets \frac{p+q}{2}$ \Call{MergeSort}{A,p,r} \Call{MergeSort}{A,r+1,q} \Call{Merge}{A,p,r,q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
 </details>
-</div>
 <section id="merge-stabile-non-inplace---theta-n" class="level4">
 <h4 class="anchored" data-anchor-id="merge-stabile-non-inplace---theta-n">Merge (stabile, non inplace) - <span class="math inline">\Theta (n)</span></h4>
-<div id="alg-merge" class="theorem algorithm">
-<p><span class="theorem-title"><strong>Algorithm 3</strong></span> &nbsp;</p>
 <details>
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-merge" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="3" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-merge" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="3" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{Merge}\begin{algorithmic} \Procedure{Merge}{$A,p,r,q$} \State $B \gets$ new array of size $(q-p+1)$ \State $i \gets p$ \State $j \gets r+1$ \For{$k \gets 0$ \To $B.length-1$} \If{$j &gt; q$} \State $B[k] \gets A[i]$ \State $i \gets i+1$ \ElsIf{$i &gt; r$} \State $B[k] \gets A[j]$ \State $j \gets j+1$ \ElsIf{$A[i] &lt; A[j]$} \State $B[k] \gets A[i]$ \State $i \gets i+1$ \Else \State $B[k] \gets A[j]$ \State $j \gets j+1$ \EndIf \EndFor \For{$k \gets 0$ \To $B.length-1$} \State $A[p+k] \gets B[k]$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
 </details>
-</div>
 <hr>
 </section>
 </section>
 <section id="binary-search" class="level3">
 <h3 class="anchored" data-anchor-id="binary-search">Binary Search</h3>
-<div id="alg-binarysearch" class="theorem algorithm">
-<p><span class="theorem-title"><strong>Algorithm 4 (Binary Search)</strong></span> &nbsp;</p>
 <details>
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-binarysearch" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="4" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-binarysearch" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="4" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{BinarySearch}\begin{algorithmic} \Procedure{BinarySearch}{$A,p,q,k$} \If{$p = q$} \State \Return $A[p] = k$ \Else \State $r \gets \frac{p+q}{2}$ \EndIf \If{$(A[r] = k)$} \State \Return 1 \ElsIf{$A[r] &gt; k$} \State \Return \Call{BinarySearch}{A, p, r-1, k} \Else \State \Return \Call{BinarySearch}{A, r+1, q, k} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
 </details>
-</div>
 <hr>
 </section>
 <section id="heapsort-non-stabile-in-place" class="level3">
 <h3 class="anchored" data-anchor-id="heapsort-non-stabile-in-place">HeapSort (non stabile, in-place)</h3>
 <p>Algoritmo con costo temporale <span class="math inline">O(n \log n)</span></p>
-<div id="alg-heapsort" class="theorem algorithm">
-<p><span class="theorem-title"><strong>Algorithm 5 (HeapSort)</strong></span> &nbsp;</p>
 <details>
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-heapsort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="5" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-heapsort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="5" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{HeapSort}\begin{algorithmic} \Procedure{HeapSort}{$A$} \State \Call{BuildHeap}{A} \For{$i \gets A.\text{length}$ \textbf{down to} $2$} \State \Call{Scambia}{A, 1, i} \State $A.\text{heapsize} \gets A.\text{heapsize} - 1$ \State \Call{Heapify}{A, 1} \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
 </details>
-</div>
 <section id="heapify" class="level4">
 <h4 class="anchored" data-anchor-id="heapify">Heapify</h4>
 <p>costo temporale: <span class="math inline">O (\log n)</span></p>
 <p><span class="math display"> T(n) = \begin{cases} \Theta (1), \quad n \leq \ \\ T(\frac{2}{3} n) + \Theta (1), \quad n \gt 1 \end{cases} </span></p>
-<div id="algo-heapify" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="6" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+</section>
+</section>
+</section>
+<section id="heapify-1" class="level2 {alg-heapify}">
+<h2 class="anchored" data-anchor-id="heapify-1">Heapify</h2>
+<details>
+<summary>
+Pseudocodice
+</summary>
+<div id="algo-heapify" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="6" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{Heapify}\begin{algorithmic} \Procedure{Heapify}{$H, i$} \State $l \gets$ \Call{Left}{i} \State $r \gets$ \Call{Right}{i} \If{$(l \leq H.\text{heapsize} \And H[l] &gt; H[i])$} \State $m \gets l$ \Else \State $m \gets i$ \EndIf \If{$(r \leq H.\text{heapsize} \And H[r] &gt; H[m])$} \State $m \gets r$ \EndIf \If{$(m \neq i)$} \State \Call{Scambia}{H, m, i} \State \Call{Heapify}{H, m} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
+</details>
+</section>
 <div id="tbl-panel" class="quarto-layout-panel anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -395,17 +392,17 @@ Table&nbsp;1: Procedure
 </figcaption>
 <div aria-describedby="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="algo-left" class="pseudocode-container quarto-float quarto-layout-cell" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="7" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="false" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="algo-left" class="pseudocode-container quarto-float quarto-layout-cell" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="7" data-indent-lines="false" data-line-number="false" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="pseudocode">
 \begin{algorithm} \caption{Left}\begin{algorithmic} \Procedure{Left}{$i$} \State \Return $2i$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
-<div id="algo-right" class="pseudocode-container quarto-float quarto-layout-cell" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="8" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="false" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="algo-right" class="pseudocode-container quarto-float quarto-layout-cell" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="8" data-indent-lines="false" data-line-number="false" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="pseudocode">
 \begin{algorithm} \caption{Right}\begin{algorithmic} \Procedure{Right}{$i$} \State \Return $2i + 1$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
-<div id="algo-parent" class="pseudocode-container quarto-float quarto-layout-cell" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="9" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="false" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="algo-parent" class="pseudocode-container quarto-float quarto-layout-cell" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="9" data-indent-lines="false" data-line-number="false" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="pseudocode">
 \begin{algorithm} \caption{Parent}\begin{algorithmic} \Procedure{Parent}{$i$} \State \Return $\lfloor i/2 \rfloor$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -415,13 +412,11 @@ Table&nbsp;1: Procedure
 </figure>
 </div>
 <hr>
-</section>
-</section>
 <section id="quicksort" class="level3">
 <h3 class="anchored" data-anchor-id="quicksort">QuickSort</h3>
 <p>costo temporale</p>
 <p><span class="math display"> T(n) = \begin{cases} \Theta (1), \quad n \leq 1 \\ T(m) + T(m-n-1) + \Theta (n), \quad n \gt 1 \end{cases} </span></p>
-<div id="algo-quicksort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="10" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-quicksort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="10" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{QuickSort}\begin{algorithmic} \Procedure{QuickSort}{$A, p, q$} \If{$p &lt; q$} \State $r \gets$ \Call{Partition}{A, p, q} \State \Call{QuickSort}{A, p, r-1} \State \Call{QuickSort}{A, r+1, q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -429,7 +424,7 @@ Table&nbsp;1: Procedure
 <section id="partition-lomuto" class="level4">
 <h4 class="anchored" data-anchor-id="partition-lomuto">Partition (Lomuto)</h4>
 <p>prende come perno l’ultimo elemento e ritorna la sua posizione corretta</p>
-<div id="algo-partition" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="11" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-partition" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="11" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{Lomuto Partition} \begin{algorithmic} \Procedure{Partition}{$A, p, q$} \State $x \gets A[q]$ \State $i \gets p - 1$ \For{$j \gets p$ \To $q-1$} \If{$A[j] \leq x$} \State $i \gets i + 1$ \State \Call{Scambia}{A, i, j} \EndIf \EndFor \State \Call{Scambia}{A, i+1, q} \State \Return $i+1$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -439,7 +434,7 @@ Table&nbsp;1: Procedure
 <section id="quicksort-select" class="level3">
 <h3 class="anchored" data-anchor-id="quicksort-select">QuickSort + Select</h3>
 <p>da correggere</p>
-<div id="algo-quicksort-select" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="12" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-quicksort-select" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="12" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{QuickSort}\begin{algorithmic} \Procedure{QuickSort}{$A, p, q$} \If{$p &lt; q$} \State $M \gets$ \Call{SelectNaive}{A, p, q} \State \Call{QuickSort}{A, p, r-1} \State \Call{QuickSort}{A, r+1, q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -449,7 +444,7 @@ Table&nbsp;1: Procedure
 <h3 class="anchored" data-anchor-id="counting-sort">Counting Sort</h3>
 <p><span class="math inline">A</span> veettore di interi nell’intervallo <span class="math inline">[0, k]</span> con <span class="math inline">k \in O(n)</span> (n = lunghezza di A)</p>
 <p>nota: <span class="math inline">k</span> non è necessariamente una costante.</p>
-<div id="algo-countingsort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-line-number-punc=":" data-no-end="false" data-pseudocode-number="13" data-line-number="false" data-indent-size="1.2em" data-caption-prefix="Algorithm" data-indent-lines="true">
+<div id="algo-countingsort" class="pseudocode-container quarto-float" data-comment-delimiter="//" data-no-end="false" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-line-number-punc=":" data-pseudocode-number="13" data-indent-lines="true" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{CountingSort}\begin{algorithmic} \Procedure{CountingSort}{$A, B, k$} \State $C \gets$ new array of size $(k+1)$ \For{$j \gets 0$ \To $k$} \State $C[j] \gets 0$ \EndFor \For{$i \gets 1$ \To $A.\text{length}$} \State $C[A[i]] \gets C[A[i]] + 1$ \EndFor \For{$j \gets 1$ \To $k$} \State $C[j] \gets C[j] + C[j-1]$ \EndFor \For{$i \gets A.\text{length}$ \Downto $1$} \State $B[C[A[i]]] \gets A[i]$ \State $C[A[i]] \gets C[A[i]] - 1$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -466,7 +461,6 @@ Table&nbsp;1: Procedure
 <section id="select-medians-of-medians" class="level3">
 <h3 class="anchored" data-anchor-id="select-medians-of-medians">Select / Medians of medians</h3>
 <hr>
-</section>
 </section>
 <section id="strutture-dati" class="level2">
 <h2 class="anchored" data-anchor-id="strutture-dati">Strutture Dati</h2>

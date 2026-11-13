@@ -12,9 +12,6 @@ Inserisco il nuovo elemento nella posizione corretta
 - a sinistra gli elementi sono già ordinati
 - finché trovo elementi maggiori, continuo a spostare l'elemento a sinistra
 
-::: {#alg-inserionsort}
-
-## Insertion Sort
 
 <details>
 <summary>Pseudocodice</summary>
@@ -42,14 +39,12 @@ Inserisco il nuovo elemento nella posizione corretta
 \end{algorithm}
 ```
 </details>
-:::
+
 
 ---
 
 ### Merge Sort
 
-::: {#alg-mergesort}
-## Merge Sort
 <details>
 <summary>Pseudocodice</summary>
 ```pseudocode
@@ -71,11 +66,10 @@ Inserisco il nuovo elemento nella posizione corretta
 \end{algorithm}
 ```
 </details>
-:::
+
 
 #### Merge (stabile, non inplace) - $\Theta (n)$
 
-::: {#alg-merge}
 
 <details>
 <summary>Pseudocodice</summary>
@@ -114,15 +108,11 @@ Inserisco il nuovo elemento nella posizione corretta
 \end{algorithm}
 ```
 </details>
-:::
+
 
 ---
 
 ### Binary Search
-
-:::{#alg-binarysearch}
-
-## Binary Search
 
 <details>
 <summary>Pseudocodice</summary>
@@ -152,7 +142,7 @@ Inserisco il nuovo elemento nella posizione corretta
 \end{algorithm}
 ```
 </details>
-:::
+
 
 ---
 
@@ -160,8 +150,7 @@ Inserisco il nuovo elemento nella posizione corretta
 
 Algoritmo con costo temporale $O(n \log n)$ 
 
-::: {#alg-heapsort}
-## HeapSort
+
 <details>
 <summary>Pseudocodice</summary>
 ```pseudocode
@@ -183,7 +172,7 @@ Algoritmo con costo temporale $O(n \log n)$
 \end{algorithm}
 ```
 </details>
-:::
+
 
 #### Heapify
 
@@ -191,6 +180,11 @@ costo temporale: $O (\log n)$
 
 $$ T(n) = \begin{cases} \Theta (1), \quad n \leq \ \\ T(\frac{2}{3} n) + \Theta (1), \quad n \gt 1 \end{cases} $$
 
+
+::: {alg-heapify}
+## Heapify
+<details>
+<summary>Pseudocodice</summary>
 ```pseudocode
 #| label: algo-heapify
 #| html-line-number: false
@@ -217,7 +211,8 @@ $$ T(n) = \begin{cases} \Theta (1), \quad n \leq \ \\ T(\frac{2}{3} n) + \Theta 
 \end{algorithmic}
 \end{algorithm}
 ```
-
+</details>
+:::
 
 ::: {#tbl-panel layout-ncol=3}
 
