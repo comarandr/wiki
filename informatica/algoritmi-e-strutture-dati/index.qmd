@@ -266,7 +266,8 @@ costo temporale
 
 $$ T(n) = \begin{cases} \Theta (1), \quad n \leq 1 \\ T(m) + T(m-n-1) + \Theta (n), \quad n \gt 1 \end{cases} $$
 
-
+<details>
+<summary>Pseudocodice</summary>
 ```pseudocode
 #| label: algo-quicksort
 #| html-line-number: false
@@ -284,11 +285,14 @@ $$ T(n) = \begin{cases} \Theta (1), \quad n \leq 1 \\ T(m) + T(m-n-1) + \Theta (
 \end{algorithmic}
 \end{algorithm}
 ```
-
+</details>
 
 #### Partition (Lomuto)
 
 prende come perno l'ultimo elemento e ritorna la sua posizione corretta
+
+<details>
+<summary>Pseudocodice</summary>
 
 ```pseudocode
 #| label: algo-partition
@@ -313,11 +317,14 @@ prende come perno l'ultimo elemento e ritorna la sua posizione corretta
 \end{algorithmic}
 \end{algorithm}
 ```
+</details>
 
 ### QuickSort + Select
 
 da correggere
 
+<details>
+<summary>Pseudocodice</summary>
 ```pseudocode
 #| label: algo-quicksort-select
 #| html-line-number: false
@@ -335,6 +342,7 @@ da correggere
 \end{algorithmic}
 \end{algorithm}
 ```
+</details>
 
 ### Counting Sort
 
@@ -342,6 +350,8 @@ $A$ veettore di interi nell'intervallo $[0, k]$ con $k \in O(n)$ (n = lunghezza 
 
 nota: $k$ non è necessariamente una costante. 
 
+<details>
+<summary>Pseudocodice</summary>
 ```pseudocode
 #| label: algo-countingsort
 #| html-line-number: false
@@ -368,6 +378,7 @@ nota: $k$ non è necessariamente una costante.
 \end{algorithmic}
 \end{algorithm}
 ```
+</details>
 
 ### Radix Sort
 
@@ -411,10 +422,156 @@ graph TD
 
 ### Tabelle di Hash
 
+Struttura dati che associa una chiave a dei valori.
+
+Costo spaziale: $\Theta(n)$
+
+Permette di effettuare operazioni di ricerca, cancellazione e inserimento con un costo medio di $\Theta(1)$
+
 #### Hash con chaining
+
+Si tratta di una struttura dati a cui associamo delle liste a un array
+
+```{dot}
+//| fig-cap: "Tabella Hash con Chaining (M = 4)"
+digraph HashTable {
+    rankdir=LR; // Orienta il grafico da sinistra a destra
+    node [shape=record, fontname="Arial", fontsize=12];
+
+    // Definizione dell'Array (tabella principale)
+    table [label="<f0> 0 | <f1> 1 | <f2> 2 | <f3> 3", height=2.5, width=0.6];
+
+    // Definizione dei nodi delle liste (valore | puntatore next)
+    node0_1 [label="{ 8 | <next> }"];
+    node0_2 [label="{ 12 | <next> }"];
+    null0 [label="NULL", shape=plaintext];
+
+    node1_1 [label="{ 5 | <next> }"];
+    node1_2 [label="{ 9 | <next> }"];
+    null1 [label="NULL", shape=plaintext];
+
+    node2_1 [label="{ 2 | <next> }"];
+    null2 [label="NULL", shape=plaintext];
+
+    null3 [label="NULL", shape=plaintext];
+
+    // Collegamenti (puntatori)
+    table:f0 -> node0_1;
+    node0_1:next -> node0_2;
+    node0_2:next -> null0;
+
+    table:f1 -> node1_1;
+    node1_1:next -> node1_2;
+    node1_2:next -> null1;
+
+    table:f2 -> node2_1;
+    node2_1:next -> null2;
+
+    table:f3 -> null3;
+}
+```
+
+
+Il costo delle operazioni è il seguente:
+
+- inserimento: $\Theta(1)$ in quanto inserisco in cima
+- cancellazione: caso medio $\Theta(1)$, ma solo se le liste hanno lunghezza costante con fattore di carico $\alpha = \frac{n}{m}$
+
+#### Hashing uniforme semplice
+
+Ovvero tutte le possibili $m!$ permutazioni devono essere equiprobabili $\frac{1}{m!}
+
+$$\forall i \in [0, m-1], \; P(h(x.key)=i) = \frac{1}{m}$$
+
+::: {#thm-hashing}
+## Teorema costo medio
+
+Se T è una tabella di *Hash con chaining* e vale l'ipotesi di *hashing uniforme semplice*, allora:
+
+- costo medio di ricerca e cancellazione: $\Theta(1 + \alpha)$
+
+:::
+
+#### Funzioni di Hash
+
+Le funzioni di Hash sono le funzioni che mappano gli elementi del dominio in una delle posizioni disponibili
+
+$$h: \{0,\ldots, \vert U \vert - 1\} \rightarrow \{0, \ldots, m-1\}, \, \vert T \vert = m \lt \lt \vert U \vert$$
+
+
+::: {.callout-tip}
+
+## Caratteristiche per una buona funzione di Hash:
+
+- **non iniettività**
+- $dom(H) = \{0, \ldots, \vert U \vert -1 \} = \{x.key \mid key \in U\}$
+- $cdom(h) \subseteq \{0, \ldots, m-1\}$ ovvero non deve uscire dalla tabella
+- **suriettività** $\forall j \in \{0,1,\ldots,m-1\}, \; \exist key \mid h(key) = j$
+- rispetta ipotesi di **hashing uniforme semplice**
+
+:::
+
+Esempi:
+
+- **metodo divisione**: $h(key) = key \mod n$, possibilmente $n$ primo
+- **bucket sort**: $h(key) = \lfloor key \cdot n \rfloor$ con $key \in [0,\ldots,1)$
+- **metodo moltiplicazione**: $h(key) = \lfloor m \cdot (k \cdot A - \lfloor k \cdot A \rfloor) \rfloor, \; 0 \lt A \lt 1, \; \forall m$
 
 #### Hash con open addressing
 
+Si utilizza un unico array $T$ di dimensione $m$. In più si usano dei valori speciali **NIL** (cella vergine) e **DEL**v(cella cancellata).
+
+La funzione con cui si scorre il vettore è detta **sequenza di scansione**
+
+$$h: \{0, \ldots, \vert U \vert - 1 \} \times \{0, \ldots, m-1\} \rightarrow \{0,\ldots,m-1\}$$
+
+La sequenza di scansione deve:
+
+- essere **biettiva**: inettività evita collisioni, suriettività evita che alcune celle non vengano mai riempite
+
+Si tratta di una permutazione di {0, 1, ..., m-1}
+
+**Hashing uniforme semplice**: tutte le possibili $m!$ permutazioni devono essere equiprobabili $\frac{1}{m!}$
+
+Esempi:
+
+**scansione lineare**: $h(key,i) = (h(key) + i) \mod m$
+soffre di *primary clustering* (blocchi di celle contigue)
+
+**scansione quadratica** $h(key,i) = (h'(key) + c_1 \cdot i + c_2 \cdot i^2) \mod m$
+soffre di *secondary clustering* (2 elementi con stesso $h'(key)$ hanno la stessa scansione)
+
+**scansione con hashing doppio** $h(key,i) = (h'(key) + i \cdot h'' (key)) \mod m$
+genera $m^2$ permutazioni
+
+<details>
+<summary>Pseudocodice</summary>
+```pseudocode
+#| label: algo-countingsort
+#| html-line-number: false
+#| html-indent-lines: true
+\begin{algorithm}
+\caption{CountingSort}
+\begin{algorithmic}[1]
+\Procedure{CountingSort}{$A, B, k$}
+    \State $C \gets$ new array of size $(k+1)$
+    \For{$j \gets 0$ \To $k$}
+        \State $C[j] \gets 0$
+    \EndFor
+    \For{$i \gets 1$ \To $A.\text{length}$}
+        \State $C[A[i]] \gets C[A[i]] + 1$
+    \EndFor
+    \For{$j \gets 1$ \To $k$}
+        \State $C[j] \gets C[j] + C[j-1]$
+    \EndFor
+    \For{$i \gets A.\text{length}$ \Downto $1$}
+        \State $B[C[A[i]]] \gets A[i]$
+        \State $C[A[i]] \gets C[A[i]] - 1$
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+```
 ### Binary Search Tree
 
 Il BST è un albero binario in cui ogni nodo ha una chiave intera tale che 
