@@ -743,3 +743,29 @@ Ogni parte dello scheletro viene poi raffinata con le trasformazioni primitive d
   
 
 Esistono dei CASE tools per supportare la progettazione.
+
+### Progettazione concettuale
+
+powerpoint
+
+## Modello relazionale
+
+### Logical Model (da cambiare zona)
+
+I *logical data model* servono a descriver i dati indipendentemente da come sono salvati fisicamente 
+
+Esistono diversi modelli:
+
+- modello relazionale
+- grafi dei dati
+- object based
+- xml
+- gerarchico, modello di rete (più vicini al fisico, con puntatori)
+
+### Basi
+
+: relazione
+generalmente rappresentata con una tabella. Una relazione tipicamente contiene un insieme di righe.
+
+: riga (**tuple**)
+i dati di ogni riga rappresentato dei fatti relativi a entità o relazioni
