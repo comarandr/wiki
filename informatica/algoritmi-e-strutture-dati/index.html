@@ -302,7 +302,7 @@ window.Quarto = {
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-insertionsort" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="1" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-insertionsort" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="1" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{InsertionSort}\begin{algorithmic} \Procedure{InsertionSort}{$A$} \For{$i \gets 2$ \To $A.\text{length}$} \State $key \gets A[i]$ \State $j \gets i - 1$ \While{$j &gt; 0$ \And $A[j] &gt; key$} \State $A[j + 1] \gets A[j]$ \State $j \gets j - 1$ \EndWhile \State $A[j + 1] \gets key$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -316,7 +316,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-mergesort" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="2" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-mergesort" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="2" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{MergeSort}\begin{algorithmic} \Procedure{MergeSort}{$A,p,q$} \If{$p &lt; q$} \State $r \gets \frac{p+q}{2}$ \Call{MergeSort}{A,p,r} \Call{MergeSort}{A,r+1,q} \Call{Merge}{A,p,r,q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -328,7 +328,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-merge" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="3" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-merge" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="3" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{Merge}\begin{algorithmic} \Procedure{Merge}{$A,p,r,q$} \State $B \gets$ new array of size $(q-p+1)$ \State $i \gets p$ \State $j \gets r+1$ \For{$k \gets 0$ \To $B.length-1$} \If{$j &gt; q$} \State $B[k] \gets A[i]$ \State $i \gets i+1$ \ElsIf{$i &gt; r$} \State $B[k] \gets A[j]$ \State $j \gets j+1$ \ElsIf{$A[i] &lt; A[j]$} \State $B[k] \gets A[i]$ \State $i \gets i+1$ \Else \State $B[k] \gets A[j]$ \State $j \gets j+1$ \EndIf \EndFor \For{$k \gets 0$ \To $B.length-1$} \State $A[p+k] \gets B[k]$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -343,7 +343,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-binarysearch" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="4" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-binarysearch" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="4" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{BinarySearch}\begin{algorithmic} \Procedure{BinarySearch}{$A,p,q,k$} \If{$p = q$} \State \Return $A[p] = k$ \Else \State $r \gets \frac{p+q}{2}$ \EndIf \If{$(A[r] = k)$} \State \Return 1 \ElsIf{$A[r] &gt; k$} \State \Return \Call{BinarySearch}{A, p, r-1, k} \Else \State \Return \Call{BinarySearch}{A, r+1, q, k} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -358,7 +358,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-heapsort" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="5" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-heapsort" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="5" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{HeapSort}\begin{algorithmic} \Procedure{HeapSort}{$A$} \State \Call{BuildHeap}{A} \For{$i \gets A.\text{length}$ \textbf{down to} $2$} \State \Call{Scambia}{A, 1, i} \State $A.\text{heapsize} \gets A.\text{heapsize} - 1$ \State \Call{Heapify}{A, 1} \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -377,7 +377,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-heapify" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="6" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-heapify" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="6" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{Heapify}\begin{algorithmic} \Procedure{Heapify}{$H, i$} \State $l \gets$ \Call{Left}{i} \State $r \gets$ \Call{Right}{i} \If{$(l \leq H.\text{heapsize} \And H[l] &gt; H[i])$} \State $m \gets l$ \Else \State $m \gets i$ \EndIf \If{$(r \leq H.\text{heapsize} \And H[r] &gt; H[m])$} \State $m \gets r$ \EndIf \If{$(m \neq i)$} \State \Call{Scambia}{H, m, i} \State \Call{Heapify}{H, m} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -391,17 +391,17 @@ Table&nbsp;1: Procedure
 </figcaption>
 <div aria-describedby="tbl-panel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div id="algo-left" class="pseudocode-container quarto-float quarto-layout-cell" data-pseudocode-number="7" data-no-end="false" data-indent-lines="false" data-comment-delimiter="//" data-indent-size="1.2em" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="algo-left" class="pseudocode-container quarto-float quarto-layout-cell" data-no-end="false" data-pseudocode-number="7" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="false" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="pseudocode">
 \begin{algorithm} \caption{Left}\begin{algorithmic} \Procedure{Left}{$i$} \State \Return $2i$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
-<div id="algo-right" class="pseudocode-container quarto-float quarto-layout-cell" data-pseudocode-number="8" data-no-end="false" data-indent-lines="false" data-comment-delimiter="//" data-indent-size="1.2em" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="algo-right" class="pseudocode-container quarto-float quarto-layout-cell" data-no-end="false" data-pseudocode-number="8" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="false" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="pseudocode">
 \begin{algorithm} \caption{Right}\begin{algorithmic} \Procedure{Right}{$i$} \State \Return $2i + 1$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
 </div>
-<div id="algo-parent" class="pseudocode-container quarto-float quarto-layout-cell" data-pseudocode-number="9" data-no-end="false" data-indent-lines="false" data-comment-delimiter="//" data-indent-size="1.2em" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="algo-parent" class="pseudocode-container quarto-float quarto-layout-cell" data-no-end="false" data-pseudocode-number="9" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="false" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="pseudocode">
 \begin{algorithm} \caption{Parent}\begin{algorithmic} \Procedure{Parent}{$i$} \State \Return $\lfloor i/2 \rfloor$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -419,7 +419,7 @@ Table&nbsp;1: Procedure
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-quicksort" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="10" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-quicksort" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="10" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{QuickSort}\begin{algorithmic} \Procedure{QuickSort}{$A, p, q$} \If{$p &lt; q$} \State $r \gets$ \Call{Partition}{A, p, q} \State \Call{QuickSort}{A, p, r-1} \State \Call{QuickSort}{A, r+1, q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -432,7 +432,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-partition" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="11" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-partition" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="11" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{Lomuto Partition} \begin{algorithmic} \Procedure{Partition}{$A, p, q$} \State $x \gets A[q]$ \State $i \gets p - 1$ \For{$j \gets p$ \To $q-1$} \If{$A[j] \leq x$} \State $i \gets i + 1$ \State \Call{Scambia}{A, i, j} \EndIf \EndFor \State \Call{Scambia}{A, i+1, q} \State \Return $i+1$ \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -447,7 +447,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-quicksort-select" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="12" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-quicksort-select" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="12" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{QuickSort}\begin{algorithmic} \Procedure{QuickSort}{$A, p, q$} \If{$p &lt; q$} \State $M \gets$ \Call{SelectNaive}{A, p, q} \State \Call{QuickSort}{A, p, r-1} \State \Call{QuickSort}{A, r+1, q} \EndIf \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -462,7 +462,7 @@ Pseudocodice
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-countingsort" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="13" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-countingsort" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="13" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{CountingSort}\begin{algorithmic} \Procedure{CountingSort}{$A, B, k$} \State $C \gets$ new array of size $(k+1)$ \For{$j \gets 0$ \To $k$} \State $C[j] \gets 0$ \EndFor \For{$i \gets 1$ \To $A.\text{length}$} \State $C[A[i]] \gets C[A[i]] + 1$ \EndFor \For{$j \gets 1$ \To $k$} \State $C[j] \gets C[j] + C[j-1]$ \EndFor \For{$i \gets A.\text{length}$ \Downto $1$} \State $B[C[A[i]]] \gets A[i]$ \State $C[A[i]] \gets C[A[i]] - 1$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
@@ -740,7 +740,7 @@ genera <span class="math inline">m^2</span> permutazioni</p>
 <summary>
 Pseudocodice
 </summary>
-<div id="algo-countingsort" class="pseudocode-container quarto-float" data-indent-lines="true" data-no-end="false" data-indent-size="1.2em" data-comment-delimiter="//" data-pseudocode-number="14" data-line-number="false" data-line-number-punc=":" data-caption-prefix="Algorithm">
+<div id="algo-countingsort" class="pseudocode-container quarto-float" data-no-end="false" data-pseudocode-number="14" data-caption-prefix="Algorithm" data-indent-size="1.2em" data-indent-lines="true" data-line-number-punc=":" data-comment-delimiter="//" data-line-number="false">
 <div class="pseudocode">
 \begin{algorithm} \caption{CountingSort}\begin{algorithmic} \Procedure{CountingSort}{$A, B, k$} \State $C \gets$ new array of size $(k+1)$ \For{$j \gets 0$ \To $k$} \State $C[j] \gets 0$ \EndFor \For{$i \gets 1$ \To $A.\text{length}$} \State $C[A[i]] \gets C[A[i]] + 1$ \EndFor \For{$j \gets 1$ \To $k$} \State $C[j] \gets C[j] + C[j-1]$ \EndFor \For{$i \gets A.\text{length}$ \Downto $1$} \State $B[C[A[i]]] \gets A[i]$ \State $C[A[i]] \gets C[A[i]] - 1$ \EndFor \EndProcedure \end{algorithmic} \end{algorithm}
 </div>
